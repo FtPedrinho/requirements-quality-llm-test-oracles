@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FORMATO HIPOTÉTICO: substituir quando o XML real da ferramenta de origem estiver disponível. -->
+<!-- Decisão: F1 OR (F2 AND F3). F1 e F2 são acopladas: velocidade > 100 implica velocidade > 50. -->
+<requirement id="REQ-003">
+  <text>Se a velocidade for maior que 100 km/h, ou a velocidade for maior que 50 km/h e estiver chovendo, o sistema deve emitir o aviso de velocidade.</text>
+  <frames>
+    <frame id="F1" type="condition">
+      <subject>velocidade</subject>
+      <operator>&gt;</operator>
+      <value unit="km/h">100</value>
+    </frame>
+    <frame id="F2" type="condition">
+      <subject>velocidade</subject>
+      <operator>&gt;</operator>
+      <value unit="km/h">50</value>
+    </frame>
+    <frame id="F3" type="condition">
+      <subject>chuva</subject>
+      <state>presente</state>
+    </frame>
+    <frame id="F4" type="action">
+      <actor>sistema</actor>
+      <verb>emitir</verb>
+      <object>aviso de velocidade</object>
+    </frame>
+  </frames>
+  <tree>
+    <implies>
+      <antecedent>
+        <or>
+          <ref frame="F1"/>
+          <and>
+            <ref frame="F2"/>
+            <ref frame="F3"/>
+          </and>
+        </or>
+      </antecedent>
+      <consequent>
+        <ref frame="F4"/>
+      </consequent>
+    </implies>
+  </tree>
+</requirement>

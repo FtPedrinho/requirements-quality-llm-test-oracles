@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FORMATO HIPOTÉTICO: substituir quando o XML real da ferramenta de origem estiver disponível. -->
+<!-- Decisão: (F1 AND F2) OR F3 -->
+<requirement id="REQ-001">
+  <text>Se a velocidade for maior que 100 km/h e o freio estiver acionado, ou o modo de emergência estiver ativo, o sistema deve ativar o alerta.</text>
+  <frames>
+    <frame id="F1" type="condition">
+      <subject>velocidade</subject>
+      <operator>&gt;</operator>
+      <value unit="km/h">100</value>
+    </frame>
+    <frame id="F2" type="condition">
+      <subject>freio</subject>
+      <state>acionado</state>
+    </frame>
+    <frame id="F3" type="condition">
+      <subject>modo de emergência</subject>
+      <state>ativo</state>
+    </frame>
+    <frame id="F4" type="action">
+      <actor>sistema</actor>
+      <verb>ativar</verb>
+      <object>alerta</object>
+    </frame>
+  </frames>
+  <tree>
+    <implies>
+      <antecedent>
+        <or>
+          <and>
+            <ref frame="F1"/>
+            <ref frame="F2"/>
+          </and>
+          <ref frame="F3"/>
+        </or>
+      </antecedent>
+      <consequent>
+        <ref frame="F4"/>
+      </consequent>
+    </implies>
+  </tree>
+</requirement>
