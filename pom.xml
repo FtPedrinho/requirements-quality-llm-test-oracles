@@ -13,12 +13,15 @@
   <modules>
     <module>mcdc-core</module>
     <module>mcdc-requirements</module>
+    <module>mcdc-z3</module>
+    <module>mcdc-cli</module>
   </modules>
 
   <properties>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.11.4</junit.version>
+    <jackson.version>2.17.2</jackson.version>
   </properties>
 
   <dependencyManagement>
@@ -27,6 +30,21 @@
         <groupId>io.github.rvdomingos.mcdc</groupId>
         <artifactId>mcdc-core</artifactId>
         <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.rvdomingos.mcdc</groupId>
+        <artifactId>mcdc-requirements</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.rvdomingos.mcdc</groupId>
+        <artifactId>mcdc-z3</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
       </dependency>
       <dependency>
         <groupId>org.junit</groupId>
@@ -61,5 +79,28 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <id>require-java</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireJavaVersion>
+                  <version>[21,)</version>
+                  <message>Este projeto precisa do JDK 21 ou mais novo. Ex.: export JAVA_HOME=$(/usr/libexec/java_home -v 21)</message>
+                </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 </project>

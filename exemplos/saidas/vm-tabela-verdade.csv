@@ -1,0 +1,161 @@
+decision,requirement,row,the_system_mode = idle,the_coin_sensor_antes = false,the_coin_sensor = true,outcome,feasible,in_suite,demonstrates,concrete_values
+vm#1,REQ001,V1,T,T,T,T,T,T,the_system_mode = idle; the_coin_sensor_antes = false; the_coin_sensor = true,the_system_mode = idle; the_coin_sensor_antes = false; the_coin_sensor = true
+vm#1,REQ001,V2,T,T,F,F,T,T,the_coin_sensor = true,the_system_mode = idle; the_coin_sensor_antes = false; the_coin_sensor = false
+vm#1,REQ001,V3,T,F,T,F,T,T,the_coin_sensor_antes = false,the_system_mode = idle; the_coin_sensor_antes = true; the_coin_sensor = true
+vm#1,REQ001,V4,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor_antes = true; the_coin_sensor = false
+vm#1,REQ001,V5,F,T,T,F,T,T,the_system_mode = idle,the_system_mode = choice; the_coin_sensor_antes = false; the_coin_sensor = true
+vm#1,REQ001,V6,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor_antes = false; the_coin_sensor = false
+vm#1,REQ001,V7,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor_antes = true; the_coin_sensor = true
+vm#1,REQ001,V8,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor_antes = true; the_coin_sensor = false
+
+decision,requirement,row,the_system_mode = choice,the_coin_sensor = false,the_coin_sensor_antes = false,the_coffee_request_button_antes != pressed,the_coffee_request_button = pressed,the_request_timer <= 30.0,outcome,feasible,in_suite,demonstrates,concrete_values
+vm#2,REQ002,V1,T,T,T,T,T,T,T,T,T,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes != pressed; the_coffee_request_button = pressed; the_request_timer <= 30.0,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V2,T,T,T,T,T,F,F,T,T,the_request_timer <= 30.0,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V3,T,T,T,T,F,T,F,T,T,the_coffee_request_button = pressed,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V4,T,T,T,T,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V5,T,T,T,F,T,T,F,T,T,the_coffee_request_button_antes != pressed,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V6,T,T,T,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V7,T,T,T,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V8,T,T,T,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V9,T,T,F,T,T,T,F,T,T,the_coin_sensor_antes = false,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V10,T,T,F,T,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V11,T,T,F,T,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V12,T,T,F,T,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V13,T,T,F,F,T,T,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V14,T,T,F,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V15,T,T,F,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V16,T,T,F,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V17,T,F,T,T,T,T,F,T,T,the_coin_sensor = false,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V18,T,F,T,T,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V19,T,F,T,T,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V20,T,F,T,T,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V21,T,F,T,F,T,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V22,T,F,T,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V23,T,F,T,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V24,T,F,T,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V25,T,F,F,T,T,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V26,T,F,F,T,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V27,T,F,F,T,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V28,T,F,F,T,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V29,T,F,F,F,T,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V30,T,F,F,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V31,T,F,F,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V32,T,F,F,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V33,F,T,T,T,T,T,F,T,T,the_system_mode = choice,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V34,F,T,T,T,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V35,F,T,T,T,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V36,F,T,T,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V37,F,T,T,F,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V38,F,T,T,F,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V39,F,T,T,F,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V40,F,T,T,F,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V41,F,T,F,T,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V42,F,T,F,T,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V43,F,T,F,T,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V44,F,T,F,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V45,F,T,F,F,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V46,F,T,F,F,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V47,F,T,F,F,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V48,F,T,F,F,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V49,F,F,T,T,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V50,F,F,T,T,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V51,F,F,T,T,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V52,F,F,T,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V53,F,F,T,F,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V54,F,F,T,F,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V55,F,F,T,F,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V56,F,F,T,F,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V57,F,F,F,T,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V58,F,F,F,T,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V59,F,F,F,T,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V60,F,F,F,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#2,REQ002,V61,F,F,F,F,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#2,REQ002,V62,F,F,F,F,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#2,REQ002,V63,F,F,F,F,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#2,REQ002,V64,F,F,F,F,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+
+decision,requirement,row,the_system_mode = choice,the_coin_sensor = false,the_coin_sensor_antes = false,the_coffee_request_button_antes != pressed,the_coffee_request_button = pressed,the_request_timer > 30.0,outcome,feasible,in_suite,demonstrates,concrete_values
+vm#3,REQ003,V1,T,T,T,T,T,T,T,T,T,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes != pressed; the_coffee_request_button = pressed; the_request_timer > 30.0,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V2,T,T,T,T,T,F,F,T,T,the_request_timer > 30.0,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V3,T,T,T,T,F,T,F,T,T,the_coffee_request_button = pressed,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V4,T,T,T,T,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V5,T,T,T,F,T,T,F,T,T,the_coffee_request_button_antes != pressed,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V6,T,T,T,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V7,T,T,T,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V8,T,T,T,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V9,T,T,F,T,T,T,F,T,T,the_coin_sensor_antes = false,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V10,T,T,F,T,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V11,T,T,F,T,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V12,T,T,F,T,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V13,T,T,F,F,T,T,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V14,T,T,F,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V15,T,T,F,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V16,T,T,F,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V17,T,F,T,T,T,T,F,T,T,the_coin_sensor = false,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V18,T,F,T,T,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V19,T,F,T,T,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V20,T,F,T,T,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V21,T,F,T,F,T,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V22,T,F,T,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V23,T,F,T,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V24,T,F,T,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V25,T,F,F,T,T,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V26,T,F,F,T,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V27,T,F,F,T,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V28,T,F,F,T,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V29,T,F,F,F,T,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V30,T,F,F,F,T,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V31,T,F,F,F,F,T,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V32,T,F,F,F,F,F,F,T,F,,the_system_mode = choice; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V33,F,T,T,T,T,T,F,T,T,the_system_mode = choice,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V34,F,T,T,T,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V35,F,T,T,T,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V36,F,T,T,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V37,F,T,T,F,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V38,F,T,T,F,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V39,F,T,T,F,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V40,F,T,T,F,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V41,F,T,F,T,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V42,F,T,F,T,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V43,F,T,F,T,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V44,F,T,F,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V45,F,T,F,F,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V46,F,T,F,F,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V47,F,T,F,F,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V48,F,T,F,F,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = false; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V49,F,F,T,T,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V50,F,F,T,T,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V51,F,F,T,T,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V52,F,F,T,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V53,F,F,T,F,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V54,F,F,T,F,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V55,F,F,T,F,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V56,F,F,T,F,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = false; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V57,F,F,F,T,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V58,F,F,F,T,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V59,F,F,F,T,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V60,F,F,F,T,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = released; the_coffee_request_button = released; the_request_timer = 0
+vm#3,REQ003,V61,F,F,F,F,T,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 31
+vm#3,REQ003,V62,F,F,F,F,T,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = pressed; the_request_timer = 0
+vm#3,REQ003,V63,F,F,F,F,F,T,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 31
+vm#3,REQ003,V64,F,F,F,F,F,F,F,T,F,,the_system_mode = idle; the_coin_sensor = true; the_coin_sensor_antes = true; the_coffee_request_button_antes = pressed; the_coffee_request_button = released; the_request_timer = 0
+
+decision,requirement,row,the_system_mode = preparing_weak,the_request_timer >= 10.0,the_request_timer <= 30.0,outcome,feasible,in_suite,demonstrates,concrete_values
+vm#4,REQ004,V1,T,T,T,T,T,T,the_system_mode = preparing_weak; the_request_timer >= 10.0; the_request_timer <= 30.0,the_system_mode = preparing_weak; the_request_timer = 10
+vm#4,REQ004,V2,T,T,F,F,T,T,the_request_timer <= 30.0,the_system_mode = preparing_weak; the_request_timer = 31
+vm#4,REQ004,V3,T,F,T,F,T,T,the_request_timer >= 10.0,the_system_mode = preparing_weak; the_request_timer = 0
+vm#4,REQ004,V4,T,F,F,F,F,F,,
+vm#4,REQ004,V5,F,T,T,F,T,T,the_system_mode = preparing_weak,the_system_mode = choice; the_request_timer = 10
+vm#4,REQ004,V6,F,T,F,F,T,F,,the_system_mode = choice; the_request_timer = 31
+vm#4,REQ004,V7,F,F,T,F,T,F,,the_system_mode = choice; the_request_timer = 0
+vm#4,REQ004,V8,F,F,F,F,F,F,,
+
+decision,requirement,row,the_system_mode = preparing_strong,the_request_timer >= 30.0,the_request_timer <= 50.0,outcome,feasible,in_suite,demonstrates,concrete_values
+vm#5,REQ005,V1,T,T,T,T,T,T,the_system_mode = preparing_strong; the_request_timer >= 30.0; the_request_timer <= 50.0,the_system_mode = preparing_strong; the_request_timer = 30
+vm#5,REQ005,V2,T,T,F,F,T,T,the_request_timer <= 50.0,the_system_mode = preparing_strong; the_request_timer = 51
+vm#5,REQ005,V3,T,F,T,F,T,T,the_request_timer >= 30.0,the_system_mode = preparing_strong; the_request_timer = 0
+vm#5,REQ005,V4,T,F,F,F,F,F,,
+vm#5,REQ005,V5,F,T,T,F,T,T,the_system_mode = preparing_strong,the_system_mode = preparing_weak; the_request_timer = 30
+vm#5,REQ005,V6,F,T,F,F,T,F,,the_system_mode = preparing_weak; the_request_timer = 51
+vm#5,REQ005,V7,F,F,T,F,T,F,,the_system_mode = preparing_weak; the_request_timer = 0
+vm#5,REQ005,V8,F,F,F,F,F,F,,

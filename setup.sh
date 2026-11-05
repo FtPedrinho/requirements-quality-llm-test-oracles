@@ -6,7 +6,7 @@ set -euo pipefail
 
 GROUP_ID="${GROUP_ID:-io.github.rvdomingos.mcdc}"
 VERSION="0.1.0-SNAPSHOT"
-JAVA_RELEASE="17"
+JAVA_RELEASE="21"
 JUNIT_VERSION="5.11.4"
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
@@ -89,6 +89,29 @@ cat > pom.xml <<EOF
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <id>require-java</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireJavaVersion>
+                  <version>[\${maven.compiler.release},)</version>
+                  <message>Este projeto precisa do JDK \${maven.compiler.release}. Ex.: export JAVA_HOME=$(/usr/libexec/java_home -v \${maven.compiler.release})</message>
+                </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 </project>
 EOF
@@ -274,7 +297,7 @@ cat > mcdc-requirements/pom.xml <<EOF
 EOF
 
 cat > "$REQ_MAIN/package-info.java" <<EOF
-/** Adaptadores de entrada do modo requisitos: XML (árvore + requirement frames) e expressão textual. */
+/** Adaptadores de entrada do modo requisitos: expressão de requisito e DFRS da NAT2TEST. */
 package $GROUP_ID.requirements;
 EOF
 

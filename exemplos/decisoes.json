@@ -1,0 +1,36 @@
+{
+  "system": "the_coffee_machine_system",
+  "inputs": [
+    { "name": "the_system_mode", "type": "enum", "values": ["idle", "choice", "preparing_strong", "preparing_weak"] },
+    { "name": "the_coin_sensor", "type": "bool" },
+    { "name": "the_coffee_request_button", "type": "bool" },
+    { "name": "the_request_timer", "type": "int" }
+  ],
+  "decisions": [
+    {
+      "id": "the_coffee_machine_system#1",
+      "requirement": "REQ-001",
+      "guard": "the_system_mode = idle /\\ the_coin_sensor = true",
+      "actions": ["the_system_mode := choice", "the_request_timer := 0"]
+    },
+    {
+      "id": "the_coffee_machine_system#2",
+      "requirement": "REQ-002",
+      "guard": "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coffee_request_button = true",
+      "temporal": "the_request_timer <= 30",
+      "actions": ["the_system_mode := preparing_weak"]
+    },
+    {
+      "id": "the_coffee_machine_system#3",
+      "requirement": "REQ-003",
+      "guard": "(the_system_mode = choice /\\ the_coffee_request_button = true) \\/ the_coin_sensor = true",
+      "actions": ["the_system_mode := preparing_strong"]
+    },
+    {
+      "id": "the_coffee_machine_system#4",
+      "requirement": "REQ-004",
+      "guard": "(the_system_mode = preparing_strong \\/ the_system_mode = preparing_weak) /\\ the_request_timer >= 50",
+      "actions": ["the_system_mode := idle"]
+    }
+  ]
+}

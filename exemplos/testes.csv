@@ -1,0 +1,14 @@
+# Testes existentes para as decisões de exemplos/decisoes.json, como a NAT2TEST poderia gerar:
+# valores concretos das variáveis e o resultado esperado da guarda.
+# O T4 tem o resultado esperado errado de propósito, para mostrar a detecção de divergências.
+decision,test,input,value,expected_outcome
+the_coffee_machine_system#1,T1,the_system_mode,idle,T
+the_coffee_machine_system#1,T1,the_coin_sensor,true,T
+the_coffee_machine_system#1,T2,the_system_mode,idle,F
+the_coffee_machine_system#1,T2,the_coin_sensor,false,F
+the_coffee_machine_system#3,T3,the_system_mode,choice,T
+the_coffee_machine_system#3,T3,the_coffee_request_button,true,T
+the_coffee_machine_system#3,T3,the_coin_sensor,false,T
+the_coffee_machine_system#3,T4,the_system_mode,idle,T
+the_coffee_machine_system#3,T4,the_coffee_request_button,true,T
+the_coffee_machine_system#3,T4,the_coin_sensor,false,T

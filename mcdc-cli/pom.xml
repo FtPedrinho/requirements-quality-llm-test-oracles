@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.rvdomingos.mcdc</groupId>
+    <artifactId>mcdc-parent</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>mcdc-cli</artifactId>
+  <name>MC/DC Command Line</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.github.rvdomingos.mcdc</groupId>
+      <artifactId>mcdc-requirements</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.github.rvdomingos.mcdc</groupId>
+      <artifactId>mcdc-z3</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- grava o classpath completo em target/classpath.txt para o script ./mcdc -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.8.1</version>
+        <executions>
+          <execution>
+            <id>classpath-do-script</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>build-classpath</goal>
+            </goals>
+            <configuration>
+              <outputFile>${project.build.directory}/classpath.txt</outputFile>
+              <includeScope>runtime</includeScope>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

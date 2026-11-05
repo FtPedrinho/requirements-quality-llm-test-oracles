@@ -1,0 +1,14 @@
+<section id="comandos" data-transition="fade" style="background:#FFFFFF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#A84A0C">Detalhes</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#14213D">Para rodar</h2>
+</div>
+<div style="background:#14213D;padding:40px 48px;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;line-height:1.55;color:#E8EBF0"><span style="color:#8FA3BF"># compila e roda os 95 testes da ferramenta</span><br>mvn clean verify<br>&#160;<br><span style="color:#8FA3BF"># os 5 requisitos, com a tabela verdade e os testes na tela</span><br>./mcdc analyze --json exemplos/vm-decisoes.json --z3<br>&#160;<br><span style="color:#8FA3BF"># os arquivos: tabela verdade, testes e relatório completo</span><br>./mcdc analyze --json exemplos/vm-decisoes.json --z3 --format truth-csv -o tabela.csv<br>./mcdc analyze --json exemplos/vm-decisoes.json --z3 --format csv -o suite.csv<br>./mcdc analyze --json exemplos/vm-decisoes.json --z3 --format json -o relatorio.json<br>&#160;<br><span style="color:#8FA3BF"># testes de fronteira para os timers</span><br>./mcdc analyze --json exemplos/vm-decisoes.json --z3 --boundary</p>
+</div>
+<div style="display:flex;justify-content:space-between;position:absolute;left:128px;bottom:64px;width:1664px">
+<p style="font-size:24px;color:#5B6676">Na raiz do projeto, com JAVA_HOME apontando para o Java 21 · passo a passo em docs/resultados.md</p>
+<p style="font-size:24px;color:#5B6676">12</p>
+</div>
+<aside>“Tudo o que mostrei sai destes comandos, rodados na raiz do projeto. O primeiro compila e roda os testes da própria ferramenta. O segundo mostra a análise dos cinco requisitos na tela. Os três do meio geram os arquivos. O último acrescenta os testes de fronteira.” Para demonstrar ao vivo, rodar o segundo comando. Antes, no zsh: setopt interactivecomments, se for colar o bloco com os comentários.</aside>
+</section>

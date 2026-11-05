@@ -1,0 +1,11 @@
+# Requisito da máquina de café, escrito como guarda (uma por linha, no formato  ID: expressão)
+#
+# Texto original:
+#   when the system mode is idle and the coin sensor changes to true
+#   the coffee machine system shall reset the request timer
+#   and the coffee machine system shall assign choice to the system mode
+#
+# REQ-001: a guarda como está em exemplos/decisoes.json
+REQ-001: the_system_mode = idle /\ the_coin_sensor = true
+# REQ-001-evento: "changes to true" escrito como evento (antes falso, agora verdadeiro)
+REQ-001-evento: the_system_mode = idle /\ the_coin_sensor_antes = false /\ the_coin_sensor = true

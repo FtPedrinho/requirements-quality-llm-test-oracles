@@ -1,0 +1,43 @@
+{
+  "system": "the_coffee_machine_system",
+  "inputs": [
+    { "name": "the_system_mode", "type": "enum", "values": ["idle", "choice", "preparing_weak", "preparing_strong"] },
+    { "name": "the_coin_sensor", "type": "bool" },
+    { "name": "the_coin_sensor_antes", "type": "bool" },
+    { "name": "the_coffee_request_button", "type": "enum", "values": ["released", "pressed"] },
+    { "name": "the_coffee_request_button_antes", "type": "enum", "values": ["released", "pressed"] },
+    { "name": "the_request_timer", "type": "real" }
+  ],
+  "decisions": [
+    {
+      "id": "vm#1",
+      "requirement": "REQ001",
+      "guard": "the_system_mode = idle /\\ the_coin_sensor_antes = false /\\ the_coin_sensor = true",
+      "actions": ["the_request_timer := 0", "the_system_mode := choice"]
+    },
+    {
+      "id": "vm#2",
+      "requirement": "REQ002",
+      "guard": "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coin_sensor_antes = false /\\ the_coffee_request_button_antes != pressed /\\ the_coffee_request_button = pressed /\\ the_request_timer <= 30.0",
+      "actions": ["the_request_timer := 0", "the_system_mode := preparing_weak"]
+    },
+    {
+      "id": "vm#3",
+      "requirement": "REQ003",
+      "guard": "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coin_sensor_antes = false /\\ the_coffee_request_button_antes != pressed /\\ the_coffee_request_button = pressed /\\ the_request_timer > 30.0",
+      "actions": ["the_request_timer := 0", "the_system_mode := preparing_strong"]
+    },
+    {
+      "id": "vm#4",
+      "requirement": "REQ004",
+      "guard": "the_system_mode = preparing_weak /\\ the_request_timer >= 10.0 /\\ the_request_timer <= 30.0",
+      "actions": ["the_system_mode := idle", "the_coffee_machine_output := weak"]
+    },
+    {
+      "id": "vm#5",
+      "requirement": "REQ005",
+      "guard": "the_system_mode = preparing_strong /\\ the_request_timer >= 30.0 /\\ the_request_timer <= 50.0",
+      "actions": ["the_system_mode := idle", "the_coffee_machine_output := strong"]
+    }
+  ]
+}

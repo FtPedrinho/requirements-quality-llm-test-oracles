@@ -1,0 +1,49 @@
+<section id="saidas" data-transition="fade" style="background:#FFFFFF;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#A84A0C">Detalhes</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15;color:#14213D">Três arquivos para a mesma análise</h2>
+</div>
+<div style="display:flex;gap:40px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#EEF1F5;padding:28px;border-radius:16px;border-top:8px solid #14213D">
+<h3 style="font-size:36px;font-weight:600;color:#14213D">JSON</h3>
+<ul style="font-size:26px;line-height:1.35;color:#3D4A5C">
+<li>a tabela verdade inteira</li>
+<li>os pares de cada condição</li>
+<li>os testes e os valores do Z3</li>
+</ul>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1F5FAD">vm-relatorio.json</p>
+<p style="font-size:24px;line-height:1.4;color:#5B6676">Para o visualizador da NAT2TEST e outros programas</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#EEF1F5;padding:28px;border-radius:16px;border-top:8px solid #1F5FAD">
+<h3 style="font-size:36px;font-weight:600;color:#14213D">CSV dos testes</h3>
+<ul style="font-size:26px;line-height:1.35;color:#3D4A5C">
+<li>só os 26 testes escolhidos</li>
+<li>uma linha por teste e condição</li>
+<li>os valores do Z3</li>
+</ul>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1F5FAD">vm-suite.csv</p>
+<p style="font-size:24px;line-height:1.4;color:#5B6676">Para a lista de testes numa planilha</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#EEF1F5;padding:28px;border-radius:16px;border-top:8px solid #A84A0C">
+<div style="display:flex;gap:16px;align-items:center">
+<h3 style="font-size:36px;font-weight:600;color:#14213D">CSV da tabela</h3>
+<p style="font-size:24px;font-weight:600;padding:4px 14px;background:#A84A0C;color:#FFFFFF;border-radius:999px">novo</p>
+</div>
+<ul style="font-size:26px;line-height:1.35;color:#3D4A5C">
+<li>as 152 linhas da tabela</li>
+<li>uma coluna T/F por condição</li>
+<li>se a linha é possível e se é teste</li>
+</ul>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1F5FAD">vm-tabela-verdade.csv</p>
+<p style="font-size:24px;line-height:1.4;color:#5B6676">Para ver a tabela verdade numa planilha</p>
+</div>
+</div>
+<div style="background:#14213D;padding:24px 36px;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.5;color:#E8EBF0"><span style="color:#8FA3BF">row,modo,timer≥10,timer≤30,outcome,feasible,in_suite,…</span><br>vm#4,REQ004,V1,T,T,T,T,T,T,…<br>vm#4,REQ004,V4,T,F,F,F,<span style="color:#F2A65A">F</span>,F,,</p>
+</div>
+<div style="display:flex;justify-content:space-between;position:absolute;left:128px;bottom:64px;width:1664px">
+<p style="font-size:24px;color:#5B6676">Arquivos em exemplos/saidas/ · formatos --format json, csv e truth-csv</p>
+<p style="font-size:24px;color:#5B6676">11</p>
+</div>
+<aside>“A mesma análise sai em três arquivos. O JSON é o mais completo, com a tabela, os pares e os testes, e é o que vai para o visualizador da NAT2TEST. O CSV dos testes traz só os 26 testes escolhidos, bom para quem vai executá-los. E o CSV da tabela, que é novo, traz as 152 linhas, uma coluna por condição, dizendo se a linha é possível e se virou teste. Na faixa escura, um pedaço dele: a linha V4 do REQ004 aparece com feasible F, ou seja, impossível.” O cabeçalho mostrado na faixa está abreviado; no arquivo, as colunas têm os nomes completos das condições.</aside>
+</section>
