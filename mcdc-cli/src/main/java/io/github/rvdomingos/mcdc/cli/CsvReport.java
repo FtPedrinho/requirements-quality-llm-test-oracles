@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Suíte mínima em CSV, uma linha por (decisão, teste, entrada). Com --z3, a última coluna traz os valores concretos do teste.
- * O formato "longo" funciona igual para decisões com entradas diferentes e abre direto numa planilha.
+ * Suíte mínima em CSV, uma linha por (decisão, teste, entrada). Com --z3, a última coluna traz os
+ * valores concretos do teste.
  */
 final class CsvReport {
 

@@ -6,16 +6,14 @@ import java.util.Map;
 /**
  * O que uma condição afirma sobre uma variável, ex.: {@code speed > 100}.
  *
- * @param variable variável comparada
  * @param operator um de =, !=, <, <=, >, >=
- * @param value    valor comparado, como texto: número, true/false ou nome de um valor de enumeração
+ * @param value    número, true/false, valor de enumeração ou outra variável
  */
 public record Predicate(String variable, String operator, String value) {
 
     /**
-     * Se o predicado vale para valores concretos, ex.: speed = 101. O valor comparado pode ser outra
-     * variável do mapa. Números são comparados como números; o resto, como texto (true/false sem
-     * diferenciar maiúsculas).
+     * Se o predicado vale para valores concretos. Números são comparados como números; o resto, como
+     * texto, sem diferenciar maiúsculas.
      */
     public boolean holds(Map<String, String> values) {
         String actual = values.get(variable);

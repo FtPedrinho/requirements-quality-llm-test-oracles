@@ -12,12 +12,9 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * Tabela verdade completa de uma expressão, montada sobre as entradas. A linha 0 tem todas as entradas verdadeiras.
+ * Tabela verdade de uma expressão, montada sobre as entradas. A linha 0 tem todas as entradas verdadeiras.
  *
- * @param expression expressão analisada
- * @param inputs     entradas, uma coluna cada
- * @param conditions condições: cada ocorrência de uma entrada na expressão
- * @param rows       todas as combinações das entradas
+ * @param conditions cada ocorrência de uma entrada na expressão
  */
 public record TruthTable(Expr expression, List<String> inputs, List<Condition> conditions, List<TestVector> rows) {
 
@@ -32,9 +29,8 @@ public record TruthTable(Expr expression, List<String> inputs, List<Condition> c
     }
 
     /**
-     * @param constraint  expressão que toda linha possível satisfaz, sobre as mesmas entradas
-     *                    da decisão; null quando não há restrição
-     * @param feasibility verificação das linhas a partir dos predicados (ex.: Z3); null para não verificar
+     * @param constraint  restrição que toda linha possível satisfaz; null quando não há
+     * @param feasibility verificação das linhas pelos predicados (ex.: Z3); null para não verificar
      */
     public static TruthTable of(Expr expr, Expr constraint, FeasibilityChecker feasibility) {
         List<String> inputs = expr.inputs();
@@ -56,7 +52,7 @@ public record TruthTable(Expr expression, List<String> inputs, List<Condition> c
             bits.put(inputs.get(i), bit(n, i));
         }
         List<TestVector> rows = new ArrayList<>(1 << n);
-        // cada linha é um número de n bits: bit 0 = entrada verdadeira, bit 1 = falsa
+        // cada linha é um número de n bits: bit 0 = entrada verdadeira
         for (int row = 0; row < (1 << n); row++) {
             boolean feasible = constraint == null || eval(constraint, row, bits);
             rows.add(new TestVector(row, inputs, eval(expr, row, bits), feasible, null));
@@ -94,7 +90,29 @@ public record TruthTable(Expr expression, List<String> inputs, List<Condition> c
         return checked;
     }
 
-    /** A mesma tabela com todas as linhas possíveis: serve para saber se uma condição sem par é redundante. */
+    /** Limite do modo direto: os índices das linhas ainda cabem num int. */
+    public static final int MAX_DIRECT_INPUTS = 30;
+
+    /** Tabela só com as linhas dadas (modo direto), sem montar as 2ⁿ; as linhas não ficam na posição do índice. */
+    public static TruthTable partial(Expr expr, List<TestVector> rows) {
+        if (expr.inputs().size() > MAX_DIRECT_INPUTS) {
+            throw new IllegalArgumentException(
+                    "Decisão com " + expr.inputs().size() + " entradas; o limite do modo direto é " + MAX_DIRECT_INPUTS);
+        }
+        return new TruthTable(expr, expr.inputs(), Condition.of(expr), List.copyOf(rows));
+    }
+
+    /** 2ⁿ, mesmo quando a tabela não foi montada. */
+    public long combinations() {
+        return 1L << inputs.size();
+    }
+
+    /** Se todas as 2ⁿ linhas estão na tabela; falso no modo direto. */
+    public boolean isFull() {
+        return rows.size() == combinations();
+    }
+
+    /** A mesma tabela com todas as linhas possíveis, para saber se uma condição sem par é redundante. */
     public TruthTable withoutConstraints() {
         List<TestVector> all = rows.stream()
                 .map(r -> new TestVector(r.index(), r.inputs(), r.outcome(), true, r.assignment()))

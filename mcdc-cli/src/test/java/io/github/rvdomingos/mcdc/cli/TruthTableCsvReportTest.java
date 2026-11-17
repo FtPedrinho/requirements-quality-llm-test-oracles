@@ -23,7 +23,7 @@ class TruthTableCsvReportTest {
 
         List<String> lines = csv.lines().toList();
         assertEquals("decision,requirement,row,A,B,C,outcome,feasible,in_suite,demonstrates,concrete_values", lines.get(0));
-        assertEquals(1 + 8, lines.size()); // cabeçalho + 2^3 linhas
+        assertEquals(1 + 8, lines.size());
         assertEquals("d1,REQ-001,V1,T,T,T,T,T,F,,", lines.get(1)); // fora da suíte
         assertEquals("d1,REQ-001,V2,T,T,F,T,T,T,A; B,", lines.get(2)); // na suíte, demonstra A e B
     }

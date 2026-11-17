@@ -5,26 +5,18 @@ import io.github.rvdomingos.mcdc.core.FeasibilityChecker;
 import io.github.rvdomingos.mcdc.core.TestVector;
 import io.github.rvdomingos.mcdc.core.model.Expr;
 import io.github.rvdomingos.mcdc.core.model.InputVariable;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 /**
- * Viabilidade das linhas com o Z3: cada linha vira uma consulta em que cada entrada verdadeira entra
- * como o predicado e cada falsa como a negação. "unsat" marca a linha como impossível; "sat" traz os
- * valores concretos. São duas chamadas ao executável por decisão: uma verifica todas as linhas, outra
- * pede os valores das possíveis.
+ * Viabilidade das linhas com o Z3: "unsat" marca a linha como impossível e "sat" traz os valores
+ * concretos. Faz duas chamadas por decisão: uma decide todas as linhas, outra pede os valores das possíveis.
  */
 public final class Z3FeasibilityChecker implements FeasibilityChecker {
-
-    private static final long TIMEOUT_SECONDS = 60;
 
     /** Cada linha é uma consulta; acima disso (12 entradas) o tempo deixa de ser razoável. */
     public static final int MAX_ROWS = 4096;
@@ -32,7 +24,7 @@ public final class Z3FeasibilityChecker implements FeasibilityChecker {
     private final List<InputVariable> declared;
     private final String command;
 
-    /** @param declared variáveis com tipo declarado (ex.: "inputs" do JSON da NAT2TEST); as outras têm o tipo inferido */
+    /** @param declared variáveis com tipo declarado; as outras têm o tipo inferido */
     public Z3FeasibilityChecker(List<InputVariable> declared) {
         this(declared, "z3");
     }
@@ -52,7 +44,7 @@ public final class Z3FeasibilityChecker implements FeasibilityChecker {
                     + " linhas (12 entradas); esta decisão tem " + rows.size());
         }
         SmtEncoding encoding = new SmtEncoding(expression, declared);
-        return solveAll(encoding, rows.stream().map(row -> assertRow(encoding, row)).toList());
+        return solveAll(command, encoding, rows.stream().map(row -> assertRow(encoding, row)).toList());
     }
 
     /**
@@ -71,7 +63,7 @@ public final class Z3FeasibilityChecker implements FeasibilityChecker {
                 }
             }
         }
-        List<Optional<Map<String, String>>> answers = solveAll(encoding, candidates.stream()
+        List<Optional<Map<String, String>>> answers = solveAll(command, encoding, candidates.stream()
                 .map(c -> assertRow(encoding, c.base()) + "(assert " + c.boundary().smt() + ")\n")
                 .toList());
 
@@ -84,8 +76,11 @@ public final class Z3FeasibilityChecker implements FeasibilityChecker {
         return tests;
     }
 
-    /** Duas chamadas: check-sat de cada consulta e, só para as possíveis, os valores. */
-    private List<Optional<Map<String, String>>> solveAll(SmtEncoding encoding, List<String> queries) {
+    /**
+     * Cada consulta numa pilha própria (push/pop) sobre as mesmas declarações. Para cada uma, na mesma
+     * ordem: vazio se impossível, os valores se possível, mapa vazio se o Z3 não decidiu.
+     */
+    static List<Optional<Map<String, String>>> solveAll(String command, SmtEncoding encoding, List<String> queries) {
         if (queries.isEmpty()) {
             return List.of();
         }
@@ -94,7 +89,7 @@ public final class Z3FeasibilityChecker implements FeasibilityChecker {
         for (String query : queries) {
             check.append("(push 1)\n").append(query).append("(check-sat)\n(pop 1)\n");
         }
-        List<String> answers = atoms(run(check.toString()));
+        List<String> answers = Z3Process.atoms(Z3Process.run(command, check.toString()));
         if (answers.size() != queries.size()) {
             throw new IllegalStateException("Resposta inesperada do Z3: " + answers);
         }
@@ -110,7 +105,7 @@ public final class Z3FeasibilityChecker implements FeasibilityChecker {
                         .append("(check-sat)\n").append(getValue).append("(pop 1)\n");
             }
         }
-        List<List<Object>> values = answers.contains("sat") ? valueLists(run(models.toString())) : List.of();
+        List<List<Object>> values = answers.contains("sat") ? Z3Process.valueLists(Z3Process.run(command, models.toString())) : List.of();
 
         List<Optional<Map<String, String>>> result = new ArrayList<>();
         int next = 0;
@@ -132,7 +127,7 @@ public final class Z3FeasibilityChecker implements FeasibilityChecker {
     }
 
     @SuppressWarnings("unchecked")
-    private static Map<String, String> assignment(SmtEncoding encoding, List<Object> pairs) {
+    static Map<String, String> assignment(SmtEncoding encoding, List<Object> pairs) {
         Map<String, String> assignment = new LinkedHashMap<>();
         for (Object pair : pairs) {
             List<Object> p = (List<Object>) pair;
@@ -143,73 +138,8 @@ public final class Z3FeasibilityChecker implements FeasibilityChecker {
         return Collections.unmodifiableMap(assignment);
     }
 
-    /** Respostas de check-sat; qualquer (error ...) vira exceção. */
-    private static List<String> atoms(String output) {
-        List<String> atoms = new ArrayList<>();
-        for (Object item : SExpr.parseAll(output)) {
-            failOnError(item);
-            if (item instanceof String atom) {
-                atoms.add(atom);
-            }
-        }
-        return atoms;
-    }
-
-    /** Listas de get-value, uma por linha possível. */
-    @SuppressWarnings("unchecked")
-    private static List<List<Object>> valueLists(String output) {
-        List<List<Object>> lists = new ArrayList<>();
-        for (Object item : SExpr.parseAll(output)) {
-            failOnError(item);
-            if (item instanceof List<?> list) {
-                lists.add((List<Object>) list);
-            }
-        }
-        return lists;
-    }
-
-    private static void failOnError(Object item) {
-        if (item instanceof List<?> list && !list.isEmpty() && "error".equals(list.get(0))) {
-            throw new IllegalStateException("Erro do Z3: " + list.get(1));
-        }
-    }
-
-    private String run(String script) {
-        Process process;
-        try {
-            process = new ProcessBuilder(command, "-in", "-smt2").redirectErrorStream(true).start();
-        } catch (IOException e) {
-            throw new IllegalStateException("Z3 não encontrado (" + command + "). Instale com: brew install z3");
-        }
-        try {
-            try (OutputStream in = process.getOutputStream()) {
-                in.write(script.getBytes(StandardCharsets.UTF_8));
-            }
-            String output = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-            if (!process.waitFor(TIMEOUT_SECONDS, TimeUnit.SECONDS)) {
-                process.destroyForcibly();
-                throw new IllegalStateException("O Z3 não respondeu em " + TIMEOUT_SECONDS + " segundos");
-            }
-            return output;
-        } catch (IOException e) {
-            throw new IllegalStateException("Falha ao conversar com o Z3: " + e.getMessage());
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new IllegalStateException("Interrompido esperando o Z3");
-        }
-    }
-
     /** Se o executável responde; usado pelos testes para pular quando o Z3 não está instalado. */
     public static boolean isAvailable(String command) {
-        try {
-            Process process = new ProcessBuilder(command, "--version").redirectErrorStream(true).start();
-            process.getInputStream().readAllBytes();
-            return process.waitFor(10, TimeUnit.SECONDS) && process.exitValue() == 0;
-        } catch (IOException e) {
-            return false;
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            return false;
-        }
+        return Z3Process.isAvailable(command);
     }
 }

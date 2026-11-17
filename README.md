@@ -1,6 +1,6 @@
 # Ferramenta MC/DC
 
-Gera, a partir de um requisito escrito como expressão lógica, a tabela verdade, os pares de independência de cada condição e a suíte mínima de testes que atinge MC/DC, dizendo qual par demonstra cada condição. Também mede o MC/DC de testes já existentes. Lê requisitos avulsos, arquivos `.mcdc` e o JSON de decisões extraído da NAT2TEST, e devolve o relatório em texto, JSON, CSV (testes ou tabela verdade inteira) ou Gherkin.
+Gera, a partir de um requisito escrito como expressão lógica, a tabela verdade, os pares de independência de cada condição e a suíte mínima de testes que atinge MC/DC, dizendo qual par demonstra cada condição. Também mede o MC/DC de testes já existentes e confere os requisitos entre si (conflitos e lacunas). Lê requisitos avulsos, arquivos `.mcdc` e o JSON de decisões extraído da NAT2TEST, e devolve o relatório em JSON (o formato da integração), texto ou CSV (testes ou tabela verdade inteira).
 
 Fase 1: motor e modo requisitos. Arquitetura em [docs/arquitetura-fase1.md](docs/arquitetura-fase1.md); estado atual em [docs/implementacao-fase1.md](docs/implementacao-fase1.md).
 
@@ -47,14 +47,25 @@ mvn clean verify      # compila e roda os testes
 ./mcdc analyze --json exemplos/decisoes.json
 ./mcdc analyze --json exemplos/decisoes.json --z3
 
-# os 5 requisitos originais da VM; resultados em docs/resultados.md
+# requisitos originais de 4 sistemas (VM, TIS, NPP, PC); resultados em docs/resultados-requisitos.md
 ./mcdc analyze --json exemplos/vm-decisoes.json --z3
+./mcdc analyze --json exemplos/tis-decisoes.json --z3
 
-# relatório em JSON (o que volta para o Viewer), CSV ou Gherkin
+# relatório em JSON (o que volta para o Viewer) ou CSV
 ./mcdc analyze --json exemplos/decisoes.json --format json | jq .
 ./mcdc analyze --json exemplos/decisoes.json --format csv -o suite.csv
 ./mcdc analyze --json exemplos/vm-decisoes.json --z3 --format truth-csv -o tabela.csv   # tabela verdade inteira
-./mcdc analyze --json exemplos/decisoes.json --z3 --format gherkin -o suite.feature
+
+# suíte exata: a menor possível, escolhida pelo Z3 (aqui, 5 testes em vez dos 6 da escolha gulosa)
+./mcdc analyze "((E or D) and (not A or D)) or B" --exact
+
+# modo direto: o Z3 procura os pares sem montar a tabela (automático com --z3 acima de 12 entradas; até 30)
+./mcdc analyze --json exemplos/vm-decisoes.json --direct
+
+# verificação entre requisitos: guardas que valem juntas e escrevem valores diferentes (conflitos)
+./mcdc verify --json exemplos/npp-decisoes.json
+# ... e lacunas: nesta situação, sempre alguma guarda vale?
+./mcdc verify --json exemplos/vm-decisoes.json --context 'the_system_mode = preparing_weak'
 
 # modo avaliação: quanto de MC/DC testes já existentes atingem e o que falta
 ./mcdc check --json exemplos/decisoes.json --tests exemplos/testes.csv
@@ -70,7 +81,7 @@ Use aspas simples quando a expressão tiver `\`, como em `/\` e `\/`.
 | não | `not`, `!` |
 | comparação | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |
 
-Código de saída: `0` cobertura completa, `1` entrada inválida, `2` alguma condição sem par de independência (no `check`: alguma condição não demonstrada ou resultado esperado divergente).
+Código de saída: `0` cobertura completa, `1` entrada inválida, `2` alguma condição sem par de independência (no `check`: alguma condição não demonstrada ou resultado esperado divergente; no `verify`: algum conflito ou lacuna).
 
 ## Módulos
 
@@ -78,5 +89,5 @@ Código de saída: `0` cobertura completa, `1` entrada inválida, `2` alguma con
 |---|---|
 | `mcdc-core` | Modelo da expressão e motor: tabela verdade, condições por ocorrência, pares, suíte mínima com rastreabilidade, diagnóstico de condição sem par, modo avaliação e validação por mutação. Sem dependências externas. |
 | `mcdc-requirements` | Parser de expressões, leitura de arquivos `.mcdc`, do JSON da NAT2TEST e de testes existentes em CSV |
-| `mcdc-z3` | Viabilidade das linhas, valores concretos e valores de fronteira com o Z3, por SMT-LIB |
-| `mcdc-cli` | Comandos `mcdc analyze` e `mcdc check`; relatórios em texto, JSON, CSV dos testes, CSV da tabela verdade e Gherkin |
+| `mcdc-z3` | Com o Z3, por SMT-LIB: viabilidade das linhas, valores concretos e de fronteira, suíte exata, modo direto e verificação entre requisitos |
+| `mcdc-cli` | Comandos `mcdc analyze`, `mcdc check` e `mcdc verify`; relatórios em JSON, texto, CSV dos testes e CSV da tabela verdade |

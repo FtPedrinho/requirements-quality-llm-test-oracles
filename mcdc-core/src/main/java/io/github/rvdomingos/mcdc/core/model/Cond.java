@@ -5,8 +5,8 @@ import java.util.Map;
 /**
  * Condição atômica.
  *
- * @param id        nome da entrada; para comparações, o texto normalizado do predicado, ex.: "speed > 100"
- * @param predicate o que a condição afirma; null para condições puramente booleanas
+ * @param id        nome da entrada; numa comparação, o texto do predicado, ex.: "speed > 100"
+ * @param predicate o que a condição afirma; null para condições booleanas
  */
 public record Cond(String id, Predicate predicate) implements Expr {
 

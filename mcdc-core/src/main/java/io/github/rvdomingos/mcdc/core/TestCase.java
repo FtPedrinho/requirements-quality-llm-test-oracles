@@ -12,15 +12,13 @@ import java.util.Map;
 /**
  * Um teste já existente, a ser avaliado pelo modo avaliação.
  *
- * @param name     nome do teste, ex.: "T1"
- * @param values   valor de cada entrada da decisão
  * @param expected resultado esperado da decisão; null quando não informado
  */
 public record TestCase(String name, Map<String, Boolean> values, Boolean expected) {
 
     /**
-     * Monta o teste a partir do que veio do arquivo. Cada entrada pode vir direto com T/F
-     * ("speed > 100" = T) ou ser calculada a partir dos valores concretos das variáveis (speed = 101).
+     * Monta o teste a partir do arquivo: cada entrada vem direto com T/F ou é calculada pelo predicado
+     * a partir dos valores concretos (speed = 101).
      */
     public static TestCase resolve(Expr expr, String name, Map<String, String> raw, Boolean expected) {
         Map<String, Cond> conds = new LinkedHashMap<>();

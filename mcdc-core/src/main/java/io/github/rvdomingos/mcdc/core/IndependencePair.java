@@ -1,12 +1,6 @@
 package io.github.rvdomingos.mcdc.core;
 
-/**
- * Dois vetores que mostram o efeito independente de uma condição.
- *
- * @param condition  condição analisada
- * @param whenTrue   vetor em que a condição é verdadeira
- * @param whenFalse  vetor em que a condição é falsa
- */
+/** Dois vetores que mostram o efeito independente de uma condição. */
 public record IndependencePair(String condition, TestVector whenTrue, TestVector whenFalse) {
 
     /** Os dois vetores diferem só na entrada da condição: o par também vale em causa única. */

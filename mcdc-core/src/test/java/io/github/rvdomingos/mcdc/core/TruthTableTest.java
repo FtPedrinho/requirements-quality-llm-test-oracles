@@ -85,6 +85,6 @@ class TruthTableTest {
         McdcReport report = Mcdc.analyze(expr, McdcOptions.defaults().withVariant(McdcVariant.UNIQUE_CAUSE));
 
         assertEquals(1 << 20, report.table().rows().size());
-        assertEquals(21, report.minimalSuite().size()); // N + 1
+        assertEquals(21, report.minimalSuite().size());
     }
 }

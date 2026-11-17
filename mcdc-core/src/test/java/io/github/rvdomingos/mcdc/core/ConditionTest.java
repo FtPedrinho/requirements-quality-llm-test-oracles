@@ -25,10 +25,11 @@ class ConditionTest {
 
     @Test
     void decidesFlipsOnlyThatOccurrence() {
+        // as duas aparições de A, na linha V2 (A=T, B=T, C=F)
         TruthTable table = TruthTable.of(expr);
-        Condition first = table.conditions().get(0);  // A em (A and B)
-        Condition second = table.conditions().get(2); // A em (not A and C)
-        TestVector ttf = table.rows().get(1);         // V2: A=T, B=T, C=F
+        Condition first = table.conditions().get(0);
+        Condition second = table.conditions().get(2);
+        TestVector ttf = table.rows().get(1);
 
         assertTrue(first.decides(expr, ttf));
         assertFalse(second.decides(expr, ttf));

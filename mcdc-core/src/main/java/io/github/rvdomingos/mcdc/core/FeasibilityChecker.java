@@ -5,15 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-/**
- * Decide quais linhas da tabela verdade são possíveis, a partir do que as condições afirmam
- * (os predicados), e dá valores concretos para as possíveis. A implementação com Z3 fica no módulo mcdc-z3.
- */
+/** Diz quais linhas da tabela são possíveis a partir dos predicados e dá valores concretos (implementação com Z3 no mcdc-z3). */
 public interface FeasibilityChecker {
 
-    /**
-     * Para cada linha, na mesma ordem, os valores concretos das variáveis que a realizam
-     * (ex.: speed = 101), ou vazio se a linha for impossível.
-     */
+    /** Para cada linha, na mesma ordem: os valores que a realizam, ou vazio se ela é impossível. */
     List<Optional<Map<String, String>>> solve(Expr expression, List<TestVector> rows);
 }

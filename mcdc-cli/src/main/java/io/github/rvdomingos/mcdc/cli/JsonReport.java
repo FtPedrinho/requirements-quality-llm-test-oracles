@@ -23,10 +23,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Relatório em JSON, o formato que volta para o Viewer da NAT2TEST.
- * Cada decisão leva {@code id} e {@code requirement} para o Viewer ligar o resultado ao requisito.
- */
+/** Relatório em JSON, o formato da integração; cada decisão leva {@code id} e {@code requirement}. */
 final class JsonReport {
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
@@ -73,8 +70,10 @@ final class JsonReport {
         }).toList());
         node.put("inputs", inputs(report));
         node.put("conditions", conditions(report));
-        node.put("truthTableRows", report.table().rows().size());
-        if (report.table().rows().size() <= MAX_TABLE_ROWS) {
+        node.put("suiteMethod", report.suiteMethod().name());
+        node.put("truthTableRows", report.table().combinations());
+        node.put("truthTableBuilt", report.table().isFull());
+        if (report.table().isFull() && report.table().rows().size() <= MAX_TABLE_ROWS) {
             node.put("truthTable", report.table().rows().stream().map(row -> vector(row, true)).toList());
         }
 

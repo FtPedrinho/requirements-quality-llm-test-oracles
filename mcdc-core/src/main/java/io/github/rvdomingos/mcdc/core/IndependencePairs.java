@@ -6,19 +6,17 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Pares de independência por condição (cada ocorrência de uma entrada), seguindo as definições
- * de Chilenski e de Kapoor e Bowen. O mapa segue a ordem das condições e usa o rótulo delas
- * (ex.: "A" ou "A#2"); condição sem par fica com lista vazia. Linhas impossíveis ficam de fora.
+ * Pares de independência de cada condição (cada ocorrência de uma entrada). Condição sem par fica com
+ * lista vazia; linhas impossíveis ficam de fora.
  */
 public final class IndependencePairs {
 
-    /** Teto de pares guardados por condição; no mascaramento, o número de pares cresce como o produto de duas listas. */
+    /** Teto de pares por condição: no mascaramento eles crescem como o produto de duas listas. */
     public static final int MAX_PAIRS_PER_CONDITION = 1000;
 
     private IndependencePairs() {
     }
 
-    /** Pares da variante pedida. */
     public static Map<String, List<IndependencePair>> of(TruthTable table, McdcVariant variant) {
         return switch (variant) {
             case UNIQUE_CAUSE -> uniqueCause(table);
@@ -27,9 +25,8 @@ public final class IndependencePairs {
     }
 
     /**
-     * Causa única: só a entrada da condição muda entre os dois vetores, o resultado muda, e nos dois
-     * vetores é esta ocorrência que decide o resultado. Sem entradas repetidas, é a causa única (UC)
-     * clássica; com repetição, é a causa única com mascaramento forte (UCMS).
+     * Causa única: só a entrada da condição muda, o resultado muda e a ocorrência decide nos dois
+     * vetores (UCMS quando a entrada se repete).
      */
     public static Map<String, List<IndependencePair>> uniqueCause(TruthTable table) {
         int n = table.inputs().size();
@@ -40,9 +37,9 @@ public final class IndependencePairs {
             List<IndependencePair> pairs = new ArrayList<>();
             for (TestVector row : table.rows()) {
                 if (!row.feasible() || (row.index() & mask) != 0) {
-                    continue; // só parte das linhas possíveis em que a entrada é verdadeira
+                    continue;
                 }
-                // mesma linha com o bit da entrada ligado, ou seja, só ela passa a falsa
+                // a mesma linha com só esta entrada falsa
                 TestVector flipped = table.rows().get(row.index() | mask);
                 if (flipped.feasible()
                         && row.outcome() != flipped.outcome()
@@ -59,10 +56,7 @@ public final class IndependencePairs {
         return result;
     }
 
-    /**
-     * Mascaramento: a entrada muda, o resultado muda, e nos dois vetores esta ocorrência decide o
-     * resultado. As outras condições podem mudar, desde que estejam mascaradas.
-     */
+    /** Mascaramento: as outras condições podem mudar, desde que estejam mascaradas. */
     public static Map<String, List<IndependencePair>> masking(TruthTable table) {
         int n = table.inputs().size();
         Map<String, List<IndependencePair>> result = new LinkedHashMap<>();
@@ -83,7 +77,6 @@ public final class IndependencePairs {
                 }
             }
 
-            // combina toda linha decisiva com a entrada T com toda linha decisiva com a entrada F de resultado oposto
             List<IndependencePair> pairs = new ArrayList<>();
             search:
             for (TestVector t : whenTrue) {

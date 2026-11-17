@@ -28,11 +28,10 @@ class McdcTest {
 
     @Test
     void reportsRedundantCondition() {
-        // A or (A and B)
+        // A or (A and B): o segundo A também fica sem par, porque cada ocorrência é uma condição
         Expr expr = new Or(new Cond("A"), new And(new Cond("A"), new Cond("B")));
         McdcReport report = Mcdc.analyze(expr, McdcOptions.defaults());
 
-        // o segundo A também é redundante: cada ocorrência é uma condição e precisa do próprio par
         assertEquals(List.of("A#2", "B"), report.uncoveredConditions());
         assertFalse(report.isComplete());
     }
@@ -52,13 +51,12 @@ class McdcTest {
 
     @Test
     void repeatedInputNeedsOnePairPerOccurrence() {
-        // (A and B) or (not A and C): 3 entradas e 4 condições
+        // (A and B) or (not A and C): 3 entradas e 4 condições; A#1 só tem o par (V2, V6) e A#2 só (V3, V7)
         Expr expr = new Or(new And(new Cond("A"), new Cond("B")), new And(new Not(new Cond("A")), new Cond("C")));
         McdcReport report = Mcdc.analyze(expr, McdcOptions.defaults().withVariant(McdcVariant.UNIQUE_CAUSE));
 
         assertTrue(report.isComplete());
         List<String> suite = report.minimalSuite().stream().map(TestVector::name).toList();
-        // A#1 só é demonstrada por (V2, V6) e A#2 só por (V3, V7)
         assertTrue(suite.containsAll(List.of("V2", "V6", "V3", "V7")), suite.toString());
     }
 

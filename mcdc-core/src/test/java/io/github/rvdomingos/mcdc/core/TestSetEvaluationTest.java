@@ -48,14 +48,13 @@ class TestSetEvaluationTest {
 
     @Test
     void countsConditionOutcomesWithIndependentEffect() {
-        // V1 (TTT): inverter qualquer uma das três sozinha mantém o resultado T, então nenhuma decide
+        // V1 (TTT): nenhuma condição decide; V2 (TTF): só A e B decidem
         TestSetEvaluation e = Mcdc.evaluate(expr, McdcOptions.defaults(), List.of(test("T1", true, true, true)));
         assertEquals(0, e.outcomesCovered());
         assertEquals(6, e.outcomesTotal());
 
-        // V2 (TTF): inverter A ou B derruba o resultado, então A=T e B=T decidem; inverter C mantém T
         TestSetEvaluation e2 = Mcdc.evaluate(expr, McdcOptions.defaults(), List.of(test("T1", true, true, false)));
-        assertEquals(2, e2.outcomesCovered()); // A=T e B=T
+        assertEquals(2, e2.outcomesCovered());
     }
 
     @Test

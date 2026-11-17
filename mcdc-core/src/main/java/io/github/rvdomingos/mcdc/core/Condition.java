@@ -10,13 +10,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Uma ocorrência de uma entrada na expressão. Pela DO-178, em {@code (A and B) or (not A and C)}
- * há 3 entradas e 4 condições: A#1, B, A#2 e C.
+ * Uma ocorrência de uma entrada na expressão: em {@code (A and B) or (not A and C)} há 3 entradas
+ * e 4 condições (A#1, B, A#2 e C).
  *
- * @param leaf       posição da folha na expressão, da esquerda para a direita, começando em 0
- * @param input      entrada a que a condição se refere
- * @param occurrence número da ocorrência dessa entrada, começando em 1
- * @param label      nome nos relatórios: a entrada, ou "entrada#n" quando ela aparece mais de uma vez
+ * @param leaf  posição da folha na expressão, da esquerda para a direita, a partir de 0
+ * @param label nome nos relatórios: a entrada, ou "entrada#n" quando ela se repete
  */
 public record Condition(int leaf, String input, int occurrence, String label) {
 
@@ -33,10 +31,7 @@ public record Condition(int leaf, String input, int occurrence, String label) {
         return List.copyOf(conditions);
     }
 
-    /**
-     * A condição decide o resultado nesta linha: inverter só esta ocorrência, mantendo as outras
-     * ocorrências da mesma entrada, inverte o resultado.
-     */
+    /** Se inverter só esta ocorrência, mantendo as outras da mesma entrada, inverte o resultado da linha. */
     public boolean decides(Expr expr, TestVector row) {
         return row.outcome() != evalFlipping(expr, row, leaf, new int[] {0});
     }

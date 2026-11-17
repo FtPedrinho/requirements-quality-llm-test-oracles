@@ -7,16 +7,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * Uma linha da tabela verdade. Os valores das entradas não são guardados: saem dos bits do índice
- * (bit 0 = verdadeira), e a lista de entradas é a mesma para todas as linhas. Assim 1 milhão de linhas
- * cabe em poucas dezenas de megabytes.
+ * Uma linha da tabela verdade. Os valores das entradas saem dos bits do índice (bit 0 = verdadeira),
+ * o que deixa 1 milhão de linhas em poucas dezenas de megabytes.
  *
- * @param index      posição na tabela, começando em 0
- * @param inputs     entradas da decisão, na ordem das colunas; compartilhada entre as linhas
- * @param outcome    resultado da decisão para esses valores
+ * @param inputs     entradas da decisão, compartilhadas entre as linhas
  * @param feasible   se a combinação é possível; linhas impossíveis não entram em pares
- * @param assignment valores concretos das variáveis que realizam a linha (ex.: speed = 101);
- *                   vazio quando não houve verificação de viabilidade
+ * @param assignment valores concretos que realizam a linha; vazio sem verificação de viabilidade
  */
 public record TestVector(int index, List<String> inputs, boolean outcome, boolean feasible,
         Map<String, String> assignment) {
@@ -25,7 +21,6 @@ public record TestVector(int index, List<String> inputs, boolean outcome, boolea
         assignment = assignment == null ? Map.of() : assignment;
     }
 
-    /** Valor de uma entrada nesta linha. */
     public boolean value(String input) {
         int i = inputs.indexOf(input);
         if (i < 0) {
@@ -34,7 +29,7 @@ public record TestVector(int index, List<String> inputs, boolean outcome, boolea
         return (index & (1 << (inputs.size() - 1 - i))) == 0;
     }
 
-    /** Valor de cada entrada, na ordem das colunas. Montado a cada chamada; use {@link #value} em laços. */
+    /** Valor de cada entrada, montado a cada chamada; em laços, use {@link #value}. */
     public Map<String, Boolean> values() {
         Map<String, Boolean> values = new LinkedHashMap<>();
         for (String input : inputs) {
@@ -43,7 +38,7 @@ public record TestVector(int index, List<String> inputs, boolean outcome, boolea
         return Collections.unmodifiableMap(values);
     }
 
-    /** Nome usado nos relatórios: V1, V2, ... */
+    /** Nome nos relatórios: V1, V2, ... */
     public String name() {
         return "V" + (index + 1);
     }

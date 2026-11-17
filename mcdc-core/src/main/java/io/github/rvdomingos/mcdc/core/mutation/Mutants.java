@@ -42,7 +42,7 @@ public final class Mutants {
                     mutants.add(new Mutant(FaultClass.ORF, replace(expr, at, n -> new Or(left, right))));
                     mutants.add(new Mutant(FaultClass.ENF, replace(expr, at, Not::new)));
                     missingVariable(expr, at, left, right, mutants);
-                    // F1 and (F2 or F3) escrito como F1 and F2 or F3, que significa (F1 and F2) or F3
+                    // parênteses deslocados: F1 and (F2 or F3) vira (F1 and F2) or F3
                     if (right instanceof Or(var y, var z)) {
                         mutants.add(new Mutant(FaultClass.ASF, replace(expr, at, n -> new Or(new And(left, y), z))));
                     }
@@ -71,7 +71,7 @@ public final class Mutants {
         return List.copyOf(mutants);
     }
 
-    /** Some com uma condição (ou a negação dela) que é filha direta de and/or: o nó vira o irmão. */
+    /** Tira uma folha que é filha direta de and/or: o nó vira o irmão dela. */
     private static void missingVariable(Expr expr, int at, Expr left, Expr right, Set<Mutant> mutants) {
         if (isLeaf(left)) {
             mutants.add(new Mutant(FaultClass.MVF, replace(expr, at, n -> right)));
@@ -102,7 +102,7 @@ public final class Mutants {
         }
     }
 
-    /** Copia a expressão trocando o nó de posição {@code target} (em pré-ordem) pelo resultado de {@code change}. */
+    /** Copia a expressão trocando o nó {@code target} (em pré-ordem) pelo resultado de {@code change}. */
     private static Expr replace(Expr root, int target, UnaryOperator<Expr> change) {
         return replace(root, target, change, new int[] {0});
     }

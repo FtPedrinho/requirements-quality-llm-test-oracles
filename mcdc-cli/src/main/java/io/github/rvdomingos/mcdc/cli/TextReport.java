@@ -58,7 +58,10 @@ final class TextReport {
                     .append("\n\n");
         }
         int rows = report.table().rows().size();
-        if (rows <= MAX_TABLE_ROWS_SHOWN) {
+        if (!report.table().isFull()) {
+            sb.append("Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; ")
+                    .append(report.table().combinations()).append(" combinações)\n");
+        } else if (rows <= MAX_TABLE_ROWS_SHOWN) {
             sb.append(report.table().format());
         } else {
             long feasible = report.table().rows().stream().filter(TestVector::feasible).count();
@@ -71,7 +74,11 @@ final class TextReport {
         report.pairs().forEach((condition, pairs) ->
                 sb.append("  ").append(condition).append(": ").append(describe(pairs)).append('\n'));
 
-        sb.append("\nSuíte mínima (").append(report.minimalSuite().size()).append(" testes):\n");
+        sb.append("\n").append(switch (report.suiteMethod()) {
+            case GREEDY -> "Suíte mínima";
+            case EXACT -> "Suíte mínima, exata (Z3)";
+            case DIRECT -> "Suíte do modo direto";
+        }).append(" (").append(report.minimalSuite().size()).append(" testes):\n");
         for (TestVector vector : report.minimalSuite()) {
             sb.append("  ").append(vector.name())
                     .append("  ").append(vector.bits())

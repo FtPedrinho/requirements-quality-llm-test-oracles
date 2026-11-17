@@ -9,16 +9,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Validação por mutação: para cada versão com uma falha, se ela é equivalente à original (nenhuma
- * entrada possível a distingue) e, se não for, qual teste da suíte a detecta.
- *
- * @param results um resultado por mutante
+ * Validação por mutação: para cada versão com uma falha, se ela é equivalente à original e, se não for,
+ * qual teste da suíte a detecta.
  */
 public record MutationReport(List<Result> results) {
 
     /**
-     * @param mutant     a versão com falha
-     * @param equivalent dá o mesmo resultado que a original em toda linha possível: nenhum teste pode detectá-la
+     * @param equivalent dá o mesmo resultado que a original em toda linha possível
      * @param killedBy   teste da suíte que detecta a falha; null se nenhum detecta
      */
     public record Result(Mutants.Mutant mutant, boolean equivalent, String killedBy) {
@@ -36,7 +33,7 @@ public record MutationReport(List<Result> results) {
         }
     }
 
-    /** Gera os mutantes da expressão analisada e os confronta com a suíte mínima do relatório. */
+    /** Gera os mutantes da expressão e os confronta com a suíte do relatório. */
     public static MutationReport of(McdcReport report) {
         Expr original = report.expression();
         List<Result> results = new ArrayList<>();

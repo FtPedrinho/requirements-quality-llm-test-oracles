@@ -2,13 +2,7 @@ package io.github.rvdomingos.mcdc.core.model;
 
 import java.util.List;
 
-/**
- * Conjunto de decisões de um sistema, como chega de um arquivo de requisitos ou da NAT2TEST.
- *
- * @param system    nome do sistema; null quando não informado
- * @param inputs    variáveis de entrada declaradas; vazio quando não informadas
- * @param decisions decisões a analisar
- */
+/** Decisões de um sistema, como chegam de um arquivo de requisitos ou da NAT2TEST. */
 public record DecisionSet(String system, List<InputVariable> inputs, List<Decision> decisions) {
 
     public DecisionSet {

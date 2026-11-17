@@ -8,8 +8,7 @@ import java.util.List;
 
 /**
  * Tabela verdade inteira em CSV: uma linha por combinação, uma coluna por condição. Cada decisão tem
- * condições diferentes, então cada uma ganha o seu próprio cabeçalho, separada da anterior por uma
- * linha em branco.
+ * o próprio cabeçalho, separado do anterior por uma linha em branco.
  */
 final class TruthTableCsvReport {
 
@@ -35,6 +34,9 @@ final class TruthTableCsvReport {
             McdcReport report = analysis.report();
             List<String> inputs = report.table().inputs();
             int size = report.table().rows().size();
+            if (!report.table().isFull()) {
+                throw new IllegalArgumentException(decision.id() + ": a tabela não foi montada (modo direto). Use --format json ou csv.");
+            }
             if (size > MAX_ROWS) {
                 throw new IllegalArgumentException(decision.id() + ": a tabela tem " + size
                         + " linhas; o truth-csv vai até " + MAX_ROWS + ". Use --format json ou csv.");

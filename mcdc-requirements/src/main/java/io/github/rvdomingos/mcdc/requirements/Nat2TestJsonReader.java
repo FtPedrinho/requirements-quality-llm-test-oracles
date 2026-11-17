@@ -16,10 +16,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Lê o JSON de decisões que o Extractor gera a partir do DFRS da NAT2TEST.
- * Formato descrito na seção 8 de docs/arquitetura-fase1.md; campos desconhecidos são ignorados.
- */
+/** Lê o JSON de decisões que o Extractor gera a partir do DFRS da NAT2TEST; campos desconhecidos são ignorados. */
 public final class Nat2TestJsonReader {
 
     private static final ObjectMapper MAPPER = new ObjectMapper()

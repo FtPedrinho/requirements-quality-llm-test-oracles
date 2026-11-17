@@ -10,12 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Testes existentes em CSV, uma linha por (teste, entrada), com cabeçalho. Colunas obrigatórias:
- * test, input, value. Opcionais: decision (obrigatória se houver mais de uma decisão) e
- * expected_outcome. As outras colunas são ignoradas, então o CSV exportado pela ferramenta serve.
- *
- * <p>Em "input" vai uma condição ("speed > 100", com value T/F) ou uma variável ("speed", com o
- * valor concreto, ex.: 101); no segundo caso a condição é calculada pelo predicado.
+ * Testes existentes em CSV, uma linha por (teste, entrada): colunas test, input e value, mais decision e
+ * expected_outcome opcionais. Em input vai uma condição (value T/F) ou uma variável (valor concreto).
  */
 public final class TestCasesFile {
 

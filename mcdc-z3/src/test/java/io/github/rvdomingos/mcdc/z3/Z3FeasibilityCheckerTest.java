@@ -142,7 +142,6 @@ class Z3FeasibilityCheckerTest {
 
     @Test
     void generatesBoundaryVariantsOfTheSuite() {
-        // suíte de causa única: V2 (TTF), V5 (FTT), V6 (FTF), V7 (FFT)
         Expr expr = new Or(cond("speed", ">", "100"), new And(cond("speed", ">", "50"), new Cond("rain")));
         Z3FeasibilityChecker z3 = new Z3FeasibilityChecker(List.of());
         McdcReport report = Mcdc.analyze(expr, McdcOptions.defaults()

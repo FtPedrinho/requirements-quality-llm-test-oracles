@@ -4,12 +4,7 @@ import io.github.rvdomingos.mcdc.core.model.Decision;
 import io.github.rvdomingos.mcdc.core.mutation.MutationReport;
 import java.util.List;
 
-/**
- * Uma decisão e o resultado da análise dela.
- *
- * @param boundaryTests variantes de fronteira dos testes da suíte; vazio quando não foram pedidas
- * @param mutation      validação por mutação da suíte; null quando não foi pedida
- */
+/** Uma decisão e o resultado da análise; fronteiras vazias e mutação null quando não foram pedidas. */
 public record DecisionAnalysis(Decision decision, McdcReport report, List<BoundaryTest> boundaryTests,
         MutationReport mutation) {
 

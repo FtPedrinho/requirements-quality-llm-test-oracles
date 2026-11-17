@@ -41,7 +41,9 @@
       "input" : "the_coin_sensor = true",
       "occurrence" : 1
     } ],
+    "suiteMethod" : "GREEDY",
     "truthTableRows" : 8,
+    "truthTableBuilt" : true,
     "truthTable" : [ {
       "vector" : "V1",
       "values" : {
@@ -299,7 +301,9 @@
       "input" : "the_request_timer <= 30.0",
       "occurrence" : 1
     } ],
+    "suiteMethod" : "GREEDY",
     "truthTableRows" : 64,
+    "truthTableBuilt" : true,
     "truthTable" : [ {
       "vector" : "V1",
       "values" : {
@@ -1827,7 +1831,9 @@
       "input" : "the_request_timer > 30.0",
       "occurrence" : 1
     } ],
+    "suiteMethod" : "GREEDY",
     "truthTableRows" : 64,
+    "truthTableBuilt" : true,
     "truthTable" : [ {
       "vector" : "V1",
       "values" : {
@@ -3328,7 +3334,9 @@
       "input" : "the_request_timer <= 30.0",
       "occurrence" : 1
     } ],
+    "suiteMethod" : "GREEDY",
     "truthTableRows" : 8,
+    "truthTableBuilt" : true,
     "truthTable" : [ {
       "vector" : "V1",
       "values" : {
@@ -3539,7 +3547,9 @@
       "input" : "the_request_timer <= 50.0",
       "occurrence" : 1
     } ],
+    "suiteMethod" : "GREEDY",
     "truthTableRows" : 8,
+    "truthTableBuilt" : true,
     "truthTable" : [ {
       "vector" : "V1",
       "values" : {

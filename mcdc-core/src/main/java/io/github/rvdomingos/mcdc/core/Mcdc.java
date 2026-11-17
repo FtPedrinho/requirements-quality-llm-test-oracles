@@ -18,15 +18,17 @@ public final class Mcdc {
     public static McdcReport analyze(Expr expression, McdcOptions options) {
         TruthTable table = TruthTable.of(expression, options.constraint(), options.feasibility());
         Map<String, List<IndependencePair>> pairs = IndependencePairs.of(table, options.variant());
-        MinimalSuite.Selection suite = MinimalSuite.select(pairs);
+        MinimalSuite.Selection suite = options.optimizer() == null
+                ? MinimalSuite.select(pairs)
+                : MinimalSuite.fromRows(pairs, options.optimizer().minimumRows(pairs));
         return new McdcReport(expression, options, table, pairs, suite.tests(), suite.chosen(),
-                diagnose(table, pairs, options.variant()));
+                diagnose(table, pairs, options.variant()),
+                options.optimizer() == null ? SuiteMethod.GREEDY : SuiteMethod.EXACT);
     }
 
     /**
-     * Modo avaliação: mede um conjunto de testes existente. Uma condição está demonstrada quando dois
-     * testes formam um par dela na variante escolhida. A porcentagem segue o MCDC-Star: cada condição
-     * tem dois resultados (T e F), e conta o resultado que algum teste mostra com efeito independente.
+     * Mede o MC/DC de testes existentes. A porcentagem segue o MCDC-Star: conta cada resultado (T e F)
+     * de condição mostrado com efeito independente.
      */
     public static TestSetEvaluation evaluate(Expr expression, McdcOptions options, List<TestCase> tests) {
         TruthTable table = TruthTable.of(expression, options.constraint(), options.feasibility());
@@ -61,16 +63,16 @@ public final class Mcdc {
 
         Map<String, IndependencePair> demonstrated = new LinkedHashMap<>();
         Map<String, List<TestVector>> suggestions = new LinkedHashMap<>();
+        Map<String, Condition> byLabel = new LinkedHashMap<>();
+        table.conditions().forEach(c -> byLabel.put(c.label(), c));
         for (Map.Entry<String, List<IndependencePair>> entry : pairs.entrySet()) {
-            IndependencePair found = null;
+            // o par é procurado entre os testes informados, e não na lista de pares, que tem teto por condição
+            IndependencePair found = pairAmong(table, byLabel.get(entry.getKey()), present, options.variant());
             IndependencePair cheapest = null;
             int cheapestCost = Integer.MAX_VALUE;
             for (IndependencePair pair : entry.getValue()) {
                 int cost = (present.contains(pair.whenTrue().index()) ? 0 : 1)
                         + (present.contains(pair.whenFalse().index()) ? 0 : 1);
-                if (cost == 0 && (found == null || (pair.isUniqueCause() && !found.isUniqueCause()))) {
-                    found = pair;
-                }
                 if (cost < cheapestCost || (cost == cheapestCost && pair.isUniqueCause() && !cheapest.isUniqueCause())) {
                     cheapest = pair;
                     cheapestCost = cost;
@@ -107,6 +109,36 @@ public final class Mcdc {
 
         return new TestSetEvaluation(table, List.copyOf(tests), vectorOfTest, demonstrated, suggestions,
                 diagnose(table, pairs, options.variant()), covered, 2 * table.conditions().size(), problems);
+    }
+
+    /** Um par da condição entre os testes informados, preferindo causa única; null se não houver. */
+    private static IndependencePair pairAmong(TruthTable table, Condition condition, Set<Integer> present,
+            McdcVariant variant) {
+        int mask = TruthTable.bit(table.inputs().size(), table.inputs().indexOf(condition.input()));
+        List<TestVector> whenTrue = new ArrayList<>();
+        List<TestVector> whenFalse = new ArrayList<>();
+        for (int index : new java.util.TreeSet<>(present)) {
+            TestVector row = table.rows().get(index);
+            if (row.feasible() && condition.decides(table.expression(), row)) {
+                ((index & mask) == 0 ? whenTrue : whenFalse).add(row);
+            }
+        }
+        IndependencePair found = null;
+        for (TestVector t : whenTrue) {
+            for (TestVector f : whenFalse) {
+                if (t.outcome() == f.outcome()) {
+                    continue;
+                }
+                boolean unique = (t.index() ^ f.index()) == mask;
+                if (unique) {
+                    return new IndependencePair(condition.label(), t, f);
+                }
+                if (variant == McdcVariant.MASKING && found == null) {
+                    found = new IndependencePair(condition.label(), t, f);
+                }
+            }
+        }
+        return found;
     }
 
     /** Para cada condição sem par: redundante, ou bloqueada pelas linhas impossíveis. */

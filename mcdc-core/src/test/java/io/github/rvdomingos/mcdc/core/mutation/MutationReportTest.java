@@ -33,10 +33,7 @@ class MutationReportTest {
             new Or(new And(A, B), new And(C, D)),
             new Or(A, new And(B, new Or(C, D))));
 
-    /**
-     * Kapoor e Bowen (Corolário 3): com condições não acopladas, um conjunto com um par de causa única por
-     * entrada detecta sempre as falhas ENF, VNF, MVF, VRF e ORF. Só ASF (parênteses) não tem garantia.
-     */
+    /** Kapoor e Bowen (Corolário 3): suítes de causa única detectam toda falha ENF, VNF, MVF, VRF e ORF; ASF não tem garantia. */
     @Test
     void uniqueCauseSuitesDetectEveryGuaranteedFault() {
         Set<FaultClass> guaranteed = Set.of(FaultClass.ORF, FaultClass.ENF, FaultClass.VNF, FaultClass.MVF, FaultClass.VRF);

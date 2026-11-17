@@ -50,7 +50,6 @@ final class SmtEncoding {
         Map<String, InputVariable> byName = new LinkedHashMap<>();
         declared.forEach(input -> byName.put(input.name(), input));
 
-        // variáveis comparadas nos predicados
         Map<String, List<String>> literals = new LinkedHashMap<>();
         for (Cond cond : inputs.values()) {
             if (cond.predicate() != null) {
@@ -87,6 +86,14 @@ final class SmtEncoding {
 
     /** Declarações e restrições de domínio das enumerações. */
     String declarations() {
+        return declarations("");
+    }
+
+    /**
+     * Declarações de uma cópia das variáveis, para falar de dois estados na mesma consulta
+     * (ex.: os dois testes de um par). A cópia "" é a das outras consultas.
+     */
+    String declarations(String copy) {
         var sb = new StringBuilder();
         for (Variable v : variables.values()) {
             String sort = switch (v.sort()) {
@@ -94,10 +101,11 @@ final class SmtEncoding {
                 case INT, ENUM -> "Int";
                 case REAL -> "Real";
             };
-            sb.append("(declare-const ").append(symbol(v.name())).append(' ').append(sort).append(")\n");
+            String name = symbol(v.name(), copy);
+            sb.append("(declare-const ").append(name).append(' ').append(sort).append(")\n");
             if (v.sort() == Sort.ENUM) {
-                sb.append("(assert (and (>= ").append(symbol(v.name())).append(" 0) (< ")
-                        .append(symbol(v.name())).append(' ').append(v.values().size()).append(")))\n");
+                sb.append("(assert (and (>= ").append(name).append(" 0) (< ")
+                        .append(name).append(' ').append(v.values().size()).append(")))\n");
             }
         }
         return sb.toString();
@@ -105,8 +113,38 @@ final class SmtEncoding {
 
     /** Fórmula que diz que a entrada tem o valor dado na linha. */
     String literal(String input, boolean value) {
-        String formula = formula(inputs.get(input));
+        return literal(input, value, "");
+    }
+
+    String literal(String input, boolean value, String copy) {
+        Cond cond = inputs.get(input);
+        if (cond == null) {
+            throw new IllegalArgumentException("Entrada fora da codificação: " + input);
+        }
+        String formula = formula(cond, copy);
         return value ? formula : "(not " + formula + ")";
+    }
+
+    /** A expressão inteira em SMT-LIB, sobre os predicados de uma cópia das variáveis. */
+    String formula(Expr expr, String copy) {
+        return switch (expr) {
+            case Cond c -> literal(c.id(), true, copy);
+            case Not(var operand) -> "(not " + formula(operand, copy) + ")";
+            case And(var left, var right) -> "(and " + formula(left, copy) + " " + formula(right, copy) + ")";
+            case Or(var left, var right) -> "(or " + formula(left, copy) + " " + formula(right, copy) + ")";
+        };
+    }
+
+    /** Nomes SMT das variáveis de uma cópia, para o get-value. */
+    List<String> symbols(String copy) {
+        return variables.values().stream().map(v -> symbol(v.name(), copy)).toList();
+    }
+
+    /** Nome da variável a partir do símbolo de uma cópia: |speed@t| volta a speed. */
+    static String variableOf(String symbol) {
+        String name = symbol.startsWith("|") ? symbol.substring(1, symbol.length() - 1) : symbol;
+        int at = name.lastIndexOf('@');
+        return at < 0 ? name : name.substring(0, at);
     }
 
     /**
@@ -160,14 +198,14 @@ final class SmtEncoding {
         return number;
     }
 
-    private String formula(Cond cond) {
+    private String formula(Cond cond, String copy) {
         Predicate p = cond.predicate();
         if (p == null) {
-            return symbol(cond.id());
+            return symbol(cond.id(), copy);
         }
         Variable v = variables.get(p.variable());
-        String right = variables.containsKey(p.value()) ? symbol(p.value()) : constant(v, p.value());
-        String left = symbol(v.name());
+        String right = variables.containsKey(p.value()) ? symbol(p.value(), copy) : constant(v, p.value());
+        String left = symbol(v.name(), copy);
         return switch (p.operator()) {
             case "=" -> "(= " + left + " " + right + ")";
             case "!=" -> "(not (= " + left + " " + right + "))";
@@ -274,8 +312,12 @@ final class SmtEncoding {
         return "|" + name + "|";
     }
 
+    static String symbol(String name, String copy) {
+        return copy.isEmpty() ? symbol(name) : "|" + name + "@" + copy + "|";
+    }
+
     private static void checkName(String name) {
-        if (name.contains("|") || name.contains("\\")) {
+        if (name.contains("|") || name.contains("\\") || name.contains("@")) {
             throw new IllegalArgumentException("Nome de variável não suportado pelo Z3: " + name);
         }
     }

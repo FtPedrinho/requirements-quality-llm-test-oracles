@@ -6,15 +6,11 @@ import java.util.Map;
 /**
  * Resultado do modo avaliação: quanto de MC/DC um conjunto de testes existente atinge.
  *
- * @param table             tabela verdade da decisão
- * @param tests             testes avaliados
- * @param vectorOfTest      linha da tabela de cada teste, pelo nome do teste
- * @param demonstrated      par formado por testes existentes, por condição demonstrada
- * @param suggestions       para cada condição que falta, as linhas a acrescentar (vazio se não houver par possível)
- * @param uncoverable       condições que nenhum conjunto de testes consegue demonstrar, com o motivo
- * @param outcomesCovered   resultados de condição (T ou F) com efeito independente demonstrado (métrica do MCDC-Star)
- * @param outcomesTotal     2 × o número de condições
- * @param problems          resultados esperados que divergem da guarda, ou testes em combinações impossíveis
+ * @param demonstrated    par formado por testes existentes, por condição demonstrada
+ * @param suggestions     linhas a acrescentar para cada condição que falta
+ * @param uncoverable     condições que nenhum teste consegue demonstrar, com o motivo
+ * @param outcomesCovered resultados de condição (T ou F) com efeito independente demonstrado (MCDC-Star)
+ * @param problems        resultados esperados divergentes ou testes em combinações impossíveis
  */
 public record TestSetEvaluation(
         TruthTable table,
