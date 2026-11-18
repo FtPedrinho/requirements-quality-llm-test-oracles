@@ -7,9 +7,6 @@ target/
 .vscode/
 .DS_Store
 
-# documentação, slides e roteiros: ficam só na máquina local
-docs/
-
 # requisitos do sistema PC: ficam só na máquina local, fora do repositório
 exemplos/pc-*
 exemplos/saidas/pc-*
