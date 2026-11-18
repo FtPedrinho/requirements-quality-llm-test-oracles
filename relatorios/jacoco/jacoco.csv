@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,VerifyReport,60,419,9,19,8,64,9,13,0,8
 MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,TextReport,80,518,11,40,13,86,11,28,0,13
-MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,JsonReport,57,666,3,23,10,119,5,28,2,17
+MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,JsonReport,17,706,2,24,2,127,3,30,1,18
 MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,CheckReport.Entry,0,9,0,0,0,1,0,1,0,1
 MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,Main.Options,0,48,0,0,0,1,0,1,0,1
 MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,CsvReport,0,243,2,24,0,36,2,14,0,3
@@ -10,7 +10,7 @@ MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,Main,27,779,12,134,6,1
 MC/DC Command Line/mcdc-cli,io.github.rvdomingos.mcdc.cli,CheckReport,81,585,10,24,9,93,12,18,4,9
 MC/DC Command Line/mcdc-core,io.github.rvdomingos.mcdc.core,Mcdc,24,601,6,82,3,101,6,44,0,6
 MC/DC Command Line/mcdc-core,io.github.rvdomingos.mcdc.core,MinimalSuite.Selection,0,40,0,4,0,6,0,5,0,3
-MC/DC Command Line/mcdc-core,io.github.rvdomingos.mcdc.core,IndependencePairs,1,243,2,36,1,47,2,20,0,3
+MC/DC Command Line/mcdc-core,io.github.rvdomingos.mcdc.core,IndependencePairs,0,294,2,44,0,54,2,26,0,5
 MC/DC Command Line/mcdc-core,io.github.rvdomingos.mcdc.core,MinimalSuite,0,269,0,42,0,44,0,26,0,5
 MC/DC Command Line/mcdc-core,io.github.rvdomingos.mcdc.core,McdcReport,0,48,0,0,0,4,0,4,0,4
 MC/DC Command Line/mcdc-core,io.github.rvdomingos.mcdc.core,SuiteMethod,0,21,0,0,0,4,0,1,0,1
@@ -65,6 +65,6 @@ MC/DC Command Line/mcdc-z3,io.github.rvdomingos.mcdc.z3,SExpr,4,176,4,22,0,32,4,
 MC/DC Command Line/mcdc-z3,io.github.rvdomingos.mcdc.z3,SmtEncoding.Variable,0,12,0,0,0,1,0,1,0,1
 MC/DC Command Line/mcdc-z3,io.github.rvdomingos.mcdc.z3,Z3SuiteOptimizer,7,285,2,26,1,50,2,21,0,9
 MC/DC Command Line/mcdc-z3,io.github.rvdomingos.mcdc.z3,SmtEncoding.Sort,0,27,0,0,0,1,0,1,0,1
-MC/DC Command Line/mcdc-z3,io.github.rvdomingos.mcdc.z3,SmtEncoding,90,1027,25,124,12,154,25,86,0,27
+MC/DC Command Line/mcdc-z3,io.github.rvdomingos.mcdc.z3,SmtEncoding,71,1046,20,129,9,157,20,91,0,27
 MC/DC Command Line/mcdc-z3,io.github.rvdomingos.mcdc.z3,Z3FeasibilityChecker.new Record() {...},0,12,0,0,0,1,0,1,0,1
 MC/DC Command Line/mcdc-z3,io.github.rvdomingos.mcdc.z3,Z3RequirementsVerifier,31,468,4,34,4,79,4,28,0,12

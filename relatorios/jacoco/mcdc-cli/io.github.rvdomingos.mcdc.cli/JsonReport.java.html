@@ -119,15 +119,15 @@ final class JsonReport {
 <span class="fc" id="L119">                    .map(r -&gt; r.mutant().fault() + &quot;: &quot; + ExprText.format(r.mutant().expression())).toList());</span>
 <span class="fc" id="L120">            node.put(&quot;mutation&quot;, m);</span>
         }
-<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        if (!analysis.boundaryTests().isEmpty()) {</span>
-<span class="nc" id="L123">            node.put(&quot;boundaryTests&quot;, analysis.boundaryTests().stream().map(b -&gt; {</span>
-<span class="nc" id="L124">                Map&lt;String, Object&gt; item = new LinkedHashMap&lt;&gt;();</span>
-<span class="nc" id="L125">                item.put(&quot;base&quot;, b.baseVector());</span>
-<span class="nc" id="L126">                item.put(&quot;condition&quot;, b.condition());</span>
-<span class="nc" id="L127">                item.put(&quot;boundary&quot;, b.boundary());</span>
-<span class="nc" id="L128">                item.put(&quot;assignment&quot;, b.assignment());</span>
-<span class="nc" id="L129">                return item;</span>
-<span class="nc" id="L130">            }).toList());</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        if (!analysis.boundaryTests().isEmpty()) {</span>
+<span class="fc" id="L123">            node.put(&quot;boundaryTests&quot;, analysis.boundaryTests().stream().map(b -&gt; {</span>
+<span class="fc" id="L124">                Map&lt;String, Object&gt; item = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L125">                item.put(&quot;base&quot;, b.baseVector());</span>
+<span class="fc" id="L126">                item.put(&quot;condition&quot;, b.condition());</span>
+<span class="fc" id="L127">                item.put(&quot;boundary&quot;, b.boundary());</span>
+<span class="fc" id="L128">                item.put(&quot;assignment&quot;, b.assignment());</span>
+<span class="fc" id="L129">                return item;</span>
+<span class="fc" id="L130">            }).toList());</span>
         }
 <span class="fc" id="L132">        return node;</span>
     }

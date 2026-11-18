@@ -213,23 +213,41 @@ O Z3 é chamado como processo externo, sem biblioteca nativa no build, com limit
 
 ### Notas atuais
 
-Medidas em 17/11/2026 com o [JaCoCo](https://www.jacoco.org/) (cobertura de código) e o [PIT](https://pitest.org/) (mutação do código), ferramentas gratuitas que rodam pelo Maven.
+Medidas em 18/11/2026 com o [JaCoCo](https://www.jacoco.org/) (cobertura de código) e o [PIT](https://pitest.org/) (mutação do código), ferramentas gratuitas que rodam pelo Maven. Relatórios completos: **[rvdomingos.github.io/Tool_MCDC_Java/relatorios](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/)**.
 
-| Módulo | Testes | Linhas cobertas | Desvios cobertos | Nota de mutação (PIT) |
-|---|---|---|---|---|
-| `mcdc-core` (motor) | 74 | 98,4% | 95,5% | 95,7% (310 de 324) |
-| `mcdc-requirements` (leitura) | 24 | 100% | 93,8% | 96,6% (140 de 145) |
-| `mcdc-z3` (verificador) | 33 | 92,6% | 85,8% | 90,8% (268 de 295) |
-| `mcdc-cli` (comandos e relatórios) | 31 | 92,3% | 85,5% | 76,6% (196 de 256) |
-| **Total** | **162** | **94,9%** (1893 de 1995) | **89,8%** (1156 de 1288) | **89,6% (914 de 1020)** |
+| Módulo | Testes | Linhas cobertas | Desvios cobertos | Nota de mutação (PIT) | Nota mínima de mutação |
+|---|---|---|---|---|---|
+| `mcdc-core` (motor) | 78 | 98,6% | 95,6% | 95,8% (319 de 333) | 90% |
+| `mcdc-requirements` (leitura) | 24 | 100% | 93,8% | 96,6% (140 de 145) | 90% |
+| `mcdc-z3` (verificador) | 34 | 93,1% | 87,0% | 91,2% (269 de 295) | 85% |
+| `mcdc-cli` (comandos e relatórios) | 35 | 93,6% | 85,8% | 76,6% (196 de 256) | 75% |
+| **Total** | **171** | **95,5% (1911 de 2001)** | **90,3% (1170 de 1296)** | **89,8% (924 de 1029)** | |
 
-- **Cobertura de linhas e desvios:** quanto do código os testes executam; desvio é cada caminho de um `if` ou `switch`.
-- **Nota de mutação:** o PIT planta defeitos no código da ferramenta (troca `<` por `<=`, nega uma condição, apaga uma chamada) e conta quantos os testes pegam. Mede se os testes conferem o resultado, não só se passam pelo código. Entre os defeitos que caem em código coberto pelos testes, 92,6% são pegos (914 de 987).
-- O PIT conta só os testes do próprio módulo; a nota da linha de comando é a mais baixa porque os defeitos que escapam ali estão quase todos em linhas secundárias do relatório em texto e nas mensagens de erro. O conteúdo do JSON, os números e os valores concretos são conferidos pelos testes de relatório.
+- **Cobertura de linhas e desvios:** quanto do código os testes executam; desvio é cada caminho de um `if` ou `switch`. A tabela mostra a cobertura somada dos testes de todos os módulos.
+- **Nota de mutação:** o PIT planta defeitos no código da ferramenta (troca `<` por `<=`, nega uma condição, apaga uma chamada) e conta quantos os testes pegam. Mede se os testes conferem o resultado, não só se passam pelo código. Entre os defeitos que caem em código coberto pelos testes, 92,7% são pegos (924 de 997).
+- O PIT conta só os testes do próprio módulo. A nota da linha de comando é a mais baixa porque os defeitos que escapam ali estão quase todos em linhas secundárias do relatório em texto e nas mensagens de erro; o conteúdo do JSON, os números e os valores concretos são conferidos pelos testes de relatório.
+
+### Notas mínimas: o build falha abaixo delas
+
+| Verificação | Quando roda | Nota mínima | Onde está |
+|---|---|---|---|
+| Testes | todo `mvn verify` | todos passando | Surefire |
+| Cobertura de linhas, por módulo | todo `mvn verify` | 90% | `qualidade.linhas.minima` no `pom.xml` |
+| Cobertura de desvios, por módulo | todo `mvn verify` | 85% | `qualidade.desvios.minima` no `pom.xml` |
+| Nota de mutação, por módulo | `mvn verify -Pqualidade` | 90% motor e leitura, 85% verificador, 75% linha de comando | `qualidade.mutacao.minima` no `pom.xml` de cada módulo |
+
+A cobertura é conferida pelo JaCoCo em cada módulo, só com os testes dele. Quando uma nota cai, o build para com a mensagem do motivo, por exemplo:
+
+```
+Rule violated for bundle mcdc-core: lines covered ratio is 0.94, but expected minimum is 0.99
+Mutation score of 96 is below threshold of 99
+```
+
+(as duas mensagens acima foram provocadas de propósito, subindo a nota mínima com `-Dqualidade.linhas.minima=0.99` e `-Dqualidade.mutacao.minima=99`, para conferir que a regra funciona). Sem o Z3 instalado, os testes que dependem dele são pulados e a cobertura do verificador cai abaixo da nota mínima; para compilar sem a regra, use `-Djacoco.skip=true`.
 
 ### Relatórios
 
-Os relatórios completos estão publicados no GitHub Pages: **[rvdomingos.github.io/Tool_MCDC_Java/relatorios](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/)**.
+Publicados no GitHub Pages: **[rvdomingos.github.io/Tool_MCDC_Java/relatorios](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/)**.
 
 | Relatório | No navegador | No repositório |
 |---|---|---|
@@ -247,25 +265,48 @@ Para gerar de novo:
 ```bash
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
-mvn clean verify                                              # testes + cobertura
-open mcdc-cli/target/site/jacoco-aggregate/index.html         # somado; por módulo: <módulo>/target/site/jacoco/
+mvn clean verify                     # testes + cobertura, com as notas mínimas de cobertura (menos de 1 minuto)
+mvn clean verify -Pqualidade         # o mesmo + mutação, com as notas mínimas de mutação (cerca de 8 minutos)
 
-mvn test-compile org.pitest:pitest-maven:mutationCoverage     # mutação, cerca de 7 minutos
-open mcdc-core/target/pit-reports/index.html                  # um relatório por módulo
+open mcdc-cli/target/site/jacoco-aggregate/index.html    # cobertura somada; por módulo: <módulo>/target/site/jacoco/
+open mcdc-core/target/pit-reports/index.html             # mutação, um relatório por módulo
 ```
 
 Para atualizar o que está publicado, copie `mcdc-cli/target/site/jacoco-aggregate/` para `relatorios/jacoco/` e cada `<módulo>/target/pit-reports/` para `relatorios/pit/<módulo>/`, e faça o commit.
 
 ### Suíte de testes
 
-São 162 testes automatizados com JUnit 5, em 31 arquivos. O build falha se algum falhar. Os testes que usam o Z3 são pulados quando ele não está instalado.
+São 171 testes automatizados com JUnit 5, em 34 arquivos. Os testes que usam o Z3 são pulados quando ele não está instalado.
 
-**Testes de propriedade, contra um oráculo independente**
+**Testes de propriedade, contra oráculos independentes**
 
 | Teste | Testes | O que garante |
 |---|---|---|
-| `IndependentOracleTest` | 4 | Em 3000 expressões aleatórias (até 5 entradas e 7 condições, com entradas repetidas e restrições), nas duas variantes, o motor é conferido contra o MC/DC escrito direto da definição, sem usar o código do motor: cada linha da tabela, cada par (nenhum inválido e nenhum faltando), a cobertura, o diagnóstico, a suíte (contém um par válido de cada condição), o veredito de cada mutante e o determinismo. Para conferir o próprio oráculo, seis defeitos foram plantados de propósito no motor, e ele acusou todos. |
+| `IndependentOracleTest` | 4 | Em 3000 expressões lógicas aleatórias (até 5 entradas e 7 condições, com entradas repetidas e restrições), nas duas variantes, o motor é conferido contra o MC/DC escrito direto da definição, sem usar o código do motor: cada linha da tabela, cada par (nenhum inválido e nenhum faltando), a cobertura, o diagnóstico, a suíte (contém um par válido de cada condição), o veredito de cada mutante e o determinismo. Para conferir o próprio oráculo, seis defeitos foram plantados de propósito no motor, e ele acusou todos. |
+| `NumericOracleTest` | 1 | Em 150 expressões aleatórias com comparações numéricas e de enumeração (`x > 3`, `y <= x`, `mode != idle`), acopladas entre si, o motor com o Z3 é conferido contra uma busca exaustiva de valores concretos (x e y inteiros de -3 a 9, `mode` em três valores), com uma avaliação própria das comparações: quais combinações são possíveis, se os valores do Z3 realizam cada linha, os pares, a cobertura, o diagnóstico e o conjunto exato de testes de fronteira (nenhum errado e nenhum faltando). Nas 150 expressões apareceram 112 combinações impossíveis e 379 testes de fronteira. Três defeitos plantados (na tradução de `!=` para o Z3, na negação de `<=` e no ponto de fronteira de `<`) foram acusados. |
 | `Z3RandomizedTest` | 2 | Em 300 expressões aleatórias, nas duas variantes, a busca exata dá sempre o mínimo encontrado por força bruta (a escolha gulosa passou do mínimo em 3 dos 600 casos). Em 120 expressões, o modo direto dá a mesma cobertura e o mesmo diagnóstico que a tabela inteira. |
+
+**Desempenho**
+
+| Teste | Testes | O que garante |
+|---|---|---|
+| `PerformanceTest` | 4 | Motor sem o Z3: 20 entradas (cerca de 1 milhão de combinações) nas duas variantes, entradas repetidas, mutação de uma decisão de 16 entradas e avaliação de testes existentes, cada caso abaixo de 5 s |
+| `SystemsPerformanceTest` | 4 | Com o Z3, pelo caminho da linha de comando: cada sistema de exemplo (análise com fronteiras e mutação, busca exata e verificação entre requisitos) abaixo de 3 s, e o modo direto com 26 entradas abaixo de 10 s |
+
+Os limites têm folga de cerca de 10 vezes sobre o tempo medido, para não falhar numa máquina mais lenta. Tempos medidos (sem contar a partida do Java):
+
+| Caso | Tempo | Limite |
+|---|---|---|
+| 20 entradas, mascaramento | 0,10 a 0,17 s | 5 s |
+| 20 entradas, causa única | 0,16 a 0,21 s | 5 s |
+| 12 entradas repetidas (36 condições) | 0,16 s | 5 s |
+| Mutação, 16 entradas | 0,51 s | 5 s |
+| Sistema de exemplo com Z3, fronteiras e mutação | 0,12 a 0,32 s | 3 s |
+| Busca exata de um sistema | 0,10 a 0,30 s | 3 s |
+| Verificação entre requisitos de um sistema | 0,01 a 0,03 s | 3 s |
+| Modo direto, 26 entradas | 0,18 s | 10 s |
+
+O teste de desempenho achou um gargalo: com 20 entradas, o mascaramento levava cerca de 6 s, porque reavaliava a fórmula inteira em cada linha para saber se a condição decide. Quando a entrada aparece uma vez só, trocar a aparição é o mesmo que trocar o bit da entrada, e a resposta está na linha vizinha da tabela; com essa troca, caiu para 0,1 s. Os oráculos independentes conferem que o resultado não mudou.
 
 **Regressão e relatórios**
 
@@ -334,20 +375,18 @@ Números travados pela regressão:
 
 | Situação | O que rodar |
 |---|---|
-| A cada mudança | `mvn clean verify`: os 162 testes e a cobertura, em menos de um minuto |
-| Ao mudar o motor (`mcdc-core`) | O build completo e o PIT do motor: `mvn -pl mcdc-core test-compile org.pitest:pitest-maven:mutationCoverage` |
-| Antes de publicar resultados | O build completo com o Z3 instalado (senão os testes do Z3, da regressão e dos valores concretos são pulados) e o PIT de todos os módulos |
-| Ao acrescentar um sistema de exemplo | Uma linha nova no `RequirementsRegressionTest` com os números conferidos, e o sistema na lista do `ReportsContentTest` |
+| A cada mudança | `mvn clean verify`: os 171 testes e as notas mínimas de cobertura, em menos de um minuto |
+| Ao mudar o motor (`mcdc-core`) | O build completo e a mutação do motor: `mvn -pl mcdc-core verify -Pqualidade` |
+| Antes de publicar resultados | `mvn clean verify -Pqualidade` com o Z3 instalado (senão os testes do Z3, da regressão e dos valores concretos são pulados) |
+| Ao acrescentar um sistema de exemplo | Uma linha nova no `RequirementsRegressionTest` com os números conferidos, e o sistema na lista do `ReportsContentTest` e do `SystemsPerformanceTest` |
 
 ### Testes recomendados, ainda não automatizados
 
 | Recomendação | Por quê |
 |---|---|
-| Rodar os testes a cada push, num serviço de integração contínua (ex.: GitHub Actions com o Z3 instalado) | Hoje os testes rodam só quando alguém roda o build |
-| Fazer o build falhar abaixo das notas mínimas (JaCoCo `check` e `mutationThreshold` do PIT) | Impede que a cobertura caia sem ninguém notar |
-| Teste de desempenho: decisão de 20 entradas e cada sistema de exemplo com o Z3 | O requisito de desempenho hoje é medido à mão |
-| Oráculo independente também com predicados numéricos e o Z3 | O oráculo atual usa entradas lógicas; os predicados são conferidos pelos testes do Z3 e dos valores concretos |
+| Rodar os testes a cada push, num serviço de integração contínua (ex.: GitHub Actions com o Z3 instalado) | Hoje os testes e as notas mínimas só são conferidos quando alguém roda o build |
 | Testes de integração com o DFRS real da NAT2TEST | Hoje as guardas são escritas à mão a partir do texto |
+| Oráculo numérico também com variáveis reais e com o modo direto | O oráculo numérico usa inteiros e a tabela inteira; reais e o modo direto são conferidos por testes de exemplo |
 | Mais testes nas linhas secundárias do relatório em texto | É onde ficou a nota de mutação mais baixa |
 
 ## Limites conhecidos

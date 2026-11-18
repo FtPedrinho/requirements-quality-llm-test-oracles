@@ -17,7 +17,7 @@
 </head>
 <body>
 <h1>Ferramenta MC/DC · relatórios de qualidade</h1>
-<p class="sub">Medidos em 17/11/2026 · 162 testes automatizados, todos passando · <a href="https://github.com/rvDomingos/Tool_MCDC_Java">repositório</a></p>
+<p class="sub">Medidos em 18/11/2026 · 171 testes automatizados, todos passando · <a href="https://github.com/rvDomingos/Tool_MCDC_Java">repositório</a></p>
 
 <h2>Cobertura de código (JaCoCo)</h2>
 <p><a href="jacoco/index.html">Abrir o relatório dos quatro módulos somados</a> · <a href="jacoco/jacoco.csv">baixar em CSV</a></p>
@@ -25,12 +25,13 @@
 <h2>Mutação do código (PIT)</h2>
 <table>
   <tr><th>Módulo</th><th>Linhas cobertas</th><th>Desvios cobertos</th><th>Nota de mutação</th><th>Relatório</th></tr>
-  <tr><td>mcdc-core (motor)</td><td class="n">98,4%</td><td class="n">95,5%</td><td class="n">95,7%</td><td><a href="pit/mcdc-core/index.html">abrir</a></td></tr>
+  <tr><td>mcdc-core (motor)</td><td class="n">98,6%</td><td class="n">95,6%</td><td class="n">95,8%</td><td><a href="pit/mcdc-core/index.html">abrir</a></td></tr>
   <tr><td>mcdc-requirements (leitura)</td><td class="n">100%</td><td class="n">93,8%</td><td class="n">96,6%</td><td><a href="pit/mcdc-requirements/index.html">abrir</a></td></tr>
-  <tr><td>mcdc-z3 (verificador)</td><td class="n">92,6%</td><td class="n">85,8%</td><td class="n">90,8%</td><td><a href="pit/mcdc-z3/index.html">abrir</a></td></tr>
-  <tr><td>mcdc-cli (comandos e relatórios)</td><td class="n">92,3%</td><td class="n">85,5%</td><td class="n">76,6%</td><td><a href="pit/mcdc-cli/index.html">abrir</a></td></tr>
-  <tr><th>Total</th><th class="n">94,9%</th><th class="n">89,8%</th><th class="n">89,6%</th><th></th></tr>
+  <tr><td>mcdc-z3 (verificador)</td><td class="n">93,1%</td><td class="n">87,0%</td><td class="n">91,2%</td><td><a href="pit/mcdc-z3/index.html">abrir</a></td></tr>
+  <tr><td>mcdc-cli (comandos e relatórios)</td><td class="n">93,6%</td><td class="n">85,8%</td><td class="n">76,6%</td><td><a href="pit/mcdc-cli/index.html">abrir</a></td></tr>
+  <tr><th>Total</th><th class="n">95,5%</th><th class="n">90,3%</th><th class="n">89,8%</th><th></th></tr>
 </table>
+<p>Notas mínimas (o build falha abaixo delas): 90% das linhas e 85% dos desvios em cada módulo; mutação de 90% no motor e na leitura, 85% no verificador e 75% na linha de comando.</p>
 <p>No JaCoCo, as linhas aparecem em verde (testadas), amarelo (desvio testado só em parte) e vermelho (sem teste). No PIT, cada defeito plantado aparece na linha em que foi plantado, com o teste que o pegou ou a marca de que sobreviveu.</p>
 </body>
 </html>

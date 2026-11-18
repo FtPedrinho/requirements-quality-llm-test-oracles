@@ -13,6 +13,11 @@
   <artifactId>mcdc-z3</artifactId>
   <name>MC/DC Z3 Feasibility</name>
 
+  <properties>
+    <!-- nota mínima de mutação (PIT) deste módulo, em %; o build com -Pqualidade falha abaixo dela -->
+    <qualidade.mutacao.minima>85</qualidade.mutacao.minima>
+  </properties>
+
   <!-- chama o executável z3 por SMT-LIB; não precisa de biblioteca nativa no build -->
   <dependencies>
     <dependency>

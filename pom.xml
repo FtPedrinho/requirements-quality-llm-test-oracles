@@ -24,6 +24,10 @@
     <jackson.version>2.17.2</jackson.version>
     <jacoco.version>0.8.16</jacoco.version>
     <pitest.version>1.30.2</pitest.version>
+    <!-- notas mínimas: o build falha abaixo delas (cobertura em todo verify; mutação com -Pqualidade) -->
+    <qualidade.linhas.minima>0.90</qualidade.linhas.minima>
+    <qualidade.desvios.minima>0.85</qualidade.desvios.minima>
+    <qualidade.mutacao.minima>85</qualidade.mutacao.minima>
   </properties>
 
   <dependencyManagement>
@@ -106,6 +110,7 @@
             <exportLineCoverage>true</exportLineCoverage>
             <threads>4</threads>
             <timeoutConstant>8000</timeoutConstant>
+            <mutationThreshold>${qualidade.mutacao.minima}</mutationThreshold>
           </configuration>
         </plugin>
       </plugins>
@@ -129,6 +134,33 @@
             <goals>
               <goal>report</goal>
             </goals>
+          </execution>
+          <!-- falha o build se o módulo ficar abaixo das notas mínimas de cobertura -->
+          <execution>
+            <id>check</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <rule>
+                  <element>BUNDLE</element>
+                  <limits>
+                    <limit>
+                      <counter>LINE</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>${qualidade.linhas.minima}</minimum>
+                    </limit>
+                    <limit>
+                      <counter>BRANCH</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>${qualidade.desvios.minima}</minimum>
+                    </limit>
+                  </limits>
+                </rule>
+              </rules>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -155,4 +187,28 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <!-- mvn verify -Pqualidade: roda também a mutação (PIT) e falha abaixo da nota mínima de cada módulo -->
+    <profile>
+      <id>qualidade</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <executions>
+              <execution>
+                <id>mutacao</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>mutationCoverage</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

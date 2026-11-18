@@ -13,6 +13,11 @@
   <artifactId>mcdc-cli</artifactId>
   <name>MC/DC Command Line</name>
 
+  <properties>
+    <!-- nota mínima de mutação (PIT) deste módulo, em %; o build com -Pqualidade falha abaixo dela -->
+    <qualidade.mutacao.minima>75</qualidade.mutacao.minima>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>io.github.rvdomingos.mcdc</groupId>

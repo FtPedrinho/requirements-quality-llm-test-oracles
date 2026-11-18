@@ -12,4 +12,9 @@
 
   <artifactId>mcdc-core</artifactId>
   <name>MC/DC Core Engine</name>
+
+  <properties>
+    <!-- nota mínima de mutação (PIT) deste módulo, em %; o build com -Pqualidade falha abaixo dela -->
+    <qualidade.mutacao.minima>90</qualidade.mutacao.minima>
+  </properties>
 </project>

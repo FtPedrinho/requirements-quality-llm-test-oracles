@@ -13,6 +13,11 @@
   <artifactId>mcdc-requirements</artifactId>
   <name>MC/DC Requirements Adapters</name>
 
+  <properties>
+    <!-- nota mínima de mutação (PIT) deste módulo, em %; o build com -Pqualidade falha abaixo dela -->
+    <qualidade.mutacao.minima>90</qualidade.mutacao.minima>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>io.github.rvdomingos.mcdc</groupId>
