@@ -2,10 +2,14 @@ package io.github.rvdomingos.mcdc.z3;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /** Conversa com o executável do Z3 por SMT-LIB e lê as respostas. */
 final class Z3Process {
@@ -17,27 +21,46 @@ final class Z3Process {
 
     /** Roda o script inteiro e devolve tudo o que o Z3 escreveu. */
     static String run(String command, String script) {
+        return run(command, script, TIMEOUT_SECONDS);
+    }
+
+    /** A saída é lida em paralelo: assim o limite de tempo vale mesmo quando o Z3 trava sem fechar a saída. */
+    static String run(String command, String script, long timeoutSeconds) {
         Process process;
         try {
             process = new ProcessBuilder(command, "-in", "-smt2").redirectErrorStream(true).start();
         } catch (IOException e) {
             throw new IllegalStateException("Z3 não encontrado (" + command + "). Instale com: brew install z3");
         }
+        CompletableFuture<String> output = CompletableFuture.supplyAsync(() -> {
+            try {
+                return new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+            } catch (IOException e) {
+                throw new UncheckedIOException(e);
+            }
+        });
         try {
+            IOException writeError = null;
             try (OutputStream in = process.getOutputStream()) {
                 in.write(script.getBytes(StandardCharsets.UTF_8));
+            } catch (IOException e) {
+                writeError = e;
             }
-            String output = new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
-            if (!process.waitFor(TIMEOUT_SECONDS, TimeUnit.SECONDS)) {
+            if (!process.waitFor(timeoutSeconds, TimeUnit.SECONDS)) {
                 process.destroyForcibly();
-                throw new IllegalStateException("O Z3 não respondeu em " + TIMEOUT_SECONDS + " segundos");
+                throw new IllegalStateException("O Z3 não respondeu em " + timeoutSeconds + " segundos");
             }
-            return output;
-        } catch (IOException e) {
-            throw new IllegalStateException("Falha ao conversar com o Z3: " + e.getMessage());
+            String text = output.get(timeoutSeconds, TimeUnit.SECONDS);
+            if (writeError != null) {
+                throw new IllegalStateException("Falha ao conversar com o Z3: " + writeError.getMessage() + " " + text.strip());
+            }
+            return text;
         } catch (InterruptedException e) {
+            process.destroyForcibly();
             Thread.currentThread().interrupt();
             throw new IllegalStateException("Interrompido esperando o Z3");
+        } catch (ExecutionException | TimeoutException e) {
+            throw new IllegalStateException("Falha ao conversar com o Z3: " + e.getCause());
         }
     }
 

@@ -16,6 +16,10 @@
   <dependencies>
     <dependency>
       <groupId>io.github.rvdomingos.mcdc</groupId>
+      <artifactId>mcdc-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.github.rvdomingos.mcdc</groupId>
       <artifactId>mcdc-requirements</artifactId>
     </dependency>
     <dependency>
@@ -41,6 +45,23 @@
             <configuration>
               <outputFile>${project.build.directory}/classpath.txt</outputFile>
               <includeScope>runtime</includeScope>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- cobertura somada dos quatro módulos -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>report-aggregate</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>report-aggregate</goal>
+            </goals>
+            <configuration>
+              <includeCurrentProject>true</includeCurrentProject>
             </configuration>
           </execution>
         </executions>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>TestVector.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">MC/DC Command Line</a> &gt; <a href="../index.html" class="el_bundle">mcdc-core</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core</a> &gt; <span class="el_source">TestVector.java</span></div><h1>TestVector.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core;
+
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+/**
+ * Uma linha da tabela verdade. Os valores das entradas saem dos bits do índice (bit 0 = verdadeira),
+ * o que deixa 1 milhão de linhas em poucas dezenas de megabytes.
+ *
+ * @param inputs     entradas da decisão, compartilhadas entre as linhas
+ * @param feasible   se a combinação é possível; linhas impossíveis não entram em pares
+ * @param assignment valores concretos que realizam a linha; vazio sem verificação de viabilidade
+ */
+public record TestVector(int index, List&lt;String&gt; inputs, boolean outcome, boolean feasible,
+        Map&lt;String, String&gt; assignment) {
+
+<span class="fc" id="L20">    public TestVector {</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        assignment = assignment == null ? Map.of() : assignment;</span>
+<span class="fc" id="L22">    }</span>
+
+    public boolean value(String input) {
+<span class="fc" id="L25">        int i = inputs.indexOf(input);</span>
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if (i &lt; 0) {</span>
+<span class="nc" id="L27">            throw new IllegalArgumentException(&quot;Entrada desconhecida: &quot; + input);</span>
+        }
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        return (index &amp; (1 &lt;&lt; (inputs.size() - 1 - i))) == 0;</span>
+    }
+
+    /** Valor de cada entrada, montado a cada chamada; em laços, use {@link #value}. */
+    public Map&lt;String, Boolean&gt; values() {
+<span class="fc" id="L34">        Map&lt;String, Boolean&gt; values = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (String input : inputs) {</span>
+<span class="fc" id="L36">            values.put(input, value(input));</span>
+<span class="fc" id="L37">        }</span>
+<span class="fc" id="L38">        return Collections.unmodifiableMap(values);</span>
+    }
+
+    /** Nome nos relatórios: V1, V2, ... */
+    public String name() {
+<span class="fc" id="L43">        return &quot;V&quot; + (index + 1);</span>
+    }
+
+    /** Valores das entradas como texto, ex.: &quot;TTF&quot;. */
+    public String bits() {
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        return inputs.stream().map(input -&gt; value(input) ? &quot;T&quot; : &quot;F&quot;).collect(Collectors.joining());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>Z3DirectAnalyzer.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">MC/DC Command Line</a> &gt; <a href="../index.html" class="el_bundle">mcdc-z3</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.z3</a> &gt; <span class="el_source">Z3DirectAnalyzer.java</span></div><h1>Z3DirectAnalyzer.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.z3;
+
+import io.github.rvdomingos.mcdc.core.Condition;
+import io.github.rvdomingos.mcdc.core.IndependencePair;
+import io.github.rvdomingos.mcdc.core.McdcOptions;
+import io.github.rvdomingos.mcdc.core.McdcReport;
+import io.github.rvdomingos.mcdc.core.McdcVariant;
+import io.github.rvdomingos.mcdc.core.SuiteMethod;
+import io.github.rvdomingos.mcdc.core.TestVector;
+import io.github.rvdomingos.mcdc.core.TruthTable;
+import io.github.rvdomingos.mcdc.core.UncoveredCondition;
+import io.github.rvdomingos.mcdc.core.model.And;
+import io.github.rvdomingos.mcdc.core.model.Cond;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import io.github.rvdomingos.mcdc.core.model.InputVariable;
+import io.github.rvdomingos.mcdc.core.model.Not;
+import io.github.rvdomingos.mcdc.core.model.Or;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.TreeMap;
+
+/**
+ * Modo direto: pede ao Z3 um par de independência por condição, sem montar a tabela verdade, para
+ * decisões grandes demais para a verificação linha a linha. Cada consulta fala dos dois testes do par
+ * ao mesmo tempo, com duas cópias das variáveis do sistema. Restrições flexíveis fazem o Z3
+ * reaproveitar testes já escolhidos, para a suíte ficar pequena.
+ */
+public final class Z3DirectAnalyzer {
+
+    /** Peso de reaproveitar um teste já escolhido; maior que o de preferir causa única. */
+    private static final int REUSE_WEIGHT = 10;
+
+    private final List&lt;InputVariable&gt; declared;
+    private final String command;
+
+    public Z3DirectAnalyzer(List&lt;InputVariable&gt; declared) {
+<span class="fc" id="L41">        this(declared, &quot;z3&quot;);</span>
+<span class="fc" id="L42">    }</span>
+
+<span class="fc" id="L44">    public Z3DirectAnalyzer(List&lt;InputVariable&gt; declared, String command) {</span>
+<span class="fc" id="L45">        this.declared = List.copyOf(declared);</span>
+<span class="fc" id="L46">        this.command = command;</span>
+<span class="fc" id="L47">    }</span>
+
+    /** Um par encontrado pelo Z3. */
+<span class="fc" id="L50">    private record Found(TestVector whenTrue, TestVector whenFalse) {</span>
+    }
+
+    public McdcReport analyze(Expr expression, McdcOptions options) {
+<span class="fc" id="L54">        List&lt;String&gt; inputs = expression.inputs();</span>
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">        if (inputs.size() &gt; TruthTable.MAX_DIRECT_INPUTS) {</span>
+<span class="nc" id="L56">            throw new IllegalArgumentException(&quot;Decisão com &quot; + inputs.size()</span>
+                    + &quot; entradas; o limite do modo direto é &quot; + TruthTable.MAX_DIRECT_INPUTS);
+        }
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if (options.constraint() != null) {</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">            for (String id : options.constraint().inputs()) {</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">                if (!inputs.contains(id)) {</span>
+<span class="nc" id="L62">                    throw new IllegalArgumentException(&quot;A restrição usa uma entrada que não está na decisão: &quot; + id);</span>
+                }
+<span class="nc" id="L64">            }</span>
+        }
+<span class="fc" id="L66">        SmtEncoding encoding = new SmtEncoding(expression, declared);</span>
+
+<span class="fc" id="L68">        Map&lt;Integer, TestVector&gt; suite = new TreeMap&lt;&gt;();</span>
+<span class="fc" id="L69">        Map&lt;String, List&lt;IndependencePair&gt;&gt; pairs = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L70">        Map&lt;String, IndependencePair&gt; chosen = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L71">        List&lt;UncoveredCondition&gt; uncovered = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        for (Condition condition : Condition.of(expression)) {</span>
+<span class="fc" id="L74">            Optional&lt;Found&gt; found = search(expression, encoding, inputs, condition, options, suite.values(), true);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">            if (found.isPresent()) {</span>
+                // um teste igual a outro já escolhido é o mesmo teste: fica com o primeiro
+<span class="fc" id="L77">                TestVector t = suite.computeIfAbsent(found.get().whenTrue().index(), k -&gt; found.get().whenTrue());</span>
+<span class="fc" id="L78">                TestVector f = suite.computeIfAbsent(found.get().whenFalse().index(), k -&gt; found.get().whenFalse());</span>
+<span class="fc" id="L79">                IndependencePair pair = new IndependencePair(condition.label(), t, f);</span>
+<span class="fc" id="L80">                pairs.put(condition.label(), List.of(pair));</span>
+<span class="fc" id="L81">                chosen.put(condition.label(), pair);</span>
+<span class="fc" id="L82">            } else {</span>
+<span class="fc" id="L83">                pairs.put(condition.label(), List.of());</span>
+                // sem as restrições: se ainda não há par, a condição é redundante; se há, as restrições bloquearam
+<span class="fc" id="L85">                Optional&lt;Found&gt; relaxed = search(expression, encoding, inputs, condition, options, List.of(), false);</span>
+<span class="fc" id="L86">                uncovered.add(new UncoveredCondition(condition.label(),</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">                        relaxed.isEmpty() ? UncoveredCondition.Reason.REDUNDANT : UncoveredCondition.Reason.INFEASIBLE,</span>
+<span class="fc" id="L88">                        relaxed.map(r -&gt; List.of(new IndependencePair(condition.label(), r.whenTrue(), r.whenFalse())))</span>
+<span class="fc" id="L89">                                .orElse(List.of())));</span>
+            }
+<span class="fc" id="L91">        }</span>
+
+<span class="fc" id="L93">        List&lt;TestVector&gt; tests = List.copyOf(suite.values());</span>
+<span class="fc" id="L94">        return new McdcReport(expression, options, TruthTable.partial(expression, tests), pairs, tests, chosen,</span>
+<span class="fc" id="L95">                List.copyOf(uncovered), SuiteMethod.DIRECT);</span>
+    }
+
+    /** Uma consulta por condição; com {@code feasible}, liga os predicados às variáveis e aplica a restrição. */
+    private Optional&lt;Found&gt; search(Expr expr, SmtEncoding encoding, List&lt;String&gt; inputs, Condition condition,
+            McdcOptions options, Collection&lt;TestVector&gt; reuse, boolean feasible) {
+<span class="fc" id="L101">        int n = inputs.size();</span>
+<span class="fc" id="L102">        int c = inputs.indexOf(condition.input());</span>
+<span class="fc" id="L103">        var s = new StringBuilder(&quot;(set-option :produce-models true)\n&quot;);</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (feasible) {</span>
+<span class="fc" id="L105">            s.append(encoding.declarations(&quot;t&quot;)).append(encoding.declarations(&quot;f&quot;));</span>
+        }
+<span class="fc bfc" id="L107" title="All 2 branches covered.">        for (String k : List.of(&quot;t&quot;, &quot;f&quot;)) {</span>
+<span class="fc bfc" id="L108" title="All 2 branches covered.">            for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L109">                s.append(&quot;(declare-const &quot;).append(b(k, i)).append(&quot; Bool)\n&quot;);</span>
+            }
+<span class="fc" id="L111">        }</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">        if (feasible) {</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">            for (String k : List.of(&quot;t&quot;, &quot;f&quot;)) {</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">                for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L115">                    s.append(&quot;(assert (= &quot;).append(b(k, i)).append(' ')</span>
+<span class="fc" id="L116">                            .append(encoding.literal(inputs.get(i), true, k)).append(&quot;))\n&quot;);</span>
+                }
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">                if (options.constraint() != null) {</span>
+<span class="nc" id="L119">                    s.append(&quot;(assert &quot;).append(bool(options.constraint(), k, inputs, -1)).append(&quot;)\n&quot;);</span>
+                }
+<span class="fc" id="L121">            }</span>
+        }
+
+        // a condição verdadeira num teste e falsa no outro
+<span class="fc" id="L125">        s.append(&quot;(assert &quot;).append(b(&quot;t&quot;, c)).append(&quot;)\n&quot;);</span>
+<span class="fc" id="L126">        s.append(&quot;(assert (not &quot;).append(b(&quot;f&quot;, c)).append(&quot;))\n&quot;);</span>
+<span class="fc" id="L127">        List&lt;String&gt; sameOthers = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">        for (int j = 0; j &lt; n; j++) {</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">            if (j != c) {</span>
+<span class="fc" id="L130">                sameOthers.add(&quot;(= &quot; + b(&quot;t&quot;, j) + &quot; &quot; + b(&quot;f&quot;, j) + &quot;)&quot;);</span>
+            }
+        }
+<span class="fc bfc" id="L133" title="All 2 branches covered.">        if (options.variant() == McdcVariant.UNIQUE_CAUSE) {</span>
+<span class="fc" id="L134">            sameOthers.forEach(eq -&gt; s.append(&quot;(assert &quot;).append(eq).append(&quot;)\n&quot;));</span>
+        }
+
+        // saídas diferentes, e a condição decide nos dois testes
+<span class="fc" id="L138">        String outT = bool(expr, &quot;t&quot;, inputs, -1);</span>
+<span class="fc" id="L139">        String outF = bool(expr, &quot;f&quot;, inputs, -1);</span>
+<span class="fc" id="L140">        s.append(&quot;(assert (not (= &quot;).append(outT).append(' ').append(outF).append(&quot;)))\n&quot;);</span>
+<span class="fc" id="L141">        s.append(&quot;(assert (not (= &quot;).append(outT).append(' ')</span>
+<span class="fc" id="L142">                .append(bool(expr, &quot;t&quot;, inputs, condition.leaf())).append(&quot;)))\n&quot;);</span>
+<span class="fc" id="L143">        s.append(&quot;(assert (not (= &quot;).append(outF).append(' ')</span>
+<span class="fc" id="L144">                .append(bool(expr, &quot;f&quot;, inputs, condition.leaf())).append(&quot;)))\n&quot;);</span>
+
+        // preferências: reaproveitar testes já escolhidos e, no mascaramento, ficar em causa única
+<span class="fc bfc" id="L147" title="All 2 branches covered.">        if (!reuse.isEmpty()) {</span>
+<span class="fc bfc" id="L148" title="All 2 branches covered.">            for (String k : List.of(&quot;t&quot;, &quot;f&quot;)) {</span>
+<span class="fc" id="L149">                List&lt;String&gt; matches = reuse.stream().map(v -&gt; matches(k, v, inputs)).toList();</span>
+<span class="fc" id="L150">                s.append(&quot;(assert-soft &quot;).append(or(matches)).append(&quot; :weight &quot;).append(REUSE_WEIGHT).append(&quot;)\n&quot;);</span>
+<span class="fc" id="L151">            }</span>
+        }
+<span class="fc bfc" id="L153" title="All 4 branches covered.">        if (options.variant() == McdcVariant.MASKING &amp;&amp; !sameOthers.isEmpty()) {</span>
+<span class="fc" id="L154">            s.append(&quot;(assert-soft &quot;).append(and(sameOthers)).append(&quot; :weight 1)\n&quot;);</span>
+        }
+
+<span class="fc" id="L157">        s.append(&quot;(check-sat)\n(get-value (&quot;);</span>
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        for (String k : List.of(&quot;t&quot;, &quot;f&quot;)) {</span>
+<span class="fc bfc" id="L159" title="All 2 branches covered.">            for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L160">                s.append(b(k, i)).append(' ');</span>
+            }
+<span class="fc" id="L162">        }</span>
+<span class="fc" id="L163">        s.append(&quot;))\n&quot;);</span>
+<span class="fc bfc" id="L164" title="All 2 branches covered.">        if (feasible) {</span>
+<span class="fc" id="L165">            s.append(&quot;(get-value (&quot;).append(String.join(&quot; &quot;, encoding.symbols(&quot;t&quot;))).append(&quot;))\n&quot;);</span>
+<span class="fc" id="L166">            s.append(&quot;(get-value (&quot;).append(String.join(&quot; &quot;, encoding.symbols(&quot;f&quot;))).append(&quot;))\n&quot;);</span>
+        }
+
+<span class="fc" id="L169">        String output = Z3Process.run(command, s.toString());</span>
+<span class="fc" id="L170">        List&lt;Object&gt; items = SExpr.parseAll(output);</span>
+<span class="pc bpc" id="L171" title="1 of 2 branches missed.">        Object answer = items.isEmpty() ? &quot;&quot; : items.get(0);</span>
+<span class="fc bfc" id="L172" title="All 2 branches covered.">        if (&quot;unsat&quot;.equals(answer)) {</span>
+<span class="fc" id="L173">            return Optional.empty();</span>
+        }
+<span class="pc bpc" id="L175" title="1 of 2 branches missed.">        if (!&quot;sat&quot;.equals(answer)) {</span>
+<span class="nc" id="L176">            throw new IllegalStateException(&quot;O Z3 não decidiu o par de &quot; + condition.label() + &quot;: &quot; + output.strip());</span>
+        }
+<span class="fc" id="L178">        List&lt;Object&gt; lists = Z3Process.all(output).stream().filter(List.class::isInstance).toList();</span>
+
+<span class="fc" id="L180">        Map&lt;String, Boolean&gt; bits = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L181" title="All 2 branches covered.">        for (Object item : (List&lt;?&gt;) lists.get(0)) {</span>
+<span class="fc" id="L182">            List&lt;?&gt; pair = (List&lt;?&gt;) item;</span>
+<span class="fc" id="L183">            bits.put(((String) pair.get(0)).replace(&quot;|&quot;, &quot;&quot;), &quot;true&quot;.equals(pair.get(1)));</span>
+<span class="fc" id="L184">        }</span>
+<span class="fc bfc" id="L185" title="All 2 branches covered.">        TestVector t = vector(expr, inputs, &quot;t&quot;, bits, feasible ? values(encoding, lists.get(1)) : Map.of());</span>
+<span class="fc bfc" id="L186" title="All 2 branches covered.">        TestVector f = vector(expr, inputs, &quot;f&quot;, bits, feasible ? values(encoding, lists.get(2)) : Map.of());</span>
+<span class="fc" id="L187">        return Optional.of(new Found(t, f));</span>
+    }
+
+    /** Monta o teste a partir dos valores booleanos de uma cópia; o índice segue a tabela (bit 1 = falsa). */
+    private static TestVector vector(Expr expr, List&lt;String&gt; inputs, String k, Map&lt;String, Boolean&gt; bits,
+            Map&lt;String, String&gt; assignment) {
+<span class="fc" id="L193">        int n = inputs.size();</span>
+<span class="fc" id="L194">        int index = 0;</span>
+<span class="fc" id="L195">        Map&lt;String, Boolean&gt; values = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L196" title="All 2 branches covered.">        for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L197">            boolean value = bits.get(b(k, i).replace(&quot;|&quot;, &quot;&quot;));</span>
+<span class="fc" id="L198">            values.put(inputs.get(i), value);</span>
+<span class="fc bfc" id="L199" title="All 2 branches covered.">            if (!value) {</span>
+<span class="fc" id="L200">                index |= 1 &lt;&lt; (n - 1 - i);</span>
+            }
+        }
+<span class="fc" id="L203">        return new TestVector(index, inputs, expr.eval(values), true, assignment);</span>
+    }
+
+    private static Map&lt;String, String&gt; values(SmtEncoding encoding, Object list) {
+<span class="fc" id="L207">        Map&lt;String, String&gt; assignment = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L208" title="All 2 branches covered.">        for (Object item : (List&lt;?&gt;) list) {</span>
+<span class="fc" id="L209">            List&lt;?&gt; pair = (List&lt;?&gt;) item;</span>
+<span class="fc" id="L210">            String variable = SmtEncoding.variableOf((String) pair.get(0));</span>
+<span class="fc" id="L211">            assignment.put(variable, encoding.decode(variable, pair.get(1)));</span>
+<span class="fc" id="L212">        }</span>
+<span class="fc" id="L213">        return assignment;</span>
+    }
+
+    /** &quot;O teste k é igual ao teste v&quot;: as mesmas entradas verdadeiras e falsas. */
+    private static String matches(String k, TestVector v, List&lt;String&gt; inputs) {
+<span class="fc" id="L218">        List&lt;String&gt; literals = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L219" title="All 2 branches covered.">        for (int i = 0; i &lt; inputs.size(); i++) {</span>
+<span class="fc bfc" id="L220" title="All 2 branches covered.">            literals.add(v.value(inputs.get(i)) ? b(k, i) : &quot;(not &quot; + b(k, i) + &quot;)&quot;);</span>
+        }
+<span class="fc" id="L222">        return and(literals);</span>
+    }
+
+    /** A expressão sobre as entradas booleanas de uma cópia, com a folha {@code flipped} invertida (-1: nenhuma). */
+    private static String bool(Expr expr, String k, List&lt;String&gt; inputs, int flipped) {
+<span class="fc" id="L227">        return bool(expr, k, inputs, flipped, new int[] {0});</span>
+    }
+
+    private static String bool(Expr expr, String k, List&lt;String&gt; inputs, int flipped, int[] next) {
+<span class="fc bfc" id="L231" title="All 4 branches covered.">        return switch (expr) {</span>
+<span class="fc" id="L232">            case Cond cond -&gt; {</span>
+<span class="fc" id="L233">                String literal = b(k, inputs.indexOf(cond.id()));</span>
+<span class="fc bfc" id="L234" title="All 2 branches covered.">                yield next[0]++ == flipped ? &quot;(not &quot; + literal + &quot;)&quot; : literal;</span>
+            }
+<span class="fc" id="L236">            case Not(var operand) -&gt; &quot;(not &quot; + bool(operand, k, inputs, flipped, next) + &quot;)&quot;;</span>
+<span class="fc" id="L237">            case And(var left, var right) -&gt; {</span>
+<span class="fc" id="L238">                String l = bool(left, k, inputs, flipped, next);</span>
+<span class="fc" id="L239">                yield &quot;(and &quot; + l + &quot; &quot; + bool(right, k, inputs, flipped, next) + &quot;)&quot;;</span>
+            }
+<span class="fc" id="L241">            case Or(var left, var right) -&gt; {</span>
+<span class="fc" id="L242">                String l = bool(left, k, inputs, flipped, next);</span>
+<span class="fc" id="L243">                yield &quot;(or &quot; + l + &quot; &quot; + bool(right, k, inputs, flipped, next) + &quot;)&quot;;</span>
+            }
+        };
+    }
+
+    /** Valor da entrada i no teste k; o @ evita colisão com os nomes das variáveis do sistema. */
+    private static String b(String k, int i) {
+<span class="fc" id="L250">        return &quot;|@&quot; + k + i + &quot;|&quot;;</span>
+    }
+
+    private static String and(List&lt;String&gt; terms) {
+<span class="fc bfc" id="L254" title="All 2 branches covered.">        return terms.size() == 1 ? terms.get(0) : &quot;(and &quot; + String.join(&quot; &quot;, terms) + &quot;)&quot;;</span>
+    }
+
+    private static String or(List&lt;String&gt; terms) {
+<span class="pc bpc" id="L258" title="1 of 2 branches missed.">        return terms.size() == 1 ? terms.get(0) : &quot;(or &quot; + String.join(&quot; &quot;, terms) + &quot;)&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

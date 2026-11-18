@@ -1,0 +1,5515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>SmtEncoding.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package io.github.rvdomingos.mcdc.z3;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.And;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.Cond;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.Expr;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.InputVariable;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.Not;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.Or;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.Predicate;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.math.BigDecimal;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.math.MathContext;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.LinkedHashMap;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.LinkedHashSet;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Locale;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Map;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Set;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.regex.Pattern;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Tradu&#231;&#227;o de uma express&#227;o para SMT-LIB: declara as vari&#225;veis e escreve, para cada entrada,</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * a f&#243;rmula que ela afirma. Enumera&#231;&#245;es viram inteiros de 0 a k-1.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>final class SmtEncoding {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Valor extra das enumera&#231;&#245;es n&#227;o declaradas: &#34;qualquer outro valor&#34;. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final String OTHER = &#34;_outro&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private static final Pattern INTEGER = Pattern.compile(&#34;-?\\d+&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private static final Pattern NUMBER = Pattern.compile(&#34;-?\\d+(\\.\\d+)?&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    enum Sort { BOOL, INT, REAL, ENUM }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    record Variable(String name, Sort sort, List&#60;String&#62; values) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Um ponto de fronteira: o texto para o relat&#243;rio e a igualdade em SMT-LIB. */</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    record Boundary(String text, String smt) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Passo usado para &#34;logo acima&#34; e &#34;logo abaixo&#34; de um limite real. */</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    static final BigDecimal REAL_STEP = new BigDecimal(&#34;0.01&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private final Map&#60;String, Variable&#62; variables = new LinkedHashMap&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private final Map&#60;String, Cond&#62; inputs = new LinkedHashMap&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    SmtEncoding(Expr expr, List&#60;InputVariable&#62; declared) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_49'/>
+49
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_49'>1</a>
+<span>
+1. &#60;init&#62; : removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        collect(expr);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Map&#60;String, InputVariable&#62; byName = new LinkedHashMap&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_51'/>
+51
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_51'>1</a>
+<span>
+1. &#60;init&#62; : removed call to java/util/List::forEach &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        declared.forEach(input -&#62; byName.put(input.name(), input));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Map&#60;String, List&#60;String&#62;&#62; literals = new LinkedHashMap&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (Cond cond : inputs.values()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_55'/>
+55
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_55'>1</a>
+<span>
+1. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (cond.predicate() != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_56'/>
+56
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_56'>1</a>
+<span>
+1. lambda$new$1 : replaced return value with Collections.emptyList for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$new$1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                literals.computeIfAbsent(cond.predicate().variable(), k -&#62; new ArrayList&#60;&#62;());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (Cond cond : inputs.values()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            Predicate p = cond.predicate();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_61'/>
+61
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_61'>3</a>
+<span>
+1. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+2. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+3. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (p != null &#38;&#38; !literals.containsKey(p.value()) &#38;&#38; !byName.containsKey(p.value())) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                literals.get(p.variable()).add(p.value());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_65'/>
+65
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_65'>1</a>
+<span>
+1. &#60;init&#62; : removed call to java/util/Map::forEach &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        literals.forEach((name, values) -&#62; variables.put(name, variable(name, values, byName.get(name))));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // vari&#225;veis declaradas que s&#243; aparecem do lado do valor, como &#34;limite&#34; em x &#60; limite</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (Cond cond : inputs.values()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            Predicate p = cond.predicate();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_69'/>
+69
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_69'>3</a>
+<span>
+1. &#60;init&#62; : negated conditional &rarr; SURVIVED<br/>
+2. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+3. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (p != null &#38;&#38; byName.containsKey(p.value()) &#38;&#38; !variables.containsKey(p.value())) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                variables.put(p.value(), variable(p.value(), List.of(), byName.get(p.value())));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // condi&#231;&#245;es sem predicado: a pr&#243;pria condi&#231;&#227;o &#233; uma vari&#225;vel booleana</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (Cond cond : inputs.values()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_76'/>
+76
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_76'>2</a>
+<span>
+1. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+2. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (cond.predicate() == null &#38;&#38; !variables.containsKey(cond.id())) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                variables.put(cond.id(), new Variable(cond.id(), Sort.BOOL, List.of()));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_80'/>
+80
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_80'>1</a>
+<span>
+1. &#60;init&#62; : removed call to java/util/Set::forEach &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        variables.keySet().forEach(SmtEncoding::checkName);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    Iterable&#60;Variable&#62; variables() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_84'/>
+84
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_84'>1</a>
+<span>
+1. variables : replaced return value with Collections.emptyList for io/github/rvdomingos/mcdc/z3/SmtEncoding::variables &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return variables.values();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Declara&#231;&#245;es e restri&#231;&#245;es de dom&#237;nio das enumera&#231;&#245;es. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    String declarations() {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_89'/>
+89
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_89'>1</a>
+<span>
+1. declarations : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::declarations &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return declarations(&#34;&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Declara&#231;&#245;es de uma c&#243;pia das vari&#225;veis, para falar de dois estados na mesma consulta</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * (ex.: os dois testes de um par). A c&#243;pia &#34;&#34; &#233; a das outras consultas.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    String declarations(String copy) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        var sb = new StringBuilder();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (Variable v : variables.values()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            String sort = switch (v.sort()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case BOOL -&#62; &#34;Bool&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case INT, ENUM -&#62; &#34;Int&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case REAL -&#62; &#34;Real&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            };</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            String name = symbol(v.name(), copy);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;(declare-const &#34;).append(name).append(&#39; &#39;).append(sort).append(&#34;)\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_106'/>
+106
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_106'>1</a>
+<span>
+1. declarations : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (v.sort() == Sort.ENUM) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                sb.append(&#34;(assert (and (&#62;= &#34;).append(name).append(&#34; 0) (&#60; &#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                        .append(name).append(&#39; &#39;).append(v.values().size()).append(&#34;)))\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_111'/>
+111
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_111'>1</a>
+<span>
+1. declarations : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::declarations &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return sb.toString();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** F&#243;rmula que diz que a entrada tem o valor dado na linha. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    String literal(String input, boolean value) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_116'/>
+116
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_116'>1</a>
+<span>
+1. literal : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::literal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return literal(input, value, &#34;&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    String literal(String input, boolean value, String copy) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Cond cond = inputs.get(input);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_121'/>
+121
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_121'>1</a>
+<span>
+1. literal : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (cond == null) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;Entrada fora da codifica&#231;&#227;o: &#34; + input);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String formula = formula(cond, copy);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_125'/>
+125
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_125'>2</a>
+<span>
+1. literal : negated conditional &rarr; KILLED<br/>
+2. literal : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::literal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return value ? formula : &#34;(not &#34; + formula + &#34;)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** A express&#227;o inteira em SMT-LIB, sobre os predicados de uma c&#243;pia das vari&#225;veis. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    String formula(Expr expr, String copy) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_130'/>
+130
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_130'>1</a>
+<span>
+1. formula : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::formula &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return switch (expr) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case Cond c -&#62; literal(c.id(), true, copy);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case Not(var operand) -&#62; &#34;(not &#34; + formula(operand, copy) + &#34;)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case And(var left, var right) -&#62; &#34;(and &#34; + formula(left, copy) + &#34; &#34; + formula(right, copy) + &#34;)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case Or(var left, var right) -&#62; &#34;(or &#34; + formula(left, copy) + &#34; &#34; + formula(right, copy) + &#34;)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Nomes SMT das vari&#225;veis de uma c&#243;pia, para o get-value. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_139'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    List&#60;String&#62; symbols(String copy) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_140'/>
+140
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_140'>2</a>
+<span>
+1. symbols : replaced return value with Collections.emptyList for io/github/rvdomingos/mcdc/z3/SmtEncoding::symbols &rarr; KILLED<br/>
+2. lambda$symbols$3 : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$symbols$3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return variables.values().stream().map(v -&#62; symbol(v.name(), copy)).toList();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Nome da vari&#225;vel a partir do s&#237;mbolo de uma c&#243;pia: |speed@t| volta a speed. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String variableOf(String symbol) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_145'/>
+145
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_145'>2</a>
+<span>
+1. variableOf : Replaced integer subtraction with addition &rarr; KILLED<br/>
+2. variableOf : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String name = symbol.startsWith(&#34;|&#34;) ? symbol.substring(1, symbol.length() - 1) : symbol;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int at = name.lastIndexOf(&#39;@&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_147'/>
+147
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_147'>3</a>
+<span>
+1. variableOf : changed conditional boundary &rarr; SURVIVED<br/>
+2. variableOf : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::variableOf &rarr; KILLED<br/>
+3. variableOf : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return at &#60; 0 ? name : name.substring(0, at);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_148'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_150'/>
+150
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_150'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Pontos de fronteira de uma entrada com o valor que ela tem na linha. S&#243; para compara&#231;&#245;es de uma</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * vari&#225;vel num&#233;rica com uma constante; as outras n&#227;o t&#234;m fronteira.</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_153'/>
+153
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_153'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_154'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    List&#60;Boundary&#62; boundaries(String input, boolean value) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_155'/>
+155
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_155'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Predicate p = inputs.get(input).predicate();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_156'/>
+156
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_156'>2</a>
+<span>
+1. boundaries : negated conditional &rarr; KILLED<br/>
+2. boundaries : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (p == null || variables.containsKey(p.value())) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            return List.of();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_158'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Variable v = variables.get(p.variable());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_160'/>
+160
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_160'>2</a>
+<span>
+1. boundaries : negated conditional &rarr; KILLED<br/>
+2. boundaries : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (v.sort() != Sort.INT &#38;&#38; v.sort() != Sort.REAL) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_161'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            return List.of();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_162'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        BigDecimal limit = new BigDecimal(p.value());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_164'/>
+164
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_164'>1</a>
+<span>
+1. boundaries : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        BigDecimal step = v.sort() == Sort.INT ? BigDecimal.ONE : REAL_STEP;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_165'/>
+165
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_165'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // com a condi&#231;&#227;o falsa, vale a compara&#231;&#227;o oposta: n&#227;o (x &#62; c) &#233; x &#60;= c</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_166'/>
+166
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_166'>1</a>
+<span>
+1. boundaries : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String operator = value ? p.operator() : switch (p.operator()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_167'/>
+167
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_167'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            case &#34;=&#34; -&#62; &#34;!=&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_168'/>
+168
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_168'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            case &#34;!=&#34; -&#62; &#34;=&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_169'/>
+169
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_169'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            case &#34;&#60;&#34; -&#62; &#34;&#62;=&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_170'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;&#60;=&#34; -&#62; &#34;&#62;&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_171'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;&#62;&#34; -&#62; &#34;&#60;=&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_172'/>
+172
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_172'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            case &#34;&#62;=&#34; -&#62; &#34;&#60;&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_173'/>
+173
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_173'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            default -&#62; throw new IllegalArgumentException(&#34;Operador desconhecido: &#34; + p.operator());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_174'/>
+174
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_174'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_175'/>
+175
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_175'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        List&#60;BigDecimal&#62; points = switch (operator) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_176'/>
+176
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_176'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;&#62;=&#34;, &#34;&#60;=&#34;, &#34;=&#34; -&#62; List.of(limit);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_177'/>
+177
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_177'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;&#62;&#34; -&#62; List.of(limit.add(step));</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_178'/>
+178
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_178'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            case &#34;&#60;&#34; -&#62; List.of(limit.subtract(step));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_179'/>
+179
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_179'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;!=&#34; -&#62; List.of(limit.subtract(step), limit.add(step));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_180'/>
+180
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_180'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            default -&#62; List.of();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_181'/>
+181
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_181'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_182'/>
+182
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_182'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        List&#60;Boundary&#62; boundaries = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_183'/>
+183
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_183'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (BigDecimal point : points) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_184'/>
+184
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_184'>1</a>
+<span>
+1. boundaries : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            String text = v.sort() == Sort.INT ? point.toBigInteger().toString() : point.toPlainString();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_185'/>
+185
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_185'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            boundaries.add(new Boundary(v.name() + &#34; = &#34; + text,</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_186'/>
+186
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_186'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    &#34;(= &#34; + symbol(v.name()) + &#34; &#34; + constant(v, text) + &#34;)&#34;));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_187'/>
+187
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_187'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_188'/>
+188
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_188'>1</a>
+<span>
+1. boundaries : replaced return value with Collections.emptyList for io/github/rvdomingos/mcdc/z3/SmtEncoding::boundaries &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return boundaries;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_189'/>
+189
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_189'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_190'/>
+190
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_190'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_191'/>
+191
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_191'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Valor do modelo do Z3 em texto leg&#237;vel: enumera&#231;&#245;es voltam ao nome, fra&#231;&#245;es viram decimais. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_192'/>
+192
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_192'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    String decode(String variable, Object smtValue) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_193'/>
+193
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_193'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Variable v = variables.get(variable);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_194'/>
+194
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_194'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String number = number(smtValue);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_195'/>
+195
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_195'>1</a>
+<span>
+1. decode : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (v.sort() == Sort.ENUM) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_196'/>
+196
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_196'>1</a>
+<span>
+1. decode : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::decode &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return v.values().get(Integer.parseInt(number));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_197'/>
+197
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_197'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_198'/>
+198
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_198'>1</a>
+<span>
+1. decode : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::decode &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return number;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_199'/>
+199
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_199'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_200'/>
+200
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_200'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_201'/>
+201
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_201'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private String formula(Cond cond, String copy) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_202'/>
+202
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_202'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Predicate p = cond.predicate();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_203'/>
+203
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_203'>1</a>
+<span>
+1. formula : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (p == null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_204'/>
+204
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_204'>1</a>
+<span>
+1. formula : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::formula &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return symbol(cond.id(), copy);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_205'/>
+205
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_205'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_206'/>
+206
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_206'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Variable v = variables.get(p.variable());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_207'/>
+207
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_207'>1</a>
+<span>
+1. formula : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String right = variables.containsKey(p.value()) ? symbol(p.value(), copy) : constant(v, p.value());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_208'/>
+208
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_208'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String left = symbol(v.name(), copy);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_209'/>
+209
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_209'>1</a>
+<span>
+1. formula : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::formula &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return switch (p.operator()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_210'/>
+210
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_210'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;=&#34; -&#62; &#34;(= &#34; + left + &#34; &#34; + right + &#34;)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_211'/>
+211
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_211'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;!=&#34; -&#62; &#34;(not (= &#34; + left + &#34; &#34; + right + &#34;))&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_212'/>
+212
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_212'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            default -&#62; {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_213'/>
+213
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_213'>2</a>
+<span>
+1. formula : negated conditional &rarr; KILLED<br/>
+2. formula : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (v.sort() == Sort.BOOL || v.sort() == Sort.ENUM) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_214'/>
+214
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_214'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    throw new IllegalArgumentException(</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_215'/>
+215
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_215'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                            &#34;Compara&#231;&#227;o &#34; + p.operator() + &#34; n&#227;o se aplica a &#34; + v.name() + &#34;, que n&#227;o &#233; num&#233;rica&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_216'/>
+216
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_216'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_217'/>
+217
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_217'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                yield &#34;(&#34; + p.operator() + &#34; &#34; + left + &#34; &#34; + right + &#34;)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_218'/>
+218
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_218'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_219'/>
+219
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_219'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_220'/>
+220
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_220'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_221'/>
+221
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_221'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_222'/>
+222
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_222'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static String constant(Variable v, String value) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_223'/>
+223
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_223'>1</a>
+<span>
+1. constant : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::constant &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return switch (v.sort()) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_224'/>
+224
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_224'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            case BOOL -&#62; {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_225'/>
+225
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_225'>2</a>
+<span>
+1. constant : negated conditional &rarr; KILLED<br/>
+2. constant : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (!value.equals(&#34;true&#34;) &#38;&#38; !value.equals(&#34;false&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_226'/>
+226
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_226'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    throw new IllegalArgumentException(v.name() + &#34; &#233; booleana, mas foi comparada com &#34; + value);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_227'/>
+227
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_227'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_228'/>
+228
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_228'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                yield value;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_229'/>
+229
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_229'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_230'/>
+230
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_230'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            case INT -&#62; {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_231'/>
+231
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_231'>1</a>
+<span>
+1. constant : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (!INTEGER.matcher(value).matches()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_232'/>
+232
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_232'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    throw new IllegalArgumentException(v.name() + &#34; &#233; inteira, mas foi comparada com &#34; + value);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_233'/>
+233
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_233'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_234'/>
+234
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_234'>1</a>
+<span>
+1. constant : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                yield value.startsWith(&#34;-&#34;) ? &#34;(- &#34; + value.substring(1) + &#34;)&#34; : value;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_235'/>
+235
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_235'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_236'/>
+236
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_236'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            case REAL -&#62; {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_237'/>
+237
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_237'>1</a>
+<span>
+1. constant : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (!NUMBER.matcher(value).matches()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_238'/>
+238
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_238'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    throw new IllegalArgumentException(v.name() + &#34; &#233; real, mas foi comparada com &#34; + value);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_239'/>
+239
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_239'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_240'/>
+240
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_240'>1</a>
+<span>
+1. constant : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                String decimal = value.contains(&#34;.&#34;) ? value : value + &#34;.0&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_241'/>
+241
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_241'>1</a>
+<span>
+1. constant : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                yield decimal.startsWith(&#34;-&#34;) ? &#34;(- &#34; + decimal.substring(1) + &#34;)&#34; : decimal;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_242'/>
+242
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_242'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_243'/>
+243
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_243'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            case ENUM -&#62; {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_244'/>
+244
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_244'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                int index = v.values().indexOf(value);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_245'/>
+245
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_245'>2</a>
+<span>
+1. constant : changed conditional boundary &rarr; KILLED<br/>
+2. constant : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (index &#60; 0) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_246'/>
+246
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_246'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    throw new IllegalArgumentException(value + &#34; n&#227;o &#233; um dos valores de &#34; + v.name() + &#34;: &#34; + v.values());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_247'/>
+247
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_247'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_248'/>
+248
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_248'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                yield String.valueOf(index);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_249'/>
+249
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_249'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_250'/>
+250
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_250'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_251'/>
+251
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_251'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_252'/>
+252
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_252'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_253'/>
+253
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_253'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Tipo declarado no JSON, ou inferido dos valores comparados. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_254'/>
+254
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_254'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Variable variable(String name, List&#60;String&#62; literals, InputVariable declared) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_255'/>
+255
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_255'>2</a>
+<span>
+1. variable : negated conditional &rarr; KILLED<br/>
+2. variable : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (declared != null &#38;&#38; declared.type() != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_256'/>
+256
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_256'>1</a>
+<span>
+1. variable : replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return switch (declared.type().toLowerCase(Locale.ROOT)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_257'/>
+257
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_257'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;bool&#34;, &#34;boolean&#34; -&#62; new Variable(name, Sort.BOOL, List.of());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_258'/>
+258
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_258'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;int&#34;, &#34;integer&#34; -&#62; new Variable(name, Sort.INT, List.of());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_259'/>
+259
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_259'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;real&#34;, &#34;float&#34;, &#34;double&#34; -&#62; new Variable(name, Sort.REAL, List.of());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_260'/>
+260
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_260'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;enum&#34; -&#62; new Variable(name, Sort.ENUM, declared.values());</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_261'/>
+261
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_261'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                default -&#62; throw new IllegalArgumentException(&#34;Tipo desconhecido para &#34; + name + &#34;: &#34; + declared.type());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_262'/>
+262
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_262'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            };</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_263'/>
+263
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_263'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_264'/>
+264
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_264'>5</a>
+<span>
+1. variable : negated conditional &rarr; SURVIVED<br/>
+2. variable : negated conditional &rarr; KILLED<br/>
+3. lambda$variable$4 : negated conditional &rarr; KILLED<br/>
+4. lambda$variable$4 : replaced boolean return with true for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$4 &rarr; KILLED<br/>
+5. lambda$variable$4 : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (!literals.isEmpty() &#38;&#38; literals.stream().allMatch(v -&#62; v.equals(&#34;true&#34;) || v.equals(&#34;false&#34;))) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_265'/>
+265
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_265'>1</a>
+<span>
+1. variable : replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return new Variable(name, Sort.BOOL, List.of());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_266'/>
+266
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_266'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_267'/>
+267
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_267'>3</a>
+<span>
+1. variable : negated conditional &rarr; KILLED<br/>
+2. lambda$variable$5 : replaced boolean return with false for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$5 &rarr; KILLED<br/>
+3. lambda$variable$5 : replaced boolean return with true for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$5 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (literals.stream().allMatch(v -&#62; INTEGER.matcher(v).matches())) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_268'/>
+268
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_268'>1</a>
+<span>
+1. variable : replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return new Variable(name, Sort.INT, List.of());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_269'/>
+269
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_269'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_270'/>
+270
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_270'>3</a>
+<span>
+1. lambda$variable$6 : replaced boolean return with true for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$6 &rarr; KILLED<br/>
+2. lambda$variable$6 : replaced boolean return with false for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$6 &rarr; KILLED<br/>
+3. variable : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (literals.stream().allMatch(v -&#62; NUMBER.matcher(v).matches())) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_271'/>
+271
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_271'>1</a>
+<span>
+1. variable : replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return new Variable(name, Sort.REAL, List.of());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_272'/>
+272
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_272'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_273'/>
+273
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_273'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Set&#60;String&#62; values = new LinkedHashSet&#60;&#62;(literals);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_274'/>
+274
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_274'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        values.add(OTHER);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_275'/>
+275
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_275'>1</a>
+<span>
+1. variable : replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new Variable(name, Sort.ENUM, List.copyOf(values));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_276'/>
+276
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_276'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_277'/>
+277
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_277'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_278'/>
+278
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_278'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private void collect(Expr expr) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_279'/>
+279
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_279'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        switch (expr) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_280'/>
+280
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_280'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case Cond c -&#62; inputs.putIfAbsent(c.id(), c);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_281'/>
+281
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_281'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case And(var left, var right) -&#62; {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_282'/>
+282
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_282'>1</a>
+<span>
+1. collect : removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                collect(left);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_283'/>
+283
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_283'>1</a>
+<span>
+1. collect : removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                collect(right);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_284'/>
+284
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_284'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_285'/>
+285
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_285'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case Or(var left, var right) -&#62; {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_286'/>
+286
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_286'>1</a>
+<span>
+1. collect : removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                collect(left);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_287'/>
+287
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_287'>1</a>
+<span>
+1. collect : removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                collect(right);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_288'/>
+288
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_288'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_289'/>
+289
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_289'>1</a>
+<span>
+1. collect : removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            case Not(var operand) -&#62; collect(operand);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_290'/>
+290
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_290'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_291'/>
+291
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_291'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_292'/>
+292
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_292'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_293'/>
+293
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_293'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** N&#250;mero do modelo: &#34;101&#34;, &#34;(- 5)&#34;, &#34;2.5&#34; ou &#34;(/ 5.0 2.0)&#34;. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_294'/>
+294
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_294'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @SuppressWarnings(&#34;unchecked&#34;)</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_295'/>
+295
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_295'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static String number(Object smtValue) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_296'/>
+296
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_296'>1</a>
+<span>
+1. number : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (smtValue instanceof String atom) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_297'/>
+297
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_297'>3</a>
+<span>
+1. number : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::number &rarr; KILLED<br/>
+2. number : negated conditional &rarr; KILLED<br/>
+3. number : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return atom.endsWith(&#34;.0&#34;) ? atom.substring(0, atom.length() - 2) : atom;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_298'/>
+298
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_298'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_299'/>
+299
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_299'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        List&#60;Object&#62; list = (List&#60;Object&#62;) smtValue;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_300'/>
+300
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_300'>2</a>
+<span>
+1. number : negated conditional &rarr; KILLED<br/>
+2. number : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (list.get(0).equals(&#34;-&#34;) &#38;&#38; list.size() == 2) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_301'/>
+301
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_301'>1</a>
+<span>
+1. number : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::number &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;-&#34; + number(list.get(1));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_302'/>
+302
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_302'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_303'/>
+303
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_303'>1</a>
+<span>
+1. number : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (list.get(0).equals(&#34;/&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_304'/>
+304
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_304'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            BigDecimal a = new BigDecimal(number(list.get(1)));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_305'/>
+305
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_305'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            BigDecimal b = new BigDecimal(number(list.get(2)));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_306'/>
+306
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_306'>1</a>
+<span>
+1. number : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::number &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return a.divide(b, MathContext.DECIMAL64).stripTrailingZeros().toPlainString();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_307'/>
+307
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_307'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_308'/>
+308
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_308'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        throw new IllegalStateException(&#34;Valor do Z3 n&#227;o reconhecido: &#34; + smtValue);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_309'/>
+309
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_309'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_310'/>
+310
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_310'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_311'/>
+311
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_311'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String symbol(String name) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_312'/>
+312
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_312'>1</a>
+<span>
+1. symbol : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::symbol &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return &#34;|&#34; + name + &#34;|&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_313'/>
+313
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_313'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_314'/>
+314
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_314'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_315'/>
+315
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_315'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String symbol(String name, String copy) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_316'/>
+316
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_316'>2</a>
+<span>
+1. symbol : negated conditional &rarr; KILLED<br/>
+2. symbol : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::symbol &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return copy.isEmpty() ? symbol(name) : &#34;|&#34; + name + &#34;@&#34; + copy + &#34;|&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_317'/>
+317
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_317'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_318'/>
+318
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_318'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_319'/>
+319
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_319'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static void checkName(String name) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_320'/>
+320
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_320'>3</a>
+<span>
+1. checkName : negated conditional &rarr; KILLED<br/>
+2. checkName : negated conditional &rarr; KILLED<br/>
+3. checkName : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (name.contains(&#34;|&#34;) || name.contains(&#34;\\&#34;) || name.contains(&#34;@&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_321'/>
+321
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_321'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;Nome de vari&#225;vel n&#227;o suportado pelo Z3: &#34; + name);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_322'/>
+322
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_322'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_323'/>
+323
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_323'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2852fb2a_324'/>
+324
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_324'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_49'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_51'>51</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_51'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> removed call to java/util/List::forEach &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_56'>56</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_56'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$new$1<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> replaced return value with Collections.emptyList for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$new$1 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_61'>61</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_61'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_65'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> removed call to java/util/Map::forEach &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_69'>69</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_69'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=<init>,-methodDesc=(Lio/github/rvdomingos/mcdc/core/model/Expr;Ljava/util/List;)V],-indexes=[170],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=<init>,-methodDesc=(Lio/github/rvdomingos/mcdc/core/model/Expr;Ljava/util/List;)V],-indexes=[170],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=<init>,-methodDesc=(Lio/github/rvdomingos/mcdc/core/model/Expr;Ljava/util/List;)V],-indexes=[170],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:comparesTwoVariables()]</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:findsImpossibleRowsFromPredicates()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_76'>76</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_76'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:findsImpossibleRowsFromPredicates()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:findsImpossibleRowsFromPredicates()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_80'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to java/util/Set::forEach &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=<init>,-methodDesc=(Lio/github/rvdomingos/mcdc/core/model/Expr;Ljava/util/List;)V],-indexes=[246],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=<init>,-methodDesc=(Lio/github/rvdomingos/mcdc/core/model/Expr;Ljava/util/List;)V],-indexes=[246],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=<init>,-methodDesc=(Lio/github/rvdomingos/mcdc/core/model/Expr;Ljava/util/List;)V],-indexes=[246],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:comparesTwoVariables()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:undeclaredEnumGetsAnOtherValue()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredEnumValuesExcludeEachOther()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:findsImpossibleRowsFromPredicates()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:givesConcreteValuesThatRealizeEachRow()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:sameValueIsACompatibleOverlap()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:findsGapsOnlyUnderAContext()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:findsContradictoryRequirementsThatFireTogether()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:sameResultAsTheHandWrittenConstraint()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:generatesBoundaryVariantsOfTheSuite()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:findsConditionsBlockedByCoupledPredicates()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:handlesDecisionsBeyondTheRowByRowLimit()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:goesBeyondTheTableLimitOfTwentyInputs()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:agreesWithTheTableOnSmallDecisions()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RandomizedTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RandomizedTest]/[method:directModeAgreesWithTheFullTable()]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_84'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variables<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()]</span></span> replaced return value with Collections.emptyList for io/github/rvdomingos/mcdc/z3/SmtEncoding::variables &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_89'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>declarations<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::declarations &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_106'>106</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_106'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>declarations<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_111'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>declarations<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::declarations &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>literal<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::literal &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_121'>121</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_121'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>literal<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_125'>125</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_125'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>literal<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:comparesTwoVariables()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>literal<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::literal &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_130'>130</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_130'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>formula<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::formula &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_140'>140</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_140'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>symbols<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()]</span></span> replaced return value with Collections.emptyList for io/github/rvdomingos/mcdc/z3/SmtEncoding::symbols &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$symbols$3<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$symbols$3 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_145'>145</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_145'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variableOf<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>variableOf<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_147'>147</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_147'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variableOf<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=variableOf,-methodDesc=(Ljava/lang/String;)Ljava/lang/String;],-indexes=[30],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=variableOf,-methodDesc=(Ljava/lang/String;)Ljava/lang/String;],-indexes=[30],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=variableOf,-methodDesc=(Ljava/lang/String;)Ljava/lang/String;],-indexes=[30],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:findsConditionsBlockedByCoupledPredicates()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:handlesDecisionsBeyondTheRowByRowLimit()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:goesBeyondTheTableLimitOfTwentyInputs()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:agreesWithTheTableOnSmallDecisions()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RandomizedTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RandomizedTest]/[method:directModeAgreesWithTheFullTable()]</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>variableOf<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::variableOf &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>variableOf<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_156'>156</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_156'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>boundaries<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>boundaries<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_160'>160</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_160'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>boundaries<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>boundaries<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_164'>164</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_164'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>boundaries<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_166'>166</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_166'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>boundaries<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_184'>184</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_184'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>boundaries<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_188'>188</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_188'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>boundaries<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> replaced return value with Collections.emptyList for io/github/rvdomingos/mcdc/z3/SmtEncoding::boundaries &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_195'>195</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_195'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_196'>196</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_196'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:undeclaredEnumGetsAnOtherValue()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::decode &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_198'>198</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_198'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>decode<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::decode &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_203'>203</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_203'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>formula<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_204'>204</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_204'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>formula<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:findsImpossibleRowsFromPredicates()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::formula &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_207'>207</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_207'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>formula<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_209'>209</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_209'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>formula<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::formula &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_213'>213</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_213'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>formula<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>formula<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_223'>223</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_223'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::constant &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_225'>225</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_225'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_231'>231</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_231'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_234'>234</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_234'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:findsImpossibleRowsFromPredicates()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_237'>237</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_237'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_240'>240</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_240'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_241'>241</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_241'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=constant,-methodDesc=(Lio/github/rvdomingos/mcdc/z3/SmtEncoding$Variable;Ljava/lang/String;)Ljava/lang/String;],-indexes=[114],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=constant,-methodDesc=(Lio/github/rvdomingos/mcdc/z3/SmtEncoding$Variable;Ljava/lang/String;)Ljava/lang/String;],-indexes=[114],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=constant,-methodDesc=(Lio/github/rvdomingos/mcdc/z3/SmtEncoding$Variable;Ljava/lang/String;)Ljava/lang/String;],-indexes=[114],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_245'>245</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_245'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>constant<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_255'>255</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_255'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_256'>256</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_256'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_264'>264</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_264'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$variable$4<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=variable,-methodDesc=(Ljava/lang/String;Ljava/util/List;Lio/github/rvdomingos/mcdc/core/model/InputVariable;)Lio/github/rvdomingos/mcdc/z3/SmtEncoding$Variable;],-indexes=[156],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=variable,-methodDesc=(Ljava/lang/String;Ljava/util/List;Lio/github/rvdomingos/mcdc/core/model/InputVariable;)Lio/github/rvdomingos/mcdc/z3/SmtEncoding$Variable;],-indexes=[156],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.z3.SmtEncoding,-method=variable,-methodDesc=(Ljava/lang/String;Ljava/util/List;Lio/github/rvdomingos/mcdc/core/model/InputVariable;)Lio/github/rvdomingos/mcdc/z3/SmtEncoding$Variable;],-indexes=[156],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:undeclaredEnumGetsAnOtherValue()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:findsImpossibleRowsFromPredicates()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:givesConcreteValuesThatRealizeEachRow()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:sameValueIsACompatibleOverlap()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:findsGapsOnlyUnderAContext()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:findsContradictoryRequirementsThatFireTogether()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:sameResultAsTheHandWrittenConstraint()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:generatesBoundaryVariantsOfTheSuite()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:findsConditionsBlockedByCoupledPredicates()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:handlesDecisionsBeyondTheRowByRowLimit()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:goesBeyondTheTableLimitOfTwentyInputs()]</li> <li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:agreesWithTheTableOnSmallDecisions()]</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>lambda$variable$4<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> replaced boolean return with true for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$4 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>lambda$variable$4<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_265'>265</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_265'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:findsContradictoryRequirementsThatFireTogether()]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_267'>267</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_267'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$variable$5<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()]</span></span> replaced boolean return with false for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$5 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>lambda$variable$5<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced boolean return with true for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$5 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_268'>268</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_268'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_270'>270</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_270'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$variable$6<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced boolean return with true for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$6 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$variable$6<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> replaced boolean return with false for io/github/rvdomingos/mcdc/z3/SmtEncoding::lambda$variable$6 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_271'>271</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_271'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_275'>275</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_275'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variable<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/z3/SmtEncoding::variable &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_282'>282</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_282'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>collect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_283'>283</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_283'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>collect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_286'>286</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_286'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>collect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_287'>287</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_287'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>collect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_289'>289</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_289'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>collect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RandomizedTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RandomizedTest]/[method:directModeAgreesWithTheFullTable()]</span></span> removed call to io/github/rvdomingos/mcdc/z3/SmtEncoding::collect &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_296'>296</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_296'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_297'>297</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_297'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:undeclaredEnumGetsAnOtherValue()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::number &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:comparesTwoVariables()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_300'>300</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_300'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:comparesTwoVariables()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:comparesTwoVariables()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_301'>301</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_301'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::number &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_303'>303</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_303'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_306'>306</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_306'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>number<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::number &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_312'>312</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_312'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>symbol<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::symbol &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_316'>316</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_316'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>symbol<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>symbol<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/z3/SmtEncoding::symbol &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2852fb2a_320'>320</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2852fb2a_320'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkName<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkName<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkName<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:explainsWhenZ3IsMissing()] (3 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:disjointGuardsDoNotOverlap()] (7 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:undeclaredEnumGetsAnOtherValue()] (12 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:handlesRealsAndNegativeNumbers()] (12 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:findsImpossibleRowsFromPredicates()] (12 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:givesConcreteValuesThatRealizeEachRow()] (12 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:sameValueIsACompatibleOverlap()] (13 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:findsGapsOnlyUnderAContext()] (18 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifierTest]/[method:findsContradictoryRequirementsThatFireTogether()] (14 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:sameResultAsTheHandWrittenConstraint()] (14 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:realBoundariesUseASmallStep()] (27 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:generatesBoundaryVariantsOfTheSuite()] (26 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:findsConditionsBlockedByCoupledPredicates()] (113 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:handlesDecisionsBeyondTheRowByRowLimit()] (116 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:goesBeyondTheTableLimitOfTwentyInputs()] (218 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:agreesWithTheTableOnSmallDecisions()] (300 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzerTest]/[method:uniqueCausePairsDifferInOneInputOnly()] (37 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3RandomizedTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3RandomizedTest]/[method:directModeAgreesWithTheFullTable()] (9498 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredBooleanCannotBeTrueAndFalse()] (13 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:declaredEnumValuesExcludeEachOther()] (12 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:rejectsValuesThatDoNotMatchTheType()] (0 ms)</li><li>io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.z3.Z3FeasibilityCheckerTest]/[method:comparesTwoVariables()] (13 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.30.2 <a href='https://github.com/sponsors/hcoles'>support</a>
+
+</body>
+</html>

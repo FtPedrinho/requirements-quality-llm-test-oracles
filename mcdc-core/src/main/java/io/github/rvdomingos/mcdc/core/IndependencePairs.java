@@ -1,6 +1,7 @@
 package io.github.rvdomingos.mcdc.core;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,6 +35,7 @@ public final class IndependencePairs {
 
         for (Condition condition : table.conditions()) {
             int mask = TruthTable.bit(n, table.inputs().indexOf(condition.input()));
+            boolean single = appearsOnce(table, condition);
             List<IndependencePair> pairs = new ArrayList<>();
             for (TestVector row : table.rows()) {
                 if (!row.feasible() || (row.index() & mask) != 0) {
@@ -43,8 +45,8 @@ public final class IndependencePairs {
                 TestVector flipped = table.rows().get(row.index() | mask);
                 if (flipped.feasible()
                         && row.outcome() != flipped.outcome()
-                        && condition.decides(table.expression(), row)
-                        && condition.decides(table.expression(), flipped)) {
+                        && decides(table, condition, row, mask, single)
+                        && decides(table, condition, flipped, mask, single)) {
                     pairs.add(new IndependencePair(condition.label(), row, flipped));
                     if (pairs.size() == MAX_PAIRS_PER_CONDITION) {
                         break;
@@ -63,11 +65,12 @@ public final class IndependencePairs {
 
         for (Condition condition : table.conditions()) {
             int mask = TruthTable.bit(n, table.inputs().indexOf(condition.input()));
+            boolean single = appearsOnce(table, condition);
             List<TestVector> whenTrue = new ArrayList<>();
             List<TestVector> whenFalse = new ArrayList<>();
             for (TestVector row : table.rows()) {
                 // "decide" é uma propriedade da fórmula: vale mesmo que a linha com a condição invertida seja impossível
-                if (!row.feasible() || !condition.decides(table.expression(), row)) {
+                if (!row.feasible() || !decides(table, condition, row, mask, single)) {
                     continue;
                 }
                 if ((row.index() & mask) == 0) {
@@ -92,5 +95,22 @@ public final class IndependencePairs {
             result.put(condition.label(), List.copyOf(pairs));
         }
         return result;
+    }
+
+    /** Se a entrada aparece uma vez só e a tabela tem todas as linhas, na posição do índice. */
+    private static boolean appearsOnce(TruthTable table, Condition condition) {
+        return table.isFull() && Collections.frequency(table.expression().leaves(), condition.input()) == 1;
+    }
+
+    /**
+     * Se a condição decide a saída na linha. Quando a entrada aparece uma vez só, trocar a aparição é trocar
+     * o bit da entrada: basta olhar a saída da linha vizinha, sem reavaliar a fórmula (20 entradas em
+     * fração de segundo em vez de segundos). Com a entrada repetida, reavalia trocando só aquela aparição.
+     */
+    private static boolean decides(TruthTable table, Condition condition, TestVector row, int mask, boolean single) {
+        if (single) {
+            return row.outcome() != table.rows().get(row.index() ^ mask).outcome();
+        }
+        return condition.decides(table.expression(), row);
     }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferramenta MC/DC · relatórios de qualidade</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 20px; color: #1f2328; line-height: 1.5; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  p.sub { color: #59636e; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0 28px; }
+  th, td { border: 1px solid #d1d9e0; padding: 6px 10px; text-align: left; }
+  th { background: #f6f8fa; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  a { color: #0969da; }
+</style>
+</head>
+<body>
+<h1>Ferramenta MC/DC · relatórios de qualidade</h1>
+<p class="sub">Medidos em 17/11/2026 · 162 testes automatizados, todos passando · <a href="https://github.com/rvDomingos/Tool_MCDC_Java">repositório</a></p>
+
+<h2>Cobertura de código (JaCoCo)</h2>
+<p><a href="jacoco/index.html">Abrir o relatório dos quatro módulos somados</a> · <a href="jacoco/jacoco.csv">baixar em CSV</a></p>
+
+<h2>Mutação do código (PIT)</h2>
+<table>
+  <tr><th>Módulo</th><th>Linhas cobertas</th><th>Desvios cobertos</th><th>Nota de mutação</th><th>Relatório</th></tr>
+  <tr><td>mcdc-core (motor)</td><td class="n">98,4%</td><td class="n">95,5%</td><td class="n">95,7%</td><td><a href="pit/mcdc-core/index.html">abrir</a></td></tr>
+  <tr><td>mcdc-requirements (leitura)</td><td class="n">100%</td><td class="n">93,8%</td><td class="n">96,6%</td><td><a href="pit/mcdc-requirements/index.html">abrir</a></td></tr>
+  <tr><td>mcdc-z3 (verificador)</td><td class="n">92,6%</td><td class="n">85,8%</td><td class="n">90,8%</td><td><a href="pit/mcdc-z3/index.html">abrir</a></td></tr>
+  <tr><td>mcdc-cli (comandos e relatórios)</td><td class="n">92,3%</td><td class="n">85,5%</td><td class="n">76,6%</td><td><a href="pit/mcdc-cli/index.html">abrir</a></td></tr>
+  <tr><th>Total</th><th class="n">94,9%</th><th class="n">89,8%</th><th class="n">89,6%</th><th></th></tr>
+</table>
+<p>No JaCoCo, as linhas aparecem em verde (testadas), amarelo (desvio testado só em parte) e vermelho (sem teste). No PIT, cada defeito plantado aparece na linha em que foi plantado, com o teste que o pegou ou a marca de que sobreviveu.</p>
+</body>
+</html>

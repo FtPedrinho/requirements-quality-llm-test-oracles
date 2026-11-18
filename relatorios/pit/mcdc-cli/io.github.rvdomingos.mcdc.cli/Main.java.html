@@ -1,0 +1,5071 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Main.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package io.github.rvdomingos.mcdc.cli;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.DecisionAnalysis;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.Mcdc;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.McdcOptions;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.McdcVariant;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.TestCase;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.TestSetEvaluation;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.Decision;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.DecisionSet;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.mutation.MutationReport;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.requirements.ExpressionParser;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.requirements.Nat2TestJsonReader;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.requirements.RequirementsFile;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.requirements.TestCasesFile;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.Expr;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzer;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.z3.Z3FeasibilityChecker;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifier;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.z3.Z3SuiteOptimizer;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.nio.file.Files;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.nio.file.Path;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Map;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/** Comando {@code mcdc}. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public final class Main {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final int OK = 0;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final int INPUT_ERROR = 1;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final int UNCOVERED = 2;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static final String USAGE = &#34;&#34;&#34;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            Uso:</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc analyze &#60;fonte&#62; [op&#231;&#245;es]                gera a su&#237;te m&#237;nima de testes MC/DC</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc check   &#60;fonte&#62; --tests &#60;testes.csv&#62;    mede o MC/DC de testes j&#225; existentes</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc verify  &#60;fonte&#62; [--context &#34;&#60;expr&#62;&#34;]    confere os requisitos entre si (usa o Z3)</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            Fonte (uma s&#243;):</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              &#34;&#60;express&#227;o&#62;&#34;           ex.: &#34;(A and B) or C&#34;, &#39;speed &#62; 100 /\\ mode = idle&#39;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              -f &#60;arquivo.mcdc&#62;       um requisito por linha: ID: express&#227;o</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --json &#60;decisoes.json&#62;  decis&#245;es no formato do Extractor da NAT2TEST</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            Op&#231;&#245;es:</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --unique-cause          causa &#250;nica em vez de mascaramento</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --constraint &#34;&#60;expr&#62;&#34;   restri&#231;&#227;o entre condi&#231;&#245;es (s&#243; com express&#227;o direta)</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --z3                    usa o Z3 para descobrir linhas imposs&#237;veis e gerar valores concretos;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                                      decis&#245;es com mais de 12 entradas passam ao modo direto</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --exact                 su&#237;te exata: a menor poss&#237;vel, escolhida pelo Z3 (em vez da gulosa)</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --direct                pede os pares direto ao Z3, sem montar a tabela (at&#233; 30 entradas)</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --boundary              com --z3, acrescenta variantes de fronteira (speed &#62; 100 -&#62; speed = 101)</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --mutation              confere se a su&#237;te detecta vers&#245;es do requisito com uma falha</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --context &#34;&#60;expr&#62;&#34;      verify: confere se, nessa situa&#231;&#227;o, sempre alguma guarda vale</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              --format &#60;formato&#62;      text (padr&#227;o), json, csv (su&#237;te) ou truth-csv (tabela verdade inteira);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                                      check e verify aceitam text e json</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              -o &#60;arquivo&#62;            grava o relat&#243;rio no arquivo em vez de mostrar na tela</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            Exemplos:</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc analyze &#34;(A and B) or C&#34;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc analyze &#34;speed &#62; 100 or (speed &#62; 50 and rain)&#34; --z3 --boundary</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc analyze --json exemplos/decisoes.json --format json -o relatorio.json</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc analyze --json exemplos/vm-decisoes.json --z3 --format truth-csv -o tabela.csv</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc check --json exemplos/decisoes.json --tests exemplos/testes.csv</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>              mcdc verify --json exemplos/npp-decisoes.json</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            &#34;&#34;&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Op&#231;&#245;es lidas da linha de comando. */</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private record Options(String command, String expression, String file, String json, String constraint,</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            String tests, String format, String output, McdcVariant variant, boolean z3, boolean boundary,</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            boolean mutation, boolean exact, boolean direct, String context) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    private Main() {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static void main(String[] args) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_79'/>
+79
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_79'>1</a>
+<span>
+1. main : removed call to java/lang/System::exit &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        System.exit(run(args));</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static int run(String[] args) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_83'/>
+83
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_83'>2</a>
+<span>
+1. run : negated conditional &rarr; KILLED<br/>
+2. run : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (args.length == 0 || !List.of(&#34;analyze&#34;, &#34;check&#34;, &#34;verify&#34;).contains(args[0])) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_84'/>
+84
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_84'>1</a>
+<span>
+1. run : removed call to java/io/PrintStream::print &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            System.err.print(USAGE);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_85'/>
+85
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_85'>1</a>
+<span>
+1. run : replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return INPUT_ERROR;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        try {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            Options options = parse(args);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            DecisionSet set = load(options);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_90'/>
+90
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_90'>1</a>
+<span>
+1. run : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (options.command().equals(&#34;verify&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_91'/>
+91
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_91'>1</a>
+<span>
+1. run : replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                return verify(options, set);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_93'/>
+93
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_93'>1</a>
+<span>
+1. run : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            Z3FeasibilityChecker checker = options.z3() ? new Z3FeasibilityChecker(set.inputs()) : null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            McdcOptions mcdc = McdcOptions.defaults()</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .withVariant(options.variant())</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_96'/>
+96
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_96'>1</a>
+<span>
+1. run : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    .withConstraint(options.constraint() == null ? null : ExpressionParser.parse(options.constraint()))</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .withFeasibility(checker)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_98'/>
+98
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_98'>1</a>
+<span>
+1. run : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    .withOptimizer(options.exact() ? new Z3SuiteOptimizer() : null);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_99'/>
+99
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_99'>2</a>
+<span>
+1. run : replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED<br/>
+2. run : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return options.command().equals(&#34;check&#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    ? check(options, set, mcdc)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    : analyze(options, set, mcdc, checker);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (IllegalArgumentException | IllegalStateException e) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_103'/>
+103
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_103'>1</a>
+<span>
+1. run : removed call to java/io/PrintStream::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            System.err.println(&#34;Erro: &#34; + e.getMessage());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_104'/>
+104
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_104'>1</a>
+<span>
+1. run : replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return INPUT_ERROR;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        } catch (IOException e) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_106'/>
+106
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_106'>1</a>
+<span>
+1. run : removed call to java/io/PrintStream::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            System.err.println(&#34;Erro de arquivo: &#34; + e.getMessage());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_107'/>
+107
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_107'>1</a>
+<span>
+1. run : replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return INPUT_ERROR;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static int analyze(Options options, DecisionSet set, McdcOptions mcdc, Z3FeasibilityChecker checker)</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            throws IOException {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_113'/>
+113
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_113'>1</a>
+<span>
+1. analyze : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        Z3DirectAnalyzer direct = options.z3() ? new Z3DirectAnalyzer(set.inputs()) : null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        List&#60;DecisionAnalysis&#62; analyses = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (Decision decision : set.decisions()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_116'/>
+116
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_116'>1</a>
+<span>
+1. analyze : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            DecisionAnalysis a = useDirect(options, decision)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    ? new DecisionAnalysis(decision, direct.analyze(decision.expression(), mcdc))</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    : Mcdc.analyze(decision, mcdc);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_119'/>
+119
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_119'>1</a>
+<span>
+1. analyze : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (options.boundary()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                a = a.withBoundaryTests(checker.boundaryTests(decision.expression(), a.report().minimalSuite()));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_122'/>
+122
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_122'>1</a>
+<span>
+1. analyze : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (options.mutation()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_123'/>
+123
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_123'>1</a>
+<span>
+1. analyze : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (!a.report().table().isFull()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    throw new IllegalArgumentException(decision.id() + &#34;: --mutation precisa da tabela inteira, &#34;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                            + &#34;que o modo direto n&#227;o monta (&#34; + decision.expression().inputs().size() + &#34; entradas).&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                a = a.withMutation(MutationReport.of(a.report()));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            analyses.add(a);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String report = switch (options.format()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;json&#34; -&#62; JsonReport.format(set.system(), mcdc, options.constraint(), analyses);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;csv&#34; -&#62; CsvReport.format(analyses);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case &#34;truth-csv&#34; -&#62; TruthTableCsvReport.format(analyses);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            default -&#62; TextReport.format(analyses, options.constraint());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_137'/>
+137
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_137'>1</a>
+<span>
+1. analyze : removed call to io/github/rvdomingos/mcdc/cli/Main::write &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        write(report, options.output());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_138'/>
+138
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_138'>4</a>
+<span>
+1. analyze : replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::analyze &rarr; KILLED<br/>
+2. lambda$analyze$0 : replaced boolean return with true for io/github/rvdomingos/mcdc/cli/Main::lambda$analyze$0 &rarr; KILLED<br/>
+3. analyze : negated conditional &rarr; KILLED<br/>
+4. lambda$analyze$0 : replaced boolean return with false for io/github/rvdomingos/mcdc/cli/Main::lambda$analyze$0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return analyses.stream().allMatch(a -&#62; a.report().isComplete()) ? OK : UNCOVERED;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_139'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Modo direto quando pedido, ou com --z3 quando a verifica&#231;&#227;o linha a linha n&#227;o cabe (mais de 12 entradas). */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static boolean useDirect(Options options, Decision decision) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int inputs = decision.expression().inputs().size();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_144'/>
+144
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_144'>6</a>
+<span>
+1. useDirect : changed conditional boundary &rarr; SURVIVED<br/>
+2. useDirect : negated conditional &rarr; KILLED<br/>
+3. useDirect : negated conditional &rarr; KILLED<br/>
+4. useDirect : negated conditional &rarr; KILLED<br/>
+5. useDirect : Replaced Shift Left with Shift Right &rarr; KILLED<br/>
+6. useDirect : replaced boolean return with true for io/github/rvdomingos/mcdc/cli/Main::useDirect &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return options.direct() || (options.z3() &#38;&#38; (1L &#60;&#60; inputs) &#62; Z3FeasibilityChecker.MAX_ROWS);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static int verify(Options options, DecisionSet set) throws IOException {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_148'/>
+148
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_148'>1</a>
+<span>
+1. verify : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        Expr context = options.context() == null ? null : ExpressionParser.parse(options.context());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Z3RequirementsVerifier.Result result = new Z3RequirementsVerifier().verify(set, context);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_150'/>
+150
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_150'>1</a>
+<span>
+1. verify : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String report = options.format().equals(&#34;json&#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                ? VerifyReport.json(set.system(), options.context(), result)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                : VerifyReport.text(set.system(), options.context(), result);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_153'/>
+153
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_153'>1</a>
+<span>
+1. verify : removed call to io/github/rvdomingos/mcdc/cli/Main::write &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        write(report, options.output());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_154'/>
+154
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_154'>1</a>
+<span>
+1. verify : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return result.hasProblems() ? UNCOVERED : OK;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_155'/>
+155
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_155'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_156'/>
+156
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_156'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static int check(Options options, DecisionSet set, McdcOptions mcdc) throws IOException {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_158'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        TestCasesFile.Contents contents = TestCasesFile.read(Path.of(options.tests()));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_159'/>
+159
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_159'>3</a>
+<span>
+1. check : negated conditional &rarr; SURVIVED<br/>
+2. check : changed conditional boundary &rarr; KILLED<br/>
+3. check : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (!contents.hasDecisionColumn() &#38;&#38; set.decisions().size() &#62; 1) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_160'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;O arquivo de testes precisa da coluna \&#34;decision\&#34; quando h&#225; mais de uma decis&#227;o.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_161'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_162'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        List&#60;CheckReport.Entry&#62; entries = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (Decision decision : set.decisions()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_164'/>
+164
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_164'>1</a>
+<span>
+1. check : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            Map&#60;String, TestCasesFile.RawTest&#62; raw = contents.hasDecisionColumn()</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_165'/>
+165
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_165'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    ? contents.byDecision().getOrDefault(decision.id(), Map.of())</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_166'/>
+166
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_166'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    : contents.byDecision().get(&#34;&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_167'/>
+167
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_167'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            List&#60;TestCase&#62; tests = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_168'/>
+168
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_168'>1</a>
+<span>
+1. check : removed call to java/util/Map::forEach &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            raw.forEach((name, test) -&#62;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_169'/>
+169
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_169'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    tests.add(TestCase.resolve(decision.expression(), name, test.values(), test.expected())));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_170'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            TestSetEvaluation evaluation = Mcdc.evaluate(decision.expression(), mcdc, tests);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_171'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            entries.add(new CheckReport.Entry(decision, evaluation));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_172'/>
+172
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_172'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_173'/>
+173
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_173'>1</a>
+<span>
+1. check : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String report = options.format().equals(&#34;json&#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_174'/>
+174
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_174'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                ? CheckReport.json(set.system(), mcdc, entries)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_175'/>
+175
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_175'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                : CheckReport.text(entries);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_176'/>
+176
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_176'>1</a>
+<span>
+1. check : removed call to io/github/rvdomingos/mcdc/cli/Main::write &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        write(report, options.output());</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_177'/>
+177
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_177'>4</a>
+<span>
+1. lambda$check$2 : replaced boolean return with true for io/github/rvdomingos/mcdc/cli/Main::lambda$check$2 &rarr; KILLED<br/>
+2. check : replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::check &rarr; KILLED<br/>
+3. lambda$check$2 : replaced boolean return with false for io/github/rvdomingos/mcdc/cli/Main::lambda$check$2 &rarr; KILLED<br/>
+4. check : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return entries.stream().allMatch(e -&#62; e.evaluation().isComplete()) ? OK : UNCOVERED;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_178'/>
+178
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_178'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_179'/>
+179
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_179'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_180'/>
+180
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_180'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static Options parse(String[] args) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_181'/>
+181
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_181'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String command = args[0];</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_182'/>
+182
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_182'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String expression = null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_183'/>
+183
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_183'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String file = null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_184'/>
+184
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_184'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String json = null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_185'/>
+185
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_185'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String constraint = null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_186'/>
+186
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_186'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String tests = null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_187'/>
+187
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_187'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String format = &#34;text&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_188'/>
+188
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_188'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String output = null;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_189'/>
+189
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_189'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        McdcVariant variant = McdcVariant.MASKING;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_190'/>
+190
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_190'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        boolean z3 = false;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_191'/>
+191
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_191'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        boolean boundary = false;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_192'/>
+192
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_192'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        boolean mutation = false;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_193'/>
+193
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_193'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        boolean exact = false;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_194'/>
+194
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_194'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        boolean direct = false;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_195'/>
+195
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_195'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String context = null;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_196'/>
+196
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_196'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_197'/>
+197
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_197'>2</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 1; i &#60; args.length; i++) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_198'/>
+198
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_198'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            switch (args[i]) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_199'/>
+199
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_199'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;--unique-cause&#34; -&#62; variant = McdcVariant.UNIQUE_CAUSE;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_200'/>
+200
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_200'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;--z3&#34; -&#62; z3 = true;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_201'/>
+201
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_201'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;--boundary&#34; -&#62; boundary = true;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_202'/>
+202
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_202'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;--mutation&#34; -&#62; mutation = true;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_203'/>
+203
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_203'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;--exact&#34; -&#62; exact = true;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_204'/>
+204
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_204'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                case &#34;--direct&#34; -&#62; direct = true;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_205'/>
+205
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_205'>1</a>
+<span>
+1. parse : Changed increment from 1 to -1 &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                case &#34;--context&#34; -&#62; context = valueAfter(args, i++);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_206'/>
+206
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_206'>1</a>
+<span>
+1. parse : Changed increment from 1 to -1 &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                case &#34;--constraint&#34; -&#62; constraint = valueAfter(args, i++);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_207'/>
+207
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_207'>1</a>
+<span>
+1. parse : Changed increment from 1 to -1 &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                case &#34;-f&#34; -&#62; file = valueAfter(args, i++);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_208'/>
+208
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_208'>1</a>
+<span>
+1. parse : Changed increment from 1 to -1 &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                case &#34;--json&#34; -&#62; json = valueAfter(args, i++);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_209'/>
+209
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_209'>1</a>
+<span>
+1. parse : Changed increment from 1 to -1 &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                case &#34;--tests&#34; -&#62; tests = valueAfter(args, i++);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_210'/>
+210
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_210'>1</a>
+<span>
+1. parse : Changed increment from 1 to -1 &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                case &#34;--format&#34; -&#62; format = valueAfter(args, i++);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_211'/>
+211
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_211'>1</a>
+<span>
+1. parse : Changed increment from 1 to -1 &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                case &#34;-o&#34; -&#62; output = valueAfter(args, i++);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_212'/>
+212
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_212'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                default -&#62; {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_213'/>
+213
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_213'>1</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    if (args[i].startsWith(&#34;-&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_214'/>
+214
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_214'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                        throw new IllegalArgumentException(&#34;Op&#231;&#227;o desconhecida: &#34; + args[i]);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_215'/>
+215
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_215'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                    }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_216'/>
+216
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_216'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    expression = args[i];</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_217'/>
+217
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_217'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_218'/>
+218
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_218'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_219'/>
+219
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_219'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_220'/>
+220
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_220'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_221'/>
+221
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_221'>5</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : Replaced integer addition with subtraction &rarr; KILLED<br/>
+3. parse : Replaced integer addition with subtraction &rarr; KILLED<br/>
+4. parse : negated conditional &rarr; KILLED<br/>
+5. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int sources = (expression != null ? 1 : 0) + (file != null ? 1 : 0) + (json != null ? 1 : 0);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_222'/>
+222
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_222'>1</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (sources != 1) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_223'/>
+223
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_223'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;Informe uma &#250;nica fonte: uma express&#227;o, -f &#60;arquivo&#62; ou --json &#60;arquivo&#62;.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_224'/>
+224
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_224'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_225'/>
+225
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_225'>1</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        List&#60;String&#62; formats = command.equals(&#34;analyze&#34;) ? List.of(&#34;text&#34;, &#34;json&#34;, &#34;csv&#34;, &#34;truth-csv&#34;) : List.of(&#34;text&#34;, &#34;json&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_226'/>
+226
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_226'>1</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (!formats.contains(format)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_227'/>
+227
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_227'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;Formato desconhecido para &#34; + command + &#34;: &#34; + format + &#34;. Use &#34; + String.join(&#34;, &#34;, formats) + &#34;.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_228'/>
+228
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_228'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_229'/>
+229
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_229'>1</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (direct) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_230'/>
+230
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_230'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            z3 = true; // o modo direto usa o Z3</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_231'/>
+231
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_231'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_232'/>
+232
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_232'>2</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (boundary &#38;&#38; !z3) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_233'/>
+233
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_233'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;--boundary precisa de --z3.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_234'/>
+234
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_234'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_235'/>
+235
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_235'>3</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+3. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (!command.equals(&#34;analyze&#34;) &#38;&#38; (exact || direct)) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_236'/>
+236
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_236'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;--exact e --direct s&#243; valem para analyze.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_237'/>
+237
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_237'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_238'/>
+238
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_238'>2</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (exact &#38;&#38; direct) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_239'/>
+239
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_239'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;--exact escolhe sobre a tabela inteira; n&#227;o vale com --direct.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_240'/>
+240
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_240'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_241'/>
+241
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_241'>3</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+3. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (direct &#38;&#38; (mutation || format.equals(&#34;truth-csv&#34;))) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_242'/>
+242
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_242'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;--mutation e truth-csv precisam da tabela inteira, que --direct n&#227;o monta.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_243'/>
+243
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_243'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_244'/>
+244
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_244'>2</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (context != null &#38;&#38; !command.equals(&#34;verify&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_245'/>
+245
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_245'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;--context s&#243; vale para verify.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_246'/>
+246
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_246'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_247'/>
+247
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_247'>6</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+3. parse : negated conditional &rarr; KILLED<br/>
+4. parse : negated conditional &rarr; KILLED<br/>
+5. parse : negated conditional &rarr; KILLED<br/>
+6. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (command.equals(&#34;verify&#34;) &#38;&#38; (z3 || boundary || mutation || constraint != null || tests != null)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_248'/>
+248
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_248'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;verify aceita s&#243; a fonte, --context, --format e -o.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_249'/>
+249
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_249'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_250'/>
+250
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_250'>3</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+3. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if ((boundary || mutation) &#38;&#38; command.equals(&#34;check&#34;)) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_251'/>
+251
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_251'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;--boundary e --mutation s&#243; valem para analyze.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_252'/>
+252
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_252'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_253'/>
+253
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_253'>2</a>
+<span>
+1. parse : negated conditional &rarr; SURVIVED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (expression == null &#38;&#38; constraint != null) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_254'/>
+254
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_254'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;--constraint s&#243; vale com uma express&#227;o direta.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_255'/>
+255
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_255'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_256'/>
+256
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_256'>2</a>
+<span>
+1. parse : negated conditional &rarr; KILLED<br/>
+2. parse : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (command.equals(&#34;check&#34;) &#38;&#38; tests == null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_257'/>
+257
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_257'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;check precisa de --tests &#60;arquivo.csv&#62;.&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_258'/>
+258
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_258'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_259'/>
+259
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_259'>1</a>
+<span>
+1. parse : replaced return value with null for io/github/rvdomingos/mcdc/cli/Main::parse &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new Options(command, expression, file, json, constraint, tests, format, output, variant, z3, boundary,</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_260'/>
+260
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_260'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                mutation, exact, direct, context);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_261'/>
+261
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_261'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_262'/>
+262
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_262'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_263'/>
+263
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_263'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static DecisionSet load(Options options) throws IOException {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_264'/>
+264
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_264'>1</a>
+<span>
+1. load : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (options.file() != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_265'/>
+265
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_265'>1</a>
+<span>
+1. load : replaced return value with null for io/github/rvdomingos/mcdc/cli/Main::load &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return RequirementsFile.read(Path.of(options.file()));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_266'/>
+266
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_266'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_267'/>
+267
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_267'>1</a>
+<span>
+1. load : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (options.json() != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_268'/>
+268
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_268'>1</a>
+<span>
+1. load : replaced return value with null for io/github/rvdomingos/mcdc/cli/Main::load &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return Nat2TestJsonReader.read(Path.of(options.json()));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_269'/>
+269
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_269'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_270'/>
+270
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_270'>1</a>
+<span>
+1. load : replaced return value with null for io/github/rvdomingos/mcdc/cli/Main::load &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new DecisionSet(null, List.of(), List.of(RequirementsFile.expression(&#34;REQ&#34;, null, options.expression())));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_271'/>
+271
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_271'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_272'/>
+272
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_272'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_273'/>
+273
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_273'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static void write(String report, String output) throws IOException {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_274'/>
+274
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_274'>1</a>
+<span>
+1. write : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (output == null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_275'/>
+275
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_275'>1</a>
+<span>
+1. write : removed call to java/io/PrintStream::print &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            System.out.print(report);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_276'/>
+276
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_276'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_277'/>
+277
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_277'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            Files.writeString(Path.of(output), report);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_278'/>
+278
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_278'>1</a>
+<span>
+1. write : removed call to java/io/PrintStream::println &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            System.out.println(&#34;Relat&#243;rio gravado em &#34; + output);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_279'/>
+279
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_279'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_280'/>
+280
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_280'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_281'/>
+281
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_281'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_282'/>
+282
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_282'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Valor da op&#231;&#227;o em args[i + 1]. Quem chama avan&#231;a o &#237;ndice com i++. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_283'/>
+283
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_283'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static String valueAfter(String[] args, int i) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_284'/>
+284
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_284'>3</a>
+<span>
+1. valueAfter : negated conditional &rarr; KILLED<br/>
+2. valueAfter : Replaced integer addition with subtraction &rarr; KILLED<br/>
+3. valueAfter : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (i + 1 &#62;= args.length) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_285'/>
+285
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_285'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;Faltou o valor de &#34; + args[i]);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_286'/>
+286
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_286'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_287'/>
+287
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_287'>2</a>
+<span>
+1. valueAfter : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/Main::valueAfter &rarr; KILLED<br/>
+2. valueAfter : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return args[i + 1];</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_288'/>
+288
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_288'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@19503dfa_289'/>
+289
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_289'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_79'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>main<br/><b>Killed by : </b>none</span></span> removed call to java/lang/System::exit &rarr; NO_COVERAGE</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_83'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_84'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::print &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[20],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[20],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[20],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_85'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_90'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_91'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_93'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_96'>96</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_96'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_98'>98</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_98'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:exactSuiteIsSmallerWhenGreedyIsNotMinimal(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_99'>99</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_99'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</span></span> replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_103'>103</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_103'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[147],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[147],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[147],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:rejectsUnknownFormat()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkNeedsTestsAndBoundaryNeedsZ3()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:acceptsOnlyOneInput(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:mutationOutputAndNoGherkin(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:rejectsUnknownFormat()]</span></span> replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_106'>106</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_106'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[162],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[162],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=run,-methodDesc=([Ljava/lang/String;)I],-indexes=[162],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:acceptsOnlyOneInput(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_107'>107</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_107'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>run<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:acceptsOnlyOneInput(java.nio.file.Path)]</span></span> replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::run &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_113'>113</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_113'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>analyze<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>analyze<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_119'>119</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_119'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>analyze<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_122'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>analyze<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:mutationOutputAndNoGherkin(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_123'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>analyze<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:mutationOutputAndNoGherkin(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_137'>137</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_137'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>analyze<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:writesReportToFile(java.nio.file.Path)]</span></span> removed call to io/github/rvdomingos/mcdc/cli/Main::write &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_138'>138</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_138'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>analyze<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</span></span> replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::analyze &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$analyze$0<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</span></span> replaced boolean return with true for io/github/rvdomingos/mcdc/cli/Main::lambda$analyze$0 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>analyze<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>lambda$analyze$0<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> replaced boolean return with false for io/github/rvdomingos/mcdc/cli/Main::lambda$analyze$0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_144'>144</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_144'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>useDirect<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=useDirect,-methodDesc=(Lio/github/rvdomingos/mcdc/cli/Main$Options;Lio/github/rvdomingos/mcdc/core/model/Decision;)Z],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=useDirect,-methodDesc=(Lio/github/rvdomingos/mcdc/cli/Main$Options;Lio/github/rvdomingos/mcdc/core/model/Decision;)Z],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=useDirect,-methodDesc=(Lio/github/rvdomingos/mcdc/cli/Main$Options;Lio/github/rvdomingos/mcdc/core/model/Decision;)Z],-indexes=[21],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#1]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#3]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:concreteValuesRealizeEveryTest(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#2]</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>useDirect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>useDirect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>useDirect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>useDirect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</span></span> Replaced Shift Left with Shift Right &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>useDirect<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> replaced boolean return with true for io/github/rvdomingos/mcdc/cli/Main::useDirect &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_148'>148</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_148'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>verify<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_150'>150</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_150'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>verify<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_153'>153</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_153'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>verify<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> removed call to io/github/rvdomingos/mcdc/cli/Main::write &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_154'>154</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_154'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>verify<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_159'>159</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_159'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>check<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>check<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>check<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=check,-methodDesc=(Lio/github/rvdomingos/mcdc/cli/Main$Options;Lio/github/rvdomingos/mcdc/core/model/DecisionSet;Lio/github/rvdomingos/mcdc/core/McdcOptions;)I],-indexes=[14],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=check,-methodDesc=(Lio/github/rvdomingos/mcdc/cli/Main$Options;Lio/github/rvdomingos/mcdc/core/model/DecisionSet;Lio/github/rvdomingos/mcdc/core/McdcOptions;)I],-indexes=[14],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=check,-methodDesc=(Lio/github/rvdomingos/mcdc/cli/Main$Options;Lio/github/rvdomingos/mcdc/core/model/DecisionSet;Lio/github/rvdomingos/mcdc/core/McdcOptions;)I],-indexes=[14],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkTextSaysWhatIsMissing(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkJsonMatchesTheEvaluation(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_164'>164</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_164'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>check<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_168'>168</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_168'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>check<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> removed call to java/util/Map::forEach &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_173'>173</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_173'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>check<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkTextSaysWhatIsMissing(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_176'>176</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_176'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>check<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkTextSaysWhatIsMissing(java.nio.file.Path)]</span></span> removed call to io/github/rvdomingos/mcdc/cli/Main::write &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_177'>177</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_177'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$check$2<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> replaced boolean return with true for io/github/rvdomingos/mcdc/cli/Main::lambda$check$2 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>check<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> replaced int return with 0 for io/github/rvdomingos/mcdc/cli/Main::check &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>lambda$check$2<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> replaced boolean return with false for io/github/rvdomingos/mcdc/cli/Main::lambda$check$2 &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>check<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_197'>197</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_197'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:rejectsUnknownFormat()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_205'>205</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_205'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_206'>206</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_206'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_207'>207</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_207'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_208'>208</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_208'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_209'>209</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_209'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_210'>210</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_210'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_211'>211</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_211'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_213'>213</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_213'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_221'>221</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_221'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</span></span> Replaced integer addition with subtraction &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</span></span> Replaced integer addition with subtraction &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_222'>222</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_222'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_225'>225</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_225'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:writesReportToFile(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_226'>226</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_226'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:rejectsUnknownFormat()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_229'>229</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_229'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkNeedsTestsAndBoundaryNeedsZ3()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_232'>232</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_232'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkNeedsTestsAndBoundaryNeedsZ3()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkNeedsTestsAndBoundaryNeedsZ3()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_235'>235</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_235'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:exactSuiteIsSmallerWhenGreedyIsNotMinimal(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_238'>238</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_238'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:exactSuiteIsSmallerWhenGreedyIsNotMinimal(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_241'>241</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_241'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:writesReportToFile(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_244'>244</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_244'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_247'>247</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_247'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_250'>250</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_250'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:mutationOutputAndNoGherkin(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_253'>253</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_253'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=parse,-methodDesc=([Ljava/lang/String;)Lio/github/rvdomingos/mcdc/cli/Main$Options;],-indexes=[558],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=parse,-methodDesc=([Ljava/lang/String;)Lio/github/rvdomingos/mcdc/cli/Main$Options;],-indexes=[558],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=parse,-methodDesc=([Ljava/lang/String;)Lio/github/rvdomingos/mcdc/cli/Main$Options;],-indexes=[558],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkNeedsTestsAndBoundaryNeedsZ3()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:acceptsOnlyOneInput(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:writesReportToFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:exactSuiteIsSmallerWhenGreedyIsNotMinimal(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:mutationOutputAndNoGherkin(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkTextSaysWhatIsMissing(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkJsonMatchesTheEvaluation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:jsonDescribesEveryInputAndTheMutationScore(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:verifyTextShowsTheConflictAndTheGap(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#1]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#3]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:concreteValuesRealizeEveryTest(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#2]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_256'>256</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_256'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkNeedsTestsAndBoundaryNeedsZ3()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkNeedsTestsAndBoundaryNeedsZ3()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_259'>259</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_259'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>parse<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:acceptsOnlyOneInput(java.nio.file.Path)]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/cli/Main::parse &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_264'>264</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_264'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>load<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:acceptsOnlyOneInput(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_265'>265</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_265'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>load<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/cli/Main::load &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_267'>267</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_267'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>load<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:acceptsOnlyOneInput(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_268'>268</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_268'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>load<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/cli/Main::load &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_270'>270</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_270'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>load<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> replaced return value with null for io/github/rvdomingos/mcdc/cli/Main::load &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_274'>274</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_274'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>write<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_275'>275</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_275'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>write<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::print &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=write,-methodDesc=(Ljava/lang/String;Ljava/lang/String;)V],-indexes=[9],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=write,-methodDesc=(Ljava/lang/String;Ljava/lang/String;)V],-indexes=[9],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=write,-methodDesc=(Ljava/lang/String;Ljava/lang/String;)V],-indexes=[9],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_278'>278</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_278'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>write<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=write,-methodDesc=(Ljava/lang/String;Ljava/lang/String;)V],-indexes=[28],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=write,-methodDesc=(Ljava/lang/String;Ljava/lang/String;)V],-indexes=[28],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.Main,-method=write,-methodDesc=(Ljava/lang/String;Ljava/lang/String;)V],-indexes=[28],-mutator=org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:writesReportToFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:exactSuiteIsSmallerWhenGreedyIsNotMinimal(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:mutationOutputAndNoGherkin(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkTextSaysWhatIsMissing(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkJsonMatchesTheEvaluation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:jsonDescribesEveryInputAndTheMutationScore(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:verifyTextShowsTheConflictAndTheGap(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#1]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#3]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:concreteValuesRealizeEveryTest(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#2]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_284'>284</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_284'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>valueAfter<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> negated conditional &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>valueAfter<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>valueAfter<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@19503dfa_287'>287</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@19503dfa_287'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>valueAfter<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/Main::valueAfter &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>valueAfter<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:verifyFindsConflictsAndGaps(java.nio.file.Path)] (54 ms)</li><li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:verifyTextShowsTheConflictAndTheGap(java.nio.file.Path)] (30 ms)</li><li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#1] (348 ms)</li><li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#3] (530 ms)</li><li>io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.RequirementsRegressionTest]/[test-template:resultsOfEachSystem(java.lang.String, int, int, int, int, int, int, int, int, int, int, int, java.nio.file.Path)]/[test-template-invocation:#2] (1071 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:mutationOutputAndNoGherkin(java.nio.file.Path)] (30 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)] (238 ms)</li><li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:jsonDescribesEveryInputAndTheMutationScore(java.nio.file.Path)] (3 ms)</li><li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)] (32 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()] (0 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:writesReportToFile(java.nio.file.Path)] (2 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:exactSuiteIsSmallerWhenGreedyIsNotMinimal(java.nio.file.Path)] (15 ms)</li><li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:concreteValuesRealizeEveryTest(java.nio.file.Path)] (807 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:rejectsUnknownFormat()] (0 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkNeedsTestsAndBoundaryNeedsZ3()] (0 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:acceptsOnlyOneInput(java.nio.file.Path)] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:invalidInputReturnsOne()] (0 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:checkMeasuresExistingTests(java.nio.file.Path)] (3 ms)</li><li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkTextSaysWhatIsMissing(java.nio.file.Path)] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:checkJsonMatchesTheEvaluation(java.nio.file.Path)] (3 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.30.2 <a href='https://github.com/sponsors/hcoles'>support</a>
+
+</body>
+</html>

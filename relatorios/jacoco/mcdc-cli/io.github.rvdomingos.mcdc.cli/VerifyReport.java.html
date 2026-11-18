@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>VerifyReport.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">MC/DC Command Line</a> &gt; <a href="../index.html" class="el_bundle">mcdc-cli</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.cli</a> &gt; <span class="el_source">VerifyReport.java</span></div><h1>VerifyReport.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.cli;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.rvdomingos.mcdc.core.model.Decision;
+import io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifier.Conflict;
+import io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifier.Overlap;
+import io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifier.Result;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+/** Relatório do {@code mcdc verify}: conflitos, sobreposições compatíveis e lacunas. */
+final class VerifyReport {
+
+<span class="fc" id="L17">    private static final ObjectMapper MAPPER = new ObjectMapper();</span>
+
+    /** Sobreposições compatíveis listadas no texto; o JSON traz todas. */
+    static final int MAX_COMPATIBLE_SHOWN = 10;
+
+    private VerifyReport() {
+    }
+
+    static String text(String system, String context, Result result) {
+<span class="fc" id="L26">        var sb = new StringBuilder();</span>
+<span class="fc" id="L27">        sb.append(&quot;Verificação entre requisitos&quot;);</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        if (system != null) {</span>
+<span class="fc" id="L29">            sb.append(&quot;: &quot;).append(system);</span>
+        }
+<span class="fc" id="L31">        sb.append('\n').append(result.decisions()).append(&quot; decisões, &quot;).append(result.pairsChecked())</span>
+<span class="fc" id="L32">                .append(&quot; pares que escrevem alguma variável em comum\n\n&quot;);</span>
+
+<span class="fc" id="L34">        List&lt;Overlap&gt; conflicts = result.conflicts();</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        sb.append(&quot;Conflitos: &quot;).append(conflicts.isEmpty() ? &quot;nenhum&quot; : conflicts.size()).append('\n');</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (Overlap o : conflicts) {</span>
+<span class="fc" id="L37">            sb.append(&quot;  &quot;).append(name(o.first())).append(&quot; × &quot;).append(name(o.second()))</span>
+<span class="fc" id="L38">                    .append(&quot;: as duas guardas valem no mesmo passo\n&quot;);</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">            for (Conflict c : o.conflicts()) {</span>
+<span class="fc" id="L40">                sb.append(&quot;    &quot;).append(c.variable()).append(&quot;: &quot;).append(c.firstValue()).append(&quot; (&quot;)</span>
+<span class="fc" id="L41">                        .append(name(o.first())).append(&quot;) × &quot;).append(c.secondValue()).append(&quot; (&quot;)</span>
+<span class="fc" id="L42">                        .append(name(o.second())).append(&quot;)\n&quot;);</span>
+<span class="fc" id="L43">            }</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">            if (!o.witness().isEmpty()) {</span>
+<span class="fc" id="L45">                sb.append(&quot;    exemplo: &quot;).append(values(o.witness())).append('\n');</span>
+            }
+<span class="fc" id="L47">        }</span>
+
+<span class="fc" id="L49">        List&lt;Overlap&gt; compatible = result.compatible();</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">        sb.append(&quot;\nSobreposições sem conflito: &quot;).append(compatible.isEmpty() ? &quot;nenhuma&quot; : compatible.size()).append('\n');</span>
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        for (Overlap o : compatible.subList(0, Math.min(compatible.size(), MAX_COMPATIBLE_SHOWN))) {</span>
+<span class="nc" id="L52">            sb.append(&quot;  &quot;).append(name(o.first())).append(&quot; × &quot;).append(name(o.second()))</span>
+<span class="nc" id="L53">                    .append(&quot;: mesmo valor em &quot;).append(String.join(&quot;, &quot;, o.shared())).append('\n');</span>
+<span class="nc" id="L54">        }</span>
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">        if (compatible.size() &gt; MAX_COMPATIBLE_SHOWN) {</span>
+<span class="nc" id="L56">            sb.append(&quot;  ... e mais &quot;).append(compatible.size() - MAX_COMPATIBLE_SHOWN)</span>
+<span class="nc" id="L57">                    .append(&quot; (lista completa com --format json)\n&quot;);</span>
+        }
+
+<span class="fc" id="L60">        sb.append(&quot;\nLacunas: &quot;);</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        if (!result.gapChecked()) {</span>
+<span class="nc" id="L62">            sb.append(&quot;não conferidas (use --context \&quot;&lt;expressão&gt;\&quot; para dizer em que situação alguma guarda deve valer)\n&quot;);</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        } else if (result.gap() == null) {</span>
+<span class="fc" id="L64">            sb.append(&quot;nenhuma: sob &quot;).append(context).append(&quot;, sempre alguma guarda vale\n&quot;);</span>
+        } else {
+<span class="fc" id="L66">            sb.append(&quot;encontrada: sob &quot;).append(context).append(&quot;, nenhuma guarda vale em\n    &quot;)</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">                    .append(result.gap().isEmpty() ? &quot;(o Z3 não deu valores)&quot; : values(result.gap())).append('\n');</span>
+        }
+<span class="fc" id="L69">        return sb.toString();</span>
+    }
+
+    static String json(String system, String context, Result result) {
+<span class="fc" id="L73">        Map&lt;String, Object&gt; root = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L74">        root.put(&quot;tool&quot;, &quot;mcdc&quot;);</span>
+<span class="fc" id="L75">        root.put(&quot;check&quot;, &quot;verify&quot;);</span>
+<span class="fc" id="L76">        root.put(&quot;system&quot;, system);</span>
+<span class="fc" id="L77">        root.put(&quot;decisions&quot;, result.decisions());</span>
+<span class="fc" id="L78">        root.put(&quot;pairsChecked&quot;, result.pairsChecked());</span>
+<span class="fc" id="L79">        root.put(&quot;conflicts&quot;, result.conflicts().stream().map(VerifyReport::overlap).toList());</span>
+<span class="fc" id="L80">        root.put(&quot;compatibleOverlaps&quot;, result.compatible().stream().map(VerifyReport::overlap).toList());</span>
+<span class="fc" id="L81">        Map&lt;String, Object&gt; gaps = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L82">        gaps.put(&quot;checked&quot;, result.gapChecked());</span>
+<span class="fc" id="L83">        gaps.put(&quot;context&quot;, context);</span>
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">        gaps.put(&quot;found&quot;, result.gap() != null);</span>
+<span class="fc" id="L85">        gaps.put(&quot;witness&quot;, result.gap());</span>
+<span class="fc" id="L86">        root.put(&quot;gaps&quot;, gaps);</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        root.put(&quot;ok&quot;, !result.hasProblems());</span>
+        try {
+<span class="fc" id="L89">            return MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(root) + &quot;\n&quot;;</span>
+<span class="nc" id="L90">        } catch (JsonProcessingException e) {</span>
+<span class="nc" id="L91">            throw new IllegalStateException(&quot;Falha ao gerar o JSON&quot;, e);</span>
+        }
+    }
+
+    private static Map&lt;String, Object&gt; overlap(Overlap o) {
+<span class="fc" id="L96">        Map&lt;String, Object&gt; node = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L97">        node.put(&quot;first&quot;, o.first().id());</span>
+<span class="fc" id="L98">        node.put(&quot;firstRequirement&quot;, o.first().requirement());</span>
+<span class="fc" id="L99">        node.put(&quot;second&quot;, o.second().id());</span>
+<span class="fc" id="L100">        node.put(&quot;secondRequirement&quot;, o.second().requirement());</span>
+<span class="fc" id="L101">        node.put(&quot;sharedVariables&quot;, o.shared());</span>
+<span class="fc" id="L102">        node.put(&quot;conflicts&quot;, o.conflicts().stream().map(c -&gt; {</span>
+<span class="fc" id="L103">            Map&lt;String, Object&gt; item = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L104">            item.put(&quot;variable&quot;, c.variable());</span>
+<span class="fc" id="L105">            item.put(&quot;first&quot;, c.firstValue());</span>
+<span class="fc" id="L106">            item.put(&quot;second&quot;, c.secondValue());</span>
+<span class="fc" id="L107">            return item;</span>
+<span class="fc" id="L108">        }).toList());</span>
+<span class="fc" id="L109">        node.put(&quot;witness&quot;, o.witness());</span>
+<span class="fc" id="L110">        return node;</span>
+    }
+
+    private static String name(Decision decision) {
+<span class="pc bpc" id="L114" title="1 of 2 branches missed.">        return decision.requirement() != null ? decision.requirement() : decision.id();</span>
+    }
+
+    private static String values(Map&lt;String, String&gt; values) {
+<span class="fc" id="L118">        return values.entrySet().stream().map(e -&gt; e.getKey() + &quot; = &quot; + e.getValue()).collect(Collectors.joining(&quot;, &quot;));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

@@ -1,0 +1,2974 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>TextReport.java</h1>
+
+<table class="src">
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package io.github.rvdomingos.mcdc.cli;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.BoundaryTest;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.DecisionAnalysis;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.IndependencePair;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.IndependencePairs;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.McdcReport;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.McdcVariant;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.TestVector;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.UncoveredCondition;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.Decision;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.model.ExprText;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import io.github.rvdomingos.mcdc.core.mutation.MutationReport;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Locale;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Map;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.stream.Collectors;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/** Relat&#243;rio em texto para o terminal. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>final class TextReport {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static final int MAX_PAIRS_SHOWN = 6;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Acima disso a tabela n&#227;o &#233; impressa no texto; o JSON traz at&#233; JsonReport.MAX_TABLE_ROWS linhas. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final int MAX_TABLE_ROWS_SHOWN = 64;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    private TextReport() {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Relat&#243;rios de todas as decis&#245;es, separados por uma linha em branco. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String format(List&#60;DecisionAnalysis&#62; analyses, String constraint) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_32'/>
+32
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_32'>1</a>
+<span>
+1. format : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::format &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return analyses.stream()</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_33'/>
+33
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_33'>1</a>
+<span>
+1. lambda$format$0 : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::lambda$format$0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                .map(analysis -&#62; format(analysis, constraint))</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                .collect(Collectors.joining(&#34;\n&#34;));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String format(DecisionAnalysis analysis, String constraint) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        Decision decision = analysis.decision();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        McdcReport report = analysis.report();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        var sb = new StringBuilder();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        sb.append(&#34;Decis&#227;o:   &#34;).append(decision.id()).append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_42'/>
+42
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_42'>2</a>
+<span>
+1. format : negated conditional &rarr; SURVIVED<br/>
+2. format : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (decision.requirement() != null &#38;&#38; !decision.requirement().equals(decision.id())) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;Requisito: &#34;).append(decision.requirement()).append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        sb.append(&#34;Guarda:    &#34;).append(decision.text()).append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_46'/>
+46
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_46'>1</a>
+<span>
+1. format : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (!decision.actions().isEmpty()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            sb.append(&#34;A&#231;&#245;es:     &#34;).append(String.join(&#34;; &#34;, decision.actions())).append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_49'/>
+49
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_49'>1</a>
+<span>
+1. format : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (constraint != null) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            sb.append(&#34;Restri&#231;&#227;o: &#34;).append(constraint).append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        sb.append(&#34;Variante:  &#34;).append(variantName(report.options().variant())).append(&#34;\n\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_54'/>
+54
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_54'>2</a>
+<span>
+1. format : changed conditional boundary &rarr; SURVIVED<br/>
+2. format : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (report.table().conditions().size() &#62; report.table().inputs().size()) {</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            // alguma entrada aparece mais de uma vez: cada ocorr&#234;ncia &#233; uma condi&#231;&#227;o com par pr&#243;prio</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;Condi&#231;&#245;es: &#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_57'/>
+57
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_57'>1</a>
+<span>
+1. lambda$format$1 : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::lambda$format$1 &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    .append(String.join(&#34;, &#34;, report.table().conditions().stream().map(c -&#62; c.label()).toList()))</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(&#34;\n\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        int rows = report.table().rows().size();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_61'/>
+61
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_61'>1</a>
+<span>
+1. format : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (!report.table().isFull()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;Tabela verdade: n&#227;o montada (modo direto: os pares foram pedidos ao Z3; &#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(report.table().combinations()).append(&#34; combina&#231;&#245;es)\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_64'/>
+64
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_64'>2</a>
+<span>
+1. format : changed conditional boundary &rarr; SURVIVED<br/>
+2. format : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        } else if (rows &#60;= MAX_TABLE_ROWS_SHOWN) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(report.table().format());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            long feasible = report.table().rows().stream().filter(TestVector::feasible).count();</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            sb.append(&#34;Tabela verdade: &#34;).append(rows).append(&#34; linhas, &#34;).append(feasible)</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .append(&#34; poss&#237;veis (grande demais para o texto; use --format json at&#233; &#34;)</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    .append(JsonReport.MAX_TABLE_ROWS).append(&#34; linhas)\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        sb.append(&#34;\nPares de independ&#234;ncia:\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_74'/>
+74
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_74'>1</a>
+<span>
+1. format : removed call to java/util/Map::forEach &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        report.pairs().forEach((condition, pairs) -&#62;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                sb.append(&#34;  &#34;).append(condition).append(&#34;: &#34;).append(describe(pairs)).append(&#39;\n&#39;));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        sb.append(&#34;\n&#34;).append(switch (report.suiteMethod()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case GREEDY -&#62; &#34;Su&#237;te m&#237;nima&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            case EXACT -&#62; &#34;Su&#237;te m&#237;nima, exata (Z3)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case DIRECT -&#62; &#34;Su&#237;te do modo direto&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }).append(&#34; (&#34;).append(report.minimalSuite().size()).append(&#34; testes):\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (TestVector vector : report.minimalSuite()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;  &#34;).append(vector.name())</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(&#34;  &#34;).append(vector.bits())</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_85'/>
+85
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_85'>1</a>
+<span>
+1. format : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    .append(&#34;  -&#62; &#34;).append(vector.outcome() ? &#34;T&#34; : &#34;F&#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(&#34;   demonstra &#34;).append(String.join(&#34;, &#34;, report.demonstratedBy(vector)));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_87'/>
+87
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_87'>1</a>
+<span>
+1. format : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (!vector.assignment().isEmpty()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                sb.append(&#34;   [&#34;).append(assignment(vector)).append(&#39;]&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_93'/>
+93
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_93'>1</a>
+<span>
+1. format : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (!analysis.boundaryTests().isEmpty()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;\nTestes de fronteira (&#34;).append(analysis.boundaryTests().size()).append(&#34;):\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            for (BoundaryTest b : analysis.boundaryTests()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                sb.append(&#34;  &#34;).append(b.baseVector()).append(&#34; com &#34;).append(b.boundary())</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                        .append(&#34;   [&#34;).append(assignment(b.assignment())).append(&#34;]\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_101'/>
+101
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_101'>1</a>
+<span>
+1. format : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (analysis.mutation() != null) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            MutationReport mutation = analysis.mutation();</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;\nValida&#231;&#227;o por muta&#231;&#227;o: &#34;).append(String.format(Locale.ROOT, &#34;%.1f&#34;, mutation.score()).replace(&#39;.&#39;, &#39;,&#39;))</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(&#34;% das falhas detect&#225;veis foram detectadas\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_105'/>
+105
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_105'>1</a>
+<span>
+1. format : removed call to java/util/Map::forEach &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            mutation.byFault().forEach((fault, s) -&#62; sb.append(&#34;  &#34;).append(fault.description()).append(&#34; (&#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(fault).append(&#34;): &#34;).append(s.killed()).append(&#34; de &#34;).append(s.detectable())</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_107'/>
+107
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_107'>2</a>
+<span>
+1. lambda$format$3 : changed conditional boundary &rarr; SURVIVED<br/>
+2. lambda$format$3 : negated conditional &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    .append(s.equivalent() &#62; 0 ? &#34; (+&#34; + s.equivalent() + &#34; equivalentes)&#34; : &#34;&#34;).append(&#39;\n&#39;));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            for (MutationReport.Result r : mutation.survivors()) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                sb.append(&#34;  n&#227;o detectada: &#34;).append(r.mutant().fault()).append(&#39; &#39;)</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                        .append(ExprText.format(r.mutant().expression())).append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_114'/>
+114
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_114'>1</a>
+<span>
+1. format : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (!report.chosenPairs().isEmpty()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;\nDemonstra&#231;&#227;o por condi&#231;&#227;o:\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_116'/>
+116
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_116'>1</a>
+<span>
+1. format : removed call to java/util/Map::forEach &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            report.chosenPairs().forEach((condition, pair) -&#62; sb.append(&#34;  &#34;).append(condition).append(&#34;: &#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(pair.whenTrue().name()).append(&#34; (T) e &#34;).append(pair.whenFalse().name()).append(&#34; (F)&#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_118'/>
+118
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_118'>1</a>
+<span>
+1. lambda$format$4 : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    .append(pair.isUniqueCause() ? &#34;, s&#243; ela muda&#34; : &#34;, outras mascaradas&#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(&#39;\n&#39;));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        sb.append(&#34;\nCobertura MC/DC: &#34;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_123'/>
+123
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_123'>1</a>
+<span>
+1. format : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (report.isComplete()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;completa\n&#34;);</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            sb.append(&#34;incompleta, sem par para &#34;)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(String.join(&#34;, &#34;, report.uncoveredConditions()))</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    .append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            for (UncoveredCondition u : report.uncovered()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                sb.append(&#34;  &#34;).append(u.condition()).append(&#34;: &#34;).append(explain(u)).append(&#39;\n&#39;);</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_133'/>
+133
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_133'>1</a>
+<span>
+1. format : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::format &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return sb.toString();</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** Valores concretos vindos do Z3, ex.: &#34;speed = 101, rain = true&#34;. */</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String assignment(TestVector vector) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_138'/>
+138
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_138'>1</a>
+<span>
+1. assignment : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::assignment &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return assignment(vector.assignment());</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_139'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String assignment(Map&#60;String, String&#62; values) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_142'/>
+142
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_142'>1</a>
+<span>
+1. assignment : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::assignment &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return values.entrySet().stream()</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_143'/>
+143
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_143'>1</a>
+<span>
+1. lambda$assignment$5 : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::lambda$assignment$5 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                .map(e -&#62; e.getKey() + &#34; = &#34; + e.getValue())</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                .collect(Collectors.joining(&#34;, &#34;));</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String explain(UncoveredCondition u) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_148'/>
+148
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_148'>1</a>
+<span>
+1. explain : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::explain &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return switch (u.reason()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case REDUNDANT -&#62; &#34;redundante: n&#227;o muda o resultado em nenhuma combina&#231;&#227;o; o requisito pode ser simplificado&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_150'/>
+150
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_150'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            case INFEASIBLE -&#62; &#34;bloqueada pelas restri&#231;&#245;es: os pares &#34; + describe(u.blockedPairs()) + &#34; usam linhas imposs&#237;veis&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_153'/>
+153
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_153'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_154'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static String describe(List&#60;IndependencePair&#62; pairs) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_155'/>
+155
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_155'>1</a>
+<span>
+1. describe : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (pairs.isEmpty()) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_156'/>
+156
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_156'>1</a>
+<span>
+1. describe : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::describe &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            return &#34;nenhum par&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_158'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String shown = pairs.stream()</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                .limit(MAX_PAIRS_SHOWN)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_160'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                .map(IndependencePair::toString)</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_161'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                .collect(Collectors.joining(&#34;, &#34;));</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_162'/>
+162
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_162'>2</a>
+<span>
+1. describe : negated conditional &rarr; SURVIVED<br/>
+2. describe : changed conditional boundary &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        String total = pairs.size() &#62;= IndependencePairs.MAX_PAIRS_PER_CONDITION</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                ? IndependencePairs.MAX_PAIRS_PER_CONDITION + &#34;+ pares&#34;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_164'/>
+164
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_164'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                : pairs.size() + &#34; pares&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_165'/>
+165
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_165'>3</a>
+<span>
+1. describe : changed conditional boundary &rarr; SURVIVED<br/>
+2. describe : negated conditional &rarr; SURVIVED<br/>
+3. describe : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::describe &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return pairs.size() &#60;= MAX_PAIRS_SHOWN ? shown : shown + &#34;, ... (&#34; + total + &#34;)&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_166'/>
+166
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_166'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_167'/>
+167
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_167'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_168'/>
+168
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_168'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static String variantName(McdcVariant variant) {</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_169'/>
+169
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_169'>1</a>
+<span>
+1. variantName : replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::variantName &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return switch (variant) {</span></pre></td></tr>
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_170'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>            case UNIQUE_CAUSE -&#62; &#34;causa &#250;nica&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_171'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            case MASKING -&#62; &#34;mascaramento&#34;;</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_172'/>
+172
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_172'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        };</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_173'/>
+173
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_173'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@25417242_174'/>
+174
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@25417242_174'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_32'>32</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_32'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::format &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_33'>33</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_33'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$format$0<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::lambda$format$0 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_42'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[38],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[38],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[38],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_46'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[67],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[67],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[67],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_49'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[85],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[85],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[85],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_54'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[120],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[120],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[120],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>format<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[120],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[120],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[120],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_57'>57</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_57'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$format$1<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::lambda$format$1 &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$1,-methodDesc=(Lio/github/rvdomingos/mcdc/core/Condition;)Ljava/lang/String;],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$1,-methodDesc=(Lio/github/rvdomingos/mcdc/core/Condition;)Ljava/lang/String;],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$1,-methodDesc=(Lio/github/rvdomingos/mcdc/core/Condition;)Ljava/lang/String;],-indexes=[5],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_61'>61</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_61'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_64'>64</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_64'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[177],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[177],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[177],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_74'>74</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_74'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> removed call to java/util/Map::forEach &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_85'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[318],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[318],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[318],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_87'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[343],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[343],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=format,-methodDesc=(Lio/github/rvdomingos/mcdc/core/DecisionAnalysis;Ljava/lang/String;)Ljava/lang/String;],-indexes=[343],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_93'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_101'>101</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_101'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_105'>105</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_105'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> removed call to java/util/Map::forEach &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_107'>107</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_107'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$format$3<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$3,-methodDesc=(Ljava/lang/StringBuilder;Lio/github/rvdomingos/mcdc/core/mutation/FaultClass;Lio/github/rvdomingos/mcdc/core/mutation/MutationReport$Summary;)V],-indexes=[29],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$3,-methodDesc=(Ljava/lang/StringBuilder;Lio/github/rvdomingos/mcdc/core/mutation/FaultClass;Lio/github/rvdomingos/mcdc/core/mutation/MutationReport$Summary;)V],-indexes=[29],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$3,-methodDesc=(Ljava/lang/StringBuilder;Lio/github/rvdomingos/mcdc/core/mutation/FaultClass;Lio/github/rvdomingos/mcdc/core/mutation/MutationReport$Summary;)V],-indexes=[29],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$format$3<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$3,-methodDesc=(Ljava/lang/StringBuilder;Lio/github/rvdomingos/mcdc/core/mutation/FaultClass;Lio/github/rvdomingos/mcdc/core/mutation/MutationReport$Summary;)V],-indexes=[29],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$3,-methodDesc=(Ljava/lang/StringBuilder;Lio/github/rvdomingos/mcdc/core/mutation/FaultClass;Lio/github/rvdomingos/mcdc/core/mutation/MutationReport$Summary;)V],-indexes=[29],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=lambda$format$3,-methodDesc=(Ljava/lang/StringBuilder;Lio/github/rvdomingos/mcdc/core/mutation/FaultClass;Lio/github/rvdomingos/mcdc/core/mutation/MutationReport$Summary;)V],-indexes=[29],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_114'>114</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_114'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> removed call to java/util/Map::forEach &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_118'>118</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_118'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$format$4<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_123'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_133'>133</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_133'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>format<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::format &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_138'>138</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_138'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>assignment<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:concreteValuesRealizeEveryTest(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::assignment &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_142'>142</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_142'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>assignment<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:concreteValuesRealizeEveryTest(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::assignment &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_143'>143</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_143'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$assignment$5<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:concreteValuesRealizeEveryTest(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::lambda$assignment$5 &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_148'>148</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_148'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>explain<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::explain &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=explain,-methodDesc=(Lio/github/rvdomingos/mcdc/core/UncoveredCondition;)Ljava/lang/String;],-indexes=[32],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=explain,-methodDesc=(Lio/github/rvdomingos/mcdc/core/UncoveredCondition;)Ljava/lang/String;],-indexes=[32],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=explain,-methodDesc=(Lio/github/rvdomingos/mcdc/core/UncoveredCondition;)Ljava/lang/String;],-indexes=[32],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_155'>155</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_155'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>describe<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> negated conditional &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_156'>156</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_156'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>describe<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::describe &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[9],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[9],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[9],-mutator=org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_162'>162</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_162'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>describe<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>describe<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[35],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_165'>165</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_165'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>describe<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[54],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[54],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[54],-mutator=org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>describe<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::describe &rarr; KILLED</span>
+</div> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>describe<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</span>
+<a title="Click to view covering tests" class="view-covered-by-tests" onClick="document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[54],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display=(document.getElementById('MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[54],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]').style.display == 'block')?'none':'block';">Covering tests</a>
+<div class="covered-tests" id="MutationIdentifier-[location=Location-[clazz=io.github.rvdomingos.mcdc.cli.TextReport,-method=describe,-methodDesc=(Ljava/util/List;)Ljava/lang/String;],-indexes=[54],-mutator=org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator]" style="display:none;">Covered by tests:
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</li> <li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)]</li> 
+</ul>
+</div></div> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@25417242_169'>169</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@25417242_169'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>variantName<br/><b>Killed by : </b>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)]</span></span> replaced return value with &#34;&#34; for io/github/rvdomingos/mcdc/cli/TextReport::variantName &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:completeCoverageReturnsZero()] (0 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsRequirementsFile(java.nio.file.Path)] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:redundantConditionReturnsTwo()] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:readsNat2TestJson(java.nio.file.Path)] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:analysisTextShowsImpossibleRowsBoundaryAndMutation(java.nio.file.Path)] (32 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:largeDecisionsGoToTheDirectModeWithZ3(java.nio.file.Path)] (238 ms)</li><li>io.github.rvdomingos.mcdc.cli.CsvReportTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.CsvReportTest]/[method:quotesCellsWithCommas()] (1 ms)</li><li>io.github.rvdomingos.mcdc.cli.TruthTableCsvReportTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.TruthTableCsvReportTest]/[method:givesEachDecisionItsOwnHeader()] (0 ms)</li><li>io.github.rvdomingos.mcdc.cli.TruthTableCsvReportTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.TruthTableCsvReportTest]/[method:writesEveryRowWithOneColumnPerCondition()] (0 ms)</li><li>io.github.rvdomingos.mcdc.cli.TruthTableCsvReportTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.TruthTableCsvReportTest]/[method:marksImpossibleRows()] (0 ms)</li><li>io.github.rvdomingos.mcdc.cli.CsvReportTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.CsvReportTest]/[method:writesOneLinePerTestAndInput()] (14 ms)</li><li>io.github.rvdomingos.mcdc.cli.MainTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.MainTest]/[method:writesReportToFile(java.nio.file.Path)] (2 ms)</li><li>io.github.rvdomingos.mcdc.cli.ReportsContentTest.[engine:junit-jupiter]/[class:io.github.rvdomingos.mcdc.cli.ReportsContentTest]/[method:concreteValuesRealizeEveryTest(java.nio.file.Path)] (807 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.30.2 <a href='https://github.com/sponsors/hcoles'>support</a>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../jacoco-resources/report.gif" type="image/gif"/><title>SExpr.java</title><link rel="stylesheet" href="../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../index.html" class="el_report">MC/DC Command Line</a> &gt; <a href="../index.html" class="el_bundle">mcdc-z3</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.z3</a> &gt; <span class="el_source">SExpr.java</span></div><h1>SExpr.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.z3;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/** Leitor mínimo das respostas do Z3: átomos viram String, listas viram List. */
+final class SExpr {
+
+    private final String text;
+    private int pos;
+
+<span class="fc" id="L12">    private SExpr(String text) {</span>
+<span class="fc" id="L13">        this.text = text;</span>
+<span class="fc" id="L14">    }</span>
+
+    /** Todas as expressões da saída, na ordem: &quot;sat&quot;, &quot;unsat&quot;, listas de get-value, erros. */
+    static List&lt;Object&gt; parseAll(String text) {
+<span class="fc" id="L18">        SExpr parser = new SExpr(text);</span>
+<span class="fc" id="L19">        List&lt;Object&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L20">        parser.skipSpaces();</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        while (parser.pos &lt; text.length()) {</span>
+<span class="fc" id="L22">            result.add(parser.next());</span>
+<span class="fc" id="L23">            parser.skipSpaces();</span>
+        }
+<span class="fc" id="L25">        return result;</span>
+    }
+
+    private Object next() {
+<span class="fc" id="L29">        char c = text.charAt(pos);</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (c == '(') {</span>
+<span class="fc" id="L31">            pos++;</span>
+<span class="fc" id="L32">            List&lt;Object&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L33">            skipSpaces();</span>
+<span class="pc bpc" id="L34" title="1 of 4 branches missed.">            while (pos &lt; text.length() &amp;&amp; text.charAt(pos) != ')') {</span>
+<span class="fc" id="L35">                list.add(next());</span>
+<span class="fc" id="L36">                skipSpaces();</span>
+            }
+<span class="fc" id="L38">            pos++; // ')'</span>
+<span class="fc" id="L39">            return list;</span>
+        }
+<span class="fc" id="L41">        int start = pos;</span>
+<span class="fc bfc" id="L42" title="All 4 branches covered.">        if (c == '|' || c == '&quot;') {</span>
+<span class="fc" id="L43">            int end = text.indexOf(c, pos + 1);</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">            pos = end &lt; 0 ? text.length() : end + 1;</span>
+<span class="fc" id="L45">            return text.substring(start, pos);</span>
+        }
+<span class="pc bpc" id="L47" title="1 of 4 branches missed.">        while (pos &lt; text.length() &amp;&amp; !Character.isWhitespace(text.charAt(pos))</span>
+<span class="pc bpc" id="L48" title="1 of 4 branches missed.">                &amp;&amp; text.charAt(pos) != '(' &amp;&amp; text.charAt(pos) != ')') {</span>
+<span class="fc" id="L49">            pos++;</span>
+        }
+<span class="fc" id="L51">        return text.substring(start, pos);</span>
+    }
+
+    private void skipSpaces() {
+<span class="fc bfc" id="L55" title="All 4 branches covered.">        while (pos &lt; text.length() &amp;&amp; Character.isWhitespace(text.charAt(pos))) {</span>
+<span class="fc" id="L56">            pos++;</span>
+        }
+<span class="fc" id="L58">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>
