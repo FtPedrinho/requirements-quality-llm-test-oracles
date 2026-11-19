@@ -1,79 +1,23 @@
-# Experimento 1 - revisão C1 dos requisitos
+# Experimento C1 — alta clareza e consistência pretendida
 
-Esta etapa prepara exclusivamente uma versão **alta clareza e alta consistência (C1)** dos documentos usados na Experimentação 0.
+## Objetivo, condição e metodologia
 
-## Estrutura
+Avaliar uma cópia documental reestruturada para maior clareza, sem alterar guardas ou ações. C1 representa a condição de alta clareza/alta consistência pretendida, mas a consistência semântica integral não foi confirmada: persistem quatro pares de ações potencialmente incompatíveis e uma variável de saída não declarada.
 
-```text
-experimentacao/experimentacao-1/
-├── README.md
-├── requirements/
-│   ├── original/
-│   ├── experimental/
-│   ├── source-hashes.csv
-│   ├── change-log.csv
-│   ├── traceability-matrix.csv
-│   └── review-decisions.md
-└── document-quality-audit.md
-```
+A documentação foi organizada e os 36 requisitos centrais foram formalizados. Há duas trilhas de resultados: análise formal das expressões e suíte Java/PIT da ferramenta; elas não medem o mesmo objeto.
 
-Os arquivos originais não foram modificados. Toda revisão foi aplicada às cópias em `requirements/experimental/`.
+## Métricas do experimento
 
-## Estado atual
+Clareza e consistência foram avaliadas em escala de 1 a 5. A auditoria registra clareza média de 4,06 para o original e 4,97 para C1; a consistência ficou em 4,67 em ambos. Também foram registrados casos Z3, testes JUnit, mutantes mortos/sobreviventes/equivalentes/não avaliáveis. Precision/Recall/F1 da qualidade de oráculos não foram calculados com uma execução independente de LLM.
 
-- 6 documentos duplicados;
-- 36 unidades principais da Experimentação 0 analisadas;
-- 33 textos estruturados JSON padronizados;
-- 42 registros rastreáveis, incluindo três expressões gerais e seis versões auxiliares `.mcdc`;
-- 0 regras funcionais alteradas;
-- 0 contradições resolvidas por suposição;
-- 5 pendências críticas ou documentais restantes.
+## Artefatos essenciais
 
-A classificação C1 não está confirmada porque permanecem incompatibilidades formais e lacunas que exigem evidência ou validação humana.
+- Resultados: [results.md](results.md).
+- Documento C1 adaptado: [documentation/tool-readme-C1.md](documentation/tool-readme-C1.md).
+- Suíte JUnit da ferramenta: [test-suites/exp1/](test-suites/exp1/).
+- Casos e oráculos formais: [oracles/](oracles/) e [test-suites/](test-suites/).
+- Instruções para uso de outra IA: não há execução independente de LLM registrada para a geração de oráculos C1.
 
-## Execução concluida
+## Integridade
 
-- Formalização Z3 dos 36 requisitos centrais;
-- geração independente de 36 oráculos C1;
-- geração de 152 casos simbólicos;
-- análise preliminar de 119 pares MC/DC;
-- Mutation Testing com 981 mutantes;
-- auditoria independente das métricas;
-- análise de sensibilidade às ressalvas TIS/NPP.
-
-## Artefatos principais
-
-- [Protocolo experimental](experiment-protocol.md)
-- [Relatório técnico](experiment-report.md)
-- [Catálogo de oráculos](oracles/oracle-catalog.md)
-- [Catálogo JSON](oracles/oracle-catalog.json)
-- [Casos de teste](test-suites/generated-test-cases.md)
-- [Auditoria de Mutation Testing](mutation-testing/audit/audit-summary.md)
-- [Relatório de métricas](metrics-report.md)
-- [Limitações e validade](limitations-and-validity.md)
-- [Resumo estruturado](results-summary.csv)
-- [Suíte executável C1](test-suites/executable-suite/README.md)
-- [sessão das suítes de teste](test-suite-session.md)
-- [comparação estrutural da documentação](document-structure-comparison.md)
-- [métricas dos oráculos](oracle-metrics.csv)
-- [classificação dos oráculos](oracle-classification.csv)
-- [gabarito dos oráculos](oracle-reference-catalog.csv)
-- [análise das métricas dos oráculos](oracle-metrics-analysis.md)
-
-## Entregáveis concretos adicionados pelo adendo
-
-- [documentação EXP1](documentation/)
-- [avaliação da documentação EXP0](documentation-assessment/exp0-documentation-assessment.md)
-- [avaliação da documentação EXP1](documentation-assessment/exp1-documentation-assessment.md)
-- [comparação documental](documentation-assessment/documentation-comparison.csv)
-- [gabarito independente](oracle-reference/oracle-reference-catalog.csv)
-- [status da geração por LLM](oracle-generation/exp1/status.md)
-- [suíte JUnit EXP1](test-suites/exp1/README.md)
-- [catálogo da suíte EXP1](test-suites/exp1/test-catalog.csv)
-- [rastreabilidade da suíte EXP1](test-suites/exp1/traceability.csv)
-- [resultados da execução EXP1](execution-results/exp1/execution-summary.md)
-- [classificação dos oráculos](oracle-evaluation/oracle-classification.csv)
-- [métricas dos oráculos](oracle-evaluation/oracle-metrics.csv)
-- [comparação de Mutation Testing](mutation-testing/mutation-comparison.md)
-- [análise comparativa final](comparison/exp0-exp1-final-analysis.md)
-- [status do experimento](experiment-status.md)
+A versão C1 é uma cópia experimental; a documentação e o código do sistema principal permanecem inalterados.

@@ -1,24 +1,19 @@
-# Suíte C2 — ferramenta MC/DC
+# Suíte de regressão da ferramenta — C2
 
 ## Objetivo
 
-Executar contra a implementação Java real os mesmos comportamentos testados em C1.
+Esta é a suíte de regressão da ferramenta Java, separada da suíte S1/S2 usada no relatório C2.
 
-## Pré-requisitos
-
-- JDK 21;
-- Maven 3.9.x;
-- Z3 no `PATH`;
-- módulos Maven instalados no repositório local.
-
-## Executar
+## Pré-requisitos e execução
 
 ```powershell
-$env:PATH="C:\Users\User\.copilot\session-state\8457bad6-f839-4d1b-96a8-6cea1a9c9dea\files\tools\z3-4.15.4-x64-win\bin;$env:PATH"
-& "C:\Users\User\.copilot\session-state\8457bad6-f839-4d1b-96a8-6cea1a9c9dea\files\tools\apache-maven-3.9.11\bin\mvn.cmd" "-f" "experimentacao\experimentacao-2\test-suites\exp2\pom.xml" "clean" "test"
+mvn -q -DskipTests -Djacoco.skip=true install
+mvn -f experimentacao\experimentacao-2\test-suites\exp2\pom.xml test
 ```
 
-## Resultado
+Requer JDK 21, Maven 3.9.x, Z3 no `PATH` e módulos instalados localmente.
+
+## Resultado registrado
 
 - testes: 25;
 - aprovados: 25;
@@ -26,6 +21,4 @@ $env:PATH="C:\Users\User\.copilot\session-state\8457bad6-f839-4d1b-96a8-6cea1a9c
 - ignorados: 0;
 - não executáveis: 0.
 
-## Relação com C2
-
-Os testes exercitam os comportamentos da implementação. Eles não são derivados de oráculos gerados por LLM nesta etapa, por ausência de execução externa.
+Estes 25 testes não substituem S1, que preserva os 26 testes originais do experimento C2, nem S2, que contém os complementares.

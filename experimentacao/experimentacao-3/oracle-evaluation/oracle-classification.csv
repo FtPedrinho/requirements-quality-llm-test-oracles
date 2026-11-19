@@ -1,0 +1,20 @@
+behavior_id,behavior_description,s1_classification,s1_evidence_test_ids,s2_classification,s2_evidence_test_ids,s3_classification,s3_evidence_test_ids,fp_assertion_ids,rationale
+B004,no command,FN,,FN,,FN,,,No complete valid oracle identified this reference behavior; partial or disabled cases do not receive credit.
+B005,one source,TP,C3-S1-002;C3-S1-003,FN,,TP,C3-S1-002;C3-S1-003,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B006,unknown option,TP,C3-S1-001,FN,,TP,C3-S1-001,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B011,invalid expression,FN,,FN,,FN,,,The test checks exit code 1 but not the required contextual diagnostic; classified as FN rather than a complete TP.
+B012,.mcdc valid,TP,C3-S1-005;C3-S1-006,FN,,TP,C3-S1-005;C3-S1-006,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B013,.mcdc empty,FN,,FN,,FN,,,No complete valid oracle identified this reference behavior; partial or disabled cases do not receive credit.
+B014,NAT2TEST valid,TP + FP,C3-S1-009;C3-S1-011,FN,,TP + FP,C3-S1-009;C3-S1-011,C3-S1-010,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B015,NAT2TEST invalid,FN,,TP,C3-S2-003,TP,C3-S2-003,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B017,CSV invalid,FN,,FN,,FN,,,No complete valid oracle identified this reference behavior; partial or disabled cases do not receive credit.
+B018,truth table,TP,C3-S1-024,FN,,TP,C3-S1-024,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B020,masking,TP,C3-S1-012,FN,,TP,C3-S1-012,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B021,unique cause,TP,C3-S1-015,FN,,TP,C3-S1-015,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B023,greedy suite,FN,,FN,,FN,,,No complete valid oracle identified this reference behavior; partial or disabled cases do not receive credit.
+B024,exact suite,FN,,FN,,FN,,,No complete valid oracle identified this reference behavior; partial or disabled cases do not receive credit.
+B025,direct mode,TP + FP,C3-S1-017,FN,,TP + FP,C3-S1-017,C3-S1-018,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B026,boundaries,TP,C3-S1-020,FN,,TP,C3-S1-020,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B027,internal mutation,TP,C3-S1-029,FN,,TP,C3-S1-029,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B028,verify conflict,TP,C3-S1-034,FN,,TP,C3-S1-034,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.
+B029,verify gap,TP,C3-S1-036,FN,,TP,C3-S1-036,,One complete independently corroborated assertion is counted at most once; opposing or unsupported variants are handled separately.

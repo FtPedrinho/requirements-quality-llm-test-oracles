@@ -1,22 +1,11 @@
-# Suíte derivada da documentação C2
+# Suítes C2 — original e complementar
 
-Esta suíte foi criada a partir dos oráculos determinados ou suficientemente especificados pela documentação C2.
+O diretório preserva S1 (os 26 testes originais, sem alterações) e S2 (os dez casos complementares). S3 é a execução combinada. Os detalhes e resultados finais estão em [../results.md](../results.md).
 
-Comportamentos ambíguos ou indeterminados não originaram testes.
-
-A execução contém 36 testes registrados: 26 aprovados e 10 erros documentais por não haver informação C2 suficiente.
-
-## Executar
+## Executar a suíte derivada
 
 ```powershell
-$env:PATH="C:\Users\User\.copilot\session-state\8457bad6-f839-4d1b-96a8-6cea1a9c9dea\files\tools\z3-4.15.4-x64-win\bin;$env:PATH"
-& "C:\Users\User\.copilot\session-state\8457bad6-f839-4d1b-96a8-6cea1a9c9dea\files\tools\apache-maven-3.9.11\bin\mvn.cmd" "-f" "experimentacao\experimentacao-2\test-suite\pom.xml" "clean" "test"
+mvn -f experimentacao\experimentacao-2\test-suite\pom.xml test
 ```
 
-## Resultado da execução
-
-- 36 testes executados;
-- 26 aprovados;
-- 0 reprovados;
-- 10 erros documentais;
-- 0 ignorados.
+Os casos indeterminados permanecem registrados, mas não são executados com resultados inventados.

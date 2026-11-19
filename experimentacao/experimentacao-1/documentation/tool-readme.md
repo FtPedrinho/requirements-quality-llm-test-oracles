@@ -132,7 +132,7 @@ vm#1,T1,the_coin_sensor,true,T
 | `csv` | A suíte: uma linha por teste e entrada, com o resultado esperado, o que o teste demonstra e os valores concretos |
 | `truth-csv` | A tabela verdade inteira, com as combinações impossíveis marcadas |
 
-Saídas já geradas para os sistemas de exemplo estão em [exemplos/saidas/](exemplos/saidas/).
+Saídas já geradas para os sistemas de exemplo estão em [exemplos/saidas/](../../../exemplos/saidas/).
 
 ## Exemplos
 
@@ -251,12 +251,12 @@ Publicados no GitHub Pages: **[rvdomingos.github.io/Tool_MCDC_Java/relatorios](h
 
 | Relatório | No navegador | No repositório |
 |---|---|---|
-| Cobertura dos quatro módulos somados (JaCoCo) | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/jacoco/index.html) | [relatorios/jacoco/](relatorios/jacoco/) |
-| Cobertura em planilha | [baixar](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/jacoco/jacoco.csv) | [jacoco.csv](relatorios/jacoco/jacoco.csv) |
-| Mutação do motor (PIT) | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/pit/mcdc-core/index.html) | [relatorios/pit/mcdc-core/](relatorios/pit/mcdc-core/) |
-| Mutação da leitura | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/pit/mcdc-requirements/index.html) | [relatorios/pit/mcdc-requirements/](relatorios/pit/mcdc-requirements/) |
-| Mutação do verificador | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/pit/mcdc-z3/index.html) | [relatorios/pit/mcdc-z3/](relatorios/pit/mcdc-z3/) |
-| Mutação da linha de comando | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/pit/mcdc-cli/index.html) | [relatorios/pit/mcdc-cli/](relatorios/pit/mcdc-cli/) |
+| Cobertura dos quatro módulos somados (JaCoCo) | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/jacoco/index.html) | [relatorios/jacoco/](../../../relatorios/jacoco/) |
+| Cobertura em planilha | [baixar](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/jacoco/jacoco.csv) | [jacoco.csv](../../../relatorios/jacoco/jacoco.csv) |
+| Mutação do motor (PIT) | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/pit/mcdc-core/index.html) | [relatorios/pit/mcdc-core/](../../../relatorios/pit/mcdc-core/) |
+| Mutação da leitura | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/pit/mcdc-requirements/index.html) | [relatorios/pit/mcdc-requirements/](../../../relatorios/pit/mcdc-requirements/) |
+| Mutação do verificador | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/pit/mcdc-z3/index.html) | [relatorios/pit/mcdc-z3/](../../../relatorios/pit/mcdc-z3/) |
+| Mutação da linha de comando | [abrir](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/pit/mcdc-cli/index.html) | [relatorios/pit/mcdc-cli/](../../../relatorios/pit/mcdc-cli/) |
 
 No JaCoCo, cada classe aparece com as linhas em verde (testadas), amarelo (desvio testado só em parte) e vermelho (sem teste). No PIT, cada defeito plantado aparece na linha em que foi plantado, com o teste que o pegou ou a marca de que sobreviveu.
 

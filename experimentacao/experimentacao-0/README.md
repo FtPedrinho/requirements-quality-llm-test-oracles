@@ -1,56 +1,23 @@
-# Experimentação 0 - análise formal e geração de oráculos
+# Experimento C0 — linha de base exploratória
 
-Esta experimentação estabelece uma linha de base para **The Impact of Requirements Quality on LLM-Generated Test Oracles**. Ela utiliza exclusivamente os requisitos originais do dataset, sem manipular clareza ou consistência.
+## Objetivo, condição e metodologia
 
-## Objetivo
+Registrar a linha de base com a documentação original, sem uma manipulação controlada de clareza ou consistência. C0 é exploratório e não corresponde, por si só, a uma célula do desenho fatorial C1–C4.
 
-Investigar em que medida os requisitos originais permitem:
+O processo histórico incluiu formalização de 36 expressões/requisitos com Z3, elaboração de oráculos e casos simbólicos para VM/TIS/NPP, além de uma suíte JUnit separada contra a ferramenta MC/DC. Essas duas trilhas têm sistemas sob teste e unidades de análise diferentes; não devem ser combinadas em um único score.
 
-- formalização verificável por Z3;
-- geração independente de oráculos por uma LLM;
-- derivação de casos de teste estruturados;
-- análise preliminar de MC/DC;
-- identificação de limitações que exigem validação humana.
+## Métricas do experimento
 
-Esta etapa não responde à pergunta principal da pesquisa nem estabelece conclusões causais.
+Para a trilha formal: casos, pares MC/DC, mutantes, equivalentes, sobreviventes e casos não avaliáveis. Para a suíte da ferramenta: execução JUnit e PIT. Não há uma cobertura de requisitos ou uma classificação Precision/Recall/F1 comparável à referência independente de 19 comportamentos usada em C2/C3.
 
-## Sequência obrigatória
+## Artefatos essenciais
 
-1. inventário das fontes normativas;
-2. formalização e análise com Z3;
-3. geração independente de oráculos pelo Copilot;
-4. verificação dos oráculos com Z3;
-5. derivação da suíte e análise MC/DC;
-6. preparação da validação humana.
+- Resultados: [results.md](results.md).
+- Suíte JUnit da ferramenta: [test-suites/exp0/](test-suites/exp0/).
+- Casos/oráculos formais: [oracles/](oracles/) e [test-suites/](test-suites/).
+- Fonte documental: [requisitos originais em exemplos/](../../exemplos/) e [especificação técnica](<../../Especificação Técnica - Ferramenta Dupla MC_DC (Requisitos e Código Java).pdf>). C0 não possui uma versão documental adaptada.
+- Instrução Copilot sem respostas geradas: [prompt-copilot.md](llm-generation/prompt-copilot.md).
 
-## Artefatos
+## Proveniência e limites
 
-- [protocolo.md](protocolo.md)
-- [metadata.md](metadata.md)
-- [inventário Z3](z3-analysis/formalization.md)
-- [resultados Z3](z3-analysis/verification-results.md)
-- [contraexemplos](z3-analysis/counterexamples.md)
-- [scripts Z3](z3-analysis/scripts/)
-- [prompt da geração](llm-generation/prompt-copilot.md)
-- [relatório da geração](llm-generation/generation-report.md)
-- [catálogo de oráculos](oracles/oracle-catalog.md)
-- [catálogo JSON](oracles/oracle-catalog.json)
-- [casos de teste](test-suites/generated-test-cases.md)
-- [análise MC/DC](test-suites/mcdc-analysis.md)
-- [comparação com Z3](evaluation/z3-oracle-comparison.md)
-- [validação humana](evaluation/human-validation.md)
-- [avaliação preliminar](evaluation/preliminary-assessment.md)
-- [questões e limitações](evaluation/issues-and-limitations.md)
-- [relatório final](relatorio-final.md)
-- [avaliação por Mutation Testing](mutation-testing/README.md)
-- [relatório final da Mutation Testing](mutation-testing/final-report.md)
-- [suíte executável com cópias mutadas](test-suites/executable-suite/README.md)
-- [sessão das suítes de teste](test-suite-session.md)
-- [métricas dos oráculos](oracle-metrics.csv)
-- [classificação dos oráculos](oracle-classification.csv)
-- [gabarito dos oráculos](oracle-reference-catalog.csv)
-- [análise das métricas dos oráculos](oracle-metrics-analysis.md)
-
-## Integridade
-
-Os arquivos originais não são alterados. Todo conteúdo produzido por esta experimentação fica em `experimentacao/experimentacao-0/`.
+Os registros de geração divergem quanto à proveniência: um relatório atribui os oráculos ao Copilot, enquanto outro registra que não houve LLM externo. Como versão e execução independente não foram preservadas de forma consistente, não se atribuem métricas de qualidade dos oráculos a um modelo externo.

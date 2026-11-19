@@ -1,21 +1,21 @@
-# Impacto da qualidade dos requisitos na geração de oráculos de teste por LLMs
+# Documentação técnica e requisitos na geração de oráculos de teste por LLMs
 
-Este repositório é o ambiente de pesquisa de uma investigação experimental sobre como a qualidade documental de requisitos influencia os oráculos de teste gerados por Large Language Models (LLMs).
+Este repositório contém uma investigação experimental que avalia como documentação técnica e requisitos podem ser usados por Large Language Models (LLMs) para gerar oráculos de teste, e como clareza e consistência documentais afetam a qualidade desses oráculos.
 
 A proposta combina um desenho experimental controlado, Controlled Natural Language (CNL), verificação lógica com Z3 e avaliação semântica por métricas e avaliadores humanos.
 
 ## Pergunta central
 
-> Em que medida a clareza e a consistência da documentação de requisitos influenciam a correção semântica e a cobertura dos oráculos de teste gerados por LLMs?
+> Em que medida a clareza e a consistência da documentação técnica e dos requisitos influenciam a correção semântica e a cobertura dos oráculos de teste gerados por LLMs?
 
 ## Objetivo
 
-Investigar experimentalmente a influência de dois fatores documentais:
+Validar, por meio de experimentos, como documentação técnica e requisitos sustentam a geração de oráculos por LLMs e investigar a influência de dois fatores documentais:
 
 - **clareza:** precisão com que os requisitos descrevem condições, estados e comportamentos esperados;
 - **consistência:** ausência de contradições entre requisitos relacionados.
 
-A qualidade dos oráculos será comparada com uma especificação de referência independente, construída e validada a partir dos requisitos originais.
+A qualidade dos oráculos é comparada, quando disponível, com uma especificação de referência independente, construída e validada a partir das fontes originais.
 
 ## Motivação
 
@@ -225,18 +225,37 @@ Outras limitações previstas:
 5. recomendações para documentação usada como entrada em ferramentas automáticas de teste;
 6. dados reprodutíveis sobre correção, cobertura e Mutation Testing.
 
-## Estado atual
+## Estado atual e navegação
 
-Este repositório iniciou pela caracterização do projeto MC/DC como candidato ao estudo. A execução experimental ainda não foi realizada.
+A pesquisa está em execução e possui quatro experimentos documentados. O **C0** é a linha de base exploratória; **C1** é a condição de alta clareza e alta consistência pretendida; **C2** reduz a clareza mantendo a consistência; **C3** mantém texto legível, mas introduz contradições. C4 (baixa clareza e baixa consistência) ainda não foi executado. Os resultados atuais não constituem um desenho fatorial completo nem permitem atribuir causalidade apenas aos fatores documentais.
 
-## Reinício metodológico
+| Experimento | Condição / foco | Plano e métricas | Resultados |
+|---|---|---|---|
+| [C0](experimentacao/experimentacao-0/README.md) | Linha de base documental exploratória | [Plano](experimentacao/experimentacao-0/README.md) | [Relatório](experimentacao/experimentacao-0/results.md) |
+| [C1](experimentacao/experimentacao-1/README.md) | Alta clareza; consistência pretendida, com ressalvas | [Plano](experimentacao/experimentacao-1/README.md) | [Relatório](experimentacao/experimentacao-1/results.md) |
+| [C2](experimentacao/experimentacao-2/README.md) | Baixa clareza / alta consistência | [Plano](experimentacao/experimentacao-2/README.md) | [Relatório](experimentacao/experimentacao-2/results.md) |
+| [C3](experimentacao/experimentacao-3/README.md) | Alta clareza / baixa consistência | [Plano](experimentacao/experimentacao-3/README.md) | [Relatório](experimentacao/experimentacao-3/results.md) |
 
-O levantamento antes dos novos experimentos está em [research/](research/README.md). Os documentos históricos dos Experimentos 0 e 1 foram preservados em `experimentacao/` e classificados como desalinhados para a pergunta atual.
+### Sistema sob teste — baseline protegido
 
-Documentação desta etapa:
+O sistema principal fica na raiz e não deve ser editado como parte da manipulação documental dos experimentos:
 
-- [documentação do repositório base](docs/README.md)
-- [análise técnica](docs/repository-analysis.md)
-- [caracterização como dataset](docs/dataset-characterization.md)
-- [avaliação da viabilidade](docs/research-feasibility.md)
-- [matriz de rastreabilidade](docs/traceability-matrix.md)
+- [CLI Java](mcdc-cli/): comandos e interface de linha de comando.
+- [Core MC/DC](mcdc-core/): análise e geração de resultados.
+- [Requisitos e modelos](mcdc-requirements/).
+- [Integração Z3](mcdc-z3/).
+- [Build Maven principal](pom.xml).
+- [Especificação técnica original](<Especificação Técnica - Ferramenta Dupla MC_DC (Requisitos e Código Java).pdf>).
+- [Exemplos e fontes originais](exemplos/).
+
+C1–C3 guardam as versões documentais experimentais em `experimentacao/experimentacao-N/documentation/`; C0 usa a documentação original. As suítes Java executam contra o sistema principal sem alterar seu código de produção. A trilha formal VM/TIS/NPP de C0 é separada e não é teste da implementação MC/DC. Uma alteração de implementação exigiria autorização e um experimento separado.
+
+### Protocolo comum e proveniência de IA
+
+O fluxo-alvo é: congelar a fonte e o gabarito independente; adaptar somente a documentação da condição; registrar clareza e consistência; gerar oráculos/casos com Copilot; classificar expectativas sem tratar aprovação como prova semântica; executar a suíte no sistema; e reportar limitações. C0/C1 são etapas históricas e não completaram todas essas fases; as diferenças estão registradas nos respectivos relatórios. Cada relatório distingue resultado documentado, inferência, suposição e caso indeterminado quando esses dados existem.
+
+As métricas comuns para C2/C3 são cobertura de requisitos, Mutation Score, Precision, Recall e F1-score. C0/C1 contêm análises exploratórias adicionais e não têm todos esses indicadores calculados sobre a mesma unidade de referência. Os resultados e suas limitações estão nos relatórios por experimento.
+
+O uso de outro modelo de IA deve ser registrado separadamente: preservar a instrução/prompt sem incorporar respostas de outra IA, identificar modelo e parâmetros quando conhecidos, e manter a documentação adaptada como artefato distinto. Nenhum resultado sem proveniência registrada deve ser atribuído a um modelo externo.
+
+O levantamento histórico e as análises de viabilidade estão em [research/](research/README.md) e [docs/](docs/README.md).

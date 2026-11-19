@@ -1,38 +1,23 @@
-# Experimento C2 — extrema baixa clareza, alta consistência
+# Experimento C2 — baixa clareza e alta consistência
 
-O C2 reduz a clareza documental do C1 ao nível extremo sem alterar limites, códigos, comandos, formatos, regras ou ações.
+## Objetivo, condição e metodologia
 
-## Estrutura
+Investigar como a redução da clareza afeta a geração de oráculos, mantendo as regras e relações documentais sem contradições deliberadas. A documentação C2 foi copiada e degradada linguisticamente; não foi corrigida durante a geração dos testes.
 
-- `audit/`: inventário C1 e integridade;
-- `documentation/`: cópia C2;
-- `documentation-assessment/`: avaliação C1/C2;
-- `z3/`: equivalência e consistência das propriedades formais;
-- `oracle-reference/`: gabarito independente;
-- `oracle-generation/`: status da geração por LLM;
-- `oracle-evaluation/`: TP/FP/FN futuros;
-- `test-suites/exp2/`: testes JUnit reais;
-- `execution-results/`: resultados Surefire;
-- `mutation-testing/`: PIT;
-- `comparison/`: comparação C1/C2;
-- `experiment-status.md`.
+Foram preservados os 26 testes originais (S1), tentados os 10 casos ausentes (S2) e avaliadas as duas partes em conjunto (S3). Os oráculos foram comparados com o gabarito independente congelado de 19 comportamentos.
 
-## Relatórios consolidados
+## Métricas utilizadas
 
-- [Resumo C0/C1/C2](consolidated-experiment-report.md)
+Somente: cobertura de requisitos, Mutation Score, Precision, Recall e F1-score. Resultados de execução e contagens de testes contextualizam as cinco métricas, mas não são métricas adicionais da avaliação.
 
-## Sessão da suíte
+## Artefatos essenciais
 
-- [test-suite-session.md](test-suites/exp2/test-suite-session.md)
-- [relatório dos erros documentais](suite-error-report.md)
+- Resultados completos: [results.md](results.md).
+- Documento C2 adaptado: [documentation/tool-readme-C2.md](documentation/tool-readme-C2.md).
+- Suíte S1/S2 e suíte combinada: [test-suite/](test-suite/) e [test-suites/exp2/](test-suites/exp2/).
+- Catálogo de testes: [test-suite/test-catalog.csv](test-suite/test-catalog.csv).
+- Gabarito usado para avaliação: [oracle-reference/](oracle-reference/).
 
-## Estado atual
+## Proveniência de IA
 
-- documentação C2 criada;
-- clareza reduzida;
-- consistência preservada;
-- propriedades Z3 sem divergência formal encontrada;
-- suíte C2 ampliada: 36 testes executados, 26 aprovados, 10 erros documentais, 0 ignorados;
-- PIT: 333 mutantes, 320 mortos, 96%;
-- geração por LLM externa: não executada nesta sessão;
-- Precision/Recall/F1: 1,0 / 0,5294 / 0,6923 nesta geração pelo agente atual.
+Os registros não indicam geração independente por outro modelo externo. Os complementos foram produzidos pelo agente Copilot desta sessão a partir da documentação literal; as suposições não foram tratadas como fatos documentados.
