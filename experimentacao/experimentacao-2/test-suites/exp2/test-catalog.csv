@@ -1,0 +1,26 @@
+test_id,behavior_id,description,status
+noCommandPrintsUsage,B004,Sem argumentos mostra uso e exit 1,PASS
+unknownOptionIsRejected,B006,Opção desconhecida retorna exit 1,PASS
+exactlyOneSourceIsRequired,B005,Exige exatamente uma fonte,PASS
+invalidExpressionIsRejectedWithDecisionId,B011,Expressão incompleta é rejeitada,PASS
+mcdcFileProducesCompleteAnalysis,B012,Arquivo .mcdc gera análise,PASS
+emptyMcdcFileIsRejected,B013,Arquivo vazio é rejeitado,PASS
+nat2TestJsonIsAccepted,B014,JSON válido gera decisão,PASS
+nat2TestJsonWithoutDecisionsIsRejected,B015,JSON sem decisões é rejeitado,PASS
+csvCheckRequiresRequiredColumns,B017,CSV incompleto é rejeitado,PASS
+truthTableContainsFourRows,B018,Tabela verdade é gerada,PASS
+maskingAndUniqueCauseAreSupported,B020;B021,Mascaramento e causa única são aceitos,PASS
+repeatedInputProducesOneConditionPerOccurrence,B019,Entrada repetida gera condições distintas,PASS
+constraintAndVariantCanBeCombined,B020;B021,Restrição e variante são combinadas,PASS
+greedySuiteIsProduced,B023,Suíte gulosa é gerada,PASS
+exactSuiteIsProducedWithZ3,B024,Suíte exata usa Z3,PASS
+directModeIsAcceptedForSmallDecision,B025,Modo direto é executado,PASS
+directModeRejectsMutationsAndTruthCsv,B025,Modo direto rejeita combinações incompatíveis,PASS
+boundaryOptionRequiresZ3,B034,--boundary sem Z3 é rejeitado,PASS
+boundaryTestsAreProducedWithZ3,B026,Testes de fronteira são gerados,PASS
+internalMutationReportIsProduced,B027,Relatório de mutação é produzido,PASS
+verifyFindsConflictingActions,B028,Verify encontra conflito,PASS
+verifyFindsGapUnderContext,B029,Verify encontra lacuna,PASS
+jsonCsvAndTruthCsvReportsAreAccepted,B030;B031;B032,Relatórios são aceitos,PASS
+gherkinFormatIsRejected,none,Formato Gherkin é rejeitado,PASS
+twentyInputLimitIsValidated,B018,20 entradas aceitas e 21 rejeitadas,PASS

@@ -1,0 +1,14 @@
+{
+  "condition": "C2",
+  "clarity": "extremely-low",
+  "consistency": "high",
+  "source_c1": "experimentacao/experimentacao-1/documentation/tool-readme-C1.md",
+  "documents": [
+    {
+      "name": "tool-readme-C2.md",
+      "path": "experimentacao/experimentacao-2/documentation/tool-readme-C2.md",
+      "sha256": "3cb561f8ed827c65f9495accd2fb54af66abd41720a468f1b99fc88a0b717e2c",
+      "modified": true
+    }
+  ]
+}

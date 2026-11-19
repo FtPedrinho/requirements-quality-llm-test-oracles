@@ -1,0 +1,21 @@
+{
+  "experiment": "EXP0",
+  "condition": "original",
+  "commit": "256e78f404527bcdfa76e7629c83376d4d719c3d",
+  "documents": [
+    {
+      "name": "tool-readme.md",
+      "path": "research/experimentacao/experimentacao-0/documentation/document-copies/tool-readme.md",
+      "role": "normative-user-documentation",
+      "modified": false,
+      "sha256": "72b827bdee6ce859527765cff574a473519c00a1af9aa9f3aacce4236a4995f8"
+    },
+    {
+      "name": "technical-specification.pdf",
+      "path": "research/experimentacao/experimentacao-0/documentation/document-copies/technical-specification.pdf",
+      "role": "reference-specification-with-architectural-proposal",
+      "modified": false,
+      "sha256": "d163ce8ab7764df17906609f39a363ffa5d6f29cdedcdc87efdc4c7a1e7b59e9"
+    }
+  ]
+}

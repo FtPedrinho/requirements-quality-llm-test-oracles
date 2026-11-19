@@ -1,0 +1,11 @@
+id,texto_c1,texto_c2,estrategia,indicador_afetado,preservacao_semantica,consistencia
+DOC-C2-001,Uma única fonte deve ser fornecida,O documento apresenta expressão direta, arquivo .mcdc ou JSON, mas descreve apenas uma forma como válida,fragmentação sintática e referência indireta,explicitação,mesma fonte única,alta
+DOC-C2-002,mascaramento por padrão; causa única com unique-cause,Mascaramento pode existir por padrão. Causa única depende de uma opção que pode ser indicada,organização indireta,especificidade,mesmos modos,alta
+DOC-C2-003,tabela completa até 20 entradas,Uma tabela completa pode considerar decisões que tenham até vinte entradas.,substituição de frase direta por construção passiva,precisão,limite 20 preservado,alta
+DOC-C2-004,modo direto até 30 entradas,No modo direto existe uma consideração limitada a trinta entradas.,referência contextual,explicitação,limite 30 preservado,alta
+DOC-C2-005,4096 linhas Z3,Verificação linha a linha pode lidar com até quatro mil e noventa e seis combinações.,spelling por palavras e sintaxe indireta,precisão,limite 4096 preservado,alta
+DOC-C2-006,timeout 60 segundos,Uma chamada Z3 pode aguardar até sessenta segundos.,construção indireta,especificidade,timeout preservado,alta
+DOC-C2-007,código 0 análise completa; 1 inválido; 2 problema,Zero indica conclusão processual; um indica entrada ou opção não aceitável; dois indica condição não coberta ou problema de verify.,vaguidade lexical controlada,ambiguidade,significado preservado,alta
+DOC-C2-EXT-001,frase direta por seção,frases encadeadas e referências contextuais substituem frases diretas,complexidade sintática,clareza/extremo,mesmas regras,alta
+DOC-C2-EXT-002,termos específicos,termos vagos como “aquilo”, “algo” e “possível”,ambiguidade lexical extrema,clareza/extremo,sem nova semântica,alta
+DOC-C2-EXT-003,organização hierárquica,blocos curtos sem hierarquia direta,organização textual,clareza/extremo,sem nova informação,alta

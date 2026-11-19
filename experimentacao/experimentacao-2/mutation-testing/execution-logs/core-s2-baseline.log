@@ -1,0 +1,58 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< io.github.rvdomingos.mcdc:mcdc-core >-----------------
+[INFO] Building MC/DC Core Engine 0.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.5.0:enforce (require-java) @ mcdc-core ---
+[INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+[INFO] 
+[INFO] --- jacoco:0.8.16:prepare-agent (prepare-agent) @ mcdc-core ---
+[INFO] argLine set to -javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\mcdc-core\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ mcdc-core ---
+[INFO] skip non existing resourceDirectory C:\Users\User\requirements-quality-llm-test-oracles\mcdc-core\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ mcdc-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- build-helper:3.6.1:add-test-source (temporary-c2-pit-test-sources) @ mcdc-core ---
+[INFO] Test Source directory: C:\Users\User\requirements-quality-llm-test-oracles\mcdc-core\target\c2-pit-sources\original added.
+[INFO] Test Source directory: C:\Users\User\requirements-quality-llm-test-oracles\mcdc-core\..\experimentacao\experimentacao-2\test-suite\complementary-tests\src\test\java added.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ mcdc-core ---
+[INFO] skip non existing resourceDirectory C:\Users\User\requirements-quality-llm-test-oracles\mcdc-core\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ mcdc-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ mcdc-core ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.github.rvdomingos.mcdc.cli.C2ComplementarySuiteTest
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-11037651143336107256\verify.json
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-15320751685781082854\infeasible.json
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-5807050570208674573\repeated.json
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-8456402890163797366\greedy.json
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-5771473349165548196\check.txt
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-16445139442470751731\pairs.txt
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-7729857566310684854\truth.csv
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-484766545536060937\mutation.json
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-4231927300795256053\greedy.json
+Relat�rio gravado em C:\Users\User\AppData\Local\Temp\junit-4231927300795256053\exact.json
+[WARNING] Tests run: 10, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.619 s -- in io.github.rvdomingos.mcdc.cli.C2ComplementarySuiteTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[WARNING] Tests run: 10, Failures: 0, Errors: 0, Skipped: 1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.023 s
+[INFO] Finished at: 2026-11-18T20:35:52-03:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,35 @@
+Behavior ID,Feature,Behavior,Preconditions,Inputs,Expected Result,Postconditions/Output,Limitation,Documentation Evidence,Implementation Evidence,Testability
+B001,CLI,analyze deve gerar análise MC/DC de uma expressão,expressão válida,expressão lógica,relatório com tabela pares suíte e condições,saída text/json/csv/truth-csv,decisão com 20 entradas no modo completo,README; Main.USAGE; Main.analyze,Main.run/analyze; Mcdc.analyze,Alta
+B002,CLI,check deve avaliar testes existentes,fonte válida e --tests,decision guard + CSV de testes,resultado por decisão com pares demonstrados e divergências,0/1/2 conforme análise,CSV com decision opcional,README; Main.USAGE; TestCasesFile,Main.check; Mcdc.evaluate,Alta
+B003,CLI,verify deve verificar decisões entre si,Z3 disponível e JSON válido,decisões/actions/contexto,conflitos sobreposições compatíveis lacunas,JSON/text report,contexto opcional,Z3; VerifyReport,Main.verify; Z3RequirementsVerifier,Alta
+B004,CLI,invoca uso com comando inválido ou ausente,nenhuma,argumentos,lista de uso no stderr,código 1,nenhum,README; Main.USAGE,Main.run,Alta
+B005,CLI,aceita apenas uma fonte,fonte ausente ou múltiplas,expression/file/json,fontes válidas apenas uma,código 1,nenhum,README; Main.parse,Main.parse,Alta
+B006,CLI,unknown option,opções,argumento desconhecido,código 1 e erro conhecido,nenhum,opção inicia com -,Main.parse,Alta
+B007,Parser,aceita and && /\,expressão válida,operadores,texto convertido em And,AST válida,precedência correta,ExpressionParser; README,ExpressionParser.parse,Alta
+B008,Parser,aceita or || \/ ,expressão válida,operadores,texto convertido em Or,AST válida,precedência correta,ExpressionParser; README,ExpressionParser.parse,Alta
+B009,Parser,aceita not !,expressão válida,operadores,texto convertido em Not,AST válida,precedência correta,ExpressionParser; README,ExpressionParser.parse,Alta
+B010,Parser,aceita comparações,expressão válida,predicado,Cond com Predicate,AST válida,operadores definidos,ExpressionParser; README,ExpressionParser.parse,Alta
+B011,Parser,rejeita expressão incompleta ou inválida,entrada inválida,expressão,ID + mensagem de erro,código 1,nenhum,RequirementsFile; README,ExpressionParser.parse,Alta
+B012,RequirementsFile,arquivo .mcdc aceita ID:expressão,arquivo existente,linhas mcdc,DecisionSet com decisões,uma por linha,comentários iniciados por #,RequirementsFile docs,RequirementsFile.read,Alta
+B013,RequirementsFile,arquivo vazio ou sem ID é rejeitado,arquivo .mcdc,conteúdo sem decisão,código 1,nenhum,RequirementsFile docs,RequirementsFile.parse,Alta
+B014,NAT2TEST,JSON carrega decisões,JSON válido,campos system inputs decisions,DecisionSet,guardas e actions carregadas,unknown fields ignorados,Nat2TestJsonReader docs,Nat2TestJsonReader.read,Alta
+B015,NAT2TEST,JSON sem decisões é rejeitado,JSON inválido,decisions ausente,código 1,nenhum,README; Nat2TestJsonReader,Nat2TestJsonReader.read,Alta
+B016,CSV,CSV exige test input value,csv válido,cabeçalho,TestCasesContents,teste por decisão,decision/expected opcionais,TestCasesFile docs,TestCasesFile.read,Alta
+B017,CSV,CSV rejeita cabeçalho incompleto,csv inválido,cabeçalho,código 1,nenhum,entrada precisa test/input/value,TestCasesFile docs,TestCasesFile.parse,Alta
+B018,Tabela,linha 0 possui todas entradas verdadeiras,expressão booleana,n entradas,linha V1 a saída correta,tabela com 2^n linhas,até 20 entradas,TruthTable docs,TruthTable.of,Alta
+B019,MC/DC,entrada repetida gera condições distintas,expressão repetida,A and B or not A,labels A#1/A#2,pares independentes,até ocorrências,README; Condition,Condition.of,Alta
+B020,Mascaramento,padrão de análise,expressão e pares,decisão mascaramento,pairs com mascaramento,suite,variant default,README; IndependencePairs,IndependencePairs.masking,Alta
+B021,Causa única,opção unique-cause,expressão e pares,só condição muda,pairs únicos,suite,UCMS para repetição,README; IndependencePairs,IndependencePairs.uniqueCause,Alta
+B022,Pares,restrições eliminam pares impossíveis,restrição ou Z3,linhas impossíveis,pairs ausentes ou bloqueados,diagnóstico,até 4096 linhas,Z3 docs,TruthTable.checkFeasibility,Alta
+B023,Suíte gulosa,seleção padrão,pairs,pares por condição,suite mínima local,chosenPairs,rápida não necessariamente exata,MinimalSuite docs,MinimalSuite.select,Alta
+B024,Suíte exata,--exact com Z3,pairs e Z3,suite global mínima,suite exata,exclusivo de direct,README; Z3SuiteOptimizer,Z3SuiteOptimizer,Alta
+B025,Modo direto,--direct com Z3,decisão >12 entradas,pairs direto ao Z3,truthTableBuilt false,suíte,até 30 entradas,README; Z3DirectAnalyzer,Z3DirectAnalyzer.analyze,Alta
+B026,Fronteiras,--boundary com Z3,comparação numérica,suite do requisito,BoundaryTest assignments,limites adjacentes,README; Z3FeasibilityChecker,Z3FeasibilityChecker.boundaryTests,Alta
+B027,Mutação interna,--mutation,expressão completa,mutantes,score e survivors,ORF ENF VNF ASF MVF VRF,README; MutationReport,MutationReport.of,Alta
+B028,Verificação,verify detecta conflito,duas decisões com ação comum,guardas + actions,conflito com witness,exit 2,duas guardas SAT,README; Z3RequirementsVerifier,Z3RequirementsVerifier.verify,Alta
+B029,Verificação,verify detecta lacuna com contexto,contexto e conjunto de guardas,guardas,lap gap,exit 2,contexto opcional,README; Z3RequirementsVerifier,Z3RequirementsVerifier.verify,Alta
+B030,Saída,JSON reporta estrutura completa,analyze --format json,expressão ou arquivo JSON,JSON com decisions/pairs/suite,arquivo ou stdout,truthTable pode ser omitida,README; JsonReport,JsonReport.format,Alta
+B031,Saída,CSV reporta suite por entrada,analyze --format csv,expressão ou arquivo CSV,csv com decision/test/input/value,arquivo ou stdout,outras colunas,README; CsvReport,CsvReport.format,Alta
+B032,Saída,truth-csv reporta tabela completa,analyze --format truth-csv,expression,truth-csv,tabela inteira,exige tabela completa,README; TruthTableCsvReport,TruthTableCsvReport.format,Alta
+B033,Saída,código de saída 2 para incompleto,análise incompleta ou verify problema,decisão/guardas,exit 2,nenhum,casos detectados,README; Main,Main.run,Alta
+B034,Z3,ausência do Z3 gera erro conhecido,opção dependente Z3 sem executável,comando,erro Z3 não encontrado,exit 1,ProcessBuilder,Z3Process docs,Z3Process.run,Alta

@@ -1,0 +1,7 @@
+property,formula,z3_status,interpretation,source
+one-source,(expression XOR file XOR json),SAT,"Existe exatamente uma fonte em representacoes separadas","pode ser uma expressao um arquivo mcdc ou json nao manda tudo junto"
+table-limit,n <= 20,SAT,"O limite declarado e 20 entradas","tabela 20 entrada"
+direct-limit,n <= 30,SAT,"O limite declarado e 30 entradas","direto 30"
+z3-row-limit,n <= 4096,SAT,"O limite declarado e 4096 linhas/combinacoes","linha 4096"
+pair-limit,n <= 1000,SAT,"O limite declarado e 1000 pares por condicao","condiçao 1000 par"
+z3-timeout,n <= 60,SAT,"O timeout declarado e 60 segundos","z3 60 segundo"

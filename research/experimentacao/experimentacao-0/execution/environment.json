@@ -1,0 +1,9 @@
+{
+  "commit": "256e78f404527bcdfa76e7629c83376d4d719c3d",
+  "java": "21.0.3",
+  "maven": "3.9.11",
+  "z3": "4.15.4",
+  "operating_system": "Windows",
+  "sut": "Ferramenta MC/DC",
+  "pit_module": "mcdc-core"
+}

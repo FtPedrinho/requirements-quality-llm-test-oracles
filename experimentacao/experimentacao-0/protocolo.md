@@ -46,3 +46,63 @@ Não foram consultados:
 - Casos MC/DC são classificados como simbólicos ou concretos conforme o domínio disponível.
 
 Nenhuma expressão inferida é apresentada como texto original.
+
+## Avaliação de qualidade dos oracles por Precision, Recall e F1
+
+As métricas de oráculos não podem reutilizar mutantes, casos simbólicos ou suítes construídas para VM, TIS e NPP como gabarito.
+
+### Unidade de avaliação
+
+A unidade principal será o comportamento especificável e verificável da ferramenta MC/DC. Cada unidade terá um identificador único e será dividida em propriedades independentes quando necessário.
+
+Para cada unidade, será anotado separadamente:
+
+- se o comportamento foi identificado;
+- se suas condições foram especificadas corretamente;
+- se o resultado esperado foi especificado corretamente;
+- se o comportamento foi omitido;
+- se o oráculo inventou ou contradisse uma regra.
+
+### Gabarito independente
+
+Antes do cálculo das métricas, será criado um catálogo de referência derivado da documentação normativa selecionada e de evidências independentes da implementação.
+
+O gabarito não pode ser derivado dos oráculos do LLM.
+
+Código-fonte e testes existentes não serão fornecidos ao LLM durante a geração.
+
+### Regras TP, FP e FN
+
+- TP: comportamento esperado corretamente identificado e especificado.
+- FP: comportamento afirmado pelo LLM que não corresponde ao gabarito.
+- FN: comportamento esperado omitido ou especificado incorretamente.
+
+Um erro pode produzir TP/FP/FN simultaneamente somente quando a unidade e as regras de anotação forem explicitadas.
+
+Ambiguidade e insuficiência documental serão registradas separadamente como não avaliáveis.
+
+### Métricas
+
+\[
+Precision = \frac{TP}{TP+FP}
+\]
+
+\[
+Recall = \frac{TP}{TP+FN}
+\]
+
+\[
+F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision+Recall}
+\]
+
+Os cálculos serão feitos por execução e agregados por média, desvio-padrão e intervalo de confiança quando a amostra permitir.
+
+Resultados por categoria também serão apresentados.
+
+### Limitação atual
+
+Os oráculos históricos deste experimento avaliam dados de entrada VM, TIS e NPP e não possuem gabarito independente da ferramenta MC/DC.
+
+Portanto, neste estado não é possível calcular valores válidos de TP, FP, FN, Precision, Recall ou F1-score para a pergunta atual.
+
+Essas métricas só serão calculadas após a construção do gabarito correto e dos novos oráculos do SUT.

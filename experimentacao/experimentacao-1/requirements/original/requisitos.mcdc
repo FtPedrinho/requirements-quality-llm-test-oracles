@@ -1,0 +1,4 @@
+# Um requisito por linha, no formato  ID: expressão
+REQ-001: (alarme_ativo and porta_aberta) or botao_emergencia
+REQ-002: porta_fechada and not obstaculo
+REQ-003: freio_acionado or (freio_acionado and pedal_pressionado)

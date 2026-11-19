@@ -1,0 +1,26 @@
+test_id,behavior_id,description
+noCommandPrintsUsage,B004,Sem argumentos mostra uso e exit 1
+unknownOptionIsRejected,B006,Opção desconhecida retorna exit 1
+exactlyOneSourceIsRequired,B005,Exige exatamente uma fonte
+invalidExpressionIsRejectedWithDecisionId,B011,Expressão incompleta é rejeitada
+mcdcFileProducesCompleteAnalysis,B012,Arquivo .mcdc válido gera análise
+emptyMcdcFileIsRejected,B013,Arquivo vazio é rejeitado
+nat2TestJsonIsAccepted,B014,JSON válido gera decisão
+nat2TestJsonWithoutDecisionsIsRejected,B015,JSON sem decisões é rejeitado
+csvCheckRequiresRequiredColumns,B017,CSV incompleto é rejeitado
+truthTableContainsFourRows,B018,Tabela verdade é gerada
+maskingAndUniqueCauseAreSupported,B020;B021,Mascaramento e causa única são aceitos
+repeatedInputProducesOneConditionPerOccurrence,B019,Entrada repetida gera condições distintas
+constraintAndVariantCanBeCombined,B020;B021,Restrição e variante são combinadas
+greedySuiteIsProduced,B023,Suíte gulosa é gerada
+exactSuiteIsProducedWithZ3,B024,Suíte exata usa Z3
+directModeIsAcceptedForSmallDecision,B025,Modo direto é executado
+directModeRejectsMutationsAndTruthCsv,B025,Modo direto rejeita mutation/truth-csv incompatíveis
+boundaryOptionRequiresZ3,B034,--boundary sem Z3 é rejeitado
+boundaryTestsAreProducedWithZ3,B026,Testes de fronteira são gerados
+internalMutationReportIsProduced,B027,Relatório de mutação é produzido
+verifyFindsConflictingActions,B028,Verify encontra conflito
+verifyFindsGapUnderContext,B029,Verify encontra lacuna
+jsonCsvAndTruthCsvReportsAreAccepted,B030;B031;B032,Relatórios JSON CSV e truth-csv são aceitos
+gherkinFormatIsRejected,none,Formato Gherkin é rejeitado
+twentyInputLimitIsValidated,B018,Limite de 20 entradas é aplicado

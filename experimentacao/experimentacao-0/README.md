@@ -44,6 +44,12 @@ Esta etapa não responde à pergunta principal da pesquisa nem estabelece conclu
 - [relatório final](relatorio-final.md)
 - [avaliação por Mutation Testing](mutation-testing/README.md)
 - [relatório final da Mutation Testing](mutation-testing/final-report.md)
+- [suíte executável com cópias mutadas](test-suites/executable-suite/README.md)
+- [sessão das suítes de teste](test-suite-session.md)
+- [métricas dos oráculos](oracle-metrics.csv)
+- [classificação dos oráculos](oracle-classification.csv)
+- [gabarito dos oráculos](oracle-reference-catalog.csv)
+- [análise das métricas dos oráculos](oracle-metrics-analysis.md)
 
 ## Integridade
 

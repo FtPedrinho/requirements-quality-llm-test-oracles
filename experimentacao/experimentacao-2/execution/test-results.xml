@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="5.416" tests="36" errors="10" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\User\requirements-quality-llm-test-oracles\experimentacao\experimentacao-2\test-suite\target\test-classes;C:\Users\User\requirements-quality-llm-test-oracles\experimentacao\experimentacao-2\test-suite\target\classes;C:\Users\User\.m2\repository\io\github\rvdomingos\mcdc\mcdc-cli\0.1.0-SNAPSHOT\mcdc-cli-0.1.0-SNAPSHOT.jar;C:\Users\User\.m2\repository\io\github\rvdomingos\mcdc\mcdc-core\0.1.0-SNAPSHOT\mcdc-core-0.1.0-SNAPSHOT.jar;C:\Users\User\.m2\repository\io\github\rvdomingos\mcdc\mcdc-requirements\0.1.0-SNAPSHOT\mcdc-requirements-0.1.0-SNAPSHOT.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar;C:\Users\User\.m2\repository\io\github\rvdomingos\mcdc\mcdc-z3\0.1.0-SNAPSHOT\mcdc-z3-0.1.0-SNAPSHOT.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.4\junit-jupiter-5.11.4.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.4\junit-jupiter-api-5.11.4.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.11.4\junit-platform-commons-1.11.4.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.4\junit-jupiter-params-5.11.4.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.4\junit-jupiter-engine-5.11.4.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.11.4\junit-platform-engine-1.11.4.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire11693588690047866743\surefirebooter-20261118192942118_3.jar C:\Users\User\AppData\Local\Temp\surefire11693588690047866743 2026-11-18T19-29-41_800-jvmRun1 surefire-20261118192942118_1tmp surefire_0-20261118192942118_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\User\requirements-quality-llm-test-oracles\experimentacao\experimentacao-2\test-suite\target\test-classes;C:\Users\User\requirements-quality-llm-test-oracles\experimentacao\experimentacao-2\test-suite\target\classes;C:\Users\User\.m2\repository\io\github\rvdomingos\mcdc\mcdc-cli\0.1.0-SNAPSHOT\mcdc-cli-0.1.0-SNAPSHOT.jar;C:\Users\User\.m2\repository\io\github\rvdomingos\mcdc\mcdc-core\0.1.0-SNAPSHOT\mcdc-core-0.1.0-SNAPSHOT.jar;C:\Users\User\.m2\repository\io\github\rvdomingos\mcdc\mcdc-requirements\0.1.0-SNAPSHOT\mcdc-requirements-0.1.0-SNAPSHOT.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar;C:\Users\User\.m2\repository\io\github\rvdomingos\mcdc\mcdc-z3\0.1.0-SNAPSHOT\mcdc-z3-0.1.0-SNAPSHOT.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.4\junit-jupiter-5.11.4.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.4\junit-jupiter-api-5.11.4.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.11.4\junit-platform-commons-1.11.4.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.4\junit-jupiter-params-5.11.4.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.4\junit-jupiter-engine-5.11.4.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.11.4\junit-platform-engine-1.11.4.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\User"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\User\requirements-quality-llm-test-oracles\experimentacao\experimentacao-2\test-suite"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire11693588690047866743\surefirebooter-20261118192942118_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.3+7-LTS-152"/>
+    <property name="user.name" value="User"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\User\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\User\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.3"/>
+    <property name="user.dir" value="C:\Users\User\requirements-quality-llm-test-oracles\experimentacao\experimentacao-2\test-suite"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\User\.copilot\session-state\8457bad6-f839-4d1b-96a8-6cea1a9c9dea\files\tools\z3-4.15.4-x64-win\bin;C:\Python313\Scripts\;C:\Python313\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Users\User\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\User\AppData\Local\Programs\Python\Python311\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\ucrt64\bin;C:\Java\jdk-21_windows-x64_bin;;C:\ghcup\bin;C:\Users\User\AppData\Roaming\npm;C:\Users\User\AppData\Local\Programs\DockerDesktop\resources\bin;C:\Users\User\.dotnet\tools;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;c:\Users\User\AppData\Local\Programs\Microsoft VS Code\69047191fc\resources\app\node_modules.asar.unpacked\@vscode\ripgrep-universal\bin\win32-x64;c:\Users\User\AppData\Local\Programs\Microsoft VS Code\69047191fc\resources\app\node_modules.asar.unpacked\@github\copilot-sdk-win32-x64\ripgrep\bin\win32-x64;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.3+7-LTS-152"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="greedySuiteIsProduced" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.393">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    ((E or D) and (not A or D)) or B
+Variante:  mascaramento
+
+Condições: E, D#1, A, D#2, B
+
+Vetor E   D   A   B   | D
+V1    T   T   T   T   | T
+V2    T   T   T   F   | T
+V3    T   T   F   T   | T
+V4    T   T   F   F   | T
+V5    T   F   T   T   | T
+V6    T   F   T   F   | F
+V7    T   F   F   T   | T
+V8    T   F   F   F   | T
+V9    F   T   T   T   | T
+V10   F   T   T   F   | T
+V11   F   T   F   T   | T
+V12   F   T   F   F   | T
+V13   F   F   T   T   | T
+V14   F   F   T   F   | F
+V15   F   F   F   T   | T
+V16   F   F   F   F   | F
+
+Pares de independência:
+  E: (V8, V16)
+  D#1: (V10, V16), (V12, V16)
+  A: (V6, V8)
+  D#2: (V2, V6), (V10, V6)
+  B: (V5, V6), (V5, V14), (V5, V16), (V13, V6), (V13, V14), (V13, V16), ... (9 pares)
+
+Suíte mínima (6 testes):
+  V2  TTTF  -> T   demonstra D#2
+  V5  TFTT  -> T   demonstra B
+  V6  TFTF  -> F   demonstra A, D#2, B
+  V8  TFFF  -> T   demonstra E, A
+  V12  FTFF  -> T   demonstra D#1
+  V16  FFFF  -> F   demonstra E, D#1
+
+Demonstração por condição:
+  E: V8 (T) e V16 (F), só ela muda
+  D#1: V12 (T) e V16 (F), só ela muda
+  A: V6 (T) e V8 (F), só ela muda
+  D#2: V2 (T) e V6 (F), só ela muda
+  B: V5 (T) e V6 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="verifyFindsConflict(Path)" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="1.387">
+    <system-out><![CDATA[Verificação entre requisitos: s
+2 decisões, 1 pares que escrevem alguma variável em comum
+
+Conflitos: 1
+  REQ1 × REQ2: as duas guardas valem no mesmo passo
+    mode: weak (REQ1) × strong (REQ2)
+    exemplo: mode = choice, timer = 30
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: não conferidas (use --context "<expressão>" para dizer em que situação alguma guarda deve valer)
+]]></system-out>
+  </testcase>
+  <testcase name="noCommandShowsUsage" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.003">
+    <system-err><![CDATA[Uso:
+  mcdc analyze <fonte> [opções]                gera a suíte mínima de testes MC/DC
+  mcdc check   <fonte> --tests <testes.csv>    mede o MC/DC de testes já existentes
+  mcdc verify  <fonte> [--context "<expr>"]    confere os requisitos entre si (usa o Z3)
+
+Fonte (uma só):
+  "<expressão>"           ex.: "(A and B) or C", 'speed > 100 /\ mode = idle'
+  -f <arquivo.mcdc>       um requisito por linha: ID: expressão
+  --json <decisoes.json>  decisões no formato do Extractor da NAT2TEST
+
+Opções:
+  --unique-cause          causa única em vez de mascaramento
+  --constraint "<expr>"   restrição entre condições (só com expressão direta)
+  --z3                    usa o Z3 para descobrir linhas impossíveis e gerar valores concretos;
+                          decisões com mais de 12 entradas passam ao modo direto
+  --exact                 suíte exata: a menor possível, escolhida pelo Z3 (em vez da gulosa)
+  --direct                pede os pares direto ao Z3, sem montar a tabela (até 30 entradas)
+  --boundary              com --z3, acrescenta variantes de fronteira (speed > 100 -> speed = 101)
+  --mutation              confere se a suíte detecta versões do requisito com uma falha
+  --context "<expr>"      verify: confere se, nessa situação, sempre alguma guarda vale
+  --format <formato>      text (padrão), json, csv (suíte) ou truth-csv (tabela verdade inteira);
+                          check e verify aceitam text e json
+  -o <arquivo>            grava o relatório no arquivo em vez de mostrar na tela
+
+Exemplos:
+  mcdc analyze "(A and B) or C"
+  mcdc analyze "speed > 100 or (speed > 50 and rain)" --z3 --boundary
+  mcdc analyze --json exemplos/decisoes.json --format json -o relatorio.json
+  mcdc analyze --json exemplos/vm-decisoes.json --z3 --format truth-csv -o tabela.csv
+  mcdc check --json exemplos/decisoes.json --tests exemplos/testes.csv
+  mcdc verify --json exemplos/npp-decisoes.json
+]]></system-err>
+  </testcase>
+  <testcase name="andOperatorIsAccepted" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.005">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    A and B
+Variante:  mascaramento
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | F
+V3    F   T   | F
+V4    F   F   | F
+
+Pares de independência:
+  A: (V1, V3)
+  B: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra A, B
+  V2  TF  -> F   demonstra B
+  V3  FT  -> F   demonstra A
+
+Demonstração por condição:
+  A: V1 (T) e V3 (F), só ela muda
+  B: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="exactSuiteUsesZ3" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.855">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    ((E or D) and (not A or D)) or B
+Variante:  mascaramento
+
+Condições: E, D#1, A, D#2, B
+
+Vetor E   D   A   B   | D
+V1    T   T   T   T   | T
+V2    T   T   T   F   | T
+V3    T   T   F   T   | T
+V4    T   T   F   F   | T
+V5    T   F   T   T   | T
+V6    T   F   T   F   | F
+V7    T   F   F   T   | T
+V8    T   F   F   F   | T
+V9    F   T   T   T   | T
+V10   F   T   T   F   | T
+V11   F   T   F   T   | T
+V12   F   T   F   F   | T
+V13   F   F   T   T   | T
+V14   F   F   T   F   | F
+V15   F   F   F   T   | T
+V16   F   F   F   F   | F
+
+Pares de independência:
+  E: (V8, V16)
+  D#1: (V10, V16), (V12, V16)
+  A: (V6, V8)
+  D#2: (V2, V6), (V10, V6)
+  B: (V5, V6), (V5, V14), (V5, V16), (V13, V6), (V13, V14), (V13, V16), ... (9 pares)
+
+Suíte mínima, exata (Z3) (5 testes):
+  V5  TFTT  -> T   demonstra B
+  V6  TFTF  -> F   demonstra A, D#2, B
+  V8  TFFF  -> T   demonstra E, A
+  V10  FTTF  -> T   demonstra D#1, D#2
+  V16  FFFF  -> F   demonstra E, D#1
+
+Demonstração por condição:
+  E: V8 (T) e V16 (F), só ela muda
+  D#1: V10 (T) e V16 (F), outras mascaradas
+  A: V6 (T) e V8 (F), só ela muda
+  D#2: V10 (T) e V6 (F), outras mascaradas
+  B: V5 (T) e V6 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="verifyCompatibleOverlapNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.015">
+    <error message="Erro C2: sobreposição compatível não é definida" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: sobreposição compatível não é definida
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.verifyCompatibleOverlapNotExecutableFromC2(C2DerivedSuiteTest.java:187)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="infeasibleLineBehaviorNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.006">
+    <error message="Erro C2: linhas impossíveis não têm semântica definida" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: linhas impossíveis não têm semântica definida
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.infeasibleLineBehaviorNotExecutableFromC2(C2DerivedSuiteTest.java:171)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="exactlyOneSourceIsRequired" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.001">
+    <system-err><![CDATA[Erro: Informe uma única fonte: uma expressão, -f <arquivo> ou --json <arquivo>.
+Erro: Informe uma única fonte: uma expressão, -f <arquivo> ou --json <arquivo>.
+]]></system-err>
+  </testcase>
+  <testcase name="invalidExpressionIsRejectedWithDecisionId" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.002">
+    <system-err><![CDATA[Erro: REQ: Expressão incompleta: esperava uma condição
+]]></system-err>
+  </testcase>
+  <testcase name="jsonCsvAndTruthCsvFormatsAreAccepted" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.05">
+    <system-out><![CDATA[{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "A and B",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "A"
+    }, {
+      "name" : "B"
+    } ],
+    "conditions" : [ {
+      "label" : "A",
+      "input" : "A",
+      "occurrence" : 1
+    }, {
+      "label" : "B",
+      "input" : "B",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true,
+        "B" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : false,
+        "B" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : false,
+        "B" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "A" : [ [ "V1", "V3" ] ],
+      "B" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true,
+        "B" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "A", "B" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "B" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : false,
+        "B" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "A" ]
+    } ],
+    "chosenPairs" : {
+      "A" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "B" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V1,A,T,T,A; B,
+REQ,,V1,B,T,T,A; B,
+REQ,,V2,A,T,F,B,
+REQ,,V2,B,F,F,B,
+REQ,,V3,A,F,F,A,
+REQ,,V3,B,T,F,A,
+decision,requirement,row,A,B,outcome,feasible,in_suite,demonstrates,concrete_values
+REQ,,V1,T,T,T,T,T,A; B,
+REQ,,V2,T,F,F,T,T,B,
+REQ,,V3,F,T,F,T,T,A,
+REQ,,V4,F,F,F,T,F,,
+]]></system-out>
+  </testcase>
+  <testcase name="comparisonsAreAccepted" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.004">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    speed >= 100
+Variante:  mascaramento
+
+Vetor speed >= 100   | D
+V1    T              | T
+V2    F              | F
+
+Pares de independência:
+  speed >= 100: (V1, V2)
+
+Suíte mínima (2 testes):
+  V1  T  -> T   demonstra speed >= 100
+  V2  F  -> F   demonstra speed >= 100
+
+Demonstração por condição:
+  speed >= 100: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="directModeUsesZ3" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.391">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    A and B
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 4 combinações)
+
+Pares de independência:
+  A: (V1, V3)
+  B: (V1, V2)
+
+Suíte do modo direto (3 testes):
+  V1  TT  -> T   demonstra A, B   [A = true, B = true]
+  V2  TF  -> F   demonstra B   [A = true, B = false]
+  V3  FT  -> F   demonstra A   [A = false, B = true]
+
+Demonstração por condição:
+  A: V1 (T) e V3 (F), só ela muda
+  B: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="pairTruncationNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.003">
+    <error message="Erro C2: limite e truncamento de pares não são definidos" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: limite e truncamento de pares não são definidos
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.pairTruncationNotExecutableFromC2(C2DerivedSuiteTest.java:199)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="unknownOptionReturnsInputError" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.004">
+    <system-err><![CDATA[Erro: Opção desconhecida: --invalid
+]]></system-err>
+  </testcase>
+  <testcase name="verifyFindsGap(Path)" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.494">
+    <system-out><![CDATA[Verificação entre requisitos: s
+1 decisões, 0 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: encontrada: sob mode = choice, nenhuma guarda vale em
+    mode = choice
+]]></system-out>
+  </testcase>
+  <testcase name="z3UnknownBehaviorNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.004">
+    <error message="Erro C2: comportamento de Z3 UNKNOWN não é definido" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: comportamento de Z3 UNKNOWN não é definido
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.z3UnknownBehaviorNotExecutableFromC2(C2DerivedSuiteTest.java:191)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="mutationReportIsProduced" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.1">
+    <system-out><![CDATA[{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "A and (B or C)",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "A"
+    }, {
+      "name" : "B"
+    }, {
+      "name" : "C"
+    } ],
+    "conditions" : [ {
+      "label" : "A",
+      "input" : "A",
+      "occurrence" : 1
+    }, {
+      "label" : "B",
+      "input" : "B",
+      "occurrence" : 1
+    }, {
+      "label" : "C",
+      "input" : "C",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "A" : [ [ "V1", "V5" ], [ "V1", "V6" ], [ "V1", "V7" ], [ "V2", "V5" ], [ "V2", "V6" ], [ "V2", "V7" ], [ "V3", "V5" ], [ "V3", "V6" ], [ "V3", "V7" ] ],
+      "B" : [ [ "V2", "V4" ] ],
+      "C" : [ [ "V3", "V4" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "A", "B" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "C" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "B", "C" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "A" ]
+    } ],
+    "chosenPairs" : {
+      "A" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "B" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "C" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 94.1,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "ASF" : {
+          "description" : "parênteses deslocados",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 0
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ "ASF: A and B or C" ]
+    }
+  } ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="mcdcFileUsesIdAndExpression(Path)" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.018">
+    <system-out><![CDATA[Decisão:   REQ-001
+Guarda:    (A and B) or C
+Variante:  mascaramento
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | T
+V3    T   F   T   | T
+V4    T   F   F   | F
+V5    F   T   T   | T
+V6    F   T   F   | F
+V7    F   F   T   | T
+V8    F   F   F   | F
+
+Pares de independência:
+  A: (V2, V6)
+  B: (V2, V4)
+  C: (V3, V4), (V3, V6), (V3, V8), (V5, V4), (V5, V6), (V5, V8), ... (9 pares)
+
+Suíte mínima (4 testes):
+  V2  TTF  -> T   demonstra A, B
+  V3  TFT  -> T   demonstra C
+  V4  TFF  -> F   demonstra B, C
+  V6  FTF  -> F   demonstra A
+
+Demonstração por condição:
+  A: V2 (T) e V6 (F), só ela muda
+  B: V2 (T) e V4 (F), só ela muda
+  C: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="nat2TestJsonWithoutDecisionsIsRejected(Path)" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.022">
+    <system-err><![CDATA[Erro: O JSON não tem decisões (campo "decisions")
+]]></system-err>
+  </testcase>
+  <testcase name="orOperatorIsAccepted" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.004">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    A or B
+Variante:  mascaramento
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | T
+V3    F   T   | T
+V4    F   F   | F
+
+Pares de independência:
+  A: (V2, V4)
+  B: (V3, V4)
+
+Suíte mínima (3 testes):
+  V2  TF  -> T   demonstra A
+  V3  FT  -> T   demonstra B
+  V4  FF  -> F   demonstra A, B
+
+Demonstração por condição:
+  A: V2 (T) e V4 (F), só ela muda
+  B: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="csvMissingValueColumnIsRejected(Path)" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.018">
+    <system-err><![CDATA[Erro: C:\Users\User\AppData\Local\Temp\junit-15728016342814966439\invalid.csv: falta a coluna "value" no cabeçalho
+]]></system-err>
+  </testcase>
+  <testcase name="exactSuiteDetailsNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.005">
+    <error message="Erro C2: saída e critérios da suíte exata não são definidos" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: saída e critérios da suíte exata não são definidos
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.exactSuiteDetailsNotExecutableFromC2(C2DerivedSuiteTest.java:179)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="notOperatorIsAccepted" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.002">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    not A
+Variante:  mascaramento
+
+Vetor A   | D
+V1    T   | F
+V2    F   | T
+
+Pares de independência:
+  A: (V1, V2)
+
+Suíte mínima (2 testes):
+  V1  T  -> F   demonstra A
+  V2  F  -> T   demonstra A
+
+Demonstração por condição:
+  A: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="nat2TestJsonUsesSystemInputsAndDecisions(Path)" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.016">
+    <system-out><![CDATA[Decisão:   s#1
+Requisito: REQ1
+Guarda:    A /\ B
+Ações:     x := true
+Variante:  mascaramento
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | F
+V3    F   T   | F
+V4    F   F   | F
+
+Pares de independência:
+  A: (V1, V3)
+  B: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra A, B
+  V2  TF  -> F   demonstra B
+  V3  FT  -> F   demonstra A
+
+Demonstração por condição:
+  A: V1 (T) e V3 (F), só ela muda
+  B: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="emptyMcdcFileIsRejected(Path)" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.011">
+    <system-err><![CDATA[Erro: Nenhum requisito em C:\Users\User\AppData\Local\Temp\junit-922415526301387124\empty.mcdc
+]]></system-err>
+  </testcase>
+  <testcase name="boundaryModeUsesZ3" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.639">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    speed > 100
+Variante:  mascaramento
+
+Vetor speed > 100   | D
+V1    T             | T
+V2    F             | F
+
+Pares de independência:
+  speed > 100: (V1, V2)
+
+Suíte mínima (2 testes):
+  V1  T  -> T   demonstra speed > 100   [speed = 101]
+  V2  F  -> F   demonstra speed > 100   [speed = 0]
+
+Testes de fronteira (2):
+  V1 com speed = 101   [speed = 101]
+  V2 com speed = 100   [speed = 100]
+
+Demonstração por condição:
+  speed > 100: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="gherkinFormatIsRejected" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.004">
+    <system-err><![CDATA[Erro: Formato desconhecido para analyze: gherkin. Use text, json, csv, truth-csv.
+]]></system-err>
+  </testcase>
+  <testcase name="mutationScoreOraclesNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.004">
+    <error message="Erro C2: semântica de Mutation Score não é definida" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: semântica de Mutation Score não é definida
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.mutationScoreOraclesNotExecutableFromC2(C2DerivedSuiteTest.java:183)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="tableLimitAccepts20AndRejects21" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.729">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    a0 and a1 and a2 and a3 and a4 and a5 and a6 and a7 and a8 and a9 and a10 and a11 and a12 and a13 and a14 and a15 and a16 and a17 and a18 and a19
+Variante:  mascaramento
+
+Tabela verdade: 1048576 linhas, 1048576 possíveis (grande demais para o texto; use --format json até 4096 linhas)
+
+Pares de independência:
+  a0: (V1, V524289)
+  a1: (V1, V262145)
+  a2: (V1, V131073)
+  a3: (V1, V65537)
+  a4: (V1, V32769)
+  a5: (V1, V16385)
+  a6: (V1, V8193)
+  a7: (V1, V4097)
+  a8: (V1, V2049)
+  a9: (V1, V1025)
+  a10: (V1, V513)
+  a11: (V1, V257)
+  a12: (V1, V129)
+  a13: (V1, V65)
+  a14: (V1, V33)
+  a15: (V1, V17)
+  a16: (V1, V9)
+  a17: (V1, V5)
+  a18: (V1, V3)
+  a19: (V1, V2)
+
+Suíte mínima (21 testes):
+  V1  TTTTTTTTTTTTTTTTTTTT  -> T   demonstra a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19
+  V2  TTTTTTTTTTTTTTTTTTTF  -> F   demonstra a19
+  V3  TTTTTTTTTTTTTTTTTTFT  -> F   demonstra a18
+  V5  TTTTTTTTTTTTTTTTTFTT  -> F   demonstra a17
+  V9  TTTTTTTTTTTTTTTTFTTT  -> F   demonstra a16
+  V17  TTTTTTTTTTTTTTTFTTTT  -> F   demonstra a15
+  V33  TTTTTTTTTTTTTTFTTTTT  -> F   demonstra a14
+  V65  TTTTTTTTTTTTTFTTTTTT  -> F   demonstra a13
+  V129  TTTTTTTTTTTTFTTTTTTT  -> F   demonstra a12
+  V257  TTTTTTTTTTTFTTTTTTTT  -> F   demonstra a11
+  V513  TTTTTTTTTTFTTTTTTTTT  -> F   demonstra a10
+  V1025  TTTTTTTTTFTTTTTTTTTT  -> F   demonstra a9
+  V2049  TTTTTTTTFTTTTTTTTTTT  -> F   demonstra a8
+  V4097  TTTTTTTFTTTTTTTTTTTT  -> F   demonstra a7
+  V8193  TTTTTTFTTTTTTTTTTTTT  -> F   demonstra a6
+  V16385  TTTTTFTTTTTTTTTTTTTT  -> F   demonstra a5
+  V32769  TTTTFTTTTTTTTTTTTTTT  -> F   demonstra a4
+  V65537  TTTFTTTTTTTTTTTTTTTT  -> F   demonstra a3
+  V131073  TTFTTTTTTTTTTTTTTTTT  -> F   demonstra a2
+  V262145  TFTTTTTTTTTTTTTTTTTT  -> F   demonstra a1
+  V524289  FTTTTTTTTTTTTTTTTTTT  -> F   demonstra a0
+
+Demonstração por condição:
+  a0: V1 (T) e V524289 (F), só ela muda
+  a1: V1 (T) e V262145 (F), só ela muda
+  a2: V1 (T) e V131073 (F), só ela muda
+  a3: V1 (T) e V65537 (F), só ela muda
+  a4: V1 (T) e V32769 (F), só ela muda
+  a5: V1 (T) e V16385 (F), só ela muda
+  a6: V1 (T) e V8193 (F), só ela muda
+  a7: V1 (T) e V4097 (F), só ela muda
+  a8: V1 (T) e V2049 (F), só ela muda
+  a9: V1 (T) e V1025 (F), só ela muda
+  a10: V1 (T) e V513 (F), só ela muda
+  a11: V1 (T) e V257 (F), só ela muda
+  a12: V1 (T) e V129 (F), só ela muda
+  a13: V1 (T) e V65 (F), só ela muda
+  a14: V1 (T) e V33 (F), só ela muda
+  a15: V1 (T) e V17 (F), só ela muda
+  a16: V1 (T) e V9 (F), só ela muda
+  a17: V1 (T) e V5 (F), só ela muda
+  a18: V1 (T) e V3 (F), só ela muda
+  a19: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+    <system-err><![CDATA[Erro: Decisão com 21 entradas; o limite é 20
+]]></system-err>
+  </testcase>
+  <testcase name="repeatedInputProducesDistinctConditions" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.006">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    (A and B) or (not A and C)
+Variante:  causa única
+
+Condições: A#1, B, A#2, C
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | T
+V3    T   F   T   | F
+V4    T   F   F   | F
+V5    F   T   T   | T
+V6    F   T   F   | F
+V7    F   F   T   | T
+V8    F   F   F   | F
+
+Pares de independência:
+  A#1: (V2, V6)
+  B: (V1, V3), (V2, V4)
+  A#2: (V3, V7)
+  C: (V5, V6), (V7, V8)
+
+Suíte mínima (6 testes):
+  V1  TTT  -> T   demonstra B
+  V2  TTF  -> T   demonstra A#1
+  V3  TFT  -> F   demonstra B, A#2
+  V5  FTT  -> T   demonstra C
+  V6  FTF  -> F   demonstra A#1, C
+  V7  FFT  -> T   demonstra A#2
+
+Demonstração por condição:
+  A#1: V2 (T) e V6 (F), só ela muda
+  B: V1 (T) e V3 (F), só ela muda
+  A#2: V3 (T) e V7 (F), só ela muda
+  C: V5 (T) e V6 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="greedyAlgorithmNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.004">
+    <error message="Erro C2: algoritmo guloso não é descrito" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: algoritmo guloso não é descrito
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.greedyAlgorithmNotExecutableFromC2(C2DerivedSuiteTest.java:175)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="repeatedInputBehaviorNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.004">
+    <error message="Erro C2: entradas repetidas não são tratadas pela documentação" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: entradas repetidas não são tratadas pela documentação
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.repeatedInputBehaviorNotExecutableFromC2(C2DerivedSuiteTest.java:167)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="maskingIsDefault" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.002">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    (A and B) or C
+Variante:  mascaramento
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | T
+V3    T   F   T   | T
+V4    T   F   F   | F
+V5    F   T   T   | T
+V6    F   T   F   | F
+V7    F   F   T   | T
+V8    F   F   F   | F
+
+Pares de independência:
+  A: (V2, V6)
+  B: (V2, V4)
+  C: (V3, V4), (V3, V6), (V3, V8), (V5, V4), (V5, V6), (V5, V8), ... (9 pares)
+
+Suíte mínima (4 testes):
+  V2  TTF  -> T   demonstra A, B
+  V3  TFT  -> T   demonstra C
+  V4  TFF  -> F   demonstra B, C
+  V6  FTF  -> F   demonstra A
+
+Demonstração por condição:
+  A: V2 (T) e V6 (F), só ela muda
+  B: V2 (T) e V4 (F), só ela muda
+  C: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="uniqueCauseCanBeSelected" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.003">
+    <system-out><![CDATA[Decisão:   REQ
+Guarda:    (A and B) or C
+Variante:  causa única
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | T
+V3    T   F   T   | T
+V4    T   F   F   | F
+V5    F   T   T   | T
+V6    F   T   F   | F
+V7    F   F   T   | T
+V8    F   F   F   | F
+
+Pares de independência:
+  A: (V2, V6)
+  B: (V2, V4)
+  C: (V3, V4), (V5, V6), (V7, V8)
+
+Suíte mínima (4 testes):
+  V2  TTF  -> T   demonstra A, B
+  V3  TFT  -> T   demonstra C
+  V4  TFF  -> F   demonstra B, C
+  V6  FTF  -> F   demonstra A
+
+Demonstração por condição:
+  A: V2 (T) e V6 (F), só ela muda
+  B: V2 (T) e V4 (F), só ela muda
+  C: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa
+]]></system-out>
+  </testcase>
+  <testcase name="truthTableFormatsNotExecutableFromC2" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.003">
+    <error message="Erro C2: formato detalhado de truth-csv não é definido" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: formato detalhado de truth-csv não é definido
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.truthTableFormatsNotExecutableFromC2(C2DerivedSuiteTest.java:195)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="validCsvCheckCannotBeInvented" classname="io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest" time="0.088">
+    <error message="Erro C2: CSV de check não tem formato ou comportamento esperado definido" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Erro C2: CSV de check não tem formato ou comportamento esperado definido
+	at io.github.rvdomingos.mcdc.cli.C2DerivedSuiteTest.validCsvCheckCannotBeInvented(C2DerivedSuiteTest.java:163)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+</testsuite>

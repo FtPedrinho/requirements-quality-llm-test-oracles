@@ -1,0 +1,7 @@
+dimensão,EXP0,EXP1,impacto
+clareza,alta em parte,alta,"Melhoria textual e estrutural"
+completude,parcial,alta nos comportamentos selecionados,"Mais explícito"
+precisão,alta para CLI atual,alta,"Sem alteração funcional"
+consistência,parcial por PDF divergente,alta dentro da cópia C1,"Separa proposta de implementação"
+especificidade,alta em formatos,alta,"Limites e códigos explícitos"
+testabilidade,alta,alta,"Comportamentos preservados"

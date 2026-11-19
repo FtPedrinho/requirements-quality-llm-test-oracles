@@ -1,0 +1,2 @@
+experiment,module,total_mutants,killed,survived,no_coverage,timed_out,invalid,equivalent,unknown,mutation_score,source
+EXP1,mcdc-core,333,320,1,12,1,0,0,0,96.09609609609609,mcdc-core/target/pit-reports/mutations.xml

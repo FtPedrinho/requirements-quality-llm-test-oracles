@@ -1,0 +1,20 @@
+behavior_id,behavior_description,conditions,inputs,expected_result,correction_criteria,documentation_origin,implementation_evidence,status
+B004,no command,no source,none,usage and exit 1,stderr usage,Main docs,Main.run,validated
+B005,one source,source count 1,expression/file/json,analysis or exit,exactly one source,Main docs,Main.parse,validated
+B006,unknown option,unknown option,args,exit 1,error,Main docs,Main.parse,validated
+B011,invalid expression,malformed expression,text,exit 1,error with context,ExpressionParser docs,ExpressionParser.parse,validated
+B012,.mcdc valid,valid file,lines,DecisionSet,IDs/guards/actions loaded,RequirementsFile docs,RequirementsFile.read,validated
+B013,.mcdc empty,empty file,lines,exit 1,no decisions,RequirementsFile docs,RequirementsFile.parse,validated
+B014,NAT2TEST valid,valid JSON,JSON,DecisionSet,decisions loaded,Nat2TestJsonReader docs,Nat2TestJsonReader.read,validated
+B015,NAT2TEST invalid,no decisions,JSON,exit 1,no decisions,Nat2TestJsonReader docs,Nat2TestJsonReader.read,validated
+B017,CSV invalid,missing header,CSV,exit 1,value missing,TestCasesFile docs,TestCasesFile.parse,validated
+B018,truth table,boolean expression,2^n,truth table,V1 all true,TruthTable docs,TruthTable.of,validated
+B020,masking,masking variant,expression,pairs/suite,default variant,IndependencePairs docs,IndependencePairs.masking,validated
+B021,unique cause,unique-cause,expression,pairs/suite,only condition changes,IndependencePairs docs,IndependencePairs.uniqueCause,validated
+B023,greedy suite,valid pairs,pairs,greedy suite,chosen pairs,MinimalSuite docs,MinimalSuite.select,validated
+B024,exact suite,Z3 available,pairs,exact suite,minimum suite,Z3SuiteOptimizer docs,Z3SuiteOptimizer,validated
+B025,direct mode,Z3 available,decision,direct suite,truthTableBuilt false,Z3DirectAnalyzer docs,Z3DirectAnalyzer,validated
+B026,boundaries,Z3 available,comparisons,boundary tests,adjacent values,Z3FeasibilityChecker docs,Z3FeasibilityChecker.boundaryTests,validated
+B027,internal mutation,--mutation,expression,mutation report,score/survivors,MutationReport docs,MutationReport.of,validated
+B028,verify conflict,Z3/actions shared,decisions,conflict exit 2,witness,RequirementsVerifier docs,Z3RequirementsVerifier.verify,validated
+B029,verify gap,Z3/context,decisions,gap exit 2,gap witness,RequirementsVerifier docs,Z3RequirementsVerifier.verify,validated

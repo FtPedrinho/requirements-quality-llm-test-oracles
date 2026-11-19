@@ -1,0 +1,22 @@
+# Os 5 requisitos originais da VM (máquina de café), escritos como guarda.
+# "changes to X" vira evento: antes não era X e agora é X (variável com sufixo _antes).
+# "was false" é o valor anterior: the_coin_sensor_antes = false.
+# A versão com os tipos das variáveis e as ações está em exemplos/vm-decisoes.json.
+
+# When the system mode is idle, and the coin sensor changes to true
+REQ001: the_system_mode = idle /\ the_coin_sensor_antes = false /\ the_coin_sensor = true
+
+# When the system mode is choice, and the coin sensor is false, and the coin sensor was false,
+# and the coffee request button changes to pressed, and the request timer is lower than or equal to 30.0
+REQ002: the_system_mode = choice /\ the_coin_sensor = false /\ the_coin_sensor_antes = false /\ the_coffee_request_button_antes != pressed /\ the_coffee_request_button = pressed /\ the_request_timer <= 30.0
+
+# Igual ao REQ002, mas com the request timer is greater than 30.0
+REQ003: the_system_mode = choice /\ the_coin_sensor = false /\ the_coin_sensor_antes = false /\ the_coffee_request_button_antes != pressed /\ the_coffee_request_button = pressed /\ the_request_timer > 30.0
+
+# When the system mode is preparing weak coffee, and the request timer is
+# greater than or equal to 10.0, and the request timer is lower than or equal to 30.0
+REQ004: the_system_mode = preparing_weak /\ the_request_timer >= 10.0 /\ the_request_timer <= 30.0
+
+# When the system mode is preparing strong coffee, and the request timer is
+# greater than or equal to 30.0, and the request timer is lower than or equal to 50.0
+REQ005: the_system_mode = preparing_strong /\ the_request_timer >= 30.0 /\ the_request_timer <= 50.0

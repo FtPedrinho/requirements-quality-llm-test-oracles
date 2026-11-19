@@ -1,0 +1,35 @@
+Behavior ID,Behavior,Conditions,Inputs,Expected Result,Correction Criteria,Documentation Origin,Implementation Evidence,Status
+B001,analyze expression,valid expression,expression,MC/DC report complete,text/json/csv/truth-csv; complete suite,README; PDF sections; Main.analyze,Main.run/analyze + Mcdc.analyze,Pending review
+B002,check tests,valid source and tests,decision + tests,coverage report and problems,text/json report,README; CheckReport; Main.check,Main.check + Mcdc.evaluate,Pending review
+B003,verify decisions,Z3 and valid JSON,decisions/actions/context,conflicts/overlaps/gaps,text/json report,README; Z3 verifier docs,Main.verify + Z3RequirementsVerifier,Pending review
+B004,missing/invalid command,no command,args,usage and exit 1,stderr usage,Main USAGE,Main.run,Pending review
+B005,exactly one source,source count !=1,expression/file/json,exit 1,one source only,README; Main.parse,Main.parse,Pending review
+B006,unknown option,unknown argument,args,exit 1,error known,Main USAGE,Main.parse,Pending review
+B007,and syntax,valid expression,and variants,AST And,operators accepted,README; ExpressionParser docs,ExpressionParser.parse,Pending review
+B008,or syntax,valid expression,or variants,AST Or,operators accepted,README; ExpressionParser docs,ExpressionParser.parse,Pending review
+B009,not syntax,valid expression,not variants,AST Not,operators accepted,README; ExpressionParser docs,ExpressionParser.parse,Pending review
+B010,comparisons,valid predicate,variable/operator/value,Predicate AST,all five operators,README; ExpressionParser docs,ExpressionParser.parse,Pending review
+B011,invalid expression,malformed expression,text,error with requirement ID and exit 1,ID prefix,Requirements docs,ExpressionParser/RequirementsFile,Pending review
+B012,.mcdc parsing,valid file,line ID:expression,DecisionSet,one decision per line,RequirementsFile docs,RequirementsFile.read,Pending review
+B013,empty .mcdc,empty or no ID,file,exit 1,no decisions,RequirementsFile docs,RequirementsFile.parse,Pending review
+B014,NAT2TEST JSON valid,valid JSON,system/inputs/decisions,DecisionSet,fields loaded,README; Nat2TestJsonReader,read/toDecision,Pending review
+B015,NAT2TEST JSON invalid,no decisions or invalid JSON,file,exit 1,invalid JSON or no decisions,README; Nat2TestJsonReader,read,Pending review
+B016,CSV valid,header test/input/value,CSV rows,TestCasesContents,tests grouped,TestCasesFile docs,TestCasesFile.parse,Pending review
+B017,CSV invalid,incomplete header,CSV,exit 1,missing required column,TestCasesFile docs,TestCasesFile.parse,Pending review
+B018,truth table,valid expression,n input combinations,2^n rows,line0 all true,TruthTable docs,TruthTable.of,Pending review
+B019,repeated conditions,expression repeats input,AST,conditions A#1 A#2,suite and pairs per occurrence,README; Condition docs,Condition.of,Pending review
+B020,masking,masking variant,expression,result pairs,default variant,README; IndependencePairs docs,IndependencePairs.masking,Pending review
+B021,unique cause,--unique-cause,expression,only condition changes,pairs/suite,README; IndependencePairs docs,IndependencePairs.uniqueCause,Pending review
+B022,infeasible lines,Z3 or constraint,constraint,impossible rows removed,diagnosis,README; Z3 docs,TruthTable.checkFeasibility,Pending review
+B023,greedy suite,default analyze,pairs,greedy suite,chosen pairs,MinimalSuite docs,MinimalSuite.select,Pending review
+B024,exact suite,--exact + Z3,pairs,Z3 minimum rows,exact suite,README; Z3SuiteOptimizer,Z3SuiteOptimizer,Pending review
+B025,direct analyzer,--direct + Z3,large decision,pairs without truth table,truthTableBuilt false,README; Z3DirectAnalyzer,Z3DirectAnalyzer,Pending review
+B026,boundary tests,--boundary + Z3,numeric comparisons,adjacent boundaries,boundary assignments,README; Z3FeasibilityChecker,Z3FeasibilityChecker.boundaryTests,Pending review
+B027,internal mutation,--mutation,expression,mutation score/survivors,ORF ENF VNF ASF MVF VRF,README; MutationReport,MutationReport.of,Pending review
+B028,requirement conflict,shared action,guard pairs + actions,conflict with witness,exit 2,Z3 verifier docs,Z3RequirementsVerifier.verify,Pending review
+B029,requirement gap,context set,guard set,gap witness,exit 2,Z3 verifier docs,Z3RequirementsVerifier.verify,Pending review
+B030,JSON report,analyze --format json,decision set,JSON report,decisions/pairs/suite,README; JsonReport docs,JsonReport.format,Pending review
+B031,CSV report,analyze --format csv,decision set,CSV suite,one row per input,README; CsvReport docs,CsvReport.format,Pending review
+B032,truth-csv,analyze --format truth-csv,table complete,full truth table,truth-csv,README; TruthTableCsvReport,TruthTableCsvReport.format,Pending review
+B033,exit 2,incomplete/conflict/gap,analysis result,exit 2,no other output contract,README; Main,Main.run,Pending review
+B034,Z3 unavailable,Z3-dependent mode,Z3 absent,exit 1 with clear error,not success fallback,README; Z3Process,Z3Process.run/isAvailable,Pending review

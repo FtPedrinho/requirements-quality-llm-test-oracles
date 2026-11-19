@@ -1,0 +1,26 @@
+test_id,behavior_id,reference_id,implementation_test,expected_evidence,status
+noCommandPrintsUsage,B004,B004,Exp2McdcSuiteTest,exit 1 + usage,PASS
+unknownOptionIsRejected,B006,B006,Exp2McdcSuiteTest,exit 1,PASS
+exactlyOneSourceIsRequired,B005,B005,Exp2McdcSuiteTest,exit 1,PASS
+invalidExpressionIsRejectedWithDecisionId,B011,B011,Exp2McdcSuiteTest,exit 1,PASS
+mcdcFileProducesCompleteAnalysis,B012,B012,Exp2McdcSuiteTest,exit 0,PASS
+emptyMcdcFileIsRejected,B013,B013,Exp2McdcSuiteTest,exit 1,PASS
+nat2TestJsonIsAccepted,B014,B014,Exp2McdcSuiteTest,exit 0,PASS
+nat2TestJsonWithoutDecisionsIsRejected,B015,B015,Exp2McdcSuiteTest,exit 1,PASS
+csvCheckRequiresRequiredColumns,B017,B017,Exp2McdcSuiteTest,exit 1,PASS
+truthTableContainsFourRows,B018,B018,Exp2McdcSuiteTest,exit 0,PASS
+maskingAndUniqueCauseAreSupported,B020;B021,B020-B021,Exp2McdcSuiteTest,exit 0,PASS
+repeatedInputProducesOneConditionPerOccurrence,B019,B019,Exp2McdcSuiteTest,exit 0,PASS
+constraintAndVariantCanBeCombined,B020;B021,B020-B021,Exp2McdcSuiteTest,exit 0,PASS
+greedySuiteIsProduced,B023,B023,Exp2McdcSuiteTest,exit 0,PASS
+exactSuiteIsProducedWithZ3,B024,B024,Exp2McdcSuiteTest,exit 0,PASS
+directModeIsAcceptedForSmallDecision,B025,B025,Exp2McdcSuiteTest,exit 0,PASS
+directModeRejectsMutationsAndTruthCsv,B025,B025,Exp2McdcSuiteTest,exit 1,PASS
+boundaryOptionRequiresZ3,B034,B034,Exp2McdcSuiteTest,exit 1,PASS
+boundaryTestsAreProducedWithZ3,B026,B026,Exp2McdcSuiteTest,exit 0,PASS
+internalMutationReportIsProduced,B027,B027,Exp2McdcSuiteTest,exit 0,PASS
+verifyFindsConflictingActions,B028,B028,Exp2McdcSuiteTest,exit 2,PASS
+verifyFindsGapUnderContext,B029,B029,Exp2McdcSuiteTest,exit 2,PASS
+jsonCsvAndTruthCsvReportsAreAccepted,B030;B031;B032,B030-B032,Exp2McdcSuiteTest,exit 0,PASS
+gherkinFormatIsRejected,none,none,Exp2McdcSuiteTest,exit 1,PASS
+twentyInputLimitIsValidated,B018,B018,Exp2McdcSuiteTest,20 accepted 21 rejected,PASS

@@ -1,0 +1,6 @@
+property,status,model
+table_limit,SAT,[n = 20]
+direct_limit,SAT,[n = 0]
+z3_row_limit,SAT,[n = 1760]
+pair_limit,SAT,[n = 8]
+timeout_limit,SAT,[n = 0]

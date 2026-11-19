@@ -1,0 +1,9 @@
+condition,metric,value,denominator,unit
+C2,total_tests,36,36,test
+C2,executed_tests,36,36,test
+C2,passed_tests,26,26,test
+C2,failed_tests,0,36,test
+C2,errors,10,36,test
+C2,skipped_tests,0,36,test
+C2,not_executable_tests,10,36,test
+C2,behaviors_covered_by_execution,26,34,behavior

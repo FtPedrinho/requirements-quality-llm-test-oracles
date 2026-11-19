@@ -229,6 +229,10 @@ Outras limitações previstas:
 
 Este repositório iniciou pela caracterização do projeto MC/DC como candidato ao estudo. A execução experimental ainda não foi realizada.
 
+## Reinício metodológico
+
+O levantamento antes dos novos experimentos está em [research/](research/README.md). Os documentos históricos dos Experimentos 0 e 1 foram preservados em `experimentacao/` e classificados como desalinhados para a pergunta atual.
+
 Documentação desta etapa:
 
 - [documentação do repositório base](docs/README.md)

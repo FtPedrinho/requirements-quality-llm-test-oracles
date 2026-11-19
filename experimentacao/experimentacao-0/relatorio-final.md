@@ -124,6 +124,25 @@ A auditoria independente confirmou:
 
 A auditoria completa está em [resumo da auditoria](mutation-testing/audit/audit-summary.md) e [métricas reproduzidas](mutation-testing/audit/reproduced-metrics.csv).
 
+## Suite executável
+
+Foi construída uma suíte Python/Z3 executável derivada das 33 decisões NAT2TEST:
+
+- 185 casos registrados;
+- 173 concretizáveis;
+- 12 não concretizáveis;
+- 981 cópias JSON mutadas;
+- 894 mutantes mortos;
+- 42 sobreviventes;
+- 21 equivalentes;
+- 24 não avaliáveis;
+- Mutation Score corrigido: 95,5128%;
+- Precision: 1,000;
+- Recall: 0,9092;
+- F1: 0,9524.
+
+Esta suíte mede a especificação formal executável, não uma implementação real de VM, TIS ou NPP.
+
 ## Próxima etapa
 
 Os avaliadores humanos deverão validar:

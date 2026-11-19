@@ -1,0 +1,173 @@
+{
+  "system": "safety_injection_system",
+  "inputs": [
+    {
+      "name": "the_water_pressure",
+      "type": "int"
+    },
+    {
+      "name": "the_water_pressure_antes",
+      "type": "int"
+    },
+    {
+      "name": "the_pressure_mode",
+      "type": "enum",
+      "values": [
+        "low",
+        "permitted",
+        "high"
+      ]
+    },
+    {
+      "name": "the_pressure_mode_antes",
+      "type": "enum",
+      "values": [
+        "low",
+        "permitted",
+        "high"
+      ]
+    },
+    {
+      "name": "the_blockage_button",
+      "type": "enum",
+      "values": [
+        "released",
+        "pressed"
+      ]
+    },
+    {
+      "name": "the_blockage_button_antes",
+      "type": "enum",
+      "values": [
+        "released",
+        "pressed"
+      ]
+    },
+    {
+      "name": "the_reset_button",
+      "type": "enum",
+      "values": [
+        "released",
+        "pressed"
+      ]
+    },
+    {
+      "name": "the_reset_button_antes",
+      "type": "enum",
+      "values": [
+        "released",
+        "pressed"
+      ]
+    },
+    {
+      "name": "the_overridden_mode",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "npp#1",
+      "requirement": "REQ001",
+      "text": "When the water pressure becomes greater than or equal to 9, and the pressure mode is low, the Safety Injection System shall assign permitted to the pressure mode.",
+      "guard": "the_water_pressure_antes < 9 /\\ the_water_pressure >= 9 /\\ the_pressure_mode = low",
+      "actions": [
+        "the_pressure_mode := permitted"
+      ]
+    },
+    {
+      "id": "npp#2",
+      "requirement": "REQ002",
+      "text": "When the water pressure becomes greater than or equal to 10, and the pressure mode is permitted, the Safety Injection System shall assign high to the pressure mode.",
+      "guard": "false",
+      "actions": [
+        "the_pressure_mode := high"
+      ],
+      "mutation": {
+        "mutant_id": "npp#2-M0002",
+        "operator": "REM",
+        "description": "Remove a subexpressao AND"
+      }
+    },
+    {
+      "id": "npp#3",
+      "requirement": "REQ003",
+      "text": "When the water pressure becomes lower than 9, and the pressure mode is permitted, the Safety Injection System shall assign low to the pressure mode.",
+      "guard": "the_water_pressure_antes >= 9 /\\ the_water_pressure < 9 /\\ the_pressure_mode = permitted",
+      "actions": [
+        "the_pressure_mode := low"
+      ]
+    },
+    {
+      "id": "npp#4",
+      "requirement": "REQ004",
+      "text": "When the water pressure becomes lower than 10, and the pressure mode is high, the Safety Injection System shall assign permitted to the pressure mode.",
+      "guard": "the_water_pressure_antes >= 10 /\\ the_water_pressure < 10 /\\ the_pressure_mode = high",
+      "actions": [
+        "the_pressure_mode := permitted"
+      ]
+    },
+    {
+      "id": "npp#5",
+      "requirement": "REQ005",
+      "text": "When the blockage button becomes pressed, and the reset button is not pressed, and the pressure mode is not high, the Safety Injection System shall assign true to the overridden mode.",
+      "guard": "the_blockage_button_antes != pressed /\\ the_blockage_button = pressed /\\ the_reset_button != pressed /\\ the_pressure_mode != high",
+      "actions": [
+        "the_overridden_mode := true"
+      ]
+    },
+    {
+      "id": "npp#6",
+      "requirement": "REQ006",
+      "text": "When the reset button becomes pressed, and the pressure mode is not high, the Safety Injection System shall assign false to the overridden mode.",
+      "guard": "the_reset_button_antes != pressed /\\ the_reset_button = pressed /\\ the_pressure_mode != high",
+      "actions": [
+        "the_overridden_mode := false"
+      ]
+    },
+    {
+      "id": "npp#7",
+      "requirement": "REQ007",
+      "text": "When the pressure mode becomes high, the Safety Injection System shall assign false to the overridden mode.",
+      "guard": "the_pressure_mode_antes != high /\\ the_pressure_mode = high",
+      "actions": [
+        "the_overridden_mode := false"
+      ]
+    },
+    {
+      "id": "npp#8",
+      "requirement": "REQ008",
+      "text": "When the pressure mode becomes not high, the Safety Injection System shall assign false to the overridden mode.",
+      "guard": "the_pressure_mode_antes = high /\\ the_pressure_mode != high",
+      "actions": [
+        "the_overridden_mode := false"
+      ]
+    },
+    {
+      "id": "npp#9",
+      "requirement": "REQ009",
+      "text": "When the pressure mode is low, and the overridden mode is true, the Safety Injection System shall assign off to the safety injection mode.",
+      "guard": "the_pressure_mode = low /\\ the_overridden_mode = true",
+      "actions": [
+        "the_safety_injection_mode := off"
+      ]
+    },
+    {
+      "id": "npp#10",
+      "requirement": "REQ010",
+      "text": "When the pressure mode is low, and the overridden mode is false, the Safety Injection System shall assign on to the safety injection mode.",
+      "guard": "the_pressure_mode = low /\\ the_overridden_mode = false",
+      "actions": [
+        "the_safety_injection_mode := on"
+      ]
+    },
+    {
+      "id": "npp#11",
+      "requirement": "REQ011",
+      "text": "When the pressure mode is permitted or the pressure mode is high, the Safety Injection System shall assign off to the safety injection mode.",
+      "guard": "the_pressure_mode = permitted \\/ the_pressure_mode = high",
+      "actions": [
+        "the_safety_injection_mode := off"
+      ]
+    }
+  ]
+}

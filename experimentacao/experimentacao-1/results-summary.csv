@@ -1,0 +1,55 @@
+experimento,condicao,sistema,metrica,valor,denominador,unidade,observacoes
+EXP0,original,GERAL,mutants,981,unique mutant IDs,mutante,linhas brutas únicas por mutante
+EXP0,original,GERAL,mutation_score_reported,93.125,960,mutante não equivalente,não exclui UNKNOWN
+EXP0,original,GERAL,mutation_score_corrected,95.51282051282051,936,mutante não equivalente avaliável,exclui equivalent e unknown
+EXP1,C1,GERAL,mutants,981,unique mutant IDs,mutante,linhas brutas únicas por mutante
+EXP1,C1,GERAL,mutation_score_reported,93.125,960,mutante não equivalente,não exclui UNKNOWN
+EXP1,C1,GERAL,mutation_score_corrected,95.51282051282051,936,mutante não equivalente avaliável,exclui equivalent e unknown
+EXP1,C1,safety_injection_system,total,223,223,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,equivalent,0,223,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,unknown,6,223,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,killed,213,223,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,survived,4,223,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,mutation_score_reported,95.51569506726457,217,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,mutation_score_corrected,98.15668202764977,217,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,precision,1.0,223,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,recall,0.9815668202764977,223,mutante,calculado independentemente por sistema
+EXP1,C1,safety_injection_system,f1,0.9906976744186046,223,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,total,191,191,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,equivalent,0,191,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,unknown,18,191,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,killed,164,191,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,survived,9,191,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,mutation_score_reported,85.86387434554973,173,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,mutation_score_corrected,94.79768786127168,173,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,precision,1.0,191,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,recall,0.9479768786127167,191,mutante,calculado independentemente por sistema
+EXP1,C1,the_coffee_machine_system,f1,0.973293768545994,191,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,total,567,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,equivalent,21,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,unknown,0,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,killed,517,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,survived,29,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,mutation_score_reported,94.68864468864469,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,mutation_score_corrected,94.68864468864469,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,precision,1.0,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,recall,0.9468864468864469,546,mutante,calculado independentemente por sistema
+EXP1,C1,turn_indicator_system,f1,0.9727187206020695,546,mutante,calculado independentemente por sistema
+EXP0,original,GERAL,requirements_formalized,36,36,requisitos,linha de base
+EXP1,C1,GERAL,requirements_formalized,36,36,requisitos,guardas preservadas
+EXP0,original,GERAL,oracles,36,36,oráculo,linha de base
+EXP1,C1,GERAL,oracles,36,36,oráculo,gerados a partir de requirements/experimental
+EXP0,original,GERAL,test_cases,152,152,caso,linha de base
+EXP1,C1,GERAL,test_cases,152,152,caso,casos simbólicos C1
+EXP0,original,GERAL,mcdc_pairs,119,119,par simbólico,linha de base
+EXP1,C1,GERAL,mcdc_pairs,119,119,par simbólico,guardas preservadas
+EXP0,original,GERAL,clarity,4.06,36,requisitos,rubrica do Experimento 0
+EXP1,C1,GERAL,clarity,4.97,36,requisitos,pós-revisão C1
+EXP0,original,GERAL,consistency,4.67,36,requisitos,linha de base
+EXP1,C1,GERAL,consistency,4.67,36,requisitos,sem alteração na média
+EXP0,original,GERAL,executable_suite_cases,185,185,caso,185 casos incluem 33 PASS, 119 MC/DC e 33 NEG
+EXP1,C1,GERAL,executable_suite_cases,185,185,caso,185 casos incluem 33 PASS, 119 MC/DC e 33 NEG
+EXP0,original,GERAL,executable_suite_mutants,981,981,mutante,cópias JSON completas da especificação
+EXP1,C1,GERAL,executable_suite_mutants,981,981,mutante,cópias JSON completas da especificação
+EXP0,original,GERAL,executable_suite_mutation_score_corrected,95.51282051282051,936,mutante não equivalente avaliável,duas suítes executáveis
+EXP1,C1,GERAL,executable_suite_mutation_score_corrected,95.51282051282051,936,mutante não equivalente avaliável,duas suítes executáveis

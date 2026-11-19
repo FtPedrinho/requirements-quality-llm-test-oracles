@@ -1,0 +1,14 @@
+dimensão,C1,C2,diferença,interpretação
+oráculos TP,indefinido,18,indefinida,C1 não possui métrica independente comparável
+oráculos FP,indefinido,0,indefinida,C1 não possui métrica independente comparável
+oráculos FN,indefinido,16,indefinida,C1 não possui métrica independente comparável
+Precision,indefinida,1.0,indefinida,C1 não possui métrica independente comparável
+Recall,indefinida,0.5294,indefinida,C1 não possui métrica independente comparável
+F1,indefinida,0.6923,indefinida,C1 não possui métrica independente comparável
+testes registrados,25,36,+11,duas suítes não derivadas da mesma unidade de oráculos
+testes executados,25,26,+1,leitura direta da C2
+testes aprovados,25,26,+1,mesma implementação
+testes erros documentais,0,10,+10,indeterminações C2
+PIT mutantes,333,333,0,mesmo conjunto real
+PIT mortos,320,320,0,mesmo código
+mutation coverage,96.096%,96.096%,0,PIT do mcdc-core não mede a suíte C2

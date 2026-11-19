@@ -1,0 +1,32 @@
+[
+  {
+    "property": "exactly-one-source",
+    "formula": "one of expression/file/json",
+    "status": "SAT",
+    "model": "[expression_source = False,\n file_source = True,\n json_source = False]"
+  },
+  {
+    "property": "table-limit",
+    "formula": "0 <= n <= 20",
+    "status": "SAT",
+    "model": "[n = 20]"
+  },
+  {
+    "property": "direct-limit",
+    "formula": "0 <= n <= 30",
+    "status": "SAT",
+    "model": "[n = 0]"
+  },
+  {
+    "property": "exact-vs-greedy",
+    "formula": "greedy=6 and exact=5",
+    "status": "SAT",
+    "model": "[exact_tests = 5, greedy_tests = 6]"
+  },
+  {
+    "property": "z3-required-mode",
+    "formula": "z3_required and z3_available",
+    "status": "SAT",
+    "model": "[z3_available = True, z3_required = True]"
+  }
+]
