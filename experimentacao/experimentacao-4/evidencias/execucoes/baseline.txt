@@ -1,0 +1,11 @@
+Experimento: C4
+Sistema: MC/DC Java original
+Git HEAD: 20288f1f2e40dcd4ca3e9412f772b72a5489b188
+Comando Maven: mvn -Djacoco.skip=true test
+Diretório do comando: experimentacao/experimentacao-4/suite-testes
+Java: 21.0.3 (Oracle)
+Maven: 3.9.11
+Z3: 4.15.4 x64
+Resultado: 40 testes registrados; 23 aprovados; 11 falhas; 0 erros; 6 ignorados
+Código de saída Maven: 1
+Integridade: git diff --name-only -- mcdc-cli mcdc-core mcdc-requirements mcdc-z3 pom.xml retornou vazio

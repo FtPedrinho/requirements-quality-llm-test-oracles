@@ -1,0 +1,8 @@
+﻿"test_class","method","baseline_status","filtered_subset_action","exclusion_reason"
+"C3DocumentationSuiteTest","directAlwaysBuildsTruthTable","FAILED on unmutated implementation","Disabled only in isolated test copy","Baseline failure; excluded so PIT measures only baseline-passing tests"
+"C3DocumentationSuiteTest","jsonTemporalIsRequired","FAILED on unmutated implementation","Disabled only in isolated test copy","Baseline failure; excluded so PIT measures only baseline-passing tests"
+"C3DocumentationSuiteTest","uniqueCauseAutomaticForThreeConditions","FAILED on unmutated implementation","Disabled only in isolated test copy","Baseline failure; excluded so PIT measures only baseline-passing tests"
+"C3DocumentationSuiteTest","truthCsvCanBeUsedInDirectMode","FAILED on unmutated implementation","Disabled only in isolated test copy","Baseline failure; excluded so PIT measures only baseline-passing tests"
+"C3DocumentationSuiteTest","directRejectsTwentyOneInputsByGeneralLimit","FAILED on unmutated implementation","Disabled only in isolated test copy","Baseline failure; excluded so PIT measures only baseline-passing tests"
+"C3DocumentationSuiteTest","mcdcMultipleLinesBelongToOneDecision","FAILED on unmutated implementation","Disabled only in isolated test copy","Baseline failure; excluded so PIT measures only baseline-passing tests"
+"C3DocumentationSuiteTest","uncoveredAnalysisReturnsZeroWhenReportsWritten","FAILED on unmutated implementation","Disabled only in isolated test copy","Baseline failure; excluded so PIT measures only baseline-passing tests"

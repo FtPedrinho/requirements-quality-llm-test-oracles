@@ -4,6 +4,8 @@ Este repositório contém uma investigação experimental que avalia como docume
 
 A proposta combina um desenho experimental controlado, Controlled Natural Language (CNL), verificação lógica com Z3 e avaliação semântica por métricas e avaliadores humanos.
 
+Consolidação dos resultados disponíveis: [Relatório geral dos experimentos assistidos pelo Copilot — C0 a C4](docs/relatorio-geral-copilot.md).
+
 ## Pergunta central
 
 > Em que medida a clareza e a consistência da documentação técnica e dos requisitos influenciam a correção semântica e a cobertura dos oráculos de teste gerados por LLMs?
@@ -227,7 +229,7 @@ Outras limitações previstas:
 
 ## Estado atual e navegação
 
-A pesquisa está em execução e possui quatro experimentos documentados. O **C0** é a linha de base exploratória; **C1** é a condição de alta clareza e alta consistência pretendida; **C2** reduz a clareza mantendo a consistência; **C3** mantém texto legível, mas introduz contradições. C4 (baixa clareza e baixa consistência) ainda não foi executado. Os resultados atuais não constituem um desenho fatorial completo nem permitem atribuir causalidade apenas aos fatores documentais.
+A pesquisa está em execução e possui cinco experimentos documentados. O **C0** é a linha de base exploratória; **C1** é a condição de alta clareza e alta consistência pretendida; **C2** reduz a clareza mantendo a consistência; **C3** mantém texto legível, mas introduz contradições; e **C4** combina baixa clareza e baixa consistência. A suíte C4 foi executada, mas teve falhas de linha de base; por isso, seu Mutation Score não é avaliável. Os resultados atuais não constituem um desenho fatorial completo nem permitem atribuir causalidade apenas aos fatores documentais.
 
 | Experimento | Condição / foco | Plano e métricas | Resultados |
 |---|---|---|---|
@@ -235,6 +237,7 @@ A pesquisa está em execução e possui quatro experimentos documentados. O **C0
 | [C1](experimentacao/experimentacao-1/README.md) | Alta clareza; consistência pretendida, com ressalvas | [Plano](experimentacao/experimentacao-1/README.md) | [Relatório](experimentacao/experimentacao-1/results.md) |
 | [C2](experimentacao/experimentacao-2/README.md) | Baixa clareza / alta consistência | [Plano](experimentacao/experimentacao-2/README.md) | [Relatório](experimentacao/experimentacao-2/results.md) |
 | [C3](experimentacao/experimentacao-3/README.md) | Alta clareza / baixa consistência | [Plano](experimentacao/experimentacao-3/README.md) | [Relatório](experimentacao/experimentacao-3/results.md) |
+| [C4](experimentacao/experimentacao-4/guia-experimento-4.md) | Baixa clareza / baixa consistência | [Plano](experimentacao/experimentacao-4/guia-experimento-4.md) | [Relatório](experimentacao/experimentacao-4/relatorio-final.md) |
 
 ### Sistema sob teste — baseline protegido
 
@@ -248,7 +251,7 @@ O sistema principal fica na raiz e não deve ser editado como parte da manipula�
 - [Especificação técnica original](<Especificação Técnica - Ferramenta Dupla MC_DC (Requisitos e Código Java).pdf>).
 - [Exemplos e fontes originais](exemplos/).
 
-C1–C3 guardam as versões documentais experimentais em `experimentacao/experimentacao-N/documentation/`; C0 usa a documentação original. As suítes Java executam contra o sistema principal sem alterar seu código de produção. A trilha formal VM/TIS/NPP de C0 é separada e não é teste da implementação MC/DC. Uma alteração de implementação exigiria autorização e um experimento separado.
+C1–C4 guardam as versões documentais experimentais em suas pastas de experimento; C0 usa a documentação original. As suítes Java executam contra o sistema principal sem alterar seu código de produção. A trilha formal VM/TIS/NPP de C0 é separada e não é teste da implementação MC/DC. Uma alteração de implementação exigiria autorização e um experimento separado.
 
 ### Protocolo comum e proveniência de IA
 
