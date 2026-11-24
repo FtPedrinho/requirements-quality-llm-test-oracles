@@ -1,0 +1,13 @@
+; par de independencia (mascaramento) para a aparicao 2 (botao_emergencia) de: (alarme_ativo and porta_aberta) or botao_emergencia
+(declare-const r1_alarme_ativo Bool)
+(declare-const r1_botao_emergencia Bool)
+(declare-const r1_porta_aberta Bool)
+(declare-const r2_alarme_ativo Bool)
+(declare-const r2_botao_emergencia Bool)
+(declare-const r2_porta_aberta Bool)
+(assert (not (= r1_botao_emergencia r2_botao_emergencia)))
+(assert (not (= (or (and r1_alarme_ativo r1_porta_aberta) r1_botao_emergencia) (or (and r2_alarme_ativo r2_porta_aberta) r2_botao_emergencia))))
+(assert (not (= (or (and r1_alarme_ativo r1_porta_aberta) r1_botao_emergencia) (or (and r1_alarme_ativo r1_porta_aberta) (not r1_botao_emergencia)))))
+(assert (not (= (or (and r2_alarme_ativo r2_porta_aberta) r2_botao_emergencia) (or (and r2_alarme_ativo r2_porta_aberta) (not r2_botao_emergencia)))))
+(check-sat)
+(get-model)

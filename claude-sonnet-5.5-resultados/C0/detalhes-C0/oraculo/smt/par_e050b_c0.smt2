@@ -1,0 +1,11 @@
+; par de independencia (mascaramento) para a aparicao 0 (porta_fechada) de: porta_fechada and not obstaculo
+(declare-const r1_obstaculo Bool)
+(declare-const r1_porta_fechada Bool)
+(declare-const r2_obstaculo Bool)
+(declare-const r2_porta_fechada Bool)
+(assert (not (= r1_porta_fechada r2_porta_fechada)))
+(assert (not (= (and r1_porta_fechada (not r1_obstaculo)) (and r2_porta_fechada (not r2_obstaculo)))))
+(assert (not (= (and r1_porta_fechada (not r1_obstaculo)) (and (not r1_porta_fechada) (not r1_obstaculo)))))
+(assert (not (= (and r2_porta_fechada (not r2_obstaculo)) (and (not r2_porta_fechada) (not r2_obstaculo)))))
+(check-sat)
+(get-model)

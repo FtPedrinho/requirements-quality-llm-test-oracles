@@ -1,0 +1,8 @@
+; par de independencia para a condicao 0 de 'speed > 100 or (speed > 50 and rain)' (Int)
+(declare-const s1 Int)(declare-const s2 Int)(declare-const rn1 Bool)(declare-const rn2 Bool)
+(assert (not (= (> s1 100) (> s2 100))))
+(assert (not (= (or (> s1 100) (and (> s1 50) rn1)) (or (> s2 100) (and (> s2 50) rn2)))))
+(assert (not (= (or (> s1 100) (and (> s1 50) rn1)) (or (not (> s1 100)) (and (> s1 50) rn1)))))
+(assert (not (= (or (> s2 100) (and (> s2 50) rn2)) (or (not (> s2 100)) (and (> s2 50) rn2)))))
+(check-sat)
+(get-model)

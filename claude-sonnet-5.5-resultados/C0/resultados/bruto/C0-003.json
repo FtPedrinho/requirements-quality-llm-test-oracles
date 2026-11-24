@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "(A and B) or C",
+    "--unique-cause",
+    "--format",
+    "csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values\nREQ,,V2,A,T,T,A; B,\nREQ,,V2,B,T,T,A; B,\nREQ,,V2,C,F,T,A; B,\nREQ,,V3,A,T,T,C,\nREQ,,V3,B,F,T,C,\nREQ,,V3,C,T,T,C,\nREQ,,V4,A,T,F,B; C,\nREQ,,V4,B,F,F,B; C,\nREQ,,V4,C,F,F,B; C,\nREQ,,V6,A,F,F,A,\nREQ,,V6,B,T,F,A,\nREQ,,V6,C,F,F,A,\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.514,
+  "id": "C0-003",
+  "titulo": "(A and B) or C em causa única: 4 testes x 3 entradas = 12 linhas CSV",
+  "esperado": {
+    "exit": 0,
+    "csv_rows": 12
+  },
+  "usa_z3": false
+}

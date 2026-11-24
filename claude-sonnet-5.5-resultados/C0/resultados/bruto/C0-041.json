@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "(A and B) or C",
+    "--direct",
+    "--format",
+    "csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values\nREQ,,V2,A,T,T,A; B,A = true; B = true; C = false\nREQ,,V2,B,T,T,A; B,A = true; B = true; C = false\nREQ,,V2,C,F,T,A; B,A = true; B = true; C = false\nREQ,,V4,A,T,F,B,A = true; B = false; C = false\nREQ,,V4,B,F,F,B,A = true; B = false; C = false\nREQ,,V4,C,F,F,B,A = true; B = false; C = false\nREQ,,V5,A,F,T,C,A = false; B = true; C = true\nREQ,,V5,B,T,T,C,A = false; B = true; C = true\nREQ,,V5,C,T,T,C,A = false; B = true; C = true\nREQ,,V6,A,F,F,A; C,A = false; B = true; C = false\nREQ,,V6,B,T,F,A; C,A = false; B = true; C = false\nREQ,,V6,C,F,F,A; C,A = false; B = true; C = false\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.871,
+  "id": "C0-041",
+  "titulo": "--direct: '(A and B) or C' dá 4 testes x 3 entradas = 12 linhas CSV",
+  "esperado": {
+    "exit": 0,
+    "csv_rows": 12
+  },
+  "usa_z3": true
+}

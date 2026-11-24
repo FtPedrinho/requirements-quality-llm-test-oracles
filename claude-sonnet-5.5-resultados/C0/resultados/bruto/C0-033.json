@@ -1,0 +1,16 @@
+{
+  "cmd": [
+    "analyze",
+    "A and -B"
+  ],
+  "exit": 1,
+  "stdout": "",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\nErro: REQ: Caractere inv�lido '-' na posi��o 6\n",
+  "segundos": 0.478,
+  "id": "C0-033",
+  "titulo": "Expressão inválida (sinal de menos fora de um número): saída 1",
+  "esperado": {
+    "exit": 1
+  },
+  "usa_z3": false
+}

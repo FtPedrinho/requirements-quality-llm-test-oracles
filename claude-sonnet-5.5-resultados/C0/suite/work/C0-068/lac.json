@@ -1,0 +1,27 @@
+{
+  "system": "s",
+  "inputs": [
+    {
+      "name": "the_system_mode",
+      "type": "enum",
+      "values": [
+        "idle",
+        "choice"
+      ]
+    },
+    {
+      "name": "the_coin_sensor",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "d1",
+      "requirement": "REQ-001",
+      "guard": "the_system_mode = idle",
+      "actions": [
+        "the_coin_sensor := true"
+      ]
+    }
+  ]
+}

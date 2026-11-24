@@ -1,0 +1,19 @@
+{
+  "cmd": [
+    "analyze",
+    "A or (B and C)",
+    "--format",
+    "truth-csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,row,A,B,C,outcome,feasible,in_suite,demonstrates,concrete_values\nREQ,,V1,T,T,T,T,T,F,,\nREQ,,V2,T,T,F,T,T,T,A,\nREQ,,V3,T,F,T,T,T,F,,\nREQ,,V4,T,F,F,T,T,F,,\nREQ,,V5,F,T,T,T,T,T,B; C,\nREQ,,V6,F,T,F,F,T,T,A; C,\nREQ,,V7,F,F,T,F,T,T,B,\nREQ,,V8,F,F,F,F,T,F,,\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.518,
+  "id": "C0-036",
+  "titulo": "truth-csv de 'A or (B and C)': 8 combinações + 1 cabeçalho = 9 linhas",
+  "esperado": {
+    "exit": 0,
+    "lines": 9
+  },
+  "usa_z3": false
+}

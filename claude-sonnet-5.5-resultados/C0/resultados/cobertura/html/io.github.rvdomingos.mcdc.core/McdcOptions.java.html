@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>McdcOptions.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core</a> &gt; <span class="el_source">McdcOptions.java</span></div><h1>McdcOptions.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core;
+
+import io.github.rvdomingos.mcdc.core.model.Expr;
+
+/**
+ * Opções da análise.
+ *
+ * @param constraint  restrição entre as condições escrita à mão; null quando não há
+ * @param feasibility verificação das linhas pelos predicados (ex.: Z3); null para não verificar
+ * @param optimizer   escolha exata da suíte; null para a escolha gulosa
+ */
+<span class="fc" id="L12">public record McdcOptions(McdcVariant variant, Expr constraint, FeasibilityChecker feasibility,</span>
+        SuiteOptimizer optimizer) {
+
+    /** Mascaramento, sem restrição, sem verificação de viabilidade e com a escolha gulosa. */
+    public static McdcOptions defaults() {
+<span class="fc" id="L17">        return new McdcOptions(McdcVariant.MASKING, null, null, null);</span>
+    }
+
+    public McdcOptions withVariant(McdcVariant variant) {
+<span class="fc" id="L21">        return new McdcOptions(variant, constraint, feasibility, optimizer);</span>
+    }
+
+    public McdcOptions withConstraint(Expr constraint) {
+<span class="fc" id="L25">        return new McdcOptions(variant, constraint, feasibility, optimizer);</span>
+    }
+
+    public McdcOptions withFeasibility(FeasibilityChecker feasibility) {
+<span class="fc" id="L29">        return new McdcOptions(variant, constraint, feasibility, optimizer);</span>
+    }
+
+    public McdcOptions withOptimizer(SuiteOptimizer optimizer) {
+<span class="fc" id="L33">        return new McdcOptions(variant, constraint, feasibility, optimizer);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "(A and B) or C",
+    "-o",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-038/relatorio.txt"
+  ],
+  "exit": 0,
+  "stdout": "Relat�rio gravado em claude-sonnet-5.5-resultados/C0/suite/work/C0-038/relatorio.txt\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.578,
+  "id": "C0-038",
+  "titulo": "-o grava o relatório no arquivo e não mostra na tela",
+  "esperado": {
+    "exit": 0,
+    "outfile": "relatorio.txt",
+    "stdout_vazio": true
+  },
+  "usa_z3": false
+}

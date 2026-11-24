@@ -1,0 +1,19 @@
+{
+  "cmd": [
+    "analyze",
+    "A && B",
+    "--format",
+    "csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values\nREQ,,V1,A,T,T,A; B,\nREQ,,V1,B,T,T,A; B,\nREQ,,V2,A,T,F,B,\nREQ,,V2,B,F,F,B,\nREQ,,V3,A,F,F,A,\nREQ,,V3,B,T,F,A,\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.523,
+  "id": "C0-013",
+  "titulo": "Operador '&&' aceito: 6 linhas CSV",
+  "esperado": {
+    "exit": 0,
+    "csv_rows": 6
+  },
+  "usa_z3": false
+}

@@ -1,0 +1,5 @@
+(declare-const mode Int)(declare-const coin Bool)(declare-const m1 Int)(declare-const m2 Int)
+(assert (and (>= mode 0) (<= mode 1)))
+(assert coin)(assert coin)
+(assert (= m1 1))(assert (= m2 1))(assert (distinct m1 m2))
+(check-sat)

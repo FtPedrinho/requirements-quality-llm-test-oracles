@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "(A and B) or (not A and C)"
+  ],
+  "exit": 0,
+  "stdout": "Decis�o:   REQ\nGuarda:    (A and B) or (not A and C)\nVariante:  mascaramento\n\nCondi��es: A#1, B, A#2, C\n\nVetor A   B   C   | D\nV1    T   T   T   | T\nV2    T   T   F   | T\nV3    T   F   T   | F\nV4    T   F   F   | F\nV5    F   T   T   | T\nV6    F   T   F   | F\nV7    F   F   T   | T\nV8    F   F   F   | F\n\nPares de independ�ncia:\n  A#1: (V1, V6), (V2, V6)\n  B: (V1, V3), (V1, V4), (V2, V3), (V2, V4)\n  A#2: (V3, V5), (V3, V7)\n  C: (V5, V6), (V5, V8), (V7, V6), (V7, V8)\n\nSu�te m�nima (4 testes):\n  V2  TTF  -> T   demonstra A#1, B\n  V3  TFT  -> F   demonstra B, A#2\n  V6  FTF  -> F   demonstra A#1, C\n  V7  FFT  -> T   demonstra A#2, C\n\nDemonstra��o por condi��o:\n  A#1: V2 (T) e V6 (F), s� ela muda\n  B: V2 (T) e V3 (F), outras mascaradas\n  A#2: V3 (T) e V7 (F), s� ela muda\n  C: V7 (T) e V6 (F), outras mascaradas\n\nCobertura MC/DC: completa\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.532,
+  "id": "C0-007",
+  "titulo": "(A and B) or (not A and C): condições A#1, B, A#2, C; saída 0",
+  "esperado": {
+    "exit": 0,
+    "contains": [
+      "A#1",
+      "A#2"
+    ]
+  },
+  "usa_z3": false
+}

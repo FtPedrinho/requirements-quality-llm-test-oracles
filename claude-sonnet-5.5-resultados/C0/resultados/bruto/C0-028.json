@@ -1,0 +1,16 @@
+{
+  "cmd": [
+    "analyze",
+    "speed > 100 /\\ mode = idle"
+  ],
+  "exit": 0,
+  "stdout": "Decis�o:   REQ\nGuarda:    speed > 100 /\\ mode = idle\nVariante:  mascaramento\n\nVetor speed > 100   mode = idle   | D\nV1    T             T             | T\nV2    T             F             | F\nV3    F             T             | F\nV4    F             F             | F\n\nPares de independ�ncia:\n  speed > 100: (V1, V3)\n  mode = idle: (V1, V2)\n\nSu�te m�nima (3 testes):\n  V1  TT  -> T   demonstra speed > 100, mode = idle\n  V2  TF  -> F   demonstra mode = idle\n  V3  FT  -> F   demonstra speed > 100\n\nDemonstra��o por condi��o:\n  speed > 100: V1 (T) e V3 (F), s� ela muda\n  mode = idle: V1 (T) e V2 (F), s� ela muda\n\nCobertura MC/DC: completa\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.544,
+  "id": "C0-028",
+  "titulo": "Exemplo da fonte: 'speed > 100 /\\ mode = idle' (saída 0)",
+  "esperado": {
+    "exit": 0
+  },
+  "usa_z3": false
+}

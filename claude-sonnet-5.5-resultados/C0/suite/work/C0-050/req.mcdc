@@ -1,0 +1,3 @@
+# requisitos de teste
+REQ-001: (alarme_ativo and porta_aberta) or botao_emergencia
+REQ-002: porta_fechada and not obstaculo

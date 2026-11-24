@@ -1,0 +1,706 @@
+{
+  "consultas": {
+    "check_errado_t2": {
+      "resposta": "unsat",
+      "saida_completa": "unsat"
+    },
+    "check_falta_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat"
+    },
+    "check_falta_c1": {
+      "resposta": "unsat",
+      "saida_completa": "unsat"
+    },
+    "check_ok_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat"
+    },
+    "check_ok_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat"
+    },
+    "check_t1_c0": {
+      "resposta": "unsat",
+      "saida_completa": "unsat"
+    },
+    "check_t1_c1": {
+      "resposta": "unsat",
+      "saida_completa": "unsat"
+    },
+    "impossivel_speed": {
+      "resposta": "unsat",
+      "saida_completa": "unsat"
+    },
+    "minsuite_abc_k2": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 15 column 10: model is not available\")"
+    },
+    "minsuite_abc_k3": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 15 column 10: model is not available\")"
+    },
+    "minsuite_abc_k4": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun s7 () Bool\n    false)\n  (define-fun s4 () Bool\n    false)\n  (define-fun s2 () Bool\n    false)\n  (define-fun s6 () Bool\n    true)\n  (define-fun s0 () Bool\n    false)\n  (define-fun s1 () Bool\n    true)\n  (define-fun s5 () Bool\n    true)\n  (define-fun s3 () Bool\n    true)\n)"
+    },
+    "minsuite_anb_k2": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 10 column 10: model is not available\")"
+    },
+    "minsuite_anb_k3": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun s3 () Bool\n    true)\n  (define-fun s2 () Bool\n    false)\n  (define-fun s0 () Bool\n    true)\n  (define-fun s1 () Bool\n    true)\n)"
+    },
+    "minsuite_exato_k2": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 25 column 10: model is not available\")"
+    },
+    "minsuite_exato_k3": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 25 column 10: model is not available\")"
+    },
+    "minsuite_exato_k4": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 25 column 10: model is not available\")"
+    },
+    "minsuite_exato_k5": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun s7 () Bool\n    false)\n  (define-fun s12 () Bool\n    false)\n  (define-fun s2 () Bool\n    false)\n  (define-fun s4 () Bool\n    false)\n  (define-fun s3 () Bool\n    true)\n  (define-fun s5 () Bool\n    true)\n  (define-fun s10 () Bool\n    false)\n  (define-fun s13 () Bool\n    false)\n  (define-fun s11 () Bool\n    false)\n  (define-fun s9 () Bool\n    false)\n  (define-fun s8 () Bool\n    false)\n  (define-fun s0 () Bool\n    false)\n  (define-fun s1 () Bool\n    false)\n  (define-fun s14 () Bool\n    true)\n  (define-fun s6 () Bool\n    true)\n  (define-fun s15 () Bool\n    true)\n)"
+    },
+    "minsuite_paridade_k2": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 24 column 10: model is not available\")"
+    },
+    "minsuite_paridade_k3": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 24 column 10: model is not available\")"
+    },
+    "minsuite_paridade_k4": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 24 column 10: model is not available\")"
+    },
+    "minsuite_paridade_k5": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 24 column 10: model is not available\")"
+    },
+    "minsuite_paridade_k6": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 24 column 10: model is not available\")"
+    },
+    "minsuite_paridade_k7": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 24 column 10: model is not available\")"
+    },
+    "minsuite_paridade_k8": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun s4 () Bool\n    true)\n  (define-fun s3 () Bool\n    true)\n  (define-fun s2 () Bool\n    true)\n  (define-fun s5 () Bool\n    true)\n  (define-fun s0 () Bool\n    true)\n  (define-fun s1 () Bool\n    true)\n  (define-fun s6 () Bool\n    true)\n  (define-fun s7 () Bool\n    true)\n)"
+    },
+    "par_conj13_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    false)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_conj13_c12": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    false)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n)"
+    },
+    "par_conj20_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A15 () Bool\n    true)\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r1_A15 () Bool\n    true)\n  (define-fun r1_A16 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A18 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A16 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    false)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r2_A17 () Bool\n    true)\n  (define-fun r1_A20 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A20 () Bool\n    true)\n  (define-fun r2_A18 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r1_A17 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r2_A14 () Bool\n    true)\n  (define-fun r1_A14 () Bool\n    true)\n  (define-fun r1_A19 () Bool\n    true)\n  (define-fun r2_A19 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_conj20_c19": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A15 () Bool\n    true)\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r1_A15 () Bool\n    true)\n  (define-fun r1_A16 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A18 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A16 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r2_A17 () Bool\n    true)\n  (define-fun r1_A20 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A20 () Bool\n    false)\n  (define-fun r2_A18 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r1_A17 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r2_A14 () Bool\n    true)\n  (define-fun r1_A14 () Bool\n    true)\n  (define-fun r1_A19 () Bool\n    true)\n  (define-fun r2_A19 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n)"
+    },
+    "par_conj26_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A23 () Bool\n    true)\n  (define-fun r1_A24 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r1_A18 () Bool\n    true)\n  (define-fun r2_A16 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r2_A20 () Bool\n    true)\n  (define-fun r2_A18 () Bool\n    true)\n  (define-fun r2_A25 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r1_A17 () Bool\n    true)\n  (define-fun r2_A14 () Bool\n    true)\n  (define-fun r1_A14 () Bool\n    true)\n  (define-fun r1_A19 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r2_A21 () Bool\n    true)\n  (define-fun r2_A15 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    false)\n  (define-fun r1_A15 () Bool\n    true)\n  (define-fun r1_A16 () Bool\n    true)\n  (define-fun r2_A24 () Bool\n    true)\n  (define-fun r1_A25 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A17 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A22 () Bool\n    true)\n  (define-fun r1_A20 () Bool\n    true)\n  (define-fun r1_A26 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A22 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A21 () Bool\n    true)\n  (define-fun r2_A26 () Bool\n    true)\n  (define-fun r2_A19 () Bool\n    true)\n  (define-fun r1_A23 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_conj26_c25": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A23 () Bool\n    true)\n  (define-fun r1_A24 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r1_A18 () Bool\n    true)\n  (define-fun r2_A16 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r2_A20 () Bool\n    true)\n  (define-fun r2_A18 () Bool\n    true)\n  (define-fun r2_A25 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r1_A17 () Bool\n    true)\n  (define-fun r2_A14 () Bool\n    true)\n  (define-fun r1_A14 () Bool\n    true)\n  (define-fun r1_A19 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r2_A21 () Bool\n    true)\n  (define-fun r2_A15 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r1_A15 () Bool\n    true)\n  (define-fun r1_A16 () Bool\n    true)\n  (define-fun r2_A24 () Bool\n    true)\n  (define-fun r1_A25 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A17 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A22 () Bool\n    true)\n  (define-fun r1_A20 () Bool\n    true)\n  (define-fun r1_A26 () Bool\n    false)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A22 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A21 () Bool\n    true)\n  (define-fun r2_A26 () Bool\n    true)\n  (define-fun r2_A19 () Bool\n    true)\n  (define-fun r1_A23 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e001_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e001_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e001_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e004_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n)"
+    },
+    "par_e004_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n)"
+    },
+    "par_e005_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e005_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e005_c10": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e005_c11": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e005_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e005_c3": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e005_c4": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e005_c5": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e005_c6": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e005_c7": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e005_c8": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e005_c9": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e006_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_E () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_D () Bool\n    false)\n  (define-fun r2_E () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_D () Bool\n    false)\n)"
+    },
+    "par_e006_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_E () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_D () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_E () Bool\n    false)\n  (define-fun r1_D () Bool\n    false)\n)"
+    },
+    "par_e006_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_E () Bool\n    true)\n  (define-fun r2_D () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_E () Bool\n    true)\n  (define-fun r1_D () Bool\n    false)\n)"
+    },
+    "par_e006_c3": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_E () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_D () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_E () Bool\n    true)\n  (define-fun r1_D () Bool\n    true)\n)"
+    },
+    "par_e006_c4": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_E () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_D () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_E () Bool\n    false)\n  (define-fun r1_D () Bool\n    false)\n)"
+    },
+    "par_e007_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e007_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e007_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e007_c3": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e008_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n)"
+    },
+    "par_e008_c1": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 11 column 10: model is not available\")"
+    },
+    "par_e008_c2": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 11 column 10: model is not available\")"
+    },
+    "par_e009_c0": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 13 column 10: model is not available\")"
+    },
+    "par_e009_c1": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 13 column 10: model is not available\")"
+    },
+    "par_e010_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e010_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e010_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e011_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e011_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e011_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    true)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e012_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e012_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e012_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e039_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e039_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_e039_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "par_e040_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n)"
+    },
+    "par_e040_c1": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 11 column 10: model is not available\")"
+    },
+    "par_e040_c2": {
+      "resposta": "unsat",
+      "saida_completa": "unsat\n(error \"line 11 column 10: model is not available\")"
+    },
+    "par_e042_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    false)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    false)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c10": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    false)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c11": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    false)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c12": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    false)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n)"
+    },
+    "par_e042_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    false)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c3": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    false)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c4": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    false)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c5": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    false)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c6": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    false)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n)"
+    },
+    "par_e042_c7": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    false)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c8": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    true)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    false)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e042_c9": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_A7 () Bool\n    true)\n  (define-fun r1_A1 () Bool\n    true)\n  (define-fun r2_A10 () Bool\n    false)\n  (define-fun r2_A11 () Bool\n    true)\n  (define-fun r2_A12 () Bool\n    true)\n  (define-fun r2_A13 () Bool\n    true)\n  (define-fun r1_A13 () Bool\n    true)\n  (define-fun r2_A1 () Bool\n    true)\n  (define-fun r2_A5 () Bool\n    true)\n  (define-fun r2_A8 () Bool\n    true)\n  (define-fun r1_A12 () Bool\n    true)\n  (define-fun r1_A8 () Bool\n    true)\n  (define-fun r2_A3 () Bool\n    true)\n  (define-fun r1_A5 () Bool\n    true)\n  (define-fun r2_A9 () Bool\n    true)\n  (define-fun r1_A3 () Bool\n    true)\n  (define-fun r1_A6 () Bool\n    true)\n  (define-fun r1_A11 () Bool\n    true)\n  (define-fun r1_A10 () Bool\n    true)\n  (define-fun r2_A2 () Bool\n    true)\n  (define-fun r2_A6 () Bool\n    true)\n  (define-fun r2_A4 () Bool\n    true)\n  (define-fun r1_A4 () Bool\n    true)\n  (define-fun r1_A9 () Bool\n    true)\n  (define-fun r1_A2 () Bool\n    true)\n  (define-fun r1_A7 () Bool\n    true)\n)"
+    },
+    "par_e050a_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r1_alarme_ativo () Bool\n    false)\n  (define-fun r1_botao_emergencia () Bool\n    false)\n  (define-fun r2_alarme_ativo () Bool\n    true)\n  (define-fun r1_porta_aberta () Bool\n    true)\n  (define-fun r2_botao_emergencia () Bool\n    false)\n  (define-fun r2_porta_aberta () Bool\n    true)\n)"
+    },
+    "par_e050a_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r1_alarme_ativo () Bool\n    true)\n  (define-fun r1_botao_emergencia () Bool\n    false)\n  (define-fun r2_alarme_ativo () Bool\n    true)\n  (define-fun r1_porta_aberta () Bool\n    false)\n  (define-fun r2_porta_aberta () Bool\n    true)\n  (define-fun r2_botao_emergencia () Bool\n    false)\n)"
+    },
+    "par_e050a_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r1_alarme_ativo () Bool\n    false)\n  (define-fun r1_botao_emergencia () Bool\n    true)\n  (define-fun r2_alarme_ativo () Bool\n    false)\n  (define-fun r1_porta_aberta () Bool\n    false)\n  (define-fun r2_botao_emergencia () Bool\n    false)\n  (define-fun r2_porta_aberta () Bool\n    false)\n)"
+    },
+    "par_e050b_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r1_obstaculo () Bool\n    false)\n  (define-fun r2_obstaculo () Bool\n    false)\n  (define-fun r1_porta_fechada () Bool\n    false)\n  (define-fun r2_porta_fechada () Bool\n    true)\n)"
+    },
+    "par_e050b_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_porta_fechada () Bool\n    true)\n  (define-fun r2_obstaculo () Bool\n    false)\n  (define-fun r1_porta_fechada () Bool\n    true)\n  (define-fun r1_obstaculo () Bool\n    true)\n)"
+    },
+    "par_natjson_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n)"
+    },
+    "par_natjson_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n)"
+    },
+    "par_num_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun rn1 () Bool\n    false)\n  (define-fun s1 () Int\n    101)\n  (define-fun rn2 () Bool\n    true)\n  (define-fun s2 () Int\n    0)\n)"
+    },
+    "par_num_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun rn1 () Bool\n    true)\n  (define-fun s1 () Int\n    0)\n  (define-fun rn2 () Bool\n    true)\n  (define-fun s2 () Int\n    51)\n)"
+    },
+    "par_num_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun s1 () Int\n    51)\n  (define-fun rn2 () Bool\n    true)\n  (define-fun rn1 () Bool\n    false)\n  (define-fun s2 () Int\n    51)\n)"
+    },
+    "par_t001_c0": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r1_B () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_t001_c1": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    true)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r1_A () Bool\n    true)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r2_A () Bool\n    true)\n  (define-fun r1_C () Bool\n    false)\n)"
+    },
+    "par_t001_c2": {
+      "resposta": "sat",
+      "saida_completa": "sat\n(\n  (define-fun r2_B () Bool\n    false)\n  (define-fun r1_B () Bool\n    false)\n  (define-fun r2_C () Bool\n    false)\n  (define-fun r1_A () Bool\n    false)\n  (define-fun r2_A () Bool\n    false)\n  (define-fun r1_C () Bool\n    true)\n)"
+    },
+    "verify_conflito": {
+      "resposta": "sat",
+      "saida_completa": "sat"
+    },
+    "verify_disjunto": {
+      "resposta": "unsat",
+      "saida_completa": "unsat"
+    },
+    "verify_lacuna_choice": {
+      "resposta": "sat",
+      "saida_completa": "sat"
+    },
+    "verify_lacuna_idle": {
+      "resposta": "unsat",
+      "saida_completa": "unsat"
+    },
+    "verify_mesmo_valor": {
+      "resposta": "unsat",
+      "saida_completa": "unsat"
+    }
+  },
+  "resumo": {
+    "C0-001": {
+      "exit_smt": 0,
+      "expressao": "(A and B) or C",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-004": {
+      "exit_smt": 0,
+      "expressao": "A and not B",
+      "respostas": [
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-005": {
+      "exit_smt": 0,
+      "expressao": "(A and B and C) or (A and not B and not C) or (not A and B and not C) or (not A and not B and C)",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-006": {
+      "exit_smt": 0,
+      "expressao": "((E or D) and (not A or D)) or B",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-007": {
+      "exit_smt": 0,
+      "expressao": "(A and B) or (not A and C)",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-008": {
+      "exit_smt": 2,
+      "expressao": "A or (A and B)",
+      "respostas": [
+        "sat",
+        "unsat",
+        "unsat"
+      ],
+      "restricao": null
+    },
+    "C0-009": {
+      "exit_smt": 2,
+      "expressao": "A and B",
+      "respostas": [
+        "unsat",
+        "unsat"
+      ],
+      "restricao": "not A or not B"
+    },
+    "C0-010": {
+      "exit_smt": 0,
+      "expressao": "A or (B and C)",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": "not A or B"
+    },
+    "C0-011": {
+      "exit_smt": 0,
+      "expressao": "A or B and C",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": "not A or not C"
+    },
+    "C0-012": {
+      "exit_smt": 0,
+      "expressao": "A and B or C",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": "not A or not C"
+    },
+    "C0-039": {
+      "exit_smt": 0,
+      "expressao": "A and (B or C)",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-040": {
+      "exit_smt": 2,
+      "expressao": "A or (A and B)",
+      "respostas": [
+        "sat",
+        "unsat",
+        "unsat"
+      ],
+      "restricao": null
+    },
+    "C0-042": {
+      "exit_smt": 0,
+      "expressao": "A1 and A2 and A3 and A4 and A5 and A6 and A7 and A8 and A9 and A10 and A11 and A12 and A13",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-043": {
+      "amostra": [
+        0,
+        19
+      ],
+      "respostas": [
+        "sat",
+        "sat"
+      ]
+    },
+    "C0-044": {
+      "amostra": [
+        0,
+        25
+      ],
+      "respostas": [
+        "sat",
+        "sat"
+      ]
+    },
+    "C0-046": {
+      "expressao": "speed > 100 or (speed > 50 and rain)",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat"
+      ]
+    },
+    "C0-047": {
+      "combinacao_impossivel_speed>100_e_nao_speed>50": "unsat"
+    },
+    "C0-050a": {
+      "exit_smt": 0,
+      "expressao": "(alarme_ativo and porta_aberta) or botao_emergencia",
+      "respostas": [
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-050b": {
+      "exit_smt": 0,
+      "expressao": "porta_fechada and not obstaculo",
+      "respostas": [
+        "sat",
+        "sat"
+      ],
+      "restricao": null
+    },
+    "C0-053": {
+      "nota": "duas condições sobre variáveis distintas: ambas têm par (AND de 2)"
+    },
+    "check": {
+      "esperado_errado_T2": "unsat",
+      "falta_T3": [
+        true,
+        false
+      ],
+      "ok": [
+        true,
+        true
+      ],
+      "so_T1": [
+        false,
+        false
+      ]
+    },
+    "suite_minima": {
+      "abc": {
+        "esperado_fonte": 4,
+        "expressao": "(A and B) or C",
+        "minimo_z3": 4,
+        "respostas": {
+          "2": "unsat",
+          "3": "unsat",
+          "4": "sat"
+        }
+      },
+      "anb": {
+        "esperado_fonte": 3,
+        "expressao": "A and not B",
+        "minimo_z3": 3,
+        "respostas": {
+          "2": "unsat",
+          "3": "sat"
+        }
+      },
+      "exato": {
+        "esperado_fonte": 5,
+        "expressao": "((E or D) and (not A or D)) or B",
+        "minimo_z3": 5,
+        "respostas": {
+          "2": "unsat",
+          "3": "unsat",
+          "4": "unsat",
+          "5": "sat"
+        }
+      },
+      "paridade": {
+        "esperado_fonte": 8,
+        "expressao": "(A and B and C) or (A and not B and not C) or (not A and B and not C) or (not A and not B and C)",
+        "minimo_z3": 8,
+        "respostas": {
+          "2": "unsat",
+          "3": "unsat",
+          "4": "unsat",
+          "5": "unsat",
+          "6": "unsat",
+          "7": "unsat",
+          "8": "sat"
+        }
+      }
+    },
+    "verify": {
+      "conflito": "sat",
+      "disjunto": "unsat",
+      "lacuna_ctx_choice": "sat",
+      "lacuna_ctx_idle": "unsat",
+      "mesmo_valor": "unsat"
+    }
+  },
+  "z3": "Z3 version 5.4.1 - 64 bit - build hashcode 145c0c51570a357cc558ce898ce77573ba9d4fbf"
+}

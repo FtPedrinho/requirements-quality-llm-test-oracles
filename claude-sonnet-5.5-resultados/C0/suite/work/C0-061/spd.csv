@@ -1,0 +1,7 @@
+test,input,value,expected_outcome
+T1,speed,150,T
+T1,rain,T,T
+T2,speed,50,F
+T2,rain,T,F
+T3,speed,150,F
+T3,rain,F,F

@@ -1,0 +1,19 @@
+{
+  "cmd": [
+    "verify",
+    "--json",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-067/lac.json",
+    "--context",
+    "the_system_mode = idle"
+  ],
+  "exit": 0,
+  "stdout": "Verifica��o entre requisitos: s\n1 decis�es, 0 pares que escrevem alguma vari�vel em comum\n\nConflitos: nenhum\n\nSobreposi��es sem conflito: nenhuma\n\nLacunas: nenhuma: sob the_system_mode = idle, sempre alguma guarda vale\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 2.096,
+  "id": "C0-067",
+  "titulo": "verify --context com guarda sempre válida: sem lacuna (saída 0)",
+  "esperado": {
+    "exit": 0
+  },
+  "usa_z3": true
+}

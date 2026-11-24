@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Action.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core.model</a> &gt; <span class="el_source">Action.java</span></div><h1>Action.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core.model;
+
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/** Uma ação de requisito na forma de atribuição, ex.: {@code the_system_mode := choice}. */
+<span class="fc" id="L8">public record Action(String variable, String value) {</span>
+
+<span class="fc" id="L10">    private static final Pattern ASSIGNMENT = Pattern.compile(&quot;^\\s*([^\\s:=]+)\\s*:=\\s*(.+?)\\s*$&quot;);</span>
+
+    /** Lê &quot;x := v&quot;; vazio quando o texto não é uma atribuição. */
+    public static Optional&lt;Action&gt; parse(String text) {
+<span class="fc" id="L14">        Matcher m = ASSIGNMENT.matcher(text);</span>
+<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        return m.matches() ? Optional.of(new Action(m.group(1), m.group(2))) : Optional.empty();</span>
+    }
+
+    /** Se as duas ações escrevem valores diferentes na mesma variável. */
+    public boolean contradicts(Action other) {
+<span class="pc bpc" id="L20" title="1 of 4 branches missed.">        return variable.equals(other.variable) &amp;&amp; !sameValue(value, other.value);</span>
+    }
+
+    /** Números comparados como números (0 e 0.0 são iguais); o resto, como texto. */
+    private static boolean sameValue(String a, String b) {
+        try {
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">            return new java.math.BigDecimal(a).compareTo(new java.math.BigDecimal(b)) == 0;</span>
+<span class="fc" id="L27">        } catch (NumberFormatException e) {</span>
+<span class="fc" id="L28">            return a.equalsIgnoreCase(b);</span>
+        }
+    }
+
+    @Override
+    public String toString() {
+<span class="nc" id="L34">        return variable + &quot; := &quot; + value;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

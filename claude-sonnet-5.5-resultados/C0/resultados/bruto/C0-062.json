@@ -1,0 +1,21 @@
+{
+  "cmd": [
+    "check",
+    "A and B",
+    "--tests",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-062/ok.csv",
+    "--format",
+    "json"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"tool\" : \"mcdc\",\n  \"mode\" : \"check\",\n  \"system\" : null,\n  \"variant\" : \"MASKING\",\n  \"complete\" : true,\n  \"decisions\" : [ {\n    \"id\" : \"REQ\",\n    \"requirement\" : null,\n    \"guard\" : \"A and B\",\n    \"complete\" : true,\n    \"conditionsDemonstrated\" : 2,\n    \"conditionsTotal\" : 2,\n    \"outcomesCovered\" : 4,\n    \"outcomesTotal\" : 4,\n    \"outcomePercentage\" : 100.0,\n    \"tests\" : [ {\n      \"test\" : \"T1\",\n      \"vector\" : \"V1\",\n      \"outcome\" : true\n    }, {\n      \"test\" : \"T2\",\n      \"vector\" : \"V3\",\n      \"outcome\" : false\n    }, {\n      \"test\" : \"T3\",\n      \"vector\" : \"V2\",\n      \"outcome\" : false\n    } ],\n    \"conditions\" : [ {\n      \"condition\" : \"A\",\n      \"demonstrated\" : true,\n      \"whenTrue\" : [ \"T1\" ],\n      \"whenFalse\" : [ \"T2\" ]\n    }, {\n      \"condition\" : \"B\",\n      \"demonstrated\" : true,\n      \"whenTrue\" : [ \"T1\" ],\n      \"whenFalse\" : [ \"T3\" ]\n    } ],\n    \"problems\" : [ ]\n  } ]\n}\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 1.837,
+  "id": "C0-062",
+  "titulo": "check --format json produz JSON válido",
+  "esperado": {
+    "exit": 0,
+    "json_valid": true
+  },
+  "usa_z3": false
+}

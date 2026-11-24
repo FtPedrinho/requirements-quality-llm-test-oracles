@@ -1,0 +1,95 @@
+id,grupo,caso,resultado,esperado,saida_observada,segundos
+C0-001,analyze/booleano,(A and B) or C: todas as condições têm par (saída 0),PASSOU,"{""exit"": 0}",0,0.59
+C0-002,analyze/booleano,(A and B) or C: suíte de 4 testes x 3 entradas = 12 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 12}",0,0.515
+C0-003,analyze/booleano,(A and B) or C em causa única: 4 testes x 3 entradas = 12 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 12}",0,0.514
+C0-004,analyze/booleano,A and not B: 3 testes x 2 entradas = 6 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 6}",0,0.492
+C0-005,analyze/booleano,"Paridade de 3 entradas exige 8 testes (24 linhas CSV, mascaramento)",PASSOU,"{""exit"": 0, ""csv_rows"": 24}",0,0.561
+C0-006,analyze/exato,--exact em ((E or D) and (not A or D)) or B: 5 testes x 4 entradas = 20 linhas,PASSOU,"{""exit"": 0, ""csv_rows"": 20}",0,0.744
+C0-007,analyze/booleano,"(A and B) or (not A and C): condições A#1, B, A#2, C; saída 0",PASSOU,"{""exit"": 0, ""contains"": [""A#1"", ""A#2""]}",0,0.532
+C0-008,analyze/diagnostico,"A or (A and B): B é redundante (saída 2, texto cita redundância)",PASSOU,"{""exit"": 2, ""contains"": [""redundan""]}",2,0.504
+C0-009,analyze/diagnostico,A and B com --constraint 'not A or not B': condições bloqueadas (saída 2),PASSOU,"{""exit"": 2, ""contains"": [""bloquead""]}",2,0.574
+C0-010,analyze/restricao,A or (B and C) com restrição 'not A or B': todas as condições têm par (saída 0),PASSOU,"{""exit"": 0}",0,0.497
+C0-011,analyze/precedencia,"Precedência: 'A or B and C' = A or (B and C) (restrição A,C exclusivos => saída 0)",PASSOU,"{""exit"": 0}",0,0.503
+C0-012,analyze/precedencia,"Precedência: 'A and B or C' = (A and B) or C (restrição A,C exclusivos => saída 0)",PASSOU,"{""exit"": 0}",0,0.5
+C0-013,operadores,Operador '&&' aceito: 6 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 6}",0,0.523
+C0-014,operadores,Operador '/\' aceito: 6 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 6}",0,0.469
+C0-015,operadores,Operador 'or' aceito: 6 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 6}",0,0.546
+C0-016,operadores,Operador '||' aceito: 6 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 6}",0,0.529
+C0-017,operadores,Operador '\/' aceito: 6 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 6}",0,0.572
+C0-018,operadores,Operador '!' aceito: 2 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 2}",0,0.521
+C0-019,operadores,Operador 'not' aceito: 2 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 2}",0,0.559
+C0-020,operadores,Comparação '=' aceita em 'x = 5 and B' (saída 0),PASSOU,"{""exit"": 0}",0,0.568
+C0-021,operadores,Comparação '==' aceita em 'x == 5 and B' (saída 0),PASSOU,"{""exit"": 0}",0,0.523
+C0-022,operadores,Comparação '!=' aceita em 'x != 5 and B' (saída 0),PASSOU,"{""exit"": 0}",0,0.529
+C0-023,operadores,Comparação '<' aceita em 'x < 5 and B' (saída 0),PASSOU,"{""exit"": 0}",0,0.579
+C0-024,operadores,Comparação '<=' aceita em 'x <= 5 and B' (saída 0),PASSOU,"{""exit"": 0}",0,0.808
+C0-025,operadores,Comparação '>' aceita em 'x > 5 and B' (saída 0),PASSOU,"{""exit"": 0}",0,0.619
+C0-026,operadores,Comparação '>=' aceita em 'x >= 5 and B' (saída 0),PASSOU,"{""exit"": 0}",0,0.517
+C0-027,operadores,Comparação de enumeração: 'mode != idle and B' (saída 0),PASSOU,"{""exit"": 0}",0,0.544
+C0-028,operadores,Exemplo da fonte: 'speed > 100 /\ mode = idle' (saída 0),PASSOU,"{""exit"": 0}",0,0.544
+C0-029,operadores,Número negativo: 'x > -3 and B' é válido (saída 0),PASSOU,"{""exit"": 0}",0,0.596
+C0-030,entrada-invalida,Expressão inválida (operador sem operando à direita): saída 1,PASSOU,"{""exit"": 1}",1,0.505
+C0-031,entrada-invalida,Expressão inválida (parêntese não fechado): saída 1,PASSOU,"{""exit"": 1}",1,0.463
+C0-032,entrada-invalida,Expressão inválida (operador sem operando à esquerda): saída 1,PASSOU,"{""exit"": 1}",1,0.425
+C0-033,entrada-invalida,Expressão inválida (sinal de menos fora de um número): saída 1,PASSOU,"{""exit"": 1}",1,0.478
+C0-034,formatos,--format json produz JSON válido,PASSOU,"{""exit"": 0, ""json_valid"": true}",0,1.435
+C0-035,formatos,truth-csv de 'A and B': 4 combinações + 1 cabeçalho = 5 linhas,PASSOU,"{""exit"": 0, ""lines"": 5}",0,0.515
+C0-036,formatos,truth-csv de 'A or (B and C)': 8 combinações + 1 cabeçalho = 9 linhas,PASSOU,"{""exit"": 0, ""lines"": 9}",0,0.518
+C0-037,formatos,"truth-csv mantém as combinações impossíveis (marcadas, não removidas): 5 linhas",PASSOU,"{""lines"": 5}",2,0.515
+C0-038,formatos,-o grava o relatório no arquivo e não mostra na tela,FALHOU,"{""exit"": 0, ""outfile"": ""relatorio.txt"", ""stdout_vazio"": true}",0,0.578
+C0-039,formatos,--mutation acrescenta a seção de mutação ao relatório em texto,PASSOU,"{""exit"": 0, ""mais_longo_que"": [""analyze"", ""A and (B or C)""]}",0,0.636
+C0-040,z3,--direct: 'A or (A and B)' dá o mesmo diagnóstico da tabela (saída 2),PASSOU,"{""exit"": 2}",2,1.64
+C0-041,z3,--direct: '(A and B) or C' dá 4 testes x 3 entradas = 12 linhas CSV,PASSOU,"{""exit"": 0, ""csv_rows"": 12}",0,0.871
+C0-042,z3,--z3 com 13 entradas passa sozinho ao modo direto (saída 0),PASSOU,"{""exit"": 0}",0,2.307
+C0-043,limites,Tabela inteira com 20 entradas (conjunção) funciona sem Z3 (saída 0),PASSOU,"{""exit"": 0}",0,1.1
+C0-044,limites,Modo direto com 26 entradas (conjunção) funciona (saída 0),PASSOU,"{""exit"": 0}",0,3.212
+C0-045,z3,--z3 --boundary 'speed > 100' traz os valores de fronteira 100 e 101,PASSOU,"{""exit"": 0, ""contains_todos"": [""100"", ""101""]}",0,1.031
+C0-046,z3,--z3 --boundary 'speed > 100 or (speed > 50 and rain)' (saída 0),PASSOU,"{""exit"": 0}",0,0.959
+C0-047,z3,--z3 mantém a tabela inteira (impossível marcada): 8 + 1 = 9 linhas truth-csv,PASSOU,"{""exit"": 0, ""lines"": 9}",0,0.834
+C0-048,z3,--z3 dá valores concretos: speed > 100 /\ mode = idle contém speed acima de 100,PASSOU,"{""exit"": 0, ""contem_numero_maior_que"": 100}",0,0.757
+C0-049,z3,"Sem Z3 no PATH, a análise sem opções de Z3 funciona (12 linhas CSV)",PASSOU,"{""exit"": 0, ""csv_rows"": 12}",0,0.533
+C0-050,arquivo-mcdc,"Arquivo .mcdc com comentário: json traz REQ-001 e REQ-002, ignora o comentário",PASSOU,"{""exit"": 0, ""contains"": [""REQ-001"", ""REQ-002""], ""json_valid"": true, ""not_contains"": [""requisitos de teste""]}",0,1.672
+C0-051,arquivo-mcdc,Erro de sintaxe em REQ-002: saída 1 citando o requisito,PASSOU,"{""exit"": 1, ""contains"": [""REQ-002""]}",1,0.505
+C0-052,arquivo-mcdc,"exemplos/requisitos.mcdc: REQ-003 tem condição redundante (saída 2, json cita REQ-003)",PASSOU,"{""exit"": 2, ""contains"": [""REQ-003""], ""json_valid"": true}",2,1.524
+C0-053,arquivo-json,JSON de decisões do exemplo da fonte: saída 0 e REQ-001 no relatório json,PASSOU,"{""exit"": 0, ""contains"": [""REQ-001""], ""json_valid"": true}",0,1.765
+C0-054,arquivo-json,JSON malformado: saída 1,PASSOU,"{""exit"": 1}",1,1.509
+C0-055,check,check: suíte MC/DC completa de 'A and B' com resultados esperados corretos (saída 0),PASSOU,"{""exit"": 0}",0,0.75
+C0-056,check,"check: falta T3, B não demonstrada (saída 2)",PASSOU,"{""exit"": 2}",2,0.705
+C0-057,check,check: resultado esperado errado em T2 (saída 2),PASSOU,"{""exit"": 2}",2,0.805
+C0-058,check,check: CSV sem a coluna 'value' é recusado (saída 1),PASSOU,"{""exit"": 1}",1,1.053
+C0-059,check,check com o exemplo de teste da fonte (só T1): condições não demonstradas (saída 2),PASSOU,"{""exit"": 2}",2,2.539
+C0-060,check,check com valores concretos (enum/bool): 3 testes completos (saída 0),PASSOU,"{""exit"": 0}",0,2.45
+C0-061,check,check com expressão numérica 'speed > 100 and rain' e valores concretos (saída 0),PASSOU,"{""exit"": 0}",0,0.678
+C0-062,check,check --format json produz JSON válido,PASSOU,"{""exit"": 0, ""json_valid"": true}",0,1.837
+C0-063,verify,verify: dois requisitos válidos juntos escrevendo valores diferentes => conflito (saída 2),PASSOU,"{""exit"": 2}",2,1.936
+C0-064,verify,verify: guardas que não se sobrepõem => sem conflito (saída 0),PASSOU,"{""exit"": 0}",0,2.398
+C0-065,verify,verify: mesmo valor escrito sem conflito (saída 0),PASSOU,"{""exit"": 0}",0,2.495
+C0-066,verify,verify --context sem guarda aplicável: lacuna (saída 2),PASSOU,"{""exit"": 2}",2,2.766
+C0-067,verify,verify --context com guarda sempre válida: sem lacuna (saída 0),PASSOU,"{""exit"": 0}",0,2.096
+C0-068,verify,verify sem contexto não aponta lacuna (saída 0),PASSOU,"{""exit"": 0}",0,1.646
+C0-069,verify,verify --format json produz JSON válido,PASSOU,"{""exit"": 0, ""json_valid"": true}",0,1.894
+C0-070,verify,verify exemplos/vm-decisoes.json: 0 conflitos (saída 0),PASSOU,"{""exit"": 0}",0,2.261
+C0-071,verify,verify exemplos/tis-decisoes.json: 3 conflitos (saída 2),PASSOU,"{""exit"": 2}",2,2.368
+C0-072,verify,verify exemplos/npp-decisoes.json: 1 conflito (saída 2),PASSOU,"{""exit"": 2}",2,2.329
+C0-I01,indeterminado,causa única na paridade de 3 entradas (número de testes),INDETERMINADO,(não executado),,
+C0-I02,indeterminado,causa única em (A and B) or (not A and C) com A repetida (saída?),INDETERMINADO,(não executado),,
+C0-I03,indeterminado,número de testes de (A and B) or (not A and C),INDETERMINADO,(não executado),,
+C0-I04,indeterminado,--boundary sem --z3,INDETERMINADO,(não executado),,
+C0-I05,indeterminado,--format com valor desconhecido (xml),INDETERMINADO,(não executado),,
+C0-I06,indeterminado,check --format csv,INDETERMINADO,(não executado),,
+C0-I07,indeterminado,ids repetidos no JSON de decisões,INDETERMINADO,(não executado),,
+C0-I08,indeterminado,--constraint com arquivo,INDETERMINADO,(não executado),,
+C0-I09,indeterminado,duas fontes ao mesmo tempo,INDETERMINADO,(não executado),,
+C0-I10,indeterminado,nenhuma fonte,INDETERMINADO,(não executado),,
+C0-I11,indeterminado,21 entradas com a tabela inteira,INDETERMINADO,(não executado),,
+C0-I12,indeterminado,--direct com 31 entradas,INDETERMINADO,(não executado),,
+C0-I13,indeterminado,verify VM com --context 'the_system_mode = preparing_weak',INDETERMINADO,(não executado),,
+C0-I14,indeterminado,código de saída de analyze --json exemplos/vm-decisoes.json,INDETERMINADO,(não executado),,
+C0-I15,indeterminado,código de saída de analyze --json exemplos/tis-decisoes.json,INDETERMINADO,(não executado),,
+C0-I16,indeterminado,operador '&' simples,INDETERMINADO,(não executado),,
+C0-I17,indeterminado,arquivo .mcdc inexistente,INDETERMINADO,(não executado),,
+C0-I18,indeterminado,linha .mcdc sem identificador,INDETERMINADO,(não executado),,
+C0-I19,indeterminado,número exato de testes de exemplos/vm-decisoes.json em CSV,INDETERMINADO,(não executado),,
+C0-I20,indeterminado,"texto exato da seção de mutação (tipos ORF, ENF, ...)",INDETERMINADO,(não executado),,
+C0-I21,indeterminado,Z3 ausente com --z3,INDETERMINADO,(não executado),,
+C0-I22,indeterminado,limite de 1000 pares por condição,INDETERMINADO,(não executado),,

@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "verify",
+    "--json",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-069/disj.json",
+    "--format",
+    "json"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"tool\" : \"mcdc\",\n  \"check\" : \"verify\",\n  \"system\" : \"s\",\n  \"decisions\" : 2,\n  \"pairsChecked\" : 1,\n  \"conflicts\" : [ ],\n  \"compatibleOverlaps\" : [ ],\n  \"gaps\" : {\n    \"checked\" : false,\n    \"context\" : null,\n    \"found\" : false,\n    \"witness\" : null\n  },\n  \"ok\" : true\n}\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 1.894,
+  "id": "C0-069",
+  "titulo": "verify --format json produz JSON válido",
+  "esperado": {
+    "exit": 0,
+    "json_valid": true
+  },
+  "usa_z3": true
+}

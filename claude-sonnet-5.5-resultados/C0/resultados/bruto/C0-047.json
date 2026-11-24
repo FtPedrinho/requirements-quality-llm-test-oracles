@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "speed > 100 or (speed > 50 and rain)",
+    "--z3",
+    "--format",
+    "truth-csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,row,speed > 100,speed > 50,rain,outcome,feasible,in_suite,demonstrates,concrete_values\nREQ,,V1,T,T,T,T,T,F,,speed = 101; rain = true\nREQ,,V2,T,T,F,T,T,T,speed > 100,speed = 101; rain = false\nREQ,,V3,T,F,T,T,F,F,,\nREQ,,V4,T,F,F,T,F,F,,\nREQ,,V5,F,T,T,T,T,T,speed > 50; rain,speed = 51; rain = true\nREQ,,V6,F,T,F,F,T,T,speed > 100; rain,speed = 51; rain = false\nREQ,,V7,F,F,T,F,T,T,speed > 50,speed = 0; rain = true\nREQ,,V8,F,F,F,F,T,F,,speed = 0; rain = false\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.834,
+  "id": "C0-047",
+  "titulo": "--z3 mantém a tabela inteira (impossível marcada): 8 + 1 = 9 linhas truth-csv",
+  "esperado": {
+    "exit": 0,
+    "lines": 9
+  },
+  "usa_z3": true
+}

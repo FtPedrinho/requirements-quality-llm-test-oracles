@@ -1,0 +1,13 @@
+; par de independencia (mascaramento) para a aparicao 0 (A) de: (A and B) or C
+(declare-const r1_A Bool)
+(declare-const r1_B Bool)
+(declare-const r1_C Bool)
+(declare-const r2_A Bool)
+(declare-const r2_B Bool)
+(declare-const r2_C Bool)
+(assert (not (= r1_A r2_A)))
+(assert (not (= (or (and r1_A r1_B) r1_C) (or (and r2_A r2_B) r2_C))))
+(assert (not (= (or (and r1_A r1_B) r1_C) (or (and (not r1_A) r1_B) r1_C))))
+(assert (not (= (or (and r2_A r2_B) r2_C) (or (and (not r2_A) r2_B) r2_C))))
+(check-sat)
+(get-model)

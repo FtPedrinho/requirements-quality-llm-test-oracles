@@ -1,0 +1,17 @@
+{
+  "cmd": [
+    "verify",
+    "--json",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-065/mesmo.json"
+  ],
+  "exit": 0,
+  "stdout": "Verifica��o entre requisitos: s\n2 decis�es, 1 pares que escrevem alguma vari�vel em comum\n\nConflitos: nenhum\n\nSobreposi��es sem conflito: 1\n  REQ-001 � REQ-002: mesmo valor em the_system_mode\n\nLacunas: n�o conferidas (use --context \"<express�o>\" para dizer em que situa��o alguma guarda deve valer)\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 2.495,
+  "id": "C0-065",
+  "titulo": "verify: mesmo valor escrito sem conflito (saída 0)",
+  "esperado": {
+    "exit": 0
+  },
+  "usa_z3": true
+}

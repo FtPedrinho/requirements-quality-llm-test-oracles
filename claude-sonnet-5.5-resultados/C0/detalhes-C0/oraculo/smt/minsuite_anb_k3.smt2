@@ -1,0 +1,10 @@
+; suite minima (mascaramento) de A and not B com no maximo 3 linhas
+(declare-const s0 Bool)
+(declare-const s1 Bool)
+(declare-const s2 Bool)
+(declare-const s3 Bool)
+(assert (or (and s1 s3)))
+(assert (or (and s0 s1)))
+(assert ((_ at-most 3) s0 s1 s2 s3))
+(check-sat)
+(get-model)

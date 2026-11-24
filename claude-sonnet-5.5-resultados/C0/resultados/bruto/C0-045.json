@@ -1,0 +1,22 @@
+{
+  "cmd": [
+    "analyze",
+    "speed > 100",
+    "--z3",
+    "--boundary"
+  ],
+  "exit": 0,
+  "stdout": "Decis�o:   REQ\nGuarda:    speed > 100\nVariante:  mascaramento\n\nVetor speed > 100   | D\nV1    T             | T\nV2    F             | F\n\nPares de independ�ncia:\n  speed > 100: (V1, V2)\n\nSu�te m�nima (2 testes):\n  V1  T  -> T   demonstra speed > 100   [speed = 101]\n  V2  F  -> F   demonstra speed > 100   [speed = 0]\n\nTestes de fronteira (2):\n  V1 com speed = 101   [speed = 101]\n  V2 com speed = 100   [speed = 100]\n\nDemonstra��o por condi��o:\n  speed > 100: V1 (T) e V2 (F), s� ela muda\n\nCobertura MC/DC: completa\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 1.031,
+  "id": "C0-045",
+  "titulo": "--z3 --boundary 'speed > 100' traz os valores de fronteira 100 e 101",
+  "esperado": {
+    "exit": 0,
+    "contains_todos": [
+      "100",
+      "101"
+    ]
+  },
+  "usa_z3": true
+}

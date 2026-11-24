@@ -1,0 +1,7 @@
+decision,test,input,value,expected_outcome
+vm#1,T1,the_system_mode,idle,T
+vm#1,T1,the_coin_sensor,true,T
+vm#1,T2,the_system_mode,choice,F
+vm#1,T2,the_coin_sensor,true,F
+vm#1,T3,the_system_mode,idle,F
+vm#1,T3,the_coin_sensor,false,F

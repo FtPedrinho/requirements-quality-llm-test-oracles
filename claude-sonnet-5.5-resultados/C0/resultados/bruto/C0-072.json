@@ -1,0 +1,17 @@
+{
+  "cmd": [
+    "verify",
+    "--json",
+    "exemplos/npp-decisoes.json"
+  ],
+  "exit": 2,
+  "stdout": "Verifica��o entre requisitos: safety_injection_system\n11 decis�es, 15 pares que escrevem alguma vari�vel em comum\n\nConflitos: 1\n  REQ005 � REQ008: as duas guardas valem no mesmo passo\n    the_overridden_mode: true (REQ005) � false (REQ008)\n    exemplo: the_pressure_mode = low, the_blockage_button_antes = released, the_blockage_button = pressed, the_reset_button = released, the_pressure_mode_antes = high\n\nSobreposi��es sem conflito: 1\n  REQ006 � REQ008: mesmo valor em the_overridden_mode\n\nLacunas: n�o conferidas (use --context \"<express�o>\" para dizer em que situa��o alguma guarda deve valer)\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 2.329,
+  "id": "C0-072",
+  "titulo": "verify exemplos/npp-decisoes.json: 1 conflito (saída 2)",
+  "esperado": {
+    "exit": 2
+  },
+  "usa_z3": true
+}

@@ -1,0 +1,17 @@
+{
+  "cmd": [
+    "analyze",
+    "--json",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-054/ruim.json"
+  ],
+  "exit": 1,
+  "stdout": "",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\nErro: JSON inv�lido: Unexpected character ('i' (code 105)): was expecting double-quote to start field name\n",
+  "segundos": 1.509,
+  "id": "C0-054",
+  "titulo": "JSON malformado: saída 1",
+  "esperado": {
+    "exit": 1
+  },
+  "usa_z3": false
+}

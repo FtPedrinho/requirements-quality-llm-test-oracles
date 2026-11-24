@@ -1,0 +1,17 @@
+{
+  "cmd": [
+    "analyze",
+    "A or (A and B)",
+    "--direct"
+  ],
+  "exit": 2,
+  "stdout": "Decis�o:   REQ\nGuarda:    A or (A and B)\nVariante:  mascaramento\n\nCondi��es: A#1, A#2, B\n\nTabela verdade: n�o montada (modo direto: os pares foram pedidos ao Z3; 4 combina��es)\n\nPares de independ�ncia:\n  A#1: (V2, V4)\n  A#2: nenhum par\n  B: nenhum par\n\nSu�te do modo direto (2 testes):\n  V2  TF  -> T   demonstra A#1   [A = true, B = false]\n  V4  FF  -> F   demonstra A#1   [A = false, B = false]\n\nDemonstra��o por condi��o:\n  A#1: V2 (T) e V4 (F), s� ela muda\n\nCobertura MC/DC: incompleta, sem par para A#2, B\n  A#2: redundante: n�o muda o resultado em nenhuma combina��o; o requisito pode ser simplificado\n  B: redundante: n�o muda o resultado em nenhuma combina��o; o requisito pode ser simplificado\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 1.64,
+  "id": "C0-040",
+  "titulo": "--direct: 'A or (A and B)' dá o mesmo diagnóstico da tabela (saída 2)",
+  "esperado": {
+    "exit": 2
+  },
+  "usa_z3": true
+}

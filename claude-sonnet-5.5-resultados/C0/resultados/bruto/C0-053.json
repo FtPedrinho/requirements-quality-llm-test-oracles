@@ -1,0 +1,23 @@
+{
+  "cmd": [
+    "analyze",
+    "--json",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-053/vm.json",
+    "--format",
+    "json"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"tool\" : \"mcdc\",\n  \"system\" : \"the_coffee_machine_system\",\n  \"variant\" : \"MASKING\",\n  \"constraint\" : null,\n  \"complete\" : true,\n  \"decisions\" : [ {\n    \"id\" : \"vm#1\",\n    \"requirement\" : \"REQ-001\",\n    \"guard\" : \"the_system_mode = idle /\\\\ the_coin_sensor = true\",\n    \"actions\" : [ \"the_system_mode := choice\" ],\n    \"complete\" : true,\n    \"uncoveredConditions\" : [ ],\n    \"uncovered\" : [ ],\n    \"inputs\" : [ {\n      \"name\" : \"the_system_mode = idle\",\n      \"variable\" : \"the_system_mode\",\n      \"operator\" : \"=\",\n      \"value\" : \"idle\"\n    }, {\n      \"name\" : \"the_coin_sensor = true\",\n      \"variable\" : \"the_coin_sensor\",\n      \"operator\" : \"=\",\n      \"value\" : \"true\"\n    } ],\n    \"conditions\" : [ {\n      \"label\" : \"the_system_mode = idle\",\n      \"input\" : \"the_system_mode = idle\",\n      \"occurrence\" : 1\n    }, {\n      \"label\" : \"the_coin_sensor = true\",\n      \"input\" : \"the_coin_sensor = true\",\n      \"occurrence\" : 1\n    } ],\n    \"suiteMethod\" : \"GREEDY\",\n    \"truthTableRows\" : 4,\n    \"truthTableBuilt\" : true,\n    \"truthTable\" : [ {\n      \"vector\" : \"V1\",\n      \"values\" : {\n        \"the_system_mode = idle\" : true,\n        \"the_coin_sensor = true\" : true\n      },\n      \"outcome\" : true,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"the_system_mode = idle\" : true,\n        \"the_coin_sensor = true\" : false\n      },\n      \"outcome\" : false,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V3\",\n      \"values\" : {\n        \"the_system_mode = idle\" : false,\n        \"the_coin_sensor = true\" : true\n      },\n      \"outcome\" : false,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V4\",\n      \"values\" : {\n        \"the_system_mode = idle\" : false,\n        \"the_coin_sensor = true\" : false\n      },\n      \"outcome\" : false,\n      \"feasible\" : true\n    } ],\n    \"independencePairs\" : {\n      \"the_system_mode = idle\" : [ [ \"V1\", \"V3\" ] ],\n      \"the_coin_sensor = true\" : [ [ \"V1\", \"V2\" ] ]\n    },\n    \"pairsTruncated\" : [ ],\n    \"minimalSuite\" : [ {\n      \"vector\" : \"V1\",\n      \"values\" : {\n        \"the_system_mode = idle\" : true,\n        \"the_coin_sensor = true\" : true\n      },\n      \"outcome\" : true,\n      \"demonstrates\" : [ \"the_system_mode = idle\", \"the_coin_sensor = true\" ]\n    }, {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"the_system_mode = idle\" : true,\n        \"the_coin_sensor = true\" : false\n      },\n      \"outcome\" : false,\n      \"demonstrates\" : [ \"the_coin_sensor = true\" ]\n    }, {\n      \"vector\" : \"V3\",\n      \"values\" : {\n        \"the_system_mode = idle\" : false,\n        \"the_coin_sensor = true\" : true\n      },\n      \"outcome\" : false,\n      \"demonstrates\" : [ \"the_system_mode = idle\" ]\n    } ],\n    \"chosenPairs\" : {\n      \"the_system_mode = idle\" : {\n        \"whenTrue\" : \"V1\",\n        \"whenFalse\" : \"V3\",\n        \"uniqueCause\" : true\n      },\n      \"the_coin_sensor = true\" : {\n        \"whenTrue\" : \"V1\",\n        \"whenFalse\" : \"V2\",\n        \"uniqueCause\" : true\n      }\n    }\n  } ]\n}\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 1.765,
+  "id": "C0-053",
+  "titulo": "JSON de decisões do exemplo da fonte: saída 0 e REQ-001 no relatório json",
+  "esperado": {
+    "exit": 0,
+    "contains": [
+      "REQ-001"
+    ],
+    "json_valid": true
+  },
+  "usa_z3": false
+}

@@ -1,0 +1,21 @@
+{
+  "cmd": [
+    "analyze",
+    "A and B",
+    "--constraint",
+    "not A or not B"
+  ],
+  "exit": 2,
+  "stdout": "Decis�o:   REQ\nGuarda:    A and B\nRestri��o: not A or not B\nVariante:  mascaramento\n\nVetor A   B   | D\nV1    T   T   | T  (imposs�vel)\nV2    T   F   | F\nV3    F   T   | F\nV4    F   F   | F\n\nPares de independ�ncia:\n  A: nenhum par\n  B: nenhum par\n\nSu�te m�nima (0 testes):\n\nCobertura MC/DC: incompleta, sem par para A, B\n  A: bloqueada pelas restri��es: os pares (V1, V3) usam linhas imposs�veis\n  B: bloqueada pelas restri��es: os pares (V1, V2) usam linhas imposs�veis\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.574,
+  "id": "C0-009",
+  "titulo": "A and B com --constraint 'not A or not B': condições bloqueadas (saída 2)",
+  "esperado": {
+    "exit": 2,
+    "contains": [
+      "bloquead"
+    ]
+  },
+  "usa_z3": false
+}

@@ -1,0 +1,19 @@
+{
+  "cmd": [
+    "analyze",
+    "!A",
+    "--format",
+    "csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values\nREQ,,V1,A,T,F,A,\nREQ,,V2,A,F,T,A,\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.521,
+  "id": "C0-018",
+  "titulo": "Operador '!' aceito: 2 linhas CSV",
+  "esperado": {
+    "exit": 0,
+    "csv_rows": 2
+  },
+  "usa_z3": false
+}

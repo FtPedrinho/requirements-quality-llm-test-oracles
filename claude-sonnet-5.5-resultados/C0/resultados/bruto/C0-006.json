@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "((E or D) and (not A or D)) or B",
+    "--exact",
+    "--format",
+    "csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values\nREQ,,V6,E,T,F,A; D#2,\nREQ,,V6,D,F,F,A; D#2,\nREQ,,V6,A,T,F,A; D#2,\nREQ,,V6,B,F,F,A; D#2,\nREQ,,V8,E,T,T,E; A,\nREQ,,V8,D,F,T,E; A,\nREQ,,V8,A,F,T,E; A,\nREQ,,V8,B,F,T,E; A,\nREQ,,V10,E,F,T,D#1; D#2,\nREQ,,V10,D,T,T,D#1; D#2,\nREQ,,V10,A,T,T,D#1; D#2,\nREQ,,V10,B,F,T,D#1; D#2,\nREQ,,V15,E,F,T,B,\nREQ,,V15,D,F,T,B,\nREQ,,V15,A,F,T,B,\nREQ,,V15,B,T,T,B,\nREQ,,V16,E,F,F,E; D#1; B,\nREQ,,V16,D,F,F,E; D#1; B,\nREQ,,V16,A,F,F,E; D#1; B,\nREQ,,V16,B,F,F,E; D#1; B,\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.744,
+  "id": "C0-006",
+  "titulo": "--exact em ((E or D) and (not A or D)) or B: 5 testes x 4 entradas = 20 linhas",
+  "esperado": {
+    "exit": 0,
+    "csv_rows": 20
+  },
+  "usa_z3": true
+}

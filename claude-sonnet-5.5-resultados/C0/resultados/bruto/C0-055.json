@@ -1,0 +1,18 @@
+{
+  "cmd": [
+    "check",
+    "A and B",
+    "--tests",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-055/ok.csv"
+  ],
+  "exit": 0,
+  "stdout": "Decis�o:   REQ\nGuarda:    A and B\nTestes:    3\n  T1 = V1  TT  -> T\n  T2 = V3  FT  -> F\n  T3 = V2  TF  -> F\n\nCondi��es:\n  A: demonstrada por T1 (T) e T2 (F)\n  B: demonstrada por T1 (T) e T3 (F)\n\nResultados de condi��o demonstrados: 4 de 4 (100,0%)\nCobertura MC/DC: completa, 2 de 2 condi��es demonstradas\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.75,
+  "id": "C0-055",
+  "titulo": "check: suíte MC/DC completa de 'A and B' com resultados esperados corretos (saída 0)",
+  "esperado": {
+    "exit": 0
+  },
+  "usa_z3": false
+}

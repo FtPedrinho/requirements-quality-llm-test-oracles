@@ -1,0 +1,18 @@
+{
+  "cmd": [
+    "check",
+    "A and B",
+    "--tests",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-058/semvalue.csv"
+  ],
+  "exit": 1,
+  "stdout": "",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\nErro: claude-sonnet-5.5-resultados\\C0\\suite\\work\\C0-058\\semvalue.csv: falta a coluna \"value\" no cabe�alho\n",
+  "segundos": 1.053,
+  "id": "C0-058",
+  "titulo": "check: CSV sem a coluna 'value' é recusado (saída 1)",
+  "esperado": {
+    "exit": 1
+  },
+  "usa_z3": false
+}

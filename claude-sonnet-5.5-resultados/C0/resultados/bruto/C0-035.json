@@ -1,0 +1,19 @@
+{
+  "cmd": [
+    "analyze",
+    "A and B",
+    "--format",
+    "truth-csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,row,A,B,outcome,feasible,in_suite,demonstrates,concrete_values\nREQ,,V1,T,T,T,T,T,A; B,\nREQ,,V2,T,F,F,T,T,B,\nREQ,,V3,F,T,F,T,T,A,\nREQ,,V4,F,F,F,T,F,,\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.515,
+  "id": "C0-035",
+  "titulo": "truth-csv de 'A and B': 4 combinações + 1 cabeçalho = 5 linhas",
+  "esperado": {
+    "exit": 0,
+    "lines": 5
+  },
+  "usa_z3": false
+}

@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "-f",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-051/ruim.mcdc"
+  ],
+  "exit": 1,
+  "stdout": "",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\nErro: REQ-002: Express�o incompleta: esperava uma condi��o\n",
+  "segundos": 0.505,
+  "id": "C0-051",
+  "titulo": "Erro de sintaxe em REQ-002: saída 1 citando o requisito",
+  "esperado": {
+    "exit": 1,
+    "contains": [
+      "REQ-002"
+    ]
+  },
+  "usa_z3": false
+}

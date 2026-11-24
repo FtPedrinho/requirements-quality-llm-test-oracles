@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "speed > 100 /\\ mode = idle",
+    "--z3",
+    "--format",
+    "csv"
+  ],
+  "exit": 0,
+  "stdout": "decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values\nREQ,,V1,speed > 100,T,T,speed > 100; mode = idle,speed = 101; mode = idle\nREQ,,V1,mode = idle,T,T,speed > 100; mode = idle,speed = 101; mode = idle\nREQ,,V2,speed > 100,T,F,mode = idle,speed = 101; mode = _outro\nREQ,,V2,mode = idle,F,F,mode = idle,speed = 101; mode = _outro\nREQ,,V3,speed > 100,F,F,speed > 100,speed = 0; mode = idle\nREQ,,V3,mode = idle,T,F,speed > 100,speed = 0; mode = idle\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.757,
+  "id": "C0-048",
+  "titulo": "--z3 dá valores concretos: speed > 100 /\\ mode = idle contém speed acima de 100",
+  "esperado": {
+    "exit": 0,
+    "contem_numero_maior_que": 100
+  },
+  "usa_z3": true
+}

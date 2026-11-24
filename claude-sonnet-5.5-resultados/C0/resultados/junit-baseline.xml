@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="72" time="77.782" timestamp="2026-11-24T17:07:32.476540-03:00" hostname="DESKTOP-E7NANC1"><testcase classname="test_mcdc_c0" name="test_caso[C0-001]" time="0.594" /><testcase classname="test_mcdc_c0" name="test_caso[C0-002]" time="0.521" /><testcase classname="test_mcdc_c0" name="test_caso[C0-003]" time="0.517" /><testcase classname="test_mcdc_c0" name="test_caso[C0-004]" time="0.549" /><testcase classname="test_mcdc_c0" name="test_caso[C0-005]" time="0.565" /><testcase classname="test_mcdc_c0" name="test_caso[C0-006]" time="0.749" /><testcase classname="test_mcdc_c0" name="test_caso[C0-007]" time="0.537" /><testcase classname="test_mcdc_c0" name="test_caso[C0-008]" time="0.540" /><testcase classname="test_mcdc_c0" name="test_caso[C0-009]" time="0.609" /><testcase classname="test_mcdc_c0" name="test_caso[C0-010]" time="0.500" /><testcase classname="test_mcdc_c0" name="test_caso[C0-011]" time="0.506" /><testcase classname="test_mcdc_c0" name="test_caso[C0-012]" time="0.503" /><testcase classname="test_mcdc_c0" name="test_caso[C0-013]" time="0.558" /><testcase classname="test_mcdc_c0" name="test_caso[C0-014]" time="0.504" /><testcase classname="test_mcdc_c0" name="test_caso[C0-015]" time="0.549" /><testcase classname="test_mcdc_c0" name="test_caso[C0-016]" time="0.533" /><testcase classname="test_mcdc_c0" name="test_caso[C0-017]" time="0.608" /><testcase classname="test_mcdc_c0" name="test_caso[C0-018]" time="0.556" /><testcase classname="test_mcdc_c0" name="test_caso[C0-019]" time="0.595" /><testcase classname="test_mcdc_c0" name="test_caso[C0-020]" time="0.571" /><testcase classname="test_mcdc_c0" name="test_caso[C0-021]" time="0.527" /><testcase classname="test_mcdc_c0" name="test_caso[C0-022]" time="0.532" /><testcase classname="test_mcdc_c0" name="test_caso[C0-023]" time="0.616" /><testcase classname="test_mcdc_c0" name="test_caso[C0-024]" time="0.845" /><testcase classname="test_mcdc_c0" name="test_caso[C0-025]" time="0.623" /><testcase classname="test_mcdc_c0" name="test_caso[C0-026]" time="0.521" /><testcase classname="test_mcdc_c0" name="test_caso[C0-027]" time="0.579" /><testcase classname="test_mcdc_c0" name="test_caso[C0-028]" time="0.564" /><testcase classname="test_mcdc_c0" name="test_caso[C0-029]" time="0.633" /><testcase classname="test_mcdc_c0" name="test_caso[C0-030]" time="0.510" /><testcase classname="test_mcdc_c0" name="test_caso[C0-031]" time="0.467" /><testcase classname="test_mcdc_c0" name="test_caso[C0-032]" time="0.460" /><testcase classname="test_mcdc_c0" name="test_caso[C0-033]" time="0.513" /><testcase classname="test_mcdc_c0" name="test_caso[C0-034]" time="1.470" /><testcase classname="test_mcdc_c0" name="test_caso[C0-035]" time="0.518" /><testcase classname="test_mcdc_c0" name="test_caso[C0-036]" time="0.521" /><testcase classname="test_mcdc_c0" name="test_caso[C0-037]" time="0.551" /><testcase classname="test_mcdc_c0" name="test_caso[C0-038]" time="0.617"><failure message="AssertionError: stdout não deveria mostrar o relatório&#10;assert 'Relat�rio gr...relatorio.txt' == ''&#10;  &#10;  + Relat�rio gravado em claude-sonnet-5.5-resultados/C0/suite/work/C0-038/relatorio.txt">caso = {'args': ['analyze', '(A and B) or C', '-o', '@OUT/relatorio.txt'], 'citacao': '`-o &lt;arquivo&gt;` | Grava o relatório no arquivo em vez de mostrar na tela', 'evidencia_z3': None, 'files': {}, ...}
+
+    @pytest.mark.parametrize("caso", DETERMINADOS, ids=[c["id"] for c in DETERMINADOS])
+    def test_caso(caso):
+        args, d = preparar(caso)
+        obs = executar(args, caso["usa_z3"])
+        obs.update({"id": caso["id"], "titulo": caso["titulo"], "esperado": caso["observa"], "usa_z3": caso["usa_z3"]})
+        salvar_bruto(caso["id"], obs)
+&gt;       checar(caso, obs, d, args)
+
+test_mcdc_c0.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+caso = {'args': ['analyze', '(A and B) or C', '-o', '@OUT/relatorio.txt'], 'citacao': '`-o &lt;arquivo&gt;` | Grava o relatório no arquivo em vez de mostrar na tela', 'evidencia_z3': None, 'files': {}, ...}
+obs = {'cmd': ['analyze', '(A and B) or C', '-o', 'claude-sonnet-5.5-resultados/C0/suite/work/C0-038/relatorio.txt'], 'esperado': {'exit': 0, 'outfile': 'relatorio.txt', 'stdout_vazio': True}, 'exit': 0, 'id': 'C0-038', ...}
+d = 'C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-sonnet-5.5-resultados\\C0\\suite\\work\\C0-038'
+args = ['analyze', '(A and B) or C', '-o', 'claude-sonnet-5.5-resultados/C0/suite/work/C0-038/relatorio.txt']
+
+    def checar(caso, obs, d, args):
+        e = caso["observa"]
+        saida = obs["stdout"] + "\n" + obs["stderr"]
+        baixo = saida.lower()
+        if "exit" in e:
+            assert obs["exit"] == e["exit"], "código de saída %s != esperado %s" % (obs["exit"], e["exit"])
+        if "csv_rows" in e:
+            n = len(linhas(obs["stdout"]))
+            assert n in (e["csv_rows"], e["csv_rows"] + 1), "linhas CSV %d, esperado %d (ou +1 de cabeçalho)" % (n, e["csv_rows"])
+        if "lines" in e:
+            n = len(linhas(obs["stdout"]))
+            assert n == e["lines"], "linhas %d != esperado %d" % (n, e["lines"])
+        for s in e.get("contains", []) + e.get("contains_todos", []):
+            assert s.lower() in baixo, "saída não contém %r" % s
+        for s in e.get("not_contains", []):
+            assert s.lower() not in baixo, "saída contém %r" % s
+        if e.get("json_valid"):
+            json.loads(obs["stdout"])
+        if "outfile" in e:
+            p = os.path.join(d, e["outfile"])
+            assert os.path.isfile(p) and os.path.getsize(p) &gt; 0, "arquivo -o ausente ou vazio"
+            if e.get("stdout_vazio"):
+&gt;               assert obs["stdout"].strip() == "", "stdout não deveria mostrar o relatório"
+E               AssertionError: stdout não deveria mostrar o relatório
+E               assert 'Relat�rio gr...relatorio.txt' == ''
+E                 
+E                 + Relat�rio gravado em claude-sonnet-5.5-resultados/C0/suite/work/C0-038/relatorio.txt
+
+test_mcdc_c0.py:36: AssertionError</failure></testcase><testcase classname="test_mcdc_c0" name="test_caso[C0-039]" time="1.207" /><testcase classname="test_mcdc_c0" name="test_caso[C0-040]" time="1.644" /><testcase classname="test_mcdc_c0" name="test_caso[C0-041]" time="0.874" /><testcase classname="test_mcdc_c0" name="test_caso[C0-042]" time="2.311" /><testcase classname="test_mcdc_c0" name="test_caso[C0-043]" time="1.104" /><testcase classname="test_mcdc_c0" name="test_caso[C0-044]" time="3.216" /><testcase classname="test_mcdc_c0" name="test_caso[C0-045]" time="1.034" /><testcase classname="test_mcdc_c0" name="test_caso[C0-046]" time="0.962" /><testcase classname="test_mcdc_c0" name="test_caso[C0-047]" time="0.870" /><testcase classname="test_mcdc_c0" name="test_caso[C0-048]" time="0.793" /><testcase classname="test_mcdc_c0" name="test_caso[C0-049]" time="0.536" /><testcase classname="test_mcdc_c0" name="test_caso[C0-050]" time="1.676" /><testcase classname="test_mcdc_c0" name="test_caso[C0-051]" time="0.509" /><testcase classname="test_mcdc_c0" name="test_caso[C0-052]" time="1.592" /><testcase classname="test_mcdc_c0" name="test_caso[C0-053]" time="1.768" /><testcase classname="test_mcdc_c0" name="test_caso[C0-054]" time="1.514" /><testcase classname="test_mcdc_c0" name="test_caso[C0-055]" time="0.753" /><testcase classname="test_mcdc_c0" name="test_caso[C0-056]" time="0.708" /><testcase classname="test_mcdc_c0" name="test_caso[C0-057]" time="1.436" /><testcase classname="test_mcdc_c0" name="test_caso[C0-058]" time="1.058" /><testcase classname="test_mcdc_c0" name="test_caso[C0-059]" time="2.544" /><testcase classname="test_mcdc_c0" name="test_caso[C0-060]" time="2.455" /><testcase classname="test_mcdc_c0" name="test_caso[C0-061]" time="0.681" /><testcase classname="test_mcdc_c0" name="test_caso[C0-062]" time="1.841" /><testcase classname="test_mcdc_c0" name="test_caso[C0-063]" time="1.941" /><testcase classname="test_mcdc_c0" name="test_caso[C0-064]" time="2.402" /><testcase classname="test_mcdc_c0" name="test_caso[C0-065]" time="2.499" /><testcase classname="test_mcdc_c0" name="test_caso[C0-066]" time="2.771" /><testcase classname="test_mcdc_c0" name="test_caso[C0-067]" time="2.099" /><testcase classname="test_mcdc_c0" name="test_caso[C0-068]" time="1.652" /><testcase classname="test_mcdc_c0" name="test_caso[C0-069]" time="1.899" /><testcase classname="test_mcdc_c0" name="test_caso[C0-070]" time="2.297" /><testcase classname="test_mcdc_c0" name="test_caso[C0-071]" time="2.371" /><testcase classname="test_mcdc_c0" name="test_caso[C0-072]" time="2.334" /></testsuite></testsuites>

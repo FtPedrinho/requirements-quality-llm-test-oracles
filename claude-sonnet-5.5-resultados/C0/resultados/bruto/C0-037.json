@@ -1,0 +1,20 @@
+{
+  "cmd": [
+    "analyze",
+    "A and B",
+    "--constraint",
+    "not A or not B",
+    "--format",
+    "truth-csv"
+  ],
+  "exit": 2,
+  "stdout": "decision,requirement,row,A,B,outcome,feasible,in_suite,demonstrates,concrete_values\nREQ,,V1,T,T,T,F,F,,\nREQ,,V2,T,F,F,T,F,,\nREQ,,V3,F,T,F,T,F,,\nREQ,,V4,F,F,F,T,F,,\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.515,
+  "id": "C0-037",
+  "titulo": "truth-csv mantém as combinações impossíveis (marcadas, não removidas): 5 linhas",
+  "esperado": {
+    "lines": 5
+  },
+  "usa_z3": false
+}

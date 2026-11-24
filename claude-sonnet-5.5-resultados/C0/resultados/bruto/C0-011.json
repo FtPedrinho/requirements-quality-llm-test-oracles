@@ -1,0 +1,18 @@
+{
+  "cmd": [
+    "analyze",
+    "A or B and C",
+    "--constraint",
+    "not A or not C"
+  ],
+  "exit": 0,
+  "stdout": "Decis�o:   REQ\nGuarda:    A or B and C\nRestri��o: not A or not C\nVariante:  mascaramento\n\nVetor A   B   C   | D\nV1    T   T   T   | T  (imposs�vel)\nV2    T   T   F   | T\nV3    T   F   T   | T  (imposs�vel)\nV4    T   F   F   | T\nV5    F   T   T   | T\nV6    F   T   F   | F\nV7    F   F   T   | F\nV8    F   F   F   | F\n\nPares de independ�ncia:\n  A: (V2, V6), (V2, V7), (V2, V8), (V4, V6), (V4, V7), (V4, V8)\n  B: (V5, V7)\n  C: (V5, V6)\n\nSu�te m�nima (4 testes):\n  V2  TTF  -> T   demonstra A\n  V5  FTT  -> T   demonstra B, C\n  V6  FTF  -> F   demonstra A, C\n  V7  FFT  -> F   demonstra B\n\nDemonstra��o por condi��o:\n  A: V2 (T) e V6 (F), s� ela muda\n  B: V5 (T) e V7 (F), s� ela muda\n  C: V5 (T) e V6 (F), s� ela muda\n\nCobertura MC/DC: completa\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.503,
+  "id": "C0-011",
+  "titulo": "Precedência: 'A or B and C' = A or (B and C) (restrição A,C exclusivos => saída 0)",
+  "esperado": {
+    "exit": 0
+  },
+  "usa_z3": false
+}

@@ -1,0 +1,135 @@
+# Análise documental C0 e oráculo (congelada antes de ler o SUT)
+
+Fonte normativa exclusiva: `experimentacao-pesquisa/documentacao-original/tool-readme-original.md` (SHA-256 `72b827bdee6ce859527765cff574a473519c00a1af9aa9f3aacce4236a4995f8`, conferido antes da leitura).
+
+Revisão: **autorrevisão** (sem revisor independente). O Z3 prova apenas as fórmulas; a fidelidade texto→fórmula não é provada.
+
+## 1. Inventário do comportamento documentado
+
+- **Comandos:** `analyze`, `check`, `verify`; fonte única: expressão, `-f` (.mcdc) ou `--json` (NAT2TEST).
+- **Operadores:** e (`and`,`&&`,`/\`), ou (`or`,`||`,`\/`), não (`not`,`!`), comparações (`= == != < <= > >=`); precedência *e* antes de *ou*; sinal de menos só em números.
+- **MC/DC:** mascaramento (padrão) e causa única; cada aparição é uma condição (`A#1`, `A#2`); par = dois testes possíveis em que a condição muda, a saída muda e ela decide nos dois.
+- **Diagnóstico:** condição sem par é *redundante* ou *bloqueada* por combinações impossíveis.
+- **Tamanho da suíte:** N+1 em guardas simples; exemplos explícitos: (A∧B)∨C = 4, A∧¬B = 3, paridade de 3 entradas = 8, `--exact` do exemplo = 5.
+- **Opções:** `--constraint`, `--z3`, `--exact`, `--direct`, `--boundary`, `--mutation`, `--format`, `-o`, `--context`.
+- **Formatos:** `text`, `json`, `csv` (uma linha por teste e entrada), `truth-csv` (tabela inteira, impossíveis marcadas, cabeçalho por decisão); `check`/`verify` aceitam `text` e `json`.
+- **Códigos de saída:** 0 tudo certo; 1 entrada inválida; 2 condição sem par / (check) não demonstrada ou esperado divergente / (verify) conflito ou lacuna.
+- **Limites:** 20 entradas (tabela), 12 (Z3 linha a linha; acima passa ao modo direto), 30 (direto).
+- **Verificação:** conflito = dois requisitos valem juntos e escrevem valores diferentes; lacuna = nenhum requisito vale (só com `--context`).
+- **Sistemas de exemplo:** VM (0 conflitos), TIS (3), NPP (1); `exemplos/requisitos.mcdc` tem REQ-003 com condição redundante.
+
+## 2. Regras de observação adotadas
+
+- `exit`: código de saída do processo `./mcdc`.
+- `csv_rows`: linhas não vazias do CSV da suíte; aceita `n` ou `n+1` (a fonte não diz se há cabeçalho no CSV da suíte).
+- `lines`: linhas não vazias do `truth-csv`, exatas (2^n combinações + 1 cabeçalho por decisão).
+- `contains`/`not_contains`: busca sem distinção de maiúsculas na saída padrão+erro.
+- Casos **INDETERMINADOS** não recebem expectativa e **não entram na execução usada para cobertura** (decisão do pesquisador).
+
+## 3. Casos determinados
+
+| ID | Grupo | Caso | Argumentos | Expectativa | Trecho literal | Justificativa |
+|---|---|---|---|---|---|---|
+| C0-001 | analyze/booleano | (A and B) or C: todas as condições têm par (saída 0) | `analyze (A and B) or C` | `{"exit": 0}` | **Código de saída:** `0` tudo certo; `1` entrada inválida; `2` alguma condição sem par / para cada condição, dois testes possíveis em que ela muda, a saída muda e ela decide nos dois (trocar só ela muda a saída) | Z3 (sat para as 3 condições) confirma que cada condição tem par; logo nenhuma está sem par. |
+| C0-002 | analyze/booleano | (A and B) or C: suíte de 4 testes x 3 entradas = 12 linhas CSV | `analyze (A and B) or C --format csv` | `{"exit": 0, "csv_rows": 12}` | Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes ...); csv: uma linha por teste e entrada | 4 testes x 3 entradas = 12 linhas de dados (tolerando 1 linha de cabeçalho, que a fonte não define). |
+| C0-003 | analyze/booleano | (A and B) or C em causa única: 4 testes x 3 entradas = 12 linhas CSV | `analyze (A and B) or C --unique-cause --format csv` | `{"exit": 0, "csv_rows": 12}` | As duas variantes de MC/DC são suportadas: mascaramento (padrão) e causa única (`--unique-cause`). / (A ∧ B) ∨ C com 4 testes | Fonte não distingue a contagem por variante nesse exemplo; assume-se o exemplo conhecido de 4 testes. |
+| C0-004 | analyze/booleano | A and not B: 3 testes x 2 entradas = 6 linhas CSV | `analyze A and not B --format csv` | `{"exit": 0, "csv_rows": 6}` | A ∧ ¬B com 3 | 3 testes x 2 entradas = 6 linhas de dados. |
+| C0-005 | analyze/booleano | Paridade de 3 entradas exige 8 testes (24 linhas CSV, mascaramento) | `analyze (A and B and C) or (A and not B and not C) or (not A and B and not C) or (not A and not B and C) --format csv` | `{"exit": 0, "csv_rows": 24}` | o MC/DC pode exigir todas as combinações (ex.: a paridade de 3 entradas pede 8 testes) | 8 testes x 3 entradas = 24 linhas de dados; exit 0 se toda condição tem par (Z3). |
+| C0-006 | analyze/exato | --exact em ((E or D) and (not A or D)) or B: 5 testes x 4 entradas = 20 linhas | `analyze ((E or D) and (not A or D)) or B --exact --format csv` | `{"exit": 0, "csv_rows": 20}` | suíte exata (aqui, 5 testes em vez dos 6 da escolha gulosa) | 5 testes x 4 entradas (E, D, A, B) = 20 linhas; Z3 independente confirma que 4 é unsat e 5 é sat. |
+| C0-007 | analyze/booleano | (A and B) or (not A and C): condições A#1, B, A#2, C; saída 0 | `analyze (A and B) or (not A and C)` | `{"exit": 0, "contains": ["A#1", "A#2"]}` | em `(A and B) or (not A and C)` há 3 entradas e 4 condições (`A#1`, `B`, `A#2`, `C`) | A saída em texto deve identificar A#1 e A#2; Z3 confirma par para as 4 condições (saída 0). |
+| C0-008 | analyze/diagnostico | A or (A and B): B é redundante (saída 2, texto cita redundância) | `analyze A or (A and B)` | `{"exit": 2, "contains": ["redundan"]}` | condição sem par: redundante (o requisito pode ser simplificado) / `2` alguma condição sem par | B nunca decide (A=T => T; A=F => A and B = F); Z3 unsat para B. |
+| C0-009 | analyze/diagnostico | A and B com --constraint 'not A or not B': condições bloqueadas (saída 2) | `analyze A and B --constraint not A or not B` | `{"exit": 2, "contains": ["bloquead"]}` | **bloqueada** por combinações impossíveis / `--constraint "<expr>"` Restrição entre condições | Z3 unsat para A e B sob a restrição. |
+| C0-010 | analyze/restricao | A or (B and C) com restrição 'not A or B': todas as condições têm par (saída 0) | `analyze A or (B and C) --constraint not A or B` | `{"exit": 0}` | restrição escrita à mão: A = speed > 100 implica B = speed > 50 / `./mcdc analyze "A or (B and C)" --constraint "not A or B"` | Z3 sat para as 3 condições com a restrição. |
+| C0-011 | analyze/precedencia | Precedência: 'A or B and C' = A or (B and C) (restrição A,C exclusivos => saída 0) | `analyze A or B and C --constraint not A or not C` | `{"exit": 0}` | Precedência (e antes de ou) | Se lido como (A or B) and C, A ficaria sem par (A e C exclusivos): o caso discrimina a leitura. |
+| C0-012 | analyze/precedencia | Precedência: 'A and B or C' = (A and B) or C (restrição A,C exclusivos => saída 0) | `analyze A and B or C --constraint not A or not C` | `{"exit": 0}` | Precedência (e antes de ou) | Z3 sat para as 3 condições em (A and B) or C com a restrição. |
+| C0-013 | operadores | Operador '&&' aceito: 6 linhas CSV | `analyze A && B --format csv` | `{"exit": 0, "csv_rows": 6}` | Operadores (use aspas simples quando a expressão tiver `\`): e: and, &&, /\; ou: or, \|\|, \/; não: not, ! | Decisão simples: N+1 testes x N entradas = 6 linhas. |
+| C0-014 | operadores | Operador '/\' aceito: 6 linhas CSV | `analyze A /\ B --format csv` | `{"exit": 0, "csv_rows": 6}` | Operadores (use aspas simples quando a expressão tiver `\`): e: and, &&, /\; ou: or, \|\|, \/; não: not, ! | Decisão simples: N+1 testes x N entradas = 6 linhas. |
+| C0-015 | operadores | Operador 'or' aceito: 6 linhas CSV | `analyze A or B --format csv` | `{"exit": 0, "csv_rows": 6}` | Operadores (use aspas simples quando a expressão tiver `\`): e: and, &&, /\; ou: or, \|\|, \/; não: not, ! | Decisão simples: N+1 testes x N entradas = 6 linhas. |
+| C0-016 | operadores | Operador '\|\|' aceito: 6 linhas CSV | `analyze A \|\| B --format csv` | `{"exit": 0, "csv_rows": 6}` | Operadores (use aspas simples quando a expressão tiver `\`): e: and, &&, /\; ou: or, \|\|, \/; não: not, ! | Decisão simples: N+1 testes x N entradas = 6 linhas. |
+| C0-017 | operadores | Operador '\/' aceito: 6 linhas CSV | `analyze A \/ B --format csv` | `{"exit": 0, "csv_rows": 6}` | Operadores (use aspas simples quando a expressão tiver `\`): e: and, &&, /\; ou: or, \|\|, \/; não: not, ! | Decisão simples: N+1 testes x N entradas = 6 linhas. |
+| C0-018 | operadores | Operador '!' aceito: 2 linhas CSV | `analyze !A --format csv` | `{"exit": 0, "csv_rows": 2}` | Operadores (use aspas simples quando a expressão tiver `\`): e: and, &&, /\; ou: or, \|\|, \/; não: not, ! | Decisão simples: N+1 testes x N entradas = 2 linhas. |
+| C0-019 | operadores | Operador 'not' aceito: 2 linhas CSV | `analyze not A --format csv` | `{"exit": 0, "csv_rows": 2}` | Operadores (use aspas simples quando a expressão tiver `\`): e: and, &&, /\; ou: or, \|\|, \/; não: not, ! | Decisão simples: N+1 testes x N entradas = 2 linhas. |
+| C0-020 | operadores | Comparação '=' aceita em 'x = 5 and B' (saída 0) | `analyze x = 5 and B` | `{"exit": 0}` | comparação \| `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` | Sem Z3 não há relação entre condições: as duas condições têm par => saída 0. |
+| C0-021 | operadores | Comparação '==' aceita em 'x == 5 and B' (saída 0) | `analyze x == 5 and B` | `{"exit": 0}` | comparação \| `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` | Sem Z3 não há relação entre condições: as duas condições têm par => saída 0. |
+| C0-022 | operadores | Comparação '!=' aceita em 'x != 5 and B' (saída 0) | `analyze x != 5 and B` | `{"exit": 0}` | comparação \| `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` | Sem Z3 não há relação entre condições: as duas condições têm par => saída 0. |
+| C0-023 | operadores | Comparação '<' aceita em 'x < 5 and B' (saída 0) | `analyze x < 5 and B` | `{"exit": 0}` | comparação \| `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` | Sem Z3 não há relação entre condições: as duas condições têm par => saída 0. |
+| C0-024 | operadores | Comparação '<=' aceita em 'x <= 5 and B' (saída 0) | `analyze x <= 5 and B` | `{"exit": 0}` | comparação \| `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` | Sem Z3 não há relação entre condições: as duas condições têm par => saída 0. |
+| C0-025 | operadores | Comparação '>' aceita em 'x > 5 and B' (saída 0) | `analyze x > 5 and B` | `{"exit": 0}` | comparação \| `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` | Sem Z3 não há relação entre condições: as duas condições têm par => saída 0. |
+| C0-026 | operadores | Comparação '>=' aceita em 'x >= 5 and B' (saída 0) | `analyze x >= 5 and B` | `{"exit": 0}` | comparação \| `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` | Sem Z3 não há relação entre condições: as duas condições têm par => saída 0. |
+| C0-027 | operadores | Comparação de enumeração: 'mode != idle and B' (saída 0) | `analyze mode != idle and B` | `{"exit": 0}` | `speed > 100 /\ mode = idle`; comparação `!=` | Condições independentes => saída 0. |
+| C0-028 | operadores | Exemplo da fonte: 'speed > 100 /\ mode = idle' (saída 0) | `analyze speed > 100 /\ mode = idle` | `{"exit": 0}` | ./mcdc analyze 'speed > 100 /\ mode = idle' | Saída 0. |
+| C0-029 | operadores | Número negativo: 'x > -3 and B' é válido (saída 0) | `analyze x > -3 and B` | `{"exit": 0}` | Sinal de menos só em números | Saída 0. |
+| C0-030 | entrada-invalida | Expressão inválida (operador sem operando à direita): saída 1 | `analyze A and` | `{"exit": 1}` | expressões inválidas recusadas / `1` entrada inválida | operador sem operando à direita. |
+| C0-031 | entrada-invalida | Expressão inválida (parêntese não fechado): saída 1 | `analyze (A and B` | `{"exit": 1}` | expressões inválidas recusadas / `1` entrada inválida | parêntese não fechado. |
+| C0-032 | entrada-invalida | Expressão inválida (operador sem operando à esquerda): saída 1 | `analyze and A` | `{"exit": 1}` | expressões inválidas recusadas / `1` entrada inválida | operador sem operando à esquerda. |
+| C0-033 | entrada-invalida | Expressão inválida (sinal de menos fora de um número): saída 1 | `analyze A and -B` | `{"exit": 1}` | expressões inválidas recusadas / `1` entrada inválida | sinal de menos fora de um número. |
+| C0-034 | formatos | --format json produz JSON válido | `analyze (A and B) or C --format json` | `{"exit": 0, "json_valid": true}` | `json` \| Resultado completo de cada decisão | Documento JSON analisável. |
+| C0-035 | formatos | truth-csv de 'A and B': 4 combinações + 1 cabeçalho = 5 linhas | `analyze A and B --format truth-csv` | `{"exit": 0, "lines": 5}` | `truth-csv` \| A tabela verdade inteira, com as combinações impossíveis marcadas / TruthTableCsvReportTest: Tabela inteira, combinações impossíveis marcadas, cabeçalho por decisão | 4 + 1 = 5 linhas. |
+| C0-036 | formatos | truth-csv de 'A or (B and C)': 8 combinações + 1 cabeçalho = 9 linhas | `analyze A or (B and C) --format truth-csv` | `{"exit": 0, "lines": 9}` | TruthTableTest: Uma linha por combinação / cabeçalho por decisão | 8 + 1 = 9. |
+| C0-037 | formatos | truth-csv mantém as combinações impossíveis (marcadas, não removidas): 5 linhas | `analyze A and B --constraint not A or not B --format truth-csv` | `{"lines": 5}` | `truth-csv` \| A tabela verdade inteira, com as combinações impossíveis marcadas | 4 combinações + 1 cabeçalho = 5 linhas, mesmo com restrição (a saída 2 não é avaliada aqui). |
+| C0-038 | formatos | -o grava o relatório no arquivo e não mostra na tela | `analyze (A and B) or C -o @OUT/relatorio.txt` | `{"exit": 0, "outfile": "relatorio.txt", "stdout_vazio": true}` | `-o <arquivo>` \| Grava o relatório no arquivo em vez de mostrar na tela | Arquivo criado e não vazio; stdout sem relatório. |
+| C0-039 | formatos | --mutation acrescenta a seção de mutação ao relatório em texto | `analyze A and (B or C) --mutation` | `{"exit": 0, "mais_longo_que": ["analyze", "A and (B or C)"]}` | `text` \| Tabela verdade, pares, suíte, ..., fronteiras, mutação e o motivo de cada problema / `--mutation` Confere se a suíte pega versões do requisito com um defeito | Relatório estritamente maior que o sem --mutation; saída 0 (todas as condições têm par). |
+| C0-040 | z3 | --direct: 'A or (A and B)' dá o mesmo diagnóstico da tabela (saída 2) | `analyze A or (A and B) --direct` | `{"exit": 2}` | o modo direto dá a mesma cobertura e o mesmo diagnóstico que a tabela inteira | Saída 2. |
+| C0-041 | z3 | --direct: '(A and B) or C' dá 4 testes x 3 entradas = 12 linhas CSV | `analyze (A and B) or C --direct --format csv` | `{"exit": 0, "csv_rows": 12}` | O modo direto concorda com a tabela / mesma cobertura e mesmo diagnóstico | 12 linhas de dados. |
+| C0-042 | z3 | --z3 com 13 entradas passa sozinho ao modo direto (saída 0) | `analyze A1 and A2 and A3 and A4 and A5 and A6 and A7 and A8 and A9 and A10 and A11 and A12 and A13 --z3` | `{"exit": 0}` | `--z3` ... acima de 12 entradas, passa sozinho ao modo direto | Saída 0. |
+| C0-043 | limites | Tabela inteira com 20 entradas (conjunção) funciona sem Z3 (saída 0) | `analyze A1 and A2 and A3 and A4 and A5 and A6 and A7 and A8 and A9 and A10 and A11 and A12 and A13 and A14 and A15 and A16 and A17 and A18 and A19 and A20` | `{"exit": 0}` | 20 entradas com a tabela inteira (cerca de 1 milhão de combinações) | Saída 0. |
+| C0-044 | limites | Modo direto com 26 entradas (conjunção) funciona (saída 0) | `analyze A1 and A2 and A3 and A4 and A5 and A6 and A7 and A8 and A9 and A10 and A11 and A12 and A13 and A14 and A15 and A16 and A17 and A18 and A19 and A20 and A21 and A22 and A23 and A24 and A25 and A26 --direct` | `{"exit": 0}` | o modo direto com 26 entradas ... e 30 no modo direto | Saída 0. |
+| C0-045 | z3 | --z3 --boundary 'speed > 100' traz os valores de fronteira 100 e 101 | `analyze speed > 100 --z3 --boundary` | `{"exit": 0, "contains_todos": ["100", "101"]}` | `--z3 --boundary` \| Variações no limite de cada comparação (`speed > 100` → 100 e 101) | A saída deve mencionar 100 e 101. |
+| C0-046 | z3 | --z3 --boundary 'speed > 100 or (speed > 50 and rain)' (saída 0) | `analyze speed > 100 or (speed > 50 and rain) --z3 --boundary` | `{"exit": 0}` | ./mcdc analyze "speed > 100 or (speed > 50 and rain)" --z3 --boundary | Z3 (Int speed) sat para as 3 condições. |
+| C0-047 | z3 | --z3 mantém a tabela inteira (impossível marcada): 8 + 1 = 9 linhas truth-csv | `analyze speed > 100 or (speed > 50 and rain) --z3 --format truth-csv` | `{"exit": 0, "lines": 9}` | `truth-csv` \| A tabela verdade inteira, com as combinações impossíveis marcadas | 8 combinações + 1 cabeçalho = 9. |
+| C0-048 | z3 | --z3 dá valores concretos: speed > 100 /\ mode = idle contém speed acima de 100 | `analyze speed > 100 /\ mode = idle --z3 --format csv` | `{"exit": 0, "contem_numero_maior_que": 100}` | `--z3` ... valores concretos para cada teste (`speed = 101`) | A saída contém um valor > 100. |
+| C0-049 | z3 | Sem Z3 no PATH, a análise sem opções de Z3 funciona (12 linhas CSV) | `analyze (A and B) or C --format csv` | `{"exit": 0, "csv_rows": 12}` | Sem o Z3, tudo funciona, exceto as opções que dependem dele | Mesmo resultado de C0-002. |
+| C0-050 | arquivo-mcdc | Arquivo .mcdc com comentário: json traz REQ-001 e REQ-002, ignora o comentário | `analyze -f @F/req.mcdc --format json` | `{"exit": 0, "contains": ["REQ-001", "REQ-002"], "json_valid": true, "not_contains": ["requisitos de teste"]}` | um requisito por linha, `ID: expressão`. Linhas com `#` são comentários. / ligado ao requisito de origem | Ambos os requisitos têm par para todas as condições => saída 0. |
+| C0-051 | arquivo-mcdc | Erro de sintaxe em REQ-002: saída 1 citando o requisito | `analyze -f @F/ruim.mcdc` | `{"exit": 1, "contains": ["REQ-002"]}` | erro de sintaxe com o requisito / `1` entrada inválida | REQ-002 termina em operador sem operando. |
+| C0-052 | arquivo-mcdc | exemplos/requisitos.mcdc: REQ-003 tem condição redundante (saída 2, json cita REQ-003) | `analyze -f exemplos/requisitos.mcdc --format json` | `{"exit": 2, "contains": ["REQ-003"], "json_valid": true}` | # vários requisitos de um arquivo; REQ-003 tem uma condição redundante / `2` alguma condição sem par | Arquivo de exemplo da própria fonte. |
+| C0-053 | arquivo-json | JSON de decisões do exemplo da fonte: saída 0 e REQ-001 no relatório json | `analyze --json @F/vm.json --format json` | `{"exit": 0, "contains": ["REQ-001"], "json_valid": true}` | JSON de decisões (formato do Extractor da NAT2TEST) ... `"requirement": "REQ-001"` | Saída 0 (ambas têm par). |
+| C0-054 | arquivo-json | JSON malformado: saída 1 | `analyze --json @F/ruim.json` | `{"exit": 1}` | Nat2TestJsonReaderTest: arquivos inválidos / `1` entrada inválida | Conteúdo não é JSON. |
+| C0-055 | check | check: suíte MC/DC completa de 'A and B' com resultados esperados corretos (saída 0) | `check A and B --tests @F/ok.csv` | `{"exit": 0}` | mcdc check <fonte> --tests <testes.csv> / `0` tudo certo | T1/T2 demonstram A; T1/T3 demonstram B. |
+| C0-056 | check | check: falta T3, B não demonstrada (saída 2) | `check A and B --tests @F/falta.csv` | `{"exit": 2}` | no `check`: alguma condição não demonstrada | Só há T1 e T2: B nunca muda. |
+| C0-057 | check | check: resultado esperado errado em T2 (saída 2) | `check A and B --tests @F/errado.csv` | `{"exit": 2}` | no `check`: ... resultado esperado divergente | Z3 (ground) unsat para 'guarda = esperado' em T2. |
+| C0-058 | check | check: CSV sem a coluna 'value' é recusado (saída 1) | `check A and B --tests @F/semvalue.csv` | `{"exit": 1}` | TestCasesFileTest: colunas faltando / `1` entrada inválida | O cabeçalho não tem 'value'. |
+| C0-059 | check | check com o exemplo de teste da fonte (só T1): condições não demonstradas (saída 2) | `check --json @F/vm.json --tests @F/t1.csv` | `{"exit": 2}` | vm#1,T1,the_system_mode,idle,T / vm#1,T1,the_coin_sensor,true,T | Sem par para nenhuma condição => saída 2. |
+| C0-060 | check | check com valores concretos (enum/bool): 3 testes completos (saída 0) | `check --json @F/vm.json --tests @F/t3.csv` | `{"exit": 0}` | o valor lógico (`T`/`F`) ou o valor concreto da variável | T1/T2 demonstram mode=idle; T1/T3 demonstram coin=true. |
+| C0-061 | check | check com expressão numérica 'speed > 100 and rain' e valores concretos (saída 0) | `check speed > 100 and rain --tests @F/spd.csv` | `{"exit": 0}` | o valor lógico (`T`/`F`) ou o valor concreto da variável | Mesma estrutura de A and B. |
+| C0-062 | check | check --format json produz JSON válido | `check A and B --tests @F/ok.csv --format json` | `{"exit": 0, "json_valid": true}` | `check` e `verify` aceitam `text` e `json` | JSON analisável. |
+| C0-063 | verify | verify: dois requisitos válidos juntos escrevendo valores diferentes => conflito (saída 2) | `verify --json @F/conf.json` | `{"exit": 2}` | Conflitos (dois requisitos valem juntos e escrevem valores diferentes) / `no verify: algum conflito ou lacuna` | SMT sat (guarda comum e valores distintos). |
+| C0-064 | verify | verify: guardas que não se sobrepõem => sem conflito (saída 0) | `verify --json @F/disj.json` | `{"exit": 0}` | Z3RequirementsVerifierTest: guardas que não se sobrepõem | SMT unsat para a sobreposição. |
+| C0-065 | verify | verify: mesmo valor escrito sem conflito (saída 0) | `verify --json @F/mesmo.json` | `{"exit": 0}` | Z3RequirementsVerifierTest: mesmo valor sem conflito | SMT unsat (valores distintos impossíveis). |
+| C0-066 | verify | verify --context sem guarda aplicável: lacuna (saída 2) | `verify --json @F/lac.json --context the_system_mode = choice` | `{"exit": 2}` | Lacunas (nenhum requisito vale) / `--context` confere se, nessa situação, sempre alguma guarda vale | SMT sat para 'contexto e nenhuma guarda'. |
+| C0-067 | verify | verify --context com guarda sempre válida: sem lacuna (saída 0) | `verify --json @F/lac.json --context the_system_mode = idle` | `{"exit": 0}` | `--context` confere se, nessa situação, sempre alguma guarda vale | SMT unsat para 'contexto e nenhuma guarda'. |
+| C0-068 | verify | verify sem contexto não aponta lacuna (saída 0) | `verify --json @F/lac.json` | `{"exit": 0}` | Z3RequirementsVerifierTest: lacunas só com contexto | Decisão única sem conflito. |
+| C0-069 | verify | verify --format json produz JSON válido | `verify --json @F/disj.json --format json` | `{"exit": 0, "json_valid": true}` | `check` e `verify` aceitam `text` e `json` | JSON analisável. |
+| C0-070 | verify | verify exemplos/vm-decisoes.json: 0 conflitos (saída 0) | `verify --json exemplos/vm-decisoes.json` | `{"exit": 0}` | VM · máquina de café ... Conflitos 0 / ./mcdc verify --json exemplos/vm-decisoes.json | Tabela travada: Conflitos = 0. |
+| C0-071 | verify | verify exemplos/tis-decisoes.json: 3 conflitos (saída 2) | `verify --json exemplos/tis-decisoes.json` | `{"exit": 2}` | TIS · pisca-pisca ... Conflitos 3 / `no verify: algum conflito ou lacuna` | Tabela travada: Conflitos = 3. |
+| C0-072 | verify | verify exemplos/npp-decisoes.json: 1 conflito (saída 2) | `verify --json exemplos/npp-decisoes.json` | `{"exit": 2}` | NPP · injeção de segurança ... Conflitos 1 / ./mcdc verify --json exemplos/npp-decisoes.json | Tabela travada: Conflitos = 1. |
+
+## 4. Casos INDETERMINADOS
+
+| ID | Caso | Trecho | Motivo |
+|---|---|---|---|
+| C0-I01 | causa única na paridade de 3 entradas (número de testes) | o MC/DC pode exigir todas as combinações (ex.: a paridade de 3 entradas pede 8 testes) | A fonte não diz se o exemplo vale para as duas variantes. |
+| C0-I02 | causa única em (A and B) or (not A and C) com A repetida (saída?) | (A and B) or (not A and C) / cada aparição de uma entrada na expressão conta como uma condição | A fonte não define causa única quando a mesma entrada aparece duas vezes (A#1 e A#2 não variam isoladamente). |
+| C0-I03 | número de testes de (A and B) or (not A and C) | Nas guardas simples, a suíte tem N + 1 testes | 'Guarda simples' não é definida e a decisão repete entrada; não há contagem documentada. |
+| C0-I04 | --boundary sem --z3 | `--boundary` \| Com `--z3`, acrescenta variantes de fronteira | A fonte não diz o que ocorre sem --z3. |
+| C0-I05 | --format com valor desconhecido (xml) | `--format <formato>` `text` (padrão), `json`, `csv`, `truth-csv` | Código de saída para formato inexistente não é documentado. |
+| C0-I06 | check --format csv | `check` e `verify` aceitam `text` e `json` | A fonte não diz como recusar csv no check. |
+| C0-I07 | ids repetidos no JSON de decisões | Nat2TestJsonReaderTest: ... ids repetidos | Não diz se a repetição é recusada ou aceita. |
+| C0-I08 | --constraint com arquivo | `--constraint` (só com expressão direta) | Efeito da violação não documentado. |
+| C0-I09 | duas fontes ao mesmo tempo | **Fonte** (uma só) | Comportamento ao receber duas fontes não documentado. |
+| C0-I10 | nenhuma fonte | mcdc analyze <fonte> [opções] | Comportamento sem fonte não documentado. |
+| C0-I11 | 21 entradas com a tabela inteira | limite de 20 entradas | A fonte dá o limite, mas não o que ocorre acima dele. |
+| C0-I12 | --direct com 31 entradas | até 30 entradas | A fonte dá o limite, mas não o que ocorre acima dele. |
+| C0-I13 | verify VM com --context 'the_system_mode = preparing_weak' | ./mcdc verify --json exemplos/vm-decisoes.json --context 'the_system_mode = preparing_weak' | A fonte não diz se há lacuna nesse contexto. |
+| C0-I14 | código de saída de analyze --json exemplos/vm-decisoes.json | VM · máquina de café \| 5 \| 5 \| 21 ... \| Completos | 'Completo' não é definido; não equivale explicitamente a 'nenhuma condição sem par'. |
+| C0-I15 | código de saída de analyze --json exemplos/tis-decisoes.json | TIS · pisca-pisca \| 17 \| 14 \| 69 ... | Mesma indefinição de 'Completos'. |
+| C0-I16 | operador '&' simples | Operadores: and, &&, /\ | A fonte não diz se '&' é aceito ou recusado. |
+| C0-I17 | arquivo .mcdc inexistente | `1` entrada inválida | Não diz se arquivo ausente é 'entrada inválida'. |
+| C0-I18 | linha .mcdc sem identificador | RequirementsFileTest: ... linha sem identificador | Não diz se a linha é recusada ou recebe ID automático. |
+| C0-I19 | número exato de testes de exemplos/vm-decisoes.json em CSV | VM ... Testes 26 | Opções usadas na tabela travada e o formato exato de linhas (por decisão/entrada) não são definidos. |
+| C0-I20 | texto exato da seção de mutação (tipos ORF, ENF, ...) | seis tipos de Kapoor e Bowen (ORF, ENF, VNF, MVF, VRF, ASF) | O formato textual do resumo por tipo não é definido. |
+| C0-I21 | Z3 ausente com --z3 | que avisam quando ele não está instalado | Texto do aviso e código de saída não definidos. |
+| C0-I22 | limite de 1000 pares por condição | até 1000 pares guardados por condição | Comportamento ao ultrapassar não é definido. |
+
+## 5. Evidência Z3
+
+Executável: `Z3 version 5.4.1` (pacote `z3-solver`), independente do módulo `mcdc-z3`. Consultas SMT-LIB em `smt/*.smt2`; respostas e resumo em `smt/resultados-z3.json`. Formalizado: existência de par MC/DC por condição (com e sem restrição), menor suíte (confirma 3, 4, 5 e 8 testes dos exemplos da fonte), pares numéricos com `speed` inteiro, demonstração de testes dados, conflito e lacuna do `verify`. Todas as expectativas de saída foram conferidas também por força bruta em Python. Nenhum `unknown`/timeout.

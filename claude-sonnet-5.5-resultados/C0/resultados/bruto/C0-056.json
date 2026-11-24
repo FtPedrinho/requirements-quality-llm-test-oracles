@@ -1,0 +1,18 @@
+{
+  "cmd": [
+    "check",
+    "A and B",
+    "--tests",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-056/falta.csv"
+  ],
+  "exit": 2,
+  "stdout": "Decis�o:   REQ\nGuarda:    A and B\nTestes:    2\n  T1 = V1  TT  -> T\n  T2 = V3  FT  -> F\n\nCondi��es:\n  A: demonstrada por T1 (T) e T2 (F)\n  B: falta; acrescente V2 (TF -> F)\n\nResultados de condi��o demonstrados: 3 de 4 (75,0%)\nCobertura MC/DC: incompleta, 1 de 2 condi��es demonstradas\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.705,
+  "id": "C0-056",
+  "titulo": "check: falta T3, B não demonstrada (saída 2)",
+  "esperado": {
+    "exit": 2
+  },
+  "usa_z3": false
+}

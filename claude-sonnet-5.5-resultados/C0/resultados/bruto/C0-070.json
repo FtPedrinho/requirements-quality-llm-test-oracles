@@ -1,0 +1,17 @@
+{
+  "cmd": [
+    "verify",
+    "--json",
+    "exemplos/vm-decisoes.json"
+  ],
+  "exit": 0,
+  "stdout": "Verifica��o entre requisitos: the_coffee_machine_system\n5 decis�es, 10 pares que escrevem alguma vari�vel em comum\n\nConflitos: nenhum\n\nSobreposi��es sem conflito: nenhuma\n\nLacunas: n�o conferidas (use --context \"<express�o>\" para dizer em que situa��o alguma guarda deve valer)\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 2.261,
+  "id": "C0-070",
+  "titulo": "verify exemplos/vm-decisoes.json: 0 conflitos (saída 0)",
+  "esperado": {
+    "exit": 0
+  },
+  "usa_z3": true
+}

@@ -1,0 +1,19 @@
+{
+  "cmd": [
+    "check",
+    "--json",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-059/vm.json",
+    "--tests",
+    "claude-sonnet-5.5-resultados/C0/suite/work/C0-059/t1.csv"
+  ],
+  "exit": 2,
+  "stdout": "Decis�o:   vm#1\nRequisito: REQ-001\nGuarda:    the_system_mode = idle /\\ the_coin_sensor = true\nTestes:    1\n  T1 = V1  TT  -> T\n\nCondi��es:\n  the_system_mode = idle: falta; acrescente V3 (FT -> F)\n  the_coin_sensor = true: falta; acrescente V2 (TF -> F)\n\nResultados de condi��o demonstrados: 2 de 4 (50,0%)\nCobertura MC/DC: incompleta, 0 de 2 condi��es demonstradas\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 2.539,
+  "id": "C0-059",
+  "titulo": "check com o exemplo de teste da fonte (só T1): condições não demonstradas (saída 2)",
+  "esperado": {
+    "exit": 2
+  },
+  "usa_z3": false
+}

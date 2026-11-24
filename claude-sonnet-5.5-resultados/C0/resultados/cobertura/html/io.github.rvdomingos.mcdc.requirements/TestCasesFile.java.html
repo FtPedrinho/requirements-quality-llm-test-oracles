@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TestCasesFile.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.requirements</a> &gt; <span class="el_source">TestCasesFile.java</span></div><h1>TestCasesFile.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.requirements;
+
+import io.github.rvdomingos.mcdc.core.TestCase;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Testes existentes em CSV, uma linha por (teste, entrada): colunas test, input e value, mais decision e
+ * expected_outcome opcionais. Em input vai uma condição (value T/F) ou uma variável (valor concreto).
+ */
+public final class TestCasesFile {
+
+    /** Valores de um teste como vieram do arquivo. */
+<span class="fc" id="L19">    public record RawTest(Map&lt;String, String&gt; values, Boolean expected) {</span>
+    }
+
+    /** Testes por decisão; a chave é &quot;&quot; quando o arquivo não tem a coluna decision. */
+<span class="fc" id="L23">    public record Contents(Map&lt;String, Map&lt;String, RawTest&gt;&gt; byDecision) {</span>
+
+        public boolean hasDecisionColumn() {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">            return !byDecision.containsKey(&quot;&quot;);</span>
+        }
+    }
+
+    private TestCasesFile() {
+    }
+
+    public static Contents read(Path path) throws IOException {
+<span class="fc" id="L34">        return parse(Files.readAllLines(path), path.toString());</span>
+    }
+
+    static Contents parse(List&lt;String&gt; lines, String source) {
+<span class="fc" id="L38">        List&lt;String&gt; header = null;</span>
+<span class="fc" id="L39">        Map&lt;String, Map&lt;String, Map&lt;String, String&gt;&gt;&gt; values = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L40">        Map&lt;String, Map&lt;String, Boolean&gt;&gt; expected = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L41">        int lineNumber = 0;</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        for (String line : lines) {</span>
+<span class="fc" id="L43">            lineNumber++;</span>
+<span class="pc bpc" id="L44" title="2 of 4 branches missed.">            if (line.isBlank() || line.startsWith(&quot;#&quot;)) {</span>
+<span class="nc" id="L45">                continue;</span>
+            }
+<span class="fc" id="L47">            List&lt;String&gt; cells = cells(line);</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">            if (header == null) {</span>
+<span class="fc" id="L49">                header = cells;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">                for (String required : List.of(&quot;test&quot;, &quot;input&quot;, &quot;value&quot;)) {</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">                    if (!header.contains(required)) {</span>
+<span class="fc" id="L52">                        throw new IllegalArgumentException(source + &quot;: falta a coluna \&quot;&quot; + required + &quot;\&quot; no cabeçalho&quot;);</span>
+                    }
+<span class="fc" id="L54">                }</span>
+<span class="fc" id="L55">                continue;</span>
+            }
+<span class="fc" id="L57">            String decision = column(header, cells, &quot;decision&quot;);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">            decision = decision == null ? &quot;&quot; : decision;</span>
+<span class="fc" id="L59">            String test = column(header, cells, &quot;test&quot;);</span>
+<span class="fc" id="L60">            String input = column(header, cells, &quot;input&quot;);</span>
+<span class="fc" id="L61">            String value = column(header, cells, &quot;value&quot;);</span>
+<span class="pc bpc" id="L62" title="3 of 6 branches missed.">            if (test == null || input == null || value == null) {</span>
+<span class="nc" id="L63">                throw new IllegalArgumentException(source + &quot;, linha &quot; + lineNumber + &quot;: faltam test, input ou value&quot;);</span>
+            }
+<span class="fc" id="L65">            values.computeIfAbsent(decision, k -&gt; new LinkedHashMap&lt;&gt;())</span>
+<span class="fc" id="L66">                    .computeIfAbsent(test, k -&gt; new LinkedHashMap&lt;&gt;())</span>
+<span class="fc" id="L67">                    .put(input, value);</span>
+<span class="fc" id="L68">            String outcome = column(header, cells, &quot;expected_outcome&quot;);</span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">            if (outcome != null) {</span>
+<span class="fc" id="L70">                expected.computeIfAbsent(decision, k -&gt; new LinkedHashMap&lt;&gt;())</span>
+<span class="fc" id="L71">                        .put(test, TestCase.parseBoolean(outcome, source + &quot;, linha &quot; + lineNumber));</span>
+            }
+<span class="fc" id="L73">        }</span>
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">        if (values.isEmpty()) {</span>
+<span class="nc" id="L75">            throw new IllegalArgumentException(&quot;Nenhum teste em &quot; + source);</span>
+        }
+
+<span class="fc" id="L78">        Map&lt;String, Map&lt;String, RawTest&gt;&gt; byDecision = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L79">        values.forEach((decision, tests) -&gt; {</span>
+<span class="fc" id="L80">            Map&lt;String, RawTest&gt; raw = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L81">            tests.forEach((test, v) -&gt; raw.put(test,</span>
+<span class="fc" id="L82">                    new RawTest(v, expected.getOrDefault(decision, Map.of()).get(test))));</span>
+<span class="fc" id="L83">            byDecision.put(decision, raw);</span>
+<span class="fc" id="L84">        });</span>
+<span class="fc" id="L85">        return new Contents(byDecision);</span>
+    }
+
+    private static String column(List&lt;String&gt; header, List&lt;String&gt; cells, String name) {
+<span class="fc" id="L89">        int i = header.indexOf(name);</span>
+<span class="pc bpc" id="L90" title="2 of 6 branches missed.">        if (i &lt; 0 || i &gt;= cells.size() || cells.get(i).isBlank()) {</span>
+<span class="fc" id="L91">            return null;</span>
+        }
+<span class="fc" id="L93">        return cells.get(i).strip();</span>
+    }
+
+    /** Divide uma linha CSV respeitando aspas (&quot;a, b&quot; e &quot;&quot; dentro de aspas). */
+    static List&lt;String&gt; cells(String line) {
+<span class="fc" id="L98">        List&lt;String&gt; cells = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L99">        var cell = new StringBuilder();</span>
+<span class="fc" id="L100">        boolean quoted = false;</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (int i = 0; i &lt; line.length(); i++) {</span>
+<span class="fc" id="L102">            char c = line.charAt(i);</span>
+<span class="pc bpc" id="L103" title="1 of 2 branches missed.">            if (quoted) {</span>
+<span class="nc bnc" id="L104" title="All 6 branches missed.">                if (c == '&quot;' &amp;&amp; i + 1 &lt; line.length() &amp;&amp; line.charAt(i + 1) == '&quot;') {</span>
+<span class="nc" id="L105">                    cell.append('&quot;');</span>
+<span class="nc" id="L106">                    i++;</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">                } else if (c == '&quot;') {</span>
+<span class="nc" id="L108">                    quoted = false;</span>
+                } else {
+<span class="nc" id="L110">                    cell.append(c);</span>
+                }
+<span class="pc bpc" id="L112" title="1 of 2 branches missed.">            } else if (c == '&quot;') {</span>
+<span class="nc" id="L113">                quoted = true;</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">            } else if (c == ',') {</span>
+<span class="fc" id="L115">                cells.add(cell.toString());</span>
+<span class="fc" id="L116">                cell.setLength(0);</span>
+            } else {
+<span class="fc" id="L118">                cell.append(c);</span>
+            }
+        }
+<span class="fc" id="L121">        cells.add(cell.toString());</span>
+<span class="fc" id="L122">        return cells;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

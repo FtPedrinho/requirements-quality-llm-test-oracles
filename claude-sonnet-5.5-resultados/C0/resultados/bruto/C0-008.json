@@ -1,0 +1,19 @@
+{
+  "cmd": [
+    "analyze",
+    "A or (A and B)"
+  ],
+  "exit": 2,
+  "stdout": "Decis�o:   REQ\nGuarda:    A or (A and B)\nVariante:  mascaramento\n\nCondi��es: A#1, A#2, B\n\nVetor A   B   | D\nV1    T   T   | T\nV2    T   F   | T\nV3    F   T   | F\nV4    F   F   | F\n\nPares de independ�ncia:\n  A#1: (V2, V3), (V2, V4)\n  A#2: nenhum par\n  B: nenhum par\n\nSu�te m�nima (2 testes):\n  V2  TF  -> T   demonstra A#1\n  V4  FF  -> F   demonstra A#1\n\nDemonstra��o por condi��o:\n  A#1: V2 (T) e V4 (F), s� ela muda\n\nCobertura MC/DC: incompleta, sem par para A#2, B\n  A#2: redundante: n�o muda o resultado em nenhuma combina��o; o requisito pode ser simplificado\n  B: redundante: n�o muda o resultado em nenhuma combina��o; o requisito pode ser simplificado\n",
+  "stderr": "Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C0/resultados/cobertura/jacoco.exec,append=true,output=file\n",
+  "segundos": 0.504,
+  "id": "C0-008",
+  "titulo": "A or (A and B): B é redundante (saída 2, texto cita redundância)",
+  "esperado": {
+    "exit": 2,
+    "contains": [
+      "redundan"
+    ]
+  },
+  "usa_z3": false
+}
