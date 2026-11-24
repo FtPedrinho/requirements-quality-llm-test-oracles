@@ -1,0 +1,12 @@
+Verifica��o entre requisitos: safety_injection_system
+11 decis�es, 15 pares que escrevem alguma vari�vel em comum
+
+Conflitos: 1
+  REQ005 � REQ008: as duas guardas valem no mesmo passo
+    the_overridden_mode: true (REQ005) � false (REQ008)
+    exemplo: the_pressure_mode = low, the_blockage_button_antes = released, the_blockage_button = pressed, the_reset_button = released, the_pressure_mode_antes = high
+
+Sobreposi��es sem conflito: 1
+  REQ006 � REQ008: mesmo valor em the_overridden_mode
+
+Lacunas: n�o conferidas (use --context "<express�o>" para dizer em que situa��o alguma guarda deve valer)

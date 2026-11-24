@@ -1,0 +1,63 @@
+Q01_AN01_ABorC_par_A	sat
+Q01_AN01_ABorC_par_B	sat
+Q01_AN01_ABorC_par_C	sat
+Q01_AN04_AandnotB_par_A	sat
+Q01_AN04_AandnotB_par_B	sat
+Q01_AN05_speed_mode_par_M	sat
+Q01_AN05_speed_mode_par_S	sat
+Q01_AN13_constraint_par_A	sat
+Q01_AN13_constraint_par_B	sat
+Q01_AN13_constraint_par_C	sat
+Q01_AN14_bloq_com_restricao_par_A	unsat
+Q01_AN14_bloq_com_restricao_par_B	sat
+Q01_AN14_bloq_sem_restricao_par_A	sat
+Q01_AN14_bloq_sem_restricao_par_B	sat
+Q01_REQ003_par_F	sat
+Q01_REQ003_par_P	unsat
+Q02_AN02_ABorC_k3	unsat
+Q02_AN02_ABorC_k4	sat
+Q02_AN04_AandnotB_k2	unsat
+Q02_AN04_AandnotB_k3	sat
+Q02_AN12_paridade_equivalencia	unsat
+Q02_AN27_exata_entradas_k4	unsat
+Q02_AN27_exata_entradas_k5	sat
+Q03_AN29_linha_A0_B0_R0	sat
+Q03_AN29_linha_A0_B0_R1	sat
+Q03_AN29_linha_A0_B1_R0	sat
+Q03_AN29_linha_A0_B1_R1	sat
+Q03_AN29_linha_A1_B0_R0	unsat
+Q03_AN29_linha_A1_B0_R1	unsat
+Q03_AN29_linha_A1_B1_R0	sat
+Q03_AN29_linha_A1_B1_R1	sat
+Q03_AN31_fronteira_100	unsat
+Q03_AN31_fronteira_50	unsat
+Q03_AN42_bloq_z3_par_A	sat
+Q03_AN42_bloq_z3_par_B	unsat
+Q03_AN43_sem_z3_par_A	sat
+Q03_AN43_sem_z3_par_B	sat
+Q04_VM_viabilidade_vm1	sat sat sat sat sat sat sat sat
+Q04_VM_viabilidade_vm2	64 sat / 0 unsat
+Q04_VM_viabilidade_vm3	64 sat / 0 unsat
+Q04_VM_viabilidade_vm4	sat sat sat unsat sat sat sat unsat
+Q04_VM_viabilidade_vm5	sat sat sat unsat sat sat sat unsat
+Q05_VM_conflito_vm1_vm2	unsat
+Q05_VM_conflito_vm1_vm3	unsat
+Q05_VM_conflito_vm1_vm4	unsat
+Q05_VM_conflito_vm1_vm5	unsat
+Q05_VM_conflito_vm2_vm3	unsat
+Q05_VM_conflito_vm2_vm4	unsat
+Q05_VM_conflito_vm2_vm5	unsat
+Q05_VM_conflito_vm3_vm4	unsat
+Q05_VM_conflito_vm3_vm5	unsat
+Q05_VM_conflito_vm4_vm5	unsat
+Q05_VM_lacuna_contexto_preparing_weak	sat
+Q06_VF01_sobreposicao	sat
+Q06_VF03_disjuntas	unsat
+Q06_VF04_lacuna	sat
+Q06_VF05_sem_lacuna	unsat
+Q07_TIS_nao_completos	sat
+Q07_regressao_consistencia	unsat
+Q08_CK01_AandB	unsat
+Q08_CK05_decisoes_T3	unsat
+Q08_CK05_decisoes_T4	unsat
+Q09_AN07_precedencia_discrimina	sat

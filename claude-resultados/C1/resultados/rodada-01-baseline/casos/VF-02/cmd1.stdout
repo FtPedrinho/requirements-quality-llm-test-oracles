@@ -1,0 +1,9 @@
+Verifica��o entre requisitos: c1_vf
+2 decis�es, 1 pares que escrevem alguma vari�vel em comum
+
+Conflitos: nenhum
+
+Sobreposi��es sem conflito: 1
+  R-1 � R-2: mesmo valor em mode
+
+Lacunas: n�o conferidas (use --context "<express�o>" para dizer em que situa��o alguma guarda deve valer)

@@ -1,0 +1,5 @@
+; QE13 linha FF (Int)
+(declare-const x Int)
+(assert (= (> x (- 3)) false))
+(assert (= (< x 2) false))
+(check-sat)

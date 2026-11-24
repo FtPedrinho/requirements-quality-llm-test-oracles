@@ -1,0 +1,17 @@
+{
+  "id": "AN-36",
+  "veredito": "INDETERMINADO",
+  "nota": "diagnóstico sem expectativa: exit=1",
+  "verificacoes": [],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--boundary"
+      ],
+      "exit": 1,
+      "segundos": 0.56
+    }
+  ]
+}

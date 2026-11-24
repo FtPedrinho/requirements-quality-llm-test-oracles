@@ -1,0 +1,18 @@
+{
+  "id": "EX-30",
+  "veredito": "INDETERMINADO",
+  "nota": "diagnóstico sem expectativa: exit=1",
+  "verificacoes": [],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and B",
+        "--exact",
+        "--direct"
+      ],
+      "exit": 1,
+      "segundos": 0.65
+    }
+  ]
+}

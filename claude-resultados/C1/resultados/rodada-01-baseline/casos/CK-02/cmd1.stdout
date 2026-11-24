@@ -1,0 +1,12 @@
+Decis�o:   REQ
+Guarda:    A and B
+Testes:    2
+  T1 = V1  TT  -> T
+  T2 = V3  FT  -> F
+
+Condi��es:
+  A: demonstrada por T1 (T) e T2 (F)
+  B: falta; acrescente V2 (TF -> F)
+
+Resultados de condi��o demonstrados: 3 de 4 (75,0%)
+Cobertura MC/DC: incompleta, 1 de 2 condi��es demonstradas

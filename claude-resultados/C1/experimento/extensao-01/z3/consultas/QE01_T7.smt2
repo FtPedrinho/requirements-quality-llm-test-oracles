@@ -1,0 +1,11 @@
+; T7: guarda = F? unsat da negação => sim
+(declare-datatypes () ((Mode idle choice)))
+(define-fun x () Int 4)
+(define-fun y () Int 5)
+(define-fun z () Int 6)
+(define-fun w () Int 5)
+(define-fun v () Int 4)
+(define-fun u () Int 5)
+(define-fun mode () Mode idle)
+(assert (not (= (and (< x 5) (<= y 5) (> z 5) (>= w 5) (not (= v 5)) (= u 5) (not (= mode idle))) false)))
+(check-sat)

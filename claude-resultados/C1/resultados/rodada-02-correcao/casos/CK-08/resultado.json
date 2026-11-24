@@ -1,0 +1,23 @@
+{
+  "id": "CK-08",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (check A and B)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "A and B",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK08_sem_esperado.csv"
+      ],
+      "exit": 0,
+      "segundos": 0.64
+    }
+  ]
+}

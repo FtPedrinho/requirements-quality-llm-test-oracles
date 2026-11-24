@@ -1,0 +1,22 @@
+{
+  "id": "VF-07",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 1, observado 1 (analyze --json)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF07_ids_repetidos.json"
+      ],
+      "exit": 1,
+      "segundos": 1.78
+    }
+  ]
+}

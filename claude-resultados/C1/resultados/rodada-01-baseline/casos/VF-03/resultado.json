@@ -1,0 +1,22 @@
+{
+  "id": "VF-03",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (verify --json)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF03_disjuntas.json"
+      ],
+      "exit": 0,
+      "segundos": 2.24
+    }
+  ]
+}

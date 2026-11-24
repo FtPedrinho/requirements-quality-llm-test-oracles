@@ -1,0 +1,27 @@
+{
+  "id": "AN-23",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or C)"
+    },
+    {
+      "ok": true,
+      "verificacao": "stdout é JSON válido"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "(A and B) or C",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 1.52
+    }
+  ]
+}

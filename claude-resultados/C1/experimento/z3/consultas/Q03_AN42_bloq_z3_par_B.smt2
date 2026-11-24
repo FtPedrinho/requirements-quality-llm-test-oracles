@@ -1,0 +1,13 @@
+; speed > 100 and speed > 50 com Z3: A=>B; B deve ficar sem par (unsat)
+; condição alvo: B
+(declare-const A_1 Bool)
+(declare-const B_1 Bool)
+(declare-const A_2 Bool)
+(declare-const B_2 Bool)
+(assert (= A_1 A_2))
+(assert (not (= B_1 B_2)))
+(assert (=> A_1 B_1))
+(assert (=> A_2 B_2))
+(assert (not (= (and A_1 B_1) (and A_2 B_2))))
+(check-sat)
+(get-model)

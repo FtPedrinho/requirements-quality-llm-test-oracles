@@ -1,0 +1,5 @@
+decision,requirement,row,x > -3,x < 2,outcome,feasible,in_suite,demonstrates,concrete_values
+REQ,,V1,T,T,T,T,T,x > -3; x < 2,x = 0
+REQ,,V2,T,F,F,T,T,x < 2,x = 2
+REQ,,V3,F,T,F,T,T,x > -3,x = -3
+REQ,,V4,F,F,F,F,F,,

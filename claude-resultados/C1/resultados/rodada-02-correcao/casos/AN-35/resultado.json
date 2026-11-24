@@ -1,0 +1,17 @@
+{
+  "id": "AN-35",
+  "veredito": "INDETERMINADO",
+  "nota": "diagnóstico sem expectativa: exit=1",
+  "verificacoes": [],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20 and X21 and X22 and X23 and X24 and X25 and X26 and X27 and X28 and X29 and X30 and X31",
+        "--direct"
+      ],
+      "exit": 1,
+      "segundos": 0.59
+    }
+  ]
+}

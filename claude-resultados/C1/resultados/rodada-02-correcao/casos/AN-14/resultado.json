@@ -1,0 +1,23 @@
+{
+  "id": "AN-14",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 2, observado 2 (analyze A and B)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and B",
+        "--constraint",
+        "A"
+      ],
+      "exit": 2,
+      "segundos": 0.61
+    }
+  ]
+}

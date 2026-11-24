@@ -1,0 +1,37 @@
+{
+  "id": "SY-TIS-06",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 11.81
+    },
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 7.53
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[INFO] Loading execution data file C:\Users\User\requirements-quality-llm-test-oracles\claude-resultados\C1\resultados\rodada-03-extensao-01\jacoco.exec.
+[INFO] Analyzing 69 classes.
+classes=69 branches=910/1296 (70.22%) linhas=1592/2001
+  io.github.rvdomingos.mcdc.cli: 238/337
+  io.github.rvdomingos.mcdc.core: 205/287
+  io.github.rvdomingos.mcdc.core.model: 36/60
+  io.github.rvdomingos.mcdc.core.mutation: 53/64
+  io.github.rvdomingos.mcdc.requirements: 129/162
+  io.github.rvdomingos.mcdc.z3: 249/386

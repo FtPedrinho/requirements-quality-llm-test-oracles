@@ -1,0 +1,2070 @@
+{
+  "condicao": "C1",
+  "fonte": "experimentacao-pesquisa/experimentacao-1/documentation/tool-readme-C1.md",
+  "fonte_sha256": "91981FA0181E5CC1BC5A67DAAFC965BB82D6F8EB0A6D47EB58CE291A3EF5D33B",
+  "unidade_de_contagem": "um caso = um ID; todas as asserções do caso devem valer para PASSOU",
+  "placeholders": {
+    "{EX}": "exemplos/ do repositório",
+    "{IN}": "experimento/entradas",
+    "{OUT}": "pasta da rodada"
+  },
+  "ambientes": {
+    "padrao": "PATH com z3",
+    "z3": "PATH com z3",
+    "sem_z3": "PATH sem z3"
+  },
+  "casos": [
+    {
+      "id": "AN-01",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or C"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\"",
+        "L491: \"todo par de causa única vale em mascaramento\""
+      ],
+      "regra": "Toda condição com par => código 0.",
+      "justificativa": "Cada condição tem par de causa única (Z3 sat); pela L491 esse par vale no mascaramento (padrão). Sem condição sem par => 0.",
+      "z3": [
+        "Q01_AN01_ABorC_par_*"
+      ]
+    },
+    {
+      "id": "AN-02",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or C",
+          "--format",
+          "csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0,
+        "testes_distintos": 4,
+        "linhas_dados": "testes_distintos * 3"
+      },
+      "trecho": [
+        "L493: \"Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes, A ∧ ¬B com 3)\"",
+        "L205: \"A suíte: uma linha por teste e entrada\""
+      ],
+      "regra": "Suíte de (A∧B)∨C tem 4 testes; CSV tem uma linha por teste e entrada (3 entradas).",
+      "justificativa": "Número literal do texto. Z3: 3 linhas não bastam para pares de causa única (unsat), 4 bastam (sat) — evidência auxiliar.",
+      "z3": [
+        "Q02_AN02_ABorC_k3",
+        "Q02_AN02_ABorC_k4"
+      ]
+    },
+    {
+      "id": "AN-03",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or C",
+          "--unique-cause"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\"",
+        "L105: \"`--unique-cause` | Causa única em vez de mascaramento\""
+      ],
+      "regra": "Causa única: cada condição tem par em que só ela muda => 0.",
+      "justificativa": "Interpretação literal de 'causa única' (só a condição alvo muda); pares existem (Z3 sat).",
+      "z3": [
+        "Q01_AN01_ABorC_par_*"
+      ]
+    },
+    {
+      "id": "AN-04",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "A and not B",
+          "--format",
+          "csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0,
+        "testes_distintos": 3
+      },
+      "trecho": [
+        "L493: \"A ∧ ¬B com 3\""
+      ],
+      "regra": "Suíte de A∧¬B tem 3 testes.",
+      "justificativa": "Número literal. Z3 auxiliar: k=2 unsat, k=3 sat.",
+      "z3": [
+        "Q02_AN04_AandnotB_k2",
+        "Q02_AN04_AandnotB_k3"
+      ]
+    },
+    {
+      "id": "AN-05",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "speed > 100 /\\ mode = idle"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L93: \"`'speed > 100 /\\ mode = idle'`\"",
+        "L131: \"e | `and`, `&&`, `/\\`\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Expressão direta com comparações e /\\ aceita; duas condições com par => 0.",
+      "justificativa": "Sem --z3 as comparações são condições independentes (tabela 2^2); pares existem (Z3 sat).",
+      "z3": [
+        "Q01_AN05_speed_mode_par_*"
+      ]
+    },
+    {
+      "id": "AN-06",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "A && B || !C",
+          "--format",
+          "truth-csv"
+        ],
+        [
+          "analyze",
+          "A /\\ B \\/ not C",
+          "--format",
+          "truth-csv"
+        ],
+        [
+          "analyze",
+          "A and B or not C",
+          "--format",
+          "truth-csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0,
+        "linhas_dados": 8,
+        "resultado_por_linha": "(A and B) or not C"
+      },
+      "trecho": [
+        "L131-135: e `and`,`&&`,`/\\`; ou `or`,`||`,`\\/`; não `not`,`!`",
+        "L515: \"Precedência (e antes de ou)\"",
+        "L207: \"`truth-csv` | A tabela-verdade inteira\""
+      ],
+      "regra": "As três grafias denotam (A∧B)∨¬C; tabela com 2^3 linhas e resultado de cada linha igual à fórmula.",
+      "justificativa": "Formas aceitas e precedência documentadas.",
+      "z3": []
+    },
+    {
+      "id": "AN-07",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "A or B and C",
+          "--format",
+          "truth-csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0,
+        "linhas_dados": 8,
+        "resultado_por_linha": "A or (B and C)"
+      },
+      "trecho": [
+        "L515: \"Precedência (e antes de ou)\""
+      ],
+      "regra": "`and` liga mais forte que `or`.",
+      "justificativa": "Z3 mostra que A∨(B∧C) e (A∨B)∧C diferem (sat), logo a tabela discrimina a precedência.",
+      "z3": [
+        "Q09_AN07_precedencia_discrimina"
+      ]
+    },
+    {
+      "id": "AN-08",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "x = 1 and y == 2 and z != 3 and w < 4 and v <= 5 and u > 6 and t >= 7"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L137: \"comparação | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=`\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Os sete comparadores são aceitos; conjunção de 7 condições independentes tem par para cada uma => 0.",
+      "justificativa": "Em conjunção sem repetição cada condição tem par de causa única (mesmo padrão de Q01_AN04/AN05).",
+      "z3": []
+    },
+    {
+      "id": "AN-09",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or (not A and C)"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L225: \"entrada repetida: cada aparição é uma condição com par próprio (A#1, A#2)\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Cada aparição (A#1, B, A#2, C) tem par próprio => nenhuma condição sem par => 0.",
+      "justificativa": "Frase literal do exemplo afirma par próprio para cada aparição.",
+      "z3": []
+    },
+    {
+      "id": "AN-10",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or (not A and C)",
+          "--format",
+          "truth-csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0,
+        "linhas_dados": 8,
+        "resultado_por_linha": "(A and B) or (not A and C)"
+      },
+      "trecho": [
+        "L55: \"há 3 entradas distintas (`A`, `B` e `C`) e 4 ocorrências\"",
+        "L279: \"para as entradas distintas da expressão, são consideradas as 2ⁿ combinações\""
+      ],
+      "regra": "Tabela por entradas distintas: 2^3 = 8 linhas.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-11",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or C",
+          "--format",
+          "truth-csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0,
+        "linhas_dados": 8,
+        "primeira_linha_toda_verdadeira": true,
+        "resultado_por_linha": "(A and B) or C"
+      },
+      "trecho": [
+        "L485: \"Uma linha por combinação; a linha 0 é tudo verdadeiro\"",
+        "L207"
+      ],
+      "regra": "8 linhas; a primeira (linha 0) tem todas as entradas verdadeiras; resultado correto por linha.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-12",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and not B and not C) or (not A and B and not C) or (not A and not B and C) or (A and B and C)",
+          "--format",
+          "csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "testes_distintos": 8
+      },
+      "trecho": [
+        "L591: \"a função de paridade de 3 entradas exige 8 testes\""
+      ],
+      "regra": "Paridade de 3 entradas => suíte com 8 testes.",
+      "justificativa": "Z3 confirma que a expressão é a paridade (equivalência a XOR: unsat da negação).",
+      "z3": [
+        "Q02_AN12_paridade_equivalencia"
+      ]
+    },
+    {
+      "id": "AN-13",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "A or (B and C)",
+          "--constraint",
+          "not A or B"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L231: \"restrição escrita à mão: A = speed > 100 implica B = speed > 50\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Com a restrição, todas as condições ainda têm par => 0.",
+      "justificativa": "Z3: pares de causa única viáveis sob a restrição (sat).",
+      "z3": [
+        "Q01_AN13_constraint_par_*"
+      ]
+    },
+    {
+      "id": "AN-14",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "A and B",
+          "--constraint",
+          "A"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L287: \"se deixa de possuir pares por causa das combinações impossíveis, é classificada como bloqueada\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Restrição 'A' torna A=F impossível; A fica sem par (bloqueada) => 2.",
+      "justificativa": "Z3: A sem par sob a restrição (unsat) e com par sem ela (sat).",
+      "z3": [
+        "Q01_AN14_bloq_com_restricao_par_A",
+        "Q01_AN14_bloq_sem_restricao_par_A"
+      ]
+    },
+    {
+      "id": "AN-15",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "-f",
+          "{EX}/requisitos.mcdc"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L241: \"vários requisitos de um arquivo; REQ-003 tem uma condição redundante\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Condição redundante = sem par no analyze => 2.",
+      "justificativa": "Texto literal; Z3 confirma que pedal_pressionado não muda o resultado de REQ-003 (unsat).",
+      "z3": [
+        "Q01_REQ003_par_P"
+      ]
+    },
+    {
+      "id": "AN-16",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "-f",
+          "{IN}/AN16_comentarios.mcdc"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L143: \"um requisito por linha, `ID: expressão`. Linhas com `#` são comentários.\""
+      ],
+      "regra": "Comentários ignorados; R-1: A and B tem pares => 0.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-17",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "-f",
+          "{IN}/AN17_erro_sintaxe.mcdc"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 1
+      },
+      "trecho": [
+        "L517: \"erro de sintaxe com o requisito\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Erro de sintaxe => entrada inválida => 1.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-18",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 1
+      },
+      "trecho": [
+        "L515: \"expressões inválidas recusadas\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Parêntese não fechado => 1.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-19",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "x > -3 and y"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L523: \"sinal de menos só em números\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Número negativo aceito; conjunção com pares => 0.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-20",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "-x > 3"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 1
+      },
+      "trecho": [
+        "L523: \"sinal de menos só em números\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Sinal de menos antes de identificador não é aceito => 1.",
+      "justificativa": "Se o sinal de menos é aceito só em números, '-x' é entrada inválida.",
+      "z3": []
+    },
+    {
+      "id": "AN-21",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "A and B",
+          "--format",
+          "xml"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 1
+      },
+      "trecho": [
+        "L121: \"`--format <formato>` | `text` (padrão), `json`, `csv` (suíte) ou `truth-csv`\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Formato fora da lista => entrada inválida => 1.",
+      "justificativa": "Opção com valor não previsto é entrada inválida.",
+      "z3": []
+    },
+    {
+      "id": "AN-22",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or C",
+          "-o",
+          "{OUT}/AN-22.txt"
+        ],
+        [
+          "analyze",
+          "(A and B) or C"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0,
+        "arquivo_igual_stdout_sem_o": true,
+        "stdout_com_o_sem_relatorio": true
+      },
+      "trecho": [
+        "L123: \"`-o <arquivo>` | Grava o relatório no arquivo em vez de mostrar na tela\"",
+        "L415: \"... e o determinismo\""
+      ],
+      "regra": "Com -o o relatório vai para o arquivo (igual ao que iria à tela) e não aparece na tela.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-23",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or C",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0,
+        "json_valido": true
+      },
+      "trecho": [
+        "L203: \"`json` | Resultado completo de cada decisão, ligado ao requisito de origem\""
+      ],
+      "regra": "Saída JSON válida.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-24",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L587: \"20 entradas com a tabela-verdade completa\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "20 entradas dentro do limite; conjunção com pares => 0.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-25",
+      "grupo": "analyze",
+      "status": "INDETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20 and X21"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {},
+      "trecho": [
+        "L587"
+      ],
+      "regra": "Acima de 20 entradas sem Z3: comportamento não descrito.",
+      "justificativa": "Omissão: o texto não diz se recusa, muda de modo ou qual código de saída.",
+      "z3": []
+    },
+    {
+      "id": "AN-26",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "A and (B or C)",
+          "--mutation"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L239: \"validação por mutação\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Mutação não está entre os gatilhos do código 2; todas as condições com par => 0.",
+      "justificativa": "Pares de causa única existem em A∧(B∨C) (conjunção/disjunção sem repetição).",
+      "z3": []
+    },
+    {
+      "id": "AN-27",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "((E or D) and (not A or D)) or B",
+          "--exact",
+          "--format",
+          "csv"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "testes_distintos": 5
+      },
+      "trecho": [
+        "L255: \"suíte exata (aqui, 5 testes em vez dos 6 da escolha gulosa)\""
+      ],
+      "regra": "--exact => 5 testes.",
+      "justificativa": "Número literal. Z3 auxiliar (causa única por entrada): k=4 unsat, k=5 sat.",
+      "z3": [
+        "Q02_AN27_exata_entradas_k4",
+        "Q02_AN27_exata_entradas_k5"
+      ]
+    },
+    {
+      "id": "AN-28",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "((E or D) and (not A or D)) or B",
+          "--format",
+          "csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "testes_distintos": 6
+      },
+      "trecho": [
+        "L255: \"5 testes em vez dos 6 da escolha gulosa\""
+      ],
+      "regra": "Gulosa => 6 testes.",
+      "justificativa": "Número literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-29",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "speed > 100 or (speed > 50 and rain)",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "linhas_dados": 8,
+        "impossiveis": "exatamente as 2 linhas com speed>100=T e speed>50=F"
+      },
+      "trecho": [
+        "L235: \"o Z3 descobre as combinações impossíveis\"",
+        "L207: \"com as combinações impossíveis marcadas\""
+      ],
+      "regra": "2 linhas impossíveis, marcadas.",
+      "justificativa": "Z3 independente: linhas A=T,B=F unsat; as demais sat.",
+      "z3": [
+        "Q03_AN29_linha_*"
+      ]
+    },
+    {
+      "id": "AN-30",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "speed > 100 or (speed > 50 and rain)",
+          "--z3",
+          "--format",
+          "csv"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 0,
+        "valores_realizam_guarda": true
+      },
+      "trecho": [
+        "L41: \"valores concretos para cada teste (`speed = 101`)\"",
+        "L463: \"os valores concretos realizam a combinação declarada e o resultado esperado é o que a guarda dá\""
+      ],
+      "regra": "Para cada teste, a guarda avaliada nos valores concretos = resultado esperado; todas as condições com par => 0.",
+      "justificativa": "Pares viáveis: A(T,T,F)/(F,T,F), B(F,T,T)/(F,F,T), C(F,T,T)/(F,T,F) — linhas sat em Q03.",
+      "z3": [
+        "Q03_AN29_linha_*"
+      ]
+    },
+    {
+      "id": "AN-31",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "speed > 100 or (speed > 50 and rain)",
+          "--z3",
+          "--boundary",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "valores_fronteira_speed_incluem": [
+          100,
+          101,
+          50,
+          51
+        ]
+      },
+      "trecho": [
+        "L43: \"Variações no limite de cada comparação (`speed > 100` → 100 e 101)\""
+      ],
+      "regra": "Fronteiras: 100/101 e 50/51.",
+      "justificativa": "Z3: 101 é o menor inteiro >100 e 100 não satisfaz (idem 50/51).",
+      "z3": [
+        "Q03_AN31_fronteira_100",
+        "Q03_AN31_fronteira_50"
+      ]
+    },
+    {
+      "id": "AN-32",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "A and B",
+          "--z3"
+        ]
+      ],
+      "ambiente": "sem_z3",
+      "expectativa": {
+        "aviso_z3": true
+      },
+      "trecho": [
+        "L73: \"As opções que exigem o Z3 avisam quando o executável não está instalado.\""
+      ],
+      "regra": "Sem z3 no PATH, a saída (stdout+stderr) avisa sobre o Z3.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-33",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13",
+          "--z3"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L109: \"acima de 12 entradas, passa sozinho ao modo direto\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "13 entradas com --z3 => direto; pares => 0.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-34",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20 and X21 and X22 and X23 and X24 and X25 and X26 and X27 and X28 and X29 and X30",
+          "--direct"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L113: \"`--direct` | Pares pedidos direto ao Z3, sem montar a tabela (até 30 entradas)\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "30 entradas dentro do limite do direto => 0.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "AN-35",
+      "grupo": "analyze",
+      "status": "INDETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20 and X21 and X22 and X23 and X24 and X25 and X26 and X27 and X28 and X29 and X30 and X31",
+          "--direct"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {},
+      "trecho": [
+        "L113"
+      ],
+      "regra": "Acima de 30 no direto: não descrito.",
+      "justificativa": "Omissão do comportamento além do limite.",
+      "z3": []
+    },
+    {
+      "id": "AN-36",
+      "grupo": "analyze",
+      "status": "INDETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "speed > 100 or (speed > 50 and rain)",
+          "--boundary"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {},
+      "trecho": [
+        "L115: \"`--boundary` | Com `--z3`, acrescenta variantes de fronteira\""
+      ],
+      "regra": "--boundary sem --z3: não descrito.",
+      "justificativa": "Omissão.",
+      "z3": []
+    },
+    {
+      "id": "AN-37",
+      "grupo": "analyze",
+      "status": "INDETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "-f",
+          "{IN}/AN16_comentarios.mcdc",
+          "--constraint",
+          "A"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {},
+      "trecho": [
+        "L107: \"(só com expressão direta)\""
+      ],
+      "regra": "Restrição com arquivo: não diz se é erro ou ignorada.",
+      "justificativa": "Ambiguidade.",
+      "z3": []
+    },
+    {
+      "id": "AN-38",
+      "grupo": "analyze",
+      "status": "INDETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "(A and B) or (not A and C)",
+          "--unique-cause"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {},
+      "trecho": [
+        "L225",
+        "L105"
+      ],
+      "regra": "Causa única com entrada repetida: o texto não define se A#1/A#2 têm par.",
+      "justificativa": "Omissão da definição de causa única para ocorrências acopladas.",
+      "z3": []
+    },
+    {
+      "id": "AN-39",
+      "grupo": "cli",
+      "status": "INDETERMINADO",
+      "comandos": [
+        [
+          "foo"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {},
+      "trecho": [
+        "L79-83"
+      ],
+      "regra": "Comando desconhecido: código não descrito.",
+      "justificativa": "Omissão.",
+      "z3": []
+    },
+    {
+      "id": "AN-40",
+      "grupo": "cli",
+      "status": "INDETERMINADO",
+      "comandos": [
+        []
+      ],
+      "ambiente": "padrao",
+      "expectativa": {},
+      "trecho": [
+        "L79-83"
+      ],
+      "regra": "Sem argumentos: não descrito.",
+      "justificativa": "Omissão.",
+      "z3": []
+    },
+    {
+      "id": "AN-41",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "-f",
+          "{IN}/nao-existe.mcdc"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 1
+      },
+      "trecho": [
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Arquivo de fonte inexistente => entrada inválida => 1.",
+      "justificativa": "O comando não pode ser concluído (0/2 exigem processamento); entre os códigos documentados só 1 se aplica.",
+      "z3": []
+    },
+    {
+      "id": "AN-42",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "speed > 100 and speed > 50",
+          "--z3"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L281: \"as que retornam `unsat` são consideradas impossíveis\"",
+        "L287: \"... bloqueada\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "speed>100=T e speed>50=F é impossível; a condição speed>50 perde o par => bloqueada => 2.",
+      "justificativa": "Z3: par de B unsat com A=>B; sat sem a restrição.",
+      "z3": [
+        "Q03_AN42_bloq_z3_par_B",
+        "Q03_AN43_sem_z3_par_B"
+      ]
+    },
+    {
+      "id": "AN-43",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "speed > 100 and speed > 50"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L73: \"Sem o Z3, continuam disponíveis os recursos que não dependem dele.\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Sem --z3 não há combinações impossíveis; ambas as condições com par => 0.",
+      "justificativa": "Z3: pares sat na tabela completa.",
+      "z3": [
+        "Q03_AN43_sem_z3_par_*"
+      ]
+    },
+    {
+      "id": "AN-44",
+      "grupo": "analyze",
+      "status": "INDETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "-f",
+          "{IN}/AN44_sem_identificador.mcdc"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {},
+      "trecho": [
+        "L517: \"linha sem identificador\""
+      ],
+      "regra": "Linha sem 'ID:': o texto não diz se é erro ou recebe id.",
+      "justificativa": "Ambiguidade.",
+      "z3": []
+    },
+    {
+      "id": "SY-VM-01",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/vm-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        [
+          "analyze",
+          "--json",
+          "{EX}/vm-decisoes.json",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "decisoes": 5,
+        "condicoes": 21,
+        "combinacoes": 152,
+        "impossiveis": 4,
+        "testes": 26,
+        "testes_por_decisao_igual_condicoes_mais_1": true,
+        "requisitos_rastreados": true
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'",
+        "L461: \"Para cada requisito completo, a quantidade registrada de testes corresponde ao número de condições mais 1.\"",
+        "L203: \"ligado ao requisito de origem\""
+      ],
+      "regra": "Números da regressão (com Z3, para as impossíveis).",
+      "justificativa": "Números literais. Todos completos => N+1 por decisão. Z3 independente reproduz 152 combinações e 4 impossíveis da VM a partir das guardas.",
+      "z3": [
+        "Q07_regressao_consistencia",
+        "Q04_VM_viabilidade_*"
+      ]
+    },
+    {
+      "id": "SY-VM-02",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/vm-decisoes.json",
+          "--z3",
+          "--mutation",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "mutantes": 152,
+        "equivalentes": 0,
+        "pegos": 152
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'"
+      ],
+      "regra": "Contagem de mutantes.",
+      "justificativa": "Números literais.",
+      "z3": [
+        "Q07_regressao_consistencia"
+      ]
+    },
+    {
+      "id": "SY-VM-03",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{EX}/vm-decisoes.json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "conflitos": 0,
+        "exit": 0
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\"",
+        "L537: \"lacunas só com contexto\""
+      ],
+      "regra": "Conflitos do verify; sem contexto não há lacuna.",
+      "justificativa": "Números literais; Z3 independente: nenhum par de guardas com escritas diferentes é simultâneo (10 unsat).",
+      "z3": [
+        "Q05_VM_conflito_*"
+      ]
+    },
+    {
+      "id": "SY-VM-04",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/vm-decisoes.json",
+          "--z3",
+          "--exact",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "testes": 26
+      },
+      "trecho": [
+        "L461: \"A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos.\""
+      ],
+      "regra": "Busca exata: mesmo número de testes.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-VM-05",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/vm-decisoes.json",
+          "--z3",
+          "--unique-cause",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "testes": 26
+      },
+      "trecho": [
+        "L461: \"A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos.\""
+      ],
+      "regra": "Causa única: mesmo número de testes.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-VM-06",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/vm-decisoes.json",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        [
+          "analyze",
+          "--json",
+          "{EX}/vm-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "cobertura_e_diagnostico_iguais": true
+      },
+      "trecho": [
+        "L419: \"o modo direto dá a mesma cobertura e o mesmo diagnóstico que a tabela-verdade completa\""
+      ],
+      "regra": "Direto = tabela completa em cobertura e diagnóstico por condição.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-TIS-01",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/tis-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        [
+          "analyze",
+          "--json",
+          "{EX}/tis-decisoes.json",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "decisoes": 17,
+        "condicoes": 69,
+        "combinacoes": 268,
+        "impossiveis": 4,
+        "testes": 80,
+        "requisitos_rastreados": true
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'",
+        "L461: \"Para cada requisito completo, a quantidade registrada de testes corresponde ao número de condições mais 1.\"",
+        "L203: \"ligado ao requisito de origem\""
+      ],
+      "regra": "Números da regressão (com Z3, para as impossíveis).",
+      "justificativa": "Números literais. ",
+      "z3": [
+        "Q07_regressao_consistencia"
+      ]
+    },
+    {
+      "id": "SY-TIS-02",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/tis-decisoes.json",
+          "--z3",
+          "--mutation",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "mutantes": 450,
+        "equivalentes": 21,
+        "pegos": 428
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'"
+      ],
+      "regra": "Contagem de mutantes.",
+      "justificativa": "Números literais.",
+      "z3": [
+        "Q07_regressao_consistencia"
+      ]
+    },
+    {
+      "id": "SY-TIS-03",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{EX}/tis-decisoes.json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "conflitos": 3,
+        "exit": 2
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\"",
+        "L537: \"lacunas só com contexto\""
+      ],
+      "regra": "Conflitos do verify; sem contexto não há lacuna.",
+      "justificativa": "Números literais.",
+      "z3": []
+    },
+    {
+      "id": "SY-TIS-04",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/tis-decisoes.json",
+          "--z3",
+          "--exact",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "testes": 80
+      },
+      "trecho": [
+        "L461: \"A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos.\""
+      ],
+      "regra": "Busca exata: mesmo número de testes.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-TIS-05",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/tis-decisoes.json",
+          "--z3",
+          "--unique-cause",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "testes": 80
+      },
+      "trecho": [
+        "L461: \"A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos.\""
+      ],
+      "regra": "Causa única: mesmo número de testes.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-TIS-06",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/tis-decisoes.json",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        [
+          "analyze",
+          "--json",
+          "{EX}/tis-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "cobertura_e_diagnostico_iguais": true
+      },
+      "trecho": [
+        "L419: \"o modo direto dá a mesma cobertura e o mesmo diagnóstico que a tabela-verdade completa\""
+      ],
+      "regra": "Direto = tabela completa em cobertura e diagnóstico por condição.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-NPP-01",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/npp-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        [
+          "analyze",
+          "--json",
+          "{EX}/npp-decisoes.json",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "decisoes": 11,
+        "condicoes": 29,
+        "combinacoes": 76,
+        "impossiveis": 1,
+        "testes": 40,
+        "testes_por_decisao_igual_condicoes_mais_1": true,
+        "requisitos_rastreados": true
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'",
+        "L461: \"Para cada requisito completo, a quantidade registrada de testes corresponde ao número de condições mais 1.\"",
+        "L203: \"ligado ao requisito de origem\""
+      ],
+      "regra": "Números da regressão (com Z3, para as impossíveis).",
+      "justificativa": "Números literais. Todos completos => N+1 por decisão. ",
+      "z3": [
+        "Q07_regressao_consistencia"
+      ]
+    },
+    {
+      "id": "SY-NPP-02",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/npp-decisoes.json",
+          "--z3",
+          "--mutation",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "mutantes": 146,
+        "equivalentes": 0,
+        "pegos": 146
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'"
+      ],
+      "regra": "Contagem de mutantes.",
+      "justificativa": "Números literais.",
+      "z3": [
+        "Q07_regressao_consistencia"
+      ]
+    },
+    {
+      "id": "SY-NPP-03",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{EX}/npp-decisoes.json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "conflitos": 1,
+        "exit": 2
+      },
+      "trecho": [
+        "L467-477: tabela 'Números travados pela regressão'",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\"",
+        "L537: \"lacunas só com contexto\""
+      ],
+      "regra": "Conflitos do verify; sem contexto não há lacuna.",
+      "justificativa": "Números literais.",
+      "z3": []
+    },
+    {
+      "id": "SY-NPP-04",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/npp-decisoes.json",
+          "--z3",
+          "--exact",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "testes": 40
+      },
+      "trecho": [
+        "L461: \"A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos.\""
+      ],
+      "regra": "Busca exata: mesmo número de testes.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-NPP-05",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/npp-decisoes.json",
+          "--z3",
+          "--unique-cause",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "testes": 40
+      },
+      "trecho": [
+        "L461: \"A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos.\""
+      ],
+      "regra": "Causa única: mesmo número de testes.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-NPP-06",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/npp-decisoes.json",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        [
+          "analyze",
+          "--json",
+          "{EX}/npp-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "cobertura_e_diagnostico_iguais": true
+      },
+      "trecho": [
+        "L419: \"o modo direto dá a mesma cobertura e o mesmo diagnóstico que a tabela-verdade completa\""
+      ],
+      "regra": "Direto = tabela completa em cobertura e diagnóstico por condição.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "SY-VM-07",
+      "grupo": "sistema",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{EX}/vm-decisoes.json",
+          "--context",
+          "the_system_mode = preparing_weak"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L119: \"`--context \\\"<expr>\\\"` | No `verify`: confere se, nessa situação, sempre alguma guarda vale\"",
+        "L53: \"lacunas (nenhum requisito vale)\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Há situação com modo preparing_weak em que nenhuma guarda vale (ex.: timer < 10) => lacuna => 2.",
+      "justificativa": "Z3 independente sobre as guardas da entrada: sat.",
+      "z3": [
+        "Q05_VM_lacuna_contexto_preparing_weak"
+      ]
+    },
+    {
+      "id": "SY-TIS-07",
+      "grupo": "sistema",
+      "status": "INDETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{EX}/tis-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {},
+      "trecho": [
+        "L471-475: coluna 'Completos' (TIS 14 de 17)",
+        "L461"
+      ],
+      "regra": "Quais requisitos são 'completos' e quantos testes os 3 restantes têm.",
+      "justificativa": "O texto não define 'requisito completo'; N+1 só vale para completos (Q07_TIS_nao_completos: 69+17≠80).",
+      "z3": [
+        "Q07_TIS_nao_completos"
+      ]
+    },
+    {
+      "id": "CK-01",
+      "grupo": "check",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "check",
+          "A and B",
+          "--tests",
+          "{IN}/CK01_completo.csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L183: \"cada linha associa um teste a uma entrada e ao valor atribuído... (`T`/`F`)... As colunas `decision` e `expected_outcome` são opcionais.\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\"",
+        "L491: \"todo par de causa única vale em mascaramento\""
+      ],
+      "regra": "T1/T2 demonstram A e T1/T3 demonstram B (causa única); esperados corretos => 0.",
+      "justificativa": "Z3: nenhum esperado diverge (unsat).",
+      "z3": [
+        "Q08_CK01_AandB"
+      ]
+    },
+    {
+      "id": "CK-02",
+      "grupo": "check",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "check",
+          "A and B",
+          "--tests",
+          "{IN}/CK02_incompleto.csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\"",
+        "L283: \"essa condição muda\""
+      ],
+      "regra": "B não muda em nenhum teste => não demonstrada => 2.",
+      "justificativa": "Um par exige que a condição mude.",
+      "z3": []
+    },
+    {
+      "id": "CK-03",
+      "grupo": "check",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "check",
+          "A and B",
+          "--tests",
+          "{IN}/CK03_esperado_errado.csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\"",
+        "L51: \"testes com resultado esperado errado\""
+      ],
+      "regra": "T1 (T,T) esperado F, guarda dá T => divergente => 2.",
+      "justificativa": "Avaliação direta da guarda.",
+      "z3": [
+        "Q08_CK01_AandB"
+      ]
+    },
+    {
+      "id": "CK-04",
+      "grupo": "check",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "check",
+          "A and B",
+          "--tests",
+          "{IN}/CK04_sem_value.csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 1
+      },
+      "trecho": [
+        "L183: \"cada linha associa um teste a uma entrada e ao valor atribuído... (`T`/`F`)... As colunas `decision` e `expected_outcome` são opcionais.\"",
+        "L521: \"colunas faltando\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Coluna obrigatória `value` ausente => entrada inválida => 1.",
+      "justificativa": "Só `decision` e `expected_outcome` são opcionais.",
+      "z3": []
+    },
+    {
+      "id": "CK-05",
+      "grupo": "check",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "check",
+          "--json",
+          "{EX}/decisoes.json",
+          "--tests",
+          "{EX}/testes.csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L269: \"avaliar testes que já existem\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "T4 (#3): mode=idle, button=true, coin=false => guarda F, esperado T => divergente => 2.",
+      "justificativa": "Z3: guarda de #3 é F em T4 (unsat de guarda=T) e T em T3.",
+      "z3": [
+        "Q08_CK05_decisoes_T4",
+        "Q08_CK05_decisoes_T3"
+      ]
+    },
+    {
+      "id": "CK-06",
+      "grupo": "check",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "check",
+          "A and B",
+          "--tests",
+          "{IN}/CK01_completo.csv",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "json_valido": true
+      },
+      "trecho": [
+        "L121: \"`check` e `verify` aceitam `text` e `json`\""
+      ],
+      "regra": "JSON válido.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "CK-07",
+      "grupo": "check",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "check",
+          "A and B",
+          "--tests",
+          "{IN}/CK01_completo.csv",
+          "--format",
+          "csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 1
+      },
+      "trecho": [
+        "L121: \"`check` e `verify` aceitam `text` e `json`\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "csv não aceito no check => 1.",
+      "justificativa": "Valor de opção não aceito = entrada inválida.",
+      "z3": []
+    },
+    {
+      "id": "CK-08",
+      "grupo": "check",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "check",
+          "A and B",
+          "--tests",
+          "{IN}/CK08_sem_esperado.csv"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L183: \"cada linha associa um teste a uma entrada e ao valor atribuído... (`T`/`F`)... As colunas `decision` e `expected_outcome` são opcionais.\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Sem expected_outcome (opcional) e cobertura completa => 0.",
+      "justificativa": "Coluna opcional; sem divergência possível.",
+      "z3": []
+    },
+    {
+      "id": "VF-01",
+      "grupo": "verify",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{IN}/VF01_conflito.json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L53: \"Conflitos (dois requisitos valem juntos e escrevem valores diferentes)\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "flag=sw=true torna ambas verdadeiras; escrevem a e b em mode => conflito => 2.",
+      "justificativa": "Z3 sat.",
+      "z3": [
+        "Q06_VF01_sobreposicao"
+      ]
+    },
+    {
+      "id": "VF-02",
+      "grupo": "verify",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{IN}/VF02_mesmo_valor.json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L537: \"mesmo valor sem conflito\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Mesmo valor => sem conflito; sem contexto não há lacuna => 0.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "VF-03",
+      "grupo": "verify",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{IN}/VF03_disjuntas.json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L537: \"guardas que não se sobrepõem\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Guardas disjuntas => sem conflito => 0.",
+      "justificativa": "Z3 unsat.",
+      "z3": [
+        "Q06_VF03_disjuntas"
+      ]
+    },
+    {
+      "id": "VF-04",
+      "grupo": "verify",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{IN}/VF01_conflito.json",
+          "--context",
+          "flag = false"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 2
+      },
+      "trecho": [
+        "L119",
+        "L53: \"lacunas (nenhum requisito vale)\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "flag=false e sw=false: nenhuma guarda vale => lacuna => 2.",
+      "justificativa": "Z3 sat.",
+      "z3": [
+        "Q06_VF04_lacuna"
+      ]
+    },
+    {
+      "id": "VF-05",
+      "grupo": "verify",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{IN}/VF03_disjuntas.json",
+          "--context",
+          "mode = a"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "exit": 0
+      },
+      "trecho": [
+        "L119",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "flag=true ou flag=false sempre vale; guardas disjuntas => 0.",
+      "justificativa": "Z3 unsat (sem lacuna) e Q06_VF03 unsat.",
+      "z3": [
+        "Q06_VF05_sem_lacuna",
+        "Q06_VF03_disjuntas"
+      ]
+    },
+    {
+      "id": "VF-06",
+      "grupo": "verify",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "verify",
+          "--json",
+          "{IN}/VF01_conflito.json",
+          "--format",
+          "json"
+        ]
+      ],
+      "ambiente": "z3",
+      "expectativa": {
+        "json_valido": true
+      },
+      "trecho": [
+        "L121: \"`check` e `verify` aceitam `text` e `json`\""
+      ],
+      "regra": "JSON válido.",
+      "justificativa": "Texto literal.",
+      "z3": []
+    },
+    {
+      "id": "VF-07",
+      "grupo": "analyze",
+      "status": "DETERMINADO",
+      "comandos": [
+        [
+          "analyze",
+          "--json",
+          "{IN}/VF07_ids_repetidos.json"
+        ]
+      ],
+      "ambiente": "padrao",
+      "expectativa": {
+        "exit": 1
+      },
+      "trecho": [
+        "L519: \"arquivos inválidos, ids repetidos\"",
+        "L139: \"`0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, uma condição não demonstrada ou um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.\""
+      ],
+      "regra": "Ids repetidos => entrada inválida => 1.",
+      "justificativa": "O teste de leitura garante a recusa de ids repetidos.",
+      "z3": []
+    }
+  ]
+}

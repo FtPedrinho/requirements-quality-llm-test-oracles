@@ -1,0 +1,40 @@
+Decis�o:   REQ
+Guarda:    A and (B or C)
+Variante:  mascaramento
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | T
+V3    T   F   T   | T
+V4    T   F   F   | F
+V5    F   T   T   | F
+V6    F   T   F   | F
+V7    F   F   T   | F
+V8    F   F   F   | F
+
+Pares de independ�ncia:
+  A: (V1, V5), (V1, V6), (V1, V7), (V2, V5), (V2, V6), (V2, V7), ... (9 pares)
+  B: (V2, V4)
+  C: (V3, V4)
+
+Su�te m�nima (4 testes):
+  V2  TTF  -> T   demonstra A, B
+  V3  TFT  -> T   demonstra C
+  V4  TFF  -> F   demonstra B, C
+  V6  FTF  -> F   demonstra A
+
+Valida��o por muta��o: 94,1% das falhas detect�veis foram detectadas
+  troca de operador (ORF): 2 de 2
+  nega��o de subexpress�o (ENF): 2 de 2
+  nega��o de vari�vel (VNF): 3 de 3
+  par�nteses deslocados (ASF): 0 de 1
+  vari�vel ausente (MVF): 3 de 3
+  troca de vari�vel (VRF): 6 de 6
+  n�o detectada: ASF A and B or C
+
+Demonstra��o por condi��o:
+  A: V2 (T) e V6 (F), s� ela muda
+  B: V2 (T) e V4 (F), s� ela muda
+  C: V3 (T) e V4 (F), s� ela muda
+
+Cobertura MC/DC: completa

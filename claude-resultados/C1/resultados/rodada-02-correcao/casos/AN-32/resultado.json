@@ -1,0 +1,22 @@
+{
+  "id": "AN-32",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "saída menciona Z3 (exit 1)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and B",
+        "--z3"
+      ],
+      "exit": 1,
+      "segundos": 0.64
+    }
+  ]
+}

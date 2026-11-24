@@ -1,0 +1,21 @@
+{
+  "system": "c1_ext",
+  "inputs": [
+    {
+      "name": "flag",
+      "type": "bool"
+    },
+    {
+      "name": "sw",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "q#1",
+      "requirement": "R-1, R-2",
+      "guard": "flag = true /\\ sw = true",
+      "actions": []
+    }
+  ]
+}

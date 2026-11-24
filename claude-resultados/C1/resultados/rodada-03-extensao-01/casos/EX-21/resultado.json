@@ -1,0 +1,38 @@
+{
+  "id": "EX-21",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and B",
+        "--constraint",
+        "A",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 2.52
+    },
+    {
+      "args": [
+        "analyze",
+        "A and B",
+        "--constraint",
+        "A",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 2.15
+    }
+  ]
+}

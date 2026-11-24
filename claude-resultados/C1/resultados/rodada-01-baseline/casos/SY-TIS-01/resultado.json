@@ -1,0 +1,61 @@
+{
+  "id": "SY-TIS-01",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "decisões 17 = 17"
+    },
+    {
+      "ok": true,
+      "verificacao": "condições 69 = 69"
+    },
+    {
+      "ok": true,
+      "verificacao": "combinações 268 = 268"
+    },
+    {
+      "ok": true,
+      "verificacao": "impossíveis (JSON) 4 = 4"
+    },
+    {
+      "ok": true,
+      "verificacao": "impossíveis marcadas (truth-csv) 4 = 4"
+    },
+    {
+      "ok": true,
+      "verificacao": "testes 80 = 80"
+    },
+    {
+      "ok": true,
+      "verificacao": "cada decisão ligada ao requisito de origem (divergentes [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 10.33
+    },
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+        "--z3",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 2,
+      "segundos": 9.86
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "SY-TIS-05",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "testes 80 = 80"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+        "--z3",
+        "--unique-cause",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 5.47
+    }
+  ]
+}

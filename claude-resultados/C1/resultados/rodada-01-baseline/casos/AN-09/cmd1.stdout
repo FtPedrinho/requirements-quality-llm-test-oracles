@@ -1,0 +1,35 @@
+Decis�o:   REQ
+Guarda:    (A and B) or (not A and C)
+Variante:  mascaramento
+
+Condi��es: A#1, B, A#2, C
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | T
+V3    T   F   T   | F
+V4    T   F   F   | F
+V5    F   T   T   | T
+V6    F   T   F   | F
+V7    F   F   T   | T
+V8    F   F   F   | F
+
+Pares de independ�ncia:
+  A#1: (V1, V6), (V2, V6)
+  B: (V1, V3), (V1, V4), (V2, V3), (V2, V4)
+  A#2: (V3, V5), (V3, V7)
+  C: (V5, V6), (V5, V8), (V7, V6), (V7, V8)
+
+Su�te m�nima (4 testes):
+  V2  TTF  -> T   demonstra A#1, B
+  V3  TFT  -> F   demonstra B, A#2
+  V6  FTF  -> F   demonstra A#1, C
+  V7  FFT  -> T   demonstra A#2, C
+
+Demonstra��o por condi��o:
+  A#1: V2 (T) e V6 (F), s� ela muda
+  B: V2 (T) e V3 (F), outras mascaradas
+  A#2: V3 (T) e V7 (F), s� ela muda
+  C: V7 (T) e V6 (F), outras mascaradas
+
+Cobertura MC/DC: completa

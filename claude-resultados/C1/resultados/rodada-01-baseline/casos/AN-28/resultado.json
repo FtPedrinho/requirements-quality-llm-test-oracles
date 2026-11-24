@@ -1,0 +1,23 @@
+{
+  "id": "AN-28",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "testes distintos esperados 6, observados 6"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "((E or D) and (not A or D)) or B",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "segundos": 0.83
+    }
+  ]
+}

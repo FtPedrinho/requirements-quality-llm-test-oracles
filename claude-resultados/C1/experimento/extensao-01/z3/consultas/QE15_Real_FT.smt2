@@ -1,0 +1,5 @@
+; QE15 linha FT (Real)
+(declare-const t Real)
+(assert (= (>= t 10.5) false))
+(assert (= (<= t 30.0) true))
+(check-sat)

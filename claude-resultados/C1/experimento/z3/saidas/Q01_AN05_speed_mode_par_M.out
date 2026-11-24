@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun M_2 () Bool
+    false)
+  (define-fun S_1 () Bool
+    true)
+  (define-fun M_1 () Bool
+    true)
+  (define-fun S_2 () Bool
+    true)
+)

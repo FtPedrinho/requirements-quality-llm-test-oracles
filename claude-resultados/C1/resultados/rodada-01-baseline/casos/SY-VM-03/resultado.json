@@ -1,0 +1,37 @@
+{
+  "id": "SY-VM-03",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (verify --json)"
+    },
+    {
+      "ok": true,
+      "verificacao": "conflitos 0 = 0"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json"
+      ],
+      "exit": 0,
+      "segundos": 2.61
+    },
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 2.6
+    }
+  ]
+}

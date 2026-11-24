@@ -1,0 +1,22 @@
+{
+  "id": "EX-06",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 1, observado 1 (analyze --json)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX06_json_malformado.json"
+      ],
+      "exit": 1,
+      "segundos": 2.38
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "VF-06",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "stdout é JSON válido"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF01_conflito.json",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 2.38
+    }
+  ]
+}

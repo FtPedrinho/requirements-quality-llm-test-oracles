@@ -1,0 +1,5 @@
+; QE16 linha FT (Int)
+(declare-const x Int)
+(assert (= (< x (- 5)) false))
+(assert (= (> x 5) true))
+(check-sat)

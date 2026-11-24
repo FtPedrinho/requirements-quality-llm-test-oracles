@@ -1,0 +1,12 @@
+; not A or (B and not C): par de causa única para A
+(declare-const A1 Bool)
+(declare-const A2 Bool)
+(declare-const B1 Bool)
+(declare-const B2 Bool)
+(declare-const C1 Bool)
+(declare-const C2 Bool)
+(assert (= B1 B2))
+(assert (= C1 C2))
+(assert (not (= A1 A2)))
+(assert (not (= (or (not A1) (and B1 (not C1))) (or (not A2) (and B2 (not C2))))))
+(check-sat)

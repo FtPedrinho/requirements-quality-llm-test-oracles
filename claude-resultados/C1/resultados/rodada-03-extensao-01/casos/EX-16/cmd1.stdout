@@ -1,0 +1,7 @@
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V2,x < -5,T,T,x < -5,x = -6
+REQ,,V2,x > 5,F,T,x < -5,x = -6
+REQ,,V3,x < -5,F,T,x > 5,x = 6
+REQ,,V3,x > 5,T,T,x > 5,x = 6
+REQ,,V4,x < -5,F,F,x < -5; x > 5,x = 0
+REQ,,V4,x > 5,F,F,x < -5; x > 5,x = 0

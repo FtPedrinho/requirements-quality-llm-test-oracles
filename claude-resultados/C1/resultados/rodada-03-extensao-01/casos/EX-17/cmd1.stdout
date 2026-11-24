@@ -1,0 +1,7 @@
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V1,t > 0.5,T,T,t > 0.5; t < 1.0,t = 0.75
+REQ,,V1,t < 1.0,T,T,t > 0.5; t < 1.0,t = 0.75
+REQ,,V2,t > 0.5,T,F,t < 1.0,t = 1
+REQ,,V2,t < 1.0,F,F,t < 1.0,t = 1
+REQ,,V3,t > 0.5,F,F,t > 0.5,t = 0
+REQ,,V3,t < 1.0,T,F,t > 0.5,t = 0

@@ -1,0 +1,8 @@
+Verificação entre requisitos: the_coffee_machine_system
+5 decisões, 10 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: não conferidas (use --context "<expressão>" para dizer em que situação alguma guarda deve valer)

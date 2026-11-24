@@ -1,0 +1,65 @@
+{
+  "id": "SY-NPP-01",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "decisões 11 = 11"
+    },
+    {
+      "ok": true,
+      "verificacao": "condições 29 = 29"
+    },
+    {
+      "ok": true,
+      "verificacao": "combinações 76 = 76"
+    },
+    {
+      "ok": true,
+      "verificacao": "impossíveis (JSON) 1 = 1"
+    },
+    {
+      "ok": true,
+      "verificacao": "impossíveis marcadas (truth-csv) 1 = 1"
+    },
+    {
+      "ok": true,
+      "verificacao": "testes 40 = 40"
+    },
+    {
+      "ok": true,
+      "verificacao": "testes = condições + 1 em cada decisão (divergentes [])"
+    },
+    {
+      "ok": true,
+      "verificacao": "cada decisão ligada ao requisito de origem (divergentes [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 5.76
+    },
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "--z3",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 0,
+      "segundos": 5.59
+    }
+  ]
+}

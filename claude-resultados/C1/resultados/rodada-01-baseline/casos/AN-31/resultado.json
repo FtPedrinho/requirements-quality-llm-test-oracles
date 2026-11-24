@@ -1,0 +1,25 @@
+{
+  "id": "AN-31",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "fronteiras de speed incluem [50.0, 51.0, 100.0, 101.0] (observadas [50.0, 51.0, 100.0, 101.0])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 3.12
+    }
+  ]
+}

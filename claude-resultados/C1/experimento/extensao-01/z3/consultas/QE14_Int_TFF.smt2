@@ -1,0 +1,7 @@
+; QE14 linha TFF (Int)
+(declare-const x Int)
+(declare-const y Int)
+(assert (= (> x 3) true))
+(assert (= (<= y x) false))
+(assert (= (> y 5) false))
+(check-sat)

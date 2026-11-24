@@ -1,0 +1,6 @@
+; T3: mode=choice, button=true, coin=false, esperado T. Guarda = F? unsat => guarda é T (coerente)
+(declare-datatypes () ((Mode idle choice preparing_strong preparing_weak)))
+(declare-const mode Mode) (declare-const button Bool) (declare-const coin Bool)
+(assert (= mode choice)) (assert (= button true)) (assert (= coin false))
+(assert (not (or (and (= mode choice) (= button true)) (= coin true))))
+(check-sat)

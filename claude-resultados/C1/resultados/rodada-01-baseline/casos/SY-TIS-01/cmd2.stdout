@@ -1,0 +1,301 @@
+decision,requirement,row,the_voltage_antes > 80,the_voltage <= 80,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#1,REQ001,V1,T,T,T,T,T,the_voltage_antes > 80; the_voltage <= 80,the_voltage_antes = 81; the_voltage = 0
+tis#1,REQ001,V2,T,F,F,T,T,the_voltage <= 80,the_voltage_antes = 81; the_voltage = 81
+tis#1,REQ001,V3,F,T,F,T,T,the_voltage_antes > 80,the_voltage_antes = 0; the_voltage = 0
+tis#1,REQ001,V4,F,F,F,T,F,,the_voltage_antes = 0; the_voltage = 81
+
+decision,requirement,row,the_voltage_antes <= 80,the_voltage > 80,the_flashing_mode_antes != left_flashing,the_flashing_mode = left_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#2,REQ002,V1,T,T,T,T,T,T,F,,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = no_flashing; the_flashing_mode = left_flashing
+tis#2,REQ002,V2,T,T,T,F,F,T,F,,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = no_flashing; the_flashing_mode = no_flashing
+tis#2,REQ002,V3,T,T,F,T,T,T,T,the_voltage_antes <= 80; the_flashing_mode = left_flashing#2,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = left_flashing; the_flashing_mode = left_flashing
+tis#2,REQ002,V4,T,T,F,F,F,T,T,the_flashing_mode = left_flashing#2,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = left_flashing; the_flashing_mode = no_flashing
+tis#2,REQ002,V5,T,F,T,T,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = no_flashing; the_flashing_mode = left_flashing
+tis#2,REQ002,V6,T,F,T,F,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = no_flashing; the_flashing_mode = no_flashing
+tis#2,REQ002,V7,T,F,F,T,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = left_flashing; the_flashing_mode = left_flashing
+tis#2,REQ002,V8,T,F,F,F,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = left_flashing; the_flashing_mode = no_flashing
+tis#2,REQ002,V9,F,T,T,T,T,T,T,the_flashing_mode_antes != left_flashing; the_voltage > 80#2,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = no_flashing; the_flashing_mode = left_flashing
+tis#2,REQ002,V10,F,T,T,F,F,T,F,,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = no_flashing; the_flashing_mode = no_flashing
+tis#2,REQ002,V11,F,T,F,T,F,T,T,the_voltage_antes <= 80; the_flashing_mode_antes != left_flashing,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = left_flashing; the_flashing_mode = left_flashing
+tis#2,REQ002,V12,F,T,F,F,F,T,F,,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = left_flashing; the_flashing_mode = no_flashing
+tis#2,REQ002,V13,F,F,T,T,F,T,T,the_voltage > 80#2,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = no_flashing; the_flashing_mode = left_flashing
+tis#2,REQ002,V14,F,F,T,F,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = no_flashing; the_flashing_mode = no_flashing
+tis#2,REQ002,V15,F,F,F,T,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = left_flashing; the_flashing_mode = left_flashing
+tis#2,REQ002,V16,F,F,F,F,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = left_flashing; the_flashing_mode = no_flashing
+
+decision,requirement,row,the_voltage_antes <= 80,the_voltage > 80,the_flashing_mode_antes != right_flashing,the_flashing_mode = right_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#3,REQ003,V1,T,T,T,T,T,T,F,,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = no_flashing; the_flashing_mode = right_flashing
+tis#3,REQ003,V2,T,T,T,F,F,T,F,,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = no_flashing; the_flashing_mode = left_flashing
+tis#3,REQ003,V3,T,T,F,T,T,T,T,the_voltage_antes <= 80; the_flashing_mode = right_flashing#2,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = right_flashing; the_flashing_mode = right_flashing
+tis#3,REQ003,V4,T,T,F,F,F,T,T,the_flashing_mode = right_flashing#2,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = right_flashing; the_flashing_mode = left_flashing
+tis#3,REQ003,V5,T,F,T,T,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = left_flashing; the_flashing_mode = right_flashing
+tis#3,REQ003,V6,T,F,T,F,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = left_flashing; the_flashing_mode = left_flashing
+tis#3,REQ003,V7,T,F,F,T,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = right_flashing; the_flashing_mode = right_flashing
+tis#3,REQ003,V8,T,F,F,F,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = right_flashing; the_flashing_mode = left_flashing
+tis#3,REQ003,V9,F,T,T,T,T,T,T,the_flashing_mode_antes != right_flashing; the_voltage > 80#2,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = left_flashing; the_flashing_mode = right_flashing
+tis#3,REQ003,V10,F,T,T,F,F,T,F,,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = left_flashing; the_flashing_mode = left_flashing
+tis#3,REQ003,V11,F,T,F,T,F,T,T,the_voltage_antes <= 80; the_flashing_mode_antes != right_flashing,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = right_flashing; the_flashing_mode = right_flashing
+tis#3,REQ003,V12,F,T,F,F,F,T,F,,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = right_flashing; the_flashing_mode = left_flashing
+tis#3,REQ003,V13,F,F,T,T,F,T,T,the_voltage > 80#2,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = left_flashing; the_flashing_mode = right_flashing
+tis#3,REQ003,V14,F,F,T,F,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = left_flashing; the_flashing_mode = left_flashing
+tis#3,REQ003,V15,F,F,F,T,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = right_flashing; the_flashing_mode = right_flashing
+tis#3,REQ003,V16,F,F,F,F,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = right_flashing; the_flashing_mode = left_flashing
+
+decision,requirement,row,the_voltage_antes <= 80,the_voltage > 80,the_flashing_mode_antes != both_flashing,the_flashing_mode = both_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#4,REQ004,V1,T,T,T,T,T,T,F,,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = no_flashing; the_flashing_mode = both_flashing
+tis#4,REQ004,V2,T,T,T,F,F,T,F,,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = no_flashing; the_flashing_mode = right_flashing
+tis#4,REQ004,V3,T,T,F,T,T,T,T,the_voltage_antes <= 80; the_flashing_mode = both_flashing#2,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = both_flashing; the_flashing_mode = both_flashing
+tis#4,REQ004,V4,T,T,F,F,F,T,T,the_flashing_mode = both_flashing#2,the_voltage_antes = 0; the_voltage = 81; the_flashing_mode_antes = both_flashing; the_flashing_mode = right_flashing
+tis#4,REQ004,V5,T,F,T,T,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = right_flashing; the_flashing_mode = both_flashing
+tis#4,REQ004,V6,T,F,T,F,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = right_flashing; the_flashing_mode = right_flashing
+tis#4,REQ004,V7,T,F,F,T,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = both_flashing; the_flashing_mode = both_flashing
+tis#4,REQ004,V8,T,F,F,F,F,T,F,,the_voltage_antes = 0; the_voltage = 0; the_flashing_mode_antes = both_flashing; the_flashing_mode = right_flashing
+tis#4,REQ004,V9,F,T,T,T,T,T,T,the_flashing_mode_antes != both_flashing; the_voltage > 80#2,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = right_flashing; the_flashing_mode = both_flashing
+tis#4,REQ004,V10,F,T,T,F,F,T,F,,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = right_flashing; the_flashing_mode = right_flashing
+tis#4,REQ004,V11,F,T,F,T,F,T,T,the_voltage_antes <= 80; the_flashing_mode_antes != both_flashing,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = both_flashing; the_flashing_mode = both_flashing
+tis#4,REQ004,V12,F,T,F,F,F,T,F,,the_voltage_antes = 81; the_voltage = 81; the_flashing_mode_antes = both_flashing; the_flashing_mode = right_flashing
+tis#4,REQ004,V13,F,F,T,T,F,T,T,the_voltage > 80#2,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = right_flashing; the_flashing_mode = both_flashing
+tis#4,REQ004,V14,F,F,T,F,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = right_flashing; the_flashing_mode = right_flashing
+tis#4,REQ004,V15,F,F,F,T,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = both_flashing; the_flashing_mode = both_flashing
+tis#4,REQ004,V16,F,F,F,F,F,T,F,,the_voltage_antes = 81; the_voltage = 0; the_flashing_mode_antes = both_flashing; the_flashing_mode = right_flashing
+
+decision,requirement,row,the_voltage > 80,the_flashing_mode = no_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#5,REQ005,V1,T,T,T,T,T,the_voltage > 80; the_flashing_mode = no_flashing,the_voltage = 81; the_flashing_mode = no_flashing
+tis#5,REQ005,V2,T,F,F,T,T,the_flashing_mode = no_flashing,the_voltage = 81; the_flashing_mode = left_flashing
+tis#5,REQ005,V3,F,T,F,T,T,the_voltage > 80,the_voltage = 0; the_flashing_mode = no_flashing
+tis#5,REQ005,V4,F,F,F,T,F,,the_voltage = 0; the_flashing_mode = left_flashing
+
+decision,requirement,row,the_voltage > 80,the_flashing_timer >= 340,the_indication_lights = left_flashing,the_indication_lights = right_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#6,REQ006,V1,T,T,T,T,T,F,F,,
+tis#6,REQ006,V2,T,T,T,F,T,T,T,the_voltage > 80; the_flashing_timer >= 340; the_indication_lights = left_flashing,the_voltage = 81; the_flashing_timer = 340; the_indication_lights = left_flashing
+tis#6,REQ006,V3,T,T,F,T,T,T,T,the_indication_lights = right_flashing,the_voltage = 81; the_flashing_timer = 340; the_indication_lights = right_flashing
+tis#6,REQ006,V4,T,T,F,F,F,T,T,the_indication_lights = left_flashing; the_indication_lights = right_flashing,the_voltage = 81; the_flashing_timer = 340; the_indication_lights = off
+tis#6,REQ006,V5,T,F,T,T,F,F,F,,
+tis#6,REQ006,V6,T,F,T,F,F,T,T,the_flashing_timer >= 340,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = left_flashing
+tis#6,REQ006,V7,T,F,F,T,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = right_flashing
+tis#6,REQ006,V8,T,F,F,F,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = off
+tis#6,REQ006,V9,F,T,T,T,F,F,F,,
+tis#6,REQ006,V10,F,T,T,F,F,T,T,the_voltage > 80,the_voltage = 0; the_flashing_timer = 340; the_indication_lights = left_flashing
+tis#6,REQ006,V11,F,T,F,T,F,T,F,,the_voltage = 0; the_flashing_timer = 340; the_indication_lights = right_flashing
+tis#6,REQ006,V12,F,T,F,F,F,T,F,,the_voltage = 0; the_flashing_timer = 340; the_indication_lights = off
+tis#6,REQ006,V13,F,F,T,T,F,F,F,,
+tis#6,REQ006,V14,F,F,T,F,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = left_flashing
+tis#6,REQ006,V15,F,F,F,T,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = right_flashing
+tis#6,REQ006,V16,F,F,F,F,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = off
+
+decision,requirement,row,the_voltage > 80,the_flashing_timer >= 220,the_indication_lights = off,the_flashing_mode = left_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#7,REQ007,V1,T,T,T,T,T,T,T,the_voltage > 80; the_flashing_timer >= 220; the_indication_lights = off; the_flashing_mode = left_flashing,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = left_flashing
+tis#7,REQ007,V2,T,T,T,F,F,T,T,the_flashing_mode = left_flashing,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = no_flashing
+tis#7,REQ007,V3,T,T,F,T,F,T,T,the_indication_lights = off,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = left_flashing
+tis#7,REQ007,V4,T,T,F,F,F,T,F,,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = no_flashing
+tis#7,REQ007,V5,T,F,T,T,F,T,T,the_flashing_timer >= 220,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = left_flashing
+tis#7,REQ007,V6,T,F,T,F,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = no_flashing
+tis#7,REQ007,V7,T,F,F,T,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = left_flashing
+tis#7,REQ007,V8,T,F,F,F,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = no_flashing
+tis#7,REQ007,V9,F,T,T,T,F,T,T,the_voltage > 80,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = left_flashing
+tis#7,REQ007,V10,F,T,T,F,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = no_flashing
+tis#7,REQ007,V11,F,T,F,T,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = left_flashing
+tis#7,REQ007,V12,F,T,F,F,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = no_flashing
+tis#7,REQ007,V13,F,F,T,T,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = left_flashing
+tis#7,REQ007,V14,F,F,T,F,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = no_flashing
+tis#7,REQ007,V15,F,F,F,T,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = left_flashing
+tis#7,REQ007,V16,F,F,F,F,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = no_flashing
+
+decision,requirement,row,the_voltage > 80,the_flashing_timer >= 220,the_indication_lights = off,the_flashing_mode = right_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#8,REQ008,V1,T,T,T,T,T,T,T,the_voltage > 80; the_flashing_timer >= 220; the_indication_lights = off; the_flashing_mode = right_flashing,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = right_flashing
+tis#8,REQ008,V2,T,T,T,F,F,T,T,the_flashing_mode = right_flashing,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = left_flashing
+tis#8,REQ008,V3,T,T,F,T,F,T,T,the_indication_lights = off,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = right_flashing
+tis#8,REQ008,V4,T,T,F,F,F,T,F,,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = left_flashing
+tis#8,REQ008,V5,T,F,T,T,F,T,T,the_flashing_timer >= 220,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = right_flashing
+tis#8,REQ008,V6,T,F,T,F,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = left_flashing
+tis#8,REQ008,V7,T,F,F,T,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = right_flashing
+tis#8,REQ008,V8,T,F,F,F,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = left_flashing
+tis#8,REQ008,V9,F,T,T,T,F,T,T,the_voltage > 80,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = right_flashing
+tis#8,REQ008,V10,F,T,T,F,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = left_flashing
+tis#8,REQ008,V11,F,T,F,T,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = right_flashing
+tis#8,REQ008,V12,F,T,F,F,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = left_flashing
+tis#8,REQ008,V13,F,F,T,T,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = right_flashing
+tis#8,REQ008,V14,F,F,T,F,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = left_flashing
+tis#8,REQ008,V15,F,F,F,T,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = right_flashing
+tis#8,REQ008,V16,F,F,F,F,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = left_flashing
+
+decision,requirement,row,the_voltage > 80,the_flashing_timer >= 220,the_indication_lights = off,the_flashing_mode = both_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#9,REQ009,V1,T,T,T,T,T,T,T,the_voltage > 80; the_flashing_timer >= 220; the_indication_lights = off; the_flashing_mode = both_flashing,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = both_flashing
+tis#9,REQ009,V2,T,T,T,F,F,T,T,the_flashing_mode = both_flashing,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = right_flashing
+tis#9,REQ009,V3,T,T,F,T,F,T,T,the_indication_lights = off,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = both_flashing
+tis#9,REQ009,V4,T,T,F,F,F,T,F,,the_voltage = 81; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = right_flashing
+tis#9,REQ009,V5,T,F,T,T,F,T,T,the_flashing_timer >= 220,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = both_flashing
+tis#9,REQ009,V6,T,F,T,F,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = right_flashing
+tis#9,REQ009,V7,T,F,F,T,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = both_flashing
+tis#9,REQ009,V8,T,F,F,F,F,T,F,,the_voltage = 81; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = right_flashing
+tis#9,REQ009,V9,F,T,T,T,F,T,T,the_voltage > 80,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = both_flashing
+tis#9,REQ009,V10,F,T,T,F,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = off; the_flashing_mode = right_flashing
+tis#9,REQ009,V11,F,T,F,T,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = both_flashing
+tis#9,REQ009,V12,F,T,F,F,F,T,F,,the_voltage = 0; the_flashing_timer = 220; the_indication_lights = left_flashing; the_flashing_mode = right_flashing
+tis#9,REQ009,V13,F,F,T,T,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = both_flashing
+tis#9,REQ009,V14,F,F,T,F,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = off; the_flashing_mode = right_flashing
+tis#9,REQ009,V15,F,F,F,T,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = both_flashing
+tis#9,REQ009,V16,F,F,F,F,F,T,F,,the_voltage = 0; the_flashing_timer = 0; the_indication_lights = left_flashing; the_flashing_mode = right_flashing
+
+decision,requirement,row,the_turn_indicator_lever_antes != left,the_turn_indicator_lever = left,the_emergency_flashing = off,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#10,REQ010,V1,T,T,T,T,T,T,the_turn_indicator_lever_antes != left; the_turn_indicator_lever = left; the_emergency_flashing = off,the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_emergency_flashing = off
+tis#10,REQ010,V2,T,T,F,F,T,T,the_emergency_flashing = off,the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_emergency_flashing = on
+tis#10,REQ010,V3,T,F,T,F,T,T,the_turn_indicator_lever = left,the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_emergency_flashing = off
+tis#10,REQ010,V4,T,F,F,F,T,F,,the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_emergency_flashing = on
+tis#10,REQ010,V5,F,T,T,F,T,T,the_turn_indicator_lever_antes != left,the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_emergency_flashing = off
+tis#10,REQ010,V6,F,T,F,F,T,F,,the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_emergency_flashing = on
+tis#10,REQ010,V7,F,F,T,F,T,F,,the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_emergency_flashing = off
+tis#10,REQ010,V8,F,F,F,F,T,F,,the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_emergency_flashing = on
+
+decision,requirement,row,the_turn_indicator_lever_antes != right,the_turn_indicator_lever = right,the_emergency_flashing = off,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#11,REQ011,V1,T,T,T,T,T,T,the_turn_indicator_lever_antes != right; the_turn_indicator_lever = right; the_emergency_flashing = off,the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = right; the_emergency_flashing = off
+tis#11,REQ011,V2,T,T,F,F,T,T,the_emergency_flashing = off,the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = right; the_emergency_flashing = on
+tis#11,REQ011,V3,T,F,T,F,T,T,the_turn_indicator_lever = right,the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_emergency_flashing = off
+tis#11,REQ011,V4,T,F,F,F,T,F,,the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_emergency_flashing = on
+tis#11,REQ011,V5,F,T,T,F,T,T,the_turn_indicator_lever_antes != right,the_turn_indicator_lever_antes = right; the_turn_indicator_lever = right; the_emergency_flashing = off
+tis#11,REQ011,V6,F,T,F,F,T,F,,the_turn_indicator_lever_antes = right; the_turn_indicator_lever = right; the_emergency_flashing = on
+tis#11,REQ011,V7,F,F,T,F,T,F,,the_turn_indicator_lever_antes = right; the_turn_indicator_lever = left; the_emergency_flashing = off
+tis#11,REQ011,V8,F,F,F,F,T,F,,the_turn_indicator_lever_antes = right; the_turn_indicator_lever = left; the_emergency_flashing = on
+
+decision,requirement,row,the_emergency_flashing_antes != on,the_emergency_flashing = on,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#12,REQ012,V1,T,T,T,T,T,the_emergency_flashing_antes != on; the_emergency_flashing = on,the_emergency_flashing_antes = off; the_emergency_flashing = on
+tis#12,REQ012,V2,T,F,F,T,T,the_emergency_flashing = on,the_emergency_flashing_antes = off; the_emergency_flashing = off
+tis#12,REQ012,V3,F,T,F,T,T,the_emergency_flashing_antes != on,the_emergency_flashing_antes = on; the_emergency_flashing = on
+tis#12,REQ012,V4,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off
+
+decision,requirement,row,the_emergency_flashing = on,the_emergency_flashing_antes = on,the_turn_indicator_lever_antes != left,the_turn_indicator_lever = left,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#13,REQ013,V1,T,T,T,T,T,T,T,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes != left; the_turn_indicator_lever = left,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left
+tis#13,REQ013,V2,T,T,T,F,F,T,T,the_turn_indicator_lever = left,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle
+tis#13,REQ013,V3,T,T,F,T,F,T,T,the_turn_indicator_lever_antes != left,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left
+tis#13,REQ013,V4,T,T,F,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle
+tis#13,REQ013,V5,T,F,T,T,F,T,T,the_emergency_flashing_antes = on,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left
+tis#13,REQ013,V6,T,F,T,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle
+tis#13,REQ013,V7,T,F,F,T,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left
+tis#13,REQ013,V8,T,F,F,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle
+tis#13,REQ013,V9,F,T,T,T,F,T,T,the_emergency_flashing = on,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left
+tis#13,REQ013,V10,F,T,T,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle
+tis#13,REQ013,V11,F,T,F,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left
+tis#13,REQ013,V12,F,T,F,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle
+tis#13,REQ013,V13,F,F,T,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left
+tis#13,REQ013,V14,F,F,T,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle
+tis#13,REQ013,V15,F,F,F,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left
+tis#13,REQ013,V16,F,F,F,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle
+
+decision,requirement,row,the_emergency_flashing = on,the_emergency_flashing_antes = on,the_turn_indicator_lever_antes != right,the_turn_indicator_lever = right,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#14,REQ014,V1,T,T,T,T,T,T,T,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes != right; the_turn_indicator_lever = right,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = right
+tis#14,REQ014,V2,T,T,T,F,F,T,T,the_turn_indicator_lever = right,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left
+tis#14,REQ014,V3,T,T,F,T,F,T,T,the_turn_indicator_lever_antes != right,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = right; the_turn_indicator_lever = right
+tis#14,REQ014,V4,T,T,F,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = right; the_turn_indicator_lever = left
+tis#14,REQ014,V5,T,F,T,T,F,T,T,the_emergency_flashing_antes = on,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = right
+tis#14,REQ014,V6,T,F,T,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left
+tis#14,REQ014,V7,T,F,F,T,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = right; the_turn_indicator_lever = right
+tis#14,REQ014,V8,T,F,F,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = right; the_turn_indicator_lever = left
+tis#14,REQ014,V9,F,T,T,T,F,T,T,the_emergency_flashing = on,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = right
+tis#14,REQ014,V10,F,T,T,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left
+tis#14,REQ014,V11,F,T,F,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = right; the_turn_indicator_lever = right
+tis#14,REQ014,V12,F,T,F,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = right; the_turn_indicator_lever = left
+tis#14,REQ014,V13,F,F,T,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = right
+tis#14,REQ014,V14,F,F,T,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left
+tis#14,REQ014,V15,F,F,F,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = right; the_turn_indicator_lever = right
+tis#14,REQ014,V16,F,F,F,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = right; the_turn_indicator_lever = left
+
+decision,requirement,row,the_emergency_flashing = on,the_emergency_flashing_antes = on,the_turn_indicator_lever_antes != idle,the_turn_indicator_lever = idle,the_flashing_mode != both_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#15,REQ015,V1,T,T,T,T,T,T,T,T,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes != idle; the_turn_indicator_lever = idle; the_flashing_mode != both_flashing,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_flashing_mode = no_flashing
+tis#15,REQ015,V2,T,T,T,T,F,F,T,T,the_flashing_mode != both_flashing,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_flashing_mode = both_flashing
+tis#15,REQ015,V3,T,T,T,F,T,F,T,T,the_turn_indicator_lever = idle,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_flashing_mode = right_flashing
+tis#15,REQ015,V4,T,T,T,F,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_flashing_mode = both_flashing
+tis#15,REQ015,V5,T,T,F,T,T,F,T,T,the_turn_indicator_lever_antes != idle,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_flashing_mode = right_flashing
+tis#15,REQ015,V6,T,T,F,T,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_flashing_mode = both_flashing
+tis#15,REQ015,V7,T,T,F,F,T,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_flashing_mode = right_flashing
+tis#15,REQ015,V8,T,T,F,F,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_flashing_mode = both_flashing
+tis#15,REQ015,V9,T,F,T,T,T,F,T,T,the_emergency_flashing_antes = on,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_flashing_mode = right_flashing
+tis#15,REQ015,V10,T,F,T,T,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_flashing_mode = both_flashing
+tis#15,REQ015,V11,T,F,T,F,T,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_flashing_mode = right_flashing
+tis#15,REQ015,V12,T,F,T,F,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_flashing_mode = both_flashing
+tis#15,REQ015,V13,T,F,F,T,T,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_flashing_mode = right_flashing
+tis#15,REQ015,V14,T,F,F,T,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_flashing_mode = both_flashing
+tis#15,REQ015,V15,T,F,F,F,T,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_flashing_mode = right_flashing
+tis#15,REQ015,V16,T,F,F,F,F,F,T,F,,the_emergency_flashing = on; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_flashing_mode = both_flashing
+tis#15,REQ015,V17,F,T,T,T,T,F,T,T,the_emergency_flashing = on,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_flashing_mode = right_flashing
+tis#15,REQ015,V18,F,T,T,T,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_flashing_mode = both_flashing
+tis#15,REQ015,V19,F,T,T,F,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_flashing_mode = right_flashing
+tis#15,REQ015,V20,F,T,T,F,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_flashing_mode = both_flashing
+tis#15,REQ015,V21,F,T,F,T,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_flashing_mode = right_flashing
+tis#15,REQ015,V22,F,T,F,T,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_flashing_mode = both_flashing
+tis#15,REQ015,V23,F,T,F,F,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_flashing_mode = right_flashing
+tis#15,REQ015,V24,F,T,F,F,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = on; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_flashing_mode = both_flashing
+tis#15,REQ015,V25,F,F,T,T,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_flashing_mode = right_flashing
+tis#15,REQ015,V26,F,F,T,T,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = idle; the_flashing_mode = both_flashing
+tis#15,REQ015,V27,F,F,T,F,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_flashing_mode = right_flashing
+tis#15,REQ015,V28,F,F,T,F,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = left; the_turn_indicator_lever = left; the_flashing_mode = both_flashing
+tis#15,REQ015,V29,F,F,F,T,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_flashing_mode = right_flashing
+tis#15,REQ015,V30,F,F,F,T,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = idle; the_flashing_mode = both_flashing
+tis#15,REQ015,V31,F,F,F,F,T,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_flashing_mode = right_flashing
+tis#15,REQ015,V32,F,F,F,F,F,F,T,F,,the_emergency_flashing = off; the_emergency_flashing_antes = off; the_turn_indicator_lever_antes = idle; the_turn_indicator_lever = left; the_flashing_mode = both_flashing
+
+decision,requirement,row,the_emergency_flashing_antes != off,the_emergency_flashing = off,the_turn_indicator_lever = left,the_turn_indicator_lever_antes = left,the_flashing_mode != left_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#16,REQ016,V1,T,T,T,T,T,T,T,T,the_emergency_flashing_antes != off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode != left_flashing,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = no_flashing
+tis#16,REQ016,V2,T,T,T,T,F,F,T,T,the_flashing_mode != left_flashing,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#16,REQ016,V3,T,T,T,F,T,F,T,T,the_turn_indicator_lever_antes = left,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = idle; the_flashing_mode = no_flashing
+tis#16,REQ016,V4,T,T,T,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = idle; the_flashing_mode = left_flashing
+tis#16,REQ016,V5,T,T,F,T,T,F,T,T,the_turn_indicator_lever = left,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = left; the_flashing_mode = no_flashing
+tis#16,REQ016,V6,T,T,F,T,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#16,REQ016,V7,T,T,F,F,T,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = idle; the_flashing_mode = no_flashing
+tis#16,REQ016,V8,T,T,F,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = idle; the_flashing_mode = left_flashing
+tis#16,REQ016,V9,T,F,T,T,T,F,T,T,the_emergency_flashing = off,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = no_flashing
+tis#16,REQ016,V10,T,F,T,T,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#16,REQ016,V11,T,F,T,F,T,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = idle; the_flashing_mode = no_flashing
+tis#16,REQ016,V12,T,F,T,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = idle; the_flashing_mode = left_flashing
+tis#16,REQ016,V13,T,F,F,T,T,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = left; the_flashing_mode = no_flashing
+tis#16,REQ016,V14,T,F,F,T,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#16,REQ016,V15,T,F,F,F,T,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = idle; the_flashing_mode = no_flashing
+tis#16,REQ016,V16,T,F,F,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = idle; the_flashing_mode = left_flashing
+tis#16,REQ016,V17,F,T,T,T,T,F,T,T,the_emergency_flashing_antes != off,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = no_flashing
+tis#16,REQ016,V18,F,T,T,T,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#16,REQ016,V19,F,T,T,F,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = idle; the_flashing_mode = no_flashing
+tis#16,REQ016,V20,F,T,T,F,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = idle; the_flashing_mode = left_flashing
+tis#16,REQ016,V21,F,T,F,T,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = left; the_flashing_mode = no_flashing
+tis#16,REQ016,V22,F,T,F,T,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#16,REQ016,V23,F,T,F,F,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = idle; the_flashing_mode = no_flashing
+tis#16,REQ016,V24,F,T,F,F,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = idle; the_flashing_mode = left_flashing
+tis#16,REQ016,V25,F,F,T,T,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = no_flashing
+tis#16,REQ016,V26,F,F,T,T,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#16,REQ016,V27,F,F,T,F,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = idle; the_flashing_mode = no_flashing
+tis#16,REQ016,V28,F,F,T,F,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = idle; the_flashing_mode = left_flashing
+tis#16,REQ016,V29,F,F,F,T,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = left; the_flashing_mode = no_flashing
+tis#16,REQ016,V30,F,F,F,T,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#16,REQ016,V31,F,F,F,F,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = idle; the_flashing_mode = no_flashing
+tis#16,REQ016,V32,F,F,F,F,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = idle; the_turn_indicator_lever_antes = idle; the_flashing_mode = left_flashing
+
+decision,requirement,row,the_emergency_flashing_antes != off,the_emergency_flashing = off,the_turn_indicator_lever = right,the_turn_indicator_lever_antes = right,the_flashing_mode != right_flashing,outcome,feasible,in_suite,demonstrates,concrete_values
+tis#17,REQ017,V1,T,T,T,T,T,T,T,T,the_emergency_flashing_antes != off; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode != right_flashing,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode = no_flashing
+tis#17,REQ017,V2,T,T,T,T,F,F,T,T,the_flashing_mode != right_flashing,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode = right_flashing
+tis#17,REQ017,V3,T,T,T,F,T,F,T,T,the_turn_indicator_lever_antes = right,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#17,REQ017,V4,T,T,T,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = left; the_flashing_mode = right_flashing
+tis#17,REQ017,V5,T,T,F,T,T,F,T,T,the_turn_indicator_lever = right,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = right; the_flashing_mode = left_flashing
+tis#17,REQ017,V6,T,T,F,T,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = right; the_flashing_mode = right_flashing
+tis#17,REQ017,V7,T,T,F,F,T,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#17,REQ017,V8,T,T,F,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = right_flashing
+tis#17,REQ017,V9,T,F,T,T,T,F,T,T,the_emergency_flashing = off,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode = left_flashing
+tis#17,REQ017,V10,T,F,T,T,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode = right_flashing
+tis#17,REQ017,V11,T,F,T,F,T,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#17,REQ017,V12,T,F,T,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = left; the_flashing_mode = right_flashing
+tis#17,REQ017,V13,T,F,F,T,T,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = right; the_flashing_mode = left_flashing
+tis#17,REQ017,V14,T,F,F,T,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = right; the_flashing_mode = right_flashing
+tis#17,REQ017,V15,T,F,F,F,T,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#17,REQ017,V16,T,F,F,F,F,F,T,F,,the_emergency_flashing_antes = on; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = right_flashing
+tis#17,REQ017,V17,F,T,T,T,T,F,T,T,the_emergency_flashing_antes != off,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode = left_flashing
+tis#17,REQ017,V18,F,T,T,T,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode = right_flashing
+tis#17,REQ017,V19,F,T,T,F,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#17,REQ017,V20,F,T,T,F,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = left; the_flashing_mode = right_flashing
+tis#17,REQ017,V21,F,T,F,T,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = right; the_flashing_mode = left_flashing
+tis#17,REQ017,V22,F,T,F,T,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = right; the_flashing_mode = right_flashing
+tis#17,REQ017,V23,F,T,F,F,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#17,REQ017,V24,F,T,F,F,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = off; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = right_flashing
+tis#17,REQ017,V25,F,F,T,T,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode = left_flashing
+tis#17,REQ017,V26,F,F,T,T,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = right; the_flashing_mode = right_flashing
+tis#17,REQ017,V27,F,F,T,F,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#17,REQ017,V28,F,F,T,F,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = right; the_turn_indicator_lever_antes = left; the_flashing_mode = right_flashing
+tis#17,REQ017,V29,F,F,F,T,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = right; the_flashing_mode = left_flashing
+tis#17,REQ017,V30,F,F,F,T,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = right; the_flashing_mode = right_flashing
+tis#17,REQ017,V31,F,F,F,F,T,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = left_flashing
+tis#17,REQ017,V32,F,F,F,F,F,F,T,F,,the_emergency_flashing_antes = off; the_emergency_flashing = on; the_turn_indicator_lever = left; the_turn_indicator_lever_antes = left; the_flashing_mode = right_flashing

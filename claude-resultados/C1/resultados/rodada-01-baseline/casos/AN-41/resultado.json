@@ -1,0 +1,22 @@
+{
+  "id": "AN-41",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 1, observado 1 (analyze -f)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "-f",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/nao-existe.mcdc"
+      ],
+      "exit": 1,
+      "segundos": 0.55
+    }
+  ]
+}

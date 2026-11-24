@@ -1,0 +1,37 @@
+{
+  "id": "SY-VM-06",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 5.14
+    },
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 3.44
+    }
+  ]
+}

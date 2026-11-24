@@ -1,0 +1,35 @@
+Decisão:   REQ
+Guarda:    x = 1 and y == 2 and z != 3 and w < 4 and v <= 5 and u > 6 and t >= 7
+Variante:  mascaramento
+
+Tabela verdade: 128 linhas, 128 possíveis (grande demais para o texto; use --format json até 4096 linhas)
+
+Pares de independência:
+  x = 1: (V1, V65)
+  y = 2: (V1, V33)
+  z != 3: (V1, V17)
+  w < 4: (V1, V9)
+  v <= 5: (V1, V5)
+  u > 6: (V1, V3)
+  t >= 7: (V1, V2)
+
+Suíte mínima (8 testes):
+  V1  TTTTTTT  -> T   demonstra x = 1, y = 2, z != 3, w < 4, v <= 5, u > 6, t >= 7
+  V2  TTTTTTF  -> F   demonstra t >= 7
+  V3  TTTTTFT  -> F   demonstra u > 6
+  V5  TTTTFTT  -> F   demonstra v <= 5
+  V9  TTTFTTT  -> F   demonstra w < 4
+  V17  TTFTTTT  -> F   demonstra z != 3
+  V33  TFTTTTT  -> F   demonstra y = 2
+  V65  FTTTTTT  -> F   demonstra x = 1
+
+Demonstração por condição:
+  x = 1: V1 (T) e V65 (F), só ela muda
+  y = 2: V1 (T) e V33 (F), só ela muda
+  z != 3: V1 (T) e V17 (F), só ela muda
+  w < 4: V1 (T) e V9 (F), só ela muda
+  v <= 5: V1 (T) e V5 (F), só ela muda
+  u > 6: V1 (T) e V3 (F), só ela muda
+  t >= 7: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa

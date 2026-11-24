@@ -1,0 +1,24 @@
+Decis�o:   REQ
+Guarda:    speed > 100 and speed > 50
+Variante:  mascaramento
+
+Vetor speed > 100   speed > 50   | D
+V1    T             T            | T
+V2    T             F            | F
+V3    F             T            | F
+V4    F             F            | F
+
+Pares de independ�ncia:
+  speed > 100: (V1, V3)
+  speed > 50: (V1, V2)
+
+Su�te m�nima (3 testes):
+  V1  TT  -> T   demonstra speed > 100, speed > 50
+  V2  TF  -> F   demonstra speed > 50
+  V3  FT  -> F   demonstra speed > 100
+
+Demonstra��o por condi��o:
+  speed > 100: V1 (T) e V3 (F), s� ela muda
+  speed > 50: V1 (T) e V2 (F), s� ela muda
+
+Cobertura MC/DC: completa

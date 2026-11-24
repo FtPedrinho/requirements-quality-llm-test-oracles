@@ -1,0 +1,11 @@
+; speed > 100 and speed > 50 sem Z3: tabela completa, B tem par (sat)
+; condição alvo: A
+(declare-const A_1 Bool)
+(declare-const B_1 Bool)
+(declare-const A_2 Bool)
+(declare-const B_2 Bool)
+(assert (= B_1 B_2))
+(assert (not (= A_1 A_2)))
+(assert (not (= (and A_1 B_1) (and A_2 B_2))))
+(check-sat)
+(get-model)

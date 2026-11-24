@@ -1,0 +1,37 @@
+{
+  "id": "SY-NPP-03",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 2, observado 2 (verify --json)"
+    },
+    {
+      "ok": true,
+      "verificacao": "conflitos 1 = 1"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json"
+      ],
+      "exit": 2,
+      "segundos": 3.0
+    },
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 3.17
+    }
+  ]
+}

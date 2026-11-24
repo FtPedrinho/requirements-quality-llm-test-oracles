@@ -1,0 +1,7 @@
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V1,A,T,F,B,
+REQ,,V1,B,T,F,B,
+REQ,,V2,A,T,T,A; B,
+REQ,,V2,B,F,T,A; B,
+REQ,,V4,A,F,F,A,
+REQ,,V4,B,F,F,A,

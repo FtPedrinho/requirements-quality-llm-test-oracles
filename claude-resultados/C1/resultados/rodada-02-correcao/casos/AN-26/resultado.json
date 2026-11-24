@@ -1,0 +1,22 @@
+{
+  "id": "AN-26",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze A and (B or C))"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and (B or C)",
+        "--mutation"
+      ],
+      "exit": 0,
+      "segundos": 0.6
+    }
+  ]
+}

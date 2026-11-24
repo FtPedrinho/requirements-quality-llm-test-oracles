@@ -1,0 +1,17 @@
+{
+  "id": "AN-38",
+  "veredito": "INDETERMINADO",
+  "nota": "diagnóstico sem expectativa: exit=0",
+  "verificacoes": [],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "(A and B) or (not A and C)",
+        "--unique-cause"
+      ],
+      "exit": 0,
+      "segundos": 0.6
+    }
+  ]
+}

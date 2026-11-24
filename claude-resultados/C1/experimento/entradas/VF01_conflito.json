@@ -1,0 +1,40 @@
+{
+  "system": "c1_vf",
+  "inputs": [
+    {
+      "name": "mode",
+      "type": "enum",
+      "values": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "name": "flag",
+      "type": "bool"
+    },
+    {
+      "name": "sw",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "vf#1",
+      "requirement": "R-1",
+      "guard": "flag = true",
+      "actions": [
+        "mode := a"
+      ]
+    },
+    {
+      "id": "vf#2",
+      "requirement": "R-2",
+      "guard": "sw = true",
+      "actions": [
+        "mode := b"
+      ]
+    }
+  ]
+}

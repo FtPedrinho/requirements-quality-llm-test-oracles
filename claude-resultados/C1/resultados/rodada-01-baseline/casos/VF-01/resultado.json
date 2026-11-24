@@ -1,0 +1,22 @@
+{
+  "id": "VF-01",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 2, observado 2 (verify --json)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF01_conflito.json"
+      ],
+      "exit": 2,
+      "segundos": 2.3
+    }
+  ]
+}

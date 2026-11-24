@@ -1,0 +1,7 @@
+; QE14 linha TFF (Real)
+(declare-const x Real)
+(declare-const y Real)
+(assert (= (> x 3.0) true))
+(assert (= (<= y x) false))
+(assert (= (> y 5.0) false))
+(check-sat)

@@ -1,0 +1,12 @@
+Verificação entre requisitos: c1_vf
+2 decisões, 1 pares que escrevem alguma variável em comum
+
+Conflitos: 1
+  R-1 × R-2: as duas guardas valem no mesmo passo
+    mode: a (R-1) × b (R-2)
+    exemplo: flag = true, sw = true
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: encontrada: sob flag = false, nenhuma guarda vale em
+    flag = false, sw = false

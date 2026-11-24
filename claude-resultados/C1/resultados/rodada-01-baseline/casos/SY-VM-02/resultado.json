@@ -1,0 +1,34 @@
+{
+  "id": "SY-VM-02",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "mutantes 152 = 152"
+    },
+    {
+      "ok": true,
+      "verificacao": "equivalentes 0 = 0"
+    },
+    {
+      "ok": true,
+      "verificacao": "pegos 152 = 152"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--z3",
+        "--mutation",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 4.01
+    }
+  ]
+}

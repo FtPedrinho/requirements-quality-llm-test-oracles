@@ -1,0 +1,27 @@
+{
+  "id": "AN-04",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze A and not B)"
+    },
+    {
+      "ok": true,
+      "verificacao": "testes distintos esperados 3, observados 3"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and not B",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "segundos": 0.64
+    }
+  ]
+}

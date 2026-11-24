@@ -1,0 +1,13 @@
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V2,speed > 100,T,T,speed > 100,speed = 101; rain = false
+REQ,,V2,speed > 50,T,T,speed > 100,speed = 101; rain = false
+REQ,,V2,rain,F,T,speed > 100,speed = 101; rain = false
+REQ,,V5,speed > 100,F,T,speed > 50; rain,speed = 51; rain = true
+REQ,,V5,speed > 50,T,T,speed > 50; rain,speed = 51; rain = true
+REQ,,V5,rain,T,T,speed > 50; rain,speed = 51; rain = true
+REQ,,V6,speed > 100,F,F,speed > 100; rain,speed = 51; rain = false
+REQ,,V6,speed > 50,T,F,speed > 100; rain,speed = 51; rain = false
+REQ,,V6,rain,F,F,speed > 100; rain,speed = 51; rain = false
+REQ,,V7,speed > 100,F,F,speed > 50,speed = 0; rain = true
+REQ,,V7,speed > 50,F,F,speed > 50,speed = 0; rain = true
+REQ,,V7,rain,T,F,speed > 50,speed = 0; rain = true

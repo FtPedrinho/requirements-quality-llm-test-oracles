@@ -1,0 +1,13 @@
+Decis�o:   REQ
+Guarda:    A and B
+Testes:    3
+  T1 = V1  TT  -> T
+  T2 = V3  FT  -> F
+  T3 = V2  TF  -> F
+
+Condi��es:
+  A: demonstrada por T1 (T) e T2 (F)
+  B: demonstrada por T1 (T) e T3 (F)
+
+Resultados de condi��o demonstrados: 4 de 4 (100,0%)
+Cobertura MC/DC: completa, 2 de 2 condi��es demonstradas

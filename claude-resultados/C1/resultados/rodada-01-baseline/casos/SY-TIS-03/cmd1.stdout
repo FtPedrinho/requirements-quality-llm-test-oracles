@@ -1,0 +1,28 @@
+Verifica��o entre requisitos: turn_indicator_system
+17 decis�es, 136 pares que escrevem alguma vari�vel em comum
+
+Conflitos: 3
+  REQ002 � REQ006: as duas guardas valem no mesmo passo
+    the_indication_lights: left_flashing (REQ002) � off (REQ006)
+    exemplo: the_voltage_antes = 0, the_voltage = 81, the_flashing_mode_antes = no_flashing, the_flashing_mode = left_flashing, the_flashing_timer = 340, the_indication_lights = left_flashing
+  REQ003 � REQ006: as duas guardas valem no mesmo passo
+    the_indication_lights: right_flashing (REQ003) � off (REQ006)
+    exemplo: the_voltage_antes = 0, the_voltage = 81, the_flashing_mode_antes = no_flashing, the_flashing_mode = right_flashing, the_flashing_timer = 340, the_indication_lights = left_flashing
+  REQ004 � REQ006: as duas guardas valem no mesmo passo
+    the_indication_lights: both_flashing (REQ004) � off (REQ006)
+    exemplo: the_voltage_antes = 0, the_voltage = 81, the_flashing_mode_antes = no_flashing, the_flashing_mode = both_flashing, the_flashing_timer = 340, the_indication_lights = left_flashing
+
+Sobreposi��es sem conflito: 70
+  REQ001 � REQ010: mesmo valor em the_flashing_timer
+  REQ001 � REQ011: mesmo valor em the_flashing_timer
+  REQ001 � REQ012: mesmo valor em the_flashing_timer
+  REQ001 � REQ013: mesmo valor em the_flashing_timer
+  REQ001 � REQ014: mesmo valor em the_flashing_timer
+  REQ001 � REQ015: mesmo valor em the_flashing_timer
+  REQ001 � REQ016: mesmo valor em the_flashing_timer
+  REQ001 � REQ017: mesmo valor em the_flashing_timer
+  REQ002 � REQ007: mesmo valor em the_indication_lights, the_flashing_timer
+  REQ002 � REQ010: mesmo valor em the_flashing_timer
+  ... e mais 60 (lista completa com --format json)
+
+Lacunas: n�o conferidas (use --context "<express�o>" para dizer em que situa��o alguma guarda deve valer)

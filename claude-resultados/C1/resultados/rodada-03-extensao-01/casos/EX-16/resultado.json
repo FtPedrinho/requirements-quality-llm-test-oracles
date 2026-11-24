@@ -1,0 +1,28 @@
+{
+  "id": "EX-16",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze x < -5 or x > 5)"
+    },
+    {
+      "ok": true,
+      "verificacao": "guarda (x < -5) or (x > 5) nos valores concretos = esperado em 6 linhas (divergentes [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "x < -5 or x > 5",
+        "--z3",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "segundos": 0.99
+    }
+  ]
+}

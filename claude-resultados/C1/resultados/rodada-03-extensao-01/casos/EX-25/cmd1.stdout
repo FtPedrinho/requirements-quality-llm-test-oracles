@@ -1,0 +1,21 @@
+decision,requirement,row,alarme_ativo,porta_aberta,botao_emergencia,outcome,feasible,in_suite,demonstrates,concrete_values
+REQ-001,REQ-001,V1,T,T,T,T,T,F,,
+REQ-001,REQ-001,V2,T,T,F,T,T,T,alarme_ativo; porta_aberta,
+REQ-001,REQ-001,V3,T,F,T,T,T,T,botao_emergencia,
+REQ-001,REQ-001,V4,T,F,F,F,T,T,porta_aberta; botao_emergencia,
+REQ-001,REQ-001,V5,F,T,T,T,T,F,,
+REQ-001,REQ-001,V6,F,T,F,F,T,T,alarme_ativo,
+REQ-001,REQ-001,V7,F,F,T,T,T,F,,
+REQ-001,REQ-001,V8,F,F,F,F,T,F,,
+
+decision,requirement,row,porta_fechada,obstaculo,outcome,feasible,in_suite,demonstrates,concrete_values
+REQ-002,REQ-002,V1,T,T,F,T,T,obstaculo,
+REQ-002,REQ-002,V2,T,F,T,T,T,porta_fechada; obstaculo,
+REQ-002,REQ-002,V3,F,T,F,T,F,,
+REQ-002,REQ-002,V4,F,F,F,T,T,porta_fechada,
+
+decision,requirement,row,freio_acionado,pedal_pressionado,outcome,feasible,in_suite,demonstrates,concrete_values
+REQ-003,REQ-003,V1,T,T,T,T,F,,
+REQ-003,REQ-003,V2,T,F,T,T,T,freio_acionado#1,
+REQ-003,REQ-003,V3,F,T,F,T,F,,
+REQ-003,REQ-003,V4,F,F,F,T,T,freio_acionado#1,

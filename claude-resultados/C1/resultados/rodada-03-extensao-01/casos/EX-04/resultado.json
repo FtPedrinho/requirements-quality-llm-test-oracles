@@ -1,0 +1,27 @@
+{
+  "id": "EX-04",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 1, observado 1 (check A and B)"
+    },
+    {
+      "ok": true,
+      "verificacao": "stderr contém '3': 'Erro: C:\\\\Users\\\\User\\\\requirements-quality-llm-test-oracles\\\\claude-resultados\\\\C1\\\\experimento\\\\extensao-01\\\\entradas\\\\EX04_celula_vazia.csv, linha 3: faltam test, input ou value'"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "A and B",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX04_celula_vazia.csv"
+      ],
+      "exit": 1,
+      "segundos": 0.62
+    }
+  ]
+}

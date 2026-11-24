@@ -1,0 +1,23 @@
+{
+  "id": "CK-04",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 1, observado 1 (check A and B)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "A and B",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK04_sem_value.csv"
+      ],
+      "exit": 1,
+      "segundos": 0.51
+    }
+  ]
+}

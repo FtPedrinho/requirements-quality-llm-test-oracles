@@ -1,0 +1,7 @@
+# Congelamento da correção 01 da suíte — 2026-11-24T10:37:47-03:00
+# Antes da execução da rodada-02. Oráculo inalterado.
+9addd5f1bc17a72e28dc3dad080eb6bf4063a0785919af07c9df9f945c8dc632 *suite/run_suite.py
+a4cbeee7f3ca013b14783179237406aa782a4f7a474e7ed87c984970c1710af4 *suite/versoes/run_suite.rodada-01.py
+edca9153792e2dc71a35eff88c517bffacfc68d3da995f969751bdbd814e9ab9 *suite/coverage.sh
+97d47a3c571319c437504cbf9c45e80c014f6e48360253e7ca015fe7d81a091e *experimento/oraculo.json
+3920106984fb53b2ba0bcb5f5bb46c4f5b909a8f0e8041d540e8c293e7b4b594 *experimento/correcoes/correcao-01-codificacao-stdout.md

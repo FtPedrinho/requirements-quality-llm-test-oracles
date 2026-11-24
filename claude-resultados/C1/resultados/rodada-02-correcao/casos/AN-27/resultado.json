@@ -1,0 +1,24 @@
+{
+  "id": "AN-27",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "testes distintos esperados 5, observados 5"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "((E or D) and (not A or D)) or B",
+        "--exact",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "segundos": 0.7
+    }
+  ]
+}

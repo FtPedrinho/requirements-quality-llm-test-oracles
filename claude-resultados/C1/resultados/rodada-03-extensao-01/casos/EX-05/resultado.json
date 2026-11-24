@@ -1,0 +1,28 @@
+{
+  "id": "EX-05",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze --json)"
+    },
+    {
+      "ok": true,
+      "verificacao": "coluna requirement = 'R-1, R-2' em todas as 6 linhas (divergentes [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX05_virgula_requisito.json",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "segundos": 2.51
+    }
+  ]
+}

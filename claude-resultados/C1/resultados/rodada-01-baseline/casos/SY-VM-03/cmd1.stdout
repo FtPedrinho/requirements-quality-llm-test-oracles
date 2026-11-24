@@ -1,0 +1,8 @@
+Verifica��o entre requisitos: the_coffee_machine_system
+5 decis�es, 10 pares que escrevem alguma vari�vel em comum
+
+Conflitos: nenhum
+
+Sobreposi��es sem conflito: nenhuma
+
+Lacunas: n�o conferidas (use --context "<express�o>" para dizer em que situa��o alguma guarda deve valer)

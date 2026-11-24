@@ -1,0 +1,23 @@
+{
+  "id": "CK-02",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 2, observado 2 (check A and B)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "A and B",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK02_incompleto.csv"
+      ],
+      "exit": 2,
+      "segundos": 0.65
+    }
+  ]
+}

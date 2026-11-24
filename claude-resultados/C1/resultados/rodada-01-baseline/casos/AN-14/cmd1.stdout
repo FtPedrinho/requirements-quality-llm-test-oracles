@@ -1,0 +1,24 @@
+Decis�o:   REQ
+Guarda:    A and B
+Restri��o: A
+Variante:  mascaramento
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | F
+V3    F   T   | F  (imposs�vel)
+V4    F   F   | F  (imposs�vel)
+
+Pares de independ�ncia:
+  A: nenhum par
+  B: (V1, V2)
+
+Su�te m�nima (2 testes):
+  V1  TT  -> T   demonstra B
+  V2  TF  -> F   demonstra B
+
+Demonstra��o por condi��o:
+  B: V1 (T) e V2 (F), s� ela muda
+
+Cobertura MC/DC: incompleta, sem par para A
+  A: bloqueada pelas restri��es: os pares (V1, V3) usam linhas imposs�veis

@@ -1,0 +1,22 @@
+{
+  "id": "EX-28",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "saída menciona Z3 (exit 1)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and B",
+        "--exact"
+      ],
+      "exit": 1,
+      "segundos": 0.75
+    }
+  ]
+}

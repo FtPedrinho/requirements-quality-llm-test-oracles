@@ -1,0 +1,11 @@
+Verifica��o entre requisitos: c1_vf
+2 decis�es, 1 pares que escrevem alguma vari�vel em comum
+
+Conflitos: 1
+  R-1 � R-2: as duas guardas valem no mesmo passo
+    mode: a (R-1) � b (R-2)
+    exemplo: flag = true, sw = true
+
+Sobreposi��es sem conflito: nenhuma
+
+Lacunas: n�o conferidas (use --context "<express�o>" para dizer em que situa��o alguma guarda deve valer)

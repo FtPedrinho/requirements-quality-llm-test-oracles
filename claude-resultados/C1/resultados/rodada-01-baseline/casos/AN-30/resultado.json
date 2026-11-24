@@ -1,0 +1,28 @@
+{
+  "id": "AN-30",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze speed > 100 or (speed > 50 and rain))"
+    },
+    {
+      "ok": true,
+      "verificacao": "guarda nos valores concretos = esperado (12 linhas; divergentes [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "segundos": 1.57
+    }
+  ]
+}

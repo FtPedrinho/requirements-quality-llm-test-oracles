@@ -1,0 +1,43 @@
+{
+  "id": "AN-22",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or C)"
+    },
+    {
+      "ok": true,
+      "verificacao": "arquivo -o criado e não vazio"
+    },
+    {
+      "ok": true,
+      "verificacao": "conteúdo do arquivo = stdout sem -o"
+    },
+    {
+      "ok": true,
+      "verificacao": "relatório não mostrado na tela com -o"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "(A and B) or C",
+        "-o",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/resultados/rodada-02-correcao/casos/AN-22/AN-22.txt"
+      ],
+      "exit": 0,
+      "segundos": 0.61
+    },
+    {
+      "args": [
+        "analyze",
+        "(A and B) or C"
+      ],
+      "exit": 0,
+      "segundos": 0.6
+    }
+  ]
+}

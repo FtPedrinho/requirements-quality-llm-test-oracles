@@ -1,0 +1,37 @@
+{
+  "id": "SY-TIS-03",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 2, observado 2 (verify --json)"
+    },
+    {
+      "ok": true,
+      "verificacao": "conflitos 3 = 3"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json"
+      ],
+      "exit": 2,
+      "segundos": 2.3
+    },
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 2.44
+    }
+  ]
+}

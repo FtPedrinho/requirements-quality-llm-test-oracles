@@ -1,0 +1,9 @@
+Verifica��o entre requisitos: the_coffee_machine_system
+5 decis�es, 10 pares que escrevem alguma vari�vel em comum
+
+Conflitos: nenhum
+
+Sobreposi��es sem conflito: nenhuma
+
+Lacunas: encontrada: sob the_system_mode = preparing_weak, nenhuma guarda vale em
+    the_system_mode = preparing_weak, the_coin_sensor_antes = false, the_coin_sensor = false, the_coffee_request_button_antes = released, the_coffee_request_button = released, the_request_timer = 31

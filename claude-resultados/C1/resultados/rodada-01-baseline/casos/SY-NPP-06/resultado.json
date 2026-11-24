@@ -1,0 +1,37 @@
+{
+  "id": "SY-NPP-06",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 6.53
+    },
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 6.75
+    }
+  ]
+}

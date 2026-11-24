@@ -1,0 +1,88 @@
+{
+  "tool" : "mcdc",
+  "mode" : "check",
+  "system" : "c1_ext",
+  "variant" : "MASKING",
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "cmp#1",
+    "requirement" : "R-CMP",
+    "guard" : "x < 5 /\\ y <= 5 /\\ z > 5 /\\ w >= 5 /\\ v != 5 /\\ u = 5 /\\ mode != idle",
+    "complete" : true,
+    "conditionsDemonstrated" : 7,
+    "conditionsTotal" : 7,
+    "outcomesCovered" : 14,
+    "outcomesTotal" : 14,
+    "outcomePercentage" : 100.0,
+    "tests" : [ {
+      "test" : "T0",
+      "vector" : "V1",
+      "outcome" : true
+    }, {
+      "test" : "T1",
+      "vector" : "V65",
+      "outcome" : false
+    }, {
+      "test" : "T2",
+      "vector" : "V33",
+      "outcome" : false
+    }, {
+      "test" : "T3",
+      "vector" : "V17",
+      "outcome" : false
+    }, {
+      "test" : "T4",
+      "vector" : "V9",
+      "outcome" : false
+    }, {
+      "test" : "T5",
+      "vector" : "V5",
+      "outcome" : false
+    }, {
+      "test" : "T6",
+      "vector" : "V3",
+      "outcome" : false
+    }, {
+      "test" : "T7",
+      "vector" : "V2",
+      "outcome" : false
+    } ],
+    "conditions" : [ {
+      "condition" : "x < 5",
+      "demonstrated" : true,
+      "whenTrue" : [ "T0" ],
+      "whenFalse" : [ "T1" ]
+    }, {
+      "condition" : "y <= 5",
+      "demonstrated" : true,
+      "whenTrue" : [ "T0" ],
+      "whenFalse" : [ "T2" ]
+    }, {
+      "condition" : "z > 5",
+      "demonstrated" : true,
+      "whenTrue" : [ "T0" ],
+      "whenFalse" : [ "T3" ]
+    }, {
+      "condition" : "w >= 5",
+      "demonstrated" : true,
+      "whenTrue" : [ "T0" ],
+      "whenFalse" : [ "T4" ]
+    }, {
+      "condition" : "v != 5",
+      "demonstrated" : true,
+      "whenTrue" : [ "T0" ],
+      "whenFalse" : [ "T5" ]
+    }, {
+      "condition" : "u = 5",
+      "demonstrated" : true,
+      "whenTrue" : [ "T0" ],
+      "whenFalse" : [ "T6" ]
+    }, {
+      "condition" : "mode != idle",
+      "demonstrated" : true,
+      "whenTrue" : [ "T0" ],
+      "whenFalse" : [ "T7" ]
+    } ],
+    "problems" : [ ]
+  } ]
+}

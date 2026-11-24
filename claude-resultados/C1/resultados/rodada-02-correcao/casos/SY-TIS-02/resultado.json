@@ -1,0 +1,34 @@
+{
+  "id": "SY-TIS-02",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "mutantes 450 = 450"
+    },
+    {
+      "ok": true,
+      "verificacao": "equivalentes 21 = 21"
+    },
+    {
+      "ok": true,
+      "verificacao": "pegos 428 = 428"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+        "--z3",
+        "--mutation",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 5.85
+    }
+  ]
+}

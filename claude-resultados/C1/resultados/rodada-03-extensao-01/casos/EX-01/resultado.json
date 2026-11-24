@@ -1,0 +1,24 @@
+{
+  "id": "EX-01",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (check --json)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX01_comparacoes.json",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX01_testes_concretos.csv"
+      ],
+      "exit": 0,
+      "segundos": 4.78
+    }
+  ]
+}

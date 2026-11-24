@@ -1,0 +1,25 @@
+Decisão:   q#1
+Requisito: R-1, R-2
+Guarda:    flag = true /\ sw = true
+Variante:  mascaramento
+
+Vetor flag = true   sw = true   | D
+V1    T             T           | T
+V2    T             F           | F
+V3    F             T           | F
+V4    F             F           | F
+
+Pares de independência:
+  flag = true: (V1, V3)
+  sw = true: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra flag = true, sw = true
+  V2  TF  -> F   demonstra sw = true
+  V3  FT  -> F   demonstra flag = true
+
+Demonstração por condição:
+  flag = true: V1 (T) e V3 (F), só ela muda
+  sw = true: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa

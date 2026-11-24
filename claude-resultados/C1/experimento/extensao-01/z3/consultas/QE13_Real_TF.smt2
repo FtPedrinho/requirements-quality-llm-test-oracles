@@ -1,0 +1,5 @@
+; QE13 linha TF (Real)
+(declare-const x Real)
+(assert (= (> x (- 3.0)) true))
+(assert (= (< x 2.0) false))
+(check-sat)

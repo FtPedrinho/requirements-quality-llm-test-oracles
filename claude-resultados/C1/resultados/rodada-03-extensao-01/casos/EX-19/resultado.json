@@ -1,0 +1,36 @@
+{
+  "id": "EX-19",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "-f",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 4.23
+    },
+    {
+      "args": [
+        "analyze",
+        "-f",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 2.16
+    }
+  ]
+}

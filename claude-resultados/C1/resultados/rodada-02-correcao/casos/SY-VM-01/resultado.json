@@ -1,0 +1,65 @@
+{
+  "id": "SY-VM-01",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "decisões 5 = 5"
+    },
+    {
+      "ok": true,
+      "verificacao": "condições 21 = 21"
+    },
+    {
+      "ok": true,
+      "verificacao": "combinações 152 = 152"
+    },
+    {
+      "ok": true,
+      "verificacao": "impossíveis (JSON) 4 = 4"
+    },
+    {
+      "ok": true,
+      "verificacao": "impossíveis marcadas (truth-csv) 4 = 4"
+    },
+    {
+      "ok": true,
+      "verificacao": "testes 26 = 26"
+    },
+    {
+      "ok": true,
+      "verificacao": "testes = condições + 1 em cada decisão (divergentes [])"
+    },
+    {
+      "ok": true,
+      "verificacao": "cada decisão ligada ao requisito de origem (divergentes [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 3.87
+    },
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--z3",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 0,
+      "segundos": 3.19
+    }
+  ]
+}

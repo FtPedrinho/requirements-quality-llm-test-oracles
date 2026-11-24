@@ -1,0 +1,7 @@
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+q#1,"R-1, R-2",V1,flag = true,T,T,flag = true; sw = true,
+q#1,"R-1, R-2",V1,sw = true,T,T,flag = true; sw = true,
+q#1,"R-1, R-2",V2,flag = true,T,F,sw = true,
+q#1,"R-1, R-2",V2,sw = true,F,F,sw = true,
+q#1,"R-1, R-2",V3,flag = true,F,F,flag = true,
+q#1,"R-1, R-2",V3,sw = true,T,F,flag = true,

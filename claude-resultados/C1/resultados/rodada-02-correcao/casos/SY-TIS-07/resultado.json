@@ -1,0 +1,20 @@
+{
+  "id": "SY-TIS-07",
+  "veredito": "INDETERMINADO",
+  "nota": "diagnóstico sem expectativa: exit=2",
+  "verificacoes": [],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 5.5
+    }
+  ]
+}

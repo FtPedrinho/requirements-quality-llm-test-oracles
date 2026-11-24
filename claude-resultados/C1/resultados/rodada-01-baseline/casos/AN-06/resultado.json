@@ -1,0 +1,75 @@
+{
+  "id": "AN-06",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze A && B || !C)"
+    },
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze A /\\ B \\/ not C)"
+    },
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze A and B or not C)"
+    },
+    {
+      "ok": true,
+      "verificacao": "linhas da tabela esperadas 8, observadas 8"
+    },
+    {
+      "ok": true,
+      "verificacao": "resultado de cada linha = (A and B) or not C (divergentes: [])"
+    },
+    {
+      "ok": true,
+      "verificacao": "linhas da tabela esperadas 8, observadas 8"
+    },
+    {
+      "ok": true,
+      "verificacao": "resultado de cada linha = (A and B) or not C (divergentes: [])"
+    },
+    {
+      "ok": true,
+      "verificacao": "linhas da tabela esperadas 8, observadas 8"
+    },
+    {
+      "ok": true,
+      "verificacao": "resultado de cada linha = (A and B) or not C (divergentes: [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A && B || !C",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 0,
+      "segundos": 0.63
+    },
+    {
+      "args": [
+        "analyze",
+        "A /\\ B \\/ not C",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 0,
+      "segundos": 0.76
+    },
+    {
+      "args": [
+        "analyze",
+        "A and B or not C",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 0,
+      "segundos": 0.67
+    }
+  ]
+}

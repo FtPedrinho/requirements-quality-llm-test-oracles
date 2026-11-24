@@ -1,0 +1,9 @@
+sat
+(
+  (define-fun sw () Bool
+    false)
+  (define-fun flag () Bool
+    false)
+  (define-fun mode () Mode
+    a)
+)

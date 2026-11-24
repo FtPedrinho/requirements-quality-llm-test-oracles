@@ -1,0 +1,273 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ-001",
+    "requirement" : "REQ-001",
+    "guard" : "(alarme_ativo and porta_aberta) or botao_emergencia",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "alarme_ativo"
+    }, {
+      "name" : "porta_aberta"
+    }, {
+      "name" : "botao_emergencia"
+    } ],
+    "conditions" : [ {
+      "label" : "alarme_ativo",
+      "input" : "alarme_ativo",
+      "occurrence" : 1
+    }, {
+      "label" : "porta_aberta",
+      "input" : "porta_aberta",
+      "occurrence" : 1
+    }, {
+      "label" : "botao_emergencia",
+      "input" : "botao_emergencia",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "DIRECT",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : false,
+    "independencePairs" : {
+      "alarme_ativo" : [ [ "V2", "V6" ] ],
+      "porta_aberta" : [ [ "V2", "V4" ] ],
+      "botao_emergencia" : [ [ "V5", "V6" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : true,
+        "botao_emergencia" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "alarme_ativo" : "true",
+        "porta_aberta" : "true",
+        "botao_emergencia" : "false"
+      },
+      "demonstrates" : [ "alarme_ativo", "porta_aberta" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : false,
+        "botao_emergencia" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "alarme_ativo" : "true",
+        "porta_aberta" : "false",
+        "botao_emergencia" : "false"
+      },
+      "demonstrates" : [ "porta_aberta" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "alarme_ativo" : false,
+        "porta_aberta" : true,
+        "botao_emergencia" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "alarme_ativo" : "false",
+        "porta_aberta" : "true",
+        "botao_emergencia" : "true"
+      },
+      "demonstrates" : [ "botao_emergencia" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "alarme_ativo" : false,
+        "porta_aberta" : true,
+        "botao_emergencia" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "alarme_ativo" : "false",
+        "porta_aberta" : "true",
+        "botao_emergencia" : "false"
+      },
+      "demonstrates" : [ "alarme_ativo", "botao_emergencia" ]
+    } ],
+    "chosenPairs" : {
+      "alarme_ativo" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "porta_aberta" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "botao_emergencia" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      }
+    }
+  }, {
+    "id" : "REQ-002",
+    "requirement" : "REQ-002",
+    "guard" : "porta_fechada and not obstaculo",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "porta_fechada"
+    }, {
+      "name" : "obstaculo"
+    } ],
+    "conditions" : [ {
+      "label" : "porta_fechada",
+      "input" : "porta_fechada",
+      "occurrence" : 1
+    }, {
+      "label" : "obstaculo",
+      "input" : "obstaculo",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "DIRECT",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : false,
+    "independencePairs" : {
+      "porta_fechada" : [ [ "V2", "V4" ] ],
+      "obstaculo" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "porta_fechada" : "true",
+        "obstaculo" : "true"
+      },
+      "demonstrates" : [ "obstaculo" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "porta_fechada" : "true",
+        "obstaculo" : "false"
+      },
+      "demonstrates" : [ "porta_fechada", "obstaculo" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "porta_fechada" : "false",
+        "obstaculo" : "false"
+      },
+      "demonstrates" : [ "porta_fechada" ]
+    } ],
+    "chosenPairs" : {
+      "porta_fechada" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "obstaculo" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  }, {
+    "id" : "REQ-003",
+    "requirement" : "REQ-003",
+    "guard" : "freio_acionado or (freio_acionado and pedal_pressionado)",
+    "actions" : [ ],
+    "complete" : false,
+    "uncoveredConditions" : [ "freio_acionado#2", "pedal_pressionado" ],
+    "uncovered" : [ {
+      "condition" : "freio_acionado#2",
+      "reason" : "REDUNDANT",
+      "blockedPairs" : [ ]
+    }, {
+      "condition" : "pedal_pressionado",
+      "reason" : "REDUNDANT",
+      "blockedPairs" : [ ]
+    } ],
+    "inputs" : [ {
+      "name" : "freio_acionado"
+    }, {
+      "name" : "pedal_pressionado"
+    } ],
+    "conditions" : [ {
+      "label" : "freio_acionado#1",
+      "input" : "freio_acionado",
+      "occurrence" : 1
+    }, {
+      "label" : "freio_acionado#2",
+      "input" : "freio_acionado",
+      "occurrence" : 2
+    }, {
+      "label" : "pedal_pressionado",
+      "input" : "pedal_pressionado",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "DIRECT",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : false,
+    "independencePairs" : {
+      "freio_acionado#1" : [ [ "V2", "V4" ] ],
+      "freio_acionado#2" : [ ],
+      "pedal_pressionado" : [ ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "freio_acionado" : true,
+        "pedal_pressionado" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "freio_acionado" : "true",
+        "pedal_pressionado" : "false"
+      },
+      "demonstrates" : [ "freio_acionado#1" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "freio_acionado" : false,
+        "pedal_pressionado" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "freio_acionado" : "false",
+        "pedal_pressionado" : "false"
+      },
+      "demonstrates" : [ "freio_acionado#1" ]
+    } ],
+    "chosenPairs" : {
+      "freio_acionado#1" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

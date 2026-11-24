@@ -1,0 +1,74 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : "A",
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "A and B",
+    "actions" : [ ],
+    "complete" : false,
+    "uncoveredConditions" : [ "A" ],
+    "uncovered" : [ {
+      "condition" : "A",
+      "reason" : "INFEASIBLE",
+      "blockedPairs" : [ [ "V1", "V3" ] ]
+    } ],
+    "inputs" : [ {
+      "name" : "A"
+    }, {
+      "name" : "B"
+    } ],
+    "conditions" : [ {
+      "label" : "A",
+      "input" : "A",
+      "occurrence" : 1
+    }, {
+      "label" : "B",
+      "input" : "B",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "DIRECT",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : false,
+    "independencePairs" : {
+      "A" : [ ],
+      "B" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true,
+        "B" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "A" : "true",
+        "B" : "true"
+      },
+      "demonstrates" : [ "B" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A" : "true",
+        "B" : "false"
+      },
+      "demonstrates" : [ "B" ]
+    } ],
+    "chosenPairs" : {
+      "B" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}
