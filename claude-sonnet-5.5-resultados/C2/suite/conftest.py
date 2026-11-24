@@ -4,8 +4,8 @@ import csv, json, os
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ORACULO = Path(os.environ.get("C2_ORACULO", HERE.parents[0] / "detalhes-C2" / "oraculo.json"))
-OUT = Path(os.environ.get("C2_CSV", HERE.parent / "resultados" / "resultados-por-caso.csv"))
+ORACULO = Path(os.environ.get("C2_ORACULO", HERE.parents[0] / "experimento" / "oraculo.json"))
+OUT = Path(os.environ.get("C2_CSV", HERE.parent / "avaliacao" / "resultados-por-caso.csv"))
 _res = {}
 
 

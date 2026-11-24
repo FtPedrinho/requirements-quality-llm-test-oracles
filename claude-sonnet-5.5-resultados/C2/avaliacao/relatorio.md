@@ -13,19 +13,19 @@
   `claude-sonnet-5.5-resultados/C0` e `C1`, nem a pasta de notas compartilhadas da sessão-mãe. Só o método descrito na tarefa foi reaproveitado
   (oráculo antes do SUT, Z3, congelamento, baseline). Não é possível demonstrar ausência de influência do conhecimento prévio do modelo sobre a ferramenta.
 
-## Oráculo e Z3 (resumo; detalhes em `../detalhes-C2/`)
+## Oráculo e Z3 (resumo; detalhes em `../experimento/`)
 
 - 68 casos no oráculo: **50 determinados** e **18 indeterminados** (omissão, expressão corrompida, falta de definição). Unidade de contagem:
   **um caso do oráculo = um teste** (ID estável `C2-nnn`).
 - O texto-fonte está fortemente degradado (letras/palavras ausentes). Só se determinou o que o texto fixa de forma única; completar expressões
   corrompidas (p.ex. `((E or D) and (not ? or D)) or B`) seria suposição → INDETERMINADO.
 - Decisão do pesquisador aplicada: indeterminados registrados, **não executados**, fora da cobertura.
-- Z3 5.4.1 independente (`z3.exe` + SMT-LIB gerado por `gerar_smt.py`); cerca de 45 consultas (arquivos .smt2 com respostas .out), nenhuma `unknown`/timeout. Resultados-chave: mínimos de suíte
+- Z3 5.4.1 independente (`z3.exe` + SMT-LIB gerado por `experimento/z3/gerar_smt.py`); cerca de 45 consultas (arquivos .smt2 com respostas .out), nenhuma `unknown`/timeout. Resultados-chave: mínimos de suíte
   `(A and B) or C`=4, `A and not B`=3, `(A or B) and (C or D)`=4 (mascaramento padrão) / 5 (causa única); 2 de 8 combinações impossíveis em
   `speed > 100 or (speed > 50 and rain)`; `B` nunca altera `A or (A and B)`.
 - Revisão texto→fórmula: **autorrevisão** (sem revisor independente). `sat/unsat` não provam fidelidade da tradução; a definição de mascaramento
   não existe no texto e foi usada apenas onde coincide com causa única.
-- Congelamentos: `detalhes-C2/congelamento-oraculo.sha256` (antes de qualquer leitura de código do SUT), `congelamento-suite.sha256`
+- Congelamentos: `../experimento/congelamento/01-oraculo.sha256` (antes de qualquer leitura de código do SUT), `02-suite.sha256`
   (baseline e extensões, cada um antes da respectiva execução).
 
 ## Métricas
@@ -61,10 +61,10 @@ inclusive não carregadas e de mutação; sem harness (pytest) nem bibliotecas e
 
 ## Evidências e limitações
 
-- Por caso: `resultados-por-caso.csv` (acumulado, com histórico por rodada), `resultados-por-caso-baseline.csv`, `-extensao1/2/3.csv`.
-- Brutos (comando, `exit`, stdout, stderr, arquivos de entrada): `bruto/` (baseline), `bruto-extensao1/2/3/`; logs pytest em `bruto/pytest-*.log`.
-- JUnit: `junit-baseline.xml`, `junit-extensao1/2/3.xml`. JaCoCo: `jacoco-baseline.{exec,csv}` + `jacoco-baseline-html/` (só baseline);
-  `jacoco.{exec,csv,xml}` + `jacoco-html/` (acumulado; o `.exec` acumula as 4 rodadas, `append=true`).
+- Por caso: `resultados-por-caso.csv` (nesta pasta, acumulado, com histórico por rodada), `../resultados/rodada-01-baseline/resultados-por-caso-baseline.csv`, `../resultados/rodada-02-extensoes/resultados-por-caso-extensao1/2/3.csv`.
+- Brutos (comando, `exit`, stdout, stderr, arquivos de entrada): `../resultados/rodada-01-baseline/bruto/` (baseline; logs pytest em `bruto/pytest-*.log`), `../resultados/rodada-02-extensoes/bruto-extensao1/2/3/`.
+- JUnit: `junit-baseline.xml` (rodada-01) e `junit-extensao1/2/3.xml` (rodada-02). JaCoCo: `jacoco-baseline.{exec,csv}` + `jacoco-baseline-html/` (rodada-01, só baseline);
+  `../resultados/acumulado/jacoco.{exec,csv,xml}` + `jacoco-html/` (o `.exec` acumula as 4 rodadas, `append=true`).
 - Comando base: `java -Dstdout.encoding=UTF-8 -cp "mcdc-cli/target/classes;<classpath.txt>" io.github.rvdomingos.mcdc.cli.Main …` com
   `JAVA_TOOL_OPTIONS=-javaagent:…jacoco.agent-0.8.16-runtime.jar=destfile=…,append=true`; `z3.exe` no `PATH` apenas nos casos que o usam
   (nos demais é removido do `PATH`). Comandos de execução em `suite/README.md`.
@@ -74,6 +74,6 @@ inclusive não carregadas e de mutação; sem harness (pytest) nem bibliotecas e
   2. Duas extensões extras (ext2, ext3) foram necessárias para corrigir erros de verificação da própria suíte; cada uma foi congelada antes de executar.
   3. A verificação do número de mutantes usa a soma dos campos `total`, `equivalent`, `killed` do JSON; a interpretação da tabela de regressão
      ("Mutantes/Equivalentes/Pegos") é da análise documental.
-  4. Casos com leitura interpretativa (códigos de saída de VM/TIS/NPP; `verify` sem `--context`; "Completos") estão registrados em `analise-documental.md`.
+  4. Casos com leitura interpretativa (códigos de saída de VM/TIS/NPP; `verify` sem `--context`; "Completos") estão registrados em `../experimento/analise-oraculo.md`.
   5. Tempo de execução e `unknown`/timeouts do Z3: nenhum timeout; erros técnicos da CLI: nenhum. Erros técnicos da suíte: C2-E07 em ext2 (leitura de CSV).
   6. Ferramenta de cobertura mede instruções de bytecode de ramos; o total de 1296 branches coincide com o número de "desvios" que o próprio texto-fonte reporta para o projeto, mas isso não foi usado como meta.

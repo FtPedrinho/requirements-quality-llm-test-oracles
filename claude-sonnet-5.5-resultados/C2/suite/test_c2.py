@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 REPO = Path(os.environ.get("MCDC_REPO", Path(__file__).resolve().parents[3]))
-RAW = Path(os.environ.get("C2_RAW", Path(__file__).resolve().parents[1] / "resultados" / "bruto"))
+RAW = Path(os.environ.get("C2_RAW", Path(__file__).resolve().parents[1] / "resultados" / "rodada-01-baseline" / "bruto"))
 Z3_DIR = os.environ.get("Z3_DIR", r"C:\Users\User\AppData\Roaming\Python\bin")
 CLASSPATH = str(REPO / "mcdc-cli" / "target" / "classes") + os.pathsep + \
     (REPO / "mcdc-cli" / "target" / "classpath.txt").read_text().strip()
