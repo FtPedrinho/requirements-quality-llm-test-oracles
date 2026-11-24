@@ -86,8 +86,8 @@ executor foi preservado, corrigido e novamente congelado em
   `0A36DD5654FE423D23A727C4570C9DB9A315926A4301189B868B6EB9BFD5979D`.
   Apenas os processos que o requerem receberam seu diretório no PATH; B31/E01
   exercitam ausência deliberada. O solver Python para os oráculos é distinto.
-- Modelo/versão/configuração, número de chamadas, tokens, custo e duração da
-  geração: **não informado**. Plataforma: Copilot SDK no VS Code. Uma
+- Modelo: **GPT 6.1 Terra (informado pelo pesquisador em 24/11/2026, após a coleta)**. Versão exata, configuração, número de chamadas,
+  tokens, custo e duração da geração: **não informado**. Plataforma: Copilot SDK no VS Code. Uma
   repetição; não é possível tirar conclusão causal entre condições. Datas e
   instruções do pesquisador em [registro](detalhes-C1/registro.md).
 

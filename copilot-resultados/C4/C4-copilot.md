@@ -106,8 +106,8 @@ executada. Dados brutos: [jacoco.exec](detalhes-C4/execucao/jacoco.exec),
   A cobertura baixa deve ser interpretada com esse escopo, sem inferência
   causal ou comparação entre condições.
 - Não houve revisão independente da tradução ou classificação dos oráculos.
-  Versão específica do modelo, tokens, custo, duração total da geração e
-  resposta integral da plataforma: não informado.
+  Modelo: GPT 6.1 Terra (informado pelo pesquisador em 24/11/2026, após a coleta). Versão específica, tokens, custo, duração total da
+  geração e resposta integral da plataforma: não informado.
 - O harness registra apenas presença ou ausência da resposta de viabilidade.
   Na API do SUT uma resposta presente também pode representar `unknown`; o
   valor da atribuição não foi preservado. Assim, nas seis respostas presentes,

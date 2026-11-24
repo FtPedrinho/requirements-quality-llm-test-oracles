@@ -24,7 +24,7 @@ O [manifesto documental](manifesto-oraculos.sha256), hash `A35EBA08004E18BDA9AAF
 - Windows NT 10.0.26200.0 x64; Java/Javac 21.0.3; Python 3.13.5; Git 2.41.0.windows.1; JaCoCo `0.8.16.202610240946`; Jackson 2.17.2. Maven e executável externo `z3` não encontrados no PATH. Não foram instalados pacotes.
 - Compilação: `javac -encoding UTF-8 -g -cp <tres jars Jackson 2.17.2> -d build\classes <51 fontes de producao>`. Código de saída 0; classes compiladas no diretório deste experimento, não no SUT. Os hashes dos binários, dependências e classes estão nos manifestos.
 - Execução: [executar-suite.py](executar-suite.py), depois [repetir-f03.py](repetir-f03.py) e [executar-extensao.py](executar-extensao.py). Cada comando Java real, entrada, código de saída quando capturado, duração, asserção e evidência estão nos resultados estruturados e diretórios de [evidências](evidencias/). Os códigos de saída não foram julgados porque C3 os especifica de forma contraditória.
-- Modelo/versão/configuração, chamadas, tokens, custo, duração total da geração e transcrição integral da plataforma: **não informado**. O conteúdo do prompt foi preservado; não se afirma preservação de uma transcrição integral indisponível.
+- Modelo: **GPT 6.1 Terra (informado pelo pesquisador em 24/11/2026, após a coleta)**. Versão exata, configuração, chamadas, tokens, custo, duração total da geração e transcrição integral da plataforma: **não informado**. O conteúdo do prompt foi preservado; não se afirma preservação de uma transcrição integral indisponível.
 
 ### Contagens e taxas
 

@@ -167,7 +167,7 @@ registrado. A execução Java durou 6,308 s.
 
 Os relatórios indicam o commit de referência
 `2aec3564c30890031db86bd2cc1bb015794d5d2e`; C4 não verificou a correspondência
-integral da árvore de trabalho. Modelo e versão específicos, configuração,
+integral da árvore de trabalho. Modelo: **GPT 6.1 Terra (informado pelo pesquisador em 24/11/2026, após a coleta)**. Versão exata, configuração,
 chamadas, tokens e custo são **não informados**. Não se presume equivalência
 entre ambientes, solvers, unidades de teste ou harnesses.
 

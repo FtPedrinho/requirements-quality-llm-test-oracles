@@ -7,5 +7,6 @@ Esta pasta preserva apenas a rodada mais recente. O [relatório completo](detalh
 - A falha C108 foi preservada, embora sua fundamentação documental seja ambígua em revisão posterior.
 - Não houve cegamento garantido. Na extensão 2, os casos concretos foram formalizados após a inspeção do sistema.
 - Nenhum teste de mutação foi executado.
+- Modelo: GPT 6.1 Terra (informado pelo pesquisador em 24/11/2026, após a coleta).
 
 A [suíte](suite/README.md) apresenta os arquivos da rodada. A junção com o nome original da rodada aponta para `detalhes-C2` e mantém acessíveis os caminhos absolutos registrados nas evidências.

@@ -106,7 +106,8 @@ registro posterior. Não foram executados nem julgados semanticamente.
 - Duração de execução medida: baseline 38,936 s; extensão 1 43,712 s;
   extensão 2 29,561 s, incluindo geração de relatórios de cada executor.
   Duração exata de geração: não informado. Chamadas, tokens, preço,
-  custo, modelo/versão e parâmetros da plataforma: não informado.
+  custo, versão exata e parâmetros da plataforma: não informado.
+  Modelo: GPT 6.1 Terra (informado pelo pesquisador em 24/11/2026, após a coleta).
 
 ## Ambiente e evidências
 

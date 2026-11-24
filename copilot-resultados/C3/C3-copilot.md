@@ -20,7 +20,7 @@
 | Registros de conflito indeterminados | 15 |
 | Oráculos classificados como incorretos ou inválidos | 0 |
 
-O caso com erro técnico passou na repetição. Os 15 registros indeterminados agrupam conflitos documentais; não são casos executáveis completos. A taxa conservadora de indeterminação é 15/29 = 51,72%, contando 14 oráculos determinados e 15 registros de conflito. A classificação dos oráculos foi feita pela própria IA, sem revisão independente.
+O caso com erro técnico passou na repetição. Os 15 registros indeterminados agrupam conflitos documentais; não são casos executáveis completos. A taxa conservadora de indeterminação é 15/29 = 51,72%, contando 14 oráculos determinados e 15 registros de conflito. A classificação dos oráculos foi feita pela própria IA, sem revisão independente. Modelo: GPT 6.1 Terra (informado pelo pesquisador em 24/11/2026, após a coleta).
 
 ## Avaliação e limites
 
