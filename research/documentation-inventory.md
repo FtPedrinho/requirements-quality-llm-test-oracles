@@ -31,7 +31,7 @@ Arquivos `.mcdc`, JSON NAT2TEST e CSV em `exemplos/` são entradas demonstrativa
 - Objetivo, corpus, riscos e análises: documentos em `research/` e `docs/` (exceto `docs/README.md`, que pertence ao SUT).
 - Protocolo e modelo vazio de coleta: `experimentacao-pesquisa/`.
 - Cópias técnicas históricas: `research/archive/legacy-experimental-results/`; não substituem as fontes normativas.
-- Resultados adotados e evidências complementares: `copilot-resultados/`.
+- Resultados adotados e evidências complementares: `gpt-6.1-terra-resultados/`.
 - Relatórios de qualidade do próprio produto em `relatorios/` e no README do SUT: não representam cobertura das suítes geradas pela nova pesquisa.
 
 Os documentos de requisitos experimentais C0-C4 são preservados. Os experimentos e metodologias anteriores descartados foram removidos.

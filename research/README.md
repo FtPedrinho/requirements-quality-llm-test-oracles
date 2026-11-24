@@ -28,4 +28,4 @@ relatórios do produto, não resultados dos experimentos desta pesquisa.
 
 ## Resultados e documentos preservados
 
-O primeiro conjunto de resultados adotado está em [copilot-resultados/](../copilot-resultados/), incluindo as evidências de C0. O estado e as limitações de cada coleta devem ser consultados no seu relatório. Cópias de documentos técnicos permanecem no [arquivo de documentação](archive/legacy-experimental-results/).
+O primeiro conjunto de resultados adotado está em [gpt-6.1-terra-resultados/](../gpt-6.1-terra-resultados/), incluindo as evidências de C0. O estado e as limitações de cada coleta devem ser consultados no seu relatório. Cópias de documentos técnicos permanecem no [arquivo de documentação](archive/legacy-experimental-results/).

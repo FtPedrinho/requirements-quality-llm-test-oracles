@@ -1,7 +1,7 @@
 # Materiais preservados
 
 Os experimentos descartados e metodologias substituídas foram removidos. O
-primeiro conjunto adotado é o de [resultados do Copilot](../copilot-resultados/);
+primeiro conjunto adotado é o de [resultados do Copilot](../gpt-6.1-terra-resultados/);
 suas limitações continuam registradas nos respectivos relatórios.
 
 Foram preservados o SUT, os requisitos e documentos experimentais, exemplos,

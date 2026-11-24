@@ -7,5 +7,5 @@ preservadas sem alterações; as fontes normativas das condições estão no
 [protocolo atual](../../../experimentacao-pesquisa/protocolo/metodologia.md).
 
 Experimentos descartados e metodologias substituídas foram removidos. Os
-[resultados do Copilot](../../../copilot-resultados/) são o primeiro conjunto
+[resultados do Copilot](../../../gpt-6.1-terra-resultados/) são o primeiro conjunto
 adotado, com as limitações descritas em cada relatório.
