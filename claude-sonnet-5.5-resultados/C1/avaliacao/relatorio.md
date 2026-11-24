@@ -15,13 +15,13 @@
 
 ## Oráculo e Z3
 
-- 72 casos: **57 DETERMINADOS** e **15 INDETERMINADOS** (`../detalhes-C1/oraculo.json`, `analise-documental.md`).
-- Z3 independente do `mcdc-z3`: 52 consultas SMT-LIB (`../detalhes-C1/smt/*.smt2` e `.out`) geradas por `gerar_smt.py`
+- 72 casos: **57 DETERMINADOS** e **15 INDETERMINADOS** (`../experimento/oraculo.json`, `../experimento/analise-oraculo.md`).
+- Z3 independente do `mcdc-z3`: 52 consultas SMT-LIB (`../experimento/z3/smt/*.smt2` e `.out`) geradas por `experimento/z3/gerar_smt.py`
   (existência de pares de causa única, suítes mínimas, tabelas-verdade, relações entre predicados, fronteiras, enum, sobreposição/lacuna de guardas, avaliação dos testes de `check`).
   Nenhuma resposta `unknown`/timeout. Z3 não prova fidelidade texto→fórmula.
 - Tensão registrada: C1-S07 (paridade de 3 entradas = 8 testes, literal do texto) × Z3 por entrada = 4; mantido o valor documental (granularidade por ocorrência).
-- **Revisão: autorrevisão** (sem revisor independente). Hashes: `../detalhes-C1/congelamento-oraculo.sha256` (antes de ler o SUT),
-  `congelamento-suite.sha256` (antes do baseline), `congelamento-extensao.sha256` (antes da extensão).
+- **Revisão: autorrevisão** (sem revisor independente). Hashes: `../experimento/congelamento/01-oraculo.sha256` (antes de ler o SUT),
+  `02-suite.sha256` (antes do baseline), `03-extensao.sha256` (antes da extensão).
 - Indeterminados (não executados, decisão do pesquisador): I01–I15 — ver motivos no oráculo.
 
 ## Métricas
@@ -46,9 +46,9 @@ Cobertura por pacote (baseline, branches cobertos/total): core 247/287, core.mod
 
 ## Evidências
 
-- Resultados por caso: `resultados-por-caso-baseline.csv`, `resultados-extensao.csv`; JUnit: `junit-baseline.xml`, `junit-extensao.xml`.
-- Saídas brutas de cada invocação da CLI: `bruto-baseline/`, `bruto-extensao/`. Execuções JaCoCo: `jacoco-baseline.exec`, `jacoco-extensao.exec`, `jacoco-acumulado.exec`; relatórios `jacoco-*.csv` e `jacoco-*-html/`.
-- Comandos: ver `../detalhes-C1/README.md`.
+- Resultados por caso: `resultados-por-caso.csv` (nesta pasta, acumulado), `../resultados/rodada-01-baseline/resultados-por-caso-baseline.csv`, `../resultados/rodada-02-extensao/resultados-extensao.csv`; JUnit: `junit-baseline.xml` e `junit-extensao.xml` nas respectivas rodadas.
+- Saídas brutas de cada invocação da CLI: `../resultados/rodada-01-baseline/bruto/`, `../resultados/rodada-02-extensao/bruto/`. JaCoCo: `jacoco-baseline.*` (rodada-01), `jacoco-extensao.exec` (rodada-02), `jacoco-acumulado.*` (`../resultados/acumulado/`); relatórios `*.csv` e `*-html/`.
+- Comandos: ver `../experimento/README.md`.
 
 ## Avaliação
 

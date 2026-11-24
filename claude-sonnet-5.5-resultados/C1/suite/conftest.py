@@ -6,7 +6,7 @@ import os
 import pytest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SAIDA = os.environ.get("C1_CSV", os.path.join(HERE, "..", "resultados", "resultados-por-caso.csv"))
+SAIDA = os.environ.get("C1_CSV", os.path.join(HERE, "..", "avaliacao", "resultados-por-caso.csv"))
 _res = {}
 
 
@@ -25,7 +25,7 @@ def pytest_runtest_makereport(item, call):
 
 
 def pytest_sessionfinish(session):
-    with open(os.path.join(HERE, "..", "detalhes-C1", "oraculo.json"), encoding="utf-8") as fh:
+    with open(os.path.join(HERE, "..", "experimento", "oraculo.json"), encoding="utf-8") as fh:
         ora = json.load(fh)
     os.makedirs(os.path.dirname(os.path.abspath(SAIDA)), exist_ok=True)
     with open(SAIDA, "w", encoding="utf-8", newline="") as fh:

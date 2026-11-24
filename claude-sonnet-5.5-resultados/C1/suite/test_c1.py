@@ -1,6 +1,6 @@
 """Suite pytest C1 - testa a ferramenta MC/DC real contra o oraculo congelado.
 
-Cada caso DETERMINADO de detalhes-C1/oraculo.json vira exatamente um teste
+Cada caso DETERMINADO de experimento/oraculo.json vira exatamente um teste
 (unidade de contagem = caso). As expectativas vem so do oraculo; nenhuma foi
 ajustada ao comportamento observado. Casos INDETERMINADOS nao sao executados.
 
@@ -19,7 +19,7 @@ import tempfile
 import pytest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ORACULO = os.path.join(HERE, "..", "detalhes-C1", "oraculo.json")
+ORACULO = os.path.join(HERE, "..", "experimento", "oraculo.json")
 
 
 def _root():
@@ -38,7 +38,7 @@ def _root():
 
 ROOT = _root()
 Z3_DIR = os.environ.get("Z3_DIR", r"C:\Users\User\AppData\Roaming\Python\bin")
-BRUTO = os.environ.get("C1_BRUTO", os.path.join(HERE, "..", "resultados", "bruto"))
+BRUTO = os.environ.get("C1_BRUTO", os.path.join(HERE, "..", "resultados", "rodada-01-baseline", "bruto"))
 
 with open(ORACULO, encoding="utf-8") as fh:
     ORA = json.load(fh)

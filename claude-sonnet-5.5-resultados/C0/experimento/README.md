@@ -2,13 +2,13 @@
 
 | Item | Onde |
 |---|---|
-| Análise documental, regras de observação, casos e justificativas | `oraculo/analise-documental.md` |
-| Oráculo estruturado (94 casos: 72 determinados, 22 indeterminados) | `oraculo/oraculo.json` |
-| Gerador do oráculo (força bruta + Z3) e da análise | `oraculo/gerar_oraculo.py`, `oraculo/gerar_analise.py` |
-| Consultas SMT-LIB (107) e respostas do Z3 | `oraculo/smt/*.smt2`, `oraculo/smt/resultados-z3.json` |
-| Congelamento do oráculo (SHA-256, antes de ler o SUT) | `congelamento-oraculo.sha256` |
-| Congelamento da suíte (SHA-256, antes da execução) | `congelamento-suite.sha256` |
-| Resultados, cobertura e avaliação | `../resultados/` |
+| Análise documental, regras de observação, casos e justificativas | `analise-oraculo.md` |
+| Oráculo estruturado (94 casos: 72 determinados, 22 indeterminados) | `oraculo.json` |
+| Gerador do oráculo (força bruta + Z3) e da análise | `gerar_oraculo.py`, `gerar_analise.py` |
+| Consultas SMT-LIB (107) e respostas do Z3 | `z3/*.smt2`, `z3/resultados-z3.json` |
+| Congelamento do oráculo (SHA-256, antes de ler o SUT) | `congelamento/01-oraculo.sha256` |
+| Congelamento da suíte (SHA-256, antes da execução) | `congelamento/02-suite.sha256` |
+| Resultados, cobertura e avaliação | `../resultados/`, `../avaliacao/` |
 
 ## Identificação
 
@@ -31,4 +31,4 @@
 - `mcdc-cli/target/classes` (hash agregado das classes) `f24162bca9a72193b3f452f5cd20ad01ba5750774637215d7d77a625ce499d71`
 - JaCoCo agent `37ae2f374ad77e85c59c6e5b46565226c3ac3cb460ac19de0bcb844ac2f43e33`
 - JaCoCo CLI `1f2a806225623fbd9f53d1ee0e42a6975323de0adebe01c12fc464ed147d756a`
-- `resultados/cobertura/jacoco.exec` `32b7065ab86891ae736cef3cfc15acbbce436c2214b8353c1f0dda48d8896a36`
+- `resultados/rodada-01-baseline/cobertura/jacoco.exec` `32b7065ab86891ae736cef3cfc15acbbce436c2214b8353c1f0dda48d8896a36`

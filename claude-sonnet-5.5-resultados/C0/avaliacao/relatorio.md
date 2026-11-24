@@ -50,7 +50,7 @@ Denominador: todas as classes de produção dos quatro módulos (JARs de `mcdc-c
 | check | 8 / 8 |
 | verify | 10 / 10 |
 
-Detalhe por caso: `resultados-por-caso.csv`; saída bruta de cada caso: `bruto/<ID>.json`; relatório JaCoCo: `cobertura/html/index.html`.
+Detalhe por caso: `resultados-por-caso.csv` (nesta pasta); saída bruta: `../resultados/rodada-01-baseline/bruto/<ID>.json`; JaCoCo: `../resultados/rodada-01-baseline/cobertura/html/index.html`.
 
 ## Divergência preservada
 

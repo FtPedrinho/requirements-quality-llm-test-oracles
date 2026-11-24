@@ -12,7 +12,7 @@ Este script NAO le nem executa o SUT. Ele:
 import itertools, json, os, re, subprocess, sys
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-SMT_DIR = os.path.join(AQUI, "smt")
+SMT_DIR = os.path.join(AQUI, "z3")
 Z3 = os.environ.get("Z3_BIN", r"C:\Users\User\AppData\Roaming\Python\bin\z3.exe")
 os.makedirs(SMT_DIR, exist_ok=True)
 

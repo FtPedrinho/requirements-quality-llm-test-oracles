@@ -4,13 +4,13 @@ import pytest
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 RAIZ = os.path.abspath(os.path.join(AQUI, "..", "..", ".."))           # raiz do repositório
-ORACULO = os.path.join(AQUI, "..", "detalhes-C0", "oraculo", "oraculo.json")
+ORACULO = os.path.join(AQUI, "..", "experimento", "oraculo.json")
 WORK = os.path.join(AQUI, "work")
 REL_WORK = os.path.relpath(WORK, RAIZ).replace("\\", "/")
 Z3_DIR = os.environ.get("Z3_DIR", r"C:\Users\User\AppData\Roaming\Python\bin")
 JACOCO_AGENT = os.environ.get("JACOCO_AGENT")           # caminho do agente (opcional)
 JACOCO_EXEC = os.environ.get("JACOCO_EXEC")             # arquivo .exec de destino
-RAW = os.environ.get("MCDC_RAW_DIR", os.path.join(AQUI, "..", "resultados", "bruto"))
+RAW = os.environ.get("MCDC_RAW_DIR", os.path.join(AQUI, "..", "resultados", "rodada-01-baseline", "bruto"))
 TIMEOUT = 180
 
 
