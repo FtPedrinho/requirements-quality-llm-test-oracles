@@ -1,0 +1,1 @@
+Erro: Z3 não encontrado (z3). Instale com: brew install z3

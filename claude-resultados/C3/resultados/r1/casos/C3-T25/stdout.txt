@@ -1,0 +1,81 @@
+{
+  "tool" : "mcdc",
+  "mode" : "check",
+  "system" : null,
+  "variant" : "MASKING",
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "(A and B) or C",
+    "complete" : false,
+    "conditionsDemonstrated" : 0,
+    "conditionsTotal" : 3,
+    "outcomesCovered" : 0,
+    "outcomesTotal" : 6,
+    "outcomePercentage" : 0.0,
+    "tests" : [ ],
+    "conditions" : [ {
+      "condition" : "A",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V2",
+        "values" : {
+          "A" : true,
+          "B" : true,
+          "C" : false
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V6",
+        "values" : {
+          "A" : false,
+          "B" : true,
+          "C" : false
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "B",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V2",
+        "values" : {
+          "A" : true,
+          "B" : true,
+          "C" : false
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V4",
+        "values" : {
+          "A" : true,
+          "B" : false,
+          "C" : false
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "C",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V3",
+        "values" : {
+          "A" : true,
+          "B" : false,
+          "C" : true
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V4",
+        "values" : {
+          "A" : true,
+          "B" : false,
+          "C" : false
+        },
+        "outcome" : false
+      } ]
+    } ],
+    "problems" : [ ]
+  } ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "AN-29",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "linhas da tabela esperadas 8, observadas 8"
+    },
+    {
+      "ok": true,
+      "verificacao": "impossíveis = 2 linhas com speed > 100=T e speed > 50=F (observadas 2: ['V3', 'V4'])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 0,
+      "segundos": 0.89
+    }
+  ]
+}

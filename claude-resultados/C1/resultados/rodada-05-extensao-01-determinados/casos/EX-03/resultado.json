@@ -1,0 +1,23 @@
+{
+  "id": "EX-03",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (check A and B)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "A and B",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX03_aspas.csv"
+      ],
+      "exit": 0,
+      "segundos": 0.62
+    }
+  ]
+}

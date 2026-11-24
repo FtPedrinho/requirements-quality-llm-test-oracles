@@ -1,0 +1,15 @@
+sat
+(
+  (define-fun the_request_timer () Real
+    0.0)
+  (define-fun the_system_mode () E_the_system_mode
+    the_system_mode__preparing_weak)
+  (define-fun the_coffee_request_button_antes () E_the_coffee_request_button_antes
+    the_coffee_request_button_antes__pressed)
+  (define-fun the_coin_sensor () Bool
+    false)
+  (define-fun the_coffee_request_button () E_the_coffee_request_button
+    the_coffee_request_button__pressed)
+  (define-fun the_coin_sensor_antes () Bool
+    false)
+)

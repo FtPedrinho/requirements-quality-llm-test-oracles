@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Condition.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C2 r2-extensao</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core</a> &gt; <span class="el_source">Condition.java</span></div><h1>Condition.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core;
+
+import io.github.rvdomingos.mcdc.core.model.And;
+import io.github.rvdomingos.mcdc.core.model.Cond;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import io.github.rvdomingos.mcdc.core.model.Not;
+import io.github.rvdomingos.mcdc.core.model.Or;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * Uma ocorrência de uma entrada na expressão: em {@code (A and B) or (not A and C)} há 3 entradas
+ * e 4 condições (A#1, B, A#2 e C).
+ *
+ * @param leaf  posição da folha na expressão, da esquerda para a direita, a partir de 0
+ * @param label nome nos relatórios: a entrada, ou &quot;entrada#n&quot; quando ela se repete
+ */
+<span class="fc" id="L19">public record Condition(int leaf, String input, int occurrence, String label) {</span>
+
+    /** As condições de uma expressão, na ordem das folhas. */
+    public static List&lt;Condition&gt; of(Expr expr) {
+<span class="fc" id="L23">        List&lt;String&gt; leaves = expr.leaves();</span>
+<span class="fc" id="L24">        List&lt;Condition&gt; conditions = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        for (int leaf = 0; leaf &lt; leaves.size(); leaf++) {</span>
+<span class="fc" id="L26">            String input = leaves.get(leaf);</span>
+<span class="fc" id="L27">            int occurrence = Collections.frequency(leaves.subList(0, leaf + 1), input);</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            boolean repeated = Collections.frequency(leaves, input) &gt; 1;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">            conditions.add(new Condition(leaf, input, occurrence, repeated ? input + &quot;#&quot; + occurrence : input));</span>
+        }
+<span class="fc" id="L31">        return List.copyOf(conditions);</span>
+    }
+
+    /** Se inverter só esta ocorrência, mantendo as outras da mesma entrada, inverte o resultado da linha. */
+    public boolean decides(Expr expr, TestVector row) {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        return row.outcome() != evalFlipping(expr, row, leaf, new int[] {0});</span>
+    }
+
+    /** Avalia a expressão com a folha {@code flipped} invertida. Avalia os dois lados de and/or para manter a contagem das folhas. */
+    private static boolean evalFlipping(Expr expr, TestVector row, int flipped, int[] next) {
+<span class="pc bpc" id="L41" title="1 of 4 branches missed.">        return switch (expr) {</span>
+<span class="fc" id="L42">            case Cond c -&gt; {</span>
+<span class="fc" id="L43">                boolean value = row.value(c.id());</span>
+<span class="fc bfc" id="L44" title="All 4 branches covered.">                yield next[0]++ == flipped ? !value : value;</span>
+            }
+<span class="fc" id="L46">            case And(var left, var right) -&gt; evalFlipping(left, row, flipped, next) &amp; evalFlipping(right, row, flipped, next);</span>
+<span class="fc" id="L47">            case Or(var left, var right) -&gt; evalFlipping(left, row, flipped, next) | evalFlipping(right, row, flipped, next);</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">            case Not(var operand) -&gt; !evalFlipping(operand, row, flipped, next);</span>
+        };
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

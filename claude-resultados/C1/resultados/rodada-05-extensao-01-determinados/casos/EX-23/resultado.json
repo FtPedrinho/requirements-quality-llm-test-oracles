@@ -1,0 +1,22 @@
+{
+  "id": "EX-23",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze not A or (B and not C))"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "not A or (B and not C)",
+        "--mutation"
+      ],
+      "exit": 0,
+      "segundos": 0.65
+    }
+  ]
+}

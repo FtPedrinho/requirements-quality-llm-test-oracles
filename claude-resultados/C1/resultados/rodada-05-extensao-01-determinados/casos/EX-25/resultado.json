@@ -1,0 +1,28 @@
+{
+  "id": "EX-25",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 2, observado 2 (analyze -f)"
+    },
+    {
+      "ok": true,
+      "verificacao": "blocos com cabeçalho e linhas [8, 4, 4] (observados [8, 4, 4])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "-f",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 2,
+      "segundos": 0.62
+    }
+  ]
+}

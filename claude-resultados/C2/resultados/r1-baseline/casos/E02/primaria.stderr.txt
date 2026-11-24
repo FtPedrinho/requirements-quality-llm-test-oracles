@@ -1,0 +1,31 @@
+Uso:
+  mcdc analyze <fonte> [opções]                gera a suíte mínima de testes MC/DC
+  mcdc check   <fonte> --tests <testes.csv>    mede o MC/DC de testes já existentes
+  mcdc verify  <fonte> [--context "<expr>"]    confere os requisitos entre si (usa o Z3)
+
+Fonte (uma só):
+  "<expressão>"           ex.: "(A and B) or C", 'speed > 100 /\ mode = idle'
+  -f <arquivo.mcdc>       um requisito por linha: ID: expressão
+  --json <decisoes.json>  decisões no formato do Extractor da NAT2TEST
+
+Opções:
+  --unique-cause          causa única em vez de mascaramento
+  --constraint "<expr>"   restrição entre condições (só com expressão direta)
+  --z3                    usa o Z3 para descobrir linhas impossíveis e gerar valores concretos;
+                          decisões com mais de 12 entradas passam ao modo direto
+  --exact                 suíte exata: a menor possível, escolhida pelo Z3 (em vez da gulosa)
+  --direct                pede os pares direto ao Z3, sem montar a tabela (até 30 entradas)
+  --boundary              com --z3, acrescenta variantes de fronteira (speed > 100 -> speed = 101)
+  --mutation              confere se a suíte detecta versões do requisito com uma falha
+  --context "<expr>"      verify: confere se, nessa situação, sempre alguma guarda vale
+  --format <formato>      text (padrão), json, csv (suíte) ou truth-csv (tabela verdade inteira);
+                          check e verify aceitam text e json
+  -o <arquivo>            grava o relatório no arquivo em vez de mostrar na tela
+
+Exemplos:
+  mcdc analyze "(A and B) or C"
+  mcdc analyze "speed > 100 or (speed > 50 and rain)" --z3 --boundary
+  mcdc analyze --json exemplos/decisoes.json --format json -o relatorio.json
+  mcdc analyze --json exemplos/vm-decisoes.json --z3 --format truth-csv -o tabela.csv
+  mcdc check --json exemplos/decisoes.json --tests exemplos/testes.csv
+  mcdc verify --json exemplos/npp-decisoes.json

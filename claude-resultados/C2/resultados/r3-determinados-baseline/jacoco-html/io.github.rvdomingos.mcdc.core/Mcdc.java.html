@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Mcdc.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C2 r3-determinados-baseline</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core</a> &gt; <span class="el_source">Mcdc.java</span></div><h1>Mcdc.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core;
+
+import io.github.rvdomingos.mcdc.core.model.Decision;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+/** Ponto de entrada do motor. */
+public final class Mcdc {
+
+    private Mcdc() {
+    }
+
+    public static McdcReport analyze(Expr expression, McdcOptions options) {
+<span class="fc" id="L19">        TruthTable table = TruthTable.of(expression, options.constraint(), options.feasibility());</span>
+<span class="fc" id="L20">        Map&lt;String, List&lt;IndependencePair&gt;&gt; pairs = IndependencePairs.of(table, options.variant());</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        MinimalSuite.Selection suite = options.optimizer() == null</span>
+<span class="fc" id="L22">                ? MinimalSuite.select(pairs)</span>
+<span class="fc" id="L23">                : MinimalSuite.fromRows(pairs, options.optimizer().minimumRows(pairs));</span>
+<span class="fc" id="L24">        return new McdcReport(expression, options, table, pairs, suite.tests(), suite.chosen(),</span>
+<span class="fc" id="L25">                diagnose(table, pairs, options.variant()),</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">                options.optimizer() == null ? SuiteMethod.GREEDY : SuiteMethod.EXACT);</span>
+    }
+
+    /**
+     * Mede o MC/DC de testes existentes. A porcentagem segue o MCDC-Star: conta cada resultado (T e F)
+     * de condição mostrado com efeito independente.
+     */
+    public static TestSetEvaluation evaluate(Expr expression, McdcOptions options, List&lt;TestCase&gt; tests) {
+<span class="fc" id="L34">        TruthTable table = TruthTable.of(expression, options.constraint(), options.feasibility());</span>
+<span class="fc" id="L35">        Map&lt;String, List&lt;IndependencePair&gt;&gt; pairs = IndependencePairs.of(table, options.variant());</span>
+<span class="fc" id="L36">        int n = table.inputs().size();</span>
+
+<span class="fc" id="L38">        Map&lt;String, TestVector&gt; vectorOfTest = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L39">        Set&lt;Integer&gt; present = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L40">        List&lt;String&gt; problems = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        for (TestCase test : tests) {</span>
+<span class="fc" id="L42">            int index = 0;</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">            for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L44">                Boolean value = test.values().get(table.inputs().get(i));</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">                if (value == null) {</span>
+<span class="nc" id="L46">                    throw new IllegalArgumentException(test.name() + &quot;: sem valor para &quot; + table.inputs().get(i));</span>
+                }
+<span class="fc bfc" id="L48" title="All 2 branches covered.">                if (!value) {</span>
+<span class="fc" id="L49">                    index |= TruthTable.bit(n, i);</span>
+                }
+            }
+<span class="fc" id="L52">            TestVector row = table.rows().get(index);</span>
+<span class="fc" id="L53">            vectorOfTest.put(test.name(), row);</span>
+<span class="fc" id="L54">            present.add(index);</span>
+<span class="fc bfc" id="L55" title="All 4 branches covered.">            if (test.expected() != null &amp;&amp; test.expected() != row.outcome()) {</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">                problems.add(test.name() + &quot;: resultado esperado &quot; + (test.expected() ? &quot;T&quot; : &quot;F&quot;)</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">                        + &quot;, mas a guarda dá &quot; + (row.outcome() ? &quot;T&quot; : &quot;F&quot;) + &quot; para esses valores&quot;);</span>
+            }
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">            if (!row.feasible()) {</span>
+<span class="nc" id="L60">                problems.add(test.name() + &quot;: a combinação &quot; + row.bits() + &quot; foi marcada como impossível&quot;);</span>
+            }
+<span class="fc" id="L62">        }</span>
+
+<span class="fc" id="L64">        Map&lt;String, IndependencePair&gt; demonstrated = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L65">        Map&lt;String, List&lt;TestVector&gt;&gt; suggestions = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L66">        Map&lt;String, Condition&gt; byLabel = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L67">        table.conditions().forEach(c -&gt; byLabel.put(c.label(), c));</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        for (Map.Entry&lt;String, List&lt;IndependencePair&gt;&gt; entry : pairs.entrySet()) {</span>
+            // o par é procurado entre os testes informados, e não na lista de pares, que tem teto por condição
+<span class="fc" id="L70">            IndependencePair found = pairAmong(table, byLabel.get(entry.getKey()), present, options.variant());</span>
+<span class="fc" id="L71">            IndependencePair cheapest = null;</span>
+<span class="fc" id="L72">            int cheapestCost = Integer.MAX_VALUE;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">            for (IndependencePair pair : entry.getValue()) {</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">                int cost = (present.contains(pair.whenTrue().index()) ? 0 : 1)</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">                        + (present.contains(pair.whenFalse().index()) ? 0 : 1);</span>
+<span class="fc bfc" id="L76" title="All 8 branches covered.">                if (cost &lt; cheapestCost || (cost == cheapestCost &amp;&amp; pair.isUniqueCause() &amp;&amp; !cheapest.isUniqueCause())) {</span>
+<span class="fc" id="L77">                    cheapest = pair;</span>
+<span class="fc" id="L78">                    cheapestCost = cost;</span>
+                }
+<span class="fc" id="L80">            }</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">            if (found != null) {</span>
+<span class="fc" id="L82">                demonstrated.put(entry.getKey(), found);</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">            } else if (cheapest != null) {</span>
+<span class="fc" id="L84">                List&lt;TestVector&gt; missing = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">                if (!present.contains(cheapest.whenTrue().index())) {</span>
+<span class="fc" id="L86">                    missing.add(cheapest.whenTrue());</span>
+                }
+<span class="fc bfc" id="L88" title="All 2 branches covered.">                if (!present.contains(cheapest.whenFalse().index())) {</span>
+<span class="fc" id="L89">                    missing.add(cheapest.whenFalse());</span>
+                }
+<span class="fc" id="L91">                suggestions.put(entry.getKey(), missing);</span>
+            }
+<span class="fc" id="L93">        }</span>
+
+<span class="fc" id="L95">        int covered = 0;</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        for (Condition condition : table.conditions()) {</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">            for (boolean value : new boolean[] {true, false}) {</span>
+<span class="fc" id="L98">                boolean shown = false;</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">                for (int index : present) {</span>
+<span class="fc" id="L100">                    TestVector row = table.rows().get(index);</span>
+<span class="fc bfc" id="L101" title="All 4 branches covered.">                    if (row.value(condition.input()) == value &amp;&amp; condition.decides(expression, row)) {</span>
+<span class="fc" id="L102">                        shown = true;</span>
+<span class="fc" id="L103">                        break;</span>
+                    }
+<span class="fc" id="L105">                }</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">                covered += shown ? 1 : 0;</span>
+            }
+<span class="fc" id="L108">        }</span>
+
+<span class="fc" id="L110">        return new TestSetEvaluation(table, List.copyOf(tests), vectorOfTest, demonstrated, suggestions,</span>
+<span class="fc" id="L111">                diagnose(table, pairs, options.variant()), covered, 2 * table.conditions().size(), problems);</span>
+    }
+
+    /** Um par da condição entre os testes informados, preferindo causa única; null se não houver. */
+    private static IndependencePair pairAmong(TruthTable table, Condition condition, Set&lt;Integer&gt; present,
+            McdcVariant variant) {
+<span class="fc" id="L117">        int mask = TruthTable.bit(table.inputs().size(), table.inputs().indexOf(condition.input()));</span>
+<span class="fc" id="L118">        List&lt;TestVector&gt; whenTrue = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L119">        List&lt;TestVector&gt; whenFalse = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L120" title="All 2 branches covered.">        for (int index : new java.util.TreeSet&lt;&gt;(present)) {</span>
+<span class="fc" id="L121">            TestVector row = table.rows().get(index);</span>
+<span class="pc bpc" id="L122" title="1 of 4 branches missed.">            if (row.feasible() &amp;&amp; condition.decides(table.expression(), row)) {</span>
+<span class="fc bfc" id="L123" title="All 2 branches covered.">                ((index &amp; mask) == 0 ? whenTrue : whenFalse).add(row);</span>
+            }
+<span class="fc" id="L125">        }</span>
+<span class="fc" id="L126">        IndependencePair found = null;</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">        for (TestVector t : whenTrue) {</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">            for (TestVector f : whenFalse) {</span>
+<span class="pc bpc" id="L129" title="1 of 2 branches missed.">                if (t.outcome() == f.outcome()) {</span>
+<span class="nc" id="L130">                    continue;</span>
+                }
+<span class="pc bpc" id="L132" title="1 of 2 branches missed.">                boolean unique = (t.index() ^ f.index()) == mask;</span>
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">                if (unique) {</span>
+<span class="fc" id="L134">                    return new IndependencePair(condition.label(), t, f);</span>
+                }
+<span class="nc bnc" id="L136" title="All 4 branches missed.">                if (variant == McdcVariant.MASKING &amp;&amp; found == null) {</span>
+<span class="nc" id="L137">                    found = new IndependencePair(condition.label(), t, f);</span>
+                }
+<span class="nc" id="L139">            }</span>
+<span class="fc" id="L140">        }</span>
+<span class="fc" id="L141">        return found;</span>
+    }
+
+    /** Para cada condição sem par: redundante, ou bloqueada pelas linhas impossíveis. */
+    static List&lt;UncoveredCondition&gt; diagnose(TruthTable table, Map&lt;String, List&lt;IndependencePair&gt;&gt; pairs, McdcVariant variant) {
+<span class="fc" id="L146">        List&lt;UncoveredCondition&gt; uncovered = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L147">        Map&lt;String, List&lt;IndependencePair&gt;&gt; relaxed = null;</span>
+<span class="fc bfc" id="L148" title="All 2 branches covered.">        for (Map.Entry&lt;String, List&lt;IndependencePair&gt;&gt; entry : pairs.entrySet()) {</span>
+<span class="fc bfc" id="L149" title="All 2 branches covered.">            if (!entry.getValue().isEmpty()) {</span>
+<span class="fc" id="L150">                continue;</span>
+            }
+<span class="fc bfc" id="L152" title="All 2 branches covered.">            if (relaxed == null) {</span>
+<span class="fc" id="L153">                relaxed = IndependencePairs.of(table.withoutConstraints(), variant);</span>
+            }
+<span class="fc" id="L155">            List&lt;IndependencePair&gt; blocked = relaxed.get(entry.getKey());</span>
+<span class="fc" id="L156">            uncovered.add(new UncoveredCondition(entry.getKey(),</span>
+<span class="fc bfc" id="L157" title="All 2 branches covered.">                    blocked.isEmpty() ? UncoveredCondition.Reason.REDUNDANT : UncoveredCondition.Reason.INFEASIBLE,</span>
+                    blocked));
+<span class="fc" id="L159">        }</span>
+<span class="fc" id="L160">        return List.copyOf(uncovered);</span>
+    }
+
+    public static DecisionAnalysis analyze(Decision decision, McdcOptions options) {
+<span class="fc" id="L164">        return new DecisionAnalysis(decision, analyze(decision.expression(), options));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

@@ -1,0 +1,16 @@
+Decisão:   REQ
+Guarda:    A and B
+Testes:    3
+  T1 = V1  TT  -> T
+  T2 = V3  FT  -> F
+  T3 = V2  TF  -> F
+
+Condições:
+  A: demonstrada por T1 (T) e T2 (F)
+  B: demonstrada por T1 (T) e T3 (F)
+
+Problemas:
+  T3: resultado esperado T, mas a guarda dá F para esses valores
+
+Resultados de condição demonstrados: 4 de 4 (100,0%)
+Cobertura MC/DC: incompleta, 2 de 2 condições demonstradas

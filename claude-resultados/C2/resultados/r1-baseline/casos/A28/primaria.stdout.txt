@@ -1,0 +1,39 @@
+Decisão:   REQ
+Guarda:    speed > 100 or (speed > 50 and rain)
+Variante:  mascaramento
+
+Vetor speed > 100   speed > 50   rain   | D
+V1    T             T            T      | T
+V2    T             T            F      | T
+V3    T             F            T      | T  (impossível)
+V4    T             F            F      | T  (impossível)
+V5    F             T            T      | T
+V6    F             T            F      | F
+V7    F             F            T      | F
+V8    F             F            F      | F
+
+Pares de independência:
+  speed > 100: (V2, V6), (V2, V7), (V2, V8)
+  speed > 50: (V5, V7)
+  rain: (V5, V6)
+
+Suíte mínima (4 testes):
+  V2  TTF  -> T   demonstra speed > 100   [speed = 101, rain = false]
+  V5  FTT  -> T   demonstra speed > 50, rain   [speed = 51, rain = true]
+  V6  FTF  -> F   demonstra speed > 100, rain   [speed = 51, rain = false]
+  V7  FFT  -> F   demonstra speed > 50   [speed = 0, rain = true]
+
+Testes de fronteira (6):
+  V2 com speed = 101   [speed = 101, rain = false]
+  V5 com speed = 100   [speed = 100, rain = true]
+  V5 com speed = 51   [speed = 51, rain = true]
+  V6 com speed = 100   [speed = 100, rain = false]
+  V6 com speed = 51   [speed = 51, rain = false]
+  V7 com speed = 50   [speed = 50, rain = true]
+
+Demonstração por condição:
+  speed > 100: V2 (T) e V6 (F), só ela muda
+  speed > 50: V5 (T) e V7 (F), só ela muda
+  rain: V5 (T) e V6 (F), só ela muda
+
+Cobertura MC/DC: completa

@@ -1,0 +1,6 @@
+sat
+((x 51))
+unsat
+sat
+((y 50))
+unsat

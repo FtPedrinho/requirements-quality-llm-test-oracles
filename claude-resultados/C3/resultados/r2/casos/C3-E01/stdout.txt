@@ -1,0 +1,23 @@
+Decisão:   e#1
+Requisito: R1
+Guarda:    x < 3 /\ x >= -2 \/ r <= 1.5 /\ m != b \/ k = true
+Testes:    5
+  U1 = V8  TTFFF  -> T
+  U2 = V24  FTFFF  -> F
+  U3 = V10  TFTTF  -> T
+  U4 = V12  TFTFF  -> F
+  U5 = V21  FTFTT  -> T
+
+Condições:
+  x < 3: demonstrada por U1 (T) e U2 (F)
+  x >= -2: demonstrada por U1 (T) e U4 (F)
+  r <= 1.5: falta; acrescente V14 (TFFTF -> F)
+  m != b: demonstrada por U3 (T) e U4 (F)
+  k = true: demonstrada por U5 (T) e U4 (F)
+
+Problemas:
+  U4: resultado esperado T, mas a guarda dá F para esses valores
+  U5: resultado esperado F, mas a guarda dá T para esses valores
+
+Resultados de condição demonstrados: 9 de 10 (90,0%)
+Cobertura MC/DC: incompleta, 4 de 5 condições demonstradas

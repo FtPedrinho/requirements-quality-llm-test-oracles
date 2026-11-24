@@ -1,0 +1,1727 @@
+{
+  "z3": "Z3 version 5.4.1 - 64 bit - build hashcode 145c0c51570a357cc558ce898ce77573ba9d4fbf",
+  "consultas": {
+    "Q01-AB-or-C-pares": {
+      "guarda": "(A and B) or C",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "A": "sat",
+        "B": "sat",
+        "C": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q02-A-and-notB-pares": {
+      "guarda": "A and not B",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "A": "sat",
+        "B": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q03-speed-mode-pares": {
+      "guarda": "speed > 100 and mode = idle",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "speed > 100": "sat",
+        "mode = idle": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q04-eq-ne-pares": {
+      "guarda": "(x = 5) and (y != 3)",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "x = 5": "sat",
+        "y != 3": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q05-lt-le-ge-pares": {
+      "guarda": "(a < 1) or ((b <= 2) and (c >= 3))",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "a < 1": "sat",
+        "b <= 2": "sat",
+        "c >= 3": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q06-repetida-tabela": {
+      "guarda": "(A and B) or ((not A) and C)",
+      "entradas": [
+        "A",
+        "B",
+        "C"
+      ],
+      "condicoes": 4,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "Q07-paridade-tabela": {
+      "guarda": "(A and not B and not C) or (not A and B and not C) or (not A and not B and C) or (A and B and C)",
+      "entradas": [
+        "A",
+        "B",
+        "C"
+      ],
+      "condicoes": 12,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "Q08-e20-pares": {
+      "guarda": "(x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and (x13 or x14) and (x15 or x16) and (x17 or x18) and (x19 or x20)",
+      "restricao": null,
+      "livre": true,
+      "par_causa_unica": {
+        "x1": "sat",
+        "x2": "sat",
+        "x3": "sat",
+        "x4": "sat",
+        "x5": "sat",
+        "x6": "sat",
+        "x7": "sat",
+        "x8": "sat",
+        "x9": "sat",
+        "x10": "sat",
+        "x11": "sat",
+        "x12": "sat",
+        "x13": "sat",
+        "x14": "sat",
+        "x15": "sat",
+        "x16": "sat",
+        "x17": "sat",
+        "x18": "sat",
+        "x19": "sat",
+        "x20": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q08-e13-pares": {
+      "guarda": "(x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and x13",
+      "restricao": null,
+      "livre": true,
+      "par_causa_unica": {
+        "x1": "sat",
+        "x2": "sat",
+        "x3": "sat",
+        "x4": "sat",
+        "x5": "sat",
+        "x6": "sat",
+        "x7": "sat",
+        "x8": "sat",
+        "x9": "sat",
+        "x10": "sat",
+        "x11": "sat",
+        "x12": "sat",
+        "x13": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q08-e26-pares": {
+      "guarda": "(x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and (x13 or x14) and (x15 or x16) and (x17 or x18) and (x19 or x20) and (x21 or x22) and (x23 or x24) and (x25 or x26)",
+      "restricao": null,
+      "livre": true,
+      "par_causa_unica": {
+        "x1": "sat",
+        "x2": "sat",
+        "x3": "sat",
+        "x4": "sat",
+        "x5": "sat",
+        "x6": "sat",
+        "x7": "sat",
+        "x8": "sat",
+        "x9": "sat",
+        "x10": "sat",
+        "x11": "sat",
+        "x12": "sat",
+        "x13": "sat",
+        "x14": "sat",
+        "x15": "sat",
+        "x16": "sat",
+        "x17": "sat",
+        "x18": "sat",
+        "x19": "sat",
+        "x20": "sat",
+        "x21": "sat",
+        "x22": "sat",
+        "x23": "sat",
+        "x24": "sat",
+        "x25": "sat",
+        "x26": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q09-bloqueio-viavel": {
+      "guarda": "x > 5 and x > 3",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "x > 5": "sat",
+        "x > 3": "unsat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q09-bloqueio-livre": {
+      "guarda": "x > 5 and x > 3",
+      "restricao": null,
+      "livre": true,
+      "par_causa_unica": {
+        "x > 5": "sat",
+        "x > 3": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q09-bloqueio-tabela": {
+      "guarda": "x > 5 and x > 3",
+      "entradas": [
+        "x > 5",
+        "x > 3"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 1,
+      "linhas_impossiveis": [
+        {
+          "x > 5": true,
+          "x > 3": false
+        }
+      ],
+      "respostas": {
+        "sat": 3,
+        "unsat": 1,
+        "unknown": 0
+      }
+    },
+    "Q10-redundante-livre": {
+      "guarda": "A or (A and B)",
+      "restricao": null,
+      "livre": true,
+      "par_causa_unica": {
+        "B": "unsat"
+      },
+      "entradas_repetidas_nao_avaliadas": [
+        "A"
+      ]
+    },
+    "Q11-restricao-pares": {
+      "guarda": "A or (B and C)",
+      "restricao": "(not A) or B",
+      "livre": true,
+      "par_causa_unica": {
+        "A": "sat",
+        "B": "sat",
+        "C": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q12-restricao-bloqueio": {
+      "guarda": "A and B",
+      "restricao": "(not A) or B",
+      "livre": true,
+      "par_causa_unica": {
+        "A": "sat",
+        "B": "unsat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q12-restricao-bloqueio-livre": {
+      "guarda": "A and B",
+      "restricao": null,
+      "livre": true,
+      "par_causa_unica": {
+        "A": "sat",
+        "B": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q13-speed-rain-tabela": {
+      "guarda": "speed > 100 or (speed > 50 and rain)",
+      "entradas": [
+        "speed > 100",
+        "speed > 50",
+        "rain"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 2,
+      "linhas_impossiveis": [
+        {
+          "speed > 100": true,
+          "speed > 50": false,
+          "rain": true
+        },
+        {
+          "speed > 100": true,
+          "speed > 50": false,
+          "rain": false
+        }
+      ],
+      "respostas": {
+        "sat": 6,
+        "unsat": 2,
+        "unknown": 0
+      }
+    },
+    "Q13-speed-rain-pares": {
+      "guarda": "speed > 100 or (speed > 50 and rain)",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "speed > 100": "sat",
+        "speed > 50": "sat",
+        "rain": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "Q14-fronteira-gt100": {
+      "respostas": [
+        "sat",
+        "unsat",
+        "sat",
+        "unsat"
+      ],
+      "saida": "sat\n((x 101))\nunsat\nsat\n((y 100))\nunsat"
+    },
+    "Q14-fronteira-gt50": {
+      "respostas": [
+        "sat",
+        "unsat",
+        "sat",
+        "unsat"
+      ],
+      "saida": "sat\n((x 51))\nunsat\nsat\n((y 50))\nunsat"
+    },
+    "Q15-exata-AB-or-C": {
+      "guarda": "(A and B) or C",
+      "minimo_causa_unica": 4,
+      "respostas_por_k": {
+        "1": "unsat",
+        "2": "unsat",
+        "3": "unsat",
+        "4": "sat",
+        "5": "sat",
+        "6": "sat",
+        "7": "sat",
+        "8": "sat"
+      }
+    },
+    "Q16-exata-AorB-and-CorD": {
+      "guarda": "(A or B) and (C or D)",
+      "minimo_causa_unica": 5,
+      "respostas_por_k": {
+        "1": "unsat",
+        "2": "unsat",
+        "3": "unsat",
+        "4": "unsat",
+        "5": "sat",
+        "6": "sat",
+        "7": "sat",
+        "8": "sat",
+        "9": "sat",
+        "10": "sat",
+        "11": "sat",
+        "12": "sat",
+        "13": "sat",
+        "14": "sat",
+        "15": "sat",
+        "16": "sat"
+      }
+    },
+    "Q17-exata-A-and-BorC": {
+      "guarda": "A and (B or C)",
+      "minimo_causa_unica": 4,
+      "respostas_por_k": {
+        "1": "unsat",
+        "2": "unsat",
+        "3": "unsat",
+        "4": "sat",
+        "5": "sat",
+        "6": "sat",
+        "7": "sat",
+        "8": "sat"
+      }
+    },
+    "Q18-exata-A-and-notB": {
+      "guarda": "A and not B",
+      "minimo_causa_unica": 3,
+      "respostas_por_k": {
+        "1": "unsat",
+        "2": "unsat",
+        "3": "sat",
+        "4": "sat"
+      }
+    },
+    "Q19-mutacao-pares": {
+      "guarda": "A and (B or C)",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "A": "sat",
+        "B": "sat",
+        "C": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "VM-vm_1-viab": {
+      "guarda": "the_system_mode = idle /\\ the_coin_sensor_antes = false /\\ the_coin_sensor = true",
+      "entradas": [
+        "the_system_mode = idle",
+        "the_coin_sensor_antes = false",
+        "the_coin_sensor = true"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "VM-vm_1-pares": {
+      "guarda": "the_system_mode = idle /\\ the_coin_sensor_antes = false /\\ the_coin_sensor = true",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_system_mode = idle": "sat",
+        "the_coin_sensor_antes = false": "sat",
+        "the_coin_sensor = true": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "VM-vm_2-viab": {
+      "guarda": "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coin_sensor_antes = false /\\ the_coffee_request_button_antes != pressed /\\ the_coffee_request_button = pressed /\\ the_request_timer <= 30.0",
+      "entradas": [
+        "the_system_mode = choice",
+        "the_coin_sensor = false",
+        "the_coin_sensor_antes = false",
+        "the_coffee_request_button_antes != pressed",
+        "the_coffee_request_button = pressed",
+        "the_request_timer <= 30.0"
+      ],
+      "condicoes": 6,
+      "combinacoes": 64,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 64,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "VM-vm_2-pares": {
+      "guarda": "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coin_sensor_antes = false /\\ the_coffee_request_button_antes != pressed /\\ the_coffee_request_button = pressed /\\ the_request_timer <= 30.0",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_system_mode = choice": "sat",
+        "the_coin_sensor = false": "sat",
+        "the_coin_sensor_antes = false": "sat",
+        "the_coffee_request_button_antes != pressed": "sat",
+        "the_coffee_request_button = pressed": "sat",
+        "the_request_timer <= 30.0": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "VM-vm_3-viab": {
+      "guarda": "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coin_sensor_antes = false /\\ the_coffee_request_button_antes != pressed /\\ the_coffee_request_button = pressed /\\ the_request_timer > 30.0",
+      "entradas": [
+        "the_system_mode = choice",
+        "the_coin_sensor = false",
+        "the_coin_sensor_antes = false",
+        "the_coffee_request_button_antes != pressed",
+        "the_coffee_request_button = pressed",
+        "the_request_timer > 30.0"
+      ],
+      "condicoes": 6,
+      "combinacoes": 64,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 64,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "VM-vm_3-pares": {
+      "guarda": "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coin_sensor_antes = false /\\ the_coffee_request_button_antes != pressed /\\ the_coffee_request_button = pressed /\\ the_request_timer > 30.0",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_system_mode = choice": "sat",
+        "the_coin_sensor = false": "sat",
+        "the_coin_sensor_antes = false": "sat",
+        "the_coffee_request_button_antes != pressed": "sat",
+        "the_coffee_request_button = pressed": "sat",
+        "the_request_timer > 30.0": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "VM-vm_4-viab": {
+      "guarda": "the_system_mode = preparing_weak /\\ the_request_timer >= 10.0 /\\ the_request_timer <= 30.0",
+      "entradas": [
+        "the_system_mode = preparing_weak",
+        "the_request_timer >= 10.0",
+        "the_request_timer <= 30.0"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 2,
+      "linhas_impossiveis": [
+        {
+          "the_system_mode = preparing_weak": true,
+          "the_request_timer >= 10.0": false,
+          "the_request_timer <= 30.0": false
+        },
+        {
+          "the_system_mode = preparing_weak": false,
+          "the_request_timer >= 10.0": false,
+          "the_request_timer <= 30.0": false
+        }
+      ],
+      "respostas": {
+        "sat": 6,
+        "unsat": 2,
+        "unknown": 0
+      }
+    },
+    "VM-vm_4-pares": {
+      "guarda": "the_system_mode = preparing_weak /\\ the_request_timer >= 10.0 /\\ the_request_timer <= 30.0",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_system_mode = preparing_weak": "sat",
+        "the_request_timer >= 10.0": "sat",
+        "the_request_timer <= 30.0": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "VM-vm_5-viab": {
+      "guarda": "the_system_mode = preparing_strong /\\ the_request_timer >= 30.0 /\\ the_request_timer <= 50.0",
+      "entradas": [
+        "the_system_mode = preparing_strong",
+        "the_request_timer >= 30.0",
+        "the_request_timer <= 50.0"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 2,
+      "linhas_impossiveis": [
+        {
+          "the_system_mode = preparing_strong": true,
+          "the_request_timer >= 30.0": false,
+          "the_request_timer <= 50.0": false
+        },
+        {
+          "the_system_mode = preparing_strong": false,
+          "the_request_timer >= 30.0": false,
+          "the_request_timer <= 50.0": false
+        }
+      ],
+      "respostas": {
+        "sat": 6,
+        "unsat": 2,
+        "unknown": 0
+      }
+    },
+    "VM-vm_5-pares": {
+      "guarda": "the_system_mode = preparing_strong /\\ the_request_timer >= 30.0 /\\ the_request_timer <= 50.0",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_system_mode = preparing_strong": "sat",
+        "the_request_timer >= 30.0": "sat",
+        "the_request_timer <= 50.0": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "VM-totais": {
+      "requisitos": 5,
+      "condicoes": 21,
+      "combinacoes": 152,
+      "impossiveis": 4
+    },
+    "VM-conflitos": {
+      "candidatos": 10,
+      "conflitos": 0,
+      "pares": []
+    },
+    "NPP-npp_1-viab": {
+      "guarda": "the_water_pressure_antes < 9 /\\ the_water_pressure >= 9 /\\ the_pressure_mode = low",
+      "entradas": [
+        "the_water_pressure_antes < 9",
+        "the_water_pressure >= 9",
+        "the_pressure_mode = low"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_1-pares": {
+      "guarda": "the_water_pressure_antes < 9 /\\ the_water_pressure >= 9 /\\ the_pressure_mode = low",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_water_pressure_antes < 9": "sat",
+        "the_water_pressure >= 9": "sat",
+        "the_pressure_mode = low": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_2-viab": {
+      "guarda": "the_water_pressure_antes < 10 /\\ the_water_pressure >= 10 /\\ the_pressure_mode = permitted",
+      "entradas": [
+        "the_water_pressure_antes < 10",
+        "the_water_pressure >= 10",
+        "the_pressure_mode = permitted"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_2-pares": {
+      "guarda": "the_water_pressure_antes < 10 /\\ the_water_pressure >= 10 /\\ the_pressure_mode = permitted",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_water_pressure_antes < 10": "sat",
+        "the_water_pressure >= 10": "sat",
+        "the_pressure_mode = permitted": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_3-viab": {
+      "guarda": "the_water_pressure_antes >= 9 /\\ the_water_pressure < 9 /\\ the_pressure_mode = permitted",
+      "entradas": [
+        "the_water_pressure_antes >= 9",
+        "the_water_pressure < 9",
+        "the_pressure_mode = permitted"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_3-pares": {
+      "guarda": "the_water_pressure_antes >= 9 /\\ the_water_pressure < 9 /\\ the_pressure_mode = permitted",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_water_pressure_antes >= 9": "sat",
+        "the_water_pressure < 9": "sat",
+        "the_pressure_mode = permitted": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_4-viab": {
+      "guarda": "the_water_pressure_antes >= 10 /\\ the_water_pressure < 10 /\\ the_pressure_mode = high",
+      "entradas": [
+        "the_water_pressure_antes >= 10",
+        "the_water_pressure < 10",
+        "the_pressure_mode = high"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_4-pares": {
+      "guarda": "the_water_pressure_antes >= 10 /\\ the_water_pressure < 10 /\\ the_pressure_mode = high",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_water_pressure_antes >= 10": "sat",
+        "the_water_pressure < 10": "sat",
+        "the_pressure_mode = high": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_5-viab": {
+      "guarda": "the_blockage_button_antes != pressed /\\ the_blockage_button = pressed /\\ the_reset_button != pressed /\\ the_pressure_mode != high",
+      "entradas": [
+        "the_blockage_button_antes != pressed",
+        "the_blockage_button = pressed",
+        "the_reset_button != pressed",
+        "the_pressure_mode != high"
+      ],
+      "condicoes": 4,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_5-pares": {
+      "guarda": "the_blockage_button_antes != pressed /\\ the_blockage_button = pressed /\\ the_reset_button != pressed /\\ the_pressure_mode != high",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_blockage_button_antes != pressed": "sat",
+        "the_blockage_button = pressed": "sat",
+        "the_reset_button != pressed": "sat",
+        "the_pressure_mode != high": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_6-viab": {
+      "guarda": "the_reset_button_antes != pressed /\\ the_reset_button = pressed /\\ the_pressure_mode != high",
+      "entradas": [
+        "the_reset_button_antes != pressed",
+        "the_reset_button = pressed",
+        "the_pressure_mode != high"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_6-pares": {
+      "guarda": "the_reset_button_antes != pressed /\\ the_reset_button = pressed /\\ the_pressure_mode != high",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_reset_button_antes != pressed": "sat",
+        "the_reset_button = pressed": "sat",
+        "the_pressure_mode != high": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_7-viab": {
+      "guarda": "the_pressure_mode_antes != high /\\ the_pressure_mode = high",
+      "entradas": [
+        "the_pressure_mode_antes != high",
+        "the_pressure_mode = high"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_7-pares": {
+      "guarda": "the_pressure_mode_antes != high /\\ the_pressure_mode = high",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_pressure_mode_antes != high": "sat",
+        "the_pressure_mode = high": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_8-viab": {
+      "guarda": "the_pressure_mode_antes = high /\\ the_pressure_mode != high",
+      "entradas": [
+        "the_pressure_mode_antes = high",
+        "the_pressure_mode != high"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_8-pares": {
+      "guarda": "the_pressure_mode_antes = high /\\ the_pressure_mode != high",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_pressure_mode_antes = high": "sat",
+        "the_pressure_mode != high": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_9-viab": {
+      "guarda": "the_pressure_mode = low /\\ the_overridden_mode = true",
+      "entradas": [
+        "the_pressure_mode = low",
+        "the_overridden_mode = true"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_9-pares": {
+      "guarda": "the_pressure_mode = low /\\ the_overridden_mode = true",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_pressure_mode = low": "sat",
+        "the_overridden_mode = true": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_10-viab": {
+      "guarda": "the_pressure_mode = low /\\ the_overridden_mode = false",
+      "entradas": [
+        "the_pressure_mode = low",
+        "the_overridden_mode = false"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_10-pares": {
+      "guarda": "the_pressure_mode = low /\\ the_overridden_mode = false",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_pressure_mode = low": "sat",
+        "the_overridden_mode = false": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-npp_11-viab": {
+      "guarda": "the_pressure_mode = permitted \\/ the_pressure_mode = high",
+      "entradas": [
+        "the_pressure_mode = permitted",
+        "the_pressure_mode = high"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 1,
+      "linhas_impossiveis": [
+        {
+          "the_pressure_mode = permitted": true,
+          "the_pressure_mode = high": true
+        }
+      ],
+      "respostas": {
+        "sat": 3,
+        "unsat": 1,
+        "unknown": 0
+      }
+    },
+    "NPP-npp_11-pares": {
+      "guarda": "the_pressure_mode = permitted \\/ the_pressure_mode = high",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_pressure_mode = permitted": "sat",
+        "the_pressure_mode = high": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "NPP-totais": {
+      "requisitos": 11,
+      "condicoes": 29,
+      "combinacoes": 76,
+      "impossiveis": 1
+    },
+    "NPP-conflitos": {
+      "candidatos": 10,
+      "conflitos": 1,
+      "pares": [
+        [
+          "npp#5",
+          "npp#8",
+          [
+            "the_overridden_mode"
+          ]
+        ]
+      ]
+    },
+    "TIS-tis_1-viab": {
+      "guarda": "the_voltage_antes > 80 /\\ the_voltage <= 80",
+      "entradas": [
+        "the_voltage_antes > 80",
+        "the_voltage <= 80"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_1-pares": {
+      "guarda": "the_voltage_antes > 80 /\\ the_voltage <= 80",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage_antes > 80": "sat",
+        "the_voltage <= 80": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_2-viab": {
+      "guarda": "((the_voltage_antes <= 80 /\\ the_voltage > 80) \\/ (the_flashing_mode_antes != left_flashing /\\ the_flashing_mode = left_flashing)) /\\ the_voltage > 80 /\\ the_flashing_mode = left_flashing",
+      "entradas": [
+        "the_voltage_antes <= 80",
+        "the_voltage > 80",
+        "the_flashing_mode_antes != left_flashing",
+        "the_flashing_mode = left_flashing"
+      ],
+      "condicoes": 6,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_2-pares": {
+      "guarda": "((the_voltage_antes <= 80 /\\ the_voltage > 80) \\/ (the_flashing_mode_antes != left_flashing /\\ the_flashing_mode = left_flashing)) /\\ the_voltage > 80 /\\ the_flashing_mode = left_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage_antes <= 80": "sat",
+        "the_flashing_mode_antes != left_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": [
+        "the_voltage > 80",
+        "the_flashing_mode = left_flashing"
+      ]
+    },
+    "TIS-tis_3-viab": {
+      "guarda": "((the_voltage_antes <= 80 /\\ the_voltage > 80) \\/ (the_flashing_mode_antes != right_flashing /\\ the_flashing_mode = right_flashing)) /\\ the_voltage > 80 /\\ the_flashing_mode = right_flashing",
+      "entradas": [
+        "the_voltage_antes <= 80",
+        "the_voltage > 80",
+        "the_flashing_mode_antes != right_flashing",
+        "the_flashing_mode = right_flashing"
+      ],
+      "condicoes": 6,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_3-pares": {
+      "guarda": "((the_voltage_antes <= 80 /\\ the_voltage > 80) \\/ (the_flashing_mode_antes != right_flashing /\\ the_flashing_mode = right_flashing)) /\\ the_voltage > 80 /\\ the_flashing_mode = right_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage_antes <= 80": "sat",
+        "the_flashing_mode_antes != right_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": [
+        "the_voltage > 80",
+        "the_flashing_mode = right_flashing"
+      ]
+    },
+    "TIS-tis_4-viab": {
+      "guarda": "((the_voltage_antes <= 80 /\\ the_voltage > 80) \\/ (the_flashing_mode_antes != both_flashing /\\ the_flashing_mode = both_flashing)) /\\ the_voltage > 80 /\\ the_flashing_mode = both_flashing",
+      "entradas": [
+        "the_voltage_antes <= 80",
+        "the_voltage > 80",
+        "the_flashing_mode_antes != both_flashing",
+        "the_flashing_mode = both_flashing"
+      ],
+      "condicoes": 6,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_4-pares": {
+      "guarda": "((the_voltage_antes <= 80 /\\ the_voltage > 80) \\/ (the_flashing_mode_antes != both_flashing /\\ the_flashing_mode = both_flashing)) /\\ the_voltage > 80 /\\ the_flashing_mode = both_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage_antes <= 80": "sat",
+        "the_flashing_mode_antes != both_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": [
+        "the_voltage > 80",
+        "the_flashing_mode = both_flashing"
+      ]
+    },
+    "TIS-tis_5-viab": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_mode = no_flashing",
+      "entradas": [
+        "the_voltage > 80",
+        "the_flashing_mode = no_flashing"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_5-pares": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_mode = no_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage > 80": "sat",
+        "the_flashing_mode = no_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_6-viab": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_timer >= 340 /\\ (the_indication_lights = left_flashing \\/ the_indication_lights = right_flashing)",
+      "entradas": [
+        "the_voltage > 80",
+        "the_flashing_timer >= 340",
+        "the_indication_lights = left_flashing",
+        "the_indication_lights = right_flashing"
+      ],
+      "condicoes": 4,
+      "combinacoes": 16,
+      "impossiveis": 4,
+      "linhas_impossiveis": [
+        {
+          "the_voltage > 80": true,
+          "the_flashing_timer >= 340": true,
+          "the_indication_lights = left_flashing": true,
+          "the_indication_lights = right_flashing": true
+        },
+        {
+          "the_voltage > 80": true,
+          "the_flashing_timer >= 340": false,
+          "the_indication_lights = left_flashing": true,
+          "the_indication_lights = right_flashing": true
+        },
+        {
+          "the_voltage > 80": false,
+          "the_flashing_timer >= 340": true,
+          "the_indication_lights = left_flashing": true,
+          "the_indication_lights = right_flashing": true
+        },
+        {
+          "the_voltage > 80": false,
+          "the_flashing_timer >= 340": false,
+          "the_indication_lights = left_flashing": true,
+          "the_indication_lights = right_flashing": true
+        }
+      ],
+      "respostas": {
+        "sat": 12,
+        "unsat": 4,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_6-pares": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_timer >= 340 /\\ (the_indication_lights = left_flashing \\/ the_indication_lights = right_flashing)",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage > 80": "sat",
+        "the_flashing_timer >= 340": "sat",
+        "the_indication_lights = left_flashing": "sat",
+        "the_indication_lights = right_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_7-viab": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_timer >= 220 /\\ the_indication_lights = off /\\ the_flashing_mode = left_flashing",
+      "entradas": [
+        "the_voltage > 80",
+        "the_flashing_timer >= 220",
+        "the_indication_lights = off",
+        "the_flashing_mode = left_flashing"
+      ],
+      "condicoes": 4,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_7-pares": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_timer >= 220 /\\ the_indication_lights = off /\\ the_flashing_mode = left_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage > 80": "sat",
+        "the_flashing_timer >= 220": "sat",
+        "the_indication_lights = off": "sat",
+        "the_flashing_mode = left_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_8-viab": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_timer >= 220 /\\ the_indication_lights = off /\\ the_flashing_mode = right_flashing",
+      "entradas": [
+        "the_voltage > 80",
+        "the_flashing_timer >= 220",
+        "the_indication_lights = off",
+        "the_flashing_mode = right_flashing"
+      ],
+      "condicoes": 4,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_8-pares": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_timer >= 220 /\\ the_indication_lights = off /\\ the_flashing_mode = right_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage > 80": "sat",
+        "the_flashing_timer >= 220": "sat",
+        "the_indication_lights = off": "sat",
+        "the_flashing_mode = right_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_9-viab": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_timer >= 220 /\\ the_indication_lights = off /\\ the_flashing_mode = both_flashing",
+      "entradas": [
+        "the_voltage > 80",
+        "the_flashing_timer >= 220",
+        "the_indication_lights = off",
+        "the_flashing_mode = both_flashing"
+      ],
+      "condicoes": 4,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_9-pares": {
+      "guarda": "the_voltage > 80 /\\ the_flashing_timer >= 220 /\\ the_indication_lights = off /\\ the_flashing_mode = both_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_voltage > 80": "sat",
+        "the_flashing_timer >= 220": "sat",
+        "the_indication_lights = off": "sat",
+        "the_flashing_mode = both_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_10-viab": {
+      "guarda": "the_turn_indicator_lever_antes != left /\\ the_turn_indicator_lever = left /\\ the_emergency_flashing = off",
+      "entradas": [
+        "the_turn_indicator_lever_antes != left",
+        "the_turn_indicator_lever = left",
+        "the_emergency_flashing = off"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_10-pares": {
+      "guarda": "the_turn_indicator_lever_antes != left /\\ the_turn_indicator_lever = left /\\ the_emergency_flashing = off",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_turn_indicator_lever_antes != left": "sat",
+        "the_turn_indicator_lever = left": "sat",
+        "the_emergency_flashing = off": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_11-viab": {
+      "guarda": "the_turn_indicator_lever_antes != right /\\ the_turn_indicator_lever = right /\\ the_emergency_flashing = off",
+      "entradas": [
+        "the_turn_indicator_lever_antes != right",
+        "the_turn_indicator_lever = right",
+        "the_emergency_flashing = off"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_11-pares": {
+      "guarda": "the_turn_indicator_lever_antes != right /\\ the_turn_indicator_lever = right /\\ the_emergency_flashing = off",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_turn_indicator_lever_antes != right": "sat",
+        "the_turn_indicator_lever = right": "sat",
+        "the_emergency_flashing = off": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_12-viab": {
+      "guarda": "the_emergency_flashing_antes != on /\\ the_emergency_flashing = on",
+      "entradas": [
+        "the_emergency_flashing_antes != on",
+        "the_emergency_flashing = on"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_12-pares": {
+      "guarda": "the_emergency_flashing_antes != on /\\ the_emergency_flashing = on",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_emergency_flashing_antes != on": "sat",
+        "the_emergency_flashing = on": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_13-viab": {
+      "guarda": "the_emergency_flashing = on /\\ the_emergency_flashing_antes = on /\\ the_turn_indicator_lever_antes != left /\\ the_turn_indicator_lever = left",
+      "entradas": [
+        "the_emergency_flashing = on",
+        "the_emergency_flashing_antes = on",
+        "the_turn_indicator_lever_antes != left",
+        "the_turn_indicator_lever = left"
+      ],
+      "condicoes": 4,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_13-pares": {
+      "guarda": "the_emergency_flashing = on /\\ the_emergency_flashing_antes = on /\\ the_turn_indicator_lever_antes != left /\\ the_turn_indicator_lever = left",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_emergency_flashing = on": "sat",
+        "the_emergency_flashing_antes = on": "sat",
+        "the_turn_indicator_lever_antes != left": "sat",
+        "the_turn_indicator_lever = left": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_14-viab": {
+      "guarda": "the_emergency_flashing = on /\\ the_emergency_flashing_antes = on /\\ the_turn_indicator_lever_antes != right /\\ the_turn_indicator_lever = right",
+      "entradas": [
+        "the_emergency_flashing = on",
+        "the_emergency_flashing_antes = on",
+        "the_turn_indicator_lever_antes != right",
+        "the_turn_indicator_lever = right"
+      ],
+      "condicoes": 4,
+      "combinacoes": 16,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 16,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_14-pares": {
+      "guarda": "the_emergency_flashing = on /\\ the_emergency_flashing_antes = on /\\ the_turn_indicator_lever_antes != right /\\ the_turn_indicator_lever = right",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_emergency_flashing = on": "sat",
+        "the_emergency_flashing_antes = on": "sat",
+        "the_turn_indicator_lever_antes != right": "sat",
+        "the_turn_indicator_lever = right": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_15-viab": {
+      "guarda": "the_emergency_flashing = on /\\ the_emergency_flashing_antes = on /\\ the_turn_indicator_lever_antes != idle /\\ the_turn_indicator_lever = idle /\\ the_flashing_mode != both_flashing",
+      "entradas": [
+        "the_emergency_flashing = on",
+        "the_emergency_flashing_antes = on",
+        "the_turn_indicator_lever_antes != idle",
+        "the_turn_indicator_lever = idle",
+        "the_flashing_mode != both_flashing"
+      ],
+      "condicoes": 5,
+      "combinacoes": 32,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 32,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_15-pares": {
+      "guarda": "the_emergency_flashing = on /\\ the_emergency_flashing_antes = on /\\ the_turn_indicator_lever_antes != idle /\\ the_turn_indicator_lever = idle /\\ the_flashing_mode != both_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_emergency_flashing = on": "sat",
+        "the_emergency_flashing_antes = on": "sat",
+        "the_turn_indicator_lever_antes != idle": "sat",
+        "the_turn_indicator_lever = idle": "sat",
+        "the_flashing_mode != both_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_16-viab": {
+      "guarda": "the_emergency_flashing_antes != off /\\ the_emergency_flashing = off /\\ the_turn_indicator_lever = left /\\ the_turn_indicator_lever_antes = left /\\ the_flashing_mode != left_flashing",
+      "entradas": [
+        "the_emergency_flashing_antes != off",
+        "the_emergency_flashing = off",
+        "the_turn_indicator_lever = left",
+        "the_turn_indicator_lever_antes = left",
+        "the_flashing_mode != left_flashing"
+      ],
+      "condicoes": 5,
+      "combinacoes": 32,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 32,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_16-pares": {
+      "guarda": "the_emergency_flashing_antes != off /\\ the_emergency_flashing = off /\\ the_turn_indicator_lever = left /\\ the_turn_indicator_lever_antes = left /\\ the_flashing_mode != left_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_emergency_flashing_antes != off": "sat",
+        "the_emergency_flashing = off": "sat",
+        "the_turn_indicator_lever = left": "sat",
+        "the_turn_indicator_lever_antes = left": "sat",
+        "the_flashing_mode != left_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-tis_17-viab": {
+      "guarda": "the_emergency_flashing_antes != off /\\ the_emergency_flashing = off /\\ the_turn_indicator_lever = right /\\ the_turn_indicator_lever_antes = right /\\ the_flashing_mode != right_flashing",
+      "entradas": [
+        "the_emergency_flashing_antes != off",
+        "the_emergency_flashing = off",
+        "the_turn_indicator_lever = right",
+        "the_turn_indicator_lever_antes = right",
+        "the_flashing_mode != right_flashing"
+      ],
+      "condicoes": 5,
+      "combinacoes": 32,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 32,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "TIS-tis_17-pares": {
+      "guarda": "the_emergency_flashing_antes != off /\\ the_emergency_flashing = off /\\ the_turn_indicator_lever = right /\\ the_turn_indicator_lever_antes = right /\\ the_flashing_mode != right_flashing",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "the_emergency_flashing_antes != off": "sat",
+        "the_emergency_flashing = off": "sat",
+        "the_turn_indicator_lever = right": "sat",
+        "the_turn_indicator_lever_antes = right": "sat",
+        "the_flashing_mode != right_flashing": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "TIS-totais": {
+      "requisitos": 17,
+      "condicoes": 69,
+      "combinacoes": 268,
+      "impossiveis": 4
+    },
+    "TIS-conflitos": {
+      "candidatos": 51,
+      "conflitos": 3,
+      "pares": [
+        [
+          "tis#2",
+          "tis#6",
+          [
+            "the_indication_lights"
+          ]
+        ],
+        [
+          "tis#3",
+          "tis#6",
+          [
+            "the_indication_lights"
+          ]
+        ],
+        [
+          "tis#4",
+          "tis#6",
+          [
+            "the_indication_lights"
+          ]
+        ]
+      ]
+    },
+    "Q20-VM-lacuna-preparing_weak": {
+      "respostas": [
+        "sat"
+      ],
+      "saida": "sat\n(\n  (define-fun the_request_timer () Real\n    0.0)\n  (define-fun the_system_mode () E_the_system_mode\n    the_system_mode__preparing_weak)\n  (define-fun the_coffee_request_button_antes () E_the_coffee_request_button_antes\n    the_coffee_request_button_antes__pressed)\n  (define-fun the_coin_sensor () Bool\n    false)\n  (define-fun the_coffee_request_button () E_the_coffee_request_button\n    the_coffee_request_button__pressed)\n  (define-fun the_coin_sensor_antes () Bool\n    false)\n)",
+      "lacuna_existe": true
+    },
+    "Q21-enum-tabela": {
+      "guarda": "m = a \\/ m = b",
+      "entradas": [
+        "m = a",
+        "m = b"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 1,
+      "linhas_impossiveis": [
+        {
+          "m = a": true,
+          "m = b": true
+        }
+      ],
+      "respostas": {
+        "sat": 3,
+        "unsat": 1,
+        "unknown": 0
+      }
+    },
+    "Q21-enum-pares": {
+      "guarda": "m = a \\/ m = b",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "m = a": "sat",
+        "m = b": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "V05-c_1-viab": {
+      "guarda": "x > 5",
+      "entradas": [
+        "x > 5"
+      ],
+      "condicoes": 1,
+      "combinacoes": 2,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 2,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "V05-c_1-pares": {
+      "guarda": "x > 5",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "x > 5": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "V05-c_2-viab": {
+      "guarda": "x > 3 /\\ s = true",
+      "entradas": [
+        "x > 3",
+        "s = true"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "V05-c_2-pares": {
+      "guarda": "x > 3 /\\ s = true",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "x > 3": "sat",
+        "s = true": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "V05-totais": {
+      "requisitos": 2,
+      "condicoes": 3,
+      "combinacoes": 6,
+      "impossiveis": 0
+    },
+    "V05-conflitos": {
+      "candidatos": 1,
+      "conflitos": 1,
+      "pares": [
+        [
+          "c#1",
+          "c#2",
+          [
+            "y"
+          ]
+        ]
+      ]
+    },
+    "V06-s_1-viab": {
+      "guarda": "mode = idle /\\ s = true",
+      "entradas": [
+        "mode = idle",
+        "s = true"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "V06-s_1-pares": {
+      "guarda": "mode = idle /\\ s = true",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "mode = idle": "sat",
+        "s = true": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "V06-s_2-viab": {
+      "guarda": "mode = idle",
+      "entradas": [
+        "mode = idle"
+      ],
+      "condicoes": 1,
+      "combinacoes": 2,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 2,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "V06-s_2-pares": {
+      "guarda": "mode = idle",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "mode = idle": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "V06-totais": {
+      "requisitos": 2,
+      "condicoes": 3,
+      "combinacoes": 6,
+      "impossiveis": 0
+    },
+    "V06-conflitos": {
+      "candidatos": 0,
+      "conflitos": 0,
+      "pares": []
+    },
+    "Q22-V06-lacuna": {
+      "respostas": [
+        "unsat"
+      ],
+      "saida": "unsat\n(error \"line 9 column 10: model is not available\")",
+      "lacuna_existe": false
+    },
+    "V07-k_1-viab": {
+      "guarda": "mode = idle /\\ s = true",
+      "entradas": [
+        "mode = idle",
+        "s = true"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "V07-k_1-pares": {
+      "guarda": "mode = idle /\\ s = true",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "mode = idle": "sat",
+        "s = true": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "V07-k_2-viab": {
+      "guarda": "mode = idle /\\ s = false",
+      "entradas": [
+        "mode = idle",
+        "s = false"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "V07-k_2-pares": {
+      "guarda": "mode = idle /\\ s = false",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "mode = idle": "sat",
+        "s = false": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "V07-totais": {
+      "requisitos": 2,
+      "condicoes": 4,
+      "combinacoes": 8,
+      "impossiveis": 0
+    },
+    "V07-conflitos": {
+      "candidatos": 1,
+      "conflitos": 0,
+      "pares": []
+    },
+    "Q22-V07-lacuna": {
+      "respostas": [
+        "unsat"
+      ],
+      "saida": "unsat\n(error \"line 9 column 10: model is not available\")",
+      "lacuna_existe": false
+    },
+    "Q23-check-exemplo": {
+      "respostas": [
+        "sat",
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "saida": "sat\n(((and (= the_system_mode the_system_mode__idle) (= the_coin_sensor true)) true))\nsat\n(((and (= the_system_mode the_system_mode__idle) (= the_coin_sensor true)) false))\nsat\n(((or (and (= the_system_mode the_system_mode__choice) (= the_coffee_request_button true)) (= the_coin_sensor true)) true))\nsat\n(((or (and (= the_system_mode the_system_mode__choice) (= the_coffee_request_button true)) (= the_coin_sensor true)) false))"
+    },
+    "Q24-check-concretos": {
+      "respostas": [
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "saida": "sat\n(((and (> x 5) (= y true)) true))\nsat\n(((and (> x 5) (= y true)) false))\nsat\n(((and (> x 5) (= y true)) false))"
+    },
+    "Q25-check-AandB-pares": {
+      "guarda": "A and B",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "A": "sat",
+        "B": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    }
+  }
+}

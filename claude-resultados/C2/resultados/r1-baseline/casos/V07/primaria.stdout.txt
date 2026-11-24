@@ -1,0 +1,8 @@
+Verificação entre requisitos: disj
+2 decisões, 1 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: nenhuma: sob mode = idle, sempre alguma guarda vale

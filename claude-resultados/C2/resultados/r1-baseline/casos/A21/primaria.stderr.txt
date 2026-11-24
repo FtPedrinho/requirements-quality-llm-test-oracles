@@ -1,0 +1,1 @@
+Erro: Decisão com 31 entradas; o limite do modo direto é 30

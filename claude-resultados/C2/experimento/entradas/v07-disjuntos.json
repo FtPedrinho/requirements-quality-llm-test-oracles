@@ -1,0 +1,35 @@
+{
+  "system": "disj",
+  "inputs": [
+    {
+      "name": "mode",
+      "type": "enum",
+      "values": [
+        "idle",
+        "busy"
+      ]
+    },
+    {
+      "name": "s",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "k#1",
+      "requirement": "R-K1",
+      "guard": "mode = idle /\\ s = true",
+      "actions": [
+        "y := on"
+      ]
+    },
+    {
+      "id": "k#2",
+      "requirement": "R-K2",
+      "guard": "mode = idle /\\ s = false",
+      "actions": [
+        "y := off"
+      ]
+    }
+  ]
+}

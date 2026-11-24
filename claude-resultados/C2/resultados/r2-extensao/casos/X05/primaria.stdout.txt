@@ -1,0 +1,269 @@
+{
+  "tool" : "mcdc",
+  "mode" : "check",
+  "system" : "the_coffee_machine_system",
+  "variant" : "MASKING",
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "the_coffee_machine_system#1",
+    "requirement" : "REQ-001",
+    "guard" : "the_system_mode = idle /\\ the_coin_sensor = true",
+    "complete" : false,
+    "conditionsDemonstrated" : 1,
+    "conditionsTotal" : 2,
+    "outcomesCovered" : 3,
+    "outcomesTotal" : 4,
+    "outcomePercentage" : 75.0,
+    "tests" : [ {
+      "test" : "T1",
+      "vector" : "V1",
+      "outcome" : true
+    }, {
+      "test" : "T2",
+      "vector" : "V2",
+      "outcome" : false
+    } ],
+    "conditions" : [ {
+      "condition" : "the_system_mode = idle",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V3",
+        "values" : {
+          "the_system_mode = idle" : false,
+          "the_coin_sensor = true" : true
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "the_coin_sensor = true",
+      "demonstrated" : true,
+      "whenTrue" : [ "T1" ],
+      "whenFalse" : [ "T2" ]
+    } ],
+    "problems" : [ ]
+  }, {
+    "id" : "the_coffee_machine_system#2",
+    "requirement" : "REQ-002",
+    "guard" : "(the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coffee_request_button = true) /\\ the_request_timer <= 30",
+    "complete" : false,
+    "conditionsDemonstrated" : 0,
+    "conditionsTotal" : 4,
+    "outcomesCovered" : 0,
+    "outcomesTotal" : 8,
+    "outcomePercentage" : 0.0,
+    "tests" : [ ],
+    "conditions" : [ {
+      "condition" : "the_system_mode = choice",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V1",
+        "values" : {
+          "the_system_mode = choice" : true,
+          "the_coin_sensor = false" : true,
+          "the_coffee_request_button = true" : true,
+          "the_request_timer <= 30" : true
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V9",
+        "values" : {
+          "the_system_mode = choice" : false,
+          "the_coin_sensor = false" : true,
+          "the_coffee_request_button = true" : true,
+          "the_request_timer <= 30" : true
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "the_coin_sensor = false",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V1",
+        "values" : {
+          "the_system_mode = choice" : true,
+          "the_coin_sensor = false" : true,
+          "the_coffee_request_button = true" : true,
+          "the_request_timer <= 30" : true
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V5",
+        "values" : {
+          "the_system_mode = choice" : true,
+          "the_coin_sensor = false" : false,
+          "the_coffee_request_button = true" : true,
+          "the_request_timer <= 30" : true
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "the_coffee_request_button = true",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V1",
+        "values" : {
+          "the_system_mode = choice" : true,
+          "the_coin_sensor = false" : true,
+          "the_coffee_request_button = true" : true,
+          "the_request_timer <= 30" : true
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V3",
+        "values" : {
+          "the_system_mode = choice" : true,
+          "the_coin_sensor = false" : true,
+          "the_coffee_request_button = true" : false,
+          "the_request_timer <= 30" : true
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "the_request_timer <= 30",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V1",
+        "values" : {
+          "the_system_mode = choice" : true,
+          "the_coin_sensor = false" : true,
+          "the_coffee_request_button = true" : true,
+          "the_request_timer <= 30" : true
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V2",
+        "values" : {
+          "the_system_mode = choice" : true,
+          "the_coin_sensor = false" : true,
+          "the_coffee_request_button = true" : true,
+          "the_request_timer <= 30" : false
+        },
+        "outcome" : false
+      } ]
+    } ],
+    "problems" : [ ]
+  }, {
+    "id" : "the_coffee_machine_system#3",
+    "requirement" : "REQ-003",
+    "guard" : "(the_system_mode = choice /\\ the_coffee_request_button = true) \\/ the_coin_sensor = true",
+    "complete" : false,
+    "conditionsDemonstrated" : 1,
+    "conditionsTotal" : 3,
+    "outcomesCovered" : 4,
+    "outcomesTotal" : 6,
+    "outcomePercentage" : 66.7,
+    "tests" : [ {
+      "test" : "T3",
+      "vector" : "V2",
+      "outcome" : true
+    }, {
+      "test" : "T4",
+      "vector" : "V6",
+      "outcome" : false
+    } ],
+    "conditions" : [ {
+      "condition" : "the_system_mode = choice",
+      "demonstrated" : true,
+      "whenTrue" : [ "T3" ],
+      "whenFalse" : [ "T4" ]
+    }, {
+      "condition" : "the_coffee_request_button = true",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V4",
+        "values" : {
+          "the_system_mode = choice" : true,
+          "the_coffee_request_button = true" : false,
+          "the_coin_sensor = true" : false
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "the_coin_sensor = true",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V5",
+        "values" : {
+          "the_system_mode = choice" : false,
+          "the_coffee_request_button = true" : true,
+          "the_coin_sensor = true" : true
+        },
+        "outcome" : true
+      } ]
+    } ],
+    "problems" : [ "T4: resultado esperado T, mas a guarda dá F para esses valores" ]
+  }, {
+    "id" : "the_coffee_machine_system#4",
+    "requirement" : "REQ-004",
+    "guard" : "(the_system_mode = preparing_strong \\/ the_system_mode = preparing_weak) /\\ the_request_timer >= 50",
+    "complete" : false,
+    "conditionsDemonstrated" : 0,
+    "conditionsTotal" : 3,
+    "outcomesCovered" : 0,
+    "outcomesTotal" : 6,
+    "outcomePercentage" : 0.0,
+    "tests" : [ ],
+    "conditions" : [ {
+      "condition" : "the_system_mode = preparing_strong",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V3",
+        "values" : {
+          "the_system_mode = preparing_strong" : true,
+          "the_system_mode = preparing_weak" : false,
+          "the_request_timer >= 50" : true
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V7",
+        "values" : {
+          "the_system_mode = preparing_strong" : false,
+          "the_system_mode = preparing_weak" : false,
+          "the_request_timer >= 50" : true
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "the_system_mode = preparing_weak",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V5",
+        "values" : {
+          "the_system_mode = preparing_strong" : false,
+          "the_system_mode = preparing_weak" : true,
+          "the_request_timer >= 50" : true
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V7",
+        "values" : {
+          "the_system_mode = preparing_strong" : false,
+          "the_system_mode = preparing_weak" : false,
+          "the_request_timer >= 50" : true
+        },
+        "outcome" : false
+      } ]
+    }, {
+      "condition" : "the_request_timer >= 50",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V1",
+        "values" : {
+          "the_system_mode = preparing_strong" : true,
+          "the_system_mode = preparing_weak" : true,
+          "the_request_timer >= 50" : true
+        },
+        "outcome" : true
+      }, {
+        "vector" : "V2",
+        "values" : {
+          "the_system_mode = preparing_strong" : true,
+          "the_system_mode = preparing_weak" : true,
+          "the_request_timer >= 50" : false
+        },
+        "outcome" : false
+      } ]
+    } ],
+    "problems" : [ ]
+  } ]
+}

@@ -1,0 +1,667 @@
+{
+ "rodada": "extensao-1-determinados",
+ "resumo": {
+  "PASSOU": 20,
+  "FALHOU": 1,
+  "INDETERMINADO": 0,
+  "ERRO_TECNICO": 0
+ },
+ "casos": [
+  {
+   "id": "C0-X01",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "x > 3 or (y <= x and mode != idle)",
+    "--z3",
+    "--boundary",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 0,
+   "segundos": 1.77,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "all_paired",
+     "ok": true,
+     "detalhe": "sem par: []"
+    },
+    {
+     "assercao": "impossible",
+     "ok": true,
+     "detalhe": "obtido 0"
+    },
+    {
+     "assercao": "concrete_ok",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "boundary:x",
+     "ok": true,
+     "detalhe": "obtido [3.0, 4.0]"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X02",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "x >= 5 and x < 10 or z == 3",
+    "--z3",
+    "--boundary",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 0,
+   "segundos": 1.76,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "all_paired",
+     "ok": true,
+     "detalhe": "sem par: []"
+    },
+    {
+     "assercao": "impossible",
+     "ok": true,
+     "detalhe": "obtido 2"
+    },
+    {
+     "assercao": "concrete_ok",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "boundary:x",
+     "ok": true,
+     "detalhe": "obtido [0.0, 4.0, 5.0, 9.0, 10.0]"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X03",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "x > 5 and x < 3 or b",
+    "--z3",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 2,
+   "segundos": 1.83,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 2, obtido 2"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "unpaired_by_reason",
+     "ok": true,
+     "detalhe": "obtido {'bloqueada': 2}"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X04",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "x > 5 and x < 3 or b",
+    "--direct",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 2,
+   "segundos": 1.88,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 2, obtido 2"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "same_pairing_as",
+     "ok": true,
+     "detalhe": "direto {'REQ': ['x < 3', 'x > 5']} x tabela {'REQ': ['x < 3', 'x > 5']}"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X05",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "A or (A and B)",
+    "--direct",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 2,
+   "segundos": 2.39,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 2, obtido 2"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "same_pairing_as",
+     "ok": true,
+     "detalhe": "direto {'REQ': ['A#2', 'B']} x tabela {'REQ': ['A#2', 'B']}"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X06",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--direct",
+    "--unique-cause",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 0,
+   "segundos": 1.63,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "pairs_valid:unique",
+     "ok": true,
+     "detalhe": "sem par valido na suite: []"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X07",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "speed > 100 or (speed > 50 and rain)",
+    "--direct",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 0,
+   "segundos": 1.52,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "all_paired",
+     "ok": true,
+     "detalhe": "sem par: []"
+    },
+    {
+     "assercao": "concrete_ok",
+     "ok": true,
+     "detalhe": ""
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X08",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--exact",
+    "--unique-cause",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 0,
+   "segundos": 1.59,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "tests",
+     "ok": true,
+     "detalhe": "obtido 4"
+    },
+    {
+     "assercao": "pairs_valid:unique",
+     "ok": true,
+     "detalhe": "sem par valido na suite: []"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X09",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--exact",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 0,
+   "segundos": 1.2,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "tests",
+     "ok": true,
+     "detalhe": "obtido 4"
+    },
+    {
+     "assercao": "pairs_valid:masking",
+     "ok": true,
+     "detalhe": "sem par valido na suite: []"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X10",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "speed > 100 or (speed > 50 and rain)",
+    "--z3",
+    "--boundary",
+    "--format",
+    "csv"
+   ],
+   "z3": true,
+   "exit": 0,
+   "segundos": 2.05,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "csv_outcome",
+     "ok": true,
+     "detalhe": "testes errados []"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X11",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "check",
+    "--json",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\experimento\\extensao-1\\entradas/dois-requisitos.json",
+    "--tests",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\experimento\\extensao-1\\entradas/testes-com-decisao.csv"
+   ],
+   "z3": false,
+   "exit": 0,
+   "segundos": 1.01,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X12",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\experimento\\extensao-1\\entradas/testes-aspas.csv"
+   ],
+   "z3": false,
+   "exit": 0,
+   "segundos": 0.66,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X13",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\experimento\\extensao-1\\entradas/testes-valor-invalido.csv"
+   ],
+   "z3": false,
+   "exit": 1,
+   "segundos": 0.55,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 1, obtido 1"
+    },
+    {
+     "assercao": "contains:4",
+     "ok": false,
+     "detalhe": ""
+    }
+   ],
+   "resultado": "FALHOU"
+  },
+  {
+   "id": "C0-X14",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\experimento\\oraculo\\entradas/testes-esperado-errado.csv",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "exit": 2,
+   "segundos": 1.0,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 2, obtido 2"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X15",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "verify",
+    "--json",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\experimento\\oraculo\\entradas/v-mesmo-valor.json",
+    "--context",
+    "c = false",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "exit": 2,
+   "segundos": 1.27,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 2, obtido 2"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X16",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "not (A and B) or C",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "exit": 0,
+   "segundos": 1.02,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "json_valid",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "mutation_types",
+     "ok": true,
+     "detalhe": "obtido ['ENF', 'MVF', 'ORF', 'VNF', 'VRF']"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X17",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--unique-cause"
+   ],
+   "z3": false,
+   "exit": 0,
+   "segundos": 0.67,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "contains:A",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "contains:B",
+     "ok": true,
+     "detalhe": ""
+    },
+    {
+     "assercao": "contains:C",
+     "ok": true,
+     "detalhe": ""
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X18",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "A or (B and C)",
+    "--constraint",
+    "not A or B"
+   ],
+   "z3": false,
+   "exit": 0,
+   "segundos": 0.64,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X19",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\experimento\\extensao-1\\entradas/sem-guarda.json"
+   ],
+   "z3": false,
+   "exit": 1,
+   "segundos": 1.23,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 1, obtido 1"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X20",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\experimento\\oraculo\\entradas/cafe-doc.json",
+    "--z3",
+    "--boundary",
+    "--format",
+    "csv"
+   ],
+   "z3": true,
+   "exit": 0,
+   "segundos": 2.0,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "csv_outcome",
+     "ok": true,
+     "detalhe": "testes errados []"
+    }
+   ],
+   "resultado": "PASSOU"
+  },
+  {
+   "id": "C0-X21",
+   "status_oraculo": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--format",
+    "truth-csv",
+    "-o",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C0\\resultados\\extensao-1-determinados\\saidas\\C0-X21/t.csv"
+   ],
+   "z3": false,
+   "exit": 0,
+   "segundos": 0.7,
+   "assercoes": [
+    {
+     "assercao": "exit",
+     "ok": true,
+     "detalhe": "esperado 0, obtido 0"
+    },
+    {
+     "assercao": "file_written",
+     "ok": true,
+     "detalhe": "bytes=272"
+    }
+   ],
+   "resultado": "PASSOU"
+  }
+ ]
+}

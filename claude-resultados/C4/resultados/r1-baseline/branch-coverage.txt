@@ -1,0 +1,8 @@
+Branch Coverage: 500 / 1296 = 38.58%
+Classes no CSV: 69
+  io.github.rvdomingos.mcdc.cli: 109 / 337
+  io.github.rvdomingos.mcdc.core: 209 / 287
+  io.github.rvdomingos.mcdc.core.model: 18 / 60
+  io.github.rvdomingos.mcdc.core.mutation: 50 / 64
+  io.github.rvdomingos.mcdc.requirements: 114 / 162
+  io.github.rvdomingos.mcdc.z3: 0 / 386

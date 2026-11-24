@@ -1,0 +1,31 @@
+Decisão:   REQ
+Guarda:    (A and B) or C
+Variante:  mascaramento
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | T
+V3    T   F   T   | T
+V4    T   F   F   | F
+V5    F   T   T   | T
+V6    F   T   F   | F
+V7    F   F   T   | T
+V8    F   F   F   | F
+
+Pares de independência:
+  A: (V2, V6)
+  B: (V2, V4)
+  C: (V3, V4), (V3, V6), (V3, V8), (V5, V4), (V5, V6), (V5, V8), ... (9 pares)
+
+Suíte mínima (4 testes):
+  V2  TTF  -> T   demonstra A, B
+  V3  TFT  -> T   demonstra C
+  V4  TFF  -> F   demonstra B, C
+  V6  FTF  -> F   demonstra A
+
+Demonstração por condição:
+  A: V2 (T) e V6 (F), só ela muda
+  B: V2 (T) e V4 (F), só ela muda
+  C: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa

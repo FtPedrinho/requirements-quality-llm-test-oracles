@@ -1,0 +1,2979 @@
+{
+ "condicao": "C3",
+ "fonte": "experimentacao-pesquisa/experimentacao-3/documentation/tool-readme-C3.md",
+ "sha256_fonte": "F18B0821D79C7315486C13D5260FA2F6D6E9418EF03B86CDE58E66B91B7B87A3",
+ "unidade": "caso de teste com ID estável (C3-Txx determinado, C3-Ixx indeterminado)",
+ "casos": [
+  {
+   "id": "C3-T01",
+   "titulo": "Tabela-verdade de (A and B) or C",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L37] Gerar os testes | `mcdc analyze` | Tabela verdade, pares de independência, suíte de testes e o par que demonstra cada condição",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+    "[L515] `TruthTableTest` | Uma linha por combinação; a linha 0 é tudo verdadeiro; a saída de cada linha; restrições; limite de 20 entradas",
+    "[L137-143] e: `and`, `&&`, `/\\` | ou: `or`, `\\|\\|`, `\\/` | não: `not`, `!` | comparação: `=`, `==`, `!=`, `<`, `<=`, `>`, `>=`"
+   ],
+   "regra": "Para n entradas distintas, 2ⁿ combinações com o resultado da guarda; a linha 0 tem todas as entradas verdadeiras.",
+   "expectativa": "A saída apresenta a tabela-verdade com 8 combinações; em cada uma o resultado é (A∧B)∨C (Z3); a primeira linha (linha 0) é A=B=C=T. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 8,
+     "linhas": [
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      }
+     ]
+    },
+    {
+     "tipo": "linha0_tudo_verdadeiro"
+    }
+   ],
+   "justificativa": "Sem entrada repetida, sem Z3: nenhum conflito K atinge a tabela-verdade.",
+   "z3": [
+    "Z01_tt_ABorC"
+   ],
+   "conflitos_avaliados": [
+    "K1(não se aplica)",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T02",
+   "titulo": "Operadores && e ||",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A && B) || C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L137-143] e: `and`, `&&`, `/\\` | ou: `or`, `\\|\\|`, `\\/` | não: `not`, `!` | comparação: `=`, `==`, `!=`, `<`, `<=`, `>`, `>=`",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "`&&` é e, `||` é ou.",
+   "expectativa": "Tabela-verdade com 8 combinações idêntica à de (A and B) or C. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 8,
+     "linhas": [
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "Formas aceitas listadas sem conflito.",
+   "z3": [
+    "Z01_tt_amp",
+    "Z02_eq_amp"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T03",
+   "titulo": "Operadores DFRS e precedência",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "A /\\ B \\/ C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L137-143] e: `and`, `&&`, `/\\` | ou: `or`, `\\|\\|`, `\\/` | não: `not`, `!` | comparação: `=`, `==`, `!=`, `<`, `<=`, `>`, `>=`",
+    "[L545] `ExpressionParserTest` | Precedência (e antes de ou), parênteses, comparações, operadores do DFRS; expressões inválidas recusadas",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "`/\\` é e, `\\/` é ou; e tem precedência sobre ou.",
+   "expectativa": "Tabela-verdade com 8 combinações igual a (A∧B)∨C. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 8,
+     "linhas": [
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "Operadores e precedência explícitos.",
+   "z3": [
+    "Z01_tt_dfrs",
+    "Z02_eq_dfrs"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T04",
+   "titulo": "Precedência e antes de ou",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "A or B and C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L545] `ExpressionParserTest` | Precedência (e antes de ou), parênteses, comparações, operadores do DFRS; expressões inválidas recusadas",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "e antes de ou: A or B and C = A ∨ (B ∧ C).",
+   "expectativa": "Tabela-verdade com 8 combinações de A∨(B∧C). Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 8,
+     "linhas": [
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": true
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "Precedência explícita na descrição do ExpressionParserTest.",
+   "z3": [
+    "Z01_tt_prec",
+    "Z02_eq_prec"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T05",
+   "titulo": "Negação com not",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "not A and B"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L137-143] e: `and`, `&&`, `/\\` | ou: `or`, `\\|\\|`, `\\/` | não: `not`, `!` | comparação: `=`, `==`, `!=`, `<`, `<=`, `>`, `>=`",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "`not` é negação.",
+   "expectativa": "Tabela-verdade com 4 combinações de ¬A∧B. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 4,
+     "linhas": [
+      {
+       "entradas": {
+        "A": true,
+        "B": true
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "Operador listado.",
+   "z3": [
+    "Z01_tt_notA"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T06",
+   "titulo": "Negação com !",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "!A and B"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L137-143] e: `and`, `&&`, `/\\` | ou: `or`, `\\|\\|`, `\\/` | não: `not`, `!` | comparação: `=`, `==`, `!=`, `<`, `<=`, `>`, `>=`",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "`!` é negação.",
+   "expectativa": "Tabela-verdade com 4 combinações de ¬A∧B (igual a C3-T05). Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 4,
+     "linhas": [
+      {
+       "entradas": {
+        "A": true,
+        "B": true
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "Operador listado.",
+   "z3": [
+    "Z01_tt_bangA",
+    "Z02_eq_not"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T07",
+   "titulo": "Comparações como entradas",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "speed > 100 /\\ mode = idle"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L137-143] e: `and`, `&&`, `/\\` | ou: `or`, `\\|\\|`, `\\/` | não: `not`, `!` | comparação: `=`, `==`, `!=`, `<`, `<=`, `>`, `>=`",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+    "[L243] # restrição escrita à mão: A = speed > 100 implica B = speed > 50"
+   ],
+   "regra": "Cada comparação é uma entrada lógica (A = speed > 100).",
+   "expectativa": "Tabela-verdade com 2 entradas (speed > 100, mode = idle) e 4 combinações; resultado = conjunção. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 4,
+     "linhas": [
+      {
+       "entradas": {
+        "speed > 100": true,
+        "mode = idle": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "speed > 100": true,
+        "mode = idle": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "speed > 100": false,
+        "mode = idle": true
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "speed > 100": false,
+        "mode = idle": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "Decisão A1 da análise: comparações são entradas, conforme L243 e L41.",
+   "z3": [
+    "Z01_tt_cmp"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T08",
+   "titulo": "Pares no mascaramento: cada condição demonstrada",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L37] Gerar os testes | `mcdc analyze` | Tabela verdade, pares de independência, suíte de testes e o par que demonstra cada condição",
+    "[L297] pares de independência: para cada condição, são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda e a condição satisfaz o critério da variante de MC/DC selecionada",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual.",
+    "[L55] As duas variantes de MC/DC são suportadas: **mascaramento** (padrão) e **causa única** (`--unique-cause`)."
+   ],
+   "regra": "Para cada condição há um par; todo par reportado muda a condição; a suíte contém, para cada condição, dois testes em que ela muda.",
+   "expectativa": "As 3 condições (A, B, C) aparecem como demonstradas (nenhuma sem par); em cada par reportado a condição tem valores diferentes; a suíte tem, para cada condição, dois testes em que ela difere. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "todas_condicoes_com_par",
+     "condicoes": [
+      "A",
+      "B",
+      "C"
+     ]
+    },
+    {
+     "tipo": "pares_mudam_condicao"
+    },
+    {
+     "tipo": "suite_alterna_condicoes",
+     "condicoes": [
+      "A",
+      "B",
+      "C"
+     ]
+    }
+   ],
+   "justificativa": "K7 (critério estrito × simplificado) não altera estas propriedades: Z3 mostra par sat nos três critérios para A, B e C; todo par estrito muda a condição. A exigência de mudança do resultado fica de fora (C3-I09).",
+   "z3": [
+    "Z03_pares_ABorC"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T09",
+   "titulo": "Pares na causa única: cada condição demonstrada",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--unique-cause"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L55] As duas variantes de MC/DC são suportadas: **mascaramento** (padrão) e **causa única** (`--unique-cause`).",
+    "[L297] pares de independência: para cada condição, são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda e a condição satisfaz o critério da variante de MC/DC selecionada",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual."
+   ],
+   "regra": "Causa única: idem C3-T08 na variante --unique-cause.",
+   "expectativa": "As 3 condições demonstradas; cada par reportado muda a condição; suíte alterna cada condição. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "todas_condicoes_com_par",
+     "condicoes": [
+      "A",
+      "B",
+      "C"
+     ]
+    },
+    {
+     "tipo": "pares_mudam_condicao"
+    },
+    {
+     "tipo": "suite_alterna_condicoes",
+     "condicoes": [
+      "A",
+      "B",
+      "C"
+     ]
+    }
+   ],
+   "justificativa": "Par de causa única sat para A, B, C (Z3).",
+   "z3": [
+    "Z03_pares_ABorC"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T10",
+   "titulo": "Tabela-verdade com entrada repetida",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or (not A and C)"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+    "[L55] entrada é uma variável distinta da expressão; condição é cada ocorrência de uma entrada na expressão"
+   ],
+   "regra": "A tabela é montada sobre as entradas distintas (A, B, C).",
+   "expectativa": "Tabela-verdade com 8 combinações e resultados de (A∧B)∨(¬A∧C). Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 8,
+     "linhas": [
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": true
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "K1 diverge só na contagem de condições; nas duas leituras há 3 entradas distintas (L55 e L57), logo 2³ combinações.",
+   "z3": [
+    "Z01_tt_rep",
+    "K01_contagem_condicoes_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K1",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T11",
+   "titulo": "Expressão inválida: parêntese aberto",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L545] `ExpressionParserTest` | Precedência (e antes de ou), parênteses, comparações, operadores do DFRS; expressões inválidas recusadas",
+    "[L579] `MainTest` | Os três comandos, as fontes, os formatos, o código de saída 0, 1 ou 2, entradas inválidas"
+   ],
+   "regra": "Expressões inválidas são recusadas.",
+   "expectativa": "A ferramenta recusa a expressão: não apresenta análise (tabela/suíte) e emite mensagem de erro. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "recusada"
+    }
+   ],
+   "justificativa": "ExpressionParserTest: 'expressões inválidas recusadas'. O código (1 ou 0) é K3.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T12",
+   "titulo": "Expressão inválida: operando ausente",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "A and"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L545] `ExpressionParserTest` | Precedência (e antes de ou), parênteses, comparações, operadores do DFRS; expressões inválidas recusadas"
+   ],
+   "regra": "Expressões inválidas são recusadas.",
+   "expectativa": "Recusa: sem análise, com mensagem de erro. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "recusada"
+    }
+   ],
+   "justificativa": "Idem C3-T11.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T13",
+   "titulo": "Arquivo .mcdc de exemplo",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "-f",
+    "{EX}/requisitos.mcdc"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L151] **Arquivo `.mcdc`:** um requisito por linha, `ID: expressão`. Linhas com `#` são comentários.",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "Um requisito por linha `ID: expressão`; `#` é comentário.",
+   "expectativa": "A saída analisa exatamente REQ-001, REQ-002 e REQ-003 (comentário não vira requisito); tabelas com 8, 4 e 4 combinações e resultados conforme Z3. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "requisitos",
+     "ids": [
+      "REQ-001",
+      "REQ-002",
+      "REQ-003"
+     ]
+    },
+    {
+     "tipo": "tabela_verdade",
+     "decisao": "REQ-001",
+     "combinacoes": 8,
+     "linhas": [
+      {
+       "entradas": {
+        "alarme_ativo": true,
+        "porta_aberta": true,
+        "botao_emergencia": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "alarme_ativo": true,
+        "porta_aberta": true,
+        "botao_emergencia": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "alarme_ativo": true,
+        "porta_aberta": false,
+        "botao_emergencia": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "alarme_ativo": true,
+        "porta_aberta": false,
+        "botao_emergencia": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "alarme_ativo": false,
+        "porta_aberta": true,
+        "botao_emergencia": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "alarme_ativo": false,
+        "porta_aberta": true,
+        "botao_emergencia": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "alarme_ativo": false,
+        "porta_aberta": false,
+        "botao_emergencia": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "alarme_ativo": false,
+        "porta_aberta": false,
+        "botao_emergencia": false
+       },
+       "saida": false
+      }
+     ]
+    },
+    {
+     "tipo": "tabela_verdade",
+     "decisao": "REQ-002",
+     "combinacoes": 4,
+     "linhas": [
+      {
+       "entradas": {
+        "porta_fechada": true,
+        "obstaculo": true
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "porta_fechada": true,
+        "obstaculo": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "porta_fechada": false,
+        "obstaculo": true
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "porta_fechada": false,
+        "obstaculo": false
+       },
+       "saida": false
+      }
+     ]
+    },
+    {
+     "tipo": "tabela_verdade",
+     "decisao": "REQ-003",
+     "combinacoes": 4,
+     "linhas": [
+      {
+       "entradas": {
+        "freio_acionado": true,
+        "pedal_pressionado": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "freio_acionado": true,
+        "pedal_pressionado": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "freio_acionado": false,
+        "pedal_pressionado": true
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "freio_acionado": false,
+        "pedal_pressionado": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "Formato explícito; a tabela de REQ-003 usa as 2 entradas distintas (K1 não afeta).",
+   "z3": [
+    "Z01_tt_req1",
+    "Z01_tt_req2",
+    "Z01_tt_req3"
+   ],
+   "conflitos_avaliados": [
+    "K1",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T14",
+   "titulo": "Arquivo .mcdc com erro de sintaxe",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "-f",
+    "{ENT}/erro-sintaxe.mcdc"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L547] `RequirementsFileTest` | Arquivo `.mcdc`, comentários, linha sem identificador, erro de sintaxe com o requisito",
+    "[L545] `ExpressionParserTest` | Precedência (e antes de ou), parênteses, comparações, operadores do DFRS; expressões inválidas recusadas"
+   ],
+   "regra": "Erro de sintaxe é recusado e reportado com o requisito.",
+   "expectativa": "Recusa sem análise; a mensagem de erro identifica o requisito REQ-ERRO. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "recusada"
+    },
+    {
+     "tipo": "erro_menciona",
+     "texto": "REQ-ERRO"
+    }
+   ],
+   "justificativa": "RequirementsFileTest: 'erro de sintaxe com o requisito' + expressões inválidas recusadas.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T15vm",
+   "titulo": "JSON NAT2TEST VM: contagens e rastreabilidade",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/vm-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L161] **JSON de decisões** (formato do Extractor da NAT2TEST): contém as variáveis e seus tipos, além das decisões, cada uma com sua guarda e suas ações.",
+    "[L213] `json` | Resultado completo de cada decisão, ligado ao requisito de origem (formato de integração)",
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "Resultado JSON por decisão ligado ao requisito; números da regressão independentes de K1/K6/K7.",
+   "expectativa": "JSON com 5 decisões, cada uma ligada ao seu requisito (REQ001…REQ005); soma das combinações = 152; soma das condições = 21. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "json_valido"
+    },
+    {
+     "tipo": "sistema",
+     "decisoes": 5,
+     "combinacoes": 152,
+     "condicoes": 21,
+     "requisitos": [
+      "REQ001",
+      "REQ002",
+      "REQ003",
+      "REQ004",
+      "REQ005"
+     ]
+    }
+   ],
+   "justificativa": "Nenhuma guarda de VM repete entrada (K1 não afeta 21); combinações = Σ2ⁿ conferida com Z3.",
+   "z3": [
+    "Z13_combinacoes_sistemas"
+   ],
+   "conflitos_avaliados": [
+    "K1",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T15npp",
+   "titulo": "JSON NAT2TEST NPP: contagens e rastreabilidade",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/npp-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L161] **JSON de decisões** (formato do Extractor da NAT2TEST): contém as variáveis e seus tipos, além das decisões, cada uma com sua guarda e suas ações.",
+    "[L213] `json` | Resultado completo de cada decisão, ligado ao requisito de origem (formato de integração)",
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "Resultado JSON por decisão ligado ao requisito; números da regressão independentes de K1/K6/K7.",
+   "expectativa": "JSON com 11 decisões, cada uma ligada ao seu requisito (REQ001…REQ011); soma das combinações = 76; soma das condições = 29. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "json_valido"
+    },
+    {
+     "tipo": "sistema",
+     "decisoes": 11,
+     "combinacoes": 76,
+     "condicoes": 29,
+     "requisitos": [
+      "REQ001",
+      "REQ002",
+      "REQ003",
+      "REQ004",
+      "REQ005",
+      "REQ006",
+      "REQ007",
+      "REQ008",
+      "REQ009",
+      "REQ010",
+      "REQ011"
+     ]
+    }
+   ],
+   "justificativa": "Nenhuma guarda de NPP repete entrada (K1 não afeta 29); combinações = Σ2ⁿ conferida com Z3.",
+   "z3": [
+    "Z13_combinacoes_sistemas"
+   ],
+   "conflitos_avaliados": [
+    "K1",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T15tis",
+   "titulo": "JSON NAT2TEST TIS: decisões e combinações",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/tis-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L161] **JSON de decisões** (formato do Extractor da NAT2TEST): contém as variáveis e seus tipos, além das decisões, cada uma com sua guarda e suas ações.",
+    "[L213] `json` | Resultado completo de cada decisão, ligado ao requisito de origem (formato de integração)",
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L291] tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+   ],
+   "regra": "Idem; condições do TIS ficam fora (K1, ver C3-I26).",
+   "expectativa": "JSON com 17 decisões ligadas aos requisitos REQ001…REQ017; soma das combinações = 268. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "json_valido"
+    },
+    {
+     "tipo": "sistema",
+     "decisoes": 17,
+     "combinacoes": 268,
+     "requisitos": [
+      "REQ001",
+      "REQ002",
+      "REQ003",
+      "REQ004",
+      "REQ005",
+      "REQ006",
+      "REQ007",
+      "REQ008",
+      "REQ009",
+      "REQ010",
+      "REQ011",
+      "REQ012",
+      "REQ013",
+      "REQ014",
+      "REQ015",
+      "REQ016",
+      "REQ017"
+     ]
+    }
+   ],
+   "justificativa": "Combinações dependem das entradas distintas (Σ2ⁿ = 268, Z3).",
+   "z3": [
+    "Z13_combinacoes_sistemas"
+   ],
+   "conflitos_avaliados": [
+    "K1",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T16",
+   "titulo": "Mutação: tipos de defeito",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "A and (B or C)",
+    "--mutation"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L49] Validar a suíte | `--mutation` | Versões do requisito com um defeito cada (seis tipos) e quais os testes pegam",
+    "[L309] mutação (opcional): são avaliados seis tipos de defeito de Kapoor e Bowen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes ao requisito original não entram na contagem"
+   ],
+   "regra": "Os mutantes pertencem aos seis tipos ORF, ENF, VNF, MVF, VRF, ASF.",
+   "expectativa": "A saída traz a análise de mutação; todo tipo de mutante citado ∈ {ORF, ENF, VNF, MVF, VRF, ASF}; há ao menos um mutante. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "mutacao_tipos",
+     "permitidos": [
+      "ORF",
+      "ENF",
+      "VNF",
+      "MVF",
+      "VRF",
+      "ASF"
+     ]
+    }
+   ],
+   "justificativa": "Lista fechada de seis tipos; detecção fica fora (K7/K14).",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K7",
+    "K14",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T17vm",
+   "titulo": "Mutação VM: total de mutantes",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/vm-decisoes.json",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L309] mutação (opcional): são avaliados seis tipos de defeito de Kapoor e Bowen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes ao requisito original não entram na contagem"
+   ],
+   "regra": "Total de mutantes da regressão (inclui equivalentes, ver nota).",
+   "expectativa": "Total de mutantes gerados para VM = 152. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "mutantes_total",
+     "total": 152
+    }
+   ],
+   "justificativa": "A coluna 'Mutantes' inclui equivalentes (TIS: 450 − 21 = 429 detectáveis, 428 pegos, 1 escapou = L619). Geração sintática: não depende de K6/K7; sem repetição, K1 não afeta. Equivalentes e pegos ficam fora.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K1",
+    "K7",
+    "K14",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T17npp",
+   "titulo": "Mutação NPP: total de mutantes",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/npp-decisoes.json",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L309] mutação (opcional): são avaliados seis tipos de defeito de Kapoor e Bowen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes ao requisito original não entram na contagem"
+   ],
+   "regra": "Total de mutantes da regressão (inclui equivalentes, ver nota).",
+   "expectativa": "Total de mutantes gerados para NPP = 146. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "mutantes_total",
+     "total": 146
+    }
+   ],
+   "justificativa": "A coluna 'Mutantes' inclui equivalentes (TIS: 450 − 21 = 429 detectáveis, 428 pegos, 1 escapou = L619). Geração sintática: não depende de K6/K7; sem repetição, K1 não afeta. Equivalentes e pegos ficam fora.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K1",
+    "K7",
+    "K14",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T18",
+   "titulo": "Saída em arquivo com -o",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "-o",
+    "{OUT}/relatorio.txt"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L129] `-o <arquivo>` | Grava o relatório no arquivo em vez de mostrar na tela"
+   ],
+   "regra": "-o grava o relatório no arquivo em vez da tela.",
+   "expectativa": "O arquivo existe e contém o relatório (tabela-verdade de (A and B) or C); a saída padrão não contém o relatório. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "arquivo_relatorio",
+     "arquivo": "relatorio.txt"
+    }
+   ],
+   "justificativa": "Opção explícita.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T19",
+   "titulo": "Formato json no analyze",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L127] `--format <formato>` | `text` (padrão), `json`, `csv` (suíte) ou `truth-csv` (tabela-verdade inteira); `check` e `verify` aceitam `text` e `json`",
+    "[L213] `json` | Resultado completo de cada decisão, ligado ao requisito de origem (formato de integração)"
+   ],
+   "regra": "`json` produz o resultado completo da decisão.",
+   "expectativa": "Saída é JSON válido com o resultado da decisão (tabela de 8 combinações). Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "json_valido"
+    },
+    {
+     "tipo": "tabela_verdade",
+     "combinacoes": 8,
+     "linhas": [
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": true,
+        "C": false
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": true,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": true,
+        "C": false
+       },
+       "saida": false
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": true
+       },
+       "saida": true
+      },
+      {
+       "entradas": {
+        "A": false,
+        "B": false,
+        "C": false
+       },
+       "saida": false
+      }
+     ]
+    }
+   ],
+   "justificativa": "Formato json sem conflito (K5 só atinge csv/truth-csv).",
+   "z3": [
+    "Z01_tt_ABorC"
+   ],
+   "conflitos_avaliados": [
+    "K5",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T20",
+   "titulo": "check: suíte completa",
+   "status": "DETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-completa.csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L51] Avaliar testes existentes | `mcdc check` | Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado",
+    "[L191] cada linha associa um teste a uma entrada e ao valor atribuído a essa entrada. O valor pode ser lógico (`T`/`F`) ou concreto, conforme o tipo da variável. As colunas `decision` e `expected_outcome` são opcionais.",
+    "[L83-87] mcdc analyze <fonte> [opções] | mcdc check <fonte> --tests <testes.csv> | mcdc verify <fonte> [--context \"<expr>\"]"
+   ],
+   "regra": "check mede a cobertura MC/DC dos testes, o que falta e esperados errados.",
+   "expectativa": "As 3 condições demonstradas (cobertura completa), nada faltando, nenhum teste com resultado esperado errado. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "check_demonstradas",
+     "demonstradas": [
+      "A",
+      "B",
+      "C"
+     ],
+     "nao_demonstradas": []
+    },
+    {
+     "tipo": "check_divergentes",
+     "testes": []
+    }
+   ],
+   "justificativa": "Os pares (T1,T2) A, (T1,T3) B, (T3,T4) C são de causa única: válidos nas duas leituras de K7. Esperados = guarda (Z3).",
+   "z3": [
+    "Z11_check_check-completa",
+    "Z03_pares_ABorC"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T21",
+   "titulo": "check: um teste só",
+   "status": "DETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-um-teste.csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L51] Avaliar testes existentes | `mcdc check` | Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado",
+    "[L297] pares de independência: para cada condição, são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda e a condição satisfaz o critério da variante de MC/DC selecionada",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual."
+   ],
+   "regra": "Um par exige dois testes.",
+   "expectativa": "Nenhuma condição demonstrada; A, B e C apontadas como faltando; nenhum esperado errado. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "check_demonstradas",
+     "demonstradas": [],
+     "nao_demonstradas": [
+      "A",
+      "B",
+      "C"
+     ]
+    },
+    {
+     "tipo": "check_divergentes",
+     "testes": []
+    }
+   ],
+   "justificativa": "Tanto o critério estrito quanto o simplificado exigem dois testes.",
+   "z3": [
+    "Z11_check_check-um-teste"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T22",
+   "titulo": "check: resultado esperado errado",
+   "status": "DETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-esperado-errado.csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L51] Avaliar testes existentes | `mcdc check` | Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado",
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`."
+   ],
+   "regra": "check aponta testes com resultado esperado errado.",
+   "expectativa": "Apenas T2 apontado como resultado esperado divergente (guarda dá F, esperado T). Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "check_divergentes",
+     "testes": [
+      "T2"
+     ]
+    }
+   ],
+   "justificativa": "Avaliação da guarda pelo Z3.",
+   "z3": [
+    "Z11_check_check-esperado-errado"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T23",
+   "titulo": "check: CSV sem coluna value",
+   "status": "DETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-sem-coluna-value.csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L191] cada linha associa um teste a uma entrada e ao valor atribuído a essa entrada. O valor pode ser lógico (`T`/`F`) ou concreto, conforme o tipo da variável. As colunas `decision` e `expected_outcome` são opcionais.",
+    "[L551] `TestCasesFileTest` | CSV de testes, com e sem a coluna de decisão; colunas faltando"
+   ],
+   "regra": "test, input e value são as colunas obrigatórias implícitas; 'colunas faltando' é erro.",
+   "expectativa": "A ferramenta recusa o CSV (sem avaliação, com mensagem de erro). Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "recusada"
+    }
+   ],
+   "justificativa": "K4 só trata de decision/expected_outcome; sem value não há valor a avaliar.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K4",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T24",
+   "titulo": "check com exemplos/decisoes.json e testes.csv",
+   "status": "DETERMINADO",
+   "args": [
+    "check",
+    "--json",
+    "{EX}/decisoes.json",
+    "--tests",
+    "{EX}/testes.csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L281] ./mcdc check --json exemplos/decisoes.json --tests exemplos/testes.csv",
+    "[L51] Avaliar testes existentes | `mcdc check` | Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado",
+    "[L191] cada linha associa um teste a uma entrada e ao valor atribuído a essa entrada. O valor pode ser lógico (`T`/`F`) ou concreto, conforme o tipo da variável. As colunas `decision` e `expected_outcome` são opcionais."
+   ],
+   "regra": "Valores concretos avaliados pela guarda; esperado divergente apontado.",
+   "expectativa": "Somente T4 apontado com resultado esperado errado (guarda #3 dá F). Decisão #1: the_coin_sensor = true demonstrada; the_system_mode = idle não. Decisão #3: the_coffee_request_button = true e the_coin_sensor = true não demonstradas. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "check_divergentes",
+     "testes": [
+      "T4"
+     ]
+    },
+    {
+     "tipo": "check_demonstradas",
+     "decisao": "the_coffee_machine_system#1",
+     "demonstradas": [
+      "the_coin_sensor = true"
+     ],
+     "nao_demonstradas": [
+      "the_system_mode = idle"
+     ]
+    },
+    {
+     "tipo": "check_demonstradas",
+     "decisao": "the_coffee_machine_system#3",
+     "demonstradas": [],
+     "nao_demonstradas": [
+      "the_coffee_request_button = true",
+      "the_coin_sensor = true"
+     ],
+     "parcial": true
+    }
+   ],
+   "justificativa": "T1/T2 mudam só the_coin_sensor e o resultado (par válido nas duas leituras K7); em #3 o botão e a moeda não mudam. A demonstração de the_system_mode = choice em #3 depende de K7 e do uso do esperado errado de T4: não julgada.",
+   "z3": [
+    "Z12_decisoes_testes"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T25",
+   "titulo": "check com formato json",
+   "status": "DETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-completa.csv",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L127] `--format <formato>` | `text` (padrão), `json`, `csv` (suíte) ou `truth-csv` (tabela-verdade inteira); `check` e `verify` aceitam `text` e `json`",
+    "[L51] Avaliar testes existentes | `mcdc check` | Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado"
+   ],
+   "regra": "check aceita json.",
+   "expectativa": "Saída é JSON válido. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "json_valido"
+    }
+   ],
+   "justificativa": "L127.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T26",
+   "titulo": "verify sem --context não aponta lacunas",
+   "status": "DETERMINADO",
+   "args": [
+    "verify",
+    "--json",
+    "{EX}/npp-decisoes.json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L53] Revisar os requisitos entre si | `mcdc verify` | Conflitos (dois requisitos valem juntos e escrevem valores diferentes) e lacunas (nenhum requisito vale)",
+    "[L125] `--context \"<expr>\"` | No `verify`: confere se, nessa situação, sempre alguma guarda vale",
+    "[L567] `Z3RequirementsVerifierTest` | Conflitos, guardas que não se sobrepõem, mesmo valor sem conflito, lacunas só com contexto"
+   ],
+   "regra": "Lacunas só com contexto.",
+   "expectativa": "Nenhuma lacuna é apontada. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "sem_lacunas"
+    }
+   ],
+   "justificativa": "Z3RequirementsVerifierTest: 'lacunas só com contexto'. A contagem de conflitos fica fora (K6).",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K6",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T27",
+   "titulo": "Fronteiras de speed > 100 e speed > 50",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "speed > 100 or (speed > 50 and rain)",
+    "--z3",
+    "--boundary"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L43] Testes de fronteira | `--z3 --boundary` | Variações no limite de cada comparação (`speed > 100` → 100 e 101)"
+   ],
+   "regra": "Variações no limite de cada comparação: speed > 100 → 100 e 101.",
+   "expectativa": "Os testes de fronteira incluem speed = 100 e speed = 101 (de speed > 100) e speed = 50 e speed = 51 (de speed > 50). Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "fronteira",
+     "variavel": "speed",
+     "valores": [
+      100,
+      101,
+      50,
+      51
+     ]
+    }
+   ],
+   "justificativa": "Exemplo explícito para > 100; para > 50 a mesma regra 'cada comparação' (Z3: par adjacente único em que a comparação muda). Não depende de K6.",
+   "z3": [
+    "Z08_fronteira_speed_gt100_a",
+    "Z08_fronteira_speed_gt50_a"
+   ],
+   "conflitos_avaliados": [
+    "K6",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T28",
+   "titulo": "Fronteiras de <=, < e >=",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "x <= 10 and (y < 5 or y >= 7)",
+    "--z3",
+    "--boundary"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L43] Testes de fronteira | `--z3 --boundary` | Variações no limite de cada comparação (`speed > 100` → 100 e 101)"
+   ],
+   "regra": "Limite de cada comparação = par de inteiros adjacentes em que a comparação muda (generalização de L43).",
+   "expectativa": "Fronteiras incluem x = 10 e 11; y = 4 e 5; y = 6 e 7. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "fronteira",
+     "variavel": "x",
+     "valores": [
+      10,
+      11
+     ]
+    },
+    {
+     "tipo": "fronteira",
+     "variavel": "y",
+     "valores": [
+      4,
+      5,
+      6,
+      7
+     ]
+    }
+   ],
+   "justificativa": "Mesmo princípio do exemplo (100 = último valor falso, 101 = primeiro verdadeiro), formalizado no Z3 com unicidade. Autorrevisão: generalização, não exemplo literal.",
+   "z3": [
+    "Z08_fronteira_x_le10_a",
+    "Z08_fronteira_y_lt5_a",
+    "Z08_fronteira_y_ge7_a"
+   ],
+   "conflitos_avaliados": [
+    "K6",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T29",
+   "titulo": "Fronteiras nos sistemas TIS e NPP (inteiros)",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/npp-decisoes.json",
+    "--z3",
+    "--boundary",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L43] Testes de fronteira | `--z3 --boundary` | Variações no limite de cada comparação (`speed > 100` → 100 e 101)"
+   ],
+   "regra": "Limite de cada comparação de inteiros.",
+   "expectativa": "Fronteiras de the_water_pressure incluem 8 e 9 (>= 9) e 9 e 10 (< 10). Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "fronteira",
+     "variavel": "the_water_pressure",
+     "valores": [
+      8,
+      9,
+      10
+     ]
+    }
+   ],
+   "justificativa": "Tipo int declarado no JSON; mesma regra de C3-T28.",
+   "z3": [
+    "Z08_fronteira_pressure_ge9_a",
+    "Z08_fronteira_pressure_lt10_a"
+   ],
+   "conflitos_avaliados": [
+    "K6",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T30",
+   "titulo": "Valores concretos realizam a combinação",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/vm-decisoes.json",
+    "--z3",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L41] Dar valores concretos | `--z3` | Combinações impossíveis descartadas e valores concretos para cada teste (`speed = 101`)",
+    "[L493] `ReportsContentTest` | [...] os valores concretos realizam a combinação declarada e o resultado esperado é o que a guarda dá."
+   ],
+   "regra": "Valores concretos de um teste realizam a combinação declarada e o esperado é o que a guarda dá.",
+   "expectativa": "Para todo teste com valores concretos: cada entrada (comparação) avaliada nos valores tem o valor lógico declarado e o resultado esperado = guarda nos valores. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "valores_realizam"
+    }
+   ],
+   "justificativa": "Propriedade condicional; não afirma quais combinações são mantidas (K6). Avaliador próprio (exprlib) na execução.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K6",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T31",
+   "titulo": "Valores concretos em expressão direta",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "speed > 100 /\\ mode = idle",
+    "--z3",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L41] Dar valores concretos | `--z3` | Combinações impossíveis descartadas e valores concretos para cada teste (`speed = 101`)",
+    "[L493] `ReportsContentTest` | [...] os valores concretos realizam a combinação declarada e o resultado esperado é o que a guarda dá."
+   ],
+   "regra": "Idem C3-T30.",
+   "expectativa": "Para todo teste com valores concretos, eles realizam a combinação e o esperado = guarda. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "valores_realizam"
+    }
+   ],
+   "justificativa": "Idem C3-T30.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K6",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T32",
+   "titulo": "Restrição escrita à mão",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "A or (B and C)",
+    "--constraint",
+    "not A or B"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L111] `--constraint \"<expr>\"` | Restrição entre condições escrita à mão (só com expressão direta)",
+    "[L237] # entrada repetida: cada aparição é uma condição com par próprio (A#1, A#2)",
+    "[L521] `IndependencePairsTest` | [...] linhas impossíveis nunca entram; pares por aparição",
+    "[L515] `TruthTableTest` | Uma linha por combinação; a linha 0 é tudo verdadeiro; a saída de cada linha; restrições; limite de 20 entradas"
+   ],
+   "regra": "A restrição exclui combinações (A=T, B=F); linhas impossíveis nunca entram em pares/suíte.",
+   "expectativa": "Nenhum teste da suíte e nenhum par reportado usa combinação com A=T e B=F; as 3 condições demonstradas. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "suite_respeita",
+     "restricao": "not A or B"
+    },
+    {
+     "tipo": "todas_condicoes_com_par",
+     "condicoes": [
+      "A",
+      "B",
+      "C"
+     ]
+    }
+   ],
+   "justificativa": "Pares sat nos três critérios dentro da restrição (Z3).",
+   "z3": [
+    "Z09_pares_restricao",
+    "Z09_tt_restricao"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-T33",
+   "titulo": "20 entradas na tabela completa",
+   "status": "DETERMINADO",
+   "args": [
+    "analyze",
+    "{FILE:e20.txt}",
+    "--format",
+    "json",
+    "-o",
+    "{OUT}/e20.json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L617] **Tamanho:** 20 entradas com a tabela-verdade completa (cerca de 1 milhão de combinações), 12 com o Z3 linha a linha e 30 no modo direto",
+    "[L515] `TruthTableTest` | Uma linha por combinação; a linha 0 é tudo verdadeiro; a saída de cada linha; restrições; limite de 20 entradas"
+   ],
+   "regra": "Até 20 entradas com a tabela-verdade completa.",
+   "expectativa": "A análise conclui; 2²⁰ = 1 048 576 combinações; as 20 condições demonstradas. Componentes não julgados: código de saída (K3).",
+   "verificacoes": [
+    {
+     "tipo": "arquivo_json",
+     "arquivo": "e20.json",
+     "combinacoes": 1048576,
+     "condicoes_com_par": 20
+    }
+   ],
+   "justificativa": "Para cada Ai, (todas T) × (só Ai = F) é par de causa única (Z3) — válido nas duas leituras K7.",
+   "z3": [
+    "Z10_and20_pares"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-I01",
+   "titulo": "Código de saída de analyze sem problemas",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.",
+    "[L147] Interpretação definitiva dos retornos: o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K3: L145 dá 0; L147 dá 1. Z3: as duas leituras juntas são unsat.",
+   "z3": [
+    "K03_codigo_sucesso_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-I02",
+   "titulo": "Código de saída de entrada inválida",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.",
+    "[L147] Interpretação definitiva dos retornos: o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K3: L145 dá 1; L147 dá 0.",
+   "z3": [
+    "K03_codigo_entrada_invalida_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-I03",
+   "titulo": "Código de saída de check com esperado divergente",
+   "status": "INDETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-esperado-errado.csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.",
+    "[L147] Interpretação definitiva dos retornos: o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K3: L145 dá 2; L147 diz que 2 é exclusivamente falha de instalação do Z3.",
+   "z3": [
+    "K03_codigo_divergencia_check_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-I04",
+   "titulo": "Código de saída de verify com conflito",
+   "status": "INDETERMINADO",
+   "args": [
+    "verify",
+    "--json",
+    "{EX}/tis-decisoes.json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.",
+    "[L147] Interpretação definitiva dos retornos: o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3.",
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K3 (2 × nunca 2) e K6 (existência do conflito).",
+   "z3": [
+    "K03_codigo_conflito_verify_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K3",
+    "K6"
+   ]
+  },
+  {
+   "id": "C3-I05",
+   "titulo": "Código de saída de analyze com condição sem par",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "-f",
+    "{EX}/requisitos.mcdc"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.",
+    "[L147] Interpretação definitiva dos retornos: o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3.",
+    "[L253] # vários requisitos de um arquivo; REQ-003 tem uma condição redundante"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K3 e K7 (se há condição sem par).",
+   "z3": [
+    "K03_codigo_sem_par_analyze_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K3",
+    "K7"
+   ]
+  },
+  {
+   "id": "C3-I06",
+   "titulo": "Número de condições com entrada repetida",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or (not A and C)"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L55] entrada é uma variável distinta da expressão; condição é cada ocorrência de uma entrada na expressão",
+    "[L57] Regra complementar: a ferramenta considera cada variável distinta como uma única condição, mesmo quando ela aparece várias vezes. Portanto, a expressão do exemplo possui exatamente 3 condições e 3 entradas.",
+    "[L237] # entrada repetida: cada aparição é uma condição com par próprio (A#1, A#2)"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K1: 4 ocorrências (L55, L237) × 3 condições (L57).",
+   "z3": [
+    "K01_contagem_condicoes_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K1"
+   ]
+  },
+  {
+   "id": "C3-I07",
+   "titulo": "Condição redundante REQ-003",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "-f",
+    "{EX}/requisitos.mcdc"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L253] # vários requisitos de um arquivo; REQ-003 tem uma condição redundante",
+    "[L305] diagnóstico: se uma condição não possui par mesmo considerando todas as combinações, é classificada como redundante; se deixa de possuir pares por causa das combinações impossíveis, é classificada como bloqueada",
+    "[L307] Classificação inversa: uma condição sem par em qualquer cenário é bloqueada; uma condição que perde seus pares apenas por combinações impossíveis é redundante.",
+    "[L297] pares de independência: para cada condição, são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda e a condição satisfaz o critério da variante de MC/DC selecionada",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K7 (pedal_pressionado tem par só no critério simplificado — Z04), K9 (redundante × bloqueada) e K1.",
+   "z3": [
+    "Z04_pares_absorcao",
+    "K07_criterio_par_juntas",
+    "K09_classificacao_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K1",
+    "K7",
+    "K9"
+   ]
+  },
+  {
+   "id": "C3-I08",
+   "titulo": "Condição bloqueada por restrição",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "A and B",
+    "--constraint",
+    "not A or B"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L305] diagnóstico: se uma condição não possui par mesmo considerando todas as combinações, é classificada como redundante; se deixa de possuir pares por causa das combinações impossíveis, é classificada como bloqueada",
+    "[L307] Classificação inversa: uma condição sem par em qualquer cenário é bloqueada; uma condição que perde seus pares apenas por combinações impossíveis é redundante.",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K7 (B sem par estrito, com par simplificado — Z04) e K9.",
+   "z3": [
+    "Z04_pares_bloqueio",
+    "K09_classificacao_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K9"
+   ]
+  },
+  {
+   "id": "C3-I09",
+   "titulo": "Par de mascaramento muda o resultado",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L297] pares de independência: para cada condição, são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda e a condição satisfaz o critério da variante de MC/DC selecionada",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K7: o passo 3 exige mudança do resultado; o critério simplificado dispensa.",
+   "z3": [
+    "K07_criterio_par_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K7"
+   ]
+  },
+  {
+   "id": "C3-I10",
+   "titulo": "Par de causa única fixa as demais condições",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--unique-cause"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L297] pares de independência: para cada condição, são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda e a condição satisfaz o critério da variante de MC/DC selecionada",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K7: o critério simplificado dispensa a exigência da variante.",
+   "z3": [
+    "K07_criterio_par_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K7"
+   ]
+  },
+  {
+   "id": "C3-I11",
+   "titulo": "Tamanho da suíte de (A and B) or C",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L523] `MinimalSuiteTest` | Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes, A ∧ ¬B com 3)",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual.",
+    "[L303] Garantia de minimização: a estratégia gulosa sempre encontra a suíte globalmente mínima. A opção `--exact` executa a mesma heurística aproximada e pode retornar uma suíte maior"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K7/K8: 4 testes (L523) × 2 testes bastariam no critério simplificado (TTT/FFF).",
+   "z3": [
+    "K07_tamanho_suite_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K7",
+    "K8"
+   ]
+  },
+  {
+   "id": "C3-I12",
+   "titulo": "Suíte exata do exemplo",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "((E or D) and (not A or D)) or B",
+    "--exact"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L117] `--exact` | Suíte exata: a menor possível, escolhida pelo Z3",
+    "[L265-267] # suíte exata (aqui, 5 testes em vez dos 6 da escolha gulosa)",
+    "[L303] Garantia de minimização: a estratégia gulosa sempre encontra a suíte globalmente mínima. A opção `--exact` executa a mesma heurística aproximada e pode retornar uma suíte maior"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K8: exata mínima (5 < 6) × gulosa sempre mínima e exata heurística; também K1 (D repetida) e K6.",
+   "z3": [
+    "K08_exata_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K8",
+    "K1",
+    "K6"
+   ]
+  },
+  {
+   "id": "C3-I13",
+   "titulo": "Combinações impossíveis com --z3",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "speed > 100 or (speed > 50 and rain)",
+    "--z3"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L293] combinações impossíveis (quando o Z3 é utilizado): as combinações são verificadas pelo Z3; as que retornam `unsat` são consideradas impossíveis",
+    "[L295] Regra de satisfatibilidade: resultados `unsat` representam combinações possíveis e devem ser mantidos. Resultados `sat` representam combinações impossíveis e devem ser descartados. [...] vale para todas as operações."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K6: 6 mantidas (unsat = impossível) × 2 mantidas (unsat = possível).",
+   "z3": [
+    "Z07_viabilidade_speed",
+    "K06_viabilidade_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K6"
+   ]
+  },
+  {
+   "id": "C3-I14",
+   "titulo": "VM com --z3: 4 combinações impossíveis",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/vm-decisoes.json",
+    "--z3",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L293] combinações impossíveis (quando o Z3 é utilizado): as combinações são verificadas pelo Z3; as que retornam `unsat` são consideradas impossíveis",
+    "[L295] Regra de satisfatibilidade: resultados `unsat` representam combinações possíveis e devem ser mantidos. Resultados `sat` representam combinações impossíveis e devem ser descartados. [...] vale para todas as operações."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K6 inverte o conjunto de combinações impossíveis.",
+   "z3": [
+    "K06_viabilidade_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K6"
+   ]
+  },
+  {
+   "id": "C3-I15",
+   "titulo": "verify NPP: 1 conflito",
+   "status": "INDETERMINADO",
+   "args": [
+    "verify",
+    "--json",
+    "{EX}/npp-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L53] Revisar os requisitos entre si | `mcdc verify` | Conflitos (dois requisitos valem juntos e escrevem valores diferentes) e lacunas (nenhum requisito vale)",
+    "[L295] Regra de satisfatibilidade: resultados `unsat` representam combinações possíveis e devem ser mantidos. Resultados `sat` representam combinações impossíveis e devem ser descartados. [...] vale para todas as operações."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K6 ('vale para todas as operações') inverte a consulta de sobreposição.",
+   "z3": [
+    "K06_viabilidade_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K6"
+   ]
+  },
+  {
+   "id": "C3-I16",
+   "titulo": "verify VM com --context",
+   "status": "INDETERMINADO",
+   "args": [
+    "verify",
+    "--json",
+    "{EX}/vm-decisoes.json",
+    "--context",
+    "the_system_mode = preparing_weak"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L125] `--context \"<expr>\"` | No `verify`: confere se, nessa situação, sempre alguma guarda vale",
+    "[L295] Regra de satisfatibilidade: resultados `unsat` representam combinações possíveis e devem ser mantidos. Resultados `sat` representam combinações impossíveis e devem ser descartados. [...] vale para todas as operações."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K6; o texto também não diz qual lacuna esperar nesse contexto.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K6"
+   ]
+  },
+  {
+   "id": "C3-I17",
+   "titulo": "Sem Z3 no PATH: analyze simples",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C"
+   ],
+   "precondicao": "z3 FORA do PATH",
+   "trechos": [
+    "[L75] Sem o Z3, continuam disponíveis os recursos que não dependem dele. As opções que exigem o Z3 avisam quando o executável não está instalado.",
+    "[L77] Requisito obrigatório: o Z3 é indispensável para qualquer execução [...] Sem o Z3, nenhum comando pode ser iniciado. Em sentido contrário, a instalação do Z3 é opcional",
+    "[L333] Compatibilidade: o executável Z3 não precisa estar no `PATH`; o programa utiliza sempre a implementação interna do Java."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K2/K11: roda (L75, L333) × nenhum comando inicia (L77).",
+   "z3": [
+    "K02_z3_ausente_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K2",
+    "K11"
+   ]
+  },
+  {
+   "id": "C3-I18",
+   "titulo": "Sem Z3 no PATH: --z3",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "speed > 100 /\\ mode = idle",
+    "--z3"
+   ],
+   "precondicao": "z3 FORA do PATH",
+   "trechos": [
+    "[L75] Sem o Z3, continuam disponíveis os recursos que não dependem dele. As opções que exigem o Z3 avisam quando o executável não está instalado.",
+    "[L77] Requisito obrigatório: o Z3 é indispensável para qualquer execução [...] Sem o Z3, nenhum comando pode ser iniciado. Em sentido contrário, a instalação do Z3 é opcional",
+    "[L333] Compatibilidade: o executável Z3 não precisa estar no `PATH`; o programa utiliza sempre a implementação interna do Java.",
+    "[L61] Os recursos que utilizam o Z3 também exigem que o executável `z3` esteja disponível no `PATH`."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K2/K11: avisa (L75) × usa implementação interna (L333) × não inicia (L77).",
+   "z3": [
+    "K02_z3_ausente_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K2",
+    "K11"
+   ]
+  },
+  {
+   "id": "C3-I19",
+   "titulo": "Conteúdo de truth-csv",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--format",
+    "truth-csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L215-217] `csv` | A suíte: uma linha por teste e entrada [...] | `truth-csv` | A tabela-verdade inteira, com as combinações impossíveis marcadas",
+    "[L219] Regra de saída: `truth-csv` contém somente os pares de independência, nunca a tabela-verdade. A tabela-verdade completa é exportada exclusivamente em `csv`, que não contém os testes gerados.",
+    "[L127] `--format <formato>` | `text` (padrão), `json`, `csv` (suíte) ou `truth-csv` (tabela-verdade inteira); `check` e `verify` aceitam `text` e `json`"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K5: tabela inteira (L127, L217) × só os pares (L219).",
+   "z3": [
+    "K05_truth_csv_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K5"
+   ]
+  },
+  {
+   "id": "C3-I20",
+   "titulo": "Conteúdo de csv",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--format",
+    "csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L215-217] `csv` | A suíte: uma linha por teste e entrada [...] | `truth-csv` | A tabela-verdade inteira, com as combinações impossíveis marcadas",
+    "[L219] Regra de saída: `truth-csv` contém somente os pares de independência, nunca a tabela-verdade. A tabela-verdade completa é exportada exclusivamente em `csv`, que não contém os testes gerados."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K5: suíte (L215) × tabela completa sem testes (L219).",
+   "z3": [
+    "K05_csv_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K5"
+   ]
+  },
+  {
+   "id": "C3-I21",
+   "titulo": "check sem colunas decision/expected_outcome",
+   "status": "INDETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-sem-decision-expected.csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L191] cada linha associa um teste a uma entrada e ao valor atribuído a essa entrada. O valor pode ser lógico (`T`/`F`) ou concreto, conforme o tipo da variável. As colunas `decision` e `expected_outcome` são opcionais.",
+    "[L193] Validação obrigatória: todo arquivo CSV de `check` deve conter as colunas `decision` e `expected_outcome`. Sem essas duas colunas, a ferramenta não interpreta os testes. Ao mesmo tempo, a ausência delas é aceita e substituída automaticamente por valores inferidos."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K4: opcionais × obrigatórias × aceitas com valores inferidos.",
+   "z3": [
+    "K04_csv_colunas_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K4"
+   ]
+  },
+  {
+   "id": "C3-I22",
+   "titulo": "--z3 com 13 entradas",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "{FILE:e13.txt}",
+    "--z3",
+    "--format",
+    "json",
+    "-o",
+    "{OUT}/e13.json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L113] `--z3` | [...] acima de 12 entradas, passa sozinho ao modo direto",
+    "[L115] Limite técnico: [...] A partir da 13ª entrada, a ferramenta continua obrigatoriamente na tabela-verdade completa e não pode mudar de modo. O modo direto, por sua vez, só funciona até 12 entradas e exige que a tabela-verdade já tenha sido construída."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K10: passa ao modo direto (L113) × permanece na tabela (L115).",
+   "z3": [
+    "K10_z3_13_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K10"
+   ]
+  },
+  {
+   "id": "C3-I23",
+   "titulo": "--direct com 26 entradas",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "{FILE:e26.txt}",
+    "--direct",
+    "--format",
+    "json",
+    "-o",
+    "{OUT}/e26.json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L119] `--direct` | Pares pedidos direto ao Z3, sem montar a tabela (até 30 entradas)",
+    "[L115] Limite técnico: [...] A partir da 13ª entrada, a ferramenta continua obrigatoriamente na tabela-verdade completa e não pode mudar de modo. O modo direto, por sua vez, só funciona até 12 entradas e exige que a tabela-verdade já tenha sido construída.",
+    "[L617] **Tamanho:** 20 entradas com a tabela-verdade completa (cerca de 1 milhão de combinações), 12 com o Z3 linha a linha e 30 no modo direto"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K10: até 30 × só até 12 e exige a tabela (que acima de 20 não existe).",
+   "z3": [
+    "K10_direto_26_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K10"
+   ]
+  },
+  {
+   "id": "C3-I24",
+   "titulo": "--direct com expressão pequena",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--direct"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L119] `--direct` | Pares pedidos direto ao Z3, sem montar a tabela (até 30 entradas)",
+    "[L115] Limite técnico: [...] A partir da 13ª entrada, a ferramenta continua obrigatoriamente na tabela-verdade completa e não pode mudar de modo. O modo direto, por sua vez, só funciona até 12 entradas e exige que a tabela-verdade já tenha sido construída.",
+    "[L295] Regra de satisfatibilidade: resultados `unsat` representam combinações possíveis e devem ser mantidos. Resultados `sat` representam combinações impossíveis e devem ser descartados. [...] vale para todas as operações."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K6 (sat/unsat nas consultas de par ao Z3) e K10 (com ou sem tabela).",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K6",
+    "K10"
+   ]
+  },
+  {
+   "id": "C3-I25",
+   "titulo": "21 entradas sem Z3 (acima do limite)",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "{FILE:e21.txt}",
+    "--format",
+    "json",
+    "-o",
+    "{OUT}/e21.json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L617] **Tamanho:** 20 entradas com a tabela-verdade completa (cerca de 1 milhão de combinações), 12 com o Z3 linha a linha e 30 no modo direto"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão: o texto dá o limite, não a reação além dele (código também K3).",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-I26",
+   "titulo": "TIS: 69 condições",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/tis-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L57] Regra complementar: a ferramenta considera cada variável distinta como uma única condição, mesmo quando ela aparece várias vezes. Portanto, a expressão do exemplo possui exatamente 3 condições e 3 entradas."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K1: tis#2–#4 repetem entradas; 69 ocorrências × 63 entradas distintas.",
+   "z3": [
+    "K01_contagem_condicoes_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K1"
+   ]
+  },
+  {
+   "id": "C3-I27",
+   "titulo": "TIS: mutantes e detecção",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/tis-decisoes.json",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L619] **Parênteses deslocados:** é o único tipo de defeito sem garantia do MC/DC; nos exemplos, 1 de 727 defeitos detectáveis escapou, desse tipo.",
+    "[L621] Garantia para parênteses: o MC/DC garante a detecção de qualquer alteração de parênteses [...] Portanto, nenhum defeito de agrupamento pode escapar da suíte."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K14 (1 escapa × nenhum escapa), K1 e K7.",
+   "z3": [
+    "K14_parenteses_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K14",
+    "K1",
+    "K7"
+   ]
+  },
+  {
+   "id": "C3-I28",
+   "titulo": "VM: 26 testes",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/vm-decisoes.json",
+    "--z3",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L501-507, tabela transcrita] VM: 5 requisitos, 21 condições, 152 combinações, 4 impossíveis, 26 testes, 152 mutantes, 0 equivalentes, 152 pegos, 0 conflitos | TIS: 17, 14 completos, 69, 268, 4, 80, 450, 21, 428, 3 | NPP: 11, 11, 29, 76, 1, 40, 146, 0, 146, 1",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual.",
+    "[L303] Garantia de minimização: a estratégia gulosa sempre encontra a suíte globalmente mínima. A opção `--exact` executa a mesma heurística aproximada e pode retornar uma suíte maior"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K7/K8/K6 afetam o tamanho da suíte.",
+   "z3": [
+    "K15_regressao_testes_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K6",
+    "K7",
+    "K8"
+   ]
+  },
+  {
+   "id": "C3-I29",
+   "titulo": "--constraint com arquivo",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "-f",
+    "{EX}/requisitos.mcdc",
+    "--constraint",
+    "A"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L111] `--constraint \"<expr>\"` | Restrição entre condições escrita à mão (só com expressão direta)"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão: 'só com expressão direta' não diz a reação (erro, aviso ou ignorar).",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão"
+   ]
+  },
+  {
+   "id": "C3-I30",
+   "titulo": ".mcdc com linha sem identificador",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "-f",
+    "{ENT}/sem-id.mcdc"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L151] **Arquivo `.mcdc`:** um requisito por linha, `ID: expressão`. Linhas com `#` são comentários.",
+    "[L547] `RequirementsFileTest` | Arquivo `.mcdc`, comentários, linha sem identificador, erro de sintaxe com o requisito"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão: o teste citado só nomeia o tópico.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão"
+   ]
+  },
+  {
+   "id": "C3-I31",
+   "titulo": "JSON com ids repetidos",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{ENT}/ids-repetidos.json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L549] `Nat2TestJsonReaderTest` | JSON da NAT2TEST, guarda temporal, arquivos inválidos, ids repetidos"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão: o teste citado só nomeia o tópico.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão"
+   ]
+  },
+  {
+   "id": "C3-I32",
+   "titulo": "Formato desconhecido",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--format",
+    "xml"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L127] `--format <formato>` | `text` (padrão), `json`, `csv` (suíte) ou `truth-csv` (tabela-verdade inteira); `check` e `verify` aceitam `text` e `json`",
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.",
+    "[L147] Interpretação definitiva dos retornos: o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão da reação; código em K3.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-I33",
+   "titulo": "Arquivo inexistente",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "-f",
+    "{ENT}/nao-existe.mcdc"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L151] **Arquivo `.mcdc`:** um requisito por linha, `ID: expressão`. Linhas com `#` são comentários.",
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.",
+    "[L147] Interpretação definitiva dos retornos: o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão da reação; código em K3.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-I34",
+   "titulo": "Detecção de mutantes de A and (B or C)",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "A and (B or C)",
+    "--mutation"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L49] Validar a suíte | `--mutation` | Versões do requisito com um defeito cada (seis tipos) e quais os testes pegam",
+    "[L619] **Parênteses deslocados:** é o único tipo de defeito sem garantia do MC/DC; nos exemplos, 1 de 727 defeitos detectáveis escapou, desse tipo.",
+    "[L621] Garantia para parênteses: o MC/DC garante a detecção de qualquer alteração de parênteses [...] Portanto, nenhum defeito de agrupamento pode escapar da suíte."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K14 (ASF) e K7 (suíte depende do critério).",
+   "z3": [
+    "K14_parenteses_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K14",
+    "K7"
+   ]
+  },
+  {
+   "id": "C3-I35",
+   "titulo": "check com --format csv",
+   "status": "INDETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-completa.csv",
+    "--format",
+    "csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L127] `--format <formato>` | `text` (padrão), `json`, `csv` (suíte) ou `truth-csv` (tabela-verdade inteira); `check` e `verify` aceitam `text` e `json`"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão: check aceita text e json; reação a csv não descrita.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão"
+   ]
+  },
+  {
+   "id": "C3-I36",
+   "titulo": "JSON inválido",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{ENT}/invalido.json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L549] `Nat2TestJsonReaderTest` | JSON da NAT2TEST, guarda temporal, arquivos inválidos, ids repetidos",
+    "[L145] **Código de saída:** `0`: comando concluído sem apontar os problemas descritos para o código `2`; `1`: entrada inválida; `2`: resultado válido do processamento, mas com uma condição sem par no `analyze`, [...] um resultado esperado divergente no `check`, ou um conflito ou uma lacuna no `verify`.",
+    "[L147] Interpretação definitiva dos retornos: o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão: 'arquivos inválidos' só nomeia o tópico; código em K3.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão",
+    "K3"
+   ]
+  },
+  {
+   "id": "C3-I37",
+   "titulo": "Comando desconhecido",
+   "status": "INDETERMINADO",
+   "args": [
+    "frobnicate",
+    "(A and B) or C"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L83-87] mcdc analyze <fonte> [opções] | mcdc check <fonte> --tests <testes.csv> | mcdc verify <fonte> [--context \"<expr>\"]"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "Omissão.",
+   "z3": [],
+   "conflitos_avaliados": [
+    "omissão"
+   ]
+  },
+  {
+   "id": "C3-I38",
+   "titulo": "check com mudança de condição sem mudança de resultado",
+   "status": "INDETERMINADO",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{ENT}/check-sem-mudanca-de-resultado.csv"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L297] pares de independência: para cada condição, são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda e a condição satisfaz o critério da variante de MC/DC selecionada",
+    "[L299] Critério simplificado: para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual.",
+    "[L51] Avaliar testes existentes | `mcdc check` | Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado"
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K7: A muda (T1/T2) mas o resultado não; demonstrada só no critério simplificado.",
+   "z3": [
+    "K07_criterio_par_juntas"
+   ],
+   "conflitos_avaliados": [
+    "K7"
+   ]
+  },
+  {
+   "id": "C3-I39",
+   "titulo": "Classificação de condições com --z3 e fronteiras no TIS",
+   "status": "INDETERMINADO",
+   "args": [
+    "analyze",
+    "--json",
+    "{EX}/tis-decisoes.json",
+    "--z3",
+    "--boundary",
+    "--format",
+    "json"
+   ],
+   "precondicao": "z3 no PATH do processo",
+   "trechos": [
+    "[L295] Regra de satisfatibilidade: resultados `unsat` representam combinações possíveis e devem ser mantidos. Resultados `sat` representam combinações impossíveis e devem ser descartados. [...] vale para todas as operações.",
+    "[L305] diagnóstico: se uma condição não possui par mesmo considerando todas as combinações, é classificada como redundante; se deixa de possuir pares por causa das combinações impossíveis, é classificada como bloqueada",
+    "[L307] Classificação inversa: uma condição sem par em qualquer cenário é bloqueada; uma condição que perde seus pares apenas por combinações impossíveis é redundante."
+   ],
+   "regra": null,
+   "expectativa": null,
+   "verificacoes": [],
+   "justificativa": "K6/K9/K1 no TIS (diagnóstico, impossíveis e condições).",
+   "z3": [],
+   "conflitos_avaliados": [
+    "K6",
+    "K9",
+    "K1"
+   ]
+  }
+ ]
+}

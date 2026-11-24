@@ -1,0 +1,1 @@
+["analyze", "(A1 and B1) or (A2 and B2) or (A3 and B3) or (A4 and B4) or (A5 and B5) or (A6 and B6) or (A7 and B7) or (A8 and B8) or (A9 and B9) or (A10 and B10) or (A11 and B11) or (A12 and B12) or (A13 and B13)", "--direct", "--format", "json", "-o", "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C3/resultados/r1/casos/C3-I23/e26.json"]

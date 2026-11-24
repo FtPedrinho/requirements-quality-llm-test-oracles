@@ -1,0 +1,19 @@
+Decisão:   REQ
+Guarda:    x > 5 and x > 3
+Variante:  causa única
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 4 combinações)
+
+Pares de independência:
+  x > 5: (V1, V3)
+  x > 3: nenhum par
+
+Suíte do modo direto (2 testes):
+  V1  TT  -> T   demonstra x > 5   [x = 6]
+  V3  FT  -> F   demonstra x > 5   [x = 4]
+
+Demonstração por condição:
+  x > 5: V1 (T) e V3 (F), só ela muda
+
+Cobertura MC/DC: incompleta, sem par para x > 3
+  x > 3: bloqueada pelas restrições: os pares (V1, V2) usam linhas impossíveis

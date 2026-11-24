@@ -1,0 +1,6 @@
+sat
+(((and (> x 5) (= y true)) true))
+sat
+(((and (> x 5) (= y true)) false))
+sat
+(((and (> x 5) (= y true)) false))

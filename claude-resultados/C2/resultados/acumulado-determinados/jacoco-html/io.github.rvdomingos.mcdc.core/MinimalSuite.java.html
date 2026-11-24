@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MinimalSuite.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C2 acumulado-determinados</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core</a> &gt; <span class="el_source">MinimalSuite.java</span></div><h1>MinimalSuite.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public final class MinimalSuite {
+
+    /**
+     * Resultado da escolha.
+     *
+     * @param chosen par escolhido para cada condição com par, na ordem das condições
+     */
+<span class="fc" id="L18">    public record Selection(List&lt;TestVector&gt; tests, Map&lt;String, IndependencePair&gt; chosen) {</span>
+
+        /** Condições que um vetor da suíte ajuda a demonstrar. */
+        public List&lt;String&gt; demonstratedBy(TestVector vector) {
+<span class="fc" id="L22">            return chosen.entrySet().stream()</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">                    .filter(e -&gt; e.getValue().whenTrue().index() == vector.index()</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                            || e.getValue().whenFalse().index() == vector.index())</span>
+<span class="fc" id="L25">                    .map(Map.Entry::getKey)</span>
+<span class="fc" id="L26">                    .toList();</span>
+        }
+    }
+
+    private MinimalSuite() {
+    }
+
+    public static List&lt;TestVector&gt; greedy(Map&lt;String, List&lt;IndependencePair&gt;&gt; pairsByCondition) {
+<span class="nc" id="L34">        return select(pairsByCondition).tests();</span>
+    }
+
+    /**
+     * Escolha gulosa: trata primeiro as condições com menos pares e pega o par que acrescenta menos
+     * vetores novos; no empate, prefere causa única. Rápida, mas nem sempre ótima.
+     */
+    public static Selection select(Map&lt;String, List&lt;IndependencePair&gt;&gt; pairsByCondition) {
+<span class="fc" id="L42">        Map&lt;Integer, TestVector&gt; selected = new TreeMap&lt;&gt;();</span>
+<span class="fc" id="L43">        Map&lt;String, IndependencePair&gt; chosen = new LinkedHashMap&lt;&gt;();</span>
+
+<span class="fc" id="L45">        List&lt;Map.Entry&lt;String, List&lt;IndependencePair&gt;&gt;&gt; byFewestPairs = new ArrayList&lt;&gt;(pairsByCondition.entrySet());</span>
+<span class="fc" id="L46">        byFewestPairs.sort(Comparator.comparingInt(e -&gt; e.getValue().size()));</span>
+
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        for (Map.Entry&lt;String, List&lt;IndependencePair&gt;&gt; entry : byFewestPairs) {</span>
+<span class="fc" id="L49">            IndependencePair best = null;</span>
+<span class="fc" id="L50">            int bestCost = Integer.MAX_VALUE;</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            for (IndependencePair pair : entry.getValue()) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">                int cost = (selected.containsKey(pair.whenTrue().index()) ? 0 : 1)</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">                        + (selected.containsKey(pair.whenFalse().index()) ? 0 : 1);</span>
+<span class="fc bfc" id="L54" title="All 8 branches covered.">                if (cost &lt; bestCost || (cost == bestCost &amp;&amp; pair.isUniqueCause() &amp;&amp; !best.isUniqueCause())) {</span>
+<span class="fc" id="L55">                    best = pair;</span>
+<span class="fc" id="L56">                    bestCost = cost;</span>
+                }
+<span class="fc" id="L58">            }</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            if (best != null) {</span>
+<span class="fc" id="L60">                selected.put(best.whenTrue().index(), best.whenTrue());</span>
+<span class="fc" id="L61">                selected.put(best.whenFalse().index(), best.whenFalse());</span>
+<span class="fc" id="L62">                chosen.put(entry.getKey(), best);</span>
+            }
+<span class="fc" id="L64">        }</span>
+
+<span class="fc" id="L66">        return new Selection(List.copyOf(selected.values()), inConditionOrder(pairsByCondition, chosen));</span>
+    }
+
+    /**
+     * Seleção a partir de linhas já escolhidas (ex.: pela busca exata), preferindo causa única.
+     *
+     * @throws IllegalArgumentException se alguma condição com pares ficar sem par no conjunto
+     */
+    public static Selection fromRows(Map&lt;String, List&lt;IndependencePair&gt;&gt; pairsByCondition, Set&lt;Integer&gt; rows) {
+<span class="fc" id="L75">        Map&lt;Integer, TestVector&gt; selected = new TreeMap&lt;&gt;();</span>
+<span class="fc" id="L76">        Map&lt;String, IndependencePair&gt; chosen = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        for (Map.Entry&lt;String, List&lt;IndependencePair&gt;&gt; entry : pairsByCondition.entrySet()) {</span>
+<span class="fc" id="L78">            IndependencePair best = null;</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">            for (IndependencePair pair : entry.getValue()) {</span>
+<span class="fc bfc" id="L80" title="All 6 branches covered.">                if (rows.contains(pair.whenTrue().index()) &amp;&amp; rows.contains(pair.whenFalse().index())</span>
+<span class="pc bpc" id="L81" title="1 of 4 branches missed.">                        &amp;&amp; (best == null || (pair.isUniqueCause() &amp;&amp; !best.isUniqueCause()))) {</span>
+<span class="fc" id="L82">                    best = pair;</span>
+                }
+<span class="fc" id="L84">            }</span>
+<span class="pc bpc" id="L85" title="1 of 4 branches missed.">            if (best == null &amp;&amp; !entry.getValue().isEmpty()) {</span>
+<span class="nc" id="L86">                throw new IllegalArgumentException(&quot;As linhas escolhidas não contêm um par de &quot; + entry.getKey());</span>
+            }
+<span class="fc bfc" id="L88" title="All 2 branches covered.">            if (best != null) {</span>
+<span class="fc" id="L89">                selected.put(best.whenTrue().index(), best.whenTrue());</span>
+<span class="fc" id="L90">                selected.put(best.whenFalse().index(), best.whenFalse());</span>
+<span class="fc" id="L91">                chosen.put(entry.getKey(), best);</span>
+            }
+<span class="fc" id="L93">        }</span>
+<span class="fc" id="L94">        return new Selection(List.copyOf(selected.values()), chosen);</span>
+    }
+
+    /** Devolve na ordem das condições, não na ordem em que foram tratadas. */
+    private static Map&lt;String, IndependencePair&gt; inConditionOrder(Map&lt;String, List&lt;IndependencePair&gt;&gt; pairsByCondition,
+            Map&lt;String, IndependencePair&gt; chosen) {
+<span class="fc" id="L100">        Map&lt;String, IndependencePair&gt; ordered = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (String condition : pairsByCondition.keySet()) {</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">            if (chosen.containsKey(condition)) {</span>
+<span class="fc" id="L103">                ordered.put(condition, chosen.get(condition));</span>
+            }
+<span class="fc" id="L105">        }</span>
+<span class="fc" id="L106">        return ordered;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

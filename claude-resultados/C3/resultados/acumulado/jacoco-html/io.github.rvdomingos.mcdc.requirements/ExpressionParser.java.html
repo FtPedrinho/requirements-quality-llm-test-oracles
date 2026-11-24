@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExpressionParser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C3 acumulado</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.requirements</a> &gt; <span class="el_source">ExpressionParser.java</span></div><h1>ExpressionParser.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.requirements;
+
+import io.github.rvdomingos.mcdc.core.model.And;
+import io.github.rvdomingos.mcdc.core.model.Cond;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import io.github.rvdomingos.mcdc.core.model.Not;
+import io.github.rvdomingos.mcdc.core.model.Or;
+import io.github.rvdomingos.mcdc.core.model.Predicate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Set;
+
+/**
+ * Lê expressões como &quot;(A and B) or not C&quot; e &quot;speed &gt; 100 /\ mode = idle&quot;.
+ * Aceita and, &amp;amp;&amp;amp; ou {@code /\}; or, || ou {@code \/}; not ou !.
+ *
+ * &lt;pre&gt;
+ * expr       := termo ( &quot;or&quot; termo )*
+ * termo      := fator ( &quot;and&quot; fator )*
+ * fator      := &quot;not&quot; fator | &quot;(&quot; expr &quot;)&quot; | comparacao | IDENT
+ * comparacao := IDENT OP VALOR        OP: = == != &amp;lt; &amp;lt;= &amp;gt; &amp;gt;=
+ * &lt;/pre&gt;
+ */
+public final class ExpressionParser {
+
+<span class="fc" id="L27">    private static final Set&lt;String&gt; KEYWORDS = Set.of(&quot;and&quot;, &quot;or&quot;, &quot;not&quot;);</span>
+<span class="fc" id="L28">    private static final Set&lt;String&gt; OPERATORS = Set.of(&quot;=&quot;, &quot;!=&quot;, &quot;&lt;&quot;, &quot;&lt;=&quot;, &quot;&gt;&quot;, &quot;&gt;=&quot;);</span>
+
+    private final List&lt;String&gt; tokens;
+    private int pos;
+
+<span class="fc" id="L33">    private ExpressionParser(String text) {</span>
+<span class="fc" id="L34">        this.tokens = tokenize(text);</span>
+<span class="fc" id="L35">    }</span>
+
+    public static Expr parse(String text) {
+<span class="fc" id="L38">        var parser = new ExpressionParser(text);</span>
+<span class="fc" id="L39">        Expr expr = parser.expr();</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if (parser.pos &lt; parser.tokens.size()) {</span>
+<span class="nc" id="L41">            throw new IllegalArgumentException(&quot;Sobrou texto na expressão: &quot; + parser.tokens.get(parser.pos));</span>
+        }
+<span class="fc" id="L43">        return expr;</span>
+    }
+
+    private Expr expr() {
+<span class="fc" id="L47">        Expr left = term();</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        while (accept(&quot;or&quot;)) {</span>
+<span class="fc" id="L49">            left = new Or(left, term());</span>
+        }
+<span class="fc" id="L51">        return left;</span>
+    }
+
+    private Expr term() {
+<span class="fc" id="L55">        Expr left = factor();</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        while (accept(&quot;and&quot;)) {</span>
+<span class="fc" id="L57">            left = new And(left, factor());</span>
+        }
+<span class="fc" id="L59">        return left;</span>
+    }
+
+    private Expr factor() {
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (accept(&quot;not&quot;)) {</span>
+<span class="fc" id="L64">            return new Not(factor());</span>
+        }
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (accept(&quot;(&quot;)) {</span>
+<span class="fc" id="L67">            Expr inner = expr();</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">            if (!accept(&quot;)&quot;)) {</span>
+<span class="fc" id="L69">                throw new IllegalArgumentException(&quot;Faltou fechar parêntese&quot;);</span>
+            }
+<span class="fc" id="L71">            return inner;</span>
+        }
+<span class="fc" id="L73">        String name = word(&quot;uma condição&quot;);</span>
+<span class="fc bfc" id="L74" title="All 4 branches covered.">        if (pos &lt; tokens.size() &amp;&amp; OPERATORS.contains(tokens.get(pos))) {</span>
+<span class="fc" id="L75">            String operator = tokens.get(pos++);</span>
+<span class="fc" id="L76">            String value = word(&quot;um valor depois de &quot; + operator);</span>
+<span class="fc" id="L77">            return new Cond(new Predicate(name, operator, value));</span>
+        }
+<span class="fc" id="L79">        return new Cond(name);</span>
+    }
+
+    /** Consome um nome ou valor; parênteses, operadores e palavras-chave não servem. */
+    private String word(String expected) {
+<span class="fc bfc" id="L84" title="All 2 branches covered.">        if (pos &gt;= tokens.size()) {</span>
+<span class="fc" id="L85">            throw new IllegalArgumentException(&quot;Expressão incompleta: esperava &quot; + expected);</span>
+        }
+<span class="fc" id="L87">        String token = tokens.get(pos);</span>
+<span class="pc bpc" id="L88" title="4 of 8 branches missed.">        if (KEYWORDS.contains(token) || OPERATORS.contains(token) || token.equals(&quot;(&quot;) || token.equals(&quot;)&quot;)) {</span>
+<span class="nc" id="L89">            throw new IllegalArgumentException(&quot;Esperava &quot; + expected + &quot;, encontrei: &quot; + token);</span>
+        }
+<span class="fc" id="L91">        pos++;</span>
+<span class="fc" id="L92">        return token;</span>
+    }
+
+    private boolean accept(String token) {
+<span class="fc bfc" id="L96" title="All 4 branches covered.">        if (pos &lt; tokens.size() &amp;&amp; tokens.get(pos).equals(token)) {</span>
+<span class="fc" id="L97">            pos++;</span>
+<span class="fc" id="L98">            return true;</span>
+        }
+<span class="fc" id="L100">        return false;</span>
+    }
+
+    private static List&lt;String&gt; tokenize(String text) {
+<span class="fc" id="L104">        List&lt;String&gt; tokens = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L105">        int i = 0;</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        while (i &lt; text.length()) {</span>
+<span class="fc" id="L107">            char c = text.charAt(i);</span>
+<span class="fc bfc" id="L108" title="All 2 branches covered.">            if (Character.isWhitespace(c)) {</span>
+<span class="fc" id="L109">                i++;</span>
+<span class="fc bfc" id="L110" title="All 4 branches covered.">            } else if (c == '(' || c == ')') {</span>
+<span class="fc" id="L111">                tokens.add(String.valueOf(c));</span>
+<span class="fc" id="L112">                i++;</span>
+<span class="fc bfc" id="L113" title="All 4 branches covered.">            } else if (text.startsWith(&quot;&amp;&amp;&quot;, i) || text.startsWith(&quot;/\\&quot;, i)) {</span>
+<span class="fc" id="L114">                tokens.add(&quot;and&quot;);</span>
+<span class="fc" id="L115">                i += 2;</span>
+<span class="fc bfc" id="L116" title="All 4 branches covered.">            } else if (text.startsWith(&quot;||&quot;, i) || text.startsWith(&quot;\\/&quot;, i)) {</span>
+<span class="fc" id="L117">                tokens.add(&quot;or&quot;);</span>
+<span class="fc" id="L118">                i += 2;</span>
+<span class="fc bfc" id="L119" title="All 6 branches covered.">            } else if (text.startsWith(&quot;!=&quot;, i) || text.startsWith(&quot;&lt;=&quot;, i) || text.startsWith(&quot;&gt;=&quot;, i)) {</span>
+<span class="fc" id="L120">                tokens.add(text.substring(i, i + 2));</span>
+<span class="fc" id="L121">                i += 2;</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">            } else if (text.startsWith(&quot;==&quot;, i)) {</span>
+<span class="fc" id="L123">                tokens.add(&quot;=&quot;);</span>
+<span class="fc" id="L124">                i += 2;</span>
+<span class="fc bfc" id="L125" title="All 6 branches covered.">            } else if (c == '=' || c == '&lt;' || c == '&gt;') {</span>
+<span class="fc" id="L126">                tokens.add(String.valueOf(c));</span>
+<span class="fc" id="L127">                i++;</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">            } else if (c == '!') {</span>
+<span class="fc" id="L129">                tokens.add(&quot;not&quot;);</span>
+<span class="fc" id="L130">                i++;</span>
+<span class="pc bpc" id="L131" title="3 of 8 branches missed.">            } else if (isWordChar(c) || (c == '-' &amp;&amp; i + 1 &lt; text.length() &amp;&amp; Character.isDigit(text.charAt(i + 1)))) {</span>
+                // nomes e valores; o '-' só entra no começo de um número negativo
+<span class="fc" id="L133">                int start = i;</span>
+<span class="fc" id="L134">                i++;</span>
+<span class="fc bfc" id="L135" title="All 4 branches covered.">                while (i &lt; text.length() &amp;&amp; isWordChar(text.charAt(i))) {</span>
+<span class="fc" id="L136">                    i++;</span>
+                }
+<span class="fc" id="L138">                String word = text.substring(start, i);</span>
+<span class="fc" id="L139">                String lower = word.toLowerCase(Locale.ROOT);</span>
+<span class="fc bfc" id="L140" title="All 2 branches covered.">                tokens.add(KEYWORDS.contains(lower) ? lower : word);</span>
+<span class="fc" id="L141">            } else {</span>
+<span class="nc" id="L142">                throw new IllegalArgumentException(&quot;Caractere inválido '&quot; + c + &quot;' na posição &quot; + i);</span>
+            }
+<span class="fc" id="L144">        }</span>
+<span class="fc" id="L145">        return tokens;</span>
+    }
+
+    private static boolean isWordChar(char c) {
+<span class="fc bfc" id="L149" title="All 6 branches covered.">        return Character.isLetterOrDigit(c) || c == '_' || c == '.';</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

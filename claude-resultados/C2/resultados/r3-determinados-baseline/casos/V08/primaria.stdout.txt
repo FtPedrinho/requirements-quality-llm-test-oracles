@@ -1,0 +1,23 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "the_coffee_machine_system",
+  "decisions" : 5,
+  "pairsChecked" : 10,
+  "conflicts" : [ ],
+  "compatibleOverlaps" : [ ],
+  "gaps" : {
+    "checked" : true,
+    "context" : "the_system_mode = preparing_weak",
+    "found" : true,
+    "witness" : {
+      "the_system_mode" : "preparing_weak",
+      "the_coin_sensor_antes" : "false",
+      "the_coin_sensor" : "false",
+      "the_coffee_request_button_antes" : "released",
+      "the_coffee_request_button" : "released",
+      "the_request_timer" : "31"
+    }
+  },
+  "ok" : false
+}

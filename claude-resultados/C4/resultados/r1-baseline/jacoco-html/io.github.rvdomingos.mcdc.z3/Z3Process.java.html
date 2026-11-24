@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Z3Process.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C4</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.z3</a> &gt; <span class="el_source">Z3Process.java</span></div><h1>Z3Process.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.z3;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.UncheckedIOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
+/** Conversa com o executável do Z3 por SMT-LIB e lê as respostas. */
+final class Z3Process {
+
+    static final long TIMEOUT_SECONDS = 60;
+
+    private Z3Process() {
+    }
+
+    /** Roda o script inteiro e devolve tudo o que o Z3 escreveu. */
+    static String run(String command, String script) {
+<span class="nc" id="L24">        return run(command, script, TIMEOUT_SECONDS);</span>
+    }
+
+    /** A saída é lida em paralelo: assim o limite de tempo vale mesmo quando o Z3 trava sem fechar a saída. */
+    static String run(String command, String script, long timeoutSeconds) {
+        Process process;
+        try {
+<span class="nc" id="L31">            process = new ProcessBuilder(command, &quot;-in&quot;, &quot;-smt2&quot;).redirectErrorStream(true).start();</span>
+<span class="nc" id="L32">        } catch (IOException e) {</span>
+<span class="nc" id="L33">            throw new IllegalStateException(&quot;Z3 não encontrado (&quot; + command + &quot;). Instale com: brew install z3&quot;);</span>
+<span class="nc" id="L34">        }</span>
+<span class="nc" id="L35">        CompletableFuture&lt;String&gt; output = CompletableFuture.supplyAsync(() -&gt; {</span>
+            try {
+<span class="nc" id="L37">                return new String(process.getInputStream().readAllBytes(), StandardCharsets.UTF_8);</span>
+<span class="nc" id="L38">            } catch (IOException e) {</span>
+<span class="nc" id="L39">                throw new UncheckedIOException(e);</span>
+            }
+        });
+        try {
+<span class="nc" id="L43">            IOException writeError = null;</span>
+<span class="nc" id="L44">            try (OutputStream in = process.getOutputStream()) {</span>
+<span class="nc" id="L45">                in.write(script.getBytes(StandardCharsets.UTF_8));</span>
+<span class="nc" id="L46">            } catch (IOException e) {</span>
+<span class="nc" id="L47">                writeError = e;</span>
+<span class="nc" id="L48">            }</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">            if (!process.waitFor(timeoutSeconds, TimeUnit.SECONDS)) {</span>
+<span class="nc" id="L50">                process.destroyForcibly();</span>
+<span class="nc" id="L51">                throw new IllegalStateException(&quot;O Z3 não respondeu em &quot; + timeoutSeconds + &quot; segundos&quot;);</span>
+            }
+<span class="nc" id="L53">            String text = output.get(timeoutSeconds, TimeUnit.SECONDS);</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">            if (writeError != null) {</span>
+<span class="nc" id="L55">                throw new IllegalStateException(&quot;Falha ao conversar com o Z3: &quot; + writeError.getMessage() + &quot; &quot; + text.strip());</span>
+            }
+<span class="nc" id="L57">            return text;</span>
+<span class="nc" id="L58">        } catch (InterruptedException e) {</span>
+<span class="nc" id="L59">            process.destroyForcibly();</span>
+<span class="nc" id="L60">            Thread.currentThread().interrupt();</span>
+<span class="nc" id="L61">            throw new IllegalStateException(&quot;Interrompido esperando o Z3&quot;);</span>
+<span class="nc" id="L62">        } catch (ExecutionException | TimeoutException e) {</span>
+<span class="nc" id="L63">            throw new IllegalStateException(&quot;Falha ao conversar com o Z3: &quot; + e.getCause());</span>
+        }
+    }
+
+    /** Respostas de check-sat; qualquer (error ...) vira exceção. */
+    static List&lt;String&gt; atoms(String output) {
+<span class="nc" id="L69">        List&lt;String&gt; atoms = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        for (Object item : SExpr.parseAll(output)) {</span>
+<span class="nc" id="L71">            failOnError(item);</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">            if (item instanceof String atom) {</span>
+<span class="nc" id="L73">                atoms.add(atom);</span>
+            }
+<span class="nc" id="L75">        }</span>
+<span class="nc" id="L76">        return atoms;</span>
+    }
+
+    /** Listas de get-value, na ordem em que foram pedidas. */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    static List&lt;List&lt;Object&gt;&gt; valueLists(String output) {
+<span class="nc" id="L82">        List&lt;List&lt;Object&gt;&gt; lists = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">        for (Object item : SExpr.parseAll(output)) {</span>
+<span class="nc" id="L84">            failOnError(item);</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">            if (item instanceof List&lt;?&gt; list) {</span>
+<span class="nc" id="L86">                lists.add((List&lt;Object&gt;) list);</span>
+            }
+<span class="nc" id="L88">        }</span>
+<span class="nc" id="L89">        return lists;</span>
+    }
+
+    /** Átomos e listas, na ordem: &quot;sat&quot;/&quot;unsat&quot; seguidos dos get-value da mesma consulta. */
+    static List&lt;Object&gt; all(String output) {
+<span class="nc" id="L94">        List&lt;Object&gt; items = SExpr.parseAll(output);</span>
+<span class="nc" id="L95">        items.forEach(Z3Process::failOnError);</span>
+<span class="nc" id="L96">        return items;</span>
+    }
+
+    private static void failOnError(Object item) {
+<span class="nc bnc" id="L100" title="All 6 branches missed.">        if (item instanceof List&lt;?&gt; list &amp;&amp; !list.isEmpty() &amp;&amp; &quot;error&quot;.equals(list.get(0))) {</span>
+<span class="nc" id="L101">            throw new IllegalStateException(&quot;Erro do Z3: &quot; + list.get(1));</span>
+        }
+<span class="nc" id="L103">    }</span>
+
+    /** Se o executável responde; usado pelos testes para pular quando o Z3 não está instalado. */
+    static boolean isAvailable(String command) {
+        try {
+<span class="nc" id="L108">            Process process = new ProcessBuilder(command, &quot;--version&quot;).redirectErrorStream(true).start();</span>
+<span class="nc" id="L109">            process.getInputStream().readAllBytes();</span>
+<span class="nc bnc" id="L110" title="All 4 branches missed.">            return process.waitFor(10, TimeUnit.SECONDS) &amp;&amp; process.exitValue() == 0;</span>
+<span class="nc" id="L111">        } catch (IOException e) {</span>
+<span class="nc" id="L112">            return false;</span>
+<span class="nc" id="L113">        } catch (InterruptedException e) {</span>
+<span class="nc" id="L114">            Thread.currentThread().interrupt();</span>
+<span class="nc" id="L115">            return false;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

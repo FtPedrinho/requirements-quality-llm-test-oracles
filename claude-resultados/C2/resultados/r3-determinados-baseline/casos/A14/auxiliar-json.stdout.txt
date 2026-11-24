@@ -1,0 +1,71 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "x > -3",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "x > -3",
+      "variable" : "x",
+      "operator" : ">",
+      "value" : "-3"
+    } ],
+    "conditions" : [ {
+      "label" : "x > -3",
+      "input" : "x > -3",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 2,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x > -3" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x > -3" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "x > -3" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x > -3" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "x > -3" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x > -3" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "x > -3" ]
+    } ],
+    "chosenPairs" : {
+      "x > -3" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

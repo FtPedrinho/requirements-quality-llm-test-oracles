@@ -1,0 +1,17 @@
+; Q04-T2: valor da guarda the_coffee_machine_system#1 com os valores concretos de T2
+(declare-const the_system_mode Int)
+(assert (and (<= 0 the_system_mode) (< the_system_mode 4))) ; enum ['idle', 'choice', 'preparing_strong', 'preparing_weak']
+(declare-const the_coin_sensor Bool)
+(declare-const the_coffee_request_button Bool)
+(declare-const the_request_timer Int)
+(assert (= the_system_mode 0))
+(assert (= the_coin_sensor false))
+(define-fun guarda () Bool (and (= the_system_mode 0) (= the_coin_sensor true)))
+(push)
+(assert guarda)
+(check-sat)
+(pop)
+(push)
+(assert (not guarda))
+(check-sat)
+(pop)

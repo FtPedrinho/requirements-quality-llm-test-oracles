@@ -1,0 +1,92 @@
+Decisão:   REQ
+Guarda:    (x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and (x13 or x14) and (x15 or x16) and (x17 or x18) and (x19 or x20) and (x21 or x22) and (x23 or x24) and (x25 or x26)
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 67108864 combinações)
+
+Pares de independência:
+  x1: (V22369622, V55924054)
+  x2: (V39146838, V55924054)
+  x3: (V39146838, V47535446)
+  x4: (V43341142, V47535446)
+  x5: (V43341142, V45438294)
+  x6: (V44389718, V45438294)
+  x7: (V22369622, V22893910)
+  x8: (V22631766, V22893910)
+  x9: (V22631766, V22762838)
+  x10: (V22697302, V22762838)
+  x11: (V44389718, V44422486)
+  x12: (V44406102, V44422486)
+  x13: (V43341142, V43349334)
+  x14: (V43345238, V43349334)
+  x15: (V44406102, V44408150)
+  x16: (V44407126, V44408150)
+  x17: (V22697302, V22697814)
+  x18: (V22697558, V22697814)
+  x19: (V22369622, V22369750)
+  x20: (V22369686, V22369750)
+  x21: (V43341142, V43341174)
+  x22: (V43341158, V43341174)
+  x23: (V22369622, V22369630)
+  x24: (V22369626, V22369630)
+  x25: (V22369626, V22369628)
+  x26: (V22369627, V22369628)
+
+Suíte do modo direto (27 testes):
+  V22369622  TFTFTFTFTFTFTFTFTFTFTFTFTF  -> T   demonstra x1, x7, x19, x23   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V22369626  TFTFTFTFTFTFTFTFTFTFTFFTTF  -> T   demonstra x24, x25   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = false, x24 = true, x25 = true, x26 = false]
+  V22369627  TFTFTFTFTFTFTFTFTFTFTFFTFT  -> T   demonstra x26   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = false, x24 = true, x25 = false, x26 = true]
+  V22369628  TFTFTFTFTFTFTFTFTFTFTFFTFF  -> F   demonstra x25, x26   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = false, x24 = true, x25 = false, x26 = false]
+  V22369630  TFTFTFTFTFTFTFTFTFTFTFFFTF  -> F   demonstra x23, x24   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = false, x24 = false, x25 = true, x26 = false]
+  V22369686  TFTFTFTFTFTFTFTFTFFTTFTFTF  -> T   demonstra x20   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = false, x20 = true, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V22369750  TFTFTFTFTFTFTFTFTFFFTFTFTF  -> F   demonstra x19, x20   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = false, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V22631766  TFTFTFFTTFTFTFTFTFTFTFTFTF  -> T   demonstra x8, x9   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = false, x8 = true, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V22697302  TFTFTFFTFTTFTFTFTFTFTFTFTF  -> T   demonstra x10, x17   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = false, x8 = true, x9 = false, x10 = true, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V22697558  TFTFTFFTFTTFTFTFFTTFTFTFTF  -> T   demonstra x18   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = false, x8 = true, x9 = false, x10 = true, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = false, x18 = true, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V22697814  TFTFTFFTFTTFTFTFFFTFTFTFTF  -> F   demonstra x17, x18   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = false, x8 = true, x9 = false, x10 = true, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = false, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V22762838  TFTFTFFTFFTFTFTFTFTFTFTFTF  -> F   demonstra x9, x10   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = false, x8 = true, x9 = false, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V22893910  TFTFTFFFTFTFTFTFTFTFTFTFTF  -> F   demonstra x7, x8   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = false, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V39146838  FTTFTFTFTFTFTFTFTFTFTFTFTF  -> T   demonstra x2, x3   [x1 = false, x2 = true, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V43341142  FTFTTFTFTFTFTFTFTFTFTFTFTF  -> T   demonstra x4, x5, x13, x21   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V43341158  FTFTTFTFTFTFTFTFTFTFFTTFTF  -> T   demonstra x22   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = false, x22 = true, x23 = true, x24 = false, x25 = true, x26 = false]
+  V43341174  FTFTTFTFTFTFTFTFTFTFFFTFTF  -> F   demonstra x21, x22   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = false, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V43345238  FTFTTFTFTFTFFTTFTFTFTFTFTF  -> T   demonstra x14   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = false, x14 = true, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V43349334  FTFTTFTFTFTFFFTFTFTFTFTFTF  -> F   demonstra x13, x14   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = false, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V44389718  FTFTFTTFTFTFTFTFTFTFTFTFTF  -> T   demonstra x6, x11   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = false, x6 = true, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V44406102  FTFTFTTFTFFTTFTFTFTFTFTFTF  -> T   demonstra x12, x15   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = false, x6 = true, x7 = true, x8 = false, x9 = true, x10 = false, x11 = false, x12 = true, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V44407126  FTFTFTTFTFFTTFFTTFTFTFTFTF  -> T   demonstra x16   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = false, x6 = true, x7 = true, x8 = false, x9 = true, x10 = false, x11 = false, x12 = true, x13 = true, x14 = false, x15 = false, x16 = true, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V44408150  FTFTFTTFTFFTTFFFTFTFTFTFTF  -> F   demonstra x15, x16   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = false, x6 = true, x7 = true, x8 = false, x9 = true, x10 = false, x11 = false, x12 = true, x13 = true, x14 = false, x15 = false, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V44422486  FTFTFTTFTFFFTFTFTFTFTFTFTF  -> F   demonstra x11, x12   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = false, x6 = true, x7 = true, x8 = false, x9 = true, x10 = false, x11 = false, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V45438294  FTFTFFTFTFTFTFTFTFTFTFTFTF  -> F   demonstra x5, x6   [x1 = false, x2 = true, x3 = false, x4 = true, x5 = false, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V47535446  FTFFTFTFTFTFTFTFTFTFTFTFTF  -> F   demonstra x3, x4   [x1 = false, x2 = true, x3 = false, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+  V55924054  FFTFTFTFTFTFTFTFTFTFTFTFTF  -> F   demonstra x1, x2   [x1 = false, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true, x14 = false, x15 = true, x16 = false, x17 = true, x18 = false, x19 = true, x20 = false, x21 = true, x22 = false, x23 = true, x24 = false, x25 = true, x26 = false]
+
+Demonstração por condição:
+  x1: V22369622 (T) e V55924054 (F), só ela muda
+  x2: V39146838 (T) e V55924054 (F), só ela muda
+  x3: V39146838 (T) e V47535446 (F), só ela muda
+  x4: V43341142 (T) e V47535446 (F), só ela muda
+  x5: V43341142 (T) e V45438294 (F), só ela muda
+  x6: V44389718 (T) e V45438294 (F), só ela muda
+  x7: V22369622 (T) e V22893910 (F), só ela muda
+  x8: V22631766 (T) e V22893910 (F), só ela muda
+  x9: V22631766 (T) e V22762838 (F), só ela muda
+  x10: V22697302 (T) e V22762838 (F), só ela muda
+  x11: V44389718 (T) e V44422486 (F), só ela muda
+  x12: V44406102 (T) e V44422486 (F), só ela muda
+  x13: V43341142 (T) e V43349334 (F), só ela muda
+  x14: V43345238 (T) e V43349334 (F), só ela muda
+  x15: V44406102 (T) e V44408150 (F), só ela muda
+  x16: V44407126 (T) e V44408150 (F), só ela muda
+  x17: V22697302 (T) e V22697814 (F), só ela muda
+  x18: V22697558 (T) e V22697814 (F), só ela muda
+  x19: V22369622 (T) e V22369750 (F), só ela muda
+  x20: V22369686 (T) e V22369750 (F), só ela muda
+  x21: V43341142 (T) e V43341174 (F), só ela muda
+  x22: V43341158 (T) e V43341174 (F), só ela muda
+  x23: V22369622 (T) e V22369630 (F), só ela muda
+  x24: V22369626 (T) e V22369630 (F), só ela muda
+  x25: V22369626 (T) e V22369628 (F), só ela muda
+  x26: V22369627 (T) e V22369628 (F), só ela muda
+
+Cobertura MC/DC: completa

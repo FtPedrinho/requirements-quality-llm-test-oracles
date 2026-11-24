@@ -1,0 +1,1 @@
+["analyze", "--json", "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json", "--z3", "--boundary", "--format", "json"]

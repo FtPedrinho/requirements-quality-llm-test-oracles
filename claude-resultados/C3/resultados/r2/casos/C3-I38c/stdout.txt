@@ -1,0 +1,13 @@
+Decisão:   D
+Guarda:    (A and B) or C
+Testes:    2
+  T1 = V3  TFT  -> T
+  T2 = V7  FFT  -> T
+
+Condições:
+  A: falta; acrescente V2 (TTF -> T) e V6 (FTF -> F)
+  B: falta; acrescente V2 (TTF -> T) e V4 (TFF -> F)
+  C: falta; acrescente V4 (TFF -> F)
+
+Resultados de condição demonstrados: 1 de 6 (16,7%)
+Cobertura MC/DC: incompleta, 0 de 3 condições demonstradas

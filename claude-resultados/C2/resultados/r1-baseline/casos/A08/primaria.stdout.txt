@@ -1,0 +1,24 @@
+Decisão:   REQ
+Guarda:    (x == 5) and (y != 3)
+Variante:  mascaramento
+
+Vetor x = 5   y != 3   | D
+V1    T       T        | T
+V2    T       F        | F
+V3    F       T        | F
+V4    F       F        | F
+
+Pares de independência:
+  x = 5: (V1, V3)
+  y != 3: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra x = 5, y != 3
+  V2  TF  -> F   demonstra y != 3
+  V3  FT  -> F   demonstra x = 5
+
+Demonstração por condição:
+  x = 5: V1 (T) e V3 (F), só ela muda
+  y != 3: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa

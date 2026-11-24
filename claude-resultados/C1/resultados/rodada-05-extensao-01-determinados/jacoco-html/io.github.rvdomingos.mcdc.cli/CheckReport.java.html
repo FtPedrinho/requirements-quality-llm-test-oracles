@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckReport.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MC/DC C1</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.cli</a> &gt; <span class="el_source">CheckReport.java</span></div><h1>CheckReport.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.cli;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.rvdomingos.mcdc.core.Condition;
+import io.github.rvdomingos.mcdc.core.IndependencePair;
+import io.github.rvdomingos.mcdc.core.McdcOptions;
+import io.github.rvdomingos.mcdc.core.TestSetEvaluation;
+import io.github.rvdomingos.mcdc.core.TestVector;
+import io.github.rvdomingos.mcdc.core.UncoveredCondition;
+import io.github.rvdomingos.mcdc.core.model.Decision;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+/** Relatório do modo avaliação (mcdc check), em texto e JSON. */
+final class CheckReport {
+
+<span class="fc" id="L22">    record Entry(Decision decision, TestSetEvaluation evaluation) {</span>
+    }
+
+    private CheckReport() {
+    }
+
+    static String text(List&lt;Entry&gt; entries) {
+<span class="fc" id="L29">        return entries.stream().map(CheckReport::text).collect(Collectors.joining(&quot;\n&quot;));</span>
+    }
+
+    private static String text(Entry entry) {
+<span class="fc" id="L33">        Decision decision = entry.decision();</span>
+<span class="fc" id="L34">        TestSetEvaluation e = entry.evaluation();</span>
+<span class="fc" id="L35">        var sb = new StringBuilder();</span>
+<span class="fc" id="L36">        sb.append(&quot;Decisão:   &quot;).append(decision.id()).append('\n');</span>
+<span class="pc bpc" id="L37" title="1 of 4 branches missed.">        if (decision.requirement() != null &amp;&amp; !decision.requirement().equals(decision.id())) {</span>
+<span class="fc" id="L38">            sb.append(&quot;Requisito: &quot;).append(decision.requirement()).append('\n');</span>
+        }
+<span class="fc" id="L40">        sb.append(&quot;Guarda:    &quot;).append(decision.text()).append('\n');</span>
+
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if (e.tests().isEmpty()) {</span>
+<span class="nc" id="L43">            sb.append(&quot;Testes:    nenhum para esta decisão\n&quot;);</span>
+        } else {
+<span class="fc" id="L45">            sb.append(&quot;Testes:    &quot;).append(e.tests().size()).append(&quot;\n&quot;);</span>
+<span class="fc" id="L46">            e.vectorOfTest().forEach((name, row) -&gt; sb.append(&quot;  &quot;).append(name).append(&quot; = &quot;).append(row.name())</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">                    .append(&quot;  &quot;).append(row.bits()).append(&quot;  -&gt; &quot;).append(row.outcome() ? &quot;T&quot; : &quot;F&quot;).append('\n'));</span>
+        }
+
+<span class="fc" id="L50">        sb.append(&quot;\nCondições:\n&quot;);</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        for (Condition condition : e.table().conditions()) {</span>
+<span class="fc" id="L52">            String label = condition.label();</span>
+<span class="fc" id="L53">            sb.append(&quot;  &quot;).append(label).append(&quot;: &quot;);</span>
+<span class="fc" id="L54">            IndependencePair pair = e.demonstrated().get(label);</span>
+<span class="fc" id="L55">            List&lt;TestVector&gt; missing = e.suggestions().get(label);</span>
+<span class="fc" id="L56">            UncoveredCondition impossible = e.uncoverable().stream()</span>
+<span class="pc" id="L57">                    .filter(u -&gt; u.condition().equals(label)).findFirst().orElse(null);</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">            if (pair != null) {</span>
+<span class="fc" id="L59">                sb.append(&quot;demonstrada por &quot;).append(String.join(&quot;/&quot;, e.testsAt(pair.whenTrue())))</span>
+<span class="fc" id="L60">                        .append(&quot; (T) e &quot;).append(String.join(&quot;/&quot;, e.testsAt(pair.whenFalse()))).append(&quot; (F)&quot;);</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">            } else if (missing != null) {</span>
+<span class="nc" id="L62">                sb.append(&quot;falta; acrescente &quot;).append(missing.stream()</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">                        .map(v -&gt; v.name() + &quot; (&quot; + v.bits() + &quot; -&gt; &quot; + (v.outcome() ? &quot;T&quot; : &quot;F&quot;) + &quot;)&quot;)</span>
+<span class="nc" id="L64">                        .collect(Collectors.joining(&quot; e &quot;)));</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">            } else if (impossible != null) {</span>
+<span class="nc" id="L66">                sb.append(&quot;não pode ser demonstrada: &quot;).append(TextReport.explain(impossible));</span>
+            }
+<span class="fc" id="L68">            sb.append('\n');</span>
+<span class="fc" id="L69">        }</span>
+
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">        if (!e.problems().isEmpty()) {</span>
+<span class="nc" id="L72">            sb.append(&quot;\nProblemas:\n&quot;);</span>
+<span class="nc" id="L73">            e.problems().forEach(p -&gt; sb.append(&quot;  &quot;).append(p).append('\n'));</span>
+        }
+
+<span class="fc" id="L76">        sb.append(&quot;\nResultados de condição demonstrados: &quot;).append(e.outcomesCovered()).append(&quot; de &quot;)</span>
+<span class="fc" id="L77">                .append(e.outcomesTotal()).append(&quot; (&quot;).append(percent(e.outcomePercentage())).append(&quot;)\n&quot;);</span>
+<span class="pc bpc" id="L78" title="1 of 2 branches missed.">        sb.append(&quot;Cobertura MC/DC: &quot;).append(e.isComplete() ? &quot;completa&quot; : &quot;incompleta&quot;)</span>
+<span class="fc" id="L79">                .append(&quot;, &quot;).append(e.demonstrated().size()).append(&quot; de &quot;).append(e.table().conditions().size())</span>
+<span class="fc" id="L80">                .append(&quot; condições demonstradas\n&quot;);</span>
+<span class="fc" id="L81">        return sb.toString();</span>
+    }
+
+    static String json(String system, McdcOptions options, List&lt;Entry&gt; entries) {
+<span class="fc" id="L85">        Map&lt;String, Object&gt; root = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L86">        root.put(&quot;tool&quot;, &quot;mcdc&quot;);</span>
+<span class="fc" id="L87">        root.put(&quot;mode&quot;, &quot;check&quot;);</span>
+<span class="fc" id="L88">        root.put(&quot;system&quot;, system);</span>
+<span class="fc" id="L89">        root.put(&quot;variant&quot;, options.variant().name());</span>
+<span class="fc" id="L90">        root.put(&quot;complete&quot;, entries.stream().allMatch(en -&gt; en.evaluation().isComplete()));</span>
+<span class="fc" id="L91">        List&lt;Map&lt;String, Object&gt;&gt; decisions = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        for (Entry entry : entries) {</span>
+<span class="fc" id="L93">            TestSetEvaluation e = entry.evaluation();</span>
+<span class="fc" id="L94">            Map&lt;String, Object&gt; node = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L95">            node.put(&quot;id&quot;, entry.decision().id());</span>
+<span class="fc" id="L96">            node.put(&quot;requirement&quot;, entry.decision().requirement());</span>
+<span class="fc" id="L97">            node.put(&quot;guard&quot;, entry.decision().text());</span>
+<span class="fc" id="L98">            node.put(&quot;complete&quot;, e.isComplete());</span>
+<span class="fc" id="L99">            node.put(&quot;conditionsDemonstrated&quot;, e.demonstrated().size());</span>
+<span class="fc" id="L100">            node.put(&quot;conditionsTotal&quot;, e.table().conditions().size());</span>
+<span class="fc" id="L101">            node.put(&quot;outcomesCovered&quot;, e.outcomesCovered());</span>
+<span class="fc" id="L102">            node.put(&quot;outcomesTotal&quot;, e.outcomesTotal());</span>
+<span class="fc" id="L103">            node.put(&quot;outcomePercentage&quot;, Math.round(e.outcomePercentage() * 10) / 10.0);</span>
+
+<span class="fc" id="L105">            List&lt;Map&lt;String, Object&gt;&gt; tests = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L106">            e.vectorOfTest().forEach((name, row) -&gt; {</span>
+<span class="fc" id="L107">                Map&lt;String, Object&gt; t = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L108">                t.put(&quot;test&quot;, name);</span>
+<span class="fc" id="L109">                t.put(&quot;vector&quot;, row.name());</span>
+<span class="fc" id="L110">                t.put(&quot;outcome&quot;, row.outcome());</span>
+<span class="fc" id="L111">                tests.add(t);</span>
+<span class="fc" id="L112">            });</span>
+<span class="fc" id="L113">            node.put(&quot;tests&quot;, tests);</span>
+
+<span class="fc" id="L115">            List&lt;Map&lt;String, Object&gt;&gt; conditions = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">            for (Condition condition : e.table().conditions()) {</span>
+<span class="fc" id="L117">                Map&lt;String, Object&gt; c = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L118">                c.put(&quot;condition&quot;, condition.label());</span>
+<span class="fc" id="L119">                IndependencePair pair = e.demonstrated().get(condition.label());</span>
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">                c.put(&quot;demonstrated&quot;, pair != null);</span>
+<span class="pc bpc" id="L121" title="1 of 2 branches missed.">                if (pair != null) {</span>
+<span class="fc" id="L122">                    c.put(&quot;whenTrue&quot;, e.testsAt(pair.whenTrue()));</span>
+<span class="fc" id="L123">                    c.put(&quot;whenFalse&quot;, e.testsAt(pair.whenFalse()));</span>
+                }
+<span class="fc" id="L125">                List&lt;TestVector&gt; missing = e.suggestions().get(condition.label());</span>
+<span class="pc bpc" id="L126" title="1 of 2 branches missed.">                if (missing != null) {</span>
+<span class="nc" id="L127">                    c.put(&quot;addVectors&quot;, missing.stream().map(v -&gt; {</span>
+<span class="nc" id="L128">                        Map&lt;String, Object&gt; m = new LinkedHashMap&lt;&gt;();</span>
+<span class="nc" id="L129">                        m.put(&quot;vector&quot;, v.name());</span>
+<span class="nc" id="L130">                        m.put(&quot;values&quot;, v.values());</span>
+<span class="nc" id="L131">                        m.put(&quot;outcome&quot;, v.outcome());</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">                        if (!v.assignment().isEmpty()) {</span>
+<span class="nc" id="L133">                            m.put(&quot;assignment&quot;, v.assignment());</span>
+                        }
+<span class="nc" id="L135">                        return m;</span>
+<span class="nc" id="L136">                    }).toList());</span>
+                }
+<span class="pc" id="L138">                e.uncoverable().stream().filter(u -&gt; u.condition().equals(condition.label())).findFirst()</span>
+<span class="pc" id="L139">                        .ifPresent(u -&gt; c.put(&quot;uncoverable&quot;, u.reason().name()));</span>
+<span class="fc" id="L140">                conditions.add(c);</span>
+<span class="fc" id="L141">            }</span>
+<span class="fc" id="L142">            node.put(&quot;conditions&quot;, conditions);</span>
+<span class="fc" id="L143">            node.put(&quot;problems&quot;, e.problems());</span>
+<span class="fc" id="L144">            decisions.add(node);</span>
+<span class="fc" id="L145">        }</span>
+<span class="fc" id="L146">        root.put(&quot;decisions&quot;, decisions);</span>
+        try {
+<span class="fc" id="L148">            return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(root) + &quot;\n&quot;;</span>
+<span class="nc" id="L149">        } catch (JsonProcessingException ex) {</span>
+<span class="nc" id="L150">            throw new IllegalStateException(&quot;Falha ao gerar o JSON&quot;, ex);</span>
+        }
+    }
+
+    private static String percent(double value) {
+<span class="fc" id="L155">        return String.format(Locale.ROOT, &quot;%.1f%%&quot;, value).replace('.', ',');</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

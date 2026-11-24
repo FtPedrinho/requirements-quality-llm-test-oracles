@@ -1,0 +1,22 @@
+{
+  "id": "AN-16",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze -f)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "-f",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/AN16_comentarios.mcdc"
+      ],
+      "exit": 0,
+      "segundos": 0.64
+    }
+  ]
+}

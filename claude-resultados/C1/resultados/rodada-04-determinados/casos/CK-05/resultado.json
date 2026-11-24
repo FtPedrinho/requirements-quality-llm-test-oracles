@@ -1,0 +1,24 @@
+{
+  "id": "CK-05",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 2, observado 2 (check --json)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/decisoes.json",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/testes.csv"
+      ],
+      "exit": 2,
+      "segundos": 2.21
+    }
+  ]
+}

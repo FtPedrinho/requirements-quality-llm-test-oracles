@@ -13,6 +13,8 @@ Execução da condição C0 conforme o [protocolo](../../experimentacao-pesquisa
 
 Só o baseline (rodada 2): 72 aprovados, 0 falhos, 13 indeterminados, cobertura de 1040/1296 (80,25%). Os detalhes estão em [avaliacao/relatorio.md](avaliacao/relatorio.md).
 
+**Cobertura só com os casos determinados** (regra do pesquisador definida depois, durante o C3: indeterminado não é teste, não é executado e não entra na cobertura): **1077 / 1296 = 83,10%** (`resultados/acumulado-determinados`). Os vereditos são idênticos aos das rodadas originais: 92 aprovados e 1 falho, com os 14 indeterminados apenas registrados. Detalhes em [experimento/determinados/README.md](experimento/determinados/README.md).
+
 ## Estrutura
 
 | Pasta | Conteúdo |

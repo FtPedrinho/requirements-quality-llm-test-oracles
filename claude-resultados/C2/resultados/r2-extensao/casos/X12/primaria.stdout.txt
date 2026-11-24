@@ -1,0 +1,43 @@
+{
+  "tool" : "mcdc",
+  "mode" : "check",
+  "system" : null,
+  "variant" : "MASKING",
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "A and B",
+    "complete" : false,
+    "conditionsDemonstrated" : 2,
+    "conditionsTotal" : 2,
+    "outcomesCovered" : 4,
+    "outcomesTotal" : 4,
+    "outcomePercentage" : 100.0,
+    "tests" : [ {
+      "test" : "T1",
+      "vector" : "V1",
+      "outcome" : true
+    }, {
+      "test" : "T2",
+      "vector" : "V3",
+      "outcome" : false
+    }, {
+      "test" : "T3",
+      "vector" : "V2",
+      "outcome" : false
+    } ],
+    "conditions" : [ {
+      "condition" : "A",
+      "demonstrated" : true,
+      "whenTrue" : [ "T1" ],
+      "whenFalse" : [ "T2" ]
+    }, {
+      "condition" : "B",
+      "demonstrated" : true,
+      "whenTrue" : [ "T1" ],
+      "whenFalse" : [ "T3" ]
+    } ],
+    "problems" : [ "T3: resultado esperado T, mas a guarda dá F para esses valores" ]
+  } ]
+}

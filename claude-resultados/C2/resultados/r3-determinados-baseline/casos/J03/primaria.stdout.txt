@@ -1,0 +1,132 @@
+{
+  "tool" : "mcdc",
+  "system" : "enum_sys",
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "e#1",
+    "requirement" : "REQ-E1",
+    "guard" : "m = a \\/ m = b",
+    "actions" : [ "out := 1" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "m = a",
+      "variable" : "m",
+      "operator" : "=",
+      "value" : "a"
+    }, {
+      "name" : "m = b",
+      "variable" : "m",
+      "operator" : "=",
+      "value" : "b"
+    } ],
+    "conditions" : [ {
+      "label" : "m = a",
+      "input" : "m = a",
+      "occurrence" : 1
+    }, {
+      "label" : "m = b",
+      "input" : "m = b",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "m = a" : true,
+        "m = b" : true
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "m = a" : true,
+        "m = b" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "m" : "a"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "m = a" : false,
+        "m = b" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "m" : "b"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "m = a" : false,
+        "m = b" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "m" : "c"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "m = a" : [ [ "V2", "V4" ] ],
+      "m = b" : [ [ "V3", "V4" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "m = a" : true,
+        "m = b" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "m" : "a"
+      },
+      "demonstrates" : [ "m = a" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "m = a" : false,
+        "m = b" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "m" : "b"
+      },
+      "demonstrates" : [ "m = b" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "m = a" : false,
+        "m = b" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "m" : "c"
+      },
+      "demonstrates" : [ "m = a", "m = b" ]
+    } ],
+    "chosenPairs" : {
+      "m = a" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "m = b" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

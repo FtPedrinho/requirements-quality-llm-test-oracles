@@ -1,0 +1,13 @@
+; consulta Q10-redundante-livre -- A23: B sem par mesmo com todas as combinações
+(set-logic ALL)
+(declare-const b0_1 Bool)
+(declare-const b1_1 Bool)
+(declare-const b0_2 Bool)
+(declare-const b1_2 Bool)
+(push)
+(assert b1_1)
+(assert (not b1_2))
+(assert (= b0_1 b0_2))
+(assert (distinct (or b0_1 (and b0_1 b1_1)) (or b0_2 (and b0_2 b1_2))))
+(check-sat)
+(pop)

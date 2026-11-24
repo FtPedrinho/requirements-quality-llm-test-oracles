@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IndependencePairs.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MC/DC C1</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core</a> &gt; <span class="el_source">IndependencePairs.java</span></div><h1>IndependencePairs.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Pares de independência de cada condição (cada ocorrência de uma entrada). Condição sem par fica com
+ * lista vazia; linhas impossíveis ficam de fora.
+ */
+public final class IndependencePairs {
+
+    /** Teto de pares por condição: no mascaramento eles crescem como o produto de duas listas. */
+    public static final int MAX_PAIRS_PER_CONDITION = 1000;
+
+    private IndependencePairs() {
+    }
+
+    public static Map&lt;String, List&lt;IndependencePair&gt;&gt; of(TruthTable table, McdcVariant variant) {
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        return switch (variant) {</span>
+<span class="fc" id="L23">            case UNIQUE_CAUSE -&gt; uniqueCause(table);</span>
+<span class="fc" id="L24">            case MASKING -&gt; masking(table);</span>
+        };
+    }
+
+    /**
+     * Causa única: só a entrada da condição muda, o resultado muda e a ocorrência decide nos dois
+     * vetores (UCMS quando a entrada se repete).
+     */
+    public static Map&lt;String, List&lt;IndependencePair&gt;&gt; uniqueCause(TruthTable table) {
+<span class="fc" id="L33">        int n = table.inputs().size();</span>
+<span class="fc" id="L34">        Map&lt;String, List&lt;IndependencePair&gt;&gt; result = new LinkedHashMap&lt;&gt;();</span>
+
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (Condition condition : table.conditions()) {</span>
+<span class="fc" id="L37">            int mask = TruthTable.bit(n, table.inputs().indexOf(condition.input()));</span>
+<span class="fc" id="L38">            boolean single = appearsOnce(table, condition);</span>
+<span class="fc" id="L39">            List&lt;IndependencePair&gt; pairs = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            for (TestVector row : table.rows()) {</span>
+<span class="pc bpc" id="L41" title="1 of 4 branches missed.">                if (!row.feasible() || (row.index() &amp; mask) != 0) {</span>
+<span class="fc" id="L42">                    continue;</span>
+                }
+                // a mesma linha com só esta entrada falsa
+<span class="fc" id="L45">                TestVector flipped = table.rows().get(row.index() | mask);</span>
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">                if (flipped.feasible()</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">                        &amp;&amp; row.outcome() != flipped.outcome()</span>
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">                        &amp;&amp; decides(table, condition, row, mask, single)</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">                        &amp;&amp; decides(table, condition, flipped, mask, single)) {</span>
+<span class="fc" id="L50">                    pairs.add(new IndependencePair(condition.label(), row, flipped));</span>
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">                    if (pairs.size() == MAX_PAIRS_PER_CONDITION) {</span>
+<span class="nc" id="L52">                        break;</span>
+                    }
+                }
+<span class="fc" id="L55">            }</span>
+<span class="fc" id="L56">            result.put(condition.label(), List.copyOf(pairs));</span>
+<span class="fc" id="L57">        }</span>
+<span class="fc" id="L58">        return result;</span>
+    }
+
+    /** Mascaramento: as outras condições podem mudar, desde que estejam mascaradas. */
+    public static Map&lt;String, List&lt;IndependencePair&gt;&gt; masking(TruthTable table) {
+<span class="fc" id="L63">        int n = table.inputs().size();</span>
+<span class="fc" id="L64">        Map&lt;String, List&lt;IndependencePair&gt;&gt; result = new LinkedHashMap&lt;&gt;();</span>
+
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        for (Condition condition : table.conditions()) {</span>
+<span class="fc" id="L67">            int mask = TruthTable.bit(n, table.inputs().indexOf(condition.input()));</span>
+<span class="fc" id="L68">            boolean single = appearsOnce(table, condition);</span>
+<span class="fc" id="L69">            List&lt;TestVector&gt; whenTrue = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L70">            List&lt;TestVector&gt; whenFalse = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">            for (TestVector row : table.rows()) {</span>
+                // &quot;decide&quot; é uma propriedade da fórmula: vale mesmo que a linha com a condição invertida seja impossível
+<span class="fc bfc" id="L73" title="All 4 branches covered.">                if (!row.feasible() || !decides(table, condition, row, mask, single)) {</span>
+<span class="fc" id="L74">                    continue;</span>
+                }
+<span class="fc bfc" id="L76" title="All 2 branches covered.">                if ((row.index() &amp; mask) == 0) {</span>
+<span class="fc" id="L77">                    whenTrue.add(row);</span>
+                } else {
+<span class="fc" id="L79">                    whenFalse.add(row);</span>
+                }
+<span class="fc" id="L81">            }</span>
+
+<span class="fc" id="L83">            List&lt;IndependencePair&gt; pairs = new ArrayList&lt;&gt;();</span>
+            search:
+<span class="fc bfc" id="L85" title="All 2 branches covered.">            for (TestVector t : whenTrue) {</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">                for (TestVector f : whenFalse) {</span>
+<span class="pc bpc" id="L87" title="1 of 2 branches missed.">                    if (t.outcome() != f.outcome()) {</span>
+<span class="fc" id="L88">                        pairs.add(new IndependencePair(condition.label(), t, f));</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">                        if (pairs.size() == MAX_PAIRS_PER_CONDITION) {</span>
+<span class="fc" id="L90">                            break search;</span>
+                        }
+                    }
+<span class="fc" id="L93">                }</span>
+<span class="fc" id="L94">            }</span>
+<span class="fc" id="L95">            result.put(condition.label(), List.copyOf(pairs));</span>
+<span class="fc" id="L96">        }</span>
+<span class="fc" id="L97">        return result;</span>
+    }
+
+    /** Se a entrada aparece uma vez só e a tabela tem todas as linhas, na posição do índice. */
+    private static boolean appearsOnce(TruthTable table, Condition condition) {
+<span class="pc bpc" id="L102" title="1 of 4 branches missed.">        return table.isFull() &amp;&amp; Collections.frequency(table.expression().leaves(), condition.input()) == 1;</span>
+    }
+
+    /**
+     * Se a condição decide a saída na linha. Quando a entrada aparece uma vez só, trocar a aparição é trocar
+     * o bit da entrada: basta olhar a saída da linha vizinha, sem reavaliar a fórmula (20 entradas em
+     * fração de segundo em vez de segundos). Com a entrada repetida, reavalia trocando só aquela aparição.
+     */
+    private static boolean decides(TruthTable table, Condition condition, TestVector row, int mask, boolean single) {
+<span class="fc bfc" id="L111" title="All 2 branches covered.">        if (single) {</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">            return row.outcome() != table.rows().get(row.index() ^ mask).outcome();</span>
+        }
+<span class="fc" id="L114">        return condition.decides(table.expression(), row);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

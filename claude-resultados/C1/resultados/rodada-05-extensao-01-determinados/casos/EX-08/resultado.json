@@ -1,0 +1,21 @@
+{
+  "id": "EX-08",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 1, observado 1 (check A and B)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "A and B"
+      ],
+      "exit": 1,
+      "segundos": 0.48
+    }
+  ]
+}

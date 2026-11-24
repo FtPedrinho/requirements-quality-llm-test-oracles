@@ -1,0 +1,24 @@
+Decisão:   REQ
+Guarda:    speed > 100 /\ mode = idle
+Variante:  mascaramento
+
+Vetor speed > 100   mode = idle   | D
+V1    T             T             | T
+V2    T             F             | F
+V3    F             T             | F
+V4    F             F             | F
+
+Pares de independência:
+  speed > 100: (V1, V3)
+  mode = idle: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra speed > 100, mode = idle   [speed = 101, mode = idle]
+  V2  TF  -> F   demonstra mode = idle   [speed = 101, mode = _outro]
+  V3  FT  -> F   demonstra speed > 100   [speed = 0, mode = idle]
+
+Demonstração por condição:
+  speed > 100: V1 (T) e V3 (F), só ela muda
+  mode = idle: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa

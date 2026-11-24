@@ -1,0 +1,108 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "UNIQUE_CAUSE",
+  "constraint" : null,
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "A or (A and B)",
+    "actions" : [ ],
+    "complete" : false,
+    "uncoveredConditions" : [ "A#2", "B" ],
+    "uncovered" : [ {
+      "condition" : "A#2",
+      "reason" : "REDUNDANT",
+      "blockedPairs" : [ ]
+    }, {
+      "condition" : "B",
+      "reason" : "REDUNDANT",
+      "blockedPairs" : [ ]
+    } ],
+    "inputs" : [ {
+      "name" : "A"
+    }, {
+      "name" : "B"
+    } ],
+    "conditions" : [ {
+      "label" : "A#1",
+      "input" : "A",
+      "occurrence" : 1
+    }, {
+      "label" : "A#2",
+      "input" : "A",
+      "occurrence" : 2
+    }, {
+      "label" : "B",
+      "input" : "B",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true,
+        "B" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : false,
+        "B" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : false,
+        "B" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "A#1" : [ [ "V2", "V4" ] ],
+      "A#2" : [ ],
+      "B" : [ ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "A#1" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : false,
+        "B" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "A#1" ]
+    } ],
+    "chosenPairs" : {
+      "A#1" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

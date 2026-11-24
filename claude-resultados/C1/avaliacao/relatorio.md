@@ -75,6 +75,24 @@ core 263/287, core.model 46/60, core.mutation 62/64, requirements 141/162, z3 31
 Não há demonstração de que 86,19% seja o máximo possível; os branches restantes incluem caminhos de erro do processo
 Z3 (timeout e resposta inválida), símbolos especiais no SMT-LIB e combinações de opções sem suporte documental.
 
+### Cobertura só com os casos determinados (medida depois)
+
+Durante o C3, o pesquisador definiu que um caso indeterminado não é teste: ele não é executado e não entra na
+Branch Coverage. Para aplicar a regra ao C1 sem apagar nada, o runner congelado foi executado de novo com a opção
+`--casos` (que já existia), recebendo a lista dos IDs determinados (`experimento/determinados/`). Oráculos, entradas e
+runner são os mesmos, e o build refeito confere com `classes.sha256`. Congelamento:
+`experimento/congelamento/06-determinados.sha256`. A execução foi feita a pedido do pesquisador pela sessão que
+consolidou os relatórios.
+
+| Rodada | Casos executados | Aprovados | Falhos | Indeterminados (não executados) | Branch Coverage |
+|---|---|---|---|---|---|
+| rodada-04 baseline só determinados | 70 | 70 | 0 | 9 | 1035 / 1296 = 79,86% |
+| rodada-05 extensão 01 só determinados | 28 | 27 | 1 (EX-27) | 3 | 905 / 1296 = 69,83% |
+| **Acumulado só determinados** | **98** | **97** | **1** | **12** | **1107 / 1296 = 85,42%** |
+
+Cada caso teve o mesmo veredito das rodadas 02 e 03. Por módulo: cli 285/337, core 370/411, requirements 140/162,
+z3 312/386. Os diagnósticos dos indeterminados respondiam por 10 desvios (86,19% → 85,42%).
+
 ## Evidências e limitações
 
 - **Divergência (FALHOU), EX-27:** `mcdc verify --json EX05_virgula_requisito.json` com o Z3 fora do PATH terminou com

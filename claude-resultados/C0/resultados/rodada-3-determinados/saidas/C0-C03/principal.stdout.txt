@@ -1,0 +1,272 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ-001",
+    "requirement" : "REQ-001",
+    "guard" : "(alarme_ativo and porta_aberta) or botao_emergencia",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "alarme_ativo"
+    }, {
+      "name" : "porta_aberta"
+    }, {
+      "name" : "botao_emergencia"
+    } ],
+    "conditions" : [ {
+      "label" : "alarme_ativo",
+      "input" : "alarme_ativo",
+      "occurrence" : 1
+    }, {
+      "label" : "porta_aberta",
+      "input" : "porta_aberta",
+      "occurrence" : 1
+    }, {
+      "label" : "botao_emergencia",
+      "input" : "botao_emergencia",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : true,
+        "botao_emergencia" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : true,
+        "botao_emergencia" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : false,
+        "botao_emergencia" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : false,
+        "botao_emergencia" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "alarme_ativo" : false,
+        "porta_aberta" : true,
+        "botao_emergencia" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "alarme_ativo" : false,
+        "porta_aberta" : true,
+        "botao_emergencia" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "alarme_ativo" : false,
+        "porta_aberta" : false,
+        "botao_emergencia" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "alarme_ativo" : false,
+        "porta_aberta" : false,
+        "botao_emergencia" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "alarme_ativo" : [ [ "V2", "V6" ] ],
+      "porta_aberta" : [ [ "V2", "V4" ] ],
+      "botao_emergencia" : [ [ "V3", "V4" ], [ "V3", "V6" ], [ "V3", "V8" ], [ "V5", "V4" ], [ "V5", "V6" ], [ "V5", "V8" ], [ "V7", "V4" ], [ "V7", "V6" ], [ "V7", "V8" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : true,
+        "botao_emergencia" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "alarme_ativo", "porta_aberta" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : false,
+        "botao_emergencia" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "botao_emergencia" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "alarme_ativo" : true,
+        "porta_aberta" : false,
+        "botao_emergencia" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "porta_aberta", "botao_emergencia" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "alarme_ativo" : false,
+        "porta_aberta" : true,
+        "botao_emergencia" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "alarme_ativo" ]
+    } ],
+    "chosenPairs" : {
+      "alarme_ativo" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "porta_aberta" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "botao_emergencia" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  }, {
+    "id" : "REQ-002",
+    "requirement" : "REQ-002",
+    "guard" : "porta_fechada and not obstaculo",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "porta_fechada"
+    }, {
+      "name" : "obstaculo"
+    } ],
+    "conditions" : [ {
+      "label" : "porta_fechada",
+      "input" : "porta_fechada",
+      "occurrence" : 1
+    }, {
+      "label" : "obstaculo",
+      "input" : "obstaculo",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "porta_fechada" : [ [ "V2", "V4" ] ],
+      "obstaculo" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "obstaculo" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "porta_fechada", "obstaculo" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "porta_fechada" ]
+    } ],
+    "chosenPairs" : {
+      "porta_fechada" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "obstaculo" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

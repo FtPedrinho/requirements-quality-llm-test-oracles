@@ -1,0 +1,208 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "UNIQUE_CAUSE",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "(A and B) or C",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "A"
+    }, {
+      "name" : "B"
+    }, {
+      "name" : "C"
+    } ],
+    "conditions" : [ {
+      "label" : "A",
+      "input" : "A",
+      "occurrence" : 1
+    }, {
+      "label" : "B",
+      "input" : "B",
+      "occurrence" : 1
+    }, {
+      "label" : "C",
+      "input" : "C",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "A" : [ [ "V2", "V6" ] ],
+      "B" : [ [ "V2", "V4" ] ],
+      "C" : [ [ "V3", "V4" ], [ "V5", "V6" ], [ "V7", "V8" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "A", "B" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "C" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "B", "C" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "A" ]
+    } ],
+    "chosenPairs" : {
+      "A" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "B" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "C" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    }
+  } ]
+}

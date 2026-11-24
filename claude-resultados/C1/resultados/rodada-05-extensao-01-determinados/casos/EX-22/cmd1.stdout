@@ -1,0 +1,78 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "speed > 100 and speed > 50",
+    "actions" : [ ],
+    "complete" : false,
+    "uncoveredConditions" : [ "speed > 50" ],
+    "uncovered" : [ {
+      "condition" : "speed > 50",
+      "reason" : "INFEASIBLE",
+      "blockedPairs" : [ [ "V1", "V2" ] ]
+    } ],
+    "inputs" : [ {
+      "name" : "speed > 100",
+      "variable" : "speed",
+      "operator" : ">",
+      "value" : "100"
+    }, {
+      "name" : "speed > 50",
+      "variable" : "speed",
+      "operator" : ">",
+      "value" : "50"
+    } ],
+    "conditions" : [ {
+      "label" : "speed > 100",
+      "input" : "speed > 100",
+      "occurrence" : 1
+    }, {
+      "label" : "speed > 50",
+      "input" : "speed > 50",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "DIRECT",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : false,
+    "independencePairs" : {
+      "speed > 100" : [ [ "V1", "V3" ] ],
+      "speed > 50" : [ ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "speed > 100" : true,
+        "speed > 50" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "speed" : "101"
+      },
+      "demonstrates" : [ "speed > 100" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "speed > 100" : false,
+        "speed > 50" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "speed" : "51"
+      },
+      "demonstrates" : [ "speed > 100" ]
+    } ],
+    "chosenPairs" : {
+      "speed > 100" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

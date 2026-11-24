@@ -1,0 +1,36 @@
+{
+  "id": "EX-20",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "(A and B) or C",
+        "--unique-cause",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 1.97
+    },
+    {
+      "args": [
+        "analyze",
+        "(A and B) or C",
+        "--unique-cause",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 1.54
+    }
+  ]
+}

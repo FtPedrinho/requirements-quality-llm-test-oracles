@@ -1,0 +1,83 @@
+Decisão:   REQ
+Guarda:    (x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and (x13 or x14) and (x15 or x16) and (x17 or x18) and (x19 or x20)
+Variante:  mascaramento
+
+Tabela verdade: 1048576 linhas, 1048576 possíveis (grande demais para o texto; use --format json até 4096 linhas)
+
+Pares de independência:
+  x1: (V262145, V786433), (V262145, V786434), (V262145, V786435), (V262145, V786437), (V262145, V786438), (V262145, V786439), ... (1000+ pares)
+  x2: (V524289, V786433), (V524289, V786434), (V524289, V786435), (V524289, V786437), (V524289, V786438), (V524289, V786439), ... (1000+ pares)
+  x3: (V65537, V196609), (V65537, V196610), (V65537, V196611), (V65537, V196613), (V65537, V196614), (V65537, V196615), ... (1000+ pares)
+  x4: (V131073, V196609), (V131073, V196610), (V131073, V196611), (V131073, V196613), (V131073, V196614), (V131073, V196615), ... (1000+ pares)
+  x5: (V16385, V49153), (V16385, V49154), (V16385, V49155), (V16385, V49157), (V16385, V49158), (V16385, V49159), ... (1000+ pares)
+  x6: (V32769, V49153), (V32769, V49154), (V32769, V49155), (V32769, V49157), (V32769, V49158), (V32769, V49159), ... (1000+ pares)
+  x7: (V4097, V12289), (V4097, V12290), (V4097, V12291), (V4097, V12293), (V4097, V12294), (V4097, V12295), ... (1000+ pares)
+  x8: (V8193, V12289), (V8193, V12290), (V8193, V12291), (V8193, V12293), (V8193, V12294), (V8193, V12295), ... (1000+ pares)
+  x9: (V1025, V3073), (V1025, V3074), (V1025, V3075), (V1025, V3077), (V1025, V3078), (V1025, V3079), ... (1000+ pares)
+  x10: (V2049, V3073), (V2049, V3074), (V2049, V3075), (V2049, V3077), (V2049, V3078), (V2049, V3079), ... (1000+ pares)
+  x11: (V257, V769), (V257, V770), (V257, V771), (V257, V773), (V257, V774), (V257, V775), ... (1000+ pares)
+  x12: (V513, V769), (V513, V770), (V513, V771), (V513, V773), (V513, V774), (V513, V775), ... (1000+ pares)
+  x13: (V65, V193), (V65, V194), (V65, V195), (V65, V197), (V65, V198), (V65, V199), ... (1000+ pares)
+  x14: (V129, V193), (V129, V194), (V129, V195), (V129, V197), (V129, V198), (V129, V199), ... (1000+ pares)
+  x15: (V17, V49), (V17, V50), (V17, V51), (V17, V53), (V17, V54), (V17, V55), ... (1000+ pares)
+  x16: (V33, V49), (V33, V50), (V33, V51), (V33, V53), (V33, V54), (V33, V55), ... (1000+ pares)
+  x17: (V5, V13), (V5, V14), (V5, V15), (V5, V29), (V5, V30), (V5, V31), ... (1000+ pares)
+  x18: (V9, V13), (V9, V14), (V9, V15), (V9, V29), (V9, V30), (V9, V31), ... (1000+ pares)
+  x19: (V2, V4), (V2, V8), (V2, V12), (V2, V20), (V2, V24), (V2, V28), ... (1000+ pares)
+  x20: (V3, V4), (V3, V8), (V3, V12), (V3, V20), (V3, V24), (V3, V28), ... (1000+ pares)
+
+Suíte mínima (30 testes):
+  V2  TTTTTTTTTTTTTTTTTTTF  -> T   demonstra x19
+  V3  TTTTTTTTTTTTTTTTTTFT  -> T   demonstra x20
+  V4  TTTTTTTTTTTTTTTTTTFF  -> F   demonstra x19, x20
+  V5  TTTTTTTTTTTTTTTTTFTT  -> T   demonstra x17
+  V9  TTTTTTTTTTTTTTTTFTTT  -> T   demonstra x18
+  V13  TTTTTTTTTTTTTTTTFFTT  -> F   demonstra x17, x18
+  V17  TTTTTTTTTTTTTTTFTTTT  -> T   demonstra x15
+  V33  TTTTTTTTTTTTTTFTTTTT  -> T   demonstra x16
+  V49  TTTTTTTTTTTTTTFFTTTT  -> F   demonstra x15, x16
+  V65  TTTTTTTTTTTTTFTTTTTT  -> T   demonstra x13
+  V129  TTTTTTTTTTTTFTTTTTTT  -> T   demonstra x14
+  V193  TTTTTTTTTTTTFFTTTTTT  -> F   demonstra x13, x14
+  V257  TTTTTTTTTTTFTTTTTTTT  -> T   demonstra x11
+  V513  TTTTTTTTTTFTTTTTTTTT  -> T   demonstra x12
+  V769  TTTTTTTTTTFFTTTTTTTT  -> F   demonstra x11, x12
+  V1025  TTTTTTTTTFTTTTTTTTTT  -> T   demonstra x9
+  V2049  TTTTTTTTFTTTTTTTTTTT  -> T   demonstra x10
+  V3073  TTTTTTTTFFTTTTTTTTTT  -> F   demonstra x9, x10
+  V4097  TTTTTTTFTTTTTTTTTTTT  -> T   demonstra x7
+  V8193  TTTTTTFTTTTTTTTTTTTT  -> T   demonstra x8
+  V12289  TTTTTTFFTTTTTTTTTTTT  -> F   demonstra x7, x8
+  V16385  TTTTTFTTTTTTTTTTTTTT  -> T   demonstra x5
+  V32769  TTTTFTTTTTTTTTTTTTTT  -> T   demonstra x6
+  V49153  TTTTFFTTTTTTTTTTTTTT  -> F   demonstra x5, x6
+  V65537  TTTFTTTTTTTTTTTTTTTT  -> T   demonstra x3
+  V131073  TTFTTTTTTTTTTTTTTTTT  -> T   demonstra x4
+  V196609  TTFFTTTTTTTTTTTTTTTT  -> F   demonstra x3, x4
+  V262145  TFTTTTTTTTTTTTTTTTTT  -> T   demonstra x1
+  V524289  FTTTTTTTTTTTTTTTTTTT  -> T   demonstra x2
+  V786433  FFTTTTTTTTTTTTTTTTTT  -> F   demonstra x1, x2
+
+Demonstração por condição:
+  x1: V262145 (T) e V786433 (F), só ela muda
+  x2: V524289 (T) e V786433 (F), só ela muda
+  x3: V65537 (T) e V196609 (F), só ela muda
+  x4: V131073 (T) e V196609 (F), só ela muda
+  x5: V16385 (T) e V49153 (F), só ela muda
+  x6: V32769 (T) e V49153 (F), só ela muda
+  x7: V4097 (T) e V12289 (F), só ela muda
+  x8: V8193 (T) e V12289 (F), só ela muda
+  x9: V1025 (T) e V3073 (F), só ela muda
+  x10: V2049 (T) e V3073 (F), só ela muda
+  x11: V257 (T) e V769 (F), só ela muda
+  x12: V513 (T) e V769 (F), só ela muda
+  x13: V65 (T) e V193 (F), só ela muda
+  x14: V129 (T) e V193 (F), só ela muda
+  x15: V17 (T) e V49 (F), só ela muda
+  x16: V33 (T) e V49 (F), só ela muda
+  x17: V5 (T) e V13 (F), só ela muda
+  x18: V9 (T) e V13 (F), só ela muda
+  x19: V2 (T) e V4 (F), só ela muda
+  x20: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa

@@ -1,0 +1,175 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "(m != idle) and (n = 4)",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "m != idle",
+      "variable" : "m",
+      "operator" : "!=",
+      "value" : "idle"
+    }, {
+      "name" : "n = 4",
+      "variable" : "n",
+      "operator" : "=",
+      "value" : "4"
+    } ],
+    "conditions" : [ {
+      "label" : "m != idle",
+      "input" : "m != idle",
+      "occurrence" : 1
+    }, {
+      "label" : "n = 4",
+      "input" : "n = 4",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "m != idle" : true,
+        "n = 4" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "m" : "_outro",
+        "n" : "4"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "m != idle" : true,
+        "n = 4" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "m" : "_outro",
+        "n" : "2"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "m != idle" : false,
+        "n = 4" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "m" : "idle",
+        "n" : "4"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "m != idle" : false,
+        "n = 4" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "m" : "idle",
+        "n" : "2"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "m != idle" : [ [ "V1", "V3" ] ],
+      "n = 4" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "m != idle" : true,
+        "n = 4" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "m" : "_outro",
+        "n" : "4"
+      },
+      "demonstrates" : [ "m != idle", "n = 4" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "m != idle" : true,
+        "n = 4" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "m" : "_outro",
+        "n" : "2"
+      },
+      "demonstrates" : [ "n = 4" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "m != idle" : false,
+        "n = 4" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "m" : "idle",
+        "n" : "4"
+      },
+      "demonstrates" : [ "m != idle" ]
+    } ],
+    "chosenPairs" : {
+      "m != idle" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "n = 4" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "boundaryTests" : [ {
+      "base" : "V1",
+      "condition" : "n = 4",
+      "boundary" : "n = 4",
+      "assignment" : {
+        "m" : "_outro",
+        "n" : "4"
+      }
+    }, {
+      "base" : "V2",
+      "condition" : "n = 4",
+      "boundary" : "n = 3",
+      "assignment" : {
+        "m" : "_outro",
+        "n" : "3"
+      }
+    }, {
+      "base" : "V2",
+      "condition" : "n = 4",
+      "boundary" : "n = 5",
+      "assignment" : {
+        "m" : "_outro",
+        "n" : "5"
+      }
+    }, {
+      "base" : "V3",
+      "condition" : "n = 4",
+      "boundary" : "n = 4",
+      "assignment" : {
+        "m" : "idle",
+        "n" : "4"
+      }
+    } ]
+  } ]
+}

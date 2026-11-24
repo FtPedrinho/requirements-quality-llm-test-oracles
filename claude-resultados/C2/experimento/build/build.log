@@ -1,0 +1,9 @@
+== mcdc-core
+mcdc-core rc=0
+== mcdc-requirements
+mcdc-requirements rc=0
+== mcdc-z3
+mcdc-z3 rc=0
+== mcdc-cli
+mcdc-cli rc=0
+java version "21.0.3" 2024-04-16 LTS

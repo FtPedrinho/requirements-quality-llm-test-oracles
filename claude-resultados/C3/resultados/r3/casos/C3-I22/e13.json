@@ -1,0 +1,659 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "A1 and A2 and A3 and A4 and A5 and A6 and A7 and A8 and A9 and A10 and A11 and A12 and A13",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "A1"
+    }, {
+      "name" : "A2"
+    }, {
+      "name" : "A3"
+    }, {
+      "name" : "A4"
+    }, {
+      "name" : "A5"
+    }, {
+      "name" : "A6"
+    }, {
+      "name" : "A7"
+    }, {
+      "name" : "A8"
+    }, {
+      "name" : "A9"
+    }, {
+      "name" : "A10"
+    }, {
+      "name" : "A11"
+    }, {
+      "name" : "A12"
+    }, {
+      "name" : "A13"
+    } ],
+    "conditions" : [ {
+      "label" : "A1",
+      "input" : "A1",
+      "occurrence" : 1
+    }, {
+      "label" : "A2",
+      "input" : "A2",
+      "occurrence" : 1
+    }, {
+      "label" : "A3",
+      "input" : "A3",
+      "occurrence" : 1
+    }, {
+      "label" : "A4",
+      "input" : "A4",
+      "occurrence" : 1
+    }, {
+      "label" : "A5",
+      "input" : "A5",
+      "occurrence" : 1
+    }, {
+      "label" : "A6",
+      "input" : "A6",
+      "occurrence" : 1
+    }, {
+      "label" : "A7",
+      "input" : "A7",
+      "occurrence" : 1
+    }, {
+      "label" : "A8",
+      "input" : "A8",
+      "occurrence" : 1
+    }, {
+      "label" : "A9",
+      "input" : "A9",
+      "occurrence" : 1
+    }, {
+      "label" : "A10",
+      "input" : "A10",
+      "occurrence" : 1
+    }, {
+      "label" : "A11",
+      "input" : "A11",
+      "occurrence" : 1
+    }, {
+      "label" : "A12",
+      "input" : "A12",
+      "occurrence" : 1
+    }, {
+      "label" : "A13",
+      "input" : "A13",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "DIRECT",
+    "truthTableRows" : 8192,
+    "truthTableBuilt" : false,
+    "independencePairs" : {
+      "A1" : [ [ "V1", "V4097" ] ],
+      "A2" : [ [ "V1", "V2049" ] ],
+      "A3" : [ [ "V1", "V1025" ] ],
+      "A4" : [ [ "V1", "V513" ] ],
+      "A5" : [ [ "V1", "V257" ] ],
+      "A6" : [ [ "V1", "V129" ] ],
+      "A7" : [ [ "V1", "V65" ] ],
+      "A8" : [ [ "V1", "V33" ] ],
+      "A9" : [ [ "V1", "V17" ] ],
+      "A10" : [ [ "V1", "V9" ] ],
+      "A11" : [ [ "V1", "V5" ] ],
+      "A12" : [ [ "V1", "V3" ] ],
+      "A13" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "false"
+      },
+      "demonstrates" : [ "A13" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : false,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "false",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A12" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : false,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "false",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A11" ]
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : false,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "false",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A10" ]
+    }, {
+      "vector" : "V17",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : false,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "false",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A9" ]
+    }, {
+      "vector" : "V33",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : false,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "false",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A8" ]
+    }, {
+      "vector" : "V65",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : false,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "false",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A7" ]
+    }, {
+      "vector" : "V129",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : false,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "false",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A6" ]
+    }, {
+      "vector" : "V257",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : false,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "false",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A5" ]
+    }, {
+      "vector" : "V513",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : true,
+        "A4" : false,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "false",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A4" ]
+    }, {
+      "vector" : "V1025",
+      "values" : {
+        "A1" : true,
+        "A2" : true,
+        "A3" : false,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "true",
+        "A3" : "false",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A3" ]
+    }, {
+      "vector" : "V2049",
+      "values" : {
+        "A1" : true,
+        "A2" : false,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "true",
+        "A2" : "false",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A2" ]
+    }, {
+      "vector" : "V4097",
+      "values" : {
+        "A1" : false,
+        "A2" : true,
+        "A3" : true,
+        "A4" : true,
+        "A5" : true,
+        "A6" : true,
+        "A7" : true,
+        "A8" : true,
+        "A9" : true,
+        "A10" : true,
+        "A11" : true,
+        "A12" : true,
+        "A13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "A1" : "false",
+        "A2" : "true",
+        "A3" : "true",
+        "A4" : "true",
+        "A5" : "true",
+        "A6" : "true",
+        "A7" : "true",
+        "A8" : "true",
+        "A9" : "true",
+        "A10" : "true",
+        "A11" : "true",
+        "A12" : "true",
+        "A13" : "true"
+      },
+      "demonstrates" : [ "A1" ]
+    } ],
+    "chosenPairs" : {
+      "A1" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V4097",
+        "uniqueCause" : true
+      },
+      "A2" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2049",
+        "uniqueCause" : true
+      },
+      "A3" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V1025",
+        "uniqueCause" : true
+      },
+      "A4" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V513",
+        "uniqueCause" : true
+      },
+      "A5" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V257",
+        "uniqueCause" : true
+      },
+      "A6" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V129",
+        "uniqueCause" : true
+      },
+      "A7" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V65",
+        "uniqueCause" : true
+      },
+      "A8" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V33",
+        "uniqueCause" : true
+      },
+      "A9" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V17",
+        "uniqueCause" : true
+      },
+      "A10" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V9",
+        "uniqueCause" : true
+      },
+      "A11" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "A12" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "A13" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "EX-14",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "linhas da tabela esperadas 8, observadas 8"
+    },
+    {
+      "ok": true,
+      "verificacao": "linha impossível sse (not a) and b and c com {'a': 'x > 3', 'b': 'y <= x', 'c': 'y > 5'} (divergentes []; impossíveis observadas ['V5'])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "x > 3 and y <= x and y > 5",
+        "--z3",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 2,
+      "segundos": 0.89
+    }
+  ]
+}

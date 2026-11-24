@@ -1,0 +1,1 @@
+Erro de arquivo: C:\Users\User\requirements-quality-llm-test-oracles\claude-resultados\C2\experimento\entradas\nao-existe.csv

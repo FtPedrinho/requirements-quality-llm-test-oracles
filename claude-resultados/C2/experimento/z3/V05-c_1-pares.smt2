@@ -1,0 +1,12 @@
+; consulta V05-c_1-pares -- par de causa única viável por entrada de c#1
+(set-logic ALL)
+(declare-const x_1 Int)
+(declare-const s_1 Bool)
+(declare-const x_2 Int)
+(declare-const s_2 Bool)
+(push)
+(assert (> x_1 5))
+(assert (not (> x_2 5)))
+(assert (distinct (> x_1 5) (> x_2 5)))
+(check-sat)
+(pop)

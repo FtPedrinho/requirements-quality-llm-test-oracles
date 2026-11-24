@@ -1,0 +1,53 @@
+Decisão:   REQ
+Guarda:    (x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and x13
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 8192 combinações)
+
+Pares de independência:
+  x1: (V2731, V6827)
+  x2: (V4779, V6827)
+  x3: (V2731, V3755)
+  x4: (V3243, V3755)
+  x5: (V2731, V2987)
+  x6: (V2859, V2987)
+  x7: (V2859, V2923)
+  x8: (V2891, V2923)
+  x9: (V3243, V3259)
+  x10: (V3251, V3259)
+  x11: (V3243, V3247)
+  x12: (V3245, V3247)
+  x13: (V2891, V2892)
+
+Suíte do modo direto (14 testes):
+  V2731  TFTFTFTFTFTFT  -> T   demonstra x1, x3, x5   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+  V2859  TFTFFTTFTFTFT  -> T   demonstra x6, x7   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = false, x6 = true, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+  V2891  TFTFFTFTTFTFT  -> T   demonstra x8, x13   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = false, x6 = true, x7 = false, x8 = true, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+  V2892  TFTFFTFTTFTFF  -> F   demonstra x13   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = false, x6 = true, x7 = false, x8 = true, x9 = true, x10 = false, x11 = true, x12 = false, x13 = false]
+  V2923  TFTFFTFFTFTFT  -> F   demonstra x7, x8   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = false, x6 = true, x7 = false, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+  V2987  TFTFFFTFTFTFT  -> F   demonstra x5, x6   [x1 = true, x2 = false, x3 = true, x4 = false, x5 = false, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+  V3243  TFFTTFTFTFTFT  -> T   demonstra x4, x9, x11   [x1 = true, x2 = false, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+  V3245  TFFTTFTFTFFTT  -> T   demonstra x12   [x1 = true, x2 = false, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = false, x12 = true, x13 = true]
+  V3247  TFFTTFTFTFFFT  -> F   demonstra x11, x12   [x1 = true, x2 = false, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = false, x12 = false, x13 = true]
+  V3251  TFFTTFTFFTTFT  -> T   demonstra x10   [x1 = true, x2 = false, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = false, x10 = true, x11 = true, x12 = false, x13 = true]
+  V3259  TFFTTFTFFFTFT  -> F   demonstra x9, x10   [x1 = true, x2 = false, x3 = false, x4 = true, x5 = true, x6 = false, x7 = true, x8 = false, x9 = false, x10 = false, x11 = true, x12 = false, x13 = true]
+  V3755  TFFFTFTFTFTFT  -> F   demonstra x3, x4   [x1 = true, x2 = false, x3 = false, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+  V4779  FTTFTFTFTFTFT  -> T   demonstra x2   [x1 = false, x2 = true, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+  V6827  FFTFTFTFTFTFT  -> F   demonstra x1, x2   [x1 = false, x2 = false, x3 = true, x4 = false, x5 = true, x6 = false, x7 = true, x8 = false, x9 = true, x10 = false, x11 = true, x12 = false, x13 = true]
+
+Demonstração por condição:
+  x1: V2731 (T) e V6827 (F), só ela muda
+  x2: V4779 (T) e V6827 (F), só ela muda
+  x3: V2731 (T) e V3755 (F), só ela muda
+  x4: V3243 (T) e V3755 (F), só ela muda
+  x5: V2731 (T) e V2987 (F), só ela muda
+  x6: V2859 (T) e V2987 (F), só ela muda
+  x7: V2859 (T) e V2923 (F), só ela muda
+  x8: V2891 (T) e V2923 (F), só ela muda
+  x9: V3243 (T) e V3259 (F), só ela muda
+  x10: V3251 (T) e V3259 (F), só ela muda
+  x11: V3243 (T) e V3247 (F), só ela muda
+  x12: V3245 (T) e V3247 (F), só ela muda
+  x13: V2891 (T) e V2892 (F), só ela muda
+
+Cobertura MC/DC: completa

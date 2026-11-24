@@ -1,0 +1,1 @@
+["analyze", "((E or D) and (not A or D)) or B", "--exact"]

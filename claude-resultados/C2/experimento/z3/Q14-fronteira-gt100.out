@@ -1,0 +1,6 @@
+sat
+((x 101))
+unsat
+sat
+((y 100))
+unsat

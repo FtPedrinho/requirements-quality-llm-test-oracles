@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Nat2TestJsonReader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C2 r4-determinados-extensao</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.requirements</a> &gt; <span class="el_source">Nat2TestJsonReader.java</span></div><h1>Nat2TestJsonReader.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.requirements;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.rvdomingos.mcdc.core.model.And;
+import io.github.rvdomingos.mcdc.core.model.Decision;
+import io.github.rvdomingos.mcdc.core.model.DecisionSet;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import io.github.rvdomingos.mcdc.core.model.InputVariable;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/** Lê o JSON de decisões que o Extractor gera a partir do DFRS da NAT2TEST; campos desconhecidos são ignorados. */
+public final class Nat2TestJsonReader {
+
+<span class="fc" id="L22">    private static final ObjectMapper MAPPER = new ObjectMapper()</span>
+<span class="fc" id="L23">            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);</span>
+
+<span class="fc" id="L25">    record JsonFile(String system, List&lt;JsonInput&gt; inputs, List&lt;JsonDecision&gt; decisions) {</span>
+    }
+
+<span class="fc" id="L28">    record JsonInput(String name, String type, List&lt;String&gt; values) {</span>
+    }
+
+<span class="fc" id="L31">    record JsonDecision(String id, String requirement, String guard, String temporal, List&lt;String&gt; actions) {</span>
+    }
+
+    private Nat2TestJsonReader() {
+    }
+
+    public static DecisionSet read(Path path) throws IOException {
+<span class="fc" id="L38">        return read(Files.readString(path));</span>
+    }
+
+    public static DecisionSet read(String json) {
+        JsonFile file;
+        try {
+<span class="fc" id="L44">            file = MAPPER.readValue(json, JsonFile.class);</span>
+<span class="nc" id="L45">        } catch (JsonProcessingException e) {</span>
+<span class="nc" id="L46">            throw new IllegalArgumentException(&quot;JSON inválido: &quot; + e.getOriginalMessage());</span>
+<span class="fc" id="L47">        }</span>
+<span class="pc bpc" id="L48" title="2 of 4 branches missed.">        if (file.decisions() == null || file.decisions().isEmpty()) {</span>
+<span class="nc" id="L49">            throw new IllegalArgumentException(&quot;O JSON não tem decisões (campo \&quot;decisions\&quot;)&quot;);</span>
+        }
+
+<span class="fc" id="L52">        List&lt;InputVariable&gt; inputs = new ArrayList&lt;&gt;();</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if (file.inputs() != null) {</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">            for (JsonInput input : file.inputs()) {</span>
+<span class="fc" id="L55">                inputs.add(new InputVariable(input.name(), input.type(), input.values()));</span>
+<span class="fc" id="L56">            }</span>
+        }
+
+<span class="fc" id="L59">        List&lt;Decision&gt; decisions = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L60">        Set&lt;String&gt; ids = new HashSet&lt;&gt;();</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        for (int i = 0; i &lt; file.decisions().size(); i++) {</span>
+<span class="fc" id="L62">            JsonDecision d = file.decisions().get(i);</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">            String id = isBlank(d.id()) ? &quot;#&quot; + (i + 1) : d.id();</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">            if (isBlank(d.guard())) {</span>
+<span class="nc" id="L65">                throw new IllegalArgumentException(id + &quot;: decisão sem \&quot;guard\&quot;&quot;);</span>
+            }
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">            if (!ids.add(id)) {</span>
+<span class="nc" id="L68">                throw new IllegalArgumentException(&quot;Decisão repetida: &quot; + id);</span>
+            }
+<span class="fc" id="L70">            decisions.add(toDecision(id, d));</span>
+        }
+<span class="fc" id="L72">        return new DecisionSet(file.system(), inputs, decisions);</span>
+    }
+
+    /** A guarda temporal entra como mais uma condição ligada por &quot;e&quot; à guarda de dados. */
+    private static Decision toDecision(String id, JsonDecision d) {
+        try {
+<span class="fc" id="L78">            Expr expression = ExpressionParser.parse(d.guard());</span>
+<span class="fc" id="L79">            String text = d.guard();</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">            if (!isBlank(d.temporal())) {</span>
+<span class="fc" id="L81">                expression = new And(expression, ExpressionParser.parse(d.temporal()));</span>
+<span class="fc" id="L82">                text = &quot;(&quot; + d.guard() + &quot;) /\\ &quot; + d.temporal();</span>
+            }
+<span class="fc" id="L84">            return new Decision(id, d.requirement(), text, expression, d.actions());</span>
+<span class="nc" id="L85">        } catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L86">            throw new IllegalArgumentException(id + &quot;: &quot; + e.getMessage());</span>
+        }
+    }
+
+    private static boolean isBlank(String text) {
+<span class="pc bpc" id="L91" title="1 of 4 branches missed.">        return text == null || text.isBlank();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

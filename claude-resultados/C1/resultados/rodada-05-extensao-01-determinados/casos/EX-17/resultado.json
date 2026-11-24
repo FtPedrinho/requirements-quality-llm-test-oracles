@@ -1,0 +1,28 @@
+{
+  "id": "EX-17",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze t > 0.5 and t < 1.0)"
+    },
+    {
+      "ok": true,
+      "verificacao": "guarda (t > 0.5) and (t < 1.0) nos valores concretos = esperado em 6 linhas (divergentes [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "t > 0.5 and t < 1.0",
+        "--z3",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "segundos": 0.9
+    }
+  ]
+}

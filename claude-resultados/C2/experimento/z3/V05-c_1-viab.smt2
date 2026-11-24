@@ -1,0 +1,12 @@
+; consulta V05-c_1-viab -- viabilidade das combinações de c#1
+(set-logic ALL)
+(declare-const x Int)
+(declare-const s Bool)
+(push)
+(assert (> x 5))
+(check-sat)
+(pop)
+(push)
+(assert (not (> x 5)))
+(check-sat)
+(pop)

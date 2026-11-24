@@ -1,0 +1,1975 @@
+[
+  {
+    "id": "AN-01",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or C)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C"
+        ],
+        "exit": 0,
+        "segundos": 0.58
+      }
+    ]
+  },
+  {
+    "id": "AN-02",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or C)"
+      },
+      {
+        "ok": true,
+        "verificacao": "testes distintos esperados 4, observados 4"
+      },
+      {
+        "ok": true,
+        "verificacao": "linhas de dados 12 = testes(4) x 3"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 0.63
+      }
+    ]
+  },
+  {
+    "id": "AN-03",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or C)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C",
+          "--unique-cause"
+        ],
+        "exit": 0,
+        "segundos": 0.61
+      }
+    ]
+  },
+  {
+    "id": "AN-04",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze A and not B)"
+      },
+      {
+        "ok": true,
+        "verificacao": "testes distintos esperados 3, observados 3"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and not B",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 0.7
+      }
+    ]
+  },
+  {
+    "id": "AN-05",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze speed > 100 /\\ mode = idle)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "speed > 100 /\\ mode = idle"
+        ],
+        "exit": 0,
+        "segundos": 0.7
+      }
+    ]
+  },
+  {
+    "id": "AN-06",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze A && B || !C)"
+      },
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze A /\\ B \\/ not C)"
+      },
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze A and B or not C)"
+      },
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 8, observadas 8"
+      },
+      {
+        "ok": true,
+        "verificacao": "resultado de cada linha = (A and B) or not C (divergentes: [])"
+      },
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 8, observadas 8"
+      },
+      {
+        "ok": true,
+        "verificacao": "resultado de cada linha = (A and B) or not C (divergentes: [])"
+      },
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 8, observadas 8"
+      },
+      {
+        "ok": true,
+        "verificacao": "resultado de cada linha = (A and B) or not C (divergentes: [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A && B || !C",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.61
+      },
+      {
+        "args": [
+          "analyze",
+          "A /\\ B \\/ not C",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.97
+      },
+      {
+        "args": [
+          "analyze",
+          "A and B or not C",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.63
+      }
+    ]
+  },
+  {
+    "id": "AN-07",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze A or B and C)"
+      },
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 8, observadas 8"
+      },
+      {
+        "ok": true,
+        "verificacao": "resultado de cada linha = A or (B and C) (divergentes: [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A or B and C",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.57
+      }
+    ]
+  },
+  {
+    "id": "AN-08",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze x = 1 and y == 2 and z != 3 and w < 4 and v <= 5 and u > 6 and t >= 7)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "x = 1 and y == 2 and z != 3 and w < 4 and v <= 5 and u > 6 and t >= 7"
+        ],
+        "exit": 0,
+        "segundos": 0.63
+      }
+    ]
+  },
+  {
+    "id": "AN-09",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or (not A and C))"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or (not A and C)"
+        ],
+        "exit": 0,
+        "segundos": 0.58
+      }
+    ]
+  },
+  {
+    "id": "AN-10",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or (not A and C))"
+      },
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 8, observadas 8"
+      },
+      {
+        "ok": true,
+        "verificacao": "resultado de cada linha = (A and B) or (not A and C) (divergentes: [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or (not A and C)",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.72
+      }
+    ]
+  },
+  {
+    "id": "AN-11",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or C)"
+      },
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 8, observadas 8"
+      },
+      {
+        "ok": true,
+        "verificacao": "resultado de cada linha = (A and B) or C (divergentes: [])"
+      },
+      {
+        "ok": true,
+        "verificacao": "primeira linha (V1) toda verdadeira"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.55
+      }
+    ]
+  },
+  {
+    "id": "AN-12",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes distintos esperados 8, observados 8"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and not B and not C) or (not A and B and not C) or (not A and not B and C) or (A and B and C)",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 0.69
+      }
+    ]
+  },
+  {
+    "id": "AN-13",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze A or (B and C))"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A or (B and C)",
+          "--constraint",
+          "not A or B"
+        ],
+        "exit": 0,
+        "segundos": 0.6
+      }
+    ]
+  },
+  {
+    "id": "AN-14",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (analyze A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and B",
+          "--constraint",
+          "A"
+        ],
+        "exit": 2,
+        "segundos": 0.62
+      }
+    ]
+  },
+  {
+    "id": "AN-15",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (analyze -f)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "-f",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc"
+        ],
+        "exit": 2,
+        "segundos": 0.64
+      }
+    ]
+  },
+  {
+    "id": "AN-16",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze -f)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "-f",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/AN16_comentarios.mcdc"
+        ],
+        "exit": 0,
+        "segundos": 0.64
+      }
+    ]
+  },
+  {
+    "id": "AN-17",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze -f)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "-f",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/AN17_erro_sintaxe.mcdc"
+        ],
+        "exit": 1,
+        "segundos": 0.55
+      }
+    ]
+  },
+  {
+    "id": "AN-18",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze (A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B"
+        ],
+        "exit": 1,
+        "segundos": 0.62
+      }
+    ]
+  },
+  {
+    "id": "AN-19",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze x > -3 and y)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "x > -3 and y"
+        ],
+        "exit": 0,
+        "segundos": 0.64
+      }
+    ]
+  },
+  {
+    "id": "AN-20",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze -x > 3)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "-x > 3"
+        ],
+        "exit": 1,
+        "segundos": 0.65
+      }
+    ]
+  },
+  {
+    "id": "AN-21",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and B",
+          "--format",
+          "xml"
+        ],
+        "exit": 1,
+        "segundos": 0.65
+      }
+    ]
+  },
+  {
+    "id": "AN-22",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or C)"
+      },
+      {
+        "ok": true,
+        "verificacao": "arquivo -o criado e não vazio"
+      },
+      {
+        "ok": true,
+        "verificacao": "conteúdo do arquivo = stdout sem -o"
+      },
+      {
+        "ok": true,
+        "verificacao": "relatório não mostrado na tela com -o"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C",
+          "-o",
+          "resultados/rodada-04-determinados/casos/AN-22/AN-22.txt"
+        ],
+        "exit": 0,
+        "segundos": 0.61
+      },
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C"
+        ],
+        "exit": 0,
+        "segundos": 0.68
+      }
+    ]
+  },
+  {
+    "id": "AN-23",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or C)"
+      },
+      {
+        "ok": true,
+        "verificacao": "stdout é JSON válido"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 1.57
+      }
+    ]
+  },
+  {
+    "id": "AN-24",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20"
+        ],
+        "exit": 0,
+        "segundos": 1.23
+      }
+    ]
+  },
+  {
+    "id": "AN-26",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze A and (B or C))"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and (B or C)",
+          "--mutation"
+        ],
+        "exit": 0,
+        "segundos": 0.68
+      }
+    ]
+  },
+  {
+    "id": "AN-27",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes distintos esperados 5, observados 5"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "((E or D) and (not A or D)) or B",
+          "--exact",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 0.78
+      }
+    ]
+  },
+  {
+    "id": "AN-28",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes distintos esperados 6, observados 6"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "((E or D) and (not A or D)) or B",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 0.64
+      }
+    ]
+  },
+  {
+    "id": "AN-29",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 8, observadas 8"
+      },
+      {
+        "ok": true,
+        "verificacao": "impossíveis = 2 linhas com speed > 100=T e speed > 50=F (observadas 2: ['V3', 'V4'])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "speed > 100 or (speed > 50 and rain)",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.89
+      }
+    ]
+  },
+  {
+    "id": "AN-30",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze speed > 100 or (speed > 50 and rain))"
+      },
+      {
+        "ok": true,
+        "verificacao": "guarda nos valores concretos = esperado (12 linhas; divergentes [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "speed > 100 or (speed > 50 and rain)",
+          "--z3",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 1.0
+      }
+    ]
+  },
+  {
+    "id": "AN-31",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "fronteiras de speed incluem [50.0, 51.0, 100.0, 101.0] (observadas [50.0, 51.0, 100.0, 101.0])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "speed > 100 or (speed > 50 and rain)",
+          "--z3",
+          "--boundary",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 2.16
+      }
+    ]
+  },
+  {
+    "id": "AN-32",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "saída menciona Z3 (exit 1)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and B",
+          "--z3"
+        ],
+        "exit": 1,
+        "segundos": 0.62
+      }
+    ]
+  },
+  {
+    "id": "AN-33",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13",
+          "--z3"
+        ],
+        "exit": 0,
+        "segundos": 3.55
+      }
+    ]
+  },
+  {
+    "id": "AN-34",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20 and X21 and X22 and X23 and X24 and X25 and X26 and X27 and X28 and X29 and X30)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20 and X21 and X22 and X23 and X24 and X25 and X26 and X27 and X28 and X29 and X30",
+          "--direct"
+        ],
+        "exit": 0,
+        "segundos": 4.02
+      }
+    ]
+  },
+  {
+    "id": "AN-41",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze -f)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "-f",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/nao-existe.mcdc"
+        ],
+        "exit": 1,
+        "segundos": 0.85
+      }
+    ]
+  },
+  {
+    "id": "AN-42",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (analyze speed > 100 and speed > 50)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "speed > 100 and speed > 50",
+          "--z3"
+        ],
+        "exit": 2,
+        "segundos": 1.05
+      }
+    ]
+  },
+  {
+    "id": "AN-43",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze speed > 100 and speed > 50)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "speed > 100 and speed > 50"
+        ],
+        "exit": 0,
+        "segundos": 0.64
+      }
+    ]
+  },
+  {
+    "id": "SY-VM-01",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "decisões 5 = 5"
+      },
+      {
+        "ok": true,
+        "verificacao": "condições 21 = 21"
+      },
+      {
+        "ok": true,
+        "verificacao": "combinações 152 = 152"
+      },
+      {
+        "ok": true,
+        "verificacao": "impossíveis (JSON) 4 = 4"
+      },
+      {
+        "ok": true,
+        "verificacao": "impossíveis marcadas (truth-csv) 4 = 4"
+      },
+      {
+        "ok": true,
+        "verificacao": "testes 26 = 26"
+      },
+      {
+        "ok": true,
+        "verificacao": "testes = condições + 1 em cada decisão (divergentes [])"
+      },
+      {
+        "ok": true,
+        "verificacao": "cada decisão ligada ao requisito de origem (divergentes [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 3.33
+      },
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 4.16
+      }
+    ]
+  },
+  {
+    "id": "SY-VM-02",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "mutantes 152 = 152"
+      },
+      {
+        "ok": true,
+        "verificacao": "equivalentes 0 = 0"
+      },
+      {
+        "ok": true,
+        "verificacao": "pegos 152 = 152"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--z3",
+          "--mutation",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 3.5
+      }
+    ]
+  },
+  {
+    "id": "SY-VM-03",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (verify --json)"
+      },
+      {
+        "ok": true,
+        "verificacao": "conflitos 0 = 0"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json"
+        ],
+        "exit": 0,
+        "segundos": 2.0
+      },
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 2.06
+      }
+    ]
+  },
+  {
+    "id": "SY-VM-04",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes 26 = 26"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--z3",
+          "--exact",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 3.98
+      }
+    ]
+  },
+  {
+    "id": "SY-VM-05",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes 26 = 26"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--z3",
+          "--unique-cause",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 3.19
+      }
+    ]
+  },
+  {
+    "id": "SY-VM-06",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 5.05
+      },
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 3.4
+      }
+    ]
+  },
+  {
+    "id": "SY-TIS-01",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "decisões 17 = 17"
+      },
+      {
+        "ok": true,
+        "verificacao": "condições 69 = 69"
+      },
+      {
+        "ok": true,
+        "verificacao": "combinações 268 = 268"
+      },
+      {
+        "ok": true,
+        "verificacao": "impossíveis (JSON) 4 = 4"
+      },
+      {
+        "ok": true,
+        "verificacao": "impossíveis marcadas (truth-csv) 4 = 4"
+      },
+      {
+        "ok": true,
+        "verificacao": "testes 80 = 80"
+      },
+      {
+        "ok": true,
+        "verificacao": "cada decisão ligada ao requisito de origem (divergentes [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 7.31
+      },
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 2,
+        "segundos": 7.41
+      }
+    ]
+  },
+  {
+    "id": "SY-TIS-02",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "mutantes 450 = 450"
+      },
+      {
+        "ok": true,
+        "verificacao": "equivalentes 21 = 21"
+      },
+      {
+        "ok": true,
+        "verificacao": "pegos 428 = 428"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+          "--z3",
+          "--mutation",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 7.52
+      }
+    ]
+  },
+  {
+    "id": "SY-TIS-03",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (verify --json)"
+      },
+      {
+        "ok": true,
+        "verificacao": "conflitos 3 = 3"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json"
+        ],
+        "exit": 2,
+        "segundos": 2.37
+      },
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 2.6
+      }
+    ]
+  },
+  {
+    "id": "SY-TIS-04",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes 80 = 80"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+          "--z3",
+          "--exact",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 9.79
+      }
+    ]
+  },
+  {
+    "id": "SY-TIS-05",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes 80 = 80"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+          "--z3",
+          "--unique-cause",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 12.54
+      }
+    ]
+  },
+  {
+    "id": "SY-TIS-06",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 40.12
+      },
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/tis-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 10.13
+      }
+    ]
+  },
+  {
+    "id": "SY-NPP-01",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "decisões 11 = 11"
+      },
+      {
+        "ok": true,
+        "verificacao": "condições 29 = 29"
+      },
+      {
+        "ok": true,
+        "verificacao": "combinações 76 = 76"
+      },
+      {
+        "ok": true,
+        "verificacao": "impossíveis (JSON) 1 = 1"
+      },
+      {
+        "ok": true,
+        "verificacao": "impossíveis marcadas (truth-csv) 1 = 1"
+      },
+      {
+        "ok": true,
+        "verificacao": "testes 40 = 40"
+      },
+      {
+        "ok": true,
+        "verificacao": "testes = condições + 1 em cada decisão (divergentes [])"
+      },
+      {
+        "ok": true,
+        "verificacao": "cada decisão ligada ao requisito de origem (divergentes [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 7.6
+      },
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 6.42
+      }
+    ]
+  },
+  {
+    "id": "SY-NPP-02",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "mutantes 146 = 146"
+      },
+      {
+        "ok": true,
+        "verificacao": "equivalentes 0 = 0"
+      },
+      {
+        "ok": true,
+        "verificacao": "pegos 146 = 146"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+          "--z3",
+          "--mutation",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 7.72
+      }
+    ]
+  },
+  {
+    "id": "SY-NPP-03",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (verify --json)"
+      },
+      {
+        "ok": true,
+        "verificacao": "conflitos 1 = 1"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json"
+        ],
+        "exit": 2,
+        "segundos": 2.88
+      },
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 2.72
+      }
+    ]
+  },
+  {
+    "id": "SY-NPP-04",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes 40 = 40"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+          "--z3",
+          "--exact",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 6.44
+      }
+    ]
+  },
+  {
+    "id": "SY-NPP-05",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "testes 40 = 40"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+          "--z3",
+          "--unique-cause",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 5.31
+      }
+    ]
+  },
+  {
+    "id": "SY-NPP-06",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 6.3
+      },
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 5.84
+      }
+    ]
+  },
+  {
+    "id": "SY-VM-07",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (verify --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+          "--context",
+          "the_system_mode = preparing_weak"
+        ],
+        "exit": 2,
+        "segundos": 3.38
+      }
+    ]
+  },
+  {
+    "id": "CK-01",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (check A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK01_completo.csv"
+        ],
+        "exit": 0,
+        "segundos": 1.05
+      }
+    ]
+  },
+  {
+    "id": "CK-02",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (check A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK02_incompleto.csv"
+        ],
+        "exit": 2,
+        "segundos": 1.03
+      }
+    ]
+  },
+  {
+    "id": "CK-03",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (check A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK03_esperado_errado.csv"
+        ],
+        "exit": 2,
+        "segundos": 0.96
+      }
+    ]
+  },
+  {
+    "id": "CK-04",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (check A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK04_sem_value.csv"
+        ],
+        "exit": 1,
+        "segundos": 0.77
+      }
+    ]
+  },
+  {
+    "id": "CK-05",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (check --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/decisoes.json",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/testes.csv"
+        ],
+        "exit": 2,
+        "segundos": 2.21
+      }
+    ]
+  },
+  {
+    "id": "CK-06",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "stdout é JSON válido"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK01_completo.csv",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 1.6
+      }
+    ]
+  },
+  {
+    "id": "CK-07",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (check A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK01_completo.csv",
+          "--format",
+          "csv"
+        ],
+        "exit": 1,
+        "segundos": 0.51
+      }
+    ]
+  },
+  {
+    "id": "CK-08",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (check A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK08_sem_esperado.csv"
+        ],
+        "exit": 0,
+        "segundos": 0.66
+      }
+    ]
+  },
+  {
+    "id": "VF-01",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (verify --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF01_conflito.json"
+        ],
+        "exit": 2,
+        "segundos": 1.98
+      }
+    ]
+  },
+  {
+    "id": "VF-02",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (verify --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF02_mesmo_valor.json"
+        ],
+        "exit": 0,
+        "segundos": 2.54
+      }
+    ]
+  },
+  {
+    "id": "VF-03",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (verify --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF03_disjuntas.json"
+        ],
+        "exit": 0,
+        "segundos": 2.65
+      }
+    ]
+  },
+  {
+    "id": "VF-04",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (verify --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF01_conflito.json",
+          "--context",
+          "flag = false"
+        ],
+        "exit": 2,
+        "segundos": 2.51
+      }
+    ]
+  },
+  {
+    "id": "VF-05",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (verify --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF03_disjuntas.json",
+          "--context",
+          "mode = a"
+        ],
+        "exit": 0,
+        "segundos": 2.63
+      }
+    ]
+  },
+  {
+    "id": "VF-06",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "stdout é JSON válido"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF01_conflito.json",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 2.28
+      }
+    ]
+  },
+  {
+    "id": "VF-07",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/VF07_ids_repetidos.json"
+        ],
+        "exit": 1,
+        "segundos": 1.74
+      }
+    ]
+  }
+]

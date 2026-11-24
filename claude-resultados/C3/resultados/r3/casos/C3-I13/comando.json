@@ -1,0 +1,1 @@
+["analyze", "speed > 100 or (speed > 50 and rain)", "--z3"]

@@ -1,0 +1,108 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "x or y",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "x"
+    }, {
+      "name" : "y"
+    } ],
+    "conditions" : [ {
+      "label" : "x",
+      "input" : "x",
+      "occurrence" : 1
+    }, {
+      "label" : "y",
+      "input" : "y",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x" : true,
+        "y" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x" : true,
+        "y" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x" : false,
+        "y" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x" : false,
+        "y" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "x" : [ [ "V2", "V4" ] ],
+      "y" : [ [ "V3", "V4" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "x" : true,
+        "y" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "x" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x" : false,
+        "y" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "y" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x" : false,
+        "y" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "x", "y" ]
+    } ],
+    "chosenPairs" : {
+      "x" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "y" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

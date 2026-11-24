@@ -1,0 +1,4 @@
+decision,test,input,expected_outcome
+D,T1,A,T
+D,T1,B,T
+D,T1,C,T

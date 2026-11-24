@@ -1,0 +1,35 @@
+{
+  "id": "EX-22",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "speed > 100 and speed > 50",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 1.91
+    },
+    {
+      "args": [
+        "analyze",
+        "speed > 100 and speed > 50",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "segundos": 1.78
+    }
+  ]
+}

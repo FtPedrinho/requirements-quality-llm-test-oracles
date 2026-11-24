@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Z3RequirementsVerifier.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C2 acumulado-determinados</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.z3</a> &gt; <span class="el_source">Z3RequirementsVerifier.java</span></div><h1>Z3RequirementsVerifier.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.z3;
+
+import io.github.rvdomingos.mcdc.core.model.Action;
+import io.github.rvdomingos.mcdc.core.model.And;
+import io.github.rvdomingos.mcdc.core.model.Cond;
+import io.github.rvdomingos.mcdc.core.model.Decision;
+import io.github.rvdomingos.mcdc.core.model.DecisionSet;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import io.github.rvdomingos.mcdc.core.model.Not;
+import io.github.rvdomingos.mcdc.core.model.Or;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
+/**
+ * Verificação entre requisitos com o Z3. Aponta conflitos: duas guardas que valem no mesmo passo e
+ * escrevem valores diferentes na mesma variável. Com um contexto, aponta lacunas: situações em que
+ * nenhuma guarda vale.
+ */
+public final class Z3RequirementsVerifier {
+
+    private final String command;
+
+    public Z3RequirementsVerifier() {
+<span class="fc" id="L29">        this(&quot;z3&quot;);</span>
+<span class="fc" id="L30">    }</span>
+
+<span class="fc" id="L32">    public Z3RequirementsVerifier(String command) {</span>
+<span class="fc" id="L33">        this.command = command;</span>
+<span class="fc" id="L34">    }</span>
+
+    /** Duas decisões escrevem valores diferentes na mesma variável. */
+<span class="fc" id="L37">    public record Conflict(String variable, String firstValue, String secondValue) {</span>
+    }
+
+    /**
+     * Duas guardas que podem valer juntas, entre decisões que escrevem alguma variável em comum.
+     *
+     * @param shared    variáveis escritas pelas duas
+     * @param conflicts variáveis com valores diferentes; vazio quando a sobreposição é compatível
+     * @param witness   valores que fazem as duas guardas valerem; vazio se o Z3 não decidiu
+     */
+<span class="fc" id="L47">    public record Overlap(Decision first, Decision second, List&lt;String&gt; shared, List&lt;Conflict&gt; conflicts,</span>
+            Map&lt;String, String&gt; witness) {
+
+        public boolean isConflict() {
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            return !conflicts.isEmpty();</span>
+        }
+    }
+
+    /**
+     * Resultado da verificação.
+     *
+     * @param pairsChecked pares de decisões comparados (os que escrevem alguma variável em comum)
+     * @param context      contexto das lacunas; null quando não informado
+     * @param gap          valores em que nenhuma guarda vale sob o contexto; null sem lacuna ou sem contexto
+     */
+<span class="fc" id="L62">    public record Result(int decisions, int pairsChecked, List&lt;Overlap&gt; overlaps, Expr context, Map&lt;String, String&gt; gap) {</span>
+
+        public List&lt;Overlap&gt; conflicts() {
+<span class="fc" id="L65">            return overlaps.stream().filter(Overlap::isConflict).toList();</span>
+        }
+
+        public List&lt;Overlap&gt; compatible() {
+<span class="fc bfc" id="L69" title="All 2 branches covered.">            return overlaps.stream().filter(o -&gt; !o.isConflict()).toList();</span>
+        }
+
+        public boolean gapChecked() {
+<span class="fc bfc" id="L73" title="All 2 branches covered.">            return context != null;</span>
+        }
+
+        /** Algum conflito ou lacuna. */
+        public boolean hasProblems() {
+<span class="fc bfc" id="L78" title="All 4 branches covered.">            return !conflicts().isEmpty() || gap != null;</span>
+        }
+    }
+
+    /** @param context contexto para as lacunas; null para conferir só as sobreposições */
+    public Result verify(DecisionSet set, Expr context) {
+<span class="fc" id="L84">        List&lt;Decision&gt; decisions = set.decisions();</span>
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">        if (decisions.isEmpty()) {</span>
+<span class="nc" id="L86">            return new Result(0, 0, List.of(), context, null);</span>
+        }
+<span class="fc" id="L88">        List&lt;List&lt;Action&gt;&gt; actions = decisions.stream()</span>
+<span class="fc" id="L89">                .map(d -&gt; d.actions().stream().map(Action::parse).flatMap(Optional::stream).toList())</span>
+<span class="fc" id="L90">                .toList();</span>
+
+        // uma codificação para o conjunto todo: as variáveis e os tipos são os mesmos em todas as consultas
+<span class="fc" id="L93">        Expr all = decisions.get(0).expression();</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        for (int i = 1; i &lt; decisions.size(); i++) {</span>
+<span class="fc" id="L95">            all = new Or(all, decisions.get(i).expression());</span>
+        }
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        SmtEncoding encoding = new SmtEncoding(context == null ? all : new And(context, all), set.inputs());</span>
+
+<span class="fc" id="L99">        record Candidate(int first, int second, List&lt;String&gt; shared) {</span>
+        }
+<span class="fc" id="L101">        List&lt;Candidate&gt; candidates = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L102">        List&lt;String&gt; queries = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        for (int i = 0; i &lt; decisions.size(); i++) {</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">            for (int j = i + 1; j &lt; decisions.size(); j++) {</span>
+<span class="fc" id="L105">                List&lt;String&gt; shared = sharedVariables(actions.get(i), actions.get(j));</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">                if (!shared.isEmpty()) {</span>
+<span class="fc" id="L107">                    candidates.add(new Candidate(i, j, shared));</span>
+<span class="fc" id="L108">                    queries.add(&quot;(assert (and &quot; + encoding.formula(decisions.get(i).expression(), &quot;&quot;) + &quot; &quot;</span>
+<span class="fc" id="L109">                            + encoding.formula(decisions.get(j).expression(), &quot;&quot;) + &quot;))\n&quot;);</span>
+                }
+            }
+        }
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        String gapQuery = context == null ? null</span>
+<span class="fc" id="L114">                : &quot;(assert (and &quot; + encoding.formula(context, &quot;&quot;) + &quot; &quot;</span>
+<span class="fc" id="L115">                        + encoding.formula(new Not(all), &quot;&quot;) + &quot;))\n&quot;;</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (gapQuery != null) {</span>
+<span class="fc" id="L117">            queries.add(gapQuery);</span>
+        }
+
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">        List&lt;Optional&lt;Map&lt;String, String&gt;&gt;&gt; answers = queries.isEmpty()</span>
+<span class="nc" id="L121">                ? List.of()</span>
+<span class="fc" id="L122">                : Z3FeasibilityChecker.solveAll(command, encoding, queries);</span>
+
+<span class="fc" id="L124">        List&lt;Overlap&gt; overlaps = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">        for (int q = 0; q &lt; candidates.size(); q++) {</span>
+<span class="fc" id="L126">            Optional&lt;Map&lt;String, String&gt;&gt; answer = answers.get(q);</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">            if (answer.isEmpty()) {</span>
+<span class="fc" id="L128">                continue; // as duas guardas nunca valem juntas</span>
+            }
+<span class="fc" id="L130">            Candidate c = candidates.get(q);</span>
+<span class="fc" id="L131">            List&lt;Conflict&gt; conflicts = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">            for (String variable : c.shared()) {</span>
+<span class="fc" id="L133">                Action a = first(actions.get(c.first()), variable);</span>
+<span class="fc" id="L134">                Action b = first(actions.get(c.second()), variable);</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">                if (a.contradicts(b)) {</span>
+<span class="fc" id="L136">                    conflicts.add(new Conflict(variable, a.value(), b.value()));</span>
+                }
+<span class="fc" id="L138">            }</span>
+<span class="fc" id="L139">            Set&lt;String&gt; used = variablesOf(decisions.get(c.first()).expression());</span>
+<span class="fc" id="L140">            used.addAll(variablesOf(decisions.get(c.second()).expression()));</span>
+<span class="fc" id="L141">            overlaps.add(new Overlap(decisions.get(c.first()), decisions.get(c.second()), c.shared(),</span>
+<span class="fc" id="L142">                    List.copyOf(conflicts), only(answer.get(), used)));</span>
+        }
+<span class="fc bfc" id="L144" title="All 2 branches covered.">        Map&lt;String, String&gt; gap = gapQuery == null ? null : answers.get(answers.size() - 1).orElse(null);</span>
+<span class="fc" id="L145">        return new Result(decisions.size(), candidates.size(), List.copyOf(overlaps), context, gap);</span>
+    }
+
+    /** Variáveis citadas numa expressão, dos dois lados das comparações. */
+    private static Set&lt;String&gt; variablesOf(Expr expr) {
+<span class="fc" id="L150">        Set&lt;String&gt; names = new LinkedHashSet&lt;&gt;();</span>
+<span class="pc bpc" id="L151" title="1 of 4 branches missed.">        switch (expr) {</span>
+<span class="fc" id="L152">            case Cond c -&gt; {</span>
+<span class="pc bpc" id="L153" title="1 of 2 branches missed.">                if (c.predicate() == null) {</span>
+<span class="nc" id="L154">                    names.add(c.id());</span>
+                } else {
+<span class="fc" id="L156">                    names.add(c.predicate().variable());</span>
+<span class="fc" id="L157">                    names.add(c.predicate().value());</span>
+                }
+<span class="fc" id="L159">            }</span>
+<span class="nc" id="L160">            case Not(var operand) -&gt; names.addAll(variablesOf(operand));</span>
+<span class="fc" id="L161">            case And(var left, var right) -&gt; {</span>
+<span class="fc" id="L162">                names.addAll(variablesOf(left));</span>
+<span class="fc" id="L163">                names.addAll(variablesOf(right));</span>
+<span class="fc" id="L164">            }</span>
+<span class="fc" id="L165">            case Or(var left, var right) -&gt; {</span>
+<span class="fc" id="L166">                names.addAll(variablesOf(left));</span>
+<span class="fc" id="L167">                names.addAll(variablesOf(right));</span>
+            }
+        }
+<span class="fc" id="L170">        return names;</span>
+    }
+
+    /** Só os valores das variáveis que as duas guardas citam: o resto do exemplo é indiferente. */
+    private static Map&lt;String, String&gt; only(Map&lt;String, String&gt; witness, Set&lt;String&gt; names) {
+<span class="fc" id="L175">        Map&lt;String, String&gt; kept = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L176">        witness.forEach((name, value) -&gt; {</span>
+<span class="fc bfc" id="L177" title="All 2 branches covered.">            if (names.contains(name)) {</span>
+<span class="fc" id="L178">                kept.put(name, value);</span>
+            }
+<span class="fc" id="L180">        });</span>
+<span class="fc" id="L181">        return kept;</span>
+    }
+
+    private static List&lt;String&gt; sharedVariables(List&lt;Action&gt; a, List&lt;Action&gt; b) {
+<span class="fc" id="L185">        Set&lt;String&gt; written = new LinkedHashSet&lt;&gt;();</span>
+<span class="fc" id="L186">        a.forEach(action -&gt; written.add(action.variable()));</span>
+<span class="fc" id="L187">        Set&lt;String&gt; shared = new LinkedHashSet&lt;&gt;();</span>
+<span class="fc" id="L188">        b.forEach(action -&gt; {</span>
+<span class="fc bfc" id="L189" title="All 2 branches covered.">            if (written.contains(action.variable())) {</span>
+<span class="fc" id="L190">                shared.add(action.variable());</span>
+            }
+<span class="fc" id="L192">        });</span>
+<span class="fc" id="L193">        return List.copyOf(shared);</span>
+    }
+
+    private static Action first(List&lt;Action&gt; actions, String variable) {
+<span class="fc" id="L197">        return actions.stream().filter(a -&gt; a.variable().equals(variable)).findFirst().orElseThrow();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

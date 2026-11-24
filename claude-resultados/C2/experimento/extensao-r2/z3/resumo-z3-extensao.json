@@ -1,0 +1,114 @@
+{
+  "z3": null,
+  "consultas": {
+    "X01-tabela": {
+      "guarda": "(x < 3) or ((y <= x) and (z >= -2))",
+      "entradas": [
+        "x < 3",
+        "y <= x",
+        "z >= -2"
+      ],
+      "condicoes": 3,
+      "combinacoes": 8,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 8,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "X01-pares": {
+      "guarda": "(x < 3) or ((y <= x) and (z >= -2))",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "x < 3": "sat",
+        "y <= x": "sat",
+        "z >= -2": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "X02-tabela": {
+      "guarda": "(m != idle) and (n = 4)",
+      "entradas": [
+        "m != idle",
+        "n = 4"
+      ],
+      "condicoes": 2,
+      "combinacoes": 4,
+      "impossiveis": 0,
+      "linhas_impossiveis": [],
+      "respostas": {
+        "sat": 4,
+        "unsat": 0,
+        "unknown": 0
+      }
+    },
+    "X02-pares": {
+      "guarda": "(m != idle) and (n = 4)",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "m != idle": "sat",
+        "n = 4": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    },
+    "X03-tabela": {
+      "guarda": "(t >= 2.5 /\\ k != a) \\/ (f = false /\\ t < -1.5)",
+      "entradas": [
+        "t >= 2.5",
+        "k != a",
+        "f = false",
+        "t < -1.5"
+      ],
+      "condicoes": 4,
+      "combinacoes": 16,
+      "impossiveis": 4,
+      "linhas_impossiveis": [
+        {
+          "t >= 2.5": true,
+          "k != a": true,
+          "f = false": true,
+          "t < -1.5": true
+        },
+        {
+          "t >= 2.5": true,
+          "k != a": true,
+          "f = false": false,
+          "t < -1.5": true
+        },
+        {
+          "t >= 2.5": true,
+          "k != a": false,
+          "f = false": true,
+          "t < -1.5": true
+        },
+        {
+          "t >= 2.5": true,
+          "k != a": false,
+          "f = false": false,
+          "t < -1.5": true
+        }
+      ],
+      "respostas": {
+        "sat": 12,
+        "unsat": 4,
+        "unknown": 0
+      }
+    },
+    "X03-pares": {
+      "guarda": "(t >= 2.5 /\\ k != a) \\/ (f = false /\\ t < -1.5)",
+      "restricao": null,
+      "livre": false,
+      "par_causa_unica": {
+        "t >= 2.5": "sat",
+        "k != a": "sat",
+        "f = false": "sat",
+        "t < -1.5": "sat"
+      },
+      "entradas_repetidas_nao_avaliadas": []
+    }
+  }
+}

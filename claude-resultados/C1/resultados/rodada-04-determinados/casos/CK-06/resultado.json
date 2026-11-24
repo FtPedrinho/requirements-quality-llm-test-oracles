@@ -1,0 +1,25 @@
+{
+  "id": "CK-06",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "stdout é JSON válido"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "check",
+        "A and B",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/entradas/CK01_completo.csv",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 1.6
+    }
+  ]
+}

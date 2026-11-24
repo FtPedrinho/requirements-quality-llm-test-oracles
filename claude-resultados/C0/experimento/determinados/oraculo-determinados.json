@@ -1,0 +1,1505 @@
+{
+ "condicao": "C0",
+ "fonte": "experimentacao-pesquisa/documentacao-original/tool-readme-original.md",
+ "fonte_sha256": "72B827BDEE6CE859527765CFF574A473519C00A1AF9AA9F3AACCE4236A4995F8",
+ "convencoes": {
+  "cwd": "raiz do repositorio (os caminhos de exemplos/ no README sao relativos a ela)",
+  "{IN}": "claude-resultados/C0/experimento/oraculo/entradas",
+  "{OUT}": "diretorio temporario de saida do caso",
+  "z3": "true = executavel z3 no PATH do processo do SUT; false = PATH sem z3",
+  "variante_padrao": "mascaramento",
+  "definicao_par_mascaramento": "par (t1,t2) da condicao c: ambos possiveis, valor de c difere, saida difere, c decide em t1 e em t2 (trocar so a aparicao c muda a saida)",
+  "definicao_par_causa_unica": "par de mascaramento em que todas as demais entradas sao iguais",
+  "unidade_de_contagem": "um caso = um ID; varias asserções do mesmo ID contam como um teste"
+ },
+ "casos": [
+  {
+   "id": "C0-A01",
+   "args": [
+    "analyze",
+    "(A and B) or C"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Código de saída: 0 tudo certo; ... 2 alguma condição sem par | MinimalSuiteTest: Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes)",
+   "regra": "Todas as condições de (A∧B)∨C têm par de mascaramento (Z3 Q-E1); a suíte do exemplo conhecido tem 4 testes",
+   "esperado": {
+    "exit": 0,
+    "contains": [
+     "A",
+     "B",
+     "C"
+    ]
+   },
+   "justificativa": "Saída em texto: só se exige código 0 e menção às três condições."
+  },
+  {
+   "id": "C0-A02",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "MinimalSuiteTest | 4 | Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes); par que demonstra cada condição",
+   "regra": "suíte de 4 testes; cada condição demonstrada por um par válido de mascaramento contido na suíte",
+   "esperado": {
+    "exit": 0,
+    "json_valid": true,
+    "tests": 4,
+    "pairs_valid": "masking",
+    "conditions": [
+     "A",
+     "B",
+     "C"
+    ]
+   },
+   "justificativa": "Mínimo 4 confirmado pelo Z3 (Q-E1-min)."
+  },
+  {
+   "id": "C0-A03",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--unique-cause",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "As duas variantes de MC/DC são suportadas: mascaramento (padrão) e causa única (--unique-cause)",
+   "regra": "em causa única, a suíte contém para cada condição um par que só difere nela",
+   "esperado": {
+    "exit": 0,
+    "json_valid": true,
+    "pairs_valid": "unique"
+   },
+   "justificativa": "Quantidade de testes em causa única não é dada para esta expressão; não é afirmada."
+  },
+  {
+   "id": "C0-A04",
+   "args": [
+    "analyze",
+    "A and not B",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "MinimalSuiteTest: ... A ∧ ¬B com 3",
+   "regra": "suíte com 3 testes",
+   "esperado": {
+    "exit": 0,
+    "tests": 3,
+    "pairs_valid": "masking"
+   },
+   "justificativa": "Mínimo 3 confirmado pelo Z3 (Q-E2-min)."
+  },
+  {
+   "id": "C0-A05",
+   "args": [
+    "analyze",
+    "(A and B) or (not A and C)",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "em (A and B) or (not A and C) há 3 entradas e 4 condições (A#1, B, A#2, C) | entrada repetida: cada aparição é uma condição com par próprio",
+   "regra": "4 condições A#1,B,A#2,C, cada uma com par próprio",
+   "esperado": {
+    "exit": 0,
+    "conditions": [
+     "A#1",
+     "B",
+     "A#2",
+     "C"
+    ],
+    "all_paired": true,
+    "pairs_valid": "masking"
+   },
+   "justificativa": "Z3 (Q-E5) confirma que cada aparição tem par de mascaramento."
+  },
+  {
+   "id": "C0-A06",
+   "args": [
+    "analyze",
+    "A or (A and B)",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "condição sem par é redundante, se continua sem par com todas as combinações | Código ... 2 alguma condição sem par",
+   "regra": "B e A#2 nunca decidem; sem restrições, ficam sem par e são redundantes",
+   "esperado": {
+    "exit": 2,
+    "unpaired": {
+     "B": "redundante",
+     "A#2": "redundante"
+    }
+   },
+   "justificativa": "Z3 (Q-E6): par de B e de A#2 unsat; par de A#1 sat."
+  },
+  {
+   "id": "C0-A07",
+   "args": [
+    "analyze",
+    "A or (A and B)"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Para cada condição sem par: redundante (o requisito pode ser simplificado) ou bloqueada",
+   "regra": "relatório em texto diz o motivo: redundante",
+   "esperado": {
+    "exit": 2,
+    "contains": [
+     "redundante"
+    ]
+   },
+   "justificativa": "Texto: 'o motivo de cada problema'."
+  },
+  {
+   "id": "C0-A08",
+   "args": [
+    "analyze",
+    "A and B",
+    "--constraint",
+    "not A or not B",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "condição sem par é redundante, se continua sem par com todas as combinações, ou bloqueada pelas combinações impossíveis",
+   "regra": "a restrição torna A=T,B=T impossível; A e B perdem o par, mas o teriam com todas as combinações: bloqueadas",
+   "esperado": {
+    "exit": 2,
+    "unpaired": {
+     "A": "bloqueada",
+     "B": "bloqueada"
+    },
+    "impossible": 1
+   },
+   "justificativa": "Z3 (Q-E7)."
+  },
+  {
+   "id": "C0-A09",
+   "args": [
+    "analyze",
+    "A and B",
+    "--constraint",
+    "not A or not B"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "bloqueada por combinações impossíveis",
+   "regra": "texto diz o motivo: bloqueada",
+   "esperado": {
+    "exit": 2,
+    "contains": [
+     "bloqueada"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-A10",
+   "args": [
+    "analyze",
+    "A or (B and C)",
+    "--constraint",
+    "not A or B",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "restrição escrita à mão: A = speed > 100 implica B = speed > 50 | ./mcdc analyze \"A or (B and C)\" --constraint \"not A or B\"",
+   "regra": "2 combinações impossíveis (A=T,B=F); todas as condições ainda têm par",
+   "esperado": {
+    "exit": 0,
+    "impossible": 2,
+    "all_paired": true,
+    "pairs_valid": "masking",
+    "suite_feasible_under": "not A or B"
+   },
+   "justificativa": "Z3 (Q-E8)."
+  },
+  {
+   "id": "C0-A11",
+   "args": [
+    "analyze",
+    "((E or D) and (not A or D)) or B",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "suíte exata (aqui, 5 testes em vez dos 6 da escolha gulosa)",
+   "regra": "escolha gulosa: 6 testes",
+   "esperado": {
+    "exit": 0,
+    "tests": 6,
+    "pairs_valid": "masking"
+   },
+   "justificativa": "Número 6 é literal da documentação."
+  },
+  {
+   "id": "C0-A12",
+   "args": [
+    "analyze",
+    "((E or D) and (not A or D)) or B",
+    "--exact",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "--exact | Suíte exata: a menor possível, escolhida pelo Z3 | (aqui, 5 testes ...)",
+   "regra": "suíte exata de 5 testes",
+   "esperado": {
+    "exit": 0,
+    "tests": 5,
+    "pairs_valid": "masking"
+   },
+   "justificativa": "Z3 (Q-E3-min): 4 unsat, 5 sat."
+  },
+  {
+   "id": "C0-A13",
+   "args": [
+    "analyze",
+    "(A and B and C) or (A and not B and not C) or (not A and B and not C) or (not A and not B and C)",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "o MC/DC pode exigir todas as combinações (ex.: a paridade de 3 entradas pede 8 testes)",
+   "regra": "paridade de 3 entradas: 8 testes",
+   "esperado": {
+    "exit": 0,
+    "tests": 8,
+    "pairs_valid": "masking"
+   },
+   "justificativa": "Z3 (Q-E4-min): 7 unsat, 8 sat."
+  },
+  {
+   "id": "C0-A14",
+   "args": [
+    "analyze",
+    "A1 and A2 and A3 and A4 and A5 and A6 and A7 and A8 and A9 and A10 and A11 and A12 and A13 and A14 and A15 and A16 and A17 and A18 and A19 and A20",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Nas guardas simples, a suíte tem N + 1 testes ... (até 20 entradas com a tabela inteira ...)",
+   "regra": "conjunção de 20 entradas distintas: 21 testes",
+   "esperado": {
+    "exit": 0,
+    "tests": 21
+   },
+   "justificativa": "Interpretação mais restrita de 'guarda simples': conjunção sem repetição. Z3 Q-E14 confirma mínimo n+1 para n=13."
+  },
+  {
+   "id": "C0-A16",
+   "args": [
+    "analyze",
+    "A1 and A2 and A3 and A4 and A5 and A6 and A7 and A8 and A9 and A10 and A11 and A12 and A13",
+    "--z3",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "--z3 ... acima de 12 entradas, passa sozinho ao modo direto",
+   "regra": "13 entradas com --z3 funciona (modo direto); conjunção simples: 14 testes",
+   "esperado": {
+    "exit": 0,
+    "tests": 14
+   },
+   "justificativa": "Z3 Q-E14: 13 unsat, 14 sat."
+  },
+  {
+   "id": "C0-A18",
+   "args": [
+    "analyze",
+    "A1 and A2 and A3 and A4 and A5 and A6 and A7 and A8 and A9 and A10 and A11 and A12 and A13 and A14 and A15 and A16 and A17 and A18 and A19 and A20 and A21 and A22 and A23 and A24 and A25 and A26",
+    "--direct",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "o modo direto com 26 entradas | --direct ... (até 30 entradas)",
+   "regra": "26 entradas no modo direto são aceitas; todas as condições com par",
+   "esperado": {
+    "exit": 0,
+    "all_paired": true
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B01",
+   "args": [
+    "analyze",
+    "A && B",
+    "--format",
+    "truth-csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "e | and, &&, /\\",
+   "regra": "&& equivale a and",
+   "esperado": {
+    "exit": 0,
+    "same_truth_as": [
+     "analyze",
+     "A and B",
+     "--format",
+     "truth-csv"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B02",
+   "args": [
+    "analyze",
+    "A /\\ B",
+    "--format",
+    "truth-csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "e | and, &&, /\\",
+   "regra": "/\\ equivale a and",
+   "esperado": {
+    "exit": 0,
+    "same_truth_as": [
+     "analyze",
+     "A and B",
+     "--format",
+     "truth-csv"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B03",
+   "args": [
+    "analyze",
+    "A || B",
+    "--format",
+    "truth-csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "ou | or, ||, \\/",
+   "regra": "|| equivale a or",
+   "esperado": {
+    "exit": 0,
+    "same_truth_as": [
+     "analyze",
+     "A or B",
+     "--format",
+     "truth-csv"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B04",
+   "args": [
+    "analyze",
+    "A \\/ B",
+    "--format",
+    "truth-csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "ou | or, ||, \\/",
+   "regra": "\\/ equivale a or",
+   "esperado": {
+    "exit": 0,
+    "same_truth_as": [
+     "analyze",
+     "A or B",
+     "--format",
+     "truth-csv"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B05",
+   "args": [
+    "analyze",
+    "!A and B",
+    "--format",
+    "truth-csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "não | not, !",
+   "regra": "! equivale a not",
+   "esperado": {
+    "exit": 0,
+    "same_truth_as": [
+     "analyze",
+     "not A and B",
+     "--format",
+     "truth-csv"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B06",
+   "args": [
+    "analyze",
+    "A or B and C",
+    "--format",
+    "truth-csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "ExpressionParserTest: Precedência (e antes de ou), parênteses",
+   "regra": "and liga antes de or: A or (B and C)",
+   "esperado": {
+    "exit": 0,
+    "same_truth_as": [
+     "analyze",
+     "A or (B and C)",
+     "--format",
+     "truth-csv"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B07",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--format",
+    "truth-csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "truth-csv | A tabela verdade inteira | TruthTableTest: Uma linha por combinação; a linha 0 é tudo verdadeiro; a saída de cada linha",
+   "regra": "8 linhas de dados; a primeira com A=B=C=T; saída de cada linha = (A∧B)∨C",
+   "esperado": {
+    "exit": 0,
+    "truth_rows": 8,
+    "row0_all_true": true,
+    "truth_outputs_correct": true
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B08",
+   "args": [
+    "analyze",
+    "A or (B and C)",
+    "--constraint",
+    "not A or B",
+    "--format",
+    "truth-csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "truth-csv | A tabela verdade inteira, com as combinações impossíveis marcadas",
+   "regra": "8 linhas; impossíveis marcadas exatamente: A=T,B=F,C=T e A=T,B=F,C=F",
+   "esperado": {
+    "exit": 0,
+    "truth_rows": 8,
+    "impossible_rows": [
+     {
+      "A": true,
+      "B": false,
+      "C": true
+     },
+     {
+      "A": true,
+      "B": false,
+      "C": false
+     }
+    ]
+   },
+   "justificativa": "Z3 Q-E8."
+  },
+  {
+   "id": "C0-B09",
+   "args": [
+    "analyze",
+    "speed > 100 /\\ mode = idle"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "./mcdc analyze 'speed > 100 /\\ mode = idle'",
+   "regra": "comparações e operadores do DFRS aceitos",
+   "esperado": {
+    "exit": 0
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B10",
+   "args": [
+    "analyze",
+    "a == 1 or b != 2 or c < 3 or d <= 4 or e >= 5",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "comparação | =, ==, !=, <, <=, >, >=",
+   "regra": "todas as comparações aceitas; 5 condições",
+   "esperado": {
+    "exit": 0,
+    "n_conditions": 5
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B11",
+   "args": [
+    "analyze",
+    "(A and B"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Código de saída: ... 1 entrada inválida | expressões inválidas recusadas",
+   "regra": "parêntese aberto: entrada inválida",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B12",
+   "args": [
+    "analyze",
+    "A and or B"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "1 entrada inválida",
+   "regra": "expressão malformada",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B13",
+   "args": [
+    "analyze",
+    ""
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "1 entrada inválida",
+   "regra": "expressão vazia não é uma expressão lógica",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-B14",
+   "args": [
+    "analyze",
+    "A and B",
+    "--format",
+    "xml"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "--format <formato> | text (padrão), json, csv (suíte) ou truth-csv",
+   "regra": "formato fora da lista é entrada inválida",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": "Leitura: o código 1 cobre entrada inválida na linha de comando."
+  },
+  {
+   "id": "C0-C01",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--format",
+    "csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "csv | A suíte: uma linha por teste e entrada, com o resultado esperado",
+   "regra": "4 testes × 3 entradas = 12 linhas de dados; resultado esperado = guarda",
+   "esperado": {
+    "exit": 0,
+    "csv_rows": 12,
+    "csv_outcome_correct": "(A and B) or C"
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-C02",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "-o",
+    "{OUT}/rel.txt"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "-o <arquivo> | Grava o relatório no arquivo em vez de mostrar na tela",
+   "regra": "arquivo criado e não vazio; o relatório não aparece no stdout",
+   "esperado": {
+    "exit": 0,
+    "file_written": "{OUT}/rel.txt"
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-C03",
+   "args": [
+    "analyze",
+    "-f",
+    "{IN}/requisitos-doc.mcdc",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Arquivo .mcdc: um requisito por linha, ID: expressão. Linhas com # são comentários | json: ... ligado ao requisito de origem",
+   "regra": "dois requisitos lidos (comentário ignorado); todas as condições com par; JSON cita REQ-001 e REQ-002",
+   "esperado": {
+    "exit": 0,
+    "json_valid": true,
+    "contains": [
+     "REQ-001",
+     "REQ-002"
+    ],
+    "n_decisions": 2
+   },
+   "justificativa": "Z3 Q-E16."
+  },
+  {
+   "id": "C0-C04",
+   "args": [
+    "analyze",
+    "-f",
+    "{IN}/requisitos-erro.mcdc"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "RequirementsFileTest: ... erro de sintaxe com o requisito | 1 entrada inválida",
+   "regra": "erro de sintaxe: código 1 e mensagem cita REQ-011",
+   "esperado": {
+    "exit": 1,
+    "contains": [
+     "REQ-011"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-C05",
+   "args": [
+    "analyze",
+    "-f",
+    "{IN}/nao-existe.mcdc"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "1 entrada inválida",
+   "regra": "arquivo inexistente é entrada inválida",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-C06",
+   "args": [
+    "analyze",
+    "-f",
+    "exemplos/requisitos.mcdc"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "vários requisitos de um arquivo; REQ-003 tem uma condição redundante | 2 alguma condição sem par",
+   "regra": "uma condição sem par: código 2; texto diz redundante",
+   "esperado": {
+    "exit": 2,
+    "contains": [
+     "REQ-003",
+     "redundante"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-C07",
+   "args": [
+    "analyze",
+    "--json",
+    "{IN}/cafe-doc.json",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "JSON de decisões (formato do Extractor da NAT2TEST) [exemplo literal]",
+   "regra": "guarda com 2 condições em conjunção: 3 testes; JSON liga vm#1 a REQ-001",
+   "esperado": {
+    "exit": 0,
+    "tests": 3,
+    "contains": [
+     "REQ-001",
+     "vm#1"
+    ]
+   },
+   "justificativa": "Z3 Q-E10."
+  },
+  {
+   "id": "C0-C08",
+   "args": [
+    "analyze",
+    "--json",
+    "{IN}/cafe-doc.json",
+    "--z3",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "--z3 | ... combinações impossíveis ... valores concretos para cada teste",
+   "regra": "nenhuma combinação impossível; valores concretos realizam a linha e o resultado esperado é o da guarda",
+   "esperado": {
+    "exit": 0,
+    "impossible": 0,
+    "tests": 3,
+    "concrete_ok": true
+   },
+   "justificativa": "Z3 Q-E10: 4 linhas sat."
+  },
+  {
+   "id": "C0-C09",
+   "args": [
+    "analyze",
+    "--json",
+    "{IN}/temporal.json",
+    "--z3"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "O valor do passo anterior é escrito com o sufixo _antes",
+   "regra": "guarda com _antes aceita",
+   "esperado": {
+    "exit": 0
+   },
+   "justificativa": "Z3 Q-E18."
+  },
+  {
+   "id": "C0-C10",
+   "args": [
+    "analyze",
+    "--json",
+    "{IN}/json-invalido.json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Nat2TestJsonReaderTest: ... arquivos inválidos | 1 entrada inválida",
+   "regra": "JSON malformado",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-C11",
+   "args": [
+    "analyze",
+    "--json",
+    "{IN}/ids-repetidos.json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Nat2TestJsonReaderTest: ... arquivos inválidos, ids repetidos | 1 entrada inválida",
+   "regra": "ids repetidos são recusados",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": "Leitura: 'ids repetidos' listado entre casos de arquivo inválido."
+  },
+  {
+   "id": "C0-D01",
+   "args": [
+    "analyze",
+    "speed > 100 or (speed > 50 and rain)",
+    "--z3",
+    "--boundary",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "o Z3 descobre as combinações impossíveis, dá valores concretos e testes de fronteira | speed > 100 → 100 e 101",
+   "regra": "2 impossíveis (speed>100 e não speed>50); todas com par; valores realizam as linhas; fronteiras 100/101 e 50/51",
+   "esperado": {
+    "exit": 0,
+    "impossible": 2,
+    "all_paired": true,
+    "concrete_ok": true,
+    "boundary_values": {
+     "speed": [
+      50,
+      51,
+      100,
+      101
+     ]
+    }
+   },
+   "justificativa": "Z3 Q-E9."
+  },
+  {
+   "id": "C0-D02",
+   "args": [
+    "analyze",
+    "speed > 100 or (speed > 50 and rain)",
+    "--z3",
+    "--boundary"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "text | ... fronteiras",
+   "regra": "texto mostra fronteiras 100 e 101",
+   "esperado": {
+    "exit": 0,
+    "contains": [
+     "100",
+     "101"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-D04",
+   "args": [
+    "analyze",
+    "speed > 100 or (speed > 50 and rain)",
+    "--z3"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Sem o Z3, tudo funciona, exceto as opções que dependem dele, que avisam quando ele não está instalado",
+   "regra": "aviso mencionando o Z3",
+   "esperado": {
+    "contains": [
+     "z3"
+    ]
+   },
+   "justificativa": "Código de saída não especificado; não afirmado."
+  },
+  {
+   "id": "C0-D05",
+   "args": [
+    "verify",
+    "--json",
+    "{IN}/v-conflito.json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "Sem o Z3 ... as opções que dependem dele ... avisam | verify (usa o Z3)",
+   "regra": "verify sem Z3 avisa",
+   "esperado": {
+    "contains": [
+     "z3"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-D06",
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/vm-decisoes.json",
+    "--direct",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "Z3RandomizedTest: ... o modo direto dá a mesma cobertura e o mesmo diagnóstico que a tabela inteira",
+   "regra": "mesmas condições com/sem par que o modo tabela com --z3",
+   "esperado": {
+    "exit_same_as": [
+     "analyze",
+     "--json",
+     "exemplos/vm-decisoes.json",
+     "--z3",
+     "--format",
+     "json"
+    ],
+    "same_pairing_as": [
+     "analyze",
+     "--json",
+     "exemplos/vm-decisoes.json",
+     "--z3",
+     "--format",
+     "json"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-D07",
+   "args": [
+    "analyze",
+    "A and (B or C)",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "--mutation | Versões do requisito com um defeito cada (seis tipos) | ORF, ENF, VNF, MVF, VRF, ASF",
+   "regra": "mutantes gerados; tipos dentro dos seis",
+   "esperado": {
+    "exit": 0,
+    "mutation_types_subset": [
+     "ORF",
+     "ENF",
+     "VNF",
+     "MVF",
+     "VRF",
+     "ASF"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-D08",
+   "args": [
+    "analyze",
+    "A and (B or C)",
+    "--mutation"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "text | ... mutação",
+   "regra": "texto cita tipos de defeito",
+   "esperado": {
+    "exit": 0,
+    "contains_any": [
+     "ORF",
+     "ENF",
+     "VNF",
+     "MVF",
+     "VRF",
+     "ASF"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-E01",
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/vm-decisoes.json",
+    "--z3",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "Números travados pela regressão: VM · máquina de café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152",
+   "regra": "totais do sistema VM",
+   "esperado": {
+    "totals": {
+     "requirements": 5,
+     "conditions": 21,
+     "combinations": 152,
+     "impossible": 4,
+     "tests": 26,
+     "mutants": 152,
+     "equivalent": 0,
+     "killed": 152
+    }
+   },
+   "justificativa": "'Completos' não tem definição operacional; não afirmado."
+  },
+  {
+   "id": "C0-E02",
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/tis-decisoes.json",
+    "--z3",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3",
+   "regra": "totais do sistema TIS",
+   "esperado": {
+    "totals": {
+     "requirements": 17,
+     "conditions": 69,
+     "combinations": 268,
+     "impossible": 4,
+     "tests": 80,
+     "mutants": 450,
+     "equivalent": 21,
+     "killed": 428
+    }
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-E03",
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/npp-decisoes.json",
+    "--z3",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "NPP · injeção de segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1",
+   "regra": "totais do sistema NPP",
+   "esperado": {
+    "totals": {
+     "requirements": 11,
+     "conditions": 29,
+     "combinations": 76,
+     "impossible": 1,
+     "tests": 40,
+     "mutants": 146,
+     "equivalent": 0,
+     "killed": 146
+    }
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-E04",
+   "args": [
+    "verify",
+    "--json",
+    "exemplos/vm-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "Conflitos VM 0 | verify: 2 algum conflito ou lacuna | lacunas só com contexto",
+   "regra": "0 conflitos, sem contexto não há lacuna: código 0",
+   "esperado": {
+    "exit": 0,
+    "conflicts": 0
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-E05",
+   "args": [
+    "verify",
+    "--json",
+    "exemplos/tis-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "Conflitos TIS 3",
+   "regra": "3 conflitos: código 2",
+   "esperado": {
+    "exit": 2,
+    "conflicts": 3
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-E06",
+   "args": [
+    "verify",
+    "--json",
+    "exemplos/npp-decisoes.json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "Conflitos NPP 1 | ./mcdc verify --json exemplos/npp-decisoes.json",
+   "regra": "1 conflito: código 2",
+   "esperado": {
+    "exit": 2
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-E08",
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/vm-decisoes.json",
+    "--z3",
+    "--exact",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "A busca exata e a causa única dão o mesmo número de testes [que a regressão: VM 26]",
+   "regra": "VM com --exact: 26 testes",
+   "esperado": {
+    "totals": {
+     "tests": 26
+    }
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-E09",
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/npp-decisoes.json",
+    "--z3",
+    "--unique-cause",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "A busca exata e a causa única dão o mesmo número de testes",
+   "regra": "NPP em causa única: 40 testes",
+   "esperado": {
+    "totals": {
+     "tests": 40
+    }
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-E10",
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/tis-decisoes.json",
+    "--z3",
+    "--format",
+    "truth-csv",
+    "-o",
+    "{OUT}/tabela.csv"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "truth-csv | A tabela verdade inteira, com as combinações impossíveis marcadas | TIS combinações 268, impossíveis 4",
+   "regra": "arquivo gravado",
+   "esperado": {
+    "exit_any_of": [
+     0,
+     2
+    ],
+    "file_written": "{OUT}/tabela.csv"
+   },
+   "justificativa": "Código: TIS tem requisitos não completos; 0 ou 2."
+  },
+  {
+   "id": "C0-F01",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{IN}/testes-completos.csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "mcdc check: Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado | 0 tudo certo",
+   "regra": "4 testes cobrem MC/DC com esperados corretos: código 0",
+   "esperado": {
+    "exit": 0
+   },
+   "justificativa": "Z3 Q-E12."
+  },
+  {
+   "id": "C0-F02",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{IN}/testes-incompletos.csv",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "no check: alguma condição não demonstrada ... (código 2)",
+   "regra": "2 testes não demonstram B e C",
+   "esperado": {
+    "exit": 2,
+    "json_valid": true
+   },
+   "justificativa": "Z3 Q-E12."
+  },
+  {
+   "id": "C0-F03",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{IN}/testes-esperado-errado.csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "no check: ... resultado esperado divergente (código 2)",
+   "regra": "T2 declara T, guarda dá F",
+   "esperado": {
+    "exit": 2
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-F04",
+   "args": [
+    "check",
+    "speed > 100 and rain",
+    "--tests",
+    "{IN}/testes-concretos.csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "com o valor lógico (T/F) ou o valor concreto da variável",
+   "regra": "valores concretos cobrem MC/DC",
+   "esperado": {
+    "exit": 0
+   },
+   "justificativa": "Z3 Q-E13."
+  },
+  {
+   "id": "C0-F05",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{IN}/testes-colunas-faltando.csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "TestCasesFileTest: ... colunas faltando | 1 entrada inválida",
+   "regra": "CSV sem colunas obrigatórias",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-F06",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{IN}/testes-completos.csv",
+    "--format",
+    "csv"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "check e verify aceitam text e json",
+   "regra": "csv não aceito no check: entrada inválida",
+   "esperado": {
+    "exit": 1
+   },
+   "justificativa": "Mesma leitura de C0-B14."
+  },
+  {
+   "id": "C0-F09",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{IN}/testes-completos.csv",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "check ... aceitam text e json",
+   "regra": "JSON válido, código 0",
+   "esperado": {
+    "exit": 0,
+    "json_valid": true
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-F10",
+   "args": [
+    "check",
+    "(A and B) or C",
+    "--tests",
+    "{IN}/testes-incompletos.csv",
+    "--unique-cause"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "no check: alguma condição não demonstrada (2)",
+   "regra": "também em causa única falta par",
+   "esperado": {
+    "exit": 2
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-G01",
+   "args": [
+    "verify",
+    "--json",
+    "{IN}/v-conflito.json",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "Conflitos (dois requisitos valem juntos e escrevem valores diferentes) | 2 algum conflito",
+   "regra": "c=T,d=T possível e m recebe choice e weak",
+   "esperado": {
+    "exit": 2,
+    "conflicts": 1
+   },
+   "justificativa": "Z3 Q-E11a."
+  },
+  {
+   "id": "C0-G02",
+   "args": [
+    "verify",
+    "--json",
+    "{IN}/v-mesmo-valor.json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "Z3RequirementsVerifierTest: ... mesmo valor sem conflito",
+   "regra": "mesmo valor: sem conflito",
+   "esperado": {
+    "exit": 0
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-G03",
+   "args": [
+    "verify",
+    "--json",
+    "{IN}/v-disjuntas.json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "guardas que não se sobrepõem",
+   "regra": "c e não c nunca valem juntos",
+   "esperado": {
+    "exit": 0
+   },
+   "justificativa": "Z3 Q-E11b unsat."
+  },
+  {
+   "id": "C0-G04",
+   "args": [
+    "verify",
+    "--json",
+    "{IN}/v-mesmo-valor.json",
+    "--context",
+    "c = false"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "lacunas (nenhum requisito vale) | --context: confere se, nessa situação, sempre alguma guarda vale",
+   "regra": "com c=F e d=F nenhuma guarda vale: lacuna, código 2",
+   "esperado": {
+    "exit": 2
+   },
+   "justificativa": "Z3 Q-E11c sat."
+  },
+  {
+   "id": "C0-G05",
+   "args": [
+    "verify",
+    "--json",
+    "{IN}/v-disjuntas.json",
+    "--context",
+    "d = true",
+    "--format",
+    "json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "--context ... sempre alguma guarda vale",
+   "regra": "c ou não c sempre vale: sem lacuna e sem conflito",
+   "esperado": {
+    "exit": 0,
+    "json_valid": true
+   },
+   "justificativa": "Z3 Q-E11d unsat."
+  },
+  {
+   "id": "C0-G08",
+   "args": [
+    "verify",
+    "--json",
+    "{IN}/v-conflito.json"
+   ],
+   "z3": true,
+   "status": "DETERMINADO",
+   "trecho": "text | ... o motivo de cada problema",
+   "regra": "texto com conflito cita R1 e R2 (ou s#1 e s#2)",
+   "esperado": {
+    "exit": 2,
+    "contains_any": [
+     "R1",
+     "s#1"
+    ]
+   },
+   "justificativa": ""
+  },
+  {
+   "id": "C0-G10",
+   "args": [
+    "analyze",
+    "(A and B) or C",
+    "--mutation",
+    "--unique-cause",
+    "--format",
+    "json"
+   ],
+   "z3": false,
+   "status": "DETERMINADO",
+   "trecho": "MutationReportTest: Suítes de causa única pegam todo defeito garantido por Kapoor e Bowen",
+   "regra": "mutação em causa única executa; tipos dentro dos seis",
+   "esperado": {
+    "exit": 0,
+    "mutation_types_subset": [
+     "ORF",
+     "ENF",
+     "VNF",
+     "MVF",
+     "VRF",
+     "ASF"
+    ]
+   },
+   "justificativa": ""
+  }
+ ],
+ "filtro": "somente DETERMINADO de oraculo/oraculo.json (casos copiados sem alteracao)"
+}

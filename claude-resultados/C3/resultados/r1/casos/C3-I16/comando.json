@@ -1,0 +1,1 @@
+["verify", "--json", "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json", "--context", "the_system_mode = preparing_weak"]

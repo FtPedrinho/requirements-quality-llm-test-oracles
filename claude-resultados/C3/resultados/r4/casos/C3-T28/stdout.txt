@@ -1,0 +1,42 @@
+Decisão:   REQ
+Guarda:    x <= 10 and (y < 5 or y >= 7)
+Variante:  mascaramento
+
+Vetor x <= 10   y < 5   y >= 7   | D
+V1    T         T       T        | T  (impossível)
+V2    T         T       F        | T
+V3    T         F       T        | T
+V4    T         F       F        | F
+V5    F         T       T        | F  (impossível)
+V6    F         T       F        | F
+V7    F         F       T        | F
+V8    F         F       F        | F
+
+Pares de independência:
+  x <= 10: (V2, V6), (V2, V7), (V3, V6), (V3, V7)
+  y < 5: (V2, V4)
+  y >= 7: (V3, V4)
+
+Suíte mínima (4 testes):
+  V2  TTF  -> T   demonstra x <= 10, y < 5   [x = 0, y = 0]
+  V3  TFT  -> T   demonstra y >= 7   [x = 0, y = 7]
+  V4  TFF  -> F   demonstra y < 5, y >= 7   [x = 0, y = 5]
+  V6  FTF  -> F   demonstra x <= 10   [x = 11, y = 0]
+
+Testes de fronteira (9):
+  V2 com x = 10   [x = 10, y = 0]
+  V2 com y = 4   [x = 0, y = 4]
+  V3 com x = 10   [x = 10, y = 7]
+  V3 com y = 7   [x = 0, y = 7]
+  V4 com x = 10   [x = 10, y = 5]
+  V4 com y = 5   [x = 0, y = 5]
+  V4 com y = 6   [x = 0, y = 6]
+  V6 com x = 11   [x = 11, y = 0]
+  V6 com y = 4   [x = 11, y = 4]
+
+Demonstração por condição:
+  x <= 10: V2 (T) e V6 (F), só ela muda
+  y < 5: V2 (T) e V4 (F), só ela muda
+  y >= 7: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa

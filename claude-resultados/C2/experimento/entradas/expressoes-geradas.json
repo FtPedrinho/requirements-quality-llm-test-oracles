@@ -1,0 +1,8 @@
+{
+  "e20": "(x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and (x13 or x14) and (x15 or x16) and (x17 or x18) and (x19 or x20)",
+  "e21": "(x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and (x13 or x14) and (x15 or x16) and (x17 or x18) and (x19 or x20) and x21",
+  "e13": "(x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and x13",
+  "e26": "(x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and (x13 or x14) and (x15 or x16) and (x17 or x18) and (x19 or x20) and (x21 or x22) and (x23 or x24) and (x25 or x26)",
+  "e31": "(x1 or x2) and (x3 or x4) and (x5 or x6) and (x7 or x8) and (x9 or x10) and (x11 or x12) and (x13 or x14) and (x15 or x16) and (x17 or x18) and (x19 or x20) and (x21 or x22) and (x23 or x24) and (x25 or x26) and (x27 or x28) and (x29 or x30) and x31",
+  "paridade3": "(A and not B and not C) or (not A and B and not C) or (not A and not B and C) or (A and B and C)"
+}

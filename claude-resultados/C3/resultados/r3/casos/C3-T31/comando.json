@@ -1,0 +1,1 @@
+["analyze", "speed > 100 /\\ mode = idle", "--z3", "--format", "json"]

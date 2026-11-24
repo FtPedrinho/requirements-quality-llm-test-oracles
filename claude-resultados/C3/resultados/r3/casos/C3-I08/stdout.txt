@@ -1,0 +1,24 @@
+Decisão:   REQ
+Guarda:    A and B
+Restrição: not A or B
+Variante:  mascaramento
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | F  (impossível)
+V3    F   T   | F
+V4    F   F   | F
+
+Pares de independência:
+  A: (V1, V3)
+  B: nenhum par
+
+Suíte mínima (2 testes):
+  V1  TT  -> T   demonstra A
+  V3  FT  -> F   demonstra A
+
+Demonstração por condição:
+  A: V1 (T) e V3 (F), só ela muda
+
+Cobertura MC/DC: incompleta, sem par para B
+  B: bloqueada pelas restrições: os pares (V1, V2) usam linhas impossíveis

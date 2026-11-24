@@ -1,0 +1,506 @@
+{
+  "condicao": "C2",
+  "fonte": "experimentacao-pesquisa/experimentacao-2/documentation/tool-readme-C2.md",
+  "sha256_fonte": "61C4062B5FC6B4F364F40465B0E017C80E0FA0C5433412EB2E925C545F6EFBE1",
+  "unidade_de_contagem": "caso = uma invocação da CLI com ID estável; PASSOU se todas as asserções da expectativa são satisfeitas, FALHOU se alguma é contrariada; INDETERMINADO quando não há expectativa única.",
+  "casos": [
+    {
+      "id": "X01",
+      "categoria": "z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(x < 3) or ((y <= x) and (z >= -2))",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L41",
+          "texto": "| Dar valoes concretos | `--z3` | Combinaçoes impossiveis descrtadas  valoes concretos   teste (`speed = 101`) |"
+        },
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        },
+        {
+          "linha": "L417",
+          "texto": "| `NumericOracleTest` | 1 |  150 expressões alatórias  comparçes numérics   enumerção (`x > 3`, `y <= x`, `mode != idle`), acpladas entre si, ..."
+        },
+        {
+          "linha": "L127-L137",
+          "texto": "| Operadr | Frmas acets | ... |  | `and`, `&&`, `/\\` | |  | `or`, `\\|\\|`, `\\/` | | não | `not`, `!` | | comparção | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |"
+        }
+      ],
+      "regra": "Valores concretos realizam cada combinação e o resultado é o da guarda (inclui fronteira).",
+      "expectativa": {
+        "exit": 0,
+        "concretos_realizam": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L41/L463; comparações < <= >= e acoplamento y <= x (L417); negativo (L523). X01-tabela: combinações viáveis. Código 0: X01-pares mostra par de causa única viável para as 3 condições.",
+      "z3": [
+        "X01-tabela",
+        "X01-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "X02",
+      "categoria": "z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(m != idle) and (n = 4)",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L41",
+          "texto": "| Dar valoes concretos | `--z3` | Combinaçoes impossiveis descrtadas  valoes concretos   teste (`speed = 101`) |"
+        },
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        },
+        {
+          "linha": "L417",
+          "texto": "| `NumericOracleTest` | 1 |  150 expressões alatórias  comparçes numérics   enumerção (`x > 3`, `y <= x`, `mode != idle`), acpladas entre si, ..."
+        }
+      ],
+      "regra": "Valores concretos com != textual e = numérico.",
+      "expectativa": {
+        "exit": 0,
+        "concretos_realizam": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L41/L463; X02-pares: par de causa única viável para as 2 condições.",
+      "z3": [
+        "X02-tabela",
+        "X02-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "X03",
+      "categoria": "z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{ENT}/x03-real.json",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L41",
+          "texto": "| Dar valoes concretos | `--z3` | Combinaçoes impossiveis descrtadas  valoes concretos   teste (`speed = 101`) |"
+        },
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        },
+        {
+          "linha": "L153",
+          "texto": "**JSON  decisões** (fomato do Extractr  NAT2TEST): cotm  variavis  seus tips, alem das decisões,     guarda   ações."
+        }
+      ],
+      "regra": "Valores concretos com real, enumeração, booleano e negativo.",
+      "expectativa": {
+        "exit": 0,
+        "concretos_realizam": true,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L41/L463, L153. X03-pares: par de causa única viável para todas as condições.",
+      "z3": [
+        "X03-tabela",
+        "X03-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "X04",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--boundary",
+        "--format",
+        "csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        },
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        }
+      ],
+      "regra": "CSV da suíte com valores concretos: resultado esperado de cada teste é o valor da guarda.",
+      "expectativa": {
+        "exit": 0,
+        "csv_resultado_esperado_correto": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L205, L463.",
+      "z3": [
+        "Q13-speed-rain-tabela"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "X05",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "--json",
+        "{EX}/decisoes.json",
+        "--tests",
+        "{EX}/testes.csv",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L121",
+          "texto": "| `--format <formato>` | `text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea); `check` e `verify` acetam `text` e `json` |"
+        },
+        {
+          "linha": "L51",
+          "texto": "| Avalar teses existntes | `mcdc check` | Cobertura MC/DC  um cnjunto  testes,  que falta  testes  resutado esperdo errdo |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "check em JSON: mesma divergência de T4 e código 2.",
+      "expectativa": {
+        "exit": 2,
+        "json_valido": true,
+        "check_divergentes": [
+          "T4"
+        ],
+        "check_nao_demonstrada": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Como K01; L121.",
+      "z3": [
+        "Q23-check-exemplo"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "X06",
+      "categoria": "modo-direto",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--direct",
+        "--unique-cause",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L113/L419",
+          "texto": "| `--direct` | Pares pedds dreto  Z   3,  mnar a tabela ( 30 entradas) | ...  120 expressões,  modo dreto dá  mesam cobertura   mesom dignstio  a tabea-verdae cmpleta."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L55",
+          "texto": "duas variants  MC/DC  supordas: **mascaramento** (pdrão) e **causa úica** (`--unique-cause`). Nesa documentaço, entraa é  variavel dstinta  expresão; condição é cada ocorencia   entrada  expressão."
+        }
+      ],
+      "regra": "Modo direto, causa única: VM sem condição sem par.",
+      "expectativa": {
+        "exit": 0,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Causa única: par em que só a condição avaliada muda e o resultado muda (sentido do nome da variante; a fonte cita Chilenski). L491: um par de causa única vale também no mascaramento; logo, existência de par de causa única (verificada no Z3) implica condição com par nas duas variantes. A definição do mascaramento não está escrita na fonte: ausência de par no mascaramento não é derivável, só presença. VM-*-pares (Z3): par de causa única viável para todas as 21 condições.",
+      "z3": [
+        "VM-totais"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "X07",
+      "categoria": "modo-direto",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/npp-decisoes.json",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L113/L419",
+          "texto": "| `--direct` | Pares pedds dreto  Z   3,  mnar a tabela ( 30 entradas) | ...  120 expressões,  modo dreto dá  mesam cobertura   mesom dignstio  a tabea-verdae cmpleta."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Modo direto: NPP sem condição sem par.",
+      "expectativa": {
+        "exit": 0,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L419; NPP-*-pares (Z3).",
+      "z3": [
+        "NPP-totais"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "X08",
+      "categoria": "modo-direto",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "-f",
+        "{EX}/requisitos.mcdc",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L113/L419",
+          "texto": "| `--direct` | Pares pedds dreto  Z   3,  mnar a tabela ( 30 entradas) | ...  120 expressões,  modo dreto dá  mesam cobertura   mesom dignstio  a tabea-verdae cmpleta."
+        },
+        {
+          "linha": "L241-L243",
+          "texto": "# város requisitos de um arquivo; REQ-003 tem  condião redundante / ./mcdc analyze -f exeplos/requisitos.mcdc"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Modo direto dá o mesmo diagnóstico: REQ-003 com condição redundante.",
+      "expectativa": {
+        "exit": 2,
+        "requisito_tem_classe": {
+          "REQ-003": "redundante"
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L419 + L241 (como M01).",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "X09",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{EX}/npp-decisoes.json",
+        "-o",
+        "{OUT}/X09-verify.txt"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L123",
+          "texto": "| `-o <arquivo>` | Grava  relatorio  arqivo  vez  mostrr  tela |"
+        },
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "verify grava o relatório com -o; conflito → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "arquivo_gerado": "{OUT}/X09-verify.txt",
+        "stdout_sem_relatorio": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L123, L475.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "X10",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--z3",
+        "--boundary",
+        "--mutation"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        }
+      ],
+      "regra": "Relatório em texto do VM com fronteira e mutação; sem condição sem par → 0.",
+      "expectativa": {
+        "exit": 0,
+        "mutantes": {
+          "total": 152,
+          "equivalentes": 0,
+          "detectados": 152
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L471, L139; VM-*-pares.",
+      "z3": [
+        "VM-totais"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "X11",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "--unique-cause",
+        "--format",
+        "truth-csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        },
+        {
+          "linha": "L485",
+          "texto": "| `TruthTableTest` | 8 |  liha por combinaçao;  linha 0  tudo verdadiro;  saída  cada linha; restriçes; lmite  20 entradas |"
+        }
+      ],
+      "regra": "truth-csv também na causa única: 8 linhas, linha 0 tudo verdadeiro, resultado da guarda.",
+      "expectativa": {
+        "exit": 0,
+        "truth_linhas": 8,
+        "truth_primeira_tudo_verdadeiro": true,
+        "truth_resultado_correto": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L207, L279, L485.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "X12",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "A and B",
+        "--tests",
+        "{ENT_BASE}/c04-esperado-errado.csv",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L121",
+          "texto": "| `--format <formato>` | `text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea); `check` e `verify` acetam `text` e `json` |"
+        },
+        {
+          "linha": "L51",
+          "texto": "| Avalar teses existntes | `mcdc check` | Cobertura MC/DC  um cnjunto  testes,  que falta  testes  resutado esperdo errdo |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "check JSON com resultado esperado errado.",
+      "expectativa": {
+        "exit": 2,
+        "json_valido": true,
+        "check_divergentes": [
+          "T3"
+        ]
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Como K04.",
+      "z3": [],
+      "diagnostico": null
+    }
+  ],
+  "extensao": "r2"
+}

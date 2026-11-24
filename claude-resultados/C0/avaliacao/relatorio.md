@@ -66,6 +66,20 @@ Na rodada 1, o runner registrou C07–C09 como FALHOU porque as entradas eram JS
 
 Cobertura acumulada por módulo: cli 297/337 (88,1%), core 348/411 (84,7%), requirements 138/162 (85,2%), z3 314/386 (81,3%). Não há alegação de que esse seja o máximo possível.
 
+### Cobertura só com os casos determinados (medida depois)
+
+Durante o C3, o pesquisador definiu que um caso indeterminado não é teste: ele não é executado e não entra na Branch Coverage. Para aplicar a regra ao C0 sem apagar nada, os oráculos congelados foram filtrados para os casos `DETERMINADO` (`experimento/determinados/filtrar.py`, sem alterar nenhum caso) e executados de novo com o mesmo runner, as mesmas entradas e o mesmo build. Congelamento: `experimento/CONGELAMENTO-DETERMINADOS.sha256`.
+
+| Fase | Casos executados | Aprovados | Falhos | Indeterminados (não executados) | Branch Coverage |
+|---|---|---|---|---|---|
+| Rodada 3, baseline só determinados | 72 | 72 | 0 | 13 | 1013/1296 = 78,16% |
+| Extensão 1, só determinados | 21 | 20 | 1 | 1 | 936/1296 = 72,22% |
+| **Acumulado só determinados** | **93** | **92** | **1** | **14** | **1077/1296 = 83,10%** |
+
+Cada caso teve o mesmo veredito das rodadas 2 e extensão 1. Por módulo: cli 289/337, core 345/411, requirements 132/162, z3 311/386. Os diagnósticos dos indeterminados respondiam por 20 desvios (84,65% → 83,10%).
+
+Antes destas rodadas, os arquivos de texto do C0, convertidos para CRLF pelo checkout (`core.autocrlf=true`), voltaram para LF **só quando** o resultado reproduzia o SHA-256 congelado (31 arquivos).
+
 ## Evidências
 
 - Resultados por caso: [resultados-por-caso.md](resultados-por-caso.md). Os dados brutos estão em `../resultados/<fase>/resultados.json`, com stdout e stderr de cada caso em `saidas/<ID>/`.

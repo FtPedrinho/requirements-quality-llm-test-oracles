@@ -1,0 +1,22 @@
+{
+  "id": "AN-42",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 2, observado 2 (analyze speed > 100 and speed > 50)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "speed > 100 and speed > 50",
+        "--z3"
+      ],
+      "exit": 2,
+      "segundos": 1.05
+    }
+  ]
+}

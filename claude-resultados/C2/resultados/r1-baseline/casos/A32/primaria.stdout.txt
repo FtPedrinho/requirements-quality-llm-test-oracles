@@ -1,0 +1,42 @@
+Decisão:   REQ
+Guarda:    (A or B) and (C or D)
+Variante:  causa única
+
+Vetor A   B   C   D   | D
+V1    T   T   T   T   | T
+V2    T   T   T   F   | T
+V3    T   T   F   T   | T
+V4    T   T   F   F   | F
+V5    T   F   T   T   | T
+V6    T   F   T   F   | T
+V7    T   F   F   T   | T
+V8    T   F   F   F   | F
+V9    F   T   T   T   | T
+V10   F   T   T   F   | T
+V11   F   T   F   T   | T
+V12   F   T   F   F   | F
+V13   F   F   T   T   | F
+V14   F   F   T   F   | F
+V15   F   F   F   T   | F
+V16   F   F   F   F   | F
+
+Pares de independência:
+  A: (V5, V13), (V6, V14), (V7, V15)
+  B: (V9, V13), (V10, V14), (V11, V15)
+  C: (V2, V4), (V6, V8), (V10, V12)
+  D: (V3, V4), (V7, V8), (V11, V12)
+
+Suíte mínima, exata (Z3) (5 testes):
+  V6  TFTF  -> T   demonstra A
+  V10  FTTF  -> T   demonstra B, C
+  V11  FTFT  -> T   demonstra D
+  V12  FTFF  -> F   demonstra C, D
+  V14  FFTF  -> F   demonstra A, B
+
+Demonstração por condição:
+  A: V6 (T) e V14 (F), só ela muda
+  B: V10 (T) e V14 (F), só ela muda
+  C: V10 (T) e V12 (F), só ela muda
+  D: V11 (T) e V12 (F), só ela muda
+
+Cobertura MC/DC: completa

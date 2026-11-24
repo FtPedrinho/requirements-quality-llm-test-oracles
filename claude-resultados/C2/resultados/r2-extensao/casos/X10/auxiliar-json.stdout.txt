@@ -1,0 +1,4175 @@
+{
+  "tool" : "mcdc",
+  "system" : "the_coffee_machine_system",
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "vm#1",
+    "requirement" : "REQ001",
+    "guard" : "the_system_mode = idle /\\ the_coin_sensor_antes = false /\\ the_coin_sensor = true",
+    "actions" : [ "the_request_timer := 0", "the_system_mode := choice" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = idle",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "idle"
+    }, {
+      "name" : "the_coin_sensor_antes = false",
+      "variable" : "the_coin_sensor_antes",
+      "operator" : "=",
+      "value" : "false"
+    }, {
+      "name" : "the_coin_sensor = true",
+      "variable" : "the_coin_sensor",
+      "operator" : "=",
+      "value" : "true"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = idle",
+      "input" : "the_system_mode = idle",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor_antes = false",
+      "input" : "the_coin_sensor_antes = false",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor = true",
+      "input" : "the_coin_sensor = true",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor_antes" : "false",
+        "the_coin_sensor" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor_antes" : "false",
+        "the_coin_sensor" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor_antes" : "true",
+        "the_coin_sensor" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor_antes" : "true",
+        "the_coin_sensor" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor_antes" : "false",
+        "the_coin_sensor" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor_antes" : "false",
+        "the_coin_sensor" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor_antes" : "true",
+        "the_coin_sensor" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor_antes" : "true",
+        "the_coin_sensor" : "false"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_system_mode = idle" : [ [ "V1", "V5" ] ],
+      "the_coin_sensor_antes = false" : [ [ "V1", "V3" ] ],
+      "the_coin_sensor = true" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor_antes" : "false",
+        "the_coin_sensor" : "true"
+      },
+      "demonstrates" : [ "the_system_mode = idle", "the_coin_sensor_antes = false", "the_coin_sensor = true" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor_antes" : "false",
+        "the_coin_sensor" : "false"
+      },
+      "demonstrates" : [ "the_coin_sensor = true" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor_antes" : "true",
+        "the_coin_sensor" : "true"
+      },
+      "demonstrates" : [ "the_coin_sensor_antes = false" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor_antes" : "false",
+        "the_coin_sensor" : "true"
+      },
+      "demonstrates" : [ "the_system_mode = idle" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = idle" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor_antes = false" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor = true" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "vm#2",
+    "requirement" : "REQ002",
+    "guard" : "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coin_sensor_antes = false /\\ the_coffee_request_button_antes != pressed /\\ the_coffee_request_button = pressed /\\ the_request_timer <= 30.0",
+    "actions" : [ "the_request_timer := 0", "the_system_mode := preparing_weak" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = choice",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "choice"
+    }, {
+      "name" : "the_coin_sensor = false",
+      "variable" : "the_coin_sensor",
+      "operator" : "=",
+      "value" : "false"
+    }, {
+      "name" : "the_coin_sensor_antes = false",
+      "variable" : "the_coin_sensor_antes",
+      "operator" : "=",
+      "value" : "false"
+    }, {
+      "name" : "the_coffee_request_button_antes != pressed",
+      "variable" : "the_coffee_request_button_antes",
+      "operator" : "!=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_coffee_request_button = pressed",
+      "variable" : "the_coffee_request_button",
+      "operator" : "=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_request_timer <= 30.0",
+      "variable" : "the_request_timer",
+      "operator" : "<=",
+      "value" : "30.0"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = choice",
+      "input" : "the_system_mode = choice",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor = false",
+      "input" : "the_coin_sensor = false",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor_antes = false",
+      "input" : "the_coin_sensor_antes = false",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coffee_request_button_antes != pressed",
+      "input" : "the_coffee_request_button_antes != pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coffee_request_button = pressed",
+      "input" : "the_coffee_request_button = pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_request_timer <= 30.0",
+      "input" : "the_request_timer <= 30.0",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 64,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V13",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V15",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V16",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V17",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V18",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V19",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V20",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V21",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V22",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V23",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V24",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V25",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V26",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V27",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V28",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V29",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V30",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V31",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V32",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V33",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V34",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V35",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V36",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V37",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V38",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V39",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V40",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V41",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V42",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V43",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V44",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V45",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V46",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V47",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V48",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V49",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V50",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V51",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V52",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V53",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V54",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V55",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V56",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V57",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V58",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V59",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V60",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V61",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V62",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V63",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V64",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_system_mode = choice" : [ [ "V1", "V33" ] ],
+      "the_coin_sensor = false" : [ [ "V1", "V17" ] ],
+      "the_coin_sensor_antes = false" : [ [ "V1", "V9" ] ],
+      "the_coffee_request_button_antes != pressed" : [ [ "V1", "V5" ] ],
+      "the_coffee_request_button = pressed" : [ [ "V1", "V3" ] ],
+      "the_request_timer <= 30.0" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_system_mode = choice", "the_coin_sensor = false", "the_coin_sensor_antes = false", "the_coffee_request_button_antes != pressed", "the_coffee_request_button = pressed", "the_request_timer <= 30.0" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "demonstrates" : [ "the_request_timer <= 30.0" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_coffee_request_button = pressed" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_coffee_request_button_antes != pressed" ]
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_coin_sensor_antes = false" ]
+    }, {
+      "vector" : "V17",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_coin_sensor = false" ]
+    }, {
+      "vector" : "V33",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_system_mode = choice" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = choice" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V33",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor = false" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V17",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor_antes = false" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V9",
+        "uniqueCause" : true
+      },
+      "the_coffee_request_button_antes != pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_coffee_request_button = pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_request_timer <= 30.0" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 5,
+          "equivalent" : 0,
+          "killed" : 5
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 5,
+          "equivalent" : 0,
+          "killed" : 5
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 30,
+          "equivalent" : 0,
+          "killed" : 30
+        }
+      },
+      "survivors" : [ ]
+    },
+    "boundaryTests" : [ {
+      "base" : "V1",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V2",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.01",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30.01"
+      }
+    }, {
+      "base" : "V3",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V9",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V17",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V33",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30"
+      }
+    } ]
+  }, {
+    "id" : "vm#3",
+    "requirement" : "REQ003",
+    "guard" : "the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coin_sensor_antes = false /\\ the_coffee_request_button_antes != pressed /\\ the_coffee_request_button = pressed /\\ the_request_timer > 30.0",
+    "actions" : [ "the_request_timer := 0", "the_system_mode := preparing_strong" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = choice",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "choice"
+    }, {
+      "name" : "the_coin_sensor = false",
+      "variable" : "the_coin_sensor",
+      "operator" : "=",
+      "value" : "false"
+    }, {
+      "name" : "the_coin_sensor_antes = false",
+      "variable" : "the_coin_sensor_antes",
+      "operator" : "=",
+      "value" : "false"
+    }, {
+      "name" : "the_coffee_request_button_antes != pressed",
+      "variable" : "the_coffee_request_button_antes",
+      "operator" : "!=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_coffee_request_button = pressed",
+      "variable" : "the_coffee_request_button",
+      "operator" : "=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_request_timer > 30.0",
+      "variable" : "the_request_timer",
+      "operator" : ">",
+      "value" : "30.0"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = choice",
+      "input" : "the_system_mode = choice",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor = false",
+      "input" : "the_coin_sensor = false",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor_antes = false",
+      "input" : "the_coin_sensor_antes = false",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coffee_request_button_antes != pressed",
+      "input" : "the_coffee_request_button_antes != pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coffee_request_button = pressed",
+      "input" : "the_coffee_request_button = pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_request_timer > 30.0",
+      "input" : "the_request_timer > 30.0",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 64,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V13",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V15",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V16",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V17",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V18",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V19",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V20",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V21",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V22",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V23",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V24",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V25",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V26",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V27",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V28",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V29",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V30",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V31",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V32",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V33",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V34",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V35",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V36",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V37",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V38",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V39",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V40",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V41",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V42",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V43",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V44",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V45",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V46",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V47",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V48",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V49",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V50",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V51",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V52",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V53",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V54",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V55",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V56",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V57",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V58",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V59",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V60",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V61",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V62",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V63",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V64",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_system_mode = choice" : [ [ "V1", "V33" ] ],
+      "the_coin_sensor = false" : [ [ "V1", "V17" ] ],
+      "the_coin_sensor_antes = false" : [ [ "V1", "V9" ] ],
+      "the_coffee_request_button_antes != pressed" : [ [ "V1", "V5" ] ],
+      "the_coffee_request_button = pressed" : [ [ "V1", "V3" ] ],
+      "the_request_timer > 30.0" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "demonstrates" : [ "the_system_mode = choice", "the_coin_sensor = false", "the_coin_sensor_antes = false", "the_coffee_request_button_antes != pressed", "the_coffee_request_button = pressed", "the_request_timer > 30.0" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_request_timer > 30.0" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : false,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "31"
+      },
+      "demonstrates" : [ "the_coffee_request_button = pressed" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : false,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "demonstrates" : [ "the_coffee_request_button_antes != pressed" ]
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : false,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "demonstrates" : [ "the_coin_sensor_antes = false" ]
+    }, {
+      "vector" : "V17",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "demonstrates" : [ "the_coin_sensor = false" ]
+    }, {
+      "vector" : "V33",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coin_sensor_antes = false" : true,
+        "the_coffee_request_button_antes != pressed" : true,
+        "the_coffee_request_button = pressed" : true,
+        "the_request_timer > 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "31"
+      },
+      "demonstrates" : [ "the_system_mode = choice" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = choice" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V33",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor = false" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V17",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor_antes = false" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V9",
+        "uniqueCause" : true
+      },
+      "the_coffee_request_button_antes != pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_coffee_request_button = pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_request_timer > 30.0" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 5,
+          "equivalent" : 0,
+          "killed" : 5
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 5,
+          "equivalent" : 0,
+          "killed" : 5
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 30,
+          "equivalent" : 0,
+          "killed" : 30
+        }
+      },
+      "survivors" : [ ]
+    },
+    "boundaryTests" : [ {
+      "base" : "V1",
+      "condition" : "the_request_timer > 30.0",
+      "boundary" : "the_request_timer = 30.01",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30.01"
+      }
+    }, {
+      "base" : "V2",
+      "condition" : "the_request_timer > 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V3",
+      "condition" : "the_request_timer > 30.0",
+      "boundary" : "the_request_timer = 30.01",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "released",
+        "the_request_timer" : "30.01"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "the_request_timer > 30.0",
+      "boundary" : "the_request_timer = 30.01",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "pressed",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30.01"
+      }
+    }, {
+      "base" : "V9",
+      "condition" : "the_request_timer > 30.0",
+      "boundary" : "the_request_timer = 30.01",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "true",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30.01"
+      }
+    }, {
+      "base" : "V17",
+      "condition" : "the_request_timer > 30.0",
+      "boundary" : "the_request_timer = 30.01",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_coin_sensor" : "true",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30.01"
+      }
+    }, {
+      "base" : "V33",
+      "condition" : "the_request_timer > 30.0",
+      "boundary" : "the_request_timer = 30.01",
+      "assignment" : {
+        "the_system_mode" : "idle",
+        "the_coin_sensor" : "false",
+        "the_coin_sensor_antes" : "false",
+        "the_coffee_request_button_antes" : "released",
+        "the_coffee_request_button" : "pressed",
+        "the_request_timer" : "30.01"
+      }
+    } ]
+  }, {
+    "id" : "vm#4",
+    "requirement" : "REQ004",
+    "guard" : "the_system_mode = preparing_weak /\\ the_request_timer >= 10.0 /\\ the_request_timer <= 30.0",
+    "actions" : [ "the_system_mode := idle", "the_coffee_machine_output := weak" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = preparing_weak",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "preparing_weak"
+    }, {
+      "name" : "the_request_timer >= 10.0",
+      "variable" : "the_request_timer",
+      "operator" : ">=",
+      "value" : "10.0"
+    }, {
+      "name" : "the_request_timer <= 30.0",
+      "variable" : "the_request_timer",
+      "operator" : "<=",
+      "value" : "30.0"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = preparing_weak",
+      "input" : "the_system_mode = preparing_weak",
+      "occurrence" : 1
+    }, {
+      "label" : "the_request_timer >= 10.0",
+      "input" : "the_request_timer >= 10.0",
+      "occurrence" : 1
+    }, {
+      "label" : "the_request_timer <= 30.0",
+      "input" : "the_request_timer <= 30.0",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 10.0" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "10"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 10.0" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 10.0" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 10.0" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "feasible" : false
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 10.0" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_request_timer" : "10"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 10.0" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_request_timer" : "31"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 10.0" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 10.0" : false,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "feasible" : false
+    } ],
+    "independencePairs" : {
+      "the_system_mode = preparing_weak" : [ [ "V1", "V5" ] ],
+      "the_request_timer >= 10.0" : [ [ "V1", "V3" ] ],
+      "the_request_timer <= 30.0" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 10.0" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "10"
+      },
+      "demonstrates" : [ "the_system_mode = preparing_weak", "the_request_timer >= 10.0", "the_request_timer <= 30.0" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 10.0" : true,
+        "the_request_timer <= 30.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "31"
+      },
+      "demonstrates" : [ "the_request_timer <= 30.0" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 10.0" : false,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_request_timer >= 10.0" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 10.0" : true,
+        "the_request_timer <= 30.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_request_timer" : "10"
+      },
+      "demonstrates" : [ "the_system_mode = preparing_weak" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = preparing_weak" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_request_timer >= 10.0" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_request_timer <= 30.0" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    },
+    "boundaryTests" : [ {
+      "base" : "V1",
+      "condition" : "the_request_timer >= 10.0",
+      "boundary" : "the_request_timer = 10.0",
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "10"
+      }
+    }, {
+      "base" : "V1",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V2",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.01",
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "30.01"
+      }
+    }, {
+      "base" : "V3",
+      "condition" : "the_request_timer >= 10.0",
+      "boundary" : "the_request_timer = 9.99",
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "9.99"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "the_request_timer >= 10.0",
+      "boundary" : "the_request_timer = 10.0",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_request_timer" : "10"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "the_request_timer <= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "choice",
+        "the_request_timer" : "30"
+      }
+    } ]
+  }, {
+    "id" : "vm#5",
+    "requirement" : "REQ005",
+    "guard" : "the_system_mode = preparing_strong /\\ the_request_timer >= 30.0 /\\ the_request_timer <= 50.0",
+    "actions" : [ "the_system_mode := idle", "the_coffee_machine_output := strong" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = preparing_strong",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "preparing_strong"
+    }, {
+      "name" : "the_request_timer >= 30.0",
+      "variable" : "the_request_timer",
+      "operator" : ">=",
+      "value" : "30.0"
+    }, {
+      "name" : "the_request_timer <= 50.0",
+      "variable" : "the_request_timer",
+      "operator" : "<=",
+      "value" : "50.0"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = preparing_strong",
+      "input" : "the_system_mode = preparing_strong",
+      "occurrence" : 1
+    }, {
+      "label" : "the_request_timer >= 30.0",
+      "input" : "the_request_timer >= 30.0",
+      "occurrence" : 1
+    }, {
+      "label" : "the_request_timer <= 50.0",
+      "input" : "the_request_timer <= 50.0",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_request_timer >= 30.0" : true,
+        "the_request_timer <= 50.0" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "30"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_request_timer >= 30.0" : true,
+        "the_request_timer <= 50.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "51"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_request_timer >= 30.0" : false,
+        "the_request_timer <= 50.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_request_timer >= 30.0" : false,
+        "the_request_timer <= 50.0" : false
+      },
+      "outcome" : false,
+      "feasible" : false
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_request_timer >= 30.0" : true,
+        "the_request_timer <= 50.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "30"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_request_timer >= 30.0" : true,
+        "the_request_timer <= 50.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "51"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_request_timer >= 30.0" : false,
+        "the_request_timer <= 50.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_request_timer >= 30.0" : false,
+        "the_request_timer <= 50.0" : false
+      },
+      "outcome" : false,
+      "feasible" : false
+    } ],
+    "independencePairs" : {
+      "the_system_mode = preparing_strong" : [ [ "V1", "V5" ] ],
+      "the_request_timer >= 30.0" : [ [ "V1", "V3" ] ],
+      "the_request_timer <= 50.0" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_request_timer >= 30.0" : true,
+        "the_request_timer <= 50.0" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "30"
+      },
+      "demonstrates" : [ "the_system_mode = preparing_strong", "the_request_timer >= 30.0", "the_request_timer <= 50.0" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_request_timer >= 30.0" : true,
+        "the_request_timer <= 50.0" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "51"
+      },
+      "demonstrates" : [ "the_request_timer <= 50.0" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_request_timer >= 30.0" : false,
+        "the_request_timer <= 50.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "0"
+      },
+      "demonstrates" : [ "the_request_timer >= 30.0" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_request_timer >= 30.0" : true,
+        "the_request_timer <= 50.0" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "30"
+      },
+      "demonstrates" : [ "the_system_mode = preparing_strong" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = preparing_strong" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_request_timer >= 30.0" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_request_timer <= 50.0" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    },
+    "boundaryTests" : [ {
+      "base" : "V1",
+      "condition" : "the_request_timer >= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V1",
+      "condition" : "the_request_timer <= 50.0",
+      "boundary" : "the_request_timer = 50.0",
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "50"
+      }
+    }, {
+      "base" : "V2",
+      "condition" : "the_request_timer <= 50.0",
+      "boundary" : "the_request_timer = 50.01",
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "50.01"
+      }
+    }, {
+      "base" : "V3",
+      "condition" : "the_request_timer >= 30.0",
+      "boundary" : "the_request_timer = 29.99",
+      "assignment" : {
+        "the_system_mode" : "preparing_strong",
+        "the_request_timer" : "29.99"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "the_request_timer >= 30.0",
+      "boundary" : "the_request_timer = 30.0",
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "30"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "the_request_timer <= 50.0",
+      "boundary" : "the_request_timer = 50.0",
+      "assignment" : {
+        "the_system_mode" : "preparing_weak",
+        "the_request_timer" : "50"
+      }
+    } ]
+  } ]
+}

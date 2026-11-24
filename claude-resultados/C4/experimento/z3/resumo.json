@@ -1,0 +1,890 @@
+{
+ "Q01-E1": {
+  "expressao": "x and y and z",
+  "entradas_distintas": [
+   "x",
+   "y",
+   "z"
+  ],
+  "condicoes(aparicoes)": [
+   "x",
+   "y",
+   "z"
+  ],
+  "combinacoes": 8,
+  "respostas": [
+   "sat"
+  ],
+  "linhas": [
+   {
+    "linha": {
+     "x": true,
+     "y": true,
+     "z": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "x": true,
+     "y": true,
+     "z": false
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "x": true,
+     "y": false,
+     "z": true
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "x": true,
+     "y": false,
+     "z": false
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "x": false,
+     "y": true,
+     "z": true
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "x": false,
+     "y": true,
+     "z": false
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "x": false,
+     "y": false,
+     "z": true
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "x": false,
+     "y": false,
+     "z": false
+    },
+    "decisao": false
+   }
+  ],
+  "quantidade_decisao_falsa": 7,
+  "quantidade_decisao_verdadeira": 1
+ },
+ "Q01-E2": {
+  "expressao": "x or y",
+  "entradas_distintas": [
+   "x",
+   "y"
+  ],
+  "condicoes(aparicoes)": [
+   "x",
+   "y"
+  ],
+  "combinacoes": 4,
+  "respostas": [
+   "sat"
+  ],
+  "linhas": [
+   {
+    "linha": {
+     "x": true,
+     "y": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "x": true,
+     "y": false
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "x": false,
+     "y": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "x": false,
+     "y": false
+    },
+    "decisao": false
+   }
+  ],
+  "quantidade_decisao_falsa": 1,
+  "quantidade_decisao_verdadeira": 3
+ },
+ "Q01-E3": {
+  "expressao": "(p and q) or (not p and r)",
+  "entradas_distintas": [
+   "p",
+   "q",
+   "r"
+  ],
+  "condicoes(aparicoes)": [
+   "p",
+   "q",
+   "p",
+   "r"
+  ],
+  "combinacoes": 8,
+  "respostas": [
+   "sat"
+  ],
+  "linhas": [
+   {
+    "linha": {
+     "p": true,
+     "q": true,
+     "r": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": true,
+     "q": true,
+     "r": false
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": true,
+     "q": false,
+     "r": true
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "p": true,
+     "q": false,
+     "r": false
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "p": false,
+     "q": true,
+     "r": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": false,
+     "q": true,
+     "r": false
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "p": false,
+     "q": false,
+     "r": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": false,
+     "q": false,
+     "r": false
+    },
+    "decisao": false
+   }
+  ],
+  "quantidade_decisao_falsa": 4,
+  "quantidade_decisao_verdadeira": 4
+ },
+ "Q01-E4": {
+  "expressao": "p or (q and r)",
+  "entradas_distintas": [
+   "p",
+   "q",
+   "r"
+  ],
+  "condicoes(aparicoes)": [
+   "p",
+   "q",
+   "r"
+  ],
+  "combinacoes": 8,
+  "respostas": [
+   "sat"
+  ],
+  "linhas": [
+   {
+    "linha": {
+     "p": true,
+     "q": true,
+     "r": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": true,
+     "q": true,
+     "r": false
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": true,
+     "q": false,
+     "r": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": true,
+     "q": false,
+     "r": false
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": false,
+     "q": true,
+     "r": true
+    },
+    "decisao": true
+   },
+   {
+    "linha": {
+     "p": false,
+     "q": true,
+     "r": false
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "p": false,
+     "q": false,
+     "r": true
+    },
+    "decisao": false
+   },
+   {
+    "linha": {
+     "p": false,
+     "q": false,
+     "r": false
+    },
+    "decisao": false
+   }
+  ],
+  "quantidade_decisao_falsa": 3,
+  "quantidade_decisao_verdadeira": 5
+ },
+ "Q02-restricao": {
+  "respostas": [
+   "unsat",
+   "unsat",
+   "sat",
+   "sat",
+   "unsat",
+   "unsat",
+   "unsat",
+   "unsat"
+  ],
+  "linhas_que_violam": [
+   {
+    "p": true,
+    "q": false,
+    "r": true
+   },
+   {
+    "p": true,
+    "q": false,
+    "r": false
+   }
+  ],
+  "quantidade_violam": 2,
+  "quantidade_aceitas": 6
+ },
+ "requisitos.mcdc": {
+  "REQ-001": "(alarme_ativo and porta_aberta) or botao_emergencia",
+  "REQ-002": "porta_fechada and not obstaculo",
+  "REQ-003": "freio_acionado or (freio_acionado and pedal_pressionado)"
+ },
+ "Q03-REQ-001": {
+  "expressao": "(alarme_ativo and porta_aberta) or botao_emergencia",
+  "entradas_distintas": [
+   "alarme_ativo",
+   "porta_aberta",
+   "botao_emergencia"
+  ],
+  "condicoes(aparicoes)": [
+   "alarme_ativo",
+   "porta_aberta",
+   "botao_emergencia"
+  ],
+  "combinacoes": 8,
+  "por_entrada": {
+   "alarme_ativo": {
+    "leitura_A_par_que_muda_decisao": "sat",
+    "leitura_B_mudanca_isolada": "sat",
+    "ocorrencias": 1
+   },
+   "porta_aberta": {
+    "leitura_A_par_que_muda_decisao": "sat",
+    "leitura_B_mudanca_isolada": "sat",
+    "ocorrencias": 1
+   },
+   "botao_emergencia": {
+    "leitura_A_par_que_muda_decisao": "sat",
+    "leitura_B_mudanca_isolada": "sat",
+    "ocorrencias": 1
+   }
+  }
+ },
+ "Q03-REQ-002": {
+  "expressao": "porta_fechada and not obstaculo",
+  "entradas_distintas": [
+   "porta_fechada",
+   "obstaculo"
+  ],
+  "condicoes(aparicoes)": [
+   "porta_fechada",
+   "obstaculo"
+  ],
+  "combinacoes": 4,
+  "por_entrada": {
+   "porta_fechada": {
+    "leitura_A_par_que_muda_decisao": "sat",
+    "leitura_B_mudanca_isolada": "sat",
+    "ocorrencias": 1
+   },
+   "obstaculo": {
+    "leitura_A_par_que_muda_decisao": "sat",
+    "leitura_B_mudanca_isolada": "sat",
+    "ocorrencias": 1
+   }
+  }
+ },
+ "Q03-REQ-003": {
+  "expressao": "freio_acionado or (freio_acionado and pedal_pressionado)",
+  "entradas_distintas": [
+   "freio_acionado",
+   "pedal_pressionado"
+  ],
+  "condicoes(aparicoes)": [
+   "freio_acionado",
+   "freio_acionado",
+   "pedal_pressionado"
+  ],
+  "combinacoes": 4,
+  "por_entrada": {
+   "freio_acionado": {
+    "leitura_A_par_que_muda_decisao": "sat",
+    "leitura_B_mudanca_isolada": "sat",
+    "ocorrencias": 2
+   },
+   "pedal_pressionado": {
+    "leitura_A_par_que_muda_decisao": "unsat",
+    "leitura_B_mudanca_isolada": "sat",
+    "ocorrencias": 1
+   }
+  }
+ },
+ "Q04-check": {
+  "T1": {
+   "decisao": "the_coffee_machine_system#1",
+   "valores": {
+    "the_system_mode": "idle",
+    "the_coin_sensor": "true"
+   },
+   "esperado": "T",
+   "guarda_avaliada_z3": "T",
+   "respostas": [
+    "sat",
+    "unsat"
+   ],
+   "esperado_confere": true,
+   "condicoes": {
+    "the_system_mode = idle": true,
+    "the_coin_sensor = true": true
+   }
+  },
+  "T2": {
+   "decisao": "the_coffee_machine_system#1",
+   "valores": {
+    "the_system_mode": "idle",
+    "the_coin_sensor": "false"
+   },
+   "esperado": "F",
+   "guarda_avaliada_z3": "F",
+   "respostas": [
+    "unsat",
+    "sat"
+   ],
+   "esperado_confere": true,
+   "condicoes": {
+    "the_system_mode = idle": true,
+    "the_coin_sensor = true": false
+   }
+  },
+  "T3": {
+   "decisao": "the_coffee_machine_system#3",
+   "valores": {
+    "the_system_mode": "choice",
+    "the_coffee_request_button": "true",
+    "the_coin_sensor": "false"
+   },
+   "esperado": "T",
+   "guarda_avaliada_z3": "T",
+   "respostas": [
+    "sat",
+    "unsat"
+   ],
+   "esperado_confere": true,
+   "condicoes": {
+    "the_system_mode = choice": true,
+    "the_coffee_request_button = true": true,
+    "the_coin_sensor = true": false
+   }
+  },
+  "T4": {
+   "decisao": "the_coffee_machine_system#3",
+   "valores": {
+    "the_system_mode": "idle",
+    "the_coffee_request_button": "true",
+    "the_coin_sensor": "false"
+   },
+   "esperado": "T",
+   "guarda_avaliada_z3": "F",
+   "respostas": [
+    "unsat",
+    "sat"
+   ],
+   "esperado_confere": false,
+   "condicoes": {
+    "the_system_mode = choice": false,
+    "the_coffee_request_button = true": true,
+    "the_coin_sensor = true": false
+   }
+  }
+ },
+ "Q04-cobertura": {
+  "the_coffee_machine_system#1": {
+   "testes": 2,
+   "condicao_muda_entre_testes": {
+    "the_system_mode = idle": false,
+    "the_coin_sensor = true": true
+   }
+  },
+  "the_coffee_machine_system#2": {
+   "testes": 0,
+   "condicao_muda_entre_testes": {
+    "the_system_mode = choice": false,
+    "the_coin_sensor = false": false,
+    "the_coffee_request_button = true": false
+   }
+  },
+  "the_coffee_machine_system#3": {
+   "testes": 2,
+   "condicao_muda_entre_testes": {
+    "the_system_mode = choice": true,
+    "the_coffee_request_button = true": false,
+    "the_coin_sensor = true": false
+   }
+  },
+  "the_coffee_machine_system#4": {
+   "testes": 0,
+   "condicao_muda_entre_testes": {
+    "the_system_mode = preparing_strong": false,
+    "the_system_mode = preparing_weak": false,
+    "the_request_timer >= 50": false
+   }
+  }
+ },
+ "Q05-vm": {
+  "decisoes": 5,
+  "condicoes": 21,
+  "combinacoes": 152,
+  "respostas_sat": 148,
+  "respostas_unsat": 4,
+  "outras_respostas": 0,
+  "impossiveis_leitura_original(unsat)": 4,
+  "impossiveis_leitura_substituta(sat)": 148,
+  "tabela_do_texto": {
+   "requisitos": 5,
+   "condicoes": 21,
+   "combinacoes": 152,
+   "impossiveis": 4
+  },
+  "unsat_por_combinacao": [
+   {
+    "decisao": "vm#4",
+    "linha": [
+     true,
+     false,
+     false
+    ]
+   },
+   {
+    "decisao": "vm#4",
+    "linha": [
+     false,
+     false,
+     false
+    ]
+   },
+   {
+    "decisao": "vm#5",
+    "linha": [
+     true,
+     false,
+     false
+    ]
+   },
+   {
+    "decisao": "vm#5",
+    "linha": [
+     false,
+     false,
+     false
+    ]
+   }
+  ],
+  "por_decisao": [
+   {
+    "id": "vm#1",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "vm#2",
+    "condicoes": 6,
+    "entradas_distintas": 6,
+    "combinacoes": 64
+   },
+   {
+    "id": "vm#3",
+    "condicoes": 6,
+    "entradas_distintas": 6,
+    "combinacoes": 64
+   },
+   {
+    "id": "vm#4",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "vm#5",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   }
+  ]
+ },
+ "Q05-vm-aritmetica": [
+  "sat",
+  "unsat",
+  "sat"
+ ],
+ "Q05-tis": {
+  "decisoes": 17,
+  "condicoes": 69,
+  "combinacoes": 268,
+  "respostas_sat": 264,
+  "respostas_unsat": 4,
+  "outras_respostas": 0,
+  "impossiveis_leitura_original(unsat)": 4,
+  "impossiveis_leitura_substituta(sat)": 264,
+  "tabela_do_texto": {
+   "requisitos": 17,
+   "condicoes": 69,
+   "combinacoes": 268,
+   "impossiveis": 4
+  },
+  "unsat_por_combinacao": [
+   {
+    "decisao": "tis#6",
+    "linha": [
+     true,
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "decisao": "tis#6",
+    "linha": [
+     true,
+     false,
+     true,
+     true
+    ]
+   },
+   {
+    "decisao": "tis#6",
+    "linha": [
+     false,
+     true,
+     true,
+     true
+    ]
+   },
+   {
+    "decisao": "tis#6",
+    "linha": [
+     false,
+     false,
+     true,
+     true
+    ]
+   }
+  ],
+  "por_decisao": [
+   {
+    "id": "tis#1",
+    "condicoes": 2,
+    "entradas_distintas": 2,
+    "combinacoes": 4
+   },
+   {
+    "id": "tis#2",
+    "condicoes": 6,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#3",
+    "condicoes": 6,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#4",
+    "condicoes": 6,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#5",
+    "condicoes": 2,
+    "entradas_distintas": 2,
+    "combinacoes": 4
+   },
+   {
+    "id": "tis#6",
+    "condicoes": 4,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#7",
+    "condicoes": 4,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#8",
+    "condicoes": 4,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#9",
+    "condicoes": 4,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#10",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "tis#11",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "tis#12",
+    "condicoes": 2,
+    "entradas_distintas": 2,
+    "combinacoes": 4
+   },
+   {
+    "id": "tis#13",
+    "condicoes": 4,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#14",
+    "condicoes": 4,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "tis#15",
+    "condicoes": 5,
+    "entradas_distintas": 5,
+    "combinacoes": 32
+   },
+   {
+    "id": "tis#16",
+    "condicoes": 5,
+    "entradas_distintas": 5,
+    "combinacoes": 32
+   },
+   {
+    "id": "tis#17",
+    "condicoes": 5,
+    "entradas_distintas": 5,
+    "combinacoes": 32
+   }
+  ]
+ },
+ "Q05-tis-aritmetica": [
+  "sat",
+  "unsat",
+  "sat"
+ ],
+ "Q05-npp": {
+  "decisoes": 11,
+  "condicoes": 29,
+  "combinacoes": 76,
+  "respostas_sat": 75,
+  "respostas_unsat": 1,
+  "outras_respostas": 0,
+  "impossiveis_leitura_original(unsat)": 1,
+  "impossiveis_leitura_substituta(sat)": 75,
+  "tabela_do_texto": {
+   "requisitos": 11,
+   "condicoes": 29,
+   "combinacoes": 76,
+   "impossiveis": 1
+  },
+  "unsat_por_combinacao": [
+   {
+    "decisao": "npp#11",
+    "linha": [
+     true,
+     true
+    ]
+   }
+  ],
+  "por_decisao": [
+   {
+    "id": "npp#1",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "npp#2",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "npp#3",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "npp#4",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "npp#5",
+    "condicoes": 4,
+    "entradas_distintas": 4,
+    "combinacoes": 16
+   },
+   {
+    "id": "npp#6",
+    "condicoes": 3,
+    "entradas_distintas": 3,
+    "combinacoes": 8
+   },
+   {
+    "id": "npp#7",
+    "condicoes": 2,
+    "entradas_distintas": 2,
+    "combinacoes": 4
+   },
+   {
+    "id": "npp#8",
+    "condicoes": 2,
+    "entradas_distintas": 2,
+    "combinacoes": 4
+   },
+   {
+    "id": "npp#9",
+    "condicoes": 2,
+    "entradas_distintas": 2,
+    "combinacoes": 4
+   },
+   {
+    "id": "npp#10",
+    "condicoes": 2,
+    "entradas_distintas": 2,
+    "combinacoes": 4
+   },
+   {
+    "id": "npp#11",
+    "condicoes": 2,
+    "entradas_distintas": 2,
+    "combinacoes": 4
+   }
+  ]
+ },
+ "Q05-npp-aritmetica": [
+  "sat",
+  "unsat",
+  "sat"
+ ],
+ "Q06-limites": [
+  "sat",
+  "unsat"
+ ],
+ "Q07-causa-unica-E6": {
+  "p": [
+   "sat"
+  ],
+  "q": [
+   "sat"
+  ],
+  "r": [
+   "sat"
+  ]
+ }
+}

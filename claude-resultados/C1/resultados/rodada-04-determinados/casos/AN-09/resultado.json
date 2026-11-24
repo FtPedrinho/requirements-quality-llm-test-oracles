@@ -1,0 +1,21 @@
+{
+  "id": "AN-09",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or (not A and C))"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "(A and B) or (not A and C)"
+      ],
+      "exit": 0,
+      "segundos": 0.58
+    }
+  ]
+}

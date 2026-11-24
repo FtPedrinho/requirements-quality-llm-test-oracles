@@ -1,0 +1,832 @@
+{
+  "tool" : "mcdc",
+  "system" : "extensao",
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "e#1",
+    "requirement" : "R1",
+    "guard" : "x < 3 /\\ x >= -2 \\/ r <= 1.5 /\\ m != b \\/ k = true",
+    "actions" : [ "y := 1" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "x < 3",
+      "variable" : "x",
+      "operator" : "<",
+      "value" : "3"
+    }, {
+      "name" : "x >= -2",
+      "variable" : "x",
+      "operator" : ">=",
+      "value" : "-2"
+    }, {
+      "name" : "r <= 1.5",
+      "variable" : "r",
+      "operator" : "<=",
+      "value" : "1.5"
+    }, {
+      "name" : "m != b",
+      "variable" : "m",
+      "operator" : "!=",
+      "value" : "b"
+    }, {
+      "name" : "k = true",
+      "variable" : "k",
+      "operator" : "=",
+      "value" : "true"
+    } ],
+    "conditions" : [ {
+      "label" : "x < 3",
+      "input" : "x < 3",
+      "occurrence" : 1
+    }, {
+      "label" : "x >= -2",
+      "input" : "x >= -2",
+      "occurrence" : 1
+    }, {
+      "label" : "r <= 1.5",
+      "input" : "r <= 1.5",
+      "occurrence" : 1
+    }, {
+      "label" : "m != b",
+      "input" : "m != b",
+      "occurrence" : 1
+    }, {
+      "label" : "k = true",
+      "input" : "k = true",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 32,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "0",
+        "m" : "a",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "0",
+        "m" : "a",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "0",
+        "m" : "b",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "2.5",
+        "m" : "a",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "2.5",
+        "m" : "a",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : false,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "2.5",
+        "m" : "b",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : false,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "2.5",
+        "m" : "b",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "a",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "a",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V13",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "2.5",
+        "m" : "a",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "2.5",
+        "m" : "a",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V15",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "2.5",
+        "m" : "b",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V16",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "2.5",
+        "m" : "b",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V17",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "3",
+        "r" : "0",
+        "m" : "a",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V18",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "3",
+        "r" : "0",
+        "m" : "a",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V19",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V20",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V21",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "3",
+        "r" : "2.5",
+        "m" : "a",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V22",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "r" : "2.5",
+        "m" : "a",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V23",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : false,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "3",
+        "r" : "2.5",
+        "m" : "b",
+        "k" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V24",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : false,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "r" : "2.5",
+        "m" : "b",
+        "k" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V25",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V26",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V27",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V28",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "feasible" : false
+    }, {
+      "vector" : "V29",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V30",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "feasible" : false
+    }, {
+      "vector" : "V31",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V32",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "feasible" : false
+    } ],
+    "independencePairs" : {
+      "x < 3" : [ [ "V4", "V20" ], [ "V4", "V22" ], [ "V4", "V24" ], [ "V6", "V20" ], [ "V6", "V22" ], [ "V6", "V24" ], [ "V8", "V20" ], [ "V8", "V22" ], [ "V8", "V24" ] ],
+      "x >= -2" : [ [ "V4", "V12" ], [ "V4", "V14" ], [ "V4", "V16" ], [ "V6", "V12" ], [ "V6", "V14" ], [ "V6", "V16" ], [ "V8", "V12" ], [ "V8", "V14" ], [ "V8", "V16" ] ],
+      "r <= 1.5" : [ [ "V10", "V14" ], [ "V10", "V22" ], [ "V18", "V14" ], [ "V18", "V22" ] ],
+      "m != b" : [ [ "V10", "V12" ], [ "V10", "V20" ], [ "V18", "V12" ], [ "V18", "V20" ] ],
+      "k = true" : [ [ "V11", "V12" ], [ "V11", "V14" ], [ "V11", "V16" ], [ "V11", "V20" ], [ "V11", "V22" ], [ "V11", "V24" ], [ "V13", "V12" ], [ "V13", "V14" ], [ "V13", "V16" ], [ "V13", "V20" ], [ "V13", "V22" ], [ "V13", "V24" ], [ "V15", "V12" ], [ "V15", "V14" ], [ "V15", "V16" ], [ "V15", "V20" ], [ "V15", "V22" ], [ "V15", "V24" ], [ "V19", "V12" ], [ "V19", "V14" ], [ "V19", "V16" ], [ "V19", "V20" ], [ "V19", "V22" ], [ "V19", "V24" ], [ "V21", "V12" ], [ "V21", "V14" ], [ "V21", "V16" ], [ "V21", "V20" ], [ "V21", "V22" ], [ "V21", "V24" ], [ "V23", "V12" ], [ "V23", "V14" ], [ "V23", "V16" ], [ "V23", "V20" ], [ "V23", "V22" ], [ "V23", "V24" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V4",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      },
+      "demonstrates" : [ "x < 3", "x >= -2" ]
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "a",
+        "k" : "false"
+      },
+      "demonstrates" : [ "r <= 1.5", "m != b" ]
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "true"
+      },
+      "demonstrates" : [ "k = true" ]
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      },
+      "demonstrates" : [ "x >= -2", "m != b", "k = true" ]
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "x < 3" : true,
+        "x >= -2" : false,
+        "r <= 1.5" : false,
+        "m != b" : true,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "-3",
+        "r" : "2.5",
+        "m" : "a",
+        "k" : "false"
+      },
+      "demonstrates" : [ "r <= 1.5" ]
+    }, {
+      "vector" : "V20",
+      "values" : {
+        "x < 3" : false,
+        "x >= -2" : true,
+        "r <= 1.5" : true,
+        "m != b" : false,
+        "k = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      },
+      "demonstrates" : [ "x < 3" ]
+    } ],
+    "chosenPairs" : {
+      "x < 3" : {
+        "whenTrue" : "V4",
+        "whenFalse" : "V20",
+        "uniqueCause" : true
+      },
+      "x >= -2" : {
+        "whenTrue" : "V4",
+        "whenFalse" : "V12",
+        "uniqueCause" : true
+      },
+      "r <= 1.5" : {
+        "whenTrue" : "V10",
+        "whenFalse" : "V14",
+        "uniqueCause" : true
+      },
+      "m != b" : {
+        "whenTrue" : "V10",
+        "whenFalse" : "V12",
+        "uniqueCause" : true
+      },
+      "k = true" : {
+        "whenTrue" : "V11",
+        "whenFalse" : "V12",
+        "uniqueCause" : true
+      }
+    },
+    "boundaryTests" : [ {
+      "base" : "V4",
+      "condition" : "x < 3",
+      "boundary" : "x = 2",
+      "assignment" : {
+        "x" : "2",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V4",
+      "condition" : "x >= -2",
+      "boundary" : "x = -2",
+      "assignment" : {
+        "x" : "-2",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V4",
+      "condition" : "r <= 1.5",
+      "boundary" : "r = 1.5",
+      "assignment" : {
+        "x" : "0",
+        "r" : "1.5",
+        "m" : "b",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V10",
+      "condition" : "x >= -2",
+      "boundary" : "x = -3",
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "a",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V10",
+      "condition" : "r <= 1.5",
+      "boundary" : "r = 1.5",
+      "assignment" : {
+        "x" : "-3",
+        "r" : "1.5",
+        "m" : "a",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V11",
+      "condition" : "x >= -2",
+      "boundary" : "x = -3",
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "true"
+      }
+    }, {
+      "base" : "V11",
+      "condition" : "r <= 1.5",
+      "boundary" : "r = 1.5",
+      "assignment" : {
+        "x" : "-3",
+        "r" : "1.5",
+        "m" : "b",
+        "k" : "true"
+      }
+    }, {
+      "base" : "V12",
+      "condition" : "x >= -2",
+      "boundary" : "x = -3",
+      "assignment" : {
+        "x" : "-3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V12",
+      "condition" : "r <= 1.5",
+      "boundary" : "r = 1.5",
+      "assignment" : {
+        "x" : "-3",
+        "r" : "1.5",
+        "m" : "b",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V14",
+      "condition" : "x >= -2",
+      "boundary" : "x = -3",
+      "assignment" : {
+        "x" : "-3",
+        "r" : "2.5",
+        "m" : "a",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V14",
+      "condition" : "r <= 1.5",
+      "boundary" : "r = 1.51",
+      "assignment" : {
+        "x" : "-3",
+        "r" : "1.51",
+        "m" : "a",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V20",
+      "condition" : "x < 3",
+      "boundary" : "x = 3",
+      "assignment" : {
+        "x" : "3",
+        "r" : "0",
+        "m" : "b",
+        "k" : "false"
+      }
+    }, {
+      "base" : "V20",
+      "condition" : "r <= 1.5",
+      "boundary" : "r = 1.5",
+      "assignment" : {
+        "x" : "3",
+        "r" : "1.5",
+        "m" : "b",
+        "k" : "false"
+      }
+    } ]
+  } ]
+}

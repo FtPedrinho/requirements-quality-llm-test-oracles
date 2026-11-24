@@ -1,0 +1,35 @@
+{
+  "system": "same",
+  "inputs": [
+    {
+      "name": "mode",
+      "type": "enum",
+      "values": [
+        "idle",
+        "busy"
+      ]
+    },
+    {
+      "name": "s",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "s#1",
+      "requirement": "R-S1",
+      "guard": "mode = idle /\\ s = true",
+      "actions": [
+        "y := on"
+      ]
+    },
+    {
+      "id": "s#2",
+      "requirement": "R-S2",
+      "guard": "mode = idle",
+      "actions": [
+        "y := on"
+      ]
+    }
+  ]
+}

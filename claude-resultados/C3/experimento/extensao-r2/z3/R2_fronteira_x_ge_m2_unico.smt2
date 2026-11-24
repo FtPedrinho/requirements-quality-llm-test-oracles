@@ -1,0 +1,5 @@
+; fronteira inteira de x >= (- 2)
+(declare-const v Int)
+(assert (not (= (>= v (- 2)) (>= (+ v 1) (- 2)))))
+(assert (not (= v -3)))
+(check-sat)

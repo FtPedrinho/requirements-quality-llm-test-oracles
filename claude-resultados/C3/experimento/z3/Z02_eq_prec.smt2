@@ -1,0 +1,5 @@
+; equivalência: A or B and C  ==  A or (B and C)
+(declare-const p0 Bool)
+(declare-const p1 Bool)
+(declare-const p2 Bool)
+(assert (not (= (or p0 (and p1 p2)) (or p0 (and p1 p2)))))(check-sat)

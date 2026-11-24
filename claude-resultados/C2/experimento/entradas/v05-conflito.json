@@ -1,0 +1,31 @@
+{
+  "system": "conf",
+  "inputs": [
+    {
+      "name": "x",
+      "type": "int"
+    },
+    {
+      "name": "s",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "c#1",
+      "requirement": "R-C1",
+      "guard": "x > 5",
+      "actions": [
+        "y := on"
+      ]
+    },
+    {
+      "id": "c#2",
+      "requirement": "R-C2",
+      "guard": "x > 3 /\\ s = true",
+      "actions": [
+        "y := off"
+      ]
+    }
+  ]
+}

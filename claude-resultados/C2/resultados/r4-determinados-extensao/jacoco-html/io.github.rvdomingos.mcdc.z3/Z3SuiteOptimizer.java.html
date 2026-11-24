@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Z3SuiteOptimizer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C2 r4-determinados-extensao</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.z3</a> &gt; <span class="el_source">Z3SuiteOptimizer.java</span></div><h1>Z3SuiteOptimizer.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.z3;
+
+import io.github.rvdomingos.mcdc.core.IndependencePair;
+import io.github.rvdomingos.mcdc.core.SuiteOptimizer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+
+/**
+ * Suíte exata com o otimizador do Z3. Cada linha que aparece em algum par vira uma variável booleana
+ * (&quot;a linha entra na suíte&quot;); cada condição exige que algum par dela tenha as duas linhas dentro;
+ * o objetivo é o menor número de linhas. No empate, prefere o conjunto em que mais condições têm um
+ * par de causa única.
+ */
+public final class Z3SuiteOptimizer implements SuiteOptimizer {
+
+    private final String command;
+
+    public Z3SuiteOptimizer() {
+<span class="nc" id="L22">        this(&quot;z3&quot;);</span>
+<span class="nc" id="L23">    }</span>
+
+<span class="nc" id="L25">    public Z3SuiteOptimizer(String command) {</span>
+<span class="nc" id="L26">        this.command = command;</span>
+<span class="nc" id="L27">    }</span>
+
+    @Override
+    public Set&lt;Integer&gt; minimumRows(Map&lt;String, List&lt;IndependencePair&gt;&gt; pairsByCondition) {
+<span class="nc" id="L31">        Set&lt;Integer&gt; rows = new TreeSet&lt;&gt;();</span>
+<span class="nc" id="L32">        pairsByCondition.values().forEach(pairs -&gt; pairs.forEach(p -&gt; {</span>
+<span class="nc" id="L33">            rows.add(p.whenTrue().index());</span>
+<span class="nc" id="L34">            rows.add(p.whenFalse().index());</span>
+<span class="nc" id="L35">        }));</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (rows.isEmpty()) {</span>
+<span class="nc" id="L37">            return Set.of();</span>
+        }
+
+<span class="nc" id="L40">        var script = new StringBuilder(&quot;(set-option :produce-models true)\n&quot;);</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">        for (int row : rows) {</span>
+<span class="nc" id="L42">            script.append(&quot;(declare-const &quot;).append(row(row)).append(&quot; Bool)\n&quot;);</span>
+<span class="nc" id="L43">        }</span>
+        // toda condição com par precisa de um par inteiro na suíte
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        for (List&lt;IndependencePair&gt; pairs : pairsByCondition.values()) {</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">            if (!pairs.isEmpty()) {</span>
+<span class="nc" id="L47">                script.append(&quot;(assert &quot;).append(any(pairs)).append(&quot;)\n&quot;);</span>
+            }
+<span class="nc" id="L49">        }</span>
+        // 1º objetivo: menos linhas
+<span class="nc" id="L51">        script.append(&quot;(minimize (+ 0&quot;);</span>
+<span class="nc" id="L52">        rows.forEach(row -&gt; script.append(&quot; (ite &quot;).append(row(row)).append(&quot; 1 0)&quot;));</span>
+<span class="nc" id="L53">        script.append(&quot;))\n&quot;);</span>
+        // 2º objetivo, no empate: condições demonstradas por um par de causa única
+<span class="nc bnc" id="L55" title="All 2 branches missed.">        for (List&lt;IndependencePair&gt; pairs : pairsByCondition.values()) {</span>
+<span class="nc" id="L56">            List&lt;IndependencePair&gt; unique = pairs.stream().filter(IndependencePair::isUniqueCause).toList();</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">            if (!unique.isEmpty()) {</span>
+<span class="nc" id="L58">                script.append(&quot;(assert-soft &quot;).append(any(unique)).append(&quot; :id causa_unica)\n&quot;);</span>
+            }
+<span class="nc" id="L60">        }</span>
+<span class="nc" id="L61">        script.append(&quot;(check-sat)\n(get-value (&quot;);</span>
+<span class="nc" id="L62">        rows.forEach(row -&gt; script.append(row(row)).append(' '));</span>
+<span class="nc" id="L63">        script.append(&quot;))\n&quot;);</span>
+
+<span class="nc" id="L65">        List&lt;Object&gt; answer = Z3Process.all(Z3Process.run(command, script.toString()));</span>
+<span class="nc bnc" id="L66" title="All 4 branches missed.">        if (answer.isEmpty() || !&quot;sat&quot;.equals(answer.get(0))) {</span>
+<span class="nc" id="L67">            throw new IllegalStateException(&quot;O Z3 não encontrou a suíte exata: &quot; + answer);</span>
+        }
+<span class="nc" id="L69">        Set&lt;Integer&gt; chosen = new TreeSet&lt;&gt;();</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        for (Object item : answer) {</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">            if (item instanceof List&lt;?&gt; values) {</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">                for (Object value : values) {</span>
+<span class="nc" id="L73">                    List&lt;?&gt; pair = (List&lt;?&gt;) value;</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">                    if (&quot;true&quot;.equals(pair.get(1))) {</span>
+                        // o Z3 pode devolver |r12| ou r12
+<span class="nc" id="L76">                        String symbol = ((String) pair.get(0)).replace(&quot;|&quot;, &quot;&quot;);</span>
+<span class="nc" id="L77">                        chosen.add(Integer.parseInt(symbol.substring(1)));</span>
+                    }
+<span class="nc" id="L79">                }</span>
+            }
+<span class="nc" id="L81">        }</span>
+<span class="nc" id="L82">        return chosen;</span>
+    }
+
+    /** &quot;Algum destes pares está inteiro na suíte.&quot; */
+    private static String any(List&lt;IndependencePair&gt; pairs) {
+<span class="nc" id="L87">        List&lt;String&gt; options = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">        for (IndependencePair p : pairs) {</span>
+<span class="nc" id="L89">            options.add(&quot;(and &quot; + row(p.whenTrue().index()) + &quot; &quot; + row(p.whenFalse().index()) + &quot;)&quot;);</span>
+<span class="nc" id="L90">        }</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        return options.size() == 1 ? options.get(0) : &quot;(or &quot; + String.join(&quot; &quot;, options) + &quot;)&quot;;</span>
+    }
+
+    private static String row(int index) {
+<span class="nc" id="L95">        return &quot;|r&quot; + index + &quot;|&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

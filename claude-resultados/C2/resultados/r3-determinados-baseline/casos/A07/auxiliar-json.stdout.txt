@@ -1,0 +1,114 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "speed > 100 /\\ mode = idle",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "speed > 100",
+      "variable" : "speed",
+      "operator" : ">",
+      "value" : "100"
+    }, {
+      "name" : "mode = idle",
+      "variable" : "mode",
+      "operator" : "=",
+      "value" : "idle"
+    } ],
+    "conditions" : [ {
+      "label" : "speed > 100",
+      "input" : "speed > 100",
+      "occurrence" : 1
+    }, {
+      "label" : "mode = idle",
+      "input" : "mode = idle",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "speed > 100" : true,
+        "mode = idle" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "speed > 100" : true,
+        "mode = idle" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "speed > 100" : false,
+        "mode = idle" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "speed > 100" : false,
+        "mode = idle" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "speed > 100" : [ [ "V1", "V3" ] ],
+      "mode = idle" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "speed > 100" : true,
+        "mode = idle" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "speed > 100", "mode = idle" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "speed > 100" : true,
+        "mode = idle" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "mode = idle" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "speed > 100" : false,
+        "mode = idle" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "speed > 100" ]
+    } ],
+    "chosenPairs" : {
+      "speed > 100" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "mode = idle" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "EX-07",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 1, observado 1 (analyze A and B)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and B",
+        "-f",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX20_req_redundante.mcdc"
+      ],
+      "exit": 1,
+      "segundos": 0.48
+    }
+  ]
+}

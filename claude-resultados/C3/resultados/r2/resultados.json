@@ -1,0 +1,242 @@
+[
+ {
+  "id": "C3-T20c",
+  "titulo": "check: suíte completa",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "check_demonstradas",
+    "ok": true,
+    "detalhe": "{'A': True, 'B': True, 'C': True} | completa, 3 de 3 condições demonstradas"
+   },
+   {
+    "tipo": "check_divergentes",
+    "ok": true,
+    "detalhe": "divergentes []"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T21c",
+  "titulo": "check: um teste só",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "check_demonstradas",
+    "ok": true,
+    "detalhe": "{'A': False, 'B': False, 'C': False} | incompleta, 0 de 3 condições demonstradas"
+   },
+   {
+    "tipo": "check_divergentes",
+    "ok": true,
+    "detalhe": "divergentes []"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T22c",
+  "titulo": "check: resultado esperado errado",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "check_divergentes",
+    "ok": true,
+    "detalhe": "divergentes ['T2']"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T25c",
+  "titulo": "check com formato json",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "json_valido",
+    "ok": true,
+    "detalhe": "JSON válido"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-I03c",
+  "titulo": "Código de saída de check com esperado divergente",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   D"
+ },
+ {
+  "id": "C3-I38c",
+  "titulo": "check com mudança de condição sem mudança de resultado",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   D"
+ },
+ {
+  "id": "C3-E01",
+  "titulo": "check com valores concretos tipados (int, real, enum, bool)",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "check_divergentes",
+    "ok": true,
+    "detalhe": "divergentes ['U4', 'U5']"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-E02",
+  "titulo": "Valores concretos e fronteiras com <, >=, <=, != e negativos",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "valores_realizam",
+    "ok": true,
+    "detalhe": "6 testes com valores concretos conferidos"
+   },
+   {
+    "tipo": "fronteira",
+    "ok": true,
+    "detalhe": "x: observados [-3.0, -2.0, 0.0, 2.0, 3.0]"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-E03",
+  "titulo": "Comparações ==, != e < com negativo",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "8 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-E04",
+  "titulo": "verify em JSON sem --context",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "json_valido",
+    "ok": true,
+    "detalhe": "JSON válido"
+   },
+   {
+    "tipo": "sem_lacunas_json",
+    "ok": true,
+    "detalhe": "gaps: {'checked': False, 'context': None, 'found': False, 'witness': None}"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-I40",
+  "titulo": "--boundary sem --z3",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: --boundary precisa de --z3.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I41",
+  "titulo": "Duas fontes ao mesmo tempo",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: Informe uma única fonte: uma expressão, -f <arquivo> ou --json <arquivo>.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I42",
+  "titulo": "check sem --tests",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: check precisa de --tests <arquivo.csv>.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I43",
+  "titulo": "--exact com --direct",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: --exact escolhe sobre a tabela inteira; não vale com --direct.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I44",
+  "titulo": "Opção sem valor",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: Faltou o valor de --format",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I45",
+  "titulo": "--context em analyze",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: --context só vale para verify.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I46",
+  "titulo": "verify com --z3",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: verify aceita só a fonte, --context, --format e -o.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I47",
+  "titulo": "--direct com --mutation",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: --mutation e truth-csv precisam da tabela inteira, que --direct não monta.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ }
+]

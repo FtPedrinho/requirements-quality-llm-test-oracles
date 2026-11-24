@@ -1,0 +1,8 @@
+sat
+(((and (= the_system_mode the_system_mode__idle) (= the_coin_sensor true)) true))
+sat
+(((and (= the_system_mode the_system_mode__idle) (= the_coin_sensor true)) false))
+sat
+(((or (and (= the_system_mode the_system_mode__choice) (= the_coffee_request_button true)) (= the_coin_sensor true)) true))
+sat
+(((or (and (= the_system_mode the_system_mode__choice) (= the_coffee_request_button true)) (= the_coin_sensor true)) false))

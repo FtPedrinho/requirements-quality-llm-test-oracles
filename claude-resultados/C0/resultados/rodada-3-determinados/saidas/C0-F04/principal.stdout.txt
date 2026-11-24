@@ -1,0 +1,13 @@
+Decisão:   REQ
+Guarda:    speed > 100 and rain
+Testes:    3
+  T1 = V1  TT  -> T
+  T2 = V3  FT  -> F
+  T3 = V2  TF  -> F
+
+Condições:
+  speed > 100: demonstrada por T1 (T) e T2 (F)
+  rain: demonstrada por T1 (T) e T3 (F)
+
+Resultados de condição demonstrados: 4 de 4 (100,0%)
+Cobertura MC/DC: completa, 2 de 2 condições demonstradas

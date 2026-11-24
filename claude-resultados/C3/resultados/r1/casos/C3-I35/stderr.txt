@@ -1,0 +1,1 @@
+Erro: Formato desconhecido para check: csv. Use text, json.

@@ -1,0 +1,1 @@
+Erro: Decisão com 21 entradas; o limite é 20

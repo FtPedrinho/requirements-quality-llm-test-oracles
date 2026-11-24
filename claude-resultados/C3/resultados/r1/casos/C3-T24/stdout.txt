@@ -1,0 +1,58 @@
+Decisão:   the_coffee_machine_system#1
+Requisito: REQ-001
+Guarda:    the_system_mode = idle /\ the_coin_sensor = true
+Testes:    2
+  T1 = V1  TT  -> T
+  T2 = V2  TF  -> F
+
+Condições:
+  the_system_mode = idle: falta; acrescente V3 (FT -> F)
+  the_coin_sensor = true: demonstrada por T1 (T) e T2 (F)
+
+Resultados de condição demonstrados: 3 de 4 (75,0%)
+Cobertura MC/DC: incompleta, 1 de 2 condições demonstradas
+
+Decisão:   the_coffee_machine_system#2
+Requisito: REQ-002
+Guarda:    (the_system_mode = choice /\ the_coin_sensor = false /\ the_coffee_request_button = true) /\ the_request_timer <= 30
+Testes:    nenhum para esta decisão
+
+Condições:
+  the_system_mode = choice: falta; acrescente V1 (TTTT -> T) e V9 (FTTT -> F)
+  the_coin_sensor = false: falta; acrescente V1 (TTTT -> T) e V5 (TFTT -> F)
+  the_coffee_request_button = true: falta; acrescente V1 (TTTT -> T) e V3 (TTFT -> F)
+  the_request_timer <= 30: falta; acrescente V1 (TTTT -> T) e V2 (TTTF -> F)
+
+Resultados de condição demonstrados: 0 de 8 (0,0%)
+Cobertura MC/DC: incompleta, 0 de 4 condições demonstradas
+
+Decisão:   the_coffee_machine_system#3
+Requisito: REQ-003
+Guarda:    (the_system_mode = choice /\ the_coffee_request_button = true) \/ the_coin_sensor = true
+Testes:    2
+  T3 = V2  TTF  -> T
+  T4 = V6  FTF  -> F
+
+Condições:
+  the_system_mode = choice: demonstrada por T3 (T) e T4 (F)
+  the_coffee_request_button = true: falta; acrescente V4 (TFF -> F)
+  the_coin_sensor = true: falta; acrescente V5 (FTT -> T)
+
+Problemas:
+  T4: resultado esperado T, mas a guarda dá F para esses valores
+
+Resultados de condição demonstrados: 4 de 6 (66,7%)
+Cobertura MC/DC: incompleta, 1 de 3 condições demonstradas
+
+Decisão:   the_coffee_machine_system#4
+Requisito: REQ-004
+Guarda:    (the_system_mode = preparing_strong \/ the_system_mode = preparing_weak) /\ the_request_timer >= 50
+Testes:    nenhum para esta decisão
+
+Condições:
+  the_system_mode = preparing_strong: falta; acrescente V3 (TFT -> T) e V7 (FFT -> F)
+  the_system_mode = preparing_weak: falta; acrescente V5 (FTT -> T) e V7 (FFT -> F)
+  the_request_timer >= 50: falta; acrescente V1 (TTT -> T) e V2 (TTF -> F)
+
+Resultados de condição demonstrados: 0 de 6 (0,0%)
+Cobertura MC/DC: incompleta, 0 de 3 condições demonstradas

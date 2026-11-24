@@ -1,0 +1,23 @@
+{
+  "id": "AN-21",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 1, observado 1 (analyze A and B)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and B",
+        "--format",
+        "xml"
+      ],
+      "exit": 1,
+      "segundos": 0.65
+    }
+  ]
+}

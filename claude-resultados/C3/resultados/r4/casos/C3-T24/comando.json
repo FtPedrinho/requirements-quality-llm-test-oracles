@@ -1,0 +1,1 @@
+["check", "--json", "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/decisoes.json", "--tests", "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/testes.csv"]

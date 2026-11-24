@@ -1,0 +1,12 @@
+; tabela-verdade de x == 5 or y != 2 and z < -1
+(declare-const p0 Bool)
+(declare-const p1 Bool)
+(declare-const p2 Bool)
+(push)(assert (and (= p0 true) (= p1 true) (= p2 true) (or p0 (and p1 p2))))(check-sat)(pop)
+(push)(assert (and (= p0 true) (= p1 true) (= p2 false) (or p0 (and p1 p2))))(check-sat)(pop)
+(push)(assert (and (= p0 true) (= p1 false) (= p2 true) (or p0 (and p1 p2))))(check-sat)(pop)
+(push)(assert (and (= p0 true) (= p1 false) (= p2 false) (or p0 (and p1 p2))))(check-sat)(pop)
+(push)(assert (and (= p0 false) (= p1 true) (= p2 true) (or p0 (and p1 p2))))(check-sat)(pop)
+(push)(assert (and (= p0 false) (= p1 true) (= p2 false) (or p0 (and p1 p2))))(check-sat)(pop)
+(push)(assert (and (= p0 false) (= p1 false) (= p2 true) (or p0 (and p1 p2))))(check-sat)(pop)
+(push)(assert (and (= p0 false) (= p1 false) (= p2 false) (or p0 (and p1 p2))))(check-sat)(pop)

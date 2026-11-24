@@ -1,0 +1,25 @@
+{
+  "id": "EX-18",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "fronteiras de x incluem [-3.0, -2.0] (observadas [-3.0, -2.0])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "x > -3",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 2.01
+    }
+  ]
+}

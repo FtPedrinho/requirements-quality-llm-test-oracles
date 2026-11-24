@@ -1,0 +1,120 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "UNIQUE_CAUSE",
+  "constraint" : null,
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "x > 5 and x > 3",
+    "actions" : [ ],
+    "complete" : false,
+    "uncoveredConditions" : [ "x > 3" ],
+    "uncovered" : [ {
+      "condition" : "x > 3",
+      "reason" : "INFEASIBLE",
+      "blockedPairs" : [ [ "V1", "V2" ] ]
+    } ],
+    "inputs" : [ {
+      "name" : "x > 5",
+      "variable" : "x",
+      "operator" : ">",
+      "value" : "5"
+    }, {
+      "name" : "x > 3",
+      "variable" : "x",
+      "operator" : ">",
+      "value" : "3"
+    } ],
+    "conditions" : [ {
+      "label" : "x > 5",
+      "input" : "x > 5",
+      "occurrence" : 1
+    }, {
+      "label" : "x > 3",
+      "input" : "x > 3",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x > 5" : true,
+        "x > 3" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "6"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x > 5" : true,
+        "x > 3" : false
+      },
+      "outcome" : false,
+      "feasible" : false
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x > 5" : false,
+        "x > 3" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "4"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x > 5" : false,
+        "x > 3" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "0"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "x > 5" : [ [ "V1", "V3" ] ],
+      "x > 3" : [ ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x > 5" : true,
+        "x > 3" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "6"
+      },
+      "demonstrates" : [ "x > 5" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x > 5" : false,
+        "x > 3" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "4"
+      },
+      "demonstrates" : [ "x > 5" ]
+    } ],
+    "chosenPairs" : {
+      "x > 5" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

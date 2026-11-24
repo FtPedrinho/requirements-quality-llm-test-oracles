@@ -1,0 +1,31 @@
+{
+  "system": "s",
+  "inputs": [
+    {
+      "name": "a",
+      "type": "bool"
+    },
+    {
+      "name": "b",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "s#1",
+      "requirement": "R1",
+      "guard": "a = true /\\ b = true",
+      "actions": [
+        "x := 1"
+      ]
+    },
+    {
+      "id": "s#1",
+      "requirement": "R2",
+      "guard": "a = true \\/ b = true",
+      "actions": [
+        "x := 2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+C3-T20c      PASSOU        exit=0
+C3-T21c      PASSOU        exit=2
+C3-T22c      PASSOU        exit=2
+C3-T25c      PASSOU        exit=0
+C3-I03c      INDETERMINADO exit=2
+C3-I38c      INDETERMINADO exit=2
+C3-E01       PASSOU        exit=2
+C3-E02       PASSOU        exit=0
+C3-E03       PASSOU        exit=0
+C3-E04       PASSOU        exit=2
+C3-I40       INDETERMINADO exit=1
+C3-I41       INDETERMINADO exit=1
+C3-I42       INDETERMINADO exit=1
+C3-I43       INDETERMINADO exit=1
+C3-I44       INDETERMINADO exit=1
+C3-I45       INDETERMINADO exit=1
+C3-I46       INDETERMINADO exit=1
+C3-I47       INDETERMINADO exit=1
+{'PASSOU': 8, 'INDETERMINADO': 10}

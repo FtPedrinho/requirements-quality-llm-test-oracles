@@ -1,0 +1,49 @@
+[
+ {
+  "id": "R2_tipada_testes",
+  "respostas": [
+   "sat",
+   "unsat",
+   "sat",
+   "unsat",
+   "sat"
+  ]
+ },
+ {
+  "id": "R2_fronteira_x_lt3",
+  "respostas": [
+   "sat"
+  ]
+ },
+ {
+  "id": "R2_fronteira_x_lt3_unico",
+  "respostas": [
+   "unsat"
+  ]
+ },
+ {
+  "id": "R2_fronteira_x_ge_m2",
+  "respostas": [
+   "sat"
+  ]
+ },
+ {
+  "id": "R2_fronteira_x_ge_m2_unico",
+  "respostas": [
+   "unsat"
+  ]
+ },
+ {
+  "id": "R2_tt_cmp",
+  "respostas": [
+   "sat",
+   "sat",
+   "sat",
+   "sat",
+   "sat",
+   "unsat",
+   "unsat",
+   "unsat"
+  ]
+ }
+]

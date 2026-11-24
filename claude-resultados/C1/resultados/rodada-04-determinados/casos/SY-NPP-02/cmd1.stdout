@@ -1,0 +1,2645 @@
+{
+  "tool" : "mcdc",
+  "system" : "safety_injection_system",
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "npp#1",
+    "requirement" : "REQ001",
+    "guard" : "the_water_pressure_antes < 9 /\\ the_water_pressure >= 9 /\\ the_pressure_mode = low",
+    "actions" : [ "the_pressure_mode := permitted" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_water_pressure_antes < 9",
+      "variable" : "the_water_pressure_antes",
+      "operator" : "<",
+      "value" : "9"
+    }, {
+      "name" : "the_water_pressure >= 9",
+      "variable" : "the_water_pressure",
+      "operator" : ">=",
+      "value" : "9"
+    }, {
+      "name" : "the_pressure_mode = low",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "low"
+    } ],
+    "conditions" : [ {
+      "label" : "the_water_pressure_antes < 9",
+      "input" : "the_water_pressure_antes < 9",
+      "occurrence" : 1
+    }, {
+      "label" : "the_water_pressure >= 9",
+      "input" : "the_water_pressure >= 9",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode = low",
+      "input" : "the_pressure_mode = low",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_water_pressure_antes < 9" : true,
+        "the_water_pressure >= 9" : true,
+        "the_pressure_mode = low" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_water_pressure_antes < 9" : true,
+        "the_water_pressure >= 9" : true,
+        "the_pressure_mode = low" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_water_pressure_antes < 9" : true,
+        "the_water_pressure >= 9" : false,
+        "the_pressure_mode = low" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_water_pressure_antes < 9" : true,
+        "the_water_pressure >= 9" : false,
+        "the_pressure_mode = low" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_water_pressure_antes < 9" : false,
+        "the_water_pressure >= 9" : true,
+        "the_pressure_mode = low" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_water_pressure_antes < 9" : false,
+        "the_water_pressure >= 9" : true,
+        "the_pressure_mode = low" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_water_pressure_antes < 9" : false,
+        "the_water_pressure >= 9" : false,
+        "the_pressure_mode = low" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_water_pressure_antes < 9" : false,
+        "the_water_pressure >= 9" : false,
+        "the_pressure_mode = low" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_water_pressure_antes < 9" : [ [ "V1", "V5" ] ],
+      "the_water_pressure >= 9" : [ [ "V1", "V3" ] ],
+      "the_pressure_mode = low" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_water_pressure_antes < 9" : true,
+        "the_water_pressure >= 9" : true,
+        "the_pressure_mode = low" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_water_pressure_antes < 9", "the_water_pressure >= 9", "the_pressure_mode = low" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_water_pressure_antes < 9" : true,
+        "the_water_pressure >= 9" : true,
+        "the_pressure_mode = low" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_pressure_mode = low" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_water_pressure_antes < 9" : true,
+        "the_water_pressure >= 9" : false,
+        "the_pressure_mode = low" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_water_pressure >= 9" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_water_pressure_antes < 9" : false,
+        "the_water_pressure >= 9" : true,
+        "the_pressure_mode = low" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_water_pressure_antes < 9" ]
+    } ],
+    "chosenPairs" : {
+      "the_water_pressure_antes < 9" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_water_pressure >= 9" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode = low" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#2",
+    "requirement" : "REQ002",
+    "guard" : "the_water_pressure_antes < 10 /\\ the_water_pressure >= 10 /\\ the_pressure_mode = permitted",
+    "actions" : [ "the_pressure_mode := high" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_water_pressure_antes < 10",
+      "variable" : "the_water_pressure_antes",
+      "operator" : "<",
+      "value" : "10"
+    }, {
+      "name" : "the_water_pressure >= 10",
+      "variable" : "the_water_pressure",
+      "operator" : ">=",
+      "value" : "10"
+    }, {
+      "name" : "the_pressure_mode = permitted",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "permitted"
+    } ],
+    "conditions" : [ {
+      "label" : "the_water_pressure_antes < 10",
+      "input" : "the_water_pressure_antes < 10",
+      "occurrence" : 1
+    }, {
+      "label" : "the_water_pressure >= 10",
+      "input" : "the_water_pressure >= 10",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode = permitted",
+      "input" : "the_pressure_mode = permitted",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_water_pressure_antes < 10" : true,
+        "the_water_pressure >= 10" : true,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_water_pressure_antes < 10" : true,
+        "the_water_pressure >= 10" : true,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_water_pressure_antes < 10" : true,
+        "the_water_pressure >= 10" : false,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_water_pressure_antes < 10" : true,
+        "the_water_pressure >= 10" : false,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_water_pressure_antes < 10" : false,
+        "the_water_pressure >= 10" : true,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_water_pressure_antes < 10" : false,
+        "the_water_pressure >= 10" : true,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_water_pressure_antes < 10" : false,
+        "the_water_pressure >= 10" : false,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_water_pressure_antes < 10" : false,
+        "the_water_pressure >= 10" : false,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_water_pressure_antes < 10" : [ [ "V1", "V5" ] ],
+      "the_water_pressure >= 10" : [ [ "V1", "V3" ] ],
+      "the_pressure_mode = permitted" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_water_pressure_antes < 10" : true,
+        "the_water_pressure >= 10" : true,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_water_pressure_antes < 10", "the_water_pressure >= 10", "the_pressure_mode = permitted" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_water_pressure_antes < 10" : true,
+        "the_water_pressure >= 10" : true,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_pressure_mode = permitted" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_water_pressure_antes < 10" : true,
+        "the_water_pressure >= 10" : false,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_water_pressure >= 10" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_water_pressure_antes < 10" : false,
+        "the_water_pressure >= 10" : true,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_water_pressure_antes < 10" ]
+    } ],
+    "chosenPairs" : {
+      "the_water_pressure_antes < 10" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_water_pressure >= 10" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode = permitted" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#3",
+    "requirement" : "REQ003",
+    "guard" : "the_water_pressure_antes >= 9 /\\ the_water_pressure < 9 /\\ the_pressure_mode = permitted",
+    "actions" : [ "the_pressure_mode := low" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_water_pressure_antes >= 9",
+      "variable" : "the_water_pressure_antes",
+      "operator" : ">=",
+      "value" : "9"
+    }, {
+      "name" : "the_water_pressure < 9",
+      "variable" : "the_water_pressure",
+      "operator" : "<",
+      "value" : "9"
+    }, {
+      "name" : "the_pressure_mode = permitted",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "permitted"
+    } ],
+    "conditions" : [ {
+      "label" : "the_water_pressure_antes >= 9",
+      "input" : "the_water_pressure_antes >= 9",
+      "occurrence" : 1
+    }, {
+      "label" : "the_water_pressure < 9",
+      "input" : "the_water_pressure < 9",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode = permitted",
+      "input" : "the_pressure_mode = permitted",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_water_pressure_antes >= 9" : true,
+        "the_water_pressure < 9" : true,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_water_pressure_antes >= 9" : true,
+        "the_water_pressure < 9" : true,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_water_pressure_antes >= 9" : true,
+        "the_water_pressure < 9" : false,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_water_pressure_antes >= 9" : true,
+        "the_water_pressure < 9" : false,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_water_pressure_antes >= 9" : false,
+        "the_water_pressure < 9" : true,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_water_pressure_antes >= 9" : false,
+        "the_water_pressure < 9" : true,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_water_pressure_antes >= 9" : false,
+        "the_water_pressure < 9" : false,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_water_pressure_antes >= 9" : false,
+        "the_water_pressure < 9" : false,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_water_pressure_antes >= 9" : [ [ "V1", "V5" ] ],
+      "the_water_pressure < 9" : [ [ "V1", "V3" ] ],
+      "the_pressure_mode = permitted" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_water_pressure_antes >= 9" : true,
+        "the_water_pressure < 9" : true,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_water_pressure_antes >= 9", "the_water_pressure < 9", "the_pressure_mode = permitted" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_water_pressure_antes >= 9" : true,
+        "the_water_pressure < 9" : true,
+        "the_pressure_mode = permitted" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_pressure_mode = permitted" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_water_pressure_antes >= 9" : true,
+        "the_water_pressure < 9" : false,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "9",
+        "the_water_pressure" : "9",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_water_pressure < 9" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_water_pressure_antes >= 9" : false,
+        "the_water_pressure < 9" : true,
+        "the_pressure_mode = permitted" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_water_pressure_antes >= 9" ]
+    } ],
+    "chosenPairs" : {
+      "the_water_pressure_antes >= 9" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_water_pressure < 9" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode = permitted" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#4",
+    "requirement" : "REQ004",
+    "guard" : "the_water_pressure_antes >= 10 /\\ the_water_pressure < 10 /\\ the_pressure_mode = high",
+    "actions" : [ "the_pressure_mode := permitted" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_water_pressure_antes >= 10",
+      "variable" : "the_water_pressure_antes",
+      "operator" : ">=",
+      "value" : "10"
+    }, {
+      "name" : "the_water_pressure < 10",
+      "variable" : "the_water_pressure",
+      "operator" : "<",
+      "value" : "10"
+    }, {
+      "name" : "the_pressure_mode = high",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "high"
+    } ],
+    "conditions" : [ {
+      "label" : "the_water_pressure_antes >= 10",
+      "input" : "the_water_pressure_antes >= 10",
+      "occurrence" : 1
+    }, {
+      "label" : "the_water_pressure < 10",
+      "input" : "the_water_pressure < 10",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode = high",
+      "input" : "the_pressure_mode = high",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_water_pressure_antes >= 10" : true,
+        "the_water_pressure < 10" : true,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_water_pressure_antes >= 10" : true,
+        "the_water_pressure < 10" : true,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_water_pressure_antes >= 10" : true,
+        "the_water_pressure < 10" : false,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_water_pressure_antes >= 10" : true,
+        "the_water_pressure < 10" : false,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_water_pressure_antes >= 10" : false,
+        "the_water_pressure < 10" : true,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_water_pressure_antes >= 10" : false,
+        "the_water_pressure < 10" : true,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_water_pressure_antes >= 10" : false,
+        "the_water_pressure < 10" : false,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_water_pressure_antes >= 10" : false,
+        "the_water_pressure < 10" : false,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_water_pressure_antes >= 10" : [ [ "V1", "V5" ] ],
+      "the_water_pressure < 10" : [ [ "V1", "V3" ] ],
+      "the_pressure_mode = high" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_water_pressure_antes >= 10" : true,
+        "the_water_pressure < 10" : true,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_water_pressure_antes >= 10", "the_water_pressure < 10", "the_pressure_mode = high" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_water_pressure_antes >= 10" : true,
+        "the_water_pressure < 10" : true,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_pressure_mode = high" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_water_pressure_antes >= 10" : true,
+        "the_water_pressure < 10" : false,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "10",
+        "the_water_pressure" : "10",
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_water_pressure < 10" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_water_pressure_antes >= 10" : false,
+        "the_water_pressure < 10" : true,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_water_pressure_antes" : "0",
+        "the_water_pressure" : "0",
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_water_pressure_antes >= 10" ]
+    } ],
+    "chosenPairs" : {
+      "the_water_pressure_antes >= 10" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_water_pressure < 10" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode = high" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#5",
+    "requirement" : "REQ005",
+    "guard" : "the_blockage_button_antes != pressed /\\ the_blockage_button = pressed /\\ the_reset_button != pressed /\\ the_pressure_mode != high",
+    "actions" : [ "the_overridden_mode := true" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_blockage_button_antes != pressed",
+      "variable" : "the_blockage_button_antes",
+      "operator" : "!=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_blockage_button = pressed",
+      "variable" : "the_blockage_button",
+      "operator" : "=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_reset_button != pressed",
+      "variable" : "the_reset_button",
+      "operator" : "!=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_pressure_mode != high",
+      "variable" : "the_pressure_mode",
+      "operator" : "!=",
+      "value" : "high"
+    } ],
+    "conditions" : [ {
+      "label" : "the_blockage_button_antes != pressed",
+      "input" : "the_blockage_button_antes != pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_blockage_button = pressed",
+      "input" : "the_blockage_button = pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_reset_button != pressed",
+      "input" : "the_reset_button != pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode != high",
+      "input" : "the_pressure_mode != high",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 16,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V13",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V15",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V16",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_blockage_button_antes != pressed" : [ [ "V1", "V9" ] ],
+      "the_blockage_button = pressed" : [ [ "V1", "V5" ] ],
+      "the_reset_button != pressed" : [ [ "V1", "V3" ] ],
+      "the_pressure_mode != high" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_blockage_button_antes != pressed", "the_blockage_button = pressed", "the_reset_button != pressed", "the_pressure_mode != high" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_pressure_mode != high" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_reset_button != pressed" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_blockage_button_antes != pressed" : true,
+        "the_blockage_button = pressed" : false,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "released",
+        "the_blockage_button" : "released",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_blockage_button = pressed" ]
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "the_blockage_button_antes != pressed" : false,
+        "the_blockage_button = pressed" : true,
+        "the_reset_button != pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_blockage_button_antes" : "pressed",
+        "the_blockage_button" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_blockage_button_antes != pressed" ]
+    } ],
+    "chosenPairs" : {
+      "the_blockage_button_antes != pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V9",
+        "uniqueCause" : true
+      },
+      "the_blockage_button = pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_reset_button != pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode != high" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 4,
+          "equivalent" : 0,
+          "killed" : 4
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 4,
+          "equivalent" : 0,
+          "killed" : 4
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 12,
+          "equivalent" : 0,
+          "killed" : 12
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#6",
+    "requirement" : "REQ006",
+    "guard" : "the_reset_button_antes != pressed /\\ the_reset_button = pressed /\\ the_pressure_mode != high",
+    "actions" : [ "the_overridden_mode := false" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_reset_button_antes != pressed",
+      "variable" : "the_reset_button_antes",
+      "operator" : "!=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_reset_button = pressed",
+      "variable" : "the_reset_button",
+      "operator" : "=",
+      "value" : "pressed"
+    }, {
+      "name" : "the_pressure_mode != high",
+      "variable" : "the_pressure_mode",
+      "operator" : "!=",
+      "value" : "high"
+    } ],
+    "conditions" : [ {
+      "label" : "the_reset_button_antes != pressed",
+      "input" : "the_reset_button_antes != pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_reset_button = pressed",
+      "input" : "the_reset_button = pressed",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode != high",
+      "input" : "the_pressure_mode != high",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_reset_button_antes != pressed" : true,
+        "the_reset_button = pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_reset_button_antes" : "released",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_reset_button_antes != pressed" : true,
+        "the_reset_button = pressed" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "released",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_reset_button_antes != pressed" : true,
+        "the_reset_button = pressed" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "released",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_reset_button_antes != pressed" : true,
+        "the_reset_button = pressed" : false,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "released",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_reset_button_antes != pressed" : false,
+        "the_reset_button = pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "pressed",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_reset_button_antes != pressed" : false,
+        "the_reset_button = pressed" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "pressed",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_reset_button_antes != pressed" : false,
+        "the_reset_button = pressed" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_reset_button_antes != pressed" : false,
+        "the_reset_button = pressed" : false,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "pressed",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_reset_button_antes != pressed" : [ [ "V1", "V5" ] ],
+      "the_reset_button = pressed" : [ [ "V1", "V3" ] ],
+      "the_pressure_mode != high" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_reset_button_antes != pressed" : true,
+        "the_reset_button = pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_reset_button_antes" : "released",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_reset_button_antes != pressed", "the_reset_button = pressed", "the_pressure_mode != high" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_reset_button_antes != pressed" : true,
+        "the_reset_button = pressed" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "released",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_pressure_mode != high" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_reset_button_antes != pressed" : true,
+        "the_reset_button = pressed" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "released",
+        "the_reset_button" : "released",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_reset_button = pressed" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_reset_button_antes != pressed" : false,
+        "the_reset_button = pressed" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_reset_button_antes" : "pressed",
+        "the_reset_button" : "pressed",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_reset_button_antes != pressed" ]
+    } ],
+    "chosenPairs" : {
+      "the_reset_button_antes != pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_reset_button = pressed" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode != high" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 3,
+          "equivalent" : 0,
+          "killed" : 3
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 6,
+          "equivalent" : 0,
+          "killed" : 6
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#7",
+    "requirement" : "REQ007",
+    "guard" : "the_pressure_mode_antes != high /\\ the_pressure_mode = high",
+    "actions" : [ "the_overridden_mode := false" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_pressure_mode_antes != high",
+      "variable" : "the_pressure_mode_antes",
+      "operator" : "!=",
+      "value" : "high"
+    }, {
+      "name" : "the_pressure_mode = high",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "high"
+    } ],
+    "conditions" : [ {
+      "label" : "the_pressure_mode_antes != high",
+      "input" : "the_pressure_mode_antes != high",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode = high",
+      "input" : "the_pressure_mode = high",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode_antes != high" : true,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode_antes" : "low",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode_antes != high" : true,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "low",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode_antes != high" : false,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "high",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_pressure_mode_antes != high" : false,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "high",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_pressure_mode_antes != high" : [ [ "V1", "V3" ] ],
+      "the_pressure_mode = high" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode_antes != high" : true,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode_antes" : "low",
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_pressure_mode_antes != high", "the_pressure_mode = high" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode_antes != high" : true,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "low",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_pressure_mode = high" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode_antes != high" : false,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "high",
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_pressure_mode_antes != high" ]
+    } ],
+    "chosenPairs" : {
+      "the_pressure_mode_antes != high" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode = high" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#8",
+    "requirement" : "REQ008",
+    "guard" : "the_pressure_mode_antes = high /\\ the_pressure_mode != high",
+    "actions" : [ "the_overridden_mode := false" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_pressure_mode_antes = high",
+      "variable" : "the_pressure_mode_antes",
+      "operator" : "=",
+      "value" : "high"
+    }, {
+      "name" : "the_pressure_mode != high",
+      "variable" : "the_pressure_mode",
+      "operator" : "!=",
+      "value" : "high"
+    } ],
+    "conditions" : [ {
+      "label" : "the_pressure_mode_antes = high",
+      "input" : "the_pressure_mode_antes = high",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode != high",
+      "input" : "the_pressure_mode != high",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode_antes = high" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode_antes" : "high",
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode_antes = high" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "high",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode_antes = high" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "permitted",
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_pressure_mode_antes = high" : false,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "permitted",
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_pressure_mode_antes = high" : [ [ "V1", "V3" ] ],
+      "the_pressure_mode != high" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode_antes = high" : true,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode_antes" : "high",
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_pressure_mode_antes = high", "the_pressure_mode != high" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode_antes = high" : true,
+        "the_pressure_mode != high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "high",
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_pressure_mode != high" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode_antes = high" : false,
+        "the_pressure_mode != high" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode_antes" : "permitted",
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_pressure_mode_antes = high" ]
+    } ],
+    "chosenPairs" : {
+      "the_pressure_mode_antes = high" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode != high" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#9",
+    "requirement" : "REQ009",
+    "guard" : "the_pressure_mode = low /\\ the_overridden_mode = true",
+    "actions" : [ "the_safety_injection_mode := off" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_pressure_mode = low",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "low"
+    }, {
+      "name" : "the_overridden_mode = true",
+      "variable" : "the_overridden_mode",
+      "operator" : "=",
+      "value" : "true"
+    } ],
+    "conditions" : [ {
+      "label" : "the_pressure_mode = low",
+      "input" : "the_pressure_mode = low",
+      "occurrence" : 1
+    }, {
+      "label" : "the_overridden_mode = true",
+      "input" : "the_overridden_mode = true",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode = low" : true,
+        "the_overridden_mode = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode" : "low",
+        "the_overridden_mode" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode = low" : true,
+        "the_overridden_mode = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "low",
+        "the_overridden_mode" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode = low" : false,
+        "the_overridden_mode = true" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "permitted",
+        "the_overridden_mode" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_pressure_mode = low" : false,
+        "the_overridden_mode = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "permitted",
+        "the_overridden_mode" : "false"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_pressure_mode = low" : [ [ "V1", "V3" ] ],
+      "the_overridden_mode = true" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode = low" : true,
+        "the_overridden_mode = true" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode" : "low",
+        "the_overridden_mode" : "true"
+      },
+      "demonstrates" : [ "the_pressure_mode = low", "the_overridden_mode = true" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode = low" : true,
+        "the_overridden_mode = true" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "low",
+        "the_overridden_mode" : "false"
+      },
+      "demonstrates" : [ "the_overridden_mode = true" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode = low" : false,
+        "the_overridden_mode = true" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "permitted",
+        "the_overridden_mode" : "true"
+      },
+      "demonstrates" : [ "the_pressure_mode = low" ]
+    } ],
+    "chosenPairs" : {
+      "the_pressure_mode = low" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_overridden_mode = true" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#10",
+    "requirement" : "REQ010",
+    "guard" : "the_pressure_mode = low /\\ the_overridden_mode = false",
+    "actions" : [ "the_safety_injection_mode := on" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_pressure_mode = low",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "low"
+    }, {
+      "name" : "the_overridden_mode = false",
+      "variable" : "the_overridden_mode",
+      "operator" : "=",
+      "value" : "false"
+    } ],
+    "conditions" : [ {
+      "label" : "the_pressure_mode = low",
+      "input" : "the_pressure_mode = low",
+      "occurrence" : 1
+    }, {
+      "label" : "the_overridden_mode = false",
+      "input" : "the_overridden_mode = false",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode = low" : true,
+        "the_overridden_mode = false" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode" : "low",
+        "the_overridden_mode" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode = low" : true,
+        "the_overridden_mode = false" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "low",
+        "the_overridden_mode" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode = low" : false,
+        "the_overridden_mode = false" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "permitted",
+        "the_overridden_mode" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_pressure_mode = low" : false,
+        "the_overridden_mode = false" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "permitted",
+        "the_overridden_mode" : "true"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_pressure_mode = low" : [ [ "V1", "V3" ] ],
+      "the_overridden_mode = false" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode = low" : true,
+        "the_overridden_mode = false" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode" : "low",
+        "the_overridden_mode" : "false"
+      },
+      "demonstrates" : [ "the_pressure_mode = low", "the_overridden_mode = false" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode = low" : true,
+        "the_overridden_mode = false" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "low",
+        "the_overridden_mode" : "true"
+      },
+      "demonstrates" : [ "the_overridden_mode = false" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode = low" : false,
+        "the_overridden_mode = false" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "permitted",
+        "the_overridden_mode" : "false"
+      },
+      "demonstrates" : [ "the_pressure_mode = low" ]
+    } ],
+    "chosenPairs" : {
+      "the_pressure_mode = low" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_overridden_mode = false" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        }
+      },
+      "survivors" : [ ]
+    }
+  }, {
+    "id" : "npp#11",
+    "requirement" : "REQ011",
+    "guard" : "the_pressure_mode = permitted \\/ the_pressure_mode = high",
+    "actions" : [ "the_safety_injection_mode := off" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_pressure_mode = permitted",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "permitted"
+    }, {
+      "name" : "the_pressure_mode = high",
+      "variable" : "the_pressure_mode",
+      "operator" : "=",
+      "value" : "high"
+    } ],
+    "conditions" : [ {
+      "label" : "the_pressure_mode = permitted",
+      "input" : "the_pressure_mode = permitted",
+      "occurrence" : 1
+    }, {
+      "label" : "the_pressure_mode = high",
+      "input" : "the_pressure_mode = high",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_pressure_mode = permitted" : true,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode = permitted" : true,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode" : "permitted"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode = permitted" : false,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode" : "high"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_pressure_mode = permitted" : false,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "low"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_pressure_mode = permitted" : [ [ "V2", "V4" ] ],
+      "the_pressure_mode = high" : [ [ "V3", "V4" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "the_pressure_mode = permitted" : true,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode" : "permitted"
+      },
+      "demonstrates" : [ "the_pressure_mode = permitted" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_pressure_mode = permitted" : false,
+        "the_pressure_mode = high" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "the_pressure_mode" : "high"
+      },
+      "demonstrates" : [ "the_pressure_mode = high" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_pressure_mode = permitted" : false,
+        "the_pressure_mode = high" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "the_pressure_mode" : "low"
+      },
+      "demonstrates" : [ "the_pressure_mode = permitted", "the_pressure_mode = high" ]
+    } ],
+    "chosenPairs" : {
+      "the_pressure_mode = permitted" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "the_pressure_mode = high" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    },
+    "mutation" : {
+      "score" : 100.0,
+      "faults" : {
+        "ORF" : {
+          "description" : "troca de operador",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "ENF" : {
+          "description" : "negação de subexpressão",
+          "total" : 1,
+          "equivalent" : 0,
+          "killed" : 1
+        },
+        "VNF" : {
+          "description" : "negação de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "MVF" : {
+          "description" : "variável ausente",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        },
+        "VRF" : {
+          "description" : "troca de variável",
+          "total" : 2,
+          "equivalent" : 0,
+          "killed" : 2
+        }
+      },
+      "survivors" : [ ]
+    }
+  } ]
+}

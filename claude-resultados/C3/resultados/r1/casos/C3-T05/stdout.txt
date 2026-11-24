@@ -1,0 +1,24 @@
+Decisão:   REQ
+Guarda:    not A and B
+Variante:  mascaramento
+
+Vetor A   B   | D
+V1    T   T   | F
+V2    T   F   | F
+V3    F   T   | T
+V4    F   F   | F
+
+Pares de independência:
+  A: (V1, V3)
+  B: (V3, V4)
+
+Suíte mínima (3 testes):
+  V1  TT  -> F   demonstra A
+  V3  FT  -> T   demonstra A, B
+  V4  FF  -> F   demonstra B
+
+Demonstração por condição:
+  A: V1 (T) e V3 (F), só ela muda
+  B: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa

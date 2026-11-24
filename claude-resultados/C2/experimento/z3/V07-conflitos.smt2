@@ -1,0 +1,10 @@
+; consulta V07-conflitos -- sobreposição de guardas com ações de valores diferentes
+(set-logic ALL)
+(declare-datatypes () ((E_mode mode__idle mode__busy)))
+(declare-const mode E_mode)
+(declare-const s Bool)
+(push)
+(assert (and (= mode mode__idle) (= s true)))
+(assert (and (= mode mode__idle) (= s false)))
+(check-sat)
+(pop)

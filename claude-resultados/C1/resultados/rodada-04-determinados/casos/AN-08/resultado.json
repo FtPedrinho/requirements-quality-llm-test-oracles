@@ -1,0 +1,21 @@
+{
+  "id": "AN-08",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze x = 1 and y == 2 and z != 3 and w < 4 and v <= 5 and u > 6 and t >= 7)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "x = 1 and y == 2 and z != 3 and w < 4 and v <= 5 and u > 6 and t >= 7"
+      ],
+      "exit": 0,
+      "segundos": 0.63
+    }
+  ]
+}

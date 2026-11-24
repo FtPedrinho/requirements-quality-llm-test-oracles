@@ -1,0 +1,2285 @@
+{
+ "z3": "Z3 version 5.4.1 - 64 bit - build hashcode 145c0c51570a357cc558ce898ce77573ba9d4fbf",
+ "consultas": [
+  {
+   "id": "Z01_tt_ABorC",
+   "arquivo": "z3/Z01_tt_ABorC.smt2",
+   "saida": "z3/Z01_tt_ABorC.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_amp",
+   "arquivo": "z3/Z01_tt_amp.smt2",
+   "saida": "z3/Z01_tt_amp.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_dfrs",
+   "arquivo": "z3/Z01_tt_dfrs.smt2",
+   "saida": "z3/Z01_tt_dfrs.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_prec",
+   "arquivo": "z3/Z01_tt_prec.smt2",
+   "saida": "z3/Z01_tt_prec.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "unsat",
+    "unsat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_notA",
+   "arquivo": "z3/Z01_tt_notA.smt2",
+   "saida": "z3/Z01_tt_notA.out",
+   "respostas": [
+    "unsat",
+    "unsat",
+    "sat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_bangA",
+   "arquivo": "z3/Z01_tt_bangA.smt2",
+   "saida": "z3/Z01_tt_bangA.out",
+   "respostas": [
+    "unsat",
+    "unsat",
+    "sat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_cmp",
+   "arquivo": "z3/Z01_tt_cmp.smt2",
+   "saida": "z3/Z01_tt_cmp.out",
+   "respostas": [
+    "sat",
+    "unsat",
+    "unsat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_rep",
+   "arquivo": "z3/Z01_tt_rep.smt2",
+   "saida": "z3/Z01_tt_rep.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "unsat",
+    "unsat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_req1",
+   "arquivo": "z3/Z01_tt_req1.smt2",
+   "saida": "z3/Z01_tt_req1.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat",
+    "sat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_req2",
+   "arquivo": "z3/Z01_tt_req2.smt2",
+   "saida": "z3/Z01_tt_req2.out",
+   "respostas": [
+    "unsat",
+    "sat",
+    "unsat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_req3",
+   "arquivo": "z3/Z01_tt_req3.smt2",
+   "saida": "z3/Z01_tt_req3.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "unsat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z01_tt_mut",
+   "arquivo": "z3/Z01_tt_mut.smt2",
+   "saida": "z3/Z01_tt_mut.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "unsat",
+    "unsat",
+    "unsat",
+    "unsat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z02_eq_amp",
+   "arquivo": "z3/Z02_eq_amp.smt2",
+   "saida": "z3/Z02_eq_amp.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z02_eq_dfrs",
+   "arquivo": "z3/Z02_eq_dfrs.smt2",
+   "saida": "z3/Z02_eq_dfrs.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z02_eq_prec",
+   "arquivo": "z3/Z02_eq_prec.smt2",
+   "saida": "z3/Z02_eq_prec.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z02_eq_not",
+   "arquivo": "z3/Z02_eq_not.smt2",
+   "saida": "z3/Z02_eq_not.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z03_pares_ABorC",
+   "arquivo": "z3/Z03_pares_ABorC.smt2",
+   "saida": "z3/Z03_pares_ABorC.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z04_pares_absorcao",
+   "arquivo": "z3/Z04_pares_absorcao.smt2",
+   "saida": "z3/Z04_pares_absorcao.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "unsat",
+    "unsat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z04_pares_bloqueio",
+   "arquivo": "z3/Z04_pares_bloqueio.smt2",
+   "saida": "z3/Z04_pares_bloqueio.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "unsat",
+    "unsat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z09_pares_restricao",
+   "arquivo": "z3/Z09_pares_restricao.smt2",
+   "saida": "z3/Z09_pares_restricao.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z10_and20_pares",
+   "arquivo": "z3/Z10_and20_pares.smt2",
+   "saida": "z3/Z10_and20_pares.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z09_tt_restricao",
+   "arquivo": "z3/Z09_tt_restricao.smt2",
+   "saida": "z3/Z09_tt_restricao.out",
+   "respostas": [
+    "sat",
+    "unsat",
+    "sat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z07_viabilidade_speed",
+   "arquivo": "z3/Z07_viabilidade_speed.smt2",
+   "saida": "z3/Z07_viabilidade_speed.out",
+   "respostas": [
+    "sat",
+    "sat",
+    "unsat",
+    "unsat",
+    "sat",
+    "sat",
+    "sat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_speed_gt100_a",
+   "arquivo": "z3/Z08_fronteira_speed_gt100_a.smt2",
+   "saida": "z3/Z08_fronteira_speed_gt100_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_speed_gt100_unico",
+   "arquivo": "z3/Z08_fronteira_speed_gt100_unico.smt2",
+   "saida": "z3/Z08_fronteira_speed_gt100_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_speed_gt50_a",
+   "arquivo": "z3/Z08_fronteira_speed_gt50_a.smt2",
+   "saida": "z3/Z08_fronteira_speed_gt50_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_speed_gt50_unico",
+   "arquivo": "z3/Z08_fronteira_speed_gt50_unico.smt2",
+   "saida": "z3/Z08_fronteira_speed_gt50_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_x_le10_a",
+   "arquivo": "z3/Z08_fronteira_x_le10_a.smt2",
+   "saida": "z3/Z08_fronteira_x_le10_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_x_le10_unico",
+   "arquivo": "z3/Z08_fronteira_x_le10_unico.smt2",
+   "saida": "z3/Z08_fronteira_x_le10_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_y_lt5_a",
+   "arquivo": "z3/Z08_fronteira_y_lt5_a.smt2",
+   "saida": "z3/Z08_fronteira_y_lt5_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_y_lt5_unico",
+   "arquivo": "z3/Z08_fronteira_y_lt5_unico.smt2",
+   "saida": "z3/Z08_fronteira_y_lt5_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_y_ge7_a",
+   "arquivo": "z3/Z08_fronteira_y_ge7_a.smt2",
+   "saida": "z3/Z08_fronteira_y_ge7_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_y_ge7_unico",
+   "arquivo": "z3/Z08_fronteira_y_ge7_unico.smt2",
+   "saida": "z3/Z08_fronteira_y_ge7_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_voltage_gt80_a",
+   "arquivo": "z3/Z08_fronteira_voltage_gt80_a.smt2",
+   "saida": "z3/Z08_fronteira_voltage_gt80_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_voltage_gt80_unico",
+   "arquivo": "z3/Z08_fronteira_voltage_gt80_unico.smt2",
+   "saida": "z3/Z08_fronteira_voltage_gt80_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_timer_ge340_a",
+   "arquivo": "z3/Z08_fronteira_timer_ge340_a.smt2",
+   "saida": "z3/Z08_fronteira_timer_ge340_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_timer_ge340_unico",
+   "arquivo": "z3/Z08_fronteira_timer_ge340_unico.smt2",
+   "saida": "z3/Z08_fronteira_timer_ge340_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_pressure_ge9_a",
+   "arquivo": "z3/Z08_fronteira_pressure_ge9_a.smt2",
+   "saida": "z3/Z08_fronteira_pressure_ge9_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_pressure_ge9_unico",
+   "arquivo": "z3/Z08_fronteira_pressure_ge9_unico.smt2",
+   "saida": "z3/Z08_fronteira_pressure_ge9_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_pressure_lt10_a",
+   "arquivo": "z3/Z08_fronteira_pressure_lt10_a.smt2",
+   "saida": "z3/Z08_fronteira_pressure_lt10_a.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z08_fronteira_pressure_lt10_unico",
+   "arquivo": "z3/Z08_fronteira_pressure_lt10_unico.smt2",
+   "saida": "z3/Z08_fronteira_pressure_lt10_unico.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z11_check_check-completa",
+   "arquivo": "z3/Z11_check_check-completa.smt2",
+   "saida": "z3/Z11_check_check-completa.out",
+   "respostas": [
+    "sat",
+    "unsat",
+    "unsat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z11_check_check-um-teste",
+   "arquivo": "z3/Z11_check_check-um-teste.smt2",
+   "saida": "z3/Z11_check_check-um-teste.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "Z11_check_check-esperado-errado",
+   "arquivo": "z3/Z11_check_check-esperado-errado.smt2",
+   "saida": "z3/Z11_check_check-esperado-errado.out",
+   "respostas": [
+    "sat",
+    "unsat",
+    "unsat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z11_check_check-sem-mudanca-de-resultado",
+   "arquivo": "z3/Z11_check_check-sem-mudanca-de-resultado.smt2",
+   "saida": "z3/Z11_check_check-sem-mudanca-de-resultado.out",
+   "respostas": [
+    "sat",
+    "sat"
+   ]
+  },
+  {
+   "id": "Z12_decisoes_testes",
+   "arquivo": "z3/Z12_decisoes_testes.smt2",
+   "saida": "z3/Z12_decisoes_testes.out",
+   "respostas": [
+    "sat",
+    "unsat",
+    "sat",
+    "unsat"
+   ]
+  },
+  {
+   "id": "Z13_combinacoes_sistemas",
+   "arquivo": "z3/Z13_combinacoes_sistemas.smt2",
+   "saida": "z3/Z13_combinacoes_sistemas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K01_contagem_condicoes_leituraA",
+   "arquivo": "z3/K01_contagem_condicoes_leituraA.smt2",
+   "saida": "z3/K01_contagem_condicoes_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K01_contagem_condicoes_leituraB",
+   "arquivo": "z3/K01_contagem_condicoes_leituraB.smt2",
+   "saida": "z3/K01_contagem_condicoes_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K01_contagem_condicoes_juntas",
+   "arquivo": "z3/K01_contagem_condicoes_juntas.smt2",
+   "saida": "z3/K01_contagem_condicoes_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K01_sem_repeticao_juntas",
+   "arquivo": "z3/K01_sem_repeticao_juntas.smt2",
+   "saida": "z3/K01_sem_repeticao_juntas.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K01_sem_repeticao_negacao",
+   "arquivo": "z3/K01_sem_repeticao_negacao.smt2",
+   "saida": "z3/K01_sem_repeticao_negacao.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K02_z3_ausente_leituraA",
+   "arquivo": "z3/K02_z3_ausente_leituraA.smt2",
+   "saida": "z3/K02_z3_ausente_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K02_z3_ausente_leituraB",
+   "arquivo": "z3/K02_z3_ausente_leituraB.smt2",
+   "saida": "z3/K02_z3_ausente_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K02_z3_ausente_juntas",
+   "arquivo": "z3/K02_z3_ausente_juntas.smt2",
+   "saida": "z3/K02_z3_ausente_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K03_codigo_sucesso_leituraA",
+   "arquivo": "z3/K03_codigo_sucesso_leituraA.smt2",
+   "saida": "z3/K03_codigo_sucesso_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_sucesso_leituraB",
+   "arquivo": "z3/K03_codigo_sucesso_leituraB.smt2",
+   "saida": "z3/K03_codigo_sucesso_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_sucesso_juntas",
+   "arquivo": "z3/K03_codigo_sucesso_juntas.smt2",
+   "saida": "z3/K03_codigo_sucesso_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K03_codigo_entrada_invalida_leituraA",
+   "arquivo": "z3/K03_codigo_entrada_invalida_leituraA.smt2",
+   "saida": "z3/K03_codigo_entrada_invalida_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_entrada_invalida_leituraB",
+   "arquivo": "z3/K03_codigo_entrada_invalida_leituraB.smt2",
+   "saida": "z3/K03_codigo_entrada_invalida_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_entrada_invalida_juntas",
+   "arquivo": "z3/K03_codigo_entrada_invalida_juntas.smt2",
+   "saida": "z3/K03_codigo_entrada_invalida_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K03_codigo_divergencia_check_leituraA",
+   "arquivo": "z3/K03_codigo_divergencia_check_leituraA.smt2",
+   "saida": "z3/K03_codigo_divergencia_check_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_divergencia_check_leituraB",
+   "arquivo": "z3/K03_codigo_divergencia_check_leituraB.smt2",
+   "saida": "z3/K03_codigo_divergencia_check_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_divergencia_check_juntas",
+   "arquivo": "z3/K03_codigo_divergencia_check_juntas.smt2",
+   "saida": "z3/K03_codigo_divergencia_check_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K03_codigo_conflito_verify_leituraA",
+   "arquivo": "z3/K03_codigo_conflito_verify_leituraA.smt2",
+   "saida": "z3/K03_codigo_conflito_verify_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_conflito_verify_leituraB",
+   "arquivo": "z3/K03_codigo_conflito_verify_leituraB.smt2",
+   "saida": "z3/K03_codigo_conflito_verify_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_conflito_verify_juntas",
+   "arquivo": "z3/K03_codigo_conflito_verify_juntas.smt2",
+   "saida": "z3/K03_codigo_conflito_verify_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K03_codigo_sem_par_analyze_leituraA",
+   "arquivo": "z3/K03_codigo_sem_par_analyze_leituraA.smt2",
+   "saida": "z3/K03_codigo_sem_par_analyze_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_sem_par_analyze_leituraB",
+   "arquivo": "z3/K03_codigo_sem_par_analyze_leituraB.smt2",
+   "saida": "z3/K03_codigo_sem_par_analyze_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K03_codigo_sem_par_analyze_juntas",
+   "arquivo": "z3/K03_codigo_sem_par_analyze_juntas.smt2",
+   "saida": "z3/K03_codigo_sem_par_analyze_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K04_csv_colunas_leituraA",
+   "arquivo": "z3/K04_csv_colunas_leituraA.smt2",
+   "saida": "z3/K04_csv_colunas_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K04_csv_colunas_leituraB",
+   "arquivo": "z3/K04_csv_colunas_leituraB.smt2",
+   "saida": "z3/K04_csv_colunas_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K04_csv_colunas_juntas",
+   "arquivo": "z3/K04_csv_colunas_juntas.smt2",
+   "saida": "z3/K04_csv_colunas_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K05_truth_csv_leituraA",
+   "arquivo": "z3/K05_truth_csv_leituraA.smt2",
+   "saida": "z3/K05_truth_csv_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K05_truth_csv_leituraB",
+   "arquivo": "z3/K05_truth_csv_leituraB.smt2",
+   "saida": "z3/K05_truth_csv_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K05_truth_csv_juntas",
+   "arquivo": "z3/K05_truth_csv_juntas.smt2",
+   "saida": "z3/K05_truth_csv_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K05_csv_leituraA",
+   "arquivo": "z3/K05_csv_leituraA.smt2",
+   "saida": "z3/K05_csv_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K05_csv_leituraB",
+   "arquivo": "z3/K05_csv_leituraB.smt2",
+   "saida": "z3/K05_csv_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K05_csv_juntas",
+   "arquivo": "z3/K05_csv_juntas.smt2",
+   "saida": "z3/K05_csv_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K06_viabilidade_leituraA",
+   "arquivo": "z3/K06_viabilidade_leituraA.smt2",
+   "saida": "z3/K06_viabilidade_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K06_viabilidade_leituraB",
+   "arquivo": "z3/K06_viabilidade_leituraB.smt2",
+   "saida": "z3/K06_viabilidade_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K06_viabilidade_juntas",
+   "arquivo": "z3/K06_viabilidade_juntas.smt2",
+   "saida": "z3/K06_viabilidade_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K07_criterio_par_leituraA",
+   "arquivo": "z3/K07_criterio_par_leituraA.smt2",
+   "saida": "z3/K07_criterio_par_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K07_criterio_par_leituraB",
+   "arquivo": "z3/K07_criterio_par_leituraB.smt2",
+   "saida": "z3/K07_criterio_par_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K07_criterio_par_juntas",
+   "arquivo": "z3/K07_criterio_par_juntas.smt2",
+   "saida": "z3/K07_criterio_par_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K07_tamanho_suite_leituraA",
+   "arquivo": "z3/K07_tamanho_suite_leituraA.smt2",
+   "saida": "z3/K07_tamanho_suite_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K07_tamanho_suite_leituraB",
+   "arquivo": "z3/K07_tamanho_suite_leituraB.smt2",
+   "saida": "z3/K07_tamanho_suite_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K07_tamanho_suite_juntas",
+   "arquivo": "z3/K07_tamanho_suite_juntas.smt2",
+   "saida": "z3/K07_tamanho_suite_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K08_exata_leituraA",
+   "arquivo": "z3/K08_exata_leituraA.smt2",
+   "saida": "z3/K08_exata_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K08_exata_leituraB",
+   "arquivo": "z3/K08_exata_leituraB.smt2",
+   "saida": "z3/K08_exata_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K08_exata_juntas",
+   "arquivo": "z3/K08_exata_juntas.smt2",
+   "saida": "z3/K08_exata_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K09_classificacao_leituraA",
+   "arquivo": "z3/K09_classificacao_leituraA.smt2",
+   "saida": "z3/K09_classificacao_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K09_classificacao_leituraB",
+   "arquivo": "z3/K09_classificacao_leituraB.smt2",
+   "saida": "z3/K09_classificacao_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K09_classificacao_juntas",
+   "arquivo": "z3/K09_classificacao_juntas.smt2",
+   "saida": "z3/K09_classificacao_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K10_z3_13_leituraA",
+   "arquivo": "z3/K10_z3_13_leituraA.smt2",
+   "saida": "z3/K10_z3_13_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K10_z3_13_leituraB",
+   "arquivo": "z3/K10_z3_13_leituraB.smt2",
+   "saida": "z3/K10_z3_13_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K10_z3_13_juntas",
+   "arquivo": "z3/K10_z3_13_juntas.smt2",
+   "saida": "z3/K10_z3_13_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K10_direto_26_leituraA",
+   "arquivo": "z3/K10_direto_26_leituraA.smt2",
+   "saida": "z3/K10_direto_26_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K10_direto_26_leituraB",
+   "arquivo": "z3/K10_direto_26_leituraB.smt2",
+   "saida": "z3/K10_direto_26_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K10_direto_26_juntas",
+   "arquivo": "z3/K10_direto_26_juntas.smt2",
+   "saida": "z3/K10_direto_26_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K14_parenteses_leituraA",
+   "arquivo": "z3/K14_parenteses_leituraA.smt2",
+   "saida": "z3/K14_parenteses_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K14_parenteses_leituraB",
+   "arquivo": "z3/K14_parenteses_leituraB.smt2",
+   "saida": "z3/K14_parenteses_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K14_parenteses_juntas",
+   "arquivo": "z3/K14_parenteses_juntas.smt2",
+   "saida": "z3/K14_parenteses_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  },
+  {
+   "id": "K15_regressao_testes_leituraA",
+   "arquivo": "z3/K15_regressao_testes_leituraA.smt2",
+   "saida": "z3/K15_regressao_testes_leituraA.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K15_regressao_testes_leituraB",
+   "arquivo": "z3/K15_regressao_testes_leituraB.smt2",
+   "saida": "z3/K15_regressao_testes_leituraB.out",
+   "respostas": [
+    "sat"
+   ]
+  },
+  {
+   "id": "K15_regressao_testes_juntas",
+   "arquivo": "z3/K15_regressao_testes_juntas.smt2",
+   "saida": "z3/K15_regressao_testes_juntas.out",
+   "respostas": [
+    "unsat"
+   ]
+  }
+ ],
+ "tabelas": {
+  "Z01_tt_ABorC": {
+   "expressao": "(A and B) or C",
+   "entradas": [
+    "A",
+    "B",
+    "C"
+   ],
+   "combinacoes": 8,
+   "linhas": [
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_amp": {
+   "expressao": "(A && B) || C",
+   "entradas": [
+    "A",
+    "B",
+    "C"
+   ],
+   "combinacoes": 8,
+   "linhas": [
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_dfrs": {
+   "expressao": "A /\\ B \\/ C",
+   "entradas": [
+    "A",
+    "B",
+    "C"
+   ],
+   "combinacoes": 8,
+   "linhas": [
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_prec": {
+   "expressao": "A or B and C",
+   "entradas": [
+    "A",
+    "B",
+    "C"
+   ],
+   "combinacoes": 8,
+   "linhas": [
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_notA": {
+   "expressao": "not A and B",
+   "entradas": [
+    "A",
+    "B"
+   ],
+   "combinacoes": 4,
+   "linhas": [
+    {
+     "entradas": {
+      "A": true,
+      "B": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_bangA": {
+   "expressao": "!A and B",
+   "entradas": [
+    "A",
+    "B"
+   ],
+   "combinacoes": 4,
+   "linhas": [
+    {
+     "entradas": {
+      "A": true,
+      "B": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_cmp": {
+   "expressao": "speed > 100 /\\ mode = idle",
+   "entradas": [
+    "speed > 100",
+    "mode = idle"
+   ],
+   "combinacoes": 4,
+   "linhas": [
+    {
+     "entradas": {
+      "speed > 100": true,
+      "mode = idle": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "speed > 100": true,
+      "mode = idle": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "speed > 100": false,
+      "mode = idle": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "speed > 100": false,
+      "mode = idle": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_rep": {
+   "expressao": "(A and B) or (not A and C)",
+   "entradas": [
+    "A",
+    "B",
+    "C"
+   ],
+   "combinacoes": 8,
+   "linhas": [
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_req1": {
+   "expressao": "(alarme_ativo and porta_aberta) or botao_emergencia",
+   "entradas": [
+    "alarme_ativo",
+    "porta_aberta",
+    "botao_emergencia"
+   ],
+   "combinacoes": 8,
+   "linhas": [
+    {
+     "entradas": {
+      "alarme_ativo": true,
+      "porta_aberta": true,
+      "botao_emergencia": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "alarme_ativo": true,
+      "porta_aberta": true,
+      "botao_emergencia": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "alarme_ativo": true,
+      "porta_aberta": false,
+      "botao_emergencia": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "alarme_ativo": true,
+      "porta_aberta": false,
+      "botao_emergencia": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "alarme_ativo": false,
+      "porta_aberta": true,
+      "botao_emergencia": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "alarme_ativo": false,
+      "porta_aberta": true,
+      "botao_emergencia": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "alarme_ativo": false,
+      "porta_aberta": false,
+      "botao_emergencia": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "alarme_ativo": false,
+      "porta_aberta": false,
+      "botao_emergencia": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_req2": {
+   "expressao": "porta_fechada and not obstaculo",
+   "entradas": [
+    "porta_fechada",
+    "obstaculo"
+   ],
+   "combinacoes": 4,
+   "linhas": [
+    {
+     "entradas": {
+      "porta_fechada": true,
+      "obstaculo": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "porta_fechada": true,
+      "obstaculo": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "porta_fechada": false,
+      "obstaculo": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "porta_fechada": false,
+      "obstaculo": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_req3": {
+   "expressao": "freio_acionado or (freio_acionado and pedal_pressionado)",
+   "entradas": [
+    "freio_acionado",
+    "pedal_pressionado"
+   ],
+   "combinacoes": 4,
+   "linhas": [
+    {
+     "entradas": {
+      "freio_acionado": true,
+      "pedal_pressionado": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "freio_acionado": true,
+      "pedal_pressionado": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "freio_acionado": false,
+      "pedal_pressionado": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "freio_acionado": false,
+      "pedal_pressionado": false
+     },
+     "saida": false
+    }
+   ]
+  },
+  "Z01_tt_mut": {
+   "expressao": "A and (B or C)",
+   "entradas": [
+    "A",
+    "B",
+    "C"
+   ],
+   "combinacoes": 8,
+   "linhas": [
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+     },
+     "saida": true
+    },
+    {
+     "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+     },
+     "saida": false
+    },
+    {
+     "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+     },
+     "saida": false
+    }
+   ]
+  }
+ },
+ "tabela_restricao": {
+  "expressao": "(not A or B)",
+  "entradas": [
+   "A",
+   "B"
+  ],
+  "combinacoes": 4,
+  "linhas": [
+   {
+    "entradas": {
+     "A": true,
+     "B": true
+    },
+    "saida": true
+   },
+   {
+    "entradas": {
+     "A": true,
+     "B": false
+    },
+    "saida": false
+   },
+   {
+    "entradas": {
+     "A": false,
+     "B": true
+    },
+    "saida": true
+   },
+   {
+    "entradas": {
+     "A": false,
+     "B": false
+    },
+    "saida": true
+   }
+  ]
+ },
+ "pares": {
+  "(A and B) or C": {
+   "A": {
+    "mascaramento": "sat",
+    "causa_unica": "sat",
+    "simplificado": "sat"
+   },
+   "B": {
+    "mascaramento": "sat",
+    "causa_unica": "sat",
+    "simplificado": "sat"
+   },
+   "C": {
+    "mascaramento": "sat",
+    "causa_unica": "sat",
+    "simplificado": "sat"
+   }
+  },
+  "A or (A and B)": {
+   "A": {
+    "mascaramento": "sat",
+    "causa_unica": "sat",
+    "simplificado": "sat"
+   },
+   "B": {
+    "mascaramento": "unsat",
+    "causa_unica": "unsat",
+    "simplificado": "sat"
+   }
+  },
+  "A and B | not A or B": {
+   "A": {
+    "mascaramento": "sat",
+    "causa_unica": "sat",
+    "simplificado": "sat"
+   },
+   "B": {
+    "mascaramento": "unsat",
+    "causa_unica": "unsat",
+    "simplificado": "sat"
+   }
+  },
+  "A or (B and C) | not A or B": {
+   "A": {
+    "mascaramento": "sat",
+    "causa_unica": "sat",
+    "simplificado": "sat"
+   },
+   "B": {
+    "mascaramento": "sat",
+    "causa_unica": "sat",
+    "simplificado": "sat"
+   },
+   "C": {
+    "mascaramento": "sat",
+    "causa_unica": "sat",
+    "simplificado": "sat"
+   }
+  }
+ },
+ "viabilidade_speed": [
+  {
+   "speed>100": true,
+   "speed>50": true,
+   "rain": true,
+   "z3": "sat"
+  },
+  {
+   "speed>100": true,
+   "speed>50": true,
+   "rain": false,
+   "z3": "sat"
+  },
+  {
+   "speed>100": true,
+   "speed>50": false,
+   "rain": true,
+   "z3": "unsat"
+  },
+  {
+   "speed>100": true,
+   "speed>50": false,
+   "rain": false,
+   "z3": "unsat"
+  },
+  {
+   "speed>100": false,
+   "speed>50": true,
+   "rain": true,
+   "z3": "sat"
+  },
+  {
+   "speed>100": false,
+   "speed>50": true,
+   "rain": false,
+   "z3": "sat"
+  },
+  {
+   "speed>100": false,
+   "speed>50": false,
+   "rain": true,
+   "z3": "sat"
+  },
+  {
+   "speed>100": false,
+   "speed>50": false,
+   "rain": false,
+   "z3": "sat"
+  }
+ ],
+ "fronteiras": {
+  "speed>100": [
+   100,
+   101
+  ],
+  "speed>50": [
+   50,
+   51
+  ],
+  "x<=10": [
+   10,
+   11
+  ],
+  "y<5": [
+   4,
+   5
+  ],
+  "y>=7": [
+   6,
+   7
+  ],
+  "the_voltage>80": [
+   80,
+   81
+  ],
+  "the_flashing_timer>=340": [
+   339,
+   340
+  ],
+  "the_water_pressure>=9": [
+   8,
+   9
+  ],
+  "the_water_pressure<10": [
+   9,
+   10
+  ]
+ },
+ "check": {
+  "check-completa": {
+   "T1": {
+    "valores": {
+     "A": true,
+     "B": true,
+     "C": false
+    },
+    "esperado": true,
+    "guarda": true
+   },
+   "T2": {
+    "valores": {
+     "A": false,
+     "B": true,
+     "C": false
+    },
+    "esperado": false,
+    "guarda": false
+   },
+   "T3": {
+    "valores": {
+     "A": true,
+     "B": false,
+     "C": false
+    },
+    "esperado": false,
+    "guarda": false
+   },
+   "T4": {
+    "valores": {
+     "A": true,
+     "B": false,
+     "C": true
+    },
+    "esperado": true,
+    "guarda": true
+   }
+  },
+  "check-um-teste": {
+   "T1": {
+    "valores": {
+     "A": true,
+     "B": true,
+     "C": false
+    },
+    "esperado": true,
+    "guarda": true
+   }
+  },
+  "check-esperado-errado": {
+   "T1": {
+    "valores": {
+     "A": true,
+     "B": true,
+     "C": false
+    },
+    "esperado": true,
+    "guarda": true
+   },
+   "T2": {
+    "valores": {
+     "A": false,
+     "B": true,
+     "C": false
+    },
+    "esperado": true,
+    "guarda": false
+   },
+   "T3": {
+    "valores": {
+     "A": true,
+     "B": false,
+     "C": false
+    },
+    "esperado": false,
+    "guarda": false
+   },
+   "T4": {
+    "valores": {
+     "A": true,
+     "B": false,
+     "C": true
+    },
+    "esperado": true,
+    "guarda": true
+   }
+  },
+  "check-sem-mudanca-de-resultado": {
+   "T1": {
+    "valores": {
+     "A": true,
+     "B": false,
+     "C": true
+    },
+    "esperado": true,
+    "guarda": true
+   },
+   "T2": {
+    "valores": {
+     "A": false,
+     "B": false,
+     "C": true
+    },
+    "esperado": true,
+    "guarda": true
+   }
+  }
+ },
+ "decisoes_testes": {
+  "T1": {
+   "decisao": "the_coffee_machine_system#1",
+   "valores": {
+    "the_system_mode": "idle",
+    "the_coin_sensor": "true"
+   },
+   "esperado": true,
+   "guarda": true
+  },
+  "T2": {
+   "decisao": "the_coffee_machine_system#1",
+   "valores": {
+    "the_system_mode": "idle",
+    "the_coin_sensor": "false"
+   },
+   "esperado": false,
+   "guarda": false
+  },
+  "T3": {
+   "decisao": "the_coffee_machine_system#3",
+   "valores": {
+    "the_system_mode": "choice",
+    "the_coffee_request_button": "true",
+    "the_coin_sensor": "false"
+   },
+   "esperado": true,
+   "guarda": true
+  },
+  "T4": {
+   "decisao": "the_coffee_machine_system#3",
+   "valores": {
+    "the_system_mode": "idle",
+    "the_coffee_request_button": "true",
+    "the_coin_sensor": "false"
+   },
+   "esperado": true,
+   "guarda": false
+  }
+ },
+ "sistemas": {
+  "vm": {
+   "decisoes": 5,
+   "combinacoes": 152,
+   "entradas_distintas": 21,
+   "ocorrencias": 21,
+   "com_repeticao": [],
+   "por_decisao": [
+    {
+     "id": "vm#1",
+     "requisito": "REQ001",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "vm#2",
+     "requisito": "REQ002",
+     "entradas": 6,
+     "ocorrencias": 6
+    },
+    {
+     "id": "vm#3",
+     "requisito": "REQ003",
+     "entradas": 6,
+     "ocorrencias": 6
+    },
+    {
+     "id": "vm#4",
+     "requisito": "REQ004",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "vm#5",
+     "requisito": "REQ005",
+     "entradas": 3,
+     "ocorrencias": 3
+    }
+   ]
+  },
+  "tis": {
+   "decisoes": 17,
+   "combinacoes": 268,
+   "entradas_distintas": 63,
+   "ocorrencias": 69,
+   "com_repeticao": [
+    "tis#2",
+    "tis#3",
+    "tis#4"
+   ],
+   "por_decisao": [
+    {
+     "id": "tis#1",
+     "requisito": "REQ001",
+     "entradas": 2,
+     "ocorrencias": 2
+    },
+    {
+     "id": "tis#2",
+     "requisito": "REQ002",
+     "entradas": 4,
+     "ocorrencias": 6
+    },
+    {
+     "id": "tis#3",
+     "requisito": "REQ003",
+     "entradas": 4,
+     "ocorrencias": 6
+    },
+    {
+     "id": "tis#4",
+     "requisito": "REQ004",
+     "entradas": 4,
+     "ocorrencias": 6
+    },
+    {
+     "id": "tis#5",
+     "requisito": "REQ005",
+     "entradas": 2,
+     "ocorrencias": 2
+    },
+    {
+     "id": "tis#6",
+     "requisito": "REQ006",
+     "entradas": 4,
+     "ocorrencias": 4
+    },
+    {
+     "id": "tis#7",
+     "requisito": "REQ007",
+     "entradas": 4,
+     "ocorrencias": 4
+    },
+    {
+     "id": "tis#8",
+     "requisito": "REQ008",
+     "entradas": 4,
+     "ocorrencias": 4
+    },
+    {
+     "id": "tis#9",
+     "requisito": "REQ009",
+     "entradas": 4,
+     "ocorrencias": 4
+    },
+    {
+     "id": "tis#10",
+     "requisito": "REQ010",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "tis#11",
+     "requisito": "REQ011",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "tis#12",
+     "requisito": "REQ012",
+     "entradas": 2,
+     "ocorrencias": 2
+    },
+    {
+     "id": "tis#13",
+     "requisito": "REQ013",
+     "entradas": 4,
+     "ocorrencias": 4
+    },
+    {
+     "id": "tis#14",
+     "requisito": "REQ014",
+     "entradas": 4,
+     "ocorrencias": 4
+    },
+    {
+     "id": "tis#15",
+     "requisito": "REQ015",
+     "entradas": 5,
+     "ocorrencias": 5
+    },
+    {
+     "id": "tis#16",
+     "requisito": "REQ016",
+     "entradas": 5,
+     "ocorrencias": 5
+    },
+    {
+     "id": "tis#17",
+     "requisito": "REQ017",
+     "entradas": 5,
+     "ocorrencias": 5
+    }
+   ]
+  },
+  "npp": {
+   "decisoes": 11,
+   "combinacoes": 76,
+   "entradas_distintas": 29,
+   "ocorrencias": 29,
+   "com_repeticao": [],
+   "por_decisao": [
+    {
+     "id": "npp#1",
+     "requisito": "REQ001",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "npp#2",
+     "requisito": "REQ002",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "npp#3",
+     "requisito": "REQ003",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "npp#4",
+     "requisito": "REQ004",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "npp#5",
+     "requisito": "REQ005",
+     "entradas": 4,
+     "ocorrencias": 4
+    },
+    {
+     "id": "npp#6",
+     "requisito": "REQ006",
+     "entradas": 3,
+     "ocorrencias": 3
+    },
+    {
+     "id": "npp#7",
+     "requisito": "REQ007",
+     "entradas": 2,
+     "ocorrencias": 2
+    },
+    {
+     "id": "npp#8",
+     "requisito": "REQ008",
+     "entradas": 2,
+     "ocorrencias": 2
+    },
+    {
+     "id": "npp#9",
+     "requisito": "REQ009",
+     "entradas": 2,
+     "ocorrencias": 2
+    },
+    {
+     "id": "npp#10",
+     "requisito": "REQ010",
+     "entradas": 2,
+     "ocorrencias": 2
+    },
+    {
+     "id": "npp#11",
+     "requisito": "REQ011",
+     "entradas": 2,
+     "ocorrencias": 2
+    }
+   ]
+  }
+ }
+}

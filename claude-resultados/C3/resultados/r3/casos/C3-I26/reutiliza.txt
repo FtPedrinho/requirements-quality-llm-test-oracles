@@ -1,0 +1,1 @@
+Mesma execução de C3-T15tis (comando e pré-condição idênticos); ver casos/C3-T15tis/

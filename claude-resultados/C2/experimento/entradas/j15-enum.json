@@ -1,0 +1,24 @@
+{
+  "system": "enum_sys",
+  "inputs": [
+    {
+      "name": "m",
+      "type": "enum",
+      "values": [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "e#1",
+      "requirement": "REQ-E1",
+      "guard": "m = a \\/ m = b",
+      "actions": [
+        "out := 1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,750 @@
+{
+  "tool" : "mcdc",
+  "system" : "the_coffee_machine_system",
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "the_coffee_machine_system#1",
+    "requirement" : "REQ-001",
+    "guard" : "the_system_mode = idle /\\ the_coin_sensor = true",
+    "actions" : [ "the_system_mode := choice", "the_request_timer := 0" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = idle",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "idle"
+    }, {
+      "name" : "the_coin_sensor = true",
+      "variable" : "the_coin_sensor",
+      "operator" : "=",
+      "value" : "true"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = idle",
+      "input" : "the_system_mode = idle",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor = true",
+      "input" : "the_coin_sensor = true",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_system_mode = idle" : [ [ "V1", "V3" ] ],
+      "the_coin_sensor = true" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "the_system_mode = idle", "the_coin_sensor = true" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_coin_sensor = true" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_system_mode = idle" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = idle" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor = true" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  }, {
+    "id" : "the_coffee_machine_system#2",
+    "requirement" : "REQ-002",
+    "guard" : "(the_system_mode = choice /\\ the_coin_sensor = false /\\ the_coffee_request_button = true) /\\ the_request_timer <= 30",
+    "actions" : [ "the_system_mode := preparing_weak" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = choice",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "choice"
+    }, {
+      "name" : "the_coin_sensor = false",
+      "variable" : "the_coin_sensor",
+      "operator" : "=",
+      "value" : "false"
+    }, {
+      "name" : "the_coffee_request_button = true",
+      "variable" : "the_coffee_request_button",
+      "operator" : "=",
+      "value" : "true"
+    }, {
+      "name" : "the_request_timer <= 30",
+      "variable" : "the_request_timer",
+      "operator" : "<=",
+      "value" : "30"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = choice",
+      "input" : "the_system_mode = choice",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor = false",
+      "input" : "the_coin_sensor = false",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coffee_request_button = true",
+      "input" : "the_coffee_request_button = true",
+      "occurrence" : 1
+    }, {
+      "label" : "the_request_timer <= 30",
+      "input" : "the_request_timer <= 30",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 16,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V13",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V15",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V16",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_system_mode = choice" : [ [ "V1", "V9" ] ],
+      "the_coin_sensor = false" : [ [ "V1", "V5" ] ],
+      "the_coffee_request_button = true" : [ [ "V1", "V3" ] ],
+      "the_request_timer <= 30" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "the_system_mode = choice", "the_coin_sensor = false", "the_coffee_request_button = true", "the_request_timer <= 30" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_request_timer <= 30" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : false,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_coffee_request_button = true" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coin_sensor = false" : false,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_coin_sensor = false" ]
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coin_sensor = false" : true,
+        "the_coffee_request_button = true" : true,
+        "the_request_timer <= 30" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_system_mode = choice" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = choice" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V9",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor = false" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "the_coffee_request_button = true" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_request_timer <= 30" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  }, {
+    "id" : "the_coffee_machine_system#3",
+    "requirement" : "REQ-003",
+    "guard" : "(the_system_mode = choice /\\ the_coffee_request_button = true) \\/ the_coin_sensor = true",
+    "actions" : [ "the_system_mode := preparing_strong" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = choice",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "choice"
+    }, {
+      "name" : "the_coffee_request_button = true",
+      "variable" : "the_coffee_request_button",
+      "operator" : "=",
+      "value" : "true"
+    }, {
+      "name" : "the_coin_sensor = true",
+      "variable" : "the_coin_sensor",
+      "operator" : "=",
+      "value" : "true"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = choice",
+      "input" : "the_system_mode = choice",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coffee_request_button = true",
+      "input" : "the_coffee_request_button = true",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor = true",
+      "input" : "the_coin_sensor = true",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coffee_request_button = true" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coffee_request_button = true" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coffee_request_button = true" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coffee_request_button = true" : false,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coffee_request_button = true" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coffee_request_button = true" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coffee_request_button = true" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coffee_request_button = true" : false,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_system_mode = choice" : [ [ "V2", "V6" ] ],
+      "the_coffee_request_button = true" : [ [ "V2", "V4" ] ],
+      "the_coin_sensor = true" : [ [ "V3", "V4" ], [ "V3", "V6" ], [ "V3", "V8" ], [ "V5", "V4" ], [ "V5", "V6" ], [ "V5", "V8" ], [ "V7", "V4" ], [ "V7", "V6" ], [ "V7", "V8" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coffee_request_button = true" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "the_system_mode = choice", "the_coffee_request_button = true" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coffee_request_button = true" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "the_coin_sensor = true" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = choice" : true,
+        "the_coffee_request_button = true" : false,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_coffee_request_button = true", "the_coin_sensor = true" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = choice" : false,
+        "the_coffee_request_button = true" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_system_mode = choice" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = choice" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "the_coffee_request_button = true" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor = true" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  }, {
+    "id" : "the_coffee_machine_system#4",
+    "requirement" : "REQ-004",
+    "guard" : "(the_system_mode = preparing_strong \\/ the_system_mode = preparing_weak) /\\ the_request_timer >= 50",
+    "actions" : [ "the_system_mode := idle" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = preparing_strong",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "preparing_strong"
+    }, {
+      "name" : "the_system_mode = preparing_weak",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "preparing_weak"
+    }, {
+      "name" : "the_request_timer >= 50",
+      "variable" : "the_request_timer",
+      "operator" : ">=",
+      "value" : "50"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = preparing_strong",
+      "input" : "the_system_mode = preparing_strong",
+      "occurrence" : 1
+    }, {
+      "label" : "the_system_mode = preparing_weak",
+      "input" : "the_system_mode = preparing_weak",
+      "occurrence" : 1
+    }, {
+      "label" : "the_request_timer >= 50",
+      "input" : "the_request_timer >= 50",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 50" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 50" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 50" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 50" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 50" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 50" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 50" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 50" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_system_mode = preparing_strong" : [ [ "V3", "V7" ] ],
+      "the_system_mode = preparing_weak" : [ [ "V5", "V7" ] ],
+      "the_request_timer >= 50" : [ [ "V1", "V2" ], [ "V1", "V4" ], [ "V1", "V6" ], [ "V3", "V2" ], [ "V3", "V4" ], [ "V3", "V6" ], [ "V5", "V2" ], [ "V5", "V4" ], [ "V5", "V6" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 50" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "the_system_mode = preparing_strong", "the_request_timer >= 50" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = preparing_strong" : true,
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 50" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_request_timer >= 50" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_system_mode = preparing_weak" : true,
+        "the_request_timer >= 50" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "the_system_mode = preparing_weak" ]
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "the_system_mode = preparing_strong" : false,
+        "the_system_mode = preparing_weak" : false,
+        "the_request_timer >= 50" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_system_mode = preparing_strong", "the_system_mode = preparing_weak" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = preparing_strong" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V7",
+        "uniqueCause" : true
+      },
+      "the_system_mode = preparing_weak" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V7",
+        "uniqueCause" : true
+      },
+      "the_request_timer >= 50" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

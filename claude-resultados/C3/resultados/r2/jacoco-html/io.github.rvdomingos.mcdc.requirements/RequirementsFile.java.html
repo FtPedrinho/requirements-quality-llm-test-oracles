@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RequirementsFile.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C3 r2</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.requirements</a> &gt; <span class="el_source">RequirementsFile.java</span></div><h1>RequirementsFile.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.requirements;
+
+import io.github.rvdomingos.mcdc.core.model.Decision;
+import io.github.rvdomingos.mcdc.core.model.DecisionSet;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
+/** Arquivo .mcdc: um requisito por linha, &quot;ID: expressão&quot;. Linhas vazias e começando com # são ignoradas. */
+public final class RequirementsFile {
+
+    private RequirementsFile() {
+    }
+
+    public static DecisionSet read(Path path) throws IOException {
+<span class="fc" id="L18">        return parse(Files.readAllLines(path), path.toString());</span>
+    }
+
+    static DecisionSet parse(List&lt;String&gt; lines, String source) {
+<span class="fc" id="L22">        List&lt;Decision&gt; decisions = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (int i = 0; i &lt; lines.size(); i++) {</span>
+<span class="fc" id="L24">            String line = lines.get(i).strip();</span>
+<span class="pc bpc" id="L25" title="1 of 4 branches missed.">            if (line.isEmpty() || line.startsWith(&quot;#&quot;)) {</span>
+<span class="fc" id="L26">                continue;</span>
+            }
+<span class="fc" id="L28">            int colon = line.indexOf(':');</span>
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">            if (colon &lt;= 0) {</span>
+<span class="nc" id="L30">                throw new IllegalArgumentException(</span>
+                        &quot;Linha &quot; + (i + 1) + &quot; sem identificador. Formato: REQ-001: expressão&quot;);
+            }
+<span class="fc" id="L33">            String id = line.substring(0, colon).strip();</span>
+<span class="fc" id="L34">            String text = line.substring(colon + 1).strip();</span>
+<span class="fc" id="L35">            decisions.add(expression(id, id, text));</span>
+        }
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (decisions.isEmpty()) {</span>
+<span class="nc" id="L38">            throw new IllegalArgumentException(&quot;Nenhum requisito em &quot; + source);</span>
+        }
+<span class="fc" id="L40">        return new DecisionSet(null, List.of(), decisions);</span>
+    }
+
+    /** Uma decisão a partir de uma expressão avulsa; erros de sintaxe saem com o id na frente. */
+    public static Decision expression(String id, String requirement, String text) {
+        try {
+<span class="fc" id="L46">            return new Decision(id, requirement, text, ExpressionParser.parse(text), List.of());</span>
+<span class="nc" id="L47">        } catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L48">            throw new IllegalArgumentException(id + &quot;: &quot; + e.getMessage());</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

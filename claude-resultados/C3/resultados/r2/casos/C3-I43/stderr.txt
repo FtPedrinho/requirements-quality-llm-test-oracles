@@ -1,0 +1,1 @@
+Erro: --exact escolhe sobre a tabela inteira; não vale com --direct.

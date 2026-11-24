@@ -1,0 +1,40 @@
+Decisão:   REQ
+Guarda:    A and (B or C)
+Variante:  mascaramento
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | T
+V3    T   F   T   | T
+V4    T   F   F   | F
+V5    F   T   T   | F
+V6    F   T   F   | F
+V7    F   F   T   | F
+V8    F   F   F   | F
+
+Pares de independência:
+  A: (V1, V5), (V1, V6), (V1, V7), (V2, V5), (V2, V6), (V2, V7), ... (9 pares)
+  B: (V2, V4)
+  C: (V3, V4)
+
+Suíte mínima (4 testes):
+  V2  TTF  -> T   demonstra A, B
+  V3  TFT  -> T   demonstra C
+  V4  TFF  -> F   demonstra B, C
+  V6  FTF  -> F   demonstra A
+
+Validação por mutação: 94,1% das falhas detectáveis foram detectadas
+  troca de operador (ORF): 2 de 2
+  negação de subexpressão (ENF): 2 de 2
+  negação de variável (VNF): 3 de 3
+  parênteses deslocados (ASF): 0 de 1
+  variável ausente (MVF): 3 de 3
+  troca de variável (VRF): 6 de 6
+  não detectada: ASF A and B or C
+
+Demonstração por condição:
+  A: V2 (T) e V6 (F), só ela muda
+  B: V2 (T) e V4 (F), só ela muda
+  C: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa

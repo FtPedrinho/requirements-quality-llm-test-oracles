@@ -1,0 +1,172 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "x and y and z",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "x"
+    }, {
+      "name" : "y"
+    }, {
+      "name" : "z"
+    } ],
+    "conditions" : [ {
+      "label" : "x",
+      "input" : "x",
+      "occurrence" : 1
+    }, {
+      "label" : "y",
+      "input" : "y",
+      "occurrence" : 1
+    }, {
+      "label" : "z",
+      "input" : "z",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x" : true,
+        "y" : true,
+        "z" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x" : true,
+        "y" : true,
+        "z" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x" : true,
+        "y" : false,
+        "z" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x" : true,
+        "y" : false,
+        "z" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "x" : false,
+        "y" : true,
+        "z" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "x" : false,
+        "y" : true,
+        "z" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "x" : false,
+        "y" : false,
+        "z" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "x" : false,
+        "y" : false,
+        "z" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "x" : [ [ "V1", "V5" ] ],
+      "y" : [ [ "V1", "V3" ] ],
+      "z" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x" : true,
+        "y" : true,
+        "z" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "x", "y", "z" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x" : true,
+        "y" : true,
+        "z" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "z" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x" : true,
+        "y" : false,
+        "z" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "y" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "x" : false,
+        "y" : true,
+        "z" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "x" ]
+    } ],
+    "chosenPairs" : {
+      "x" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "y" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "z" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

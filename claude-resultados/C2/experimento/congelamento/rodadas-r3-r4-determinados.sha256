@@ -1,0 +1,8 @@
+# Rodadas r3/r4: só casos DETERMINADOS (a cobertura de casos indeterminados não conta)
+# runner, oráculos e entradas sem alteração em relação às rodadas r1/r2
+7e8d78a526de7aec0a20b3fe82ee647903d41770fbb18c1b09cf443e88d7dd41 *suite/runner.py
+792630c0fcd70877c861a399ad22d0b931e1297a27928a0788ee0f440e401ce0 *suite/cobertura.py
+fdd8670a4da5e6a5ff2f41fea877887bc1670f4dd70c39e710b9904200e9e138 *experimento/oraculo.json
+35fd04611e4d9aec5cbc66dd819b5c6005dfb24dd0cca7bb90a6ec313887dc2e *experimento/extensao-r2/oraculo-extensao.json
+# casos r3: A01,A02,A03,A04,A05,A06,A07,A08,A09,A10,A12,A13,A14,A16,A17,A19,A20,A22,A23,A24,A25,A26,A27,A28,A29,A30,A31,A32,A33,A35,F01,F02,F03,F04,F05,F06,M01,M02,M03,M04,JVM1,JVM2,JVM3,JVM4,JTIS1,JTIS2,JTIS3,JTIS4,JNPP1,JNPP2,JNPP3,JNPP4,J02,J03,J04,J06,J07,Z01,Z02,Z03,K01,K02,K03,K04,K05,K06,K07,V01,V02,V03,V04,V05,V06,V07,V08
+# casos r4: X01,X02,X03,X04,X05,X06,X07,X08,X09,X10,X11,X12

@@ -1,0 +1,26 @@
+{
+  "id": "SY-VM-04",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "testes 26 = 26"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--z3",
+        "--exact",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 3.98
+    }
+  ]
+}

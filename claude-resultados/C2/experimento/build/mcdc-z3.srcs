@@ -1,0 +1,7 @@
+src/mcdc-z3/src/main/java/io/github/rvdomingos/mcdc/z3/SExpr.java
+src/mcdc-z3/src/main/java/io/github/rvdomingos/mcdc/z3/SmtEncoding.java
+src/mcdc-z3/src/main/java/io/github/rvdomingos/mcdc/z3/Z3DirectAnalyzer.java
+src/mcdc-z3/src/main/java/io/github/rvdomingos/mcdc/z3/Z3FeasibilityChecker.java
+src/mcdc-z3/src/main/java/io/github/rvdomingos/mcdc/z3/Z3Process.java
+src/mcdc-z3/src/main/java/io/github/rvdomingos/mcdc/z3/Z3RequirementsVerifier.java
+src/mcdc-z3/src/main/java/io/github/rvdomingos/mcdc/z3/Z3SuiteOptimizer.java

@@ -1,0 +1,38 @@
+{
+  "classes": 69,
+  "branches_cobertos": 901,
+  "branches_total": 1296,
+  "branch_coverage_pct": 69.52,
+  "linhas_cobertas": 1623,
+  "linhas_total": 2001,
+  "por_pacote": {
+    "io.github.rvdomingos.mcdc.core": {
+      "cobertos": 210,
+      "total": 287
+    },
+    "io.github.rvdomingos.mcdc.requirements": {
+      "cobertos": 119,
+      "total": 162
+    },
+    "io.github.rvdomingos.mcdc.core.model": {
+      "cobertos": 18,
+      "total": 60
+    },
+    "io.github.rvdomingos.mcdc.z3": {
+      "cobertos": 282,
+      "total": 386
+    },
+    "io.github.rvdomingos.mcdc.cli": {
+      "cobertos": 227,
+      "total": 337
+    },
+    "io.github.rvdomingos.mcdc.core.mutation": {
+      "cobertos": 45,
+      "total": 64
+    }
+  },
+  "ferramenta": "JaCoCo 0.8.16 (agente + CLI)",
+  "execs": [
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C2\\resultados\\r4-determinados-extensao\\jacoco.exec"
+  ]
+}

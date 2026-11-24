@@ -1,0 +1,3219 @@
+{
+  "condicao": "C2",
+  "fonte": "experimentacao-pesquisa/experimentacao-2/documentation/tool-readme-C2.md",
+  "sha256_fonte": "61C4062B5FC6B4F364F40465B0E017C80E0FA0C5433412EB2E925C545F6EFBE1",
+  "unidade_de_contagem": "caso = uma invocação da CLI com ID estável; PASSOU se todas as asserções da expectativa são satisfeitas, FALHOU se alguma é contrariada; INDETERMINADO quando não há expectativa única.",
+  "casos": [
+    {
+      "id": "A01",
+      "categoria": "analyze",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        },
+        {
+          "linha": "L55",
+          "texto": "duas variants  MC/DC  supordas: **mascaramento** (pdrão) e **causa úica** (`--unique-cause`). Nesa documentaço, entraa é  variavel dstinta  expresão; condição é cada ocorencia   entrada  expressão."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L491",
+          "texto": "| `IndependencePairsTest` | 8 | Pres em ,   não; condiço  efio fica  par;  par  causa única vale  mascaramento; lnhas impssiveis nuna entrm; pares  apariço |"
+        }
+      ],
+      "regra": "Mascaramento padrão; exemplo conhecido (A∧B)∨C com 4 testes.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 4,
+        "todas_condicoes_com_par": true,
+        "condicoes": 3
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L493 dá 4 testes para (A∧B)∨C. Z3 (Q01) encontra par de causa única para A, B e C; por L491 vale no mascaramento, logo nenhuma condição sem par e código 0. 0 = comando concluído sem apontar os problemas do código 2; 1 = entrada inválida; 2 = resultado válido com condição sem par (analyze), condição não demonstrada ou resultado esperado divergente (check), conflito ou lacuna (verify). 'condição  par' lido como 'condição sem par': o próprio texto usa 'sem par' como o problema de analyze (L39 'cada cond   ição sem par', L461 'condições sem par'); 'com par' tornaria o código 2 o resultado de toda análise, contra a definição do código 0.",
+      "z3": [
+        "Q01-AB-or-C-pares",
+        "Q15-exata-AB-or-C"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A02",
+      "categoria": "analyze",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "--unique-cause"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L55",
+          "texto": "duas variants  MC/DC  supordas: **mascaramento** (pdrão) e **causa úica** (`--unique-cause`). Nesa documentaço, entraa é  variavel dstinta  expresão; condição é cada ocorencia   entrada  expressão."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L283",
+          "texto": "→ 3. pares  independência:   condição,  procurds dois tests possíveis   essa conição muda,  resultado  decisão  muda   condição satisfaz  critério da variante de MC/DC selecionaa"
+        }
+      ],
+      "regra": "Variante causa única aceita; toda condição com par de causa única.",
+      "expectativa": {
+        "exit": 0,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Causa única: par em que só a condição avaliada muda e o resultado muda (sentido do nome da variante; a fonte cita Chilenski). L491: um par de causa única vale também no mascaramento; logo, existência de par de causa única (verificada no Z3) implica condição com par nas duas variantes. A definição do mascaramento não está escrita na fonte: ausência de par no mascaramento não é derivável, só presença. Q01: sat para A, B, C.",
+      "z3": [
+        "Q01-AB-or-C-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A03",
+      "categoria": "analyze",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "A and not B"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Exemplo conhecido A∧¬B com 3 testes.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 3,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L493 'A ∧ ¬B  3'. Q02: pares para A e B.",
+      "z3": [
+        "Q02-A-and-notB-pares",
+        "Q18-exata-A-and-notB"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A04",
+      "categoria": "operadores",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A && B) || C"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L127-L137",
+          "texto": "| Operadr | Frmas acets | ... |  | `and`, `&&`, `/\\` | |  | `or`, `\\|\\|`, `\\/` | | não | `not`, `!` | | comparção | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |"
+        },
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        }
+      ],
+      "regra": "&& e || são formas aceitas de e/ou; resultado igual ao de A01.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 4,
+        "todas_condicoes_com_par": true,
+        "equivalente_a": "A01"
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L131/L133: as formas de cada linha da tabela de operadores são equivalentes. A coluna do nome do operador está ilegível, mas cada linha agrupa and/&&//\\ e or/||/\\/ inequivocamente.",
+      "z3": [
+        "Q01-AB-or-C-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A05",
+      "categoria": "operadores",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A /\\ B) \\/ C"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L127-L137",
+          "texto": "| Operadr | Frmas acets | ... |  | `and`, `&&`, `/\\` | |  | `or`, `\\|\\|`, `\\/` | | não | `not`, `!` | | comparção | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |"
+        },
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        }
+      ],
+      "regra": "/\\ e \\/ (DFRS) são formas aceitas de e/ou.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 4,
+        "todas_condicoes_com_par": true,
+        "equivalente_a": "A01"
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Idem A04.",
+      "z3": [
+        "Q01-AB-or-C-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A06",
+      "categoria": "operadores",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "A and !B"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L127-L137",
+          "texto": "| Operadr | Frmas acets | ... |  | `and`, `&&`, `/\\` | |  | `or`, `\\|\\|`, `\\/` | | não | `not`, `!` | | comparção | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |"
+        },
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        }
+      ],
+      "regra": "! é forma de 'não'.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 3,
+        "equivalente_a": "A03"
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L135: 'não | not, !'.",
+      "z3": [
+        "Q02-A-and-notB-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A07",
+      "categoria": "operadores",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100 /\\ mode = idle"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L127-L137",
+          "texto": "| Operadr | Frmas acets | ... |  | `and`, `&&`, `/\\` | |  | `or`, `\\|\\|`, `\\/` | | não | `not`, `!` | | comparção | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |"
+        },
+        {
+          "linha": "L221-L223",
+          "texto": "# comparações e  operadores do DFRS / ./mcdc analyze 'speed > 100 /\\ mode = idle'"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Comparações como condições; 2 condições, ambas com par.",
+      "expectativa": {
+        "exit": 0,
+        "condicoes": 2,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Q03: par de causa única para as duas comparações.",
+      "z3": [
+        "Q03-speed-mode-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A08",
+      "categoria": "operadores",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(x == 5) and (y != 3)"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L127-L137",
+          "texto": "| Operadr | Frmas acets | ... |  | `and`, `&&`, `/\\` | |  | `or`, `\\|\\|`, `\\/` | | não | `not`, `!` | | comparção | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "== e != aceitos.",
+      "expectativa": {
+        "exit": 0,
+        "condicoes": 2,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L137 lista = == != < <= > >=. Q04.",
+      "z3": [
+        "Q04-eq-ne-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A09",
+      "categoria": "operadores",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(a < 1) or ((b <= 2) and (c >= 3))"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L127-L137",
+          "texto": "| Operadr | Frmas acets | ... |  | `and`, `&&`, `/\\` | |  | `or`, `\\|\\|`, `\\/` | | não | `not`, `!` | | comparção | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "< <= >= aceitos.",
+      "expectativa": {
+        "exit": 0,
+        "condicoes": 3,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Q05.",
+      "z3": [
+        "Q05-lt-le-ge-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A10",
+      "categoria": "entrada-repetida",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or (not A and C)"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L55",
+          "texto": "duas variants  MC/DC  supordas: **mascaramento** (pdrão) e **causa úica** (`--unique-cause`). Nesa documentaço, entraa é  variavel dstinta  expresão; condição é cada ocorencia   entrada  expressão."
+        },
+        {
+          "linha": "L225-L227",
+          "texto": "# entrada repetida:  aparião é  condição  par próprio (#1, A#2) / ./mcdc analze \"(A and B) or (not  and C)\""
+        },
+        {
+          "linha": "L279",
+          "texto": "→ 1. tabela-verdade: para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada "
+        }
+      ],
+      "regra": "3 entradas, 4 condições A#1, B, A#2, C; tabela 2^3; cada aparição tem par próprio.",
+      "expectativa": {
+        "exit": 0,
+        "entradas": 3,
+        "condicoes": 4,
+        "combinacoes": 8,
+        "rotulos_condicoes_contem": [
+          "A#1",
+          "A#2"
+        ],
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L55 dá exatamente esta expressão e a contagem (3 entradas, 4 condições A#1, B, A#2, C). L225 afirma que cada aparição é condição com par próprio (rótulos '#1'/'A#2' parcialmente apagados, mas L55 os dá completos). L227 apaga a letra em '(not  and C)'; a expressão completa vem de L55. Q06: 8 combinações.",
+      "z3": [
+        "Q06-repetida-tabela"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A11",
+      "categoria": "precedencia",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "A or B and C"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L515",
+          "texto": "| `ExpressionParserTest` | 9 | Precedênca ( ates de ), parêntses, comparções, operadres  DFRS; expressões inlidas recsads |"
+        }
+      ],
+      "regra": "Precedência entre e/ou.",
+      "expectativa": null,
+      "motivo_indeterminacao": "L515 'Precedênca ( ates de )': os operadores foram apagados; a fonte não diz se and precede or ou o contrário, nem se a mistura é recusada.",
+      "justificativa": "O operador que tem precedência foi apagado do texto.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A12",
+      "categoria": "entrada-invalida",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L515",
+          "texto": "| `ExpressionParserTest` | 9 | Precedênca ( ates de ), parêntses, comparções, operadres  DFRS; expressões inlidas recsads |"
+        }
+      ],
+      "regra": "Expressão inválida (parêntese não fechado) é entrada inválida.",
+      "expectativa": {
+        "exit": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L139: 1 = entrada inválida; L515 'expressões inválidas recusadas'.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A13",
+      "categoria": "entrada-invalida",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "A and"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L515",
+          "texto": "| `ExpressionParserTest` | 9 | Precedênca ( ates de ), parêntses, comparções, operadres  DFRS; expressões inlidas recsads |"
+        }
+      ],
+      "regra": "Expressão inválida (operando faltando).",
+      "expectativa": {
+        "exit": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Idem A12.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A14",
+      "categoria": "operadores",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "x > -3"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L523",
+          "texto": "| `InputEdgeCasesTest` | 4 | Aspas  CSV, nmeo  lina com erro, sinal de menos só em númros |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Sinal de menos em número é aceito.",
+      "expectativa": {
+        "exit": 0,
+        "condicoes": 1,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L523 'sinal de menos só em números': número negativo é forma aceita. Uma condição isolada tem par trivial (x>-3 T/F).",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A15",
+      "categoria": "operadores",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "x > -y"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L523",
+          "texto": "| `InputEdgeCasesTest` | 4 | Aspas  CSV, nmeo  lina com erro, sinal de menos só em númros |"
+        }
+      ],
+      "regra": "Sinal de menos aplicado a identificador.",
+      "expectativa": null,
+      "motivo_indeterminacao": "L523 só nomeia o tema 'sinal de menos só em números' numa lista de testes; não diz o que ocorre com '-y' (recusa com código 1, outra mensagem ou outra interpretação).",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A16",
+      "categoria": "paridade",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "{G:paridade3}"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L591",
+          "texto": "- **Fórmus  mitas ocorencias rpetids  entradas:** o critéro MC   /DC pode exgir todas  combinaçoes posiveis. Por emplo, a fnção de paridde  3 entrdas exige 8 testes."
+        }
+      ],
+      "regra": "Paridade de 3 entradas exige 8 testes.",
+      "expectativa": {
+        "tamanho_suite": 8,
+        "combinacoes": 8
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L591: 'a função de paridade de 3 entradas exige 8 testes'. A fórmula (forma normal disjuntiva canônica) é a escrita natural da paridade com os operadores da L127-L137; Q07: 8 combinações.",
+      "z3": [
+        "Q07-paridade-tabela"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A17",
+      "categoria": "limites",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "{G:e20}"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L293/L587",
+          "texto": "Os limtes documentads :  20 entradas   tabela-verdade cmpeta, 12 entradas  processanto  Z3 linha a linha  30 entradas  modo dreto. / - **Tamnho:** 20 entrdas   taela-verdade cmpleta (cerca  1 mlhão  combinços), 12  o Z3 linha a linha  30 no modo dreto;  1000 pares guardads por condição."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Até 20 entradas na tabela-verdade completa.",
+      "expectativa": {
+        "exit": 0,
+        "entradas": 20,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L293/L587: limite de 20 entradas (inclusive) na tabela completa. Q08-e20: par de causa única para todas.",
+      "z3": [
+        "Q08-e20-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A18",
+      "categoria": "limites",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "{G:e21}"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L293/L587",
+          "texto": "Os limtes documentads :  20 entradas   tabela-verdade cmpeta, 12 entradas  processanto  Z3 linha a linha  30 entradas  modo dreto. / - **Tamnho:** 20 entrdas   taela-verdade cmpleta (cerca  1 mlhão  combinços), 12  o Z3 linha a linha  30 no modo dreto;  1000 pares guardads por condição."
+        }
+      ],
+      "regra": "21 entradas sem --z3/--direct.",
+      "expectativa": null,
+      "motivo_indeterminacao": "A fonte fixa o limite de 20 entradas, mas não diz o que ocorre acima dele (erro, código 1, troca de modo).",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A19",
+      "categoria": "modo-direto",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "{G:e13}",
+        "--z3"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L109",
+          "texto": "| `--z3` | Usa o Z3 pra dscobrir cominaçoes impossiveis  dar valoes concretos; acim  12 entradas, passa soznho  modo dreto |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Com --z3 e mais de 12 entradas passa sozinho ao modo direto e conclui.",
+      "expectativa": {
+        "exit": 0,
+        "entradas": 13,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L109; L419 (modo direto com mesma cobertura e diagnóstico). Q08-e13.",
+      "z3": [
+        "Q08-e13-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A20",
+      "categoria": "modo-direto",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "{G:e26}",
+        "--direct"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L113/L419",
+          "texto": "| `--direct` | Pares pedds dreto  Z   3,  mnar a tabela ( 30 entradas) | ...  120 expressões,  modo dreto dá  mesam cobertura   mesom dignstio  a tabea-verdae cmpleta."
+        },
+        {
+          "linha": "L293/L587",
+          "texto": "Os limtes documentads :  20 entradas   tabela-verdade cmpeta, 12 entradas  processanto  Z3 linha a linha  30 entradas  modo dreto. / - **Tamnho:** 20 entrdas   taela-verdade cmpleta (cerca  1 mlhão  combinços), 12  o Z3 linha a linha  30 no modo dreto;  1000 pares guardads por condição."
+        },
+        {
+          "linha": "L429",
+          "texto": "| `SystemsPerformanceTest` | 4 |   Z3, pelo camnho  linha  comndo:  sistma  emplo (analise  fronteras e mutção, busca exaa  verifcaçao  requisitos) abaio de 3 s,  o modo dreto com 26 entradas abaio  10 s |"
+        }
+      ],
+      "regra": "Modo direto com 26 entradas (≤ 30).",
+      "expectativa": {
+        "exit": 0,
+        "entradas": 26,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L113/L293: até 30 entradas no modo direto; L429 cita 26 entradas. Q08-e26.",
+      "z3": [
+        "Q08-e26-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A21",
+      "categoria": "modo-direto",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "{G:e31}",
+        "--direct"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L293/L587",
+          "texto": "Os limtes documentads :  20 entradas   tabela-verdade cmpeta, 12 entradas  processanto  Z3 linha a linha  30 entradas  modo dreto. / - **Tamnho:** 20 entrdas   taela-verdade cmpleta (cerca  1 mlhão  combinços), 12  o Z3 linha a linha  30 no modo dreto;  1000 pares guardads por condição."
+        }
+      ],
+      "regra": "31 entradas no modo direto.",
+      "expectativa": null,
+      "motivo_indeterminacao": "Acima de 30 entradas o comportamento não é descrito.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A22",
+      "categoria": "diagnostico",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "x > 5 and x > 3",
+        "--z3",
+        "--unique-cause"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L287",
+          "texto": "→ 5. diagnóstico:   condição não possui par mesmo considerando tods  combinações, é classificada  redundante;  dixa  possur pares  causa  combinações impossíveis,  classificada como bloqueada"
+        },
+        {
+          "linha": "L281",
+          "texto": "→ 2. combinações impossíveis (  Z3 é utilizado): as combinaçes  verificaas  Z3;  que retornam `unsat`  consideradas impossíveis e não participam da análse"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Condição que só perde par por combinações impossíveis é bloqueada.",
+      "expectativa": {
+        "exit": 2,
+        "condicao_classificada": {
+          "x > 3": "bloqueada"
+        },
+        "condicao_com_par": [
+          "x > 5"
+        ],
+        "impossiveis": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Causa única: par em que só a condição avaliada muda e o resultado muda (sentido do nome da variante; a fonte cita Chilenski). L491: um par de causa única vale também no mascaramento; logo, existência de par de causa única (verificada no Z3) implica condição com par nas duas variantes. A definição do mascaramento não está escrita na fonte: ausência de par no mascaramento não é derivável, só presença. Q09-bloqueio-livre: x>3 tem par sem domínio; Q09-bloqueio-viavel: unsat com domínio (x>5 ∧ ¬x>3 impossível, Q09-bloqueio-tabela). L287 → bloqueada; condição sem par → código 2.",
+      "z3": [
+        "Q09-bloqueio-viavel",
+        "Q09-bloqueio-livre",
+        "Q09-bloqueio-tabela"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A23",
+      "categoria": "modo-direto",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "x > 5 and x > 3",
+        "--direct",
+        "--unique-cause"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L113/L419",
+          "texto": "| `--direct` | Pares pedds dreto  Z   3,  mnar a tabela ( 30 entradas) | ...  120 expressões,  modo dreto dá  mesam cobertura   mesom dignstio  a tabea-verdae cmpleta."
+        },
+        {
+          "linha": "L287",
+          "texto": "→ 5. diagnóstico:   condição não possui par mesmo considerando tods  combinações, é classificada  redundante;  dixa  possur pares  causa  combinações impossíveis,  classificada como bloqueada"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Modo direto dá o mesmo diagnóstico da tabela.",
+      "expectativa": {
+        "exit": 2,
+        "condicao_classificada": {
+          "x > 3": "bloqueada"
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L419: mesmo diagnóstico do modo tabela (A22).",
+      "z3": [
+        "Q09-bloqueio-viavel",
+        "Q09-bloqueio-livre"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A24",
+      "categoria": "diagnostico",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "A or (A and B)",
+        "--unique-cause"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L287",
+          "texto": "→ 5. diagnóstico:   condição não possui par mesmo considerando tods  combinações, é classificada  redundante;  dixa  possur pares  causa  combinações impossíveis,  classificada como bloqueada"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Condição sem par mesmo com todas as combinações é redundante.",
+      "expectativa": {
+        "exit": 2,
+        "condicao_classificada": {
+          "B": "redundante"
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Causa única: par em que só a condição avaliada muda e o resultado muda (sentido do nome da variante; a fonte cita Chilenski). L491: um par de causa única vale também no mascaramento; logo, existência de par de causa única (verificada no Z3) implica condição com par nas duas variantes. A definição do mascaramento não está escrita na fonte: ausência de par no mascaramento não é derivável, só presença. Q10: B sem par de causa única em todas as combinações (unsat). Classificação de A#1/A#2 não é avaliada.",
+      "z3": [
+        "Q10-redundante-livre"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A25",
+      "categoria": "restricao",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "A or (B and C)",
+        "--constraint",
+        "not A or B"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L107/L231",
+          "texto": "| `--constraint \"<expr>\"` | Rtrição etre condições escrta  mão (  expressão dreta) | ... # restrição escita  mão: A = speed > 100 impica B = speed > 50 / ./mcdc analye \" or (B and C)\" --constraint \"not  or B\""
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L491",
+          "texto": "| `IndependencePairsTest` | 8 | Pres em ,   não; condiço  efio fica  par;  par  causa única vale  mascaramento; lnhas impssiveis nuna entrm; pares  apariço |"
+        }
+      ],
+      "regra": "Restrição escrita à mão exclui combinações que a violam; todas as condições mantêm par.",
+      "expectativa": {
+        "exit": 0,
+        "suite_sem_combinacao": {
+          "A": true,
+          "B": false
+        },
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L231 explica a restrição como implicação A ⇒ B (A=speed>100, B=speed>50), ou seja combinações com A verdadeiro e B falso não existem. O exemplo literal tem letras apagadas (\" or (B and C)\", \"not  or B\"); a expressão usada é a reconstrução com A, a única letra citada no comentário. Q11: pares de causa única respeitando a restrição.",
+      "z3": [
+        "Q11-restricao-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A26",
+      "categoria": "restricao",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "A and B",
+        "--constraint",
+        "not A or B",
+        "--unique-cause"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L107/L231",
+          "texto": "| `--constraint \"<expr>\"` | Rtrição etre condições escrta  mão (  expressão dreta) | ... # restrição escita  mão: A = speed > 100 impica B = speed > 50 / ./mcdc analye \" or (B and C)\" --constraint \"not  or B\""
+        },
+        {
+          "linha": "L287",
+          "texto": "→ 5. diagnóstico:   condição não possui par mesmo considerando tods  combinações, é classificada  redundante;  dixa  possur pares  causa  combinações impossíveis,  classificada como bloqueada"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Condição cujo único par viola a restrição fica bloqueada.",
+      "expectativa": {
+        "exit": 2,
+        "condicao_classificada": {
+          "B": "bloqueada"
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Causa única: par em que só a condição avaliada muda e o resultado muda (sentido do nome da variante; a fonte cita Chilenski). L491: um par de causa única vale também no mascaramento; logo, existência de par de causa única (verificada no Z3) implica condição com par nas duas variantes. A definição do mascaramento não está escrita na fonte: ausência de par no mascaramento não é derivável, só presença. Q12: B tem par sem restrição (sat) e não tem com ela (unsat) → bloqueada (L287).",
+      "z3": [
+        "Q12-restricao-bloqueio",
+        "Q12-restricao-bloqueio-livre"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A27",
+      "categoria": "z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--boundary"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L109",
+          "texto": "| `--z3` | Usa o Z3 pra dscobrir cominaçoes impossiveis  dar valoes concretos; acim  12 entradas, passa soznho  modo dreto |"
+        },
+        {
+          "linha": "L281",
+          "texto": "→ 2. combinações impossíveis (  Z3 é utilizado): as combinaçes  verificaas  Z3;  que retornam `unsat`  consideradas impossíveis e não participam da análse"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L233-L235",
+          "texto": "#  Z   3 descobre as combinaçes impossíveis, dá valres concrtos e testes  fronteira / ./mcdc analze \"speed > 100 or (speed > 50 and rain)\" --z3 --boundary"
+        }
+      ],
+      "regra": "Z3 descarta combinações impossíveis; todas as condições têm par viável.",
+      "expectativa": {
+        "exit": 0,
+        "combinacoes": 8,
+        "impossiveis": 2,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Q13-tabela: 2 combinações unsat (speed>100 ∧ ¬speed>50). Q13-pares: par viável para as 3 condições.",
+      "z3": [
+        "Q13-speed-rain-tabela",
+        "Q13-speed-rain-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A28",
+      "categoria": "fronteira",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--boundary"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L43",
+          "texto": "| Testes  frnteira | `--z3 --boundary` | Variaçes  lmite  cada comparção (`speed > 100` → 100  101) |"
+        }
+      ],
+      "regra": "Fronteira de 'x > k' (inteiro): k e k+1.",
+      "expectativa": {
+        "fronteira_contem": {
+          "speed > 100": [
+            "100",
+            "101"
+          ],
+          "speed > 50": [
+            "50",
+            "51"
+          ]
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L43: 'speed > 100 → 100 e 101' e 'variações no limite de cada comparação'. Q14: 101 é o único menor inteiro que satisfaz e 100 o único maior que não satisfaz (idem 51/50).",
+      "z3": [
+        "Q14-fronteira-gt100",
+        "Q14-fronteira-gt50"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A29",
+      "categoria": "z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--boundary"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        },
+        {
+          "linha": "L41",
+          "texto": "| Dar valoes concretos | `--z3` | Combinaçoes impossiveis descrtadas  valoes concretos   teste (`speed = 101`) |"
+        }
+      ],
+      "regra": "Valores concretos realizam a combinação declarada e o resultado esperado é o da guarda (incl. fronteira).",
+      "expectativa": {
+        "concretos_realizam": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L41 e L463.",
+      "z3": [
+        "Q13-speed-rain-tabela"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A30",
+      "categoria": "z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100 /\\ mode = idle",
+        "--z3"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        },
+        {
+          "linha": "L109",
+          "texto": "| `--z3` | Usa o Z3 pra dscobrir cominaçoes impossiveis  dar valoes concretos; acim  12 entradas, passa soznho  modo dreto |"
+        }
+      ],
+      "regra": "Valores concretos com comparação textual realizam a combinação.",
+      "expectativa": {
+        "exit": 0,
+        "concretos_realizam": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L41, L463.",
+      "z3": [
+        "Q03-speed-mode-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A31",
+      "categoria": "exata",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "--exact",
+        "--unique-cause"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L111",
+          "texto": "| `--exact` | Suíe exata:  menro possivel, esclhida pelo Z3 |"
+        },
+        {
+          "linha": "L285",
+          "texto": "→ 4. esclha da suíte:  estratégia gulosa considera primeiro as condções   pars e esolhe pares  acrescentem  testes  suíe; em caso  empate, prioriza caua únca.  `--exact`,  Z   3 pocura  suíte de tamanho mnimo"
+        }
+      ],
+      "regra": "Suíte exata é a menor possível.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 4
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Causa única: par em que só a condição avaliada muda e o resultado muda (sentido do nome da variante; a fonte cita Chilenski). L491: um par de causa única vale também no mascaramento; logo, existência de par de causa única (verificada no Z3) implica condição com par nas duas variantes. A definição do mascaramento não está escrita na fonte: ausência de par no mascaramento não é derivável, só presença. Q15: mínimo 4 (sat em k=4, unsat em k=3).",
+      "z3": [
+        "Q15-exata-AB-or-C"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A32",
+      "categoria": "exata",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A or B) and (C or D)",
+        "--exact",
+        "--unique-cause"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L111",
+          "texto": "| `--exact` | Suíe exata:  menro possivel, esclhida pelo Z3 |"
+        }
+      ],
+      "regra": "Suíte exata é a menor possível.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 5
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Q16: mínimo 5.",
+      "z3": [
+        "Q16-exata-AorB-and-CorD"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A33",
+      "categoria": "exata",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "A and (B or C)",
+        "--exact",
+        "--unique-cause"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L111",
+          "texto": "| `--exact` | Suíe exata:  menro possivel, esclhida pelo Z3 |"
+        }
+      ],
+      "regra": "Suíte exata é a menor possível.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 4
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Q17: mínimo 4.",
+      "z3": [
+        "Q17-exata-A-and-BorC"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A34",
+      "categoria": "exata",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "((E or D) and (not A or D)) or B",
+        "--exact"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L253-L255",
+          "texto": "# suíe exata (aqui, 5 testes  vez  6 da escolha guloa) / ./mcdc analyze \"((E or D) and (not  or D)) or B\" --exact"
+        }
+      ],
+      "regra": "Exemplo de suíte exata (5 testes contra 6 da gulosa).",
+      "expectativa": null,
+      "motivo_indeterminacao": "A variável negada foi apagada ('(not  or D)'); a expressão do exemplo não é única. O caso roda como diagnóstico com uma letra escolhida (A), sem expectativa. Além disso o mínimo no mascaramento depende da definição de mascaramento, que a fonte não dá.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A35",
+      "categoria": "mutacao",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "A and (B or C)",
+        "--mutation"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L289/L117",
+          "texto": "→ 6. mutação (opional): são avaliados seis tipos  defeto  Kapoor e Boen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contgem / | `--mutation` | Confre   suíte pega verses  requisito   defito |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Mutação é opcional e não é problema de código 2.",
+      "expectativa": {
+        "exit": 0,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L139 só lista condição sem par como problema do analyze; Q19: as 3 condições têm par.",
+      "z3": [
+        "Q19-mutacao-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "A36",
+      "categoria": "mutacao",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "A and (B or C)",
+        "--mutation",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L289/L117",
+          "texto": "→ 6. mutação (opional): são avaliados seis tipos  defeto  Kapoor e Boen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contgem / | `--mutation` | Confre   suíte pega verses  requisito   defito |"
+        }
+      ],
+      "regra": "Quantidade de mutantes por tipo.",
+      "expectativa": null,
+      "motivo_indeterminacao": "A fonte só nomeia os seis tipos (ORF, ENF, VNF, MVF, VRF, ASF) sem definir como cada mutante é construído; o número de mutantes, equivalentes e detectados desta expressão não é derivável.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "A37",
+      "categoria": "gulosa",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L285",
+          "texto": "→ 4. esclha da suíte:  estratégia gulosa considera primeiro as condções   pars e esolhe pares  acrescentem  testes  suíe; em caso  empate, prioriza caua únca.  `--exact`,  Z   3 pocura  suíte de tamanho mnimo"
+        }
+      ],
+      "regra": "Ordem da escolha gulosa e preferência de causa única no empate.",
+      "expectativa": null,
+      "motivo_indeterminacao": "'considera primeiro as condições   pars' tem a qualificação apagada (menos/mais pares); quais pares são escolhidos não é derivável.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "F01",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L121",
+          "texto": "| `--format <formato>` | `text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea); `check` e `verify` acetam `text` e `json` |"
+        },
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        },
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        }
+      ],
+      "regra": "Saída JSON válida com o resultado completo da decisão.",
+      "expectativa": {
+        "exit": 0,
+        "json_valido": true,
+        "tamanho_suite": 4
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L121, L203.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "F02",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "--format",
+        "csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L121",
+          "texto": "| `--format <formato>` | `text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea); `check` e `verify` acetam `text` e `json` |"
+        },
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        },
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        }
+      ],
+      "regra": "CSV da suíte: uma linha por teste e entrada, com o resultado esperado.",
+      "expectativa": {
+        "exit": 0,
+        "csv_linhas_dados": 12,
+        "csv_resultado_esperado_correto": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L205: uma linha por teste e entrada; 4 testes (L493) × 3 entradas = 12 linhas; o resultado esperado de cada teste é o valor da guarda na combinação.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "F03",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "--format",
+        "truth-csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L121",
+          "texto": "| `--format <formato>` | `text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea); `check` e `verify` acetam `text` e `json` |"
+        },
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        },
+        {
+          "linha": "L485",
+          "texto": "| `TruthTableTest` | 8 |  liha por combinaçao;  linha 0  tudo verdadiro;  saída  cada linha; restriçes; lmite  20 entradas |"
+        },
+        {
+          "linha": "L279",
+          "texto": "→ 1. tabela-verdade: para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada "
+        }
+      ],
+      "regra": "Tabela-verdade inteira; linha 0 é tudo verdadeiro; resultado por linha.",
+      "expectativa": {
+        "exit": 0,
+        "truth_linhas": 8,
+        "truth_primeira_tudo_verdadeiro": true,
+        "truth_resultado_correto": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L207, L279 (2^n), L485 ('a linha 0 é tudo verdadeiro').",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "F04",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--format",
+        "truth-csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        },
+        {
+          "linha": "L281",
+          "texto": "→ 2. combinações impossíveis (  Z3 é utilizado): as combinaçes  verificaas  Z3;  que retornam `unsat`  consideradas impossíveis e não participam da análse"
+        }
+      ],
+      "regra": "truth-csv marca as combinações impossíveis.",
+      "expectativa": {
+        "exit": 0,
+        "truth_linhas": 8,
+        "truth_impossiveis_marcadas": 2
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L207; Q13: 2 impossíveis.",
+      "z3": [
+        "Q13-speed-rain-tabela"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "F05",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "-o",
+        "{OUT}/F05-relatorio.txt"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L123",
+          "texto": "| `-o <arquivo>` | Grava  relatorio  arqivo  vez  mostrr  tela |"
+        }
+      ],
+      "regra": "-o grava o relatório no arquivo em vez de mostrar na tela.",
+      "expectativa": {
+        "exit": 0,
+        "arquivo_gerado": "{OUT}/F05-relatorio.txt",
+        "stdout_sem_relatorio": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L123.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "F06",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        }
+      ],
+      "regra": "JSON ligado ao requisito de origem de cada decisão.",
+      "expectativa": {
+        "json_valido": true,
+        "rastreabilidade": {
+          "vm#1": "REQ001",
+          "vm#2": "REQ002",
+          "vm#3": "REQ003",
+          "vm#4": "REQ004",
+          "vm#5": "REQ005"
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L203: 'Resultado completo de cada decisão, ligado ao requisito de origem'. Pares id/requirement da entrada.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "F07",
+      "categoria": "formatos",
+      "status": "INDETERMINADO",
+      "comando": [
+        "check",
+        "(A and B)",
+        "--tests",
+        "{ENT}/c02-completo.csv",
+        "--format",
+        "csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L121",
+          "texto": "| `--format <formato>` | `text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea); `check` e `verify` acetam `text` e `json` |"
+        }
+      ],
+      "regra": "check com formato não aceito.",
+      "expectativa": null,
+      "motivo_indeterminacao": "L121 diz que check aceita text e json, mas não diz o que ocorre com outro formato (código 1, ignorar, outro).",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "M01",
+      "categoria": "mcdc-arquivo",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "-f",
+        "{EX}/requisitos.mcdc"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L241-L243",
+          "texto": "# város requisitos de um arquivo; REQ-003 tem  condião redundante / ./mcdc analyze -f exeplos/requisitos.mcdc"
+        },
+        {
+          "linha": "L287",
+          "texto": "→ 5. diagnóstico:   condição não possui par mesmo considerando tods  combinações, é classificada  redundante;  dixa  possur pares  causa  combinações impossíveis,  classificada como bloqueada"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "REQ-003 tem condição redundante; condição sem par → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "requisitos": 3,
+        "requisito_tem_classe": {
+          "REQ-003": "redundante"
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L241: 'REQ-003 tem  condião redundante' (o artigo apagado não muda o sentido). 0 = comando concluído sem apontar os problemas do código 2; 1 = entrada inválida; 2 = resultado válido com condição sem par (analyze), condição não demonstrada ou resultado esperado divergente (check), conflito ou lacuna (verify). 'condição  par' lido como 'condição sem par': o próprio texto usa 'sem par' como o problema de analyze (L39 'cada cond   ição sem par', L461 'condições sem par'); 'com par' tornaria o código 2 o resultado de toda análise, contra a definição do código 0.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "M02",
+      "categoria": "mcdc-arquivo",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "-f",
+        "{EX}/requisitos.mcdc"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        },
+        {
+          "linha": "L491",
+          "texto": "| `IndependencePairsTest` | 8 | Pres em ,   não; condiço  efio fica  par;  par  causa única vale  mascaramento; lnhas impssiveis nuna entrm; pares  apariço |"
+        }
+      ],
+      "regra": "REQ-001 ((a∧b)∨c) e REQ-002 (a∧¬b) completos com 4 e 3 testes.",
+      "expectativa": {
+        "tamanho_suite_por_requisito": {
+          "REQ-001": 4,
+          "REQ-002": 3
+        },
+        "requisitos_com_todas_com_par": [
+          "REQ-001",
+          "REQ-002"
+        ]
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Mesma forma dos exemplos conhecidos de L493; pares de causa única (Q01/Q02, renomeando variáveis).",
+      "z3": [
+        "Q01-AB-or-C-pares",
+        "Q02-A-and-notB-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "M03",
+      "categoria": "mcdc-arquivo",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "-f",
+        "{ENT}/m03-comentarios.mcdc"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L143",
+          "texto": "**Arqivo `.mcdc`:** um requisito  linha, `ID: expressão`. Lnhas com `#`  comentrios."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Linhas com # são comentários: um único requisito.",
+      "expectativa": {
+        "exit": 0,
+        "requisitos": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L143.",
+      "z3": [
+        "Q25-check-AandB-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "M04",
+      "categoria": "mcdc-arquivo",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "-f",
+        "{ENT}/m04-erro-sintaxe.mcdc"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L517",
+          "texto": "| `RequirementsFileTest` | 3 | Arqivo `.mcdc`, comentrios, linha sem identficador, erro  sintxe  o requisito |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Erro de sintaxe no requisito é entrada inválida.",
+      "expectativa": {
+        "exit": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L139 (1 = entrada inválida); L517.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "M05",
+      "categoria": "mcdc-arquivo",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "-f",
+        "{ENT}/m05-sem-id.mcdc"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L517",
+          "texto": "| `RequirementsFileTest` | 3 | Arqivo `.mcdc`, comentrios, linha sem identficador, erro  sintxe  o requisito |"
+        },
+        {
+          "linha": "L143",
+          "texto": "**Arqivo `.mcdc`:** um requisito  linha, `ID: expressão`. Lnhas com `#`  comentrios."
+        }
+      ],
+      "regra": "Linha sem identificador.",
+      "expectativa": null,
+      "motivo_indeterminacao": "L517 só nomeia o tema 'linha sem identificador'; não diz se é erro, se é ignorada ou se recebe id automático.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JVM1",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--z3",
+        "--mutation",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L289/L117",
+          "texto": "→ 6. mutação (opional): são avaliados seis tipos  defeto  Kapoor e Boen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contgem / | `--mutation` | Confre   suíte pega verses  requisito   defito |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Valores registrados do sistema VM.",
+      "expectativa": {
+        "requisitos": 5,
+        "condicoes": 21,
+        "combinacoes": 152,
+        "impossiveis": 4,
+        "tamanho_suite": 26,
+        "mutantes": {
+          "total": 152,
+          "equivalentes": 0,
+          "detectados": 152
+        },
+        "exit": 0,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Números travados em regressão (L467-L477). Impossíveis exigem Z3 e mutantes exigem --mutation; a variante é a padrão. Z3 independente reproduz requisitos/condições/combinações/impossíveis (VM-totais). Todas as condições têm par de causa única viável (VM-*-pares) → código 0.",
+      "z3": [
+        "VM-totais"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "JVM2",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--exact",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L111",
+          "texto": "| `--exact` | Suíe exata:  menro possivel, esclhida pelo Z3 |"
+        }
+      ],
+      "regra": "Busca exata produz o mesmo número de testes.",
+      "expectativa": {
+        "tamanho_suite": 26
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L461: 'A busca exata ... produzem o mesmo número de testes nesses exemplos'.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JVM3",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--z3",
+        "--unique-cause",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        }
+      ],
+      "regra": "Variante causa única produz o mesmo número de testes.",
+      "expectativa": {
+        "tamanho_suite": 26
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L461.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JVM4",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        },
+        {
+          "linha": "L43",
+          "texto": "| Testes  frnteira | `--z3 --boundary` | Variaçes  lmite  cada comparção (`speed > 100` → 100  101) |"
+        }
+      ],
+      "regra": "Valores concretos (inclusive de fronteira) realizam a combinação e o resultado esperado é o da guarda.",
+      "expectativa": {
+        "concretos_realizam": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L463.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JTIS1",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/tis-decisoes.json",
+        "--z3",
+        "--mutation",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L289/L117",
+          "texto": "→ 6. mutação (opional): são avaliados seis tipos  defeto  Kapoor e Boen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contgem / | `--mutation` | Confre   suíte pega verses  requisito   defito |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Valores registrados do sistema TIS.",
+      "expectativa": {
+        "requisitos": 17,
+        "condicoes": 69,
+        "combinacoes": 268,
+        "impossiveis": 4,
+        "tamanho_suite": 80,
+        "mutantes": {
+          "total": 450,
+          "equivalentes": 21,
+          "detectados": 428
+        }
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Números travados em regressão (L467-L477). Impossíveis exigem Z3 e mutantes exigem --mutation; a variante é a padrão. Z3 independente reproduz requisitos/condições/combinações/impossíveis (TIS-totais).",
+      "z3": [
+        "TIS-totais"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "JTIS2",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/tis-decisoes.json",
+        "--exact",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L111",
+          "texto": "| `--exact` | Suíe exata:  menro possivel, esclhida pelo Z3 |"
+        }
+      ],
+      "regra": "Busca exata produz o mesmo número de testes.",
+      "expectativa": {
+        "tamanho_suite": 80
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L461: 'A busca exata ... produzem o mesmo número de testes nesses exemplos'.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JTIS3",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/tis-decisoes.json",
+        "--z3",
+        "--unique-cause",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        }
+      ],
+      "regra": "Variante causa única produz o mesmo número de testes.",
+      "expectativa": {
+        "tamanho_suite": 80
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L461.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JTIS4",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/tis-decisoes.json",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        },
+        {
+          "linha": "L43",
+          "texto": "| Testes  frnteira | `--z3 --boundary` | Variaçes  lmite  cada comparção (`speed > 100` → 100  101) |"
+        }
+      ],
+      "regra": "Valores concretos (inclusive de fronteira) realizam a combinação e o resultado esperado é o da guarda.",
+      "expectativa": {
+        "concretos_realizam": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L463.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JNPP1",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/npp-decisoes.json",
+        "--z3",
+        "--mutation",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L289/L117",
+          "texto": "→ 6. mutação (opional): são avaliados seis tipos  defeto  Kapoor e Boen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contgem / | `--mutation` | Confre   suíte pega verses  requisito   defito |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Valores registrados do sistema NPP.",
+      "expectativa": {
+        "requisitos": 11,
+        "condicoes": 29,
+        "combinacoes": 76,
+        "impossiveis": 1,
+        "tamanho_suite": 40,
+        "mutantes": {
+          "total": 146,
+          "equivalentes": 0,
+          "detectados": 146
+        },
+        "exit": 0,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Números travados em regressão (L467-L477). Impossíveis exigem Z3 e mutantes exigem --mutation; a variante é a padrão. Z3 independente reproduz requisitos/condições/combinações/impossíveis (NPP-totais). Todas as condições têm par de causa única viável (NPP-*-pares) → código 0.",
+      "z3": [
+        "NPP-totais"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "JNPP2",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/npp-decisoes.json",
+        "--exact",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L111",
+          "texto": "| `--exact` | Suíe exata:  menro possivel, esclhida pelo Z3 |"
+        }
+      ],
+      "regra": "Busca exata produz o mesmo número de testes.",
+      "expectativa": {
+        "tamanho_suite": 40
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L461: 'A busca exata ... produzem o mesmo número de testes nesses exemplos'.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JNPP3",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/npp-decisoes.json",
+        "--z3",
+        "--unique-cause",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        }
+      ],
+      "regra": "Variante causa única produz o mesmo número de testes.",
+      "expectativa": {
+        "tamanho_suite": 40
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L461.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "JNPP4",
+      "categoria": "sistemas",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/npp-decisoes.json",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L463",
+          "texto": "| `ReportsContentTest` | 6 |  JSON,  texto   CSV dizem o   clculado,  três comnos.  todos os testes gerdos pra  sistems de exmplo, inclusve   frnteira,  valoes concrtos ralizam  combinaçao dclarada   resuado esperdo  o que  guarda dá. |"
+        },
+        {
+          "linha": "L43",
+          "texto": "| Testes  frnteira | `--z3 --boundary` | Variaçes  lmite  cada comparção (`speed > 100` → 100  101) |"
+        }
+      ],
+      "regra": "Valores concretos (inclusive de fronteira) realizam a combinação e o resultado esperado é o da guarda.",
+      "expectativa": {
+        "concretos_realizam": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L463.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "J01",
+      "categoria": "sistemas",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/tis-decisoes.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L461",
+          "texto": "| `RequirementsRegressionTest` | 3 | Verifca se  resutados  três sistes  emplo permancem iais  vales regstrados  requisitos, condições, combinaçoes, combinaçoes impossiveis, testes, condições sem par, mutants (ttal, equivalents  detectdos)  confltos.  busca eata   varnte  caua únca produzem o mesom nmero de tetes nses exmplos. Pra  requisito cpleto,  quantdade regstrada  testes correspnde  nmro  condições  1. |"
+        }
+      ],
+      "regra": "Coluna 'Completos' (5/14/11).",
+      "expectativa": null,
+      "motivo_indeterminacao": "A fonte não define 'requisito completo' (L461 só diz que nele testes = condições + 1); o critério de contagem não é único. Também o código de saída do TIS depende disso e não é derivável.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "J02",
+      "categoria": "modo-direto",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L113/L419",
+          "texto": "| `--direct` | Pares pedds dreto  Z   3,  mnar a tabela ( 30 entradas) | ...  120 expressões,  modo dreto dá  mesam cobertura   mesom dignstio  a tabea-verdae cmpleta."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Modo direto com o mesmo diagnóstico da tabela (VM sem condição sem par).",
+      "expectativa": {
+        "exit": 0,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L419; VM-*-pares.",
+      "z3": [
+        "VM-totais"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "J03",
+      "categoria": "json",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{ENT}/j15-enum.json",
+        "--z3",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L153",
+          "texto": "**JSON  decisões** (fomato do Extractr  NAT2TEST): cotm  variavis  seus tips, alem das decisões,     guarda   ações."
+        },
+        {
+          "linha": "L281",
+          "texto": "→ 2. combinações impossíveis (  Z3 é utilizado): as combinaçes  verificaas  Z3;  que retornam `unsat`  consideradas impossíveis e não participam da análse"
+        }
+      ],
+      "regra": "Valores de enumeração: m=a e m=b não valem juntos.",
+      "expectativa": {
+        "exit": 0,
+        "combinacoes": 4,
+        "impossiveis": 1,
+        "todas_condicoes_com_par": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L153 (variáveis e tipos), L281. Q21.",
+      "z3": [
+        "Q21-enum-tabela",
+        "Q21-enum-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "J04",
+      "categoria": "entrada-invalida",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{ENT}/j16-invalido.json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L519",
+          "texto": "| `Nat2TestJs   onReaderTest` | 4 | JSON  NAT2TEST, guarda teporl, arquivs invlidos, ids repetids |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "JSON malformado é entrada inválida.",
+      "expectativa": {
+        "exit": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L139; L519 'arquivos inválidos'.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "J05",
+      "categoria": "json",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{ENT}/j17-ids-repetidos.json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L519",
+          "texto": "| `Nat2TestJs   onReaderTest` | 4 | JSON  NAT2TEST, guarda teporl, arquivs invlidos, ids repetids |"
+        }
+      ],
+      "regra": "Ids de decisão repetidos.",
+      "expectativa": null,
+      "motivo_indeterminacao": "L519 só nomeia o tema 'ids repetidos'; não diz se é recusa (código 1) nem outra consequência.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "J06",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--z3",
+        "--format",
+        "truth-csv",
+        "-o",
+        "{OUT}/J06-tabela.csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        },
+        {
+          "linha": "L123",
+          "texto": "| `-o <arquivo>` | Grava  relatorio  arqivo  vez  mostrr  tela |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L251",
+          "texto": "./mcdc analyze --json exemlos/vm-decisoes.json --z3 --format truth-csv - tabela.csv"
+        }
+      ],
+      "regra": "Tabela-verdade inteira do VM gravada em arquivo com impossíveis marcadas.",
+      "expectativa": {
+        "exit": 0,
+        "arquivo_gerado": "{OUT}/J06-tabela.csv",
+        "truth_linhas_arquivo": 152,
+        "truth_impossiveis_marcadas_arquivo": 4
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L207, L123, L471. A opção '-o' do exemplo L251 aparece como '-' (letra apagada); L123 dá '-o'.",
+      "z3": [
+        "VM-totais"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "J07",
+      "categoria": "formatos",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/tis-decisoes.json",
+        "--z3",
+        "--format",
+        "json",
+        "-o",
+        "{OUT}/J07-relatorio.json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L201-L207",
+          "texto": "| `json` | Reutado cmpleto de cada decião, lgdo  rquisito  orgem (fomato  integrção) | | `csv` |  suíte:  liha por tste  enrada,  o reutado esperdo,   o tese demnstra   valoes concetos | | `truth-csv` | A tabela-verdade intea,   combinaçoes impssiveis marcads |"
+        },
+        {
+          "linha": "L123",
+          "texto": "| `-o <arquivo>` | Grava  relatorio  arqivo  vez  mostrr  tela |"
+        },
+        {
+          "linha": "L249",
+          "texto": "./mcdc analyze --json exemplos/tis-deisoes.json --z3 --format json -o relatorio.json"
+        }
+      ],
+      "regra": "Relatório JSON do TIS gravado em arquivo, ligado aos requisitos.",
+      "expectativa": {
+        "arquivo_gerado": "{OUT}/J07-relatorio.json",
+        "json_valido_arquivo": true,
+        "rastreabilidade_arquivo_qtd": 17
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L249, L203.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "Z01",
+      "categoria": "sem-z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--z3"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": false
+      },
+      "trechos": [
+        {
+          "linha": "L73",
+          "texto": " scrpt `./mcdc` execta  feraemta  prtir  class  compildas.   Z3, continum disponiveis  recurss que não dependm dele. As opçoes  exgem  Z3 avisam qndo o executvel não está instaldo."
+        }
+      ],
+      "regra": "Opção que exige Z3 avisa quando o executável não está instalado.",
+      "expectativa": {
+        "aviso_z3": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L73 'As opções que exigem Z3 avisam quando o executável não está instalado'. Código de saída não é dado.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "Z02",
+      "categoria": "sem-z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": false
+      },
+      "trechos": [
+        {
+          "linha": "L73",
+          "texto": " scrpt `./mcdc` execta  feraemta  prtir  class  compildas.   Z3, continum disponiveis  recurss que não dependm dele. As opçoes  exgem  Z3 avisam qndo o executvel não está instaldo."
+        },
+        {
+          "linha": "L493",
+          "texto": "| `MinimalSuiteTest` | 4 | Exmplos conhecdos (( ∧ B) ∨ C  4 testes, A ∧ ¬B  3); par que demnstra  condção; empte prefre causa úica |"
+        }
+      ],
+      "regra": "Recursos que não dependem do Z3 continuam disponíveis.",
+      "expectativa": {
+        "exit": 0,
+        "tamanho_suite": 4
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L73 '[sem o] Z3, continuam disponíveis os recursos que não dependem dele' (o início da frase está apagado, mas 'continuam disponíveis' só faz sentido para a ausência).",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "Z03",
+      "categoria": "sem-z3",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{EX}/npp-decisoes.json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": false
+      },
+      "trechos": [
+        {
+          "linha": "L73",
+          "texto": " scrpt `./mcdc` execta  feraemta  prtir  class  compildas.   Z3, continum disponiveis  recurss que não dependm dele. As opçoes  exgem  Z3 avisam qndo o executvel não está instaldo."
+        },
+        {
+          "linha": "L83",
+          "texto": "mcdc verify  <fonte> [--context \"<expr>\"]    confere  rquisitos  si (usa  Z   3)"
+        }
+      ],
+      "regra": "verify usa o Z3 e avisa quando ele falta.",
+      "expectativa": {
+        "aviso_z3": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L73, L83.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "Z04",
+      "categoria": "sem-z3",
+      "status": "INDETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100",
+        "--boundary"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L43",
+          "texto": "| Testes  frnteira | `--z3 --boundary` | Variaçes  lmite  cada comparção (`speed > 100` → 100  101) |"
+        },
+        {
+          "linha": "L115",
+          "texto": "| `--boundary` |  `--z3`, acrsenta variants  frnteira |"
+        }
+      ],
+      "regra": "--boundary sem --z3.",
+      "expectativa": null,
+      "motivo_indeterminacao": "L115 tem a preposição apagada ('  `--z3`'); não se sabe se --boundary exige --z3, o implica ou é ignorado sem ele.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "K01",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "--json",
+        "{EX}/decisoes.json",
+        "--tests",
+        "{EX}/testes.csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L51",
+          "texto": "| Avalar teses existntes | `mcdc check` | Cobertura MC/DC  um cnjunto  testes,  que falta  testes  resutado esperdo errdo |"
+        },
+        {
+          "linha": "L183",
+          "texto": "**Teses existntes** (pra  comndo `check`), em CSV: cada lina asocia  teste   entrada e ao valor atrbuído   entrada. O valr pode ser lgico (`T`/`F`) ou cncreto, confore  tipo da variavel. As colunas `decision`  `expected_outcome` são opcionis."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Teste com resultado esperado diferente do valor da guarda é divergente; condições não demonstradas → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "check_divergentes": [
+          "T4"
+        ],
+        "check_nao_demonstrada": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Q23: guarda de #3 em T4 (idle, botão true, moeda false) é false, esperado T → divergente. T1–T3 conferem. As decisões #2 e #4 não têm testes, logo há condição não demonstrada. 0 = comando concluído sem apontar os problemas do código 2; 1 = entrada inválida; 2 = resultado válido com condição sem par (analyze), condição não demonstrada ou resultado esperado divergente (check), conflito ou lacuna (verify). 'condição  par' lido como 'condição sem par': o próprio texto usa 'sem par' como o problema de analyze (L39 'cada cond   ição sem par', L461 'condições sem par'); 'com par' tornaria o código 2 o resultado de toda análise, contra a definição do código 0.",
+      "z3": [
+        "Q23-check-exemplo"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "K02",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "A and B",
+        "--tests",
+        "{ENT}/c02-completo.csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L51",
+          "texto": "| Avalar teses existntes | `mcdc check` | Cobertura MC/DC  um cnjunto  testes,  que falta  testes  resutado esperdo errdo |"
+        },
+        {
+          "linha": "L183",
+          "texto": "**Teses existntes** (pra  comndo `check`), em CSV: cada lina asocia  teste   entrada e ao valor atrbuído   entrada. O valr pode ser lgico (`T`/`F`) ou cncreto, confore  tipo da variavel. As colunas `decision`  `expected_outcome` são opcionis."
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        },
+        {
+          "linha": "L491",
+          "texto": "| `IndependencePairsTest` | 8 | Pres em ,   não; condiço  efio fica  par;  par  causa única vale  mascaramento; lnhas impssiveis nuna entrm; pares  apariço |"
+        }
+      ],
+      "regra": "Testes com par de causa única para A e B: cobertura completa; sem colunas opcionais.",
+      "expectativa": {
+        "exit": 0,
+        "check_completo": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L183: decision e expected_outcome são opcionais; valores T/F. T1/T2 demonstram A, T1/T3 demonstram B (causa única, válido no mascaramento por L491). Sem condição não demonstrada nem divergência → 0.",
+      "z3": [
+        "Q25-check-AandB-pares"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "K03",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "A and B",
+        "--tests",
+        "{ENT}/c03-incompleto.csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L51",
+          "texto": "| Avalar teses existntes | `mcdc check` | Cobertura MC/DC  um cnjunto  testes,  que falta  testes  resutado esperdo errdo |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Falta par para B → condição não demonstrada → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "check_nao_demonstrada": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Só T1 (TT) e T2 (FT): B nunca muda, logo não há par para B em nenhuma variante (L283: a condição precisa mudar).",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "K04",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "A and B",
+        "--tests",
+        "{ENT}/c04-esperado-errado.csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L51",
+          "texto": "| Avalar teses existntes | `mcdc check` | Cobertura MC/DC  um cnjunto  testes,  que falta  testes  resutado esperdo errdo |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Resultado esperado errado (T3: A=T,B=F esperado T) → divergente → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "check_divergentes": [
+          "T3"
+        ]
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "A∧B com A=T, B=F é F; esperado T.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "K05",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "A and B",
+        "--tests",
+        "{ENT}/c02-completo.csv",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L121",
+          "texto": "| `--format <formato>` | `text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea); `check` e `verify` acetam `text` e `json` |"
+        },
+        {
+          "linha": "L51",
+          "texto": "| Avalar teses existntes | `mcdc check` | Cobertura MC/DC  um cnjunto  testes,  que falta  testes  resutado esperdo errdo |"
+        }
+      ],
+      "regra": "check aceita json.",
+      "expectativa": {
+        "exit": 0,
+        "json_valido": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L121.",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "K06",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "--json",
+        "{ENT}/c06-concretos.json",
+        "--tests",
+        "{ENT}/c06-concretos.csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L183",
+          "texto": "**Teses existntes** (pra  comndo `check`), em CSV: cada lina asocia  teste   entrada e ao valor atrbuído   entrada. O valr pode ser lgico (`T`/`F`) ou cncreto, confore  tipo da variavel. As colunas `decision`  `expected_outcome` são opcionis."
+        },
+        {
+          "linha": "L51",
+          "texto": "| Avalar teses existntes | `mcdc check` | Cobertura MC/DC  um cnjunto  testes,  que falta  testes  resutado esperdo errdo |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Valores concretos conforme o tipo; cobertura completa e resultados esperados corretos.",
+      "expectativa": {
+        "exit": 0,
+        "check_completo": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L183: valor concreto conforme o tipo. Q24: guarda T, F, F para T1, T2, T3, igual ao esperado; T1/T2 mudam só x>5, T1/T3 mudam só y=true.",
+      "z3": [
+        "Q24-check-concretos"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "K07",
+      "categoria": "check",
+      "status": "DETERMINADO",
+      "comando": [
+        "check",
+        "A and B",
+        "--tests",
+        "{ENT}/c07-coluna-faltando.csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L183",
+          "texto": "**Teses existntes** (pra  comndo `check`), em CSV: cada lina asocia  teste   entrada e ao valor atrbuído   entrada. O valr pode ser lgico (`T`/`F`) ou cncreto, confore  tipo da variavel. As colunas `decision`  `expected_outcome` são opcionis."
+        },
+        {
+          "linha": "L521",
+          "texto": "| `TestCasesFileTest` | 4 | CSV  testes,  e  a coluna de decisão; colunas fltando |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "CSV sem a coluna obrigatória de valor é entrada inválida.",
+      "expectativa": {
+        "exit": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L183: só decision e expected_outcome são opcionais; sem 'value' a entrada é inválida (L139, L521 'colunas faltando').",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "V01",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{EX}/npp-decisoes.json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "NPP tem 1 conflito → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "conflitos": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L475; Z3 NPP-conflitos = 1 (npp#5 × npp#8).",
+      "z3": [
+        "NPP-conflitos"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "V02",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{EX}/tis-decisoes.json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "TIS tem 3 conflitos → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "conflitos": 3
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L473; Z3 TIS-conflitos = 3.",
+      "z3": [
+        "TIS-conflitos"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "V03",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        },
+        {
+          "linha": "L467-L477",
+          "texto": "| Sistma | Requisitos | Cmpletos | Condições | Combinaçoes | Impossiveis | Testes | Mutants | Equivalents | Pegos | Confltos | ... | VM · máqina  café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 | | TIS · pisca-psca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 | | NPP · injeço  sgurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        }
+      ],
+      "regra": "VM sem conflitos.",
+      "expectativa": {
+        "json_valido": true,
+        "conflitos": 0
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L471; Z3 VM-conflitos = 0. Código de saída não avaliado (ver V09).",
+      "z3": [
+        "VM-conflitos"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "V04",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--context",
+        "the_system_mode = preparing_weak"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        },
+        {
+          "linha": "L265",
+          "texto": "./mcdc verify --json eemplos/vm-decisoes.json --context 'the_system_mode = preparing_weak'"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "No contexto, há situação sem guarda válida → lacuna → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "lacuna": true,
+        "conflitos": 0
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Q20: sat (ex.: timer fora de [10,30]).",
+      "z3": [
+        "Q20-VM-lacuna-preparing_weak",
+        "VM-conflitos"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "V05",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{ENT}/v05-conflito.json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        },
+        {
+          "linha": "L503",
+          "texto": "| `ActionTest` | 2 | Leura  aões `x := v`; contrdção só  valoes diferetes  mesam vaiavel |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Guardas que valem juntas e escrevem valores diferentes → conflito → código 2.",
+      "expectativa": {
+        "exit": 2,
+        "conflitos": 1
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Z3 V05-conflitos: x>5 ∧ x>3 ∧ s sat com y:=on × y:=off.",
+      "z3": [
+        "V05-conflitos"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "V06",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{ENT}/v06-mesmo-valor.json",
+        "--context",
+        "mode = idle"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        },
+        {
+          "linha": "L503",
+          "texto": "| `ActionTest` | 2 | Leura  aões `x := v`; contrdção só  valoes diferetes  mesam vaiavel |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Mesmo valor não é conflito; no contexto sempre alguma guarda vale → código 0.",
+      "expectativa": {
+        "exit": 0,
+        "conflitos": 0,
+        "lacuna": false
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L503: contradição só com valores diferentes da mesma variável. Q22-V06: unsat (sem lacuna no contexto).",
+      "z3": [
+        "V06-conflitos",
+        "Q22-V06-lacuna"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "V07",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{ENT}/v07-disjuntos.json",
+        "--context",
+        "mode = idle"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        },
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Guardas que não valem juntas não conflitam; sem lacuna no contexto → código 0.",
+      "expectativa": {
+        "exit": 0,
+        "conflitos": 0,
+        "lacuna": false
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "Z3 V07-conflitos: candidato unsat; Q22-V07 unsat.",
+      "z3": [
+        "V07-conflitos",
+        "Q22-V07-lacuna"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "V08",
+      "categoria": "verify",
+      "status": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{EX}/vm-decisoes.json",
+        "--context",
+        "the_system_mode = preparing_weak",
+        "--format",
+        "json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L121",
+          "texto": "| `--format <formato>` | `text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea); `check` e `verify` acetam `text` e `json` |"
+        },
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        }
+      ],
+      "regra": "verify aceita json; mesma lacuna.",
+      "expectativa": {
+        "exit": 2,
+        "json_valido": true,
+        "lacuna": true
+      },
+      "motivo_indeterminacao": null,
+      "justificativa": "L121; Q20.",
+      "z3": [
+        "Q20-VM-lacuna-preparing_weak"
+      ],
+      "diagnostico": null
+    },
+    {
+      "id": "V09",
+      "categoria": "verify",
+      "status": "INDETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "{EX}/vm-decisoes.json"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L53/L119",
+          "texto": "| Revsar  requisios  si | `mcdc verify` | Confltos (dois requistos valem jtos  escrvem valoes diferetes) e lacunas (nnum requisito vale) | ... | `--context \"<expr>\"` | No `verify`: confre se, nssa suação, smre algma guarda vale |"
+        }
+      ],
+      "regra": "Lacunas sem --context.",
+      "expectativa": null,
+      "motivo_indeterminacao": "A fonte não diz se, sem --context, verify procura lacunas em todo o espaço de estados; o código de saída do VM sem contexto não é único.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "E01",
+      "categoria": "entrada-invalida",
+      "status": "INDETERMINADO",
+      "comando": [
+        "check",
+        "A and B",
+        "--tests",
+        "{ENT}/nao-existe.csv"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Arquivo de testes inexistente.",
+      "expectativa": null,
+      "motivo_indeterminacao": "A fonte não diz se arquivo ausente é 'entrada inválida' (código 1) ou outro erro.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    },
+    {
+      "id": "E02",
+      "categoria": "entrada-invalida",
+      "status": "INDETERMINADO",
+      "comando": [
+        "comando-inexistente",
+        "A"
+      ],
+      "pre_condicoes": {
+        "z3_no_PATH_do_SUT": true
+      },
+      "trechos": [
+        {
+          "linha": "L139",
+          "texto": "**Cigo  saída:** `0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto,  com  condição  par  `analyze`,  codição não demonstrda ou um resutado espero divergente  `check`,   cnfito ou uma lcuna no `verify`."
+        }
+      ],
+      "regra": "Comando desconhecido.",
+      "expectativa": null,
+      "motivo_indeterminacao": "Não descrito.",
+      "justificativa": "",
+      "z3": [],
+      "diagnostico": null
+    }
+  ]
+}

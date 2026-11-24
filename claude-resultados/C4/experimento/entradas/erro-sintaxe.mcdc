@@ -1,0 +1,3 @@
+# Arquivo proprio da execucao C4: erro de sintaxe na linha 3
+REQ-A: p and q
+REQ-B: p and (q or r

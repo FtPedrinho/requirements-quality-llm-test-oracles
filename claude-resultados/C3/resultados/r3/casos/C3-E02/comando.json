@@ -1,0 +1,1 @@
+["analyze", "--json", "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C3/experimento/extensao-r2/entradas/tipada.json", "--z3", "--boundary", "--format", "json"]

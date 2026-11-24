@@ -1,0 +1,21 @@
+{
+  "id": "AN-05",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze speed > 100 /\\ mode = idle)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "speed > 100 /\\ mode = idle"
+      ],
+      "exit": 0,
+      "segundos": 0.7
+    }
+  ]
+}

@@ -1,0 +1,978 @@
+{
+ "contagem": {
+  "PASSOU": 44,
+  "FALHOU": 1,
+  "INDETERMINADO": 37
+ },
+ "execucoes": {
+  "X01": {
+   "args": [
+    "analyze",
+    "x and y and z",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X02": {
+   "args": [
+    "analyze",
+    "x or y",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X03": {
+   "args": [
+    "analyze",
+    "(p and q) or (not p and r)",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X04": {
+   "args": [
+    "analyze",
+    "(p and q) or r",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X05": {
+   "args": [
+    "analyze",
+    "(p and q) or r",
+    "--unique-cause",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X06": {
+   "args": [
+    "analyze",
+    "speed > 100 /\\ mode = idle",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X07": {
+   "args": [
+    "analyze",
+    "p or (q and r)",
+    "--constraint",
+    "not p or q",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X08": {
+   "args": [
+    "analyze",
+    "p and (q or r",
+    "--format",
+    "json"
+   ],
+   "exit": 1
+  },
+  "X09": {
+   "args": [
+    "analyze",
+    "p and or q",
+    "--format",
+    "json"
+   ],
+   "exit": 1
+  },
+  "X10": {
+   "args": [
+    "analyze",
+    "-f",
+    "exemplos/requisitos.mcdc",
+    "--format",
+    "json"
+   ],
+   "exit": 2
+  },
+  "X11": {
+   "args": [
+    "analyze",
+    "-f",
+    "claude-resultados/C4/experimento/entradas/erro-sintaxe.mcdc",
+    "--format",
+    "json"
+   ],
+   "exit": 1
+  },
+  "X12": {
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/vm-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X13": {
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/tis-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "exit": 2
+  },
+  "X14": {
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/npp-decisoes.json",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X15": {
+   "args": [
+    "analyze",
+    "--json",
+    "exemplos/decisoes.json",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X16": {
+   "args": [
+    "check",
+    "--json",
+    "exemplos/decisoes.json",
+    "--tests",
+    "exemplos/testes.csv",
+    "--format",
+    "json"
+   ],
+   "exit": 2
+  },
+  "X17": {
+   "args": [
+    "analyze",
+    "p and (q or r)",
+    "--mutation",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  },
+  "X18": {
+   "args": [
+    "analyze",
+    "x01 and (x02 or x03 or x04 or x05 or x06 or x07 or x08 or x09 or x10 or x11 or x12 or x13 or x14 or x15 or x16 or x17 or x18 or x19 or x20)",
+    "--format",
+    "json"
+   ],
+   "exit": 0
+  }
+ },
+ "casos": [
+  {
+   "id": "C4-D01",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X01",
+   "expectativa": "A tabela-verdade analisada tem exatamente 8 combinações (3 entradas distintas).",
+   "resultado": "PASSOU",
+   "observado": "truthTableRows=8 linhas=8",
+   "exit_codes": {
+    "X01": 0
+   }
+  },
+  {
+   "id": "C4-D02",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X01",
+   "expectativa": "A primeira linha (linha 0) tem x=y=z=verdadeiro e a decisão nela é verdadeira.",
+   "resultado": "PASSOU",
+   "observado": "linha0={'vector': 'V1', 'values': {'x': True, 'y': True, 'z': True}, 'outcome': True, 'feasible': True}",
+   "exit_codes": {
+    "X01": 0
+   }
+  },
+  {
+   "id": "C4-D03",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X01",
+   "expectativa": "Exatamente 1 das 8 combinações tem decisão verdadeira (x=y=z=V); as outras 7 têm decisão falsa.",
+   "resultado": "PASSOU",
+   "observado": "verdadeiras=1 falsas=7",
+   "exit_codes": {
+    "X01": 0
+   }
+  },
+  {
+   "id": "C4-D04",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X02",
+   "expectativa": "4 combinações; exatamente 1 com decisão falsa (x=F, y=F) e 3 verdadeiras.",
+   "resultado": "PASSOU",
+   "observado": "linhas=4 falsas=[{'vector': 'V4', 'values': {'x': False, 'y': False}, 'outcome': False, 'feasible': True}]",
+   "exit_codes": {
+    "X02": 0
+   }
+  },
+  {
+   "id": "C4-D05",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X03",
+   "expectativa": "8 combinações (3 entradas distintas p, q, r).",
+   "resultado": "PASSOU",
+   "observado": "truthTableRows=8",
+   "exit_codes": {
+    "X03": 0
+   }
+  },
+  {
+   "id": "C4-D06",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X03",
+   "expectativa": "A decisão tem 4 condições (p, q, p, r).",
+   "resultado": "PASSOU",
+   "observado": "condicoes=['p#1', 'q', 'p#2', 'r']",
+   "exit_codes": {
+    "X03": 0
+   }
+  },
+  {
+   "id": "C4-D07",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X03",
+   "expectativa": "As duas aparições de p aparecem como condições distintas identificadas com os sufixos #1 e #2 (p#1, p#2).",
+   "resultado": "PASSOU",
+   "observado": "labels=['p#1', 'q', 'p#2', 'r']",
+   "exit_codes": {
+    "X03": 0
+   }
+  },
+  {
+   "id": "C4-D08",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X03",
+   "expectativa": "A informação de par de independência é relatada separadamente para p#1 e para p#2 (uma entrada de par por aparição).",
+   "resultado": "PASSOU",
+   "observado": "chaves de pares=['p#1', 'q', 'p#2', 'r']",
+   "exit_codes": {
+    "X03": 0
+   }
+  },
+  {
+   "id": "C4-D09",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X04",
+   "expectativa": "A análise é feita na variante mascaramento (MC/DC de mascaramento).",
+   "resultado": "PASSOU",
+   "observado": "variant=MASKING",
+   "exit_codes": {
+    "X04": 0
+   }
+  },
+  {
+   "id": "C4-D10",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X05",
+   "expectativa": "A análise é feita na variante causa única.",
+   "resultado": "PASSOU",
+   "observado": "variant=UNIQUE_CAUSE",
+   "exit_codes": {
+    "X05": 0
+   }
+  },
+  {
+   "id": "C4-D11",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X04+X05",
+   "expectativa": "Todo par de independência relatado na variante causa única (X05) também é par válido relatado na variante mascaramento (X04) para a mesma condição.",
+   "resultado": "PASSOU",
+   "observado": "causa_unica={'p': [('V2', 'V6')], 'q': [('V2', 'V4')], 'r': [('V3', 'V4'), ('V5', 'V6'), ('V7', 'V8')]} mascaramento={'p': [('V2', 'V6')], 'q': [('V2', 'V4')], 'r': [('V3', 'V4'), ('V3', 'V6'), ('V3', 'V8'), ('V5', 'V4'), ('V5', 'V6'), ('V5', 'V8'), ('V7', 'V4'), ('V7', 'V6'), ('V7', 'V8')]} fora={}",
+   "exit_codes": {
+    "X04": 0,
+    "X05": 0
+   }
+  },
+  {
+   "id": "C4-D12",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X04",
+   "expectativa": "Nenhuma condição de (p and q) or r é diagnosticada como redundante ou bloqueada; todas têm par.",
+   "resultado": "PASSOU",
+   "observado": "uncovered=[] uncoveredConditions=[]",
+   "exit_codes": {
+    "X04": 0
+   }
+  },
+  {
+   "id": "C4-D13",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X05",
+   "expectativa": "Nenhuma condição é diagnosticada como redundante ou bloqueada; todas têm par de causa única.",
+   "resultado": "PASSOU",
+   "observado": "uncovered=[] uncoveredConditions=[]",
+   "exit_codes": {
+    "X05": 0
+   }
+  },
+  {
+   "id": "C4-D14",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X06",
+   "expectativa": "A expressão é aceita (analisada, não recusada) com 2 condições: speed > 100 e mode = idle.",
+   "resultado": "PASSOU",
+   "observado": "condicoes=['speed > 100', 'mode = idle'] inputs=[{'name': 'speed > 100', 'variable': 'speed', 'operator': '>', 'value': '100'}, {'name': 'mode = idle', 'variable': 'mode', 'operator': '=', 'value': 'idle'}]",
+   "exit_codes": {
+    "X06": 0
+   }
+  },
+  {
+   "id": "C4-D15",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X06",
+   "expectativa": "4 combinações.",
+   "resultado": "PASSOU",
+   "observado": "truthTableRows=4",
+   "exit_codes": {
+    "X06": 0
+   }
+  },
+  {
+   "id": "C4-D16",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X07",
+   "expectativa": "Das 8 combinações, exatamente 2 são tratadas como impossíveis/excluídas (p=V,q=F,r=V e p=V,q=F,r=F) e 6 são aceitas.",
+   "resultado": "PASSOU",
+   "observado": "impossiveis=[{'p': True, 'q': False, 'r': True}, {'p': True, 'q': False, 'r': False}]",
+   "exit_codes": {
+    "X07": 0
+   }
+  },
+  {
+   "id": "C4-D17",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X07",
+   "expectativa": "Nenhum par de independência relatado usa uma combinação com p=V e q=F.",
+   "resultado": "PASSOU",
+   "observado": "impossiveis=['V3', 'V4'] usados_em_pares=['V2', 'V5', 'V6', 'V7', 'V8']",
+   "exit_codes": {
+    "X07": 0
+   }
+  },
+  {
+   "id": "C4-D18",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X08",
+   "expectativa": "A expressão é recusada: nenhuma análise (tabela, pares, suíte) é produzida e a ferramenta sinaliza erro.",
+   "resultado": "PASSOU",
+   "observado": "stdout='' stderr='Erro: REQ: Faltou fechar parêntese' exit=1",
+   "exit_codes": {
+    "X08": 1
+   }
+  },
+  {
+   "id": "C4-D19",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X09",
+   "expectativa": "A expressão é recusada: nenhuma análise é produzida e a ferramenta sinaliza erro.",
+   "resultado": "PASSOU",
+   "observado": "stdout='' stderr='Erro: REQ: Esperava uma condição, encontrei: or' exit=1",
+   "exit_codes": {
+    "X09": 1
+   }
+  },
+  {
+   "id": "C4-D20",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X10",
+   "expectativa": "São analisados exatamente 3 requisitos, identificados REQ-001, REQ-002 e REQ-003; a linha de comentário não vira requisito.",
+   "resultado": "PASSOU",
+   "observado": "ids=['REQ-001', 'REQ-002', 'REQ-003']",
+   "exit_codes": {
+    "X10": 2
+   }
+  },
+  {
+   "id": "C4-D21",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X10",
+   "expectativa": "REQ-001: 3 condições e 8 combinações.",
+   "resultado": "PASSOU",
+   "observado": "condicoes=['alarme_ativo', 'porta_aberta', 'botao_emergencia'] truthTableRows=8",
+   "exit_codes": {
+    "X10": 2
+   }
+  },
+  {
+   "id": "C4-D22",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X10",
+   "expectativa": "REQ-002: 2 condições e 4 combinações.",
+   "resultado": "PASSOU",
+   "observado": "condicoes=['porta_fechada', 'obstaculo'] truthTableRows=4",
+   "exit_codes": {
+    "X10": 2
+   }
+  },
+  {
+   "id": "C4-D23",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X10",
+   "expectativa": "REQ-003: 3 condições (freio_acionado#1, freio_acionado#2, pedal_pressionado) e 4 combinações.",
+   "resultado": "PASSOU",
+   "observado": "condicoes=['freio_acionado#1', 'freio_acionado#2', 'pedal_pressionado'] truthTableRows=4",
+   "exit_codes": {
+    "X10": 2
+   }
+  },
+  {
+   "id": "C4-D24",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X10",
+   "expectativa": "Nenhuma condição de REQ-001 é diagnosticada como redundante ou bloqueada.",
+   "resultado": "PASSOU",
+   "observado": "uncovered=[] uncoveredConditions=[]",
+   "exit_codes": {
+    "X10": 2
+   }
+  },
+  {
+   "id": "C4-D25",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X10",
+   "expectativa": "Nenhuma condição de REQ-002 é diagnosticada como redundante ou bloqueada.",
+   "resultado": "PASSOU",
+   "observado": "uncovered=[] uncoveredConditions=[]",
+   "exit_codes": {
+    "X10": 2
+   }
+  },
+  {
+   "id": "C4-D26",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X11",
+   "expectativa": "O arquivo é recusado com erro que menciona a linha 3.",
+   "resultado": "FALHOU",
+   "observado": "stdout='' stderr='Erro: REQ-B: Faltou fechar parêntese' exit=1",
+   "exit_codes": {
+    "X11": 1
+   }
+  },
+  {
+   "id": "C4-D27",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X12",
+   "expectativa": "5 requisitos (decisões) analisados.",
+   "resultado": "PASSOU",
+   "observado": "req=5",
+   "exit_codes": {
+    "X12": 0
+   }
+  },
+  {
+   "id": "C4-D28",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X12",
+   "expectativa": "21 condições no total.",
+   "resultado": "PASSOU",
+   "observado": "cond=21",
+   "exit_codes": {
+    "X12": 0
+   }
+  },
+  {
+   "id": "C4-D29",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X12",
+   "expectativa": "152 combinações no total.",
+   "resultado": "PASSOU",
+   "observado": "comb=152",
+   "exit_codes": {
+    "X12": 0
+   }
+  },
+  {
+   "id": "C4-D30",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X13",
+   "expectativa": "17 requisitos (decisões) analisados.",
+   "resultado": "PASSOU",
+   "observado": "req=17",
+   "exit_codes": {
+    "X13": 2
+   }
+  },
+  {
+   "id": "C4-D31",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X13",
+   "expectativa": "69 condições no total.",
+   "resultado": "PASSOU",
+   "observado": "cond=69",
+   "exit_codes": {
+    "X13": 2
+   }
+  },
+  {
+   "id": "C4-D32",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X13",
+   "expectativa": "268 combinações no total.",
+   "resultado": "PASSOU",
+   "observado": "comb=268",
+   "exit_codes": {
+    "X13": 2
+   }
+  },
+  {
+   "id": "C4-D33",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X14",
+   "expectativa": "11 requisitos (decisões) analisados.",
+   "resultado": "PASSOU",
+   "observado": "req=11",
+   "exit_codes": {
+    "X14": 0
+   }
+  },
+  {
+   "id": "C4-D34",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X14",
+   "expectativa": "29 condições no total.",
+   "resultado": "PASSOU",
+   "observado": "cond=29",
+   "exit_codes": {
+    "X14": 0
+   }
+  },
+  {
+   "id": "C4-D35",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X14",
+   "expectativa": "76 combinações no total.",
+   "resultado": "PASSOU",
+   "observado": "comb=76",
+   "exit_codes": {
+    "X14": 0
+   }
+  },
+  {
+   "id": "C4-D36",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X15",
+   "expectativa": "A saída do relatório é JSON válido (analisável).",
+   "resultado": "PASSOU",
+   "observado": "json_valido=True",
+   "exit_codes": {
+    "X15": 0
+   }
+  },
+  {
+   "id": "C4-D37",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X15",
+   "expectativa": "O JSON contém um resultado para cada uma das 4 decisões do arquivo, identificado pela decisão (id the_coffee_machine_system#1..#4 ou requisito REQ-001..REQ-004).",
+   "resultado": "PASSOU",
+   "observado": "ids=['the_coffee_machine_system#1', 'the_coffee_machine_system#2', 'the_coffee_machine_system#3', 'the_coffee_machine_system#4'] requirements=['REQ-001', 'REQ-002', 'REQ-003', 'REQ-004']",
+   "exit_codes": {
+    "X15": 0
+   }
+  },
+  {
+   "id": "C4-D38",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X16",
+   "expectativa": "T4 é apontado como teste com resultado esperado errado (a guarda vale F nesses valores, o CSV diz T).",
+   "resultado": "PASSOU",
+   "observado": "problems=['T4: resultado esperado T, mas a guarda dá F para esses valores']",
+   "exit_codes": {
+    "X16": 2
+   }
+  },
+  {
+   "id": "C4-D39",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X16",
+   "expectativa": "T1, T2 e T3 não são apontados como resultado esperado errado.",
+   "resultado": "PASSOU",
+   "observado": "problems=['T4: resultado esperado T, mas a guarda dá F para esses valores']",
+   "exit_codes": {
+    "X16": 2
+   }
+  },
+  {
+   "id": "C4-D40",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X16",
+   "expectativa": "A decisão the_coffee_machine_system#1 não é dada como coberta: falta par para a condição the_system_mode = idle.",
+   "resultado": "PASSOU",
+   "observado": "complete=False demonstrada={'the_system_mode idle': False}",
+   "exit_codes": {
+    "X16": 2
+   }
+  },
+  {
+   "id": "C4-D41",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X16",
+   "expectativa": "A decisão the_coffee_machine_system#3 não é dada como coberta: faltam pares para the_coffee_request_button = true e the_coin_sensor = true.",
+   "resultado": "PASSOU",
+   "observado": "complete=False demonstradas={'the_coffee_request_button': False, 'the_coin_sensor': False}",
+   "exit_codes": {
+    "X16": 2
+   }
+  },
+  {
+   "id": "C4-D42",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X16",
+   "expectativa": "As decisões the_coffee_machine_system#2 e #4 não são dadas como cobertas (nenhum teste).",
+   "resultado": "PASSOU",
+   "observado": "#2 complete=False testes=0; #4 complete=False testes=0",
+   "exit_codes": {
+    "X16": 2
+   }
+  },
+  {
+   "id": "C4-D43",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X17",
+   "expectativa": "O relatório de mutação cobre os seis tipos ORF, ENF, VNF, MVF, VRF e ASF (cada tipo aparece no relatório).",
+   "resultado": "PASSOU",
+   "observado": "tipos=['ASF', 'ENF', 'MVF', 'ORF', 'VNF', 'VRF'] faltando=[]",
+   "exit_codes": {
+    "X17": 0
+   }
+  },
+  {
+   "id": "C4-D44",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X18",
+   "expectativa": "A expressão é aceita e analisada com 1048576 combinações.",
+   "resultado": "PASSOU",
+   "observado": "truthTableRows=1048576",
+   "exit_codes": {
+    "X18": 0
+   }
+  },
+  {
+   "id": "C4-D45",
+   "status_oraculo": "DETERMINADO",
+   "execucao": "X18",
+   "expectativa": "Para a condição x01 são guardados/relatados no máximo 1000 pares, embora existam mais de 1000 candidatos.",
+   "resultado": "PASSOU",
+   "observado": "pares_guardados(x01)=1000 pairsTruncated=['x01']",
+   "exit_codes": {
+    "X18": 0
+   }
+  },
+  {
+   "id": "C4-I01",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I02",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I03",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I04",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I05",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I06",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I07",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I08",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I09",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I10",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I11",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I12",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I13",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I14",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I15",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I16",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I17",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I18",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I19",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I20",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I21",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I22",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I23",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I24",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I25",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I26",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I27",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I28",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I29",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I30",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I31",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I32",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I33",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I34",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I35",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I36",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  },
+  {
+   "id": "C4-I37",
+   "status_oraculo": "INDETERMINADO",
+   "execucao": null,
+   "expectativa": "Sem expectativa única.",
+   "resultado": "INDETERMINADO",
+   "observado": "não executado (sem expectativa documental única)"
+  }
+ ]
+}

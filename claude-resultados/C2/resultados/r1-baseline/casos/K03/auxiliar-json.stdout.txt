@@ -1,0 +1,45 @@
+{
+  "tool" : "mcdc",
+  "mode" : "check",
+  "system" : null,
+  "variant" : "MASKING",
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "A and B",
+    "complete" : false,
+    "conditionsDemonstrated" : 1,
+    "conditionsTotal" : 2,
+    "outcomesCovered" : 3,
+    "outcomesTotal" : 4,
+    "outcomePercentage" : 75.0,
+    "tests" : [ {
+      "test" : "T1",
+      "vector" : "V1",
+      "outcome" : true
+    }, {
+      "test" : "T2",
+      "vector" : "V3",
+      "outcome" : false
+    } ],
+    "conditions" : [ {
+      "condition" : "A",
+      "demonstrated" : true,
+      "whenTrue" : [ "T1" ],
+      "whenFalse" : [ "T2" ]
+    }, {
+      "condition" : "B",
+      "demonstrated" : false,
+      "addVectors" : [ {
+        "vector" : "V2",
+        "values" : {
+          "A" : true,
+          "B" : false
+        },
+        "outcome" : false
+      } ]
+    } ],
+    "problems" : [ ]
+  } ]
+}

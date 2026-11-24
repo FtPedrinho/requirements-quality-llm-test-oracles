@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExprText.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C4</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core.model</a> &gt; <span class="el_source">ExprText.java</span></div><h1>ExprText.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core.model;
+
+/** Escreve uma expressão como texto, com parênteses só onde a precedência exige (not &gt; and &gt; or). */
+public final class ExprText {
+
+    private ExprText() {
+    }
+
+    public static String format(Expr expr) {
+<span class="pc bpc" id="L10" title="1 of 4 branches missed.">        return switch (expr) {</span>
+<span class="fc" id="L11">            case Cond c -&gt; c.id();</span>
+<span class="nc bnc" id="L12" title="All 2 branches missed.">            case Not(var operand) -&gt; &quot;not &quot; + (operand instanceof Cond ? format(operand) : &quot;(&quot; + format(operand) + &quot;)&quot;);</span>
+<span class="fc" id="L13">            case And(var left, var right) -&gt; inAnd(left) + &quot; and &quot; + inAnd(right);</span>
+<span class="fc" id="L14">            case Or(var left, var right) -&gt; format(left) + &quot; or &quot; + format(right);</span>
+        };
+    }
+
+    private static String inAnd(Expr expr) {
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        return expr instanceof Or ? &quot;(&quot; + format(expr) + &quot;)&quot; : format(expr);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

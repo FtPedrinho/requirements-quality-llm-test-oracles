@@ -1,0 +1,1027 @@
+[
+ {
+  "id": "C3-T01",
+  "titulo": "Tabela-verdade de (A and B) or C",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "8 combinações conferidas"
+   },
+   {
+    "tipo": "linha0_tudo_verdadeiro",
+    "ok": true,
+    "detalhe": "V1 tudo T"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T02",
+  "titulo": "Operadores && e ||",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "8 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T03",
+  "titulo": "Operadores DFRS e precedência",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "8 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T04",
+  "titulo": "Precedência e antes de ou",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "8 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T05",
+  "titulo": "Negação com not",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "4 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T06",
+  "titulo": "Negação com !",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "4 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T07",
+  "titulo": "Comparações como entradas",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "4 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T08",
+  "titulo": "Pares no mascaramento: cada condição demonstrada",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "todas_condicoes_com_par",
+    "ok": true,
+    "detalhe": "cobertura: completa; pares por condição: {A: 1, B: 1, C: 6}"
+   },
+   {
+    "tipo": "pares_mudam_condicao",
+    "ok": true,
+    "detalhe": "8 pares conferidos"
+   },
+   {
+    "tipo": "suite_alterna_condicoes",
+    "ok": true,
+    "detalhe": "suíte de 4 testes alterna ['A', 'B', 'C']"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T09",
+  "titulo": "Pares na causa única: cada condição demonstrada",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "todas_condicoes_com_par",
+    "ok": true,
+    "detalhe": "cobertura: completa; pares por condição: {A: 1, B: 1, C: 3}"
+   },
+   {
+    "tipo": "pares_mudam_condicao",
+    "ok": true,
+    "detalhe": "5 pares conferidos"
+   },
+   {
+    "tipo": "suite_alterna_condicoes",
+    "ok": true,
+    "detalhe": "suíte de 4 testes alterna ['A', 'B', 'C']"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T10",
+  "titulo": "Tabela-verdade com entrada repetida",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "8 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T11",
+  "titulo": "Expressão inválida: parêntese aberto",
+  "status_oraculo": "DETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: REQ: Faltou fechar parêntese",
+  "verificacoes": [
+   {
+    "tipo": "recusada",
+    "ok": true,
+    "detalhe": "recusada: Erro: REQ: Faltou fechar parêntese"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T12",
+  "titulo": "Expressão inválida: operando ausente",
+  "status_oraculo": "DETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: REQ: Expressão incompleta: esperava uma condição",
+  "verificacoes": [
+   {
+    "tipo": "recusada",
+    "ok": true,
+    "detalhe": "recusada: Erro: REQ: Expressão incompleta: esperava uma condição"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T13",
+  "titulo": "Arquivo .mcdc de exemplo",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "requisitos",
+    "ok": true,
+    "detalhe": "['REQ-001', 'REQ-002', 'REQ-003']"
+   },
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "8 combinações conferidas"
+   },
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "4 combinações conferidas"
+   },
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "4 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T14",
+  "titulo": "Arquivo .mcdc com erro de sintaxe",
+  "status_oraculo": "DETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: REQ-ERRO: Faltou fechar parêntese",
+  "verificacoes": [
+   {
+    "tipo": "recusada",
+    "ok": true,
+    "detalhe": "recusada: Erro: REQ-ERRO: Faltou fechar parêntese"
+   },
+   {
+    "tipo": "erro_menciona",
+    "ok": true,
+    "detalhe": "cita REQ-ERRO"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T15vm",
+  "titulo": "JSON NAT2TEST VM: contagens e rastreabilidade",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "json_valido",
+    "ok": true,
+    "detalhe": "JSON válido"
+   },
+   {
+    "tipo": "sistema",
+    "ok": true,
+    "detalhe": "{\"decisoes\": 5, \"combinacoes\": 152, \"condicoes\": 21}"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T15npp",
+  "titulo": "JSON NAT2TEST NPP: contagens e rastreabilidade",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "json_valido",
+    "ok": true,
+    "detalhe": "JSON válido"
+   },
+   {
+    "tipo": "sistema",
+    "ok": true,
+    "detalhe": "{\"decisoes\": 11, \"combinacoes\": 76, \"condicoes\": 29}"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T15tis",
+  "titulo": "JSON NAT2TEST TIS: decisões e combinações",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "json_valido",
+    "ok": true,
+    "detalhe": "JSON válido"
+   },
+   {
+    "tipo": "sistema",
+    "ok": true,
+    "detalhe": "{\"decisoes\": 17, \"combinacoes\": 268}"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T16",
+  "titulo": "Mutação: tipos de defeito",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "mutacao_tipos",
+    "ok": true,
+    "detalhe": "tipos: ORF 2/2, ENF 2/2, VNF 3/3, ASF 0/1, MVF 3/3, VRF 6/6"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T17vm",
+  "titulo": "Mutação VM: total de mutantes",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "mutantes_total",
+    "ok": true,
+    "detalhe": "total 152, equivalentes 0, mortos 152"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T17npp",
+  "titulo": "Mutação NPP: total de mutantes",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "mutantes_total",
+    "ok": true,
+    "detalhe": "total 146, equivalentes 0, mortos 146"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T18",
+  "titulo": "Saída em arquivo com -o",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "arquivo_relatorio",
+    "ok": true,
+    "detalhe": "arquivo com 705 caracteres; tela: Relatório gravado em C:/Users/User/requirements-quality-llm-test-oracles/claude-"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T19",
+  "titulo": "Formato json no analyze",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "json_valido",
+    "ok": true,
+    "detalhe": "JSON válido"
+   },
+   {
+    "tipo": "tabela_verdade",
+    "ok": true,
+    "detalhe": "8 combinações conferidas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T20",
+  "titulo": "check: suíte completa",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "check_demonstradas",
+    "ok": false,
+    "detalhe": "A não demonstrada: {'A': False, 'B': False, 'C': False}"
+   },
+   {
+    "tipo": "check_divergentes",
+    "ok": true,
+    "detalhe": "divergentes []"
+   }
+  ],
+  "resultado": "FALHOU"
+ },
+ {
+  "id": "C3-T21",
+  "titulo": "check: um teste só",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "check_demonstradas",
+    "ok": true,
+    "detalhe": "{'A': False, 'B': False, 'C': False} | incompleta, 0 de 3 condições demonstradas"
+   },
+   {
+    "tipo": "check_divergentes",
+    "ok": true,
+    "detalhe": "divergentes []"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T22",
+  "titulo": "check: resultado esperado errado",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "check_divergentes",
+    "ok": false,
+    "detalhe": "divergentes []"
+   }
+  ],
+  "resultado": "FALHOU"
+ },
+ {
+  "id": "C3-T23",
+  "titulo": "check: CSV sem coluna value",
+  "status_oraculo": "DETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C3\\experimento\\entradas\\check-sem-coluna-value.csv: falta a coluna \"value\" no cabeçalho",
+  "verificacoes": [
+   {
+    "tipo": "recusada",
+    "ok": true,
+    "detalhe": "recusada: Erro: C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C3\\experimento\\entradas\\check-sem-coluna-value.csv: falta a coluna \"value\" no cabeça"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T24",
+  "titulo": "check com exemplos/decisoes.json e testes.csv",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "check_divergentes",
+    "ok": true,
+    "detalhe": "divergentes ['T4']"
+   },
+   {
+    "tipo": "check_demonstradas",
+    "ok": true,
+    "detalhe": "{'the_system_mode = idle': False, 'the_coin_sensor = true': True} | incompleta, 1 de 2 condições demonstradas"
+   },
+   {
+    "tipo": "check_demonstradas",
+    "ok": true,
+    "detalhe": "{'the_system_mode = choice': True, 'the_coffee_request_button = true': False, 'the_coin_sensor = true': False} | incompleta, 1 de 3 condições demonstradas"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T25",
+  "titulo": "check com formato json",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "json_valido",
+    "ok": true,
+    "detalhe": "JSON válido"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T26",
+  "titulo": "verify sem --context não aponta lacunas",
+  "status_oraculo": "DETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "sem_lacunas",
+    "ok": true,
+    "detalhe": "não conferidas (use --context \"<expressão>\" para dizer em que situação alguma guarda deve valer)"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T27",
+  "titulo": "Fronteiras de speed > 100 e speed > 50",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "fronteira",
+    "ok": true,
+    "detalhe": "speed: observados [50.0, 51.0, 100.0, 101.0]"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T28",
+  "titulo": "Fronteiras de <=, < e >=",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "fronteira",
+    "ok": true,
+    "detalhe": "x: observados [0.0, 10.0, 11.0]"
+   },
+   {
+    "tipo": "fronteira",
+    "ok": true,
+    "detalhe": "y: observados [0.0, 4.0, 5.0, 6.0, 7.0]"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T29",
+  "titulo": "Fronteiras nos sistemas TIS e NPP (inteiros)",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "fronteira",
+    "ok": true,
+    "detalhe": "the_water_pressure: observados [0.0, 8.0, 9.0, 10.0]"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T30",
+  "titulo": "Valores concretos realizam a combinação",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "valores_realizam",
+    "ok": true,
+    "detalhe": "26 testes com valores concretos conferidos"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T31",
+  "titulo": "Valores concretos em expressão direta",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "valores_realizam",
+    "ok": true,
+    "detalhe": "3 testes com valores concretos conferidos"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T32",
+  "titulo": "Restrição escrita à mão",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "suite_respeita",
+    "ok": true,
+    "detalhe": "5 vetores usados, todos dentro da restrição"
+   },
+   {
+    "tipo": "todas_condicoes_com_par",
+    "ok": true,
+    "detalhe": "cobertura: completa; pares por condição: {A: 3, B: 1, C: 1}"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-T33",
+  "titulo": "20 entradas na tabela completa",
+  "status_oraculo": "DETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [
+   {
+    "tipo": "arquivo_json",
+    "ok": true,
+    "detalhe": "1048576 combinações, 20 condições com par, suíte 21"
+   }
+  ],
+  "resultado": "PASSOU"
+ },
+ {
+  "id": "C3-I01",
+  "titulo": "Código de saída de analyze sem problemas",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I02",
+  "titulo": "Código de saída de entrada inválida",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: REQ: Faltou fechar parêntese",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I03",
+  "titulo": "Código de saída de check com esperado divergente",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I04",
+  "titulo": "Código de saída de verify com conflito",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Verificação entre requisitos: turn_indicator_system"
+ },
+ {
+  "id": "C3-I05",
+  "titulo": "Código de saída de analyze com condição sem par",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ-001"
+ },
+ {
+  "id": "C3-I06",
+  "titulo": "Número de condições com entrada repetida",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I07",
+  "titulo": "Condição redundante REQ-003",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ-001"
+ },
+ {
+  "id": "C3-I08",
+  "titulo": "Condição bloqueada por restrição",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I09",
+  "titulo": "Par de mascaramento muda o resultado",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I10",
+  "titulo": "Par de causa única fixa as demais condições",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I11",
+  "titulo": "Tamanho da suíte de (A and B) or C",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I12",
+  "titulo": "Suíte exata do exemplo",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I13",
+  "titulo": "Combinações impossíveis com --z3",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I14",
+  "titulo": "VM com --z3: 4 combinações impossíveis",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "{"
+ },
+ {
+  "id": "C3-I15",
+  "titulo": "verify NPP: 1 conflito",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "{"
+ },
+ {
+  "id": "C3-I16",
+  "titulo": "verify VM com --context",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Verificação entre requisitos: the_coffee_machine_system"
+ },
+ {
+  "id": "C3-I17",
+  "titulo": "Sem Z3 no PATH: analyze simples",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I18",
+  "titulo": "Sem Z3 no PATH: --z3",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: Z3 não encontrado (z3). Instale com: brew install z3",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I19",
+  "titulo": "Conteúdo de truth-csv",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "decision,requirement,row,A,B,C,outcome,feasible,in_suite,demonstrates,concrete_values"
+ },
+ {
+  "id": "C3-I20",
+  "titulo": "Conteúdo de csv",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values"
+ },
+ {
+  "id": "C3-I21",
+  "titulo": "check sem colunas decision/expected_outcome",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I22",
+  "titulo": "--z3 com 13 entradas",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Relatório gravado em C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C3/resultados/r1/casos/C3-I22/e13.json"
+ },
+ {
+  "id": "C3-I23",
+  "titulo": "--direct com 26 entradas",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Relatório gravado em C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C3/resultados/r1/casos/C3-I23/e26.json"
+ },
+ {
+  "id": "C3-I24",
+  "titulo": "--direct com expressão pequena",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I25",
+  "titulo": "21 entradas sem Z3 (acima do limite)",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: Decisão com 21 entradas; o limite é 20",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I26",
+  "titulo": "TIS: 69 condições",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "{"
+ },
+ {
+  "id": "C3-I27",
+  "titulo": "TIS: mutantes e detecção",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "{"
+ },
+ {
+  "id": "C3-I28",
+  "titulo": "VM: 26 testes",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "{"
+ },
+ {
+  "id": "C3-I29",
+  "titulo": "--constraint com arquivo",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: --constraint só vale com uma expressão direta.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I30",
+  "titulo": ".mcdc com linha sem identificador",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: Linha 2 sem identificador. Formato: REQ-001: expressão",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I31",
+  "titulo": "JSON com ids repetidos",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: Decisão repetida: s#1",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I32",
+  "titulo": "Formato desconhecido",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: Formato desconhecido para analyze: xml. Use text, json, csv, truth-csv.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I33",
+  "titulo": "Arquivo inexistente",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro de arquivo: C:\\Users\\User\\requirements-quality-llm-test-oracles\\claude-resultados\\C3\\experimento\\entradas\\nao-existe.mcdc",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I34",
+  "titulo": "Detecção de mutantes de A and (B or C)",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 0,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I35",
+  "titulo": "check com --format csv",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: Formato desconhecido para check: csv. Use text, json.",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I36",
+  "titulo": "JSON inválido",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Erro: JSON inválido: Unexpected character ('i' (code 105)): was expecting double-quote to start field name",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I37",
+  "titulo": "Comando desconhecido",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 1,
+  "stderr_1a_linha": "Uso:",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": ""
+ },
+ {
+  "id": "C3-I38",
+  "titulo": "check com mudança de condição sem mudança de resultado",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "Decisão:   REQ"
+ },
+ {
+  "id": "C3-I39",
+  "titulo": "Classificação de condições com --z3 e fronteiras no TIS",
+  "status_oraculo": "INDETERMINADO",
+  "exit": 2,
+  "stderr_1a_linha": "",
+  "verificacoes": [],
+  "resultado": "INDETERMINADO",
+  "observacao": "{"
+ }
+]

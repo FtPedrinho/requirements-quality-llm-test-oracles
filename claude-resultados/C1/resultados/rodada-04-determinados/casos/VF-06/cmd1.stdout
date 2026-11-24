@@ -1,0 +1,31 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "c1_vf",
+  "decisions" : 2,
+  "pairsChecked" : 1,
+  "conflicts" : [ {
+    "first" : "vf#1",
+    "firstRequirement" : "R-1",
+    "second" : "vf#2",
+    "secondRequirement" : "R-2",
+    "sharedVariables" : [ "mode" ],
+    "conflicts" : [ {
+      "variable" : "mode",
+      "first" : "a",
+      "second" : "b"
+    } ],
+    "witness" : {
+      "flag" : "true",
+      "sw" : "true"
+    }
+  } ],
+  "compatibleOverlaps" : [ ],
+  "gaps" : {
+    "checked" : false,
+    "context" : null,
+    "found" : false,
+    "witness" : null
+  },
+  "ok" : false
+}

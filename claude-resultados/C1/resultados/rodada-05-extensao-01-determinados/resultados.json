@@ -1,0 +1,734 @@
+[
+  {
+    "id": "EX-01",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (check --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX01_comparacoes.json",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX01_testes_concretos.csv"
+        ],
+        "exit": 0,
+        "segundos": 1.83
+      }
+    ]
+  },
+  {
+    "id": "EX-02",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "stdout é JSON válido"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX01_comparacoes.json",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX01_testes_concretos.csv",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 1.85
+      }
+    ]
+  },
+  {
+    "id": "EX-03",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (check A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX03_aspas.csv"
+        ],
+        "exit": 0,
+        "segundos": 0.62
+      }
+    ]
+  },
+  {
+    "id": "EX-04",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (check A and B)"
+      },
+      {
+        "ok": true,
+        "verificacao": "stderr contém '3': 'Erro: C:\\\\Users\\\\User\\\\requirements-quality-llm-test-oracles\\\\claude-resultados\\\\C1\\\\experimento\\\\extensao-01\\\\entradas\\\\EX04_celula_vazia.csv, linha 3: faltam test, input ou value'"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B",
+          "--tests",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX04_celula_vazia.csv"
+        ],
+        "exit": 1,
+        "segundos": 0.54
+      }
+    ]
+  },
+  {
+    "id": "EX-05",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze --json)"
+      },
+      {
+        "ok": true,
+        "verificacao": "coluna requirement = 'R-1, R-2' em todas as 6 linhas (divergentes [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX05_virgula_requisito.json",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 1.79
+      }
+    ]
+  },
+  {
+    "id": "EX-06",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX06_json_malformado.json"
+        ],
+        "exit": 1,
+        "segundos": 1.64
+      }
+    ]
+  },
+  {
+    "id": "EX-07",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and B",
+          "-f",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX20_req_redundante.mcdc"
+        ],
+        "exit": 1,
+        "segundos": 0.48
+      }
+    ]
+  },
+  {
+    "id": "EX-08",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (check A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "check",
+          "A and B"
+        ],
+        "exit": 1,
+        "segundos": 0.48
+      }
+    ]
+  },
+  {
+    "id": "EX-09",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze A and B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and B",
+          "--format"
+        ],
+        "exit": 1,
+        "segundos": 0.59
+      }
+    ]
+  },
+  {
+    "id": "EX-10",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze A B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A B"
+        ],
+        "exit": 1,
+        "segundos": 0.51
+      }
+    ]
+  },
+  {
+    "id": "EX-11",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze A and or B)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and or B"
+        ],
+        "exit": 1,
+        "segundos": 0.51
+      }
+    ]
+  },
+  {
+    "id": "EX-12",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 1, observado 1 (analyze (A and B)))"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B))"
+        ],
+        "exit": 1,
+        "segundos": 0.54
+      }
+    ]
+  },
+  {
+    "id": "EX-13",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 4, observadas 4"
+      },
+      {
+        "ok": true,
+        "verificacao": "linha impossível sse (not a) and (not b) com {'a': 'x > -3', 'b': 'x < 2'} (divergentes []; impossíveis observadas ['V4'])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "x > -3 and x < 2",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.88
+      }
+    ]
+  },
+  {
+    "id": "EX-14",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 8, observadas 8"
+      },
+      {
+        "ok": true,
+        "verificacao": "linha impossível sse (not a) and b and c com {'a': 'x > 3', 'b': 'y <= x', 'c': 'y > 5'} (divergentes []; impossíveis observadas ['V5'])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "x > 3 and y <= x and y > 5",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 2,
+        "segundos": 0.89
+      }
+    ]
+  },
+  {
+    "id": "EX-15",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "linhas da tabela esperadas 4, observadas 4"
+      },
+      {
+        "ok": true,
+        "verificacao": "linha impossível sse (not a) and (not b) com {'a': 't >= 10.5', 'b': 't <= 30.0'} (divergentes []; impossíveis observadas ['V4'])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "t >= 10.5 and t <= 30.0",
+          "--z3",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 0,
+        "segundos": 0.93
+      }
+    ]
+  },
+  {
+    "id": "EX-16",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze x < -5 or x > 5)"
+      },
+      {
+        "ok": true,
+        "verificacao": "guarda (x < -5) or (x > 5) nos valores concretos = esperado em 6 linhas (divergentes [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "x < -5 or x > 5",
+          "--z3",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 1.2
+      }
+    ]
+  },
+  {
+    "id": "EX-17",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze t > 0.5 and t < 1.0)"
+      },
+      {
+        "ok": true,
+        "verificacao": "guarda (t > 0.5) and (t < 1.0) nos valores concretos = esperado em 6 linhas (divergentes [])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "t > 0.5 and t < 1.0",
+          "--z3",
+          "--format",
+          "csv"
+        ],
+        "exit": 0,
+        "segundos": 0.9
+      }
+    ]
+  },
+  {
+    "id": "EX-18",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "fronteiras de x incluem [-3.0, -2.0] (observadas [-3.0, -2.0])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "x > -3",
+          "--z3",
+          "--boundary",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 2.01
+      }
+    ]
+  },
+  {
+    "id": "EX-19",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "-f",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 2.78
+      },
+      {
+        "args": [
+          "analyze",
+          "-f",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 1.6
+      }
+    ]
+  },
+  {
+    "id": "EX-20",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C",
+          "--unique-cause",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 1.97
+      },
+      {
+        "args": [
+          "analyze",
+          "(A and B) or C",
+          "--unique-cause",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 1.54
+      }
+    ]
+  },
+  {
+    "id": "EX-21",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and B",
+          "--constraint",
+          "A",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 1.94
+      },
+      {
+        "args": [
+          "analyze",
+          "A and B",
+          "--constraint",
+          "A",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 1.54
+      }
+    ]
+  },
+  {
+    "id": "EX-22",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "direto = tabela completa em cobertura/diagnóstico (diferenças {})"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "speed > 100 and speed > 50",
+          "--direct",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 1.91
+      },
+      {
+        "args": [
+          "analyze",
+          "speed > 100 and speed > 50",
+          "--z3",
+          "--format",
+          "json"
+        ],
+        "exit": 2,
+        "segundos": 1.78
+      }
+    ]
+  },
+  {
+    "id": "EX-23",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze not A or (B and not C))"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "not A or (B and not C)",
+          "--mutation"
+        ],
+        "exit": 0,
+        "segundos": 0.65
+      }
+    ]
+  },
+  {
+    "id": "EX-24",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze A and (B1 or B2 or B3 or B4 or B5 or B6 or B7 or B8 or B9 or B10 or B11))"
+      },
+      {
+        "ok": true,
+        "verificacao": "pares guardados para A: 1000 (0 < n <= 1000)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and (B1 or B2 or B3 or B4 or B5 or B6 or B7 or B8 or B9 or B10 or B11)",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "segundos": 1.77
+      }
+    ]
+  },
+  {
+    "id": "EX-25",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 2, observado 2 (analyze -f)"
+      },
+      {
+        "ok": true,
+        "verificacao": "blocos com cabeçalho e linhas [8, 4, 4] (observados [8, 4, 4])"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "-f",
+          "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc",
+          "--format",
+          "truth-csv"
+        ],
+        "exit": 2,
+        "segundos": 0.62
+      }
+    ]
+  },
+  {
+    "id": "EX-26",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "exit esperado 0, observado 0 (analyze --json)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX05_virgula_requisito.json"
+        ],
+        "exit": 0,
+        "segundos": 1.83
+      }
+    ]
+  },
+  {
+    "id": "EX-27",
+    "veredito": "FALHOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": false,
+        "verificacao": "saída menciona Z3 (exit 0)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "verify",
+          "--json",
+          "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX05_virgula_requisito.json"
+        ],
+        "exit": 0,
+        "segundos": 1.78
+      }
+    ]
+  },
+  {
+    "id": "EX-28",
+    "veredito": "PASSOU",
+    "nota": "",
+    "verificacoes": [
+      {
+        "ok": true,
+        "verificacao": "saída menciona Z3 (exit 1)"
+      }
+    ],
+    "comandos": [
+      {
+        "args": [
+          "analyze",
+          "A and B",
+          "--exact"
+        ],
+        "exit": 1,
+        "segundos": 0.57
+      }
+    ]
+  }
+]

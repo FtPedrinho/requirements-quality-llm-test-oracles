@@ -1,0 +1,31 @@
+{
+  "id": "AN-10",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze (A and B) or (not A and C))"
+    },
+    {
+      "ok": true,
+      "verificacao": "linhas da tabela esperadas 8, observadas 8"
+    },
+    {
+      "ok": true,
+      "verificacao": "resultado de cada linha = (A and B) or (not A and C) (divergentes: [])"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "(A and B) or (not A and C)",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 0,
+      "segundos": 0.72
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Verificação entre requisitos: same
+2 decisões, 1 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: 1
+  R-S1 × R-S2: mesmo valor em y
+
+Lacunas: nenhuma: sob mode = idle, sempre alguma guarda vale

@@ -1,0 +1,23 @@
+Decisão:   REQ
+Guarda:    (A and B) or C
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 8 combinações)
+
+Pares de independência:
+  A: (V2, V6)
+  B: (V2, V4)
+  C: (V5, V6)
+
+Suíte do modo direto (4 testes):
+  V2  TTF  -> T   demonstra A, B   [A = true, B = true, C = false]
+  V4  TFF  -> F   demonstra B   [A = true, B = false, C = false]
+  V5  FTT  -> T   demonstra C   [A = false, B = true, C = true]
+  V6  FTF  -> F   demonstra A, C   [A = false, B = true, C = false]
+
+Demonstração por condição:
+  A: V2 (T) e V6 (F), só ela muda
+  B: V2 (T) e V4 (F), só ela muda
+  C: V5 (T) e V6 (F), só ela muda
+
+Cobertura MC/DC: completa

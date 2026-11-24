@@ -1,0 +1,16 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "disj",
+  "decisions" : 2,
+  "pairsChecked" : 1,
+  "conflicts" : [ ],
+  "compatibleOverlaps" : [ ],
+  "gaps" : {
+    "checked" : true,
+    "context" : "mode = idle",
+    "found" : false,
+    "witness" : null
+  },
+  "ok" : true
+}

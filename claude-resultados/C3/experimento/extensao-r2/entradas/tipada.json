@@ -1,0 +1,36 @@
+{
+  "system": "extensao",
+  "inputs": [
+    {
+      "name": "x",
+      "type": "int"
+    },
+    {
+      "name": "r",
+      "type": "real"
+    },
+    {
+      "name": "m",
+      "type": "enum",
+      "values": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "name": "k",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "e#1",
+      "requirement": "R1",
+      "guard": "x < 3 /\\ x >= -2 \\/ r <= 1.5 /\\ m != b \\/ k = true",
+      "actions": [
+        "y := 1"
+      ]
+    }
+  ]
+}

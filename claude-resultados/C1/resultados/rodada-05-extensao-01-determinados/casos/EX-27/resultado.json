@@ -1,0 +1,22 @@
+{
+  "id": "EX-27",
+  "veredito": "FALHOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": false,
+      "verificacao": "saída menciona Z3 (exit 0)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C1/experimento/extensao-01/entradas/EX05_virgula_requisito.json"
+      ],
+      "exit": 0,
+      "segundos": 1.78
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "system": "dup",
+  "inputs": [
+    {
+      "name": "p",
+      "type": "bool"
+    },
+    {
+      "name": "q",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "d#1",
+      "requirement": "R1",
+      "guard": "p = true",
+      "actions": [
+        "z := 1"
+      ]
+    },
+    {
+      "id": "d#1",
+      "requirement": "R2",
+      "guard": "q = true",
+      "actions": [
+        "z := 2"
+      ]
+    }
+  ]
+}

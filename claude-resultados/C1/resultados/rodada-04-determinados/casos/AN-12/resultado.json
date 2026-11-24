@@ -1,0 +1,23 @@
+{
+  "id": "AN-12",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "testes distintos esperados 8, observados 8"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "(A and not B and not C) or (not A and B and not C) or (not A and not B and C) or (A and B and C)",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "segundos": 0.69
+    }
+  ]
+}

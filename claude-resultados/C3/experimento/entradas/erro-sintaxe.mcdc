@@ -1,0 +1,3 @@
+# requisito com erro de sintaxe
+REQ-OK: A and B
+REQ-ERRO: (A and B

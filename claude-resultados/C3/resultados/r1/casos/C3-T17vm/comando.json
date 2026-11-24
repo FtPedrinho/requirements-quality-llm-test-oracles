@@ -1,0 +1,1 @@
+["analyze", "--json", "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json", "--mutation", "--format", "json"]

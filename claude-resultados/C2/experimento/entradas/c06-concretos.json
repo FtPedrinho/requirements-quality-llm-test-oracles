@@ -1,0 +1,23 @@
+{
+  "system": "conc",
+  "inputs": [
+    {
+      "name": "x",
+      "type": "int"
+    },
+    {
+      "name": "y",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "d#1",
+      "requirement": "R-D1",
+      "guard": "x > 5 /\\ y = true",
+      "actions": [
+        "z := 1"
+      ]
+    }
+  ]
+}

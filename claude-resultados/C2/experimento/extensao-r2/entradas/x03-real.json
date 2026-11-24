@@ -1,0 +1,31 @@
+{
+  "system": "real_sys",
+  "inputs": [
+    {
+      "name": "t",
+      "type": "real"
+    },
+    {
+      "name": "k",
+      "type": "enum",
+      "values": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "f",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "r#1",
+      "requirement": "R-R1",
+      "guard": "(t >= 2.5 /\\ k != a) \\/ (f = false /\\ t < -1.5)",
+      "actions": [
+        "z := 1"
+      ]
+    }
+  ]
+}

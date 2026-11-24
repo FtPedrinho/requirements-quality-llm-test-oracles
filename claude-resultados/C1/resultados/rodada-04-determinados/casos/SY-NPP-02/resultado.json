@@ -1,0 +1,34 @@
+{
+  "id": "SY-NPP-02",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "mutantes 146 = 146"
+    },
+    {
+      "ok": true,
+      "verificacao": "equivalentes 0 = 0"
+    },
+    {
+      "ok": true,
+      "verificacao": "pegos 146 = 146"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "--z3",
+        "--mutation",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 7.72
+    }
+  ]
+}

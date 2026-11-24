@@ -1,0 +1,26 @@
+{
+  "id": "SY-NPP-04",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "testes 40 = 40"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "--z3",
+        "--exact",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 6.44
+    }
+  ]
+}

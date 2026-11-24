@@ -1,0 +1,314 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "(x < 3) or ((y <= x) and (z >= -2))",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "x < 3",
+      "variable" : "x",
+      "operator" : "<",
+      "value" : "3"
+    }, {
+      "name" : "y <= x",
+      "variable" : "y",
+      "operator" : "<=",
+      "value" : "x"
+    }, {
+      "name" : "z >= -2",
+      "variable" : "z",
+      "operator" : ">=",
+      "value" : "-2"
+    } ],
+    "conditions" : [ {
+      "label" : "x < 3",
+      "input" : "x < 3",
+      "occurrence" : 1
+    }, {
+      "label" : "y <= x",
+      "input" : "y <= x",
+      "occurrence" : 1
+    }, {
+      "label" : "z >= -2",
+      "input" : "z >= -2",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x < 3" : true,
+        "y <= x" : true,
+        "z >= -2" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "y" : "0",
+        "z" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x < 3" : true,
+        "y <= x" : true,
+        "z >= -2" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "y" : "0",
+        "z" : "-3"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x < 3" : true,
+        "y <= x" : false,
+        "z >= -2" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-1",
+        "y" : "0",
+        "z" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x < 3" : true,
+        "y <= x" : false,
+        "z >= -2" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "-1",
+        "y" : "0",
+        "z" : "-3"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "x < 3" : false,
+        "y <= x" : true,
+        "z >= -2" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "z" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "x < 3" : false,
+        "y <= x" : true,
+        "z >= -2" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "z" : "-3"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "x < 3" : false,
+        "y <= x" : false,
+        "z >= -2" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "y" : "4",
+        "z" : "0"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "x < 3" : false,
+        "y <= x" : false,
+        "z >= -2" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "y" : "4",
+        "z" : "-3"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "x < 3" : [ [ "V2", "V6" ], [ "V2", "V7" ], [ "V2", "V8" ], [ "V3", "V6" ], [ "V3", "V7" ], [ "V3", "V8" ], [ "V4", "V6" ], [ "V4", "V7" ], [ "V4", "V8" ] ],
+      "y <= x" : [ [ "V5", "V7" ] ],
+      "z >= -2" : [ [ "V5", "V6" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "x < 3" : true,
+        "y <= x" : true,
+        "z >= -2" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "y" : "0",
+        "z" : "-3"
+      },
+      "demonstrates" : [ "x < 3" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "x < 3" : false,
+        "y <= x" : true,
+        "z >= -2" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "z" : "0"
+      },
+      "demonstrates" : [ "y <= x", "z >= -2" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "x < 3" : false,
+        "y <= x" : true,
+        "z >= -2" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "z" : "-3"
+      },
+      "demonstrates" : [ "x < 3", "z >= -2" ]
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "x < 3" : false,
+        "y <= x" : false,
+        "z >= -2" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "y" : "4",
+        "z" : "0"
+      },
+      "demonstrates" : [ "y <= x" ]
+    } ],
+    "chosenPairs" : {
+      "x < 3" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "y <= x" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V7",
+        "uniqueCause" : true
+      },
+      "z >= -2" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      }
+    },
+    "boundaryTests" : [ {
+      "base" : "V2",
+      "condition" : "x < 3",
+      "boundary" : "x = 2",
+      "assignment" : {
+        "x" : "2",
+        "y" : "0",
+        "z" : "-3"
+      }
+    }, {
+      "base" : "V2",
+      "condition" : "z >= -2",
+      "boundary" : "z = -3",
+      "assignment" : {
+        "x" : "0",
+        "y" : "0",
+        "z" : "-3"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "x < 3",
+      "boundary" : "x = 3",
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "z" : "0"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "z >= -2",
+      "boundary" : "z = -2",
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "z" : "-2"
+      }
+    }, {
+      "base" : "V6",
+      "condition" : "x < 3",
+      "boundary" : "x = 3",
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "z" : "-3"
+      }
+    }, {
+      "base" : "V6",
+      "condition" : "z >= -2",
+      "boundary" : "z = -3",
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "z" : "-3"
+      }
+    }, {
+      "base" : "V7",
+      "condition" : "x < 3",
+      "boundary" : "x = 3",
+      "assignment" : {
+        "x" : "3",
+        "y" : "4",
+        "z" : "0"
+      }
+    }, {
+      "base" : "V7",
+      "condition" : "z >= -2",
+      "boundary" : "z = -2",
+      "assignment" : {
+        "x" : "3",
+        "y" : "4",
+        "z" : "-2"
+      }
+    } ]
+  } ]
+}

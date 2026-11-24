@@ -1,0 +1,12 @@
+; Q07-p: existe par de causa unica para p em (p and q) or r ?
+(declare-const a0 Bool)
+(declare-const c0 Bool)
+(declare-const a1 Bool)
+(declare-const c1 Bool)
+(assert (= a1 c1))
+(declare-const a2 Bool)
+(declare-const c2 Bool)
+(assert (= a2 c2))
+(assert (not (= a0 c0)))
+(assert (not (= (or (and a0 a1) a2) (or (and c0 c1) c2))))
+(check-sat)

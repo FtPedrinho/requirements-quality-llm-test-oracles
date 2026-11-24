@@ -1,0 +1,11 @@
+Decisão:   REQ
+Guarda:    (A and B) or C
+Testes:    nenhum para esta decisão
+
+Condições:
+  A: falta; acrescente V2 (TTF -> T) e V6 (FTF -> F)
+  B: falta; acrescente V2 (TTF -> T) e V4 (TFF -> F)
+  C: falta; acrescente V3 (TFT -> T) e V4 (TFF -> F)
+
+Resultados de condição demonstrados: 0 de 6 (0,0%)
+Cobertura MC/DC: incompleta, 0 de 3 condições demonstradas

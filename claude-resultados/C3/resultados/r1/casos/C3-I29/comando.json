@@ -1,0 +1,1 @@
+["analyze", "-f", "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc", "--constraint", "A"]

@@ -1,0 +1,368 @@
+Decisão:   vm#1
+Requisito: REQ001
+Guarda:    the_system_mode = idle /\ the_coin_sensor_antes = false /\ the_coin_sensor = true
+Ações:     the_request_timer := 0; the_system_mode := choice
+Variante:  mascaramento
+
+Vetor the_system_mode = idle   the_coin_sensor_antes = false   the_coin_sensor = true   | D
+V1    T                        T                               T                        | T
+V2    T                        T                               F                        | F
+V3    T                        F                               T                        | F
+V4    T                        F                               F                        | F
+V5    F                        T                               T                        | F
+V6    F                        T                               F                        | F
+V7    F                        F                               T                        | F
+V8    F                        F                               F                        | F
+
+Pares de independência:
+  the_system_mode = idle: (V1, V5)
+  the_coin_sensor_antes = false: (V1, V3)
+  the_coin_sensor = true: (V1, V2)
+
+Suíte mínima (4 testes):
+  V1  TTT  -> T   demonstra the_system_mode = idle, the_coin_sensor_antes = false, the_coin_sensor = true   [the_system_mode = idle, the_coin_sensor_antes = false, the_coin_sensor = true]
+  V2  TTF  -> F   demonstra the_coin_sensor = true   [the_system_mode = idle, the_coin_sensor_antes = false, the_coin_sensor = false]
+  V3  TFT  -> F   demonstra the_coin_sensor_antes = false   [the_system_mode = idle, the_coin_sensor_antes = true, the_coin_sensor = true]
+  V5  FTT  -> F   demonstra the_system_mode = idle   [the_system_mode = choice, the_coin_sensor_antes = false, the_coin_sensor = true]
+
+Validação por mutação: 100,0% das falhas detectáveis foram detectadas
+  troca de operador (ORF): 2 de 2
+  negação de subexpressão (ENF): 2 de 2
+  negação de variável (VNF): 3 de 3
+  variável ausente (MVF): 3 de 3
+  troca de variável (VRF): 6 de 6
+
+Demonstração por condição:
+  the_system_mode = idle: V1 (T) e V5 (F), só ela muda
+  the_coin_sensor_antes = false: V1 (T) e V3 (F), só ela muda
+  the_coin_sensor = true: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   vm#2
+Requisito: REQ002
+Guarda:    the_system_mode = choice /\ the_coin_sensor = false /\ the_coin_sensor_antes = false /\ the_coffee_request_button_antes != pressed /\ the_coffee_request_button = pressed /\ the_request_timer <= 30.0
+Ações:     the_request_timer := 0; the_system_mode := preparing_weak
+Variante:  mascaramento
+
+Vetor the_system_mode = choice   the_coin_sensor = false   the_coin_sensor_antes = false   the_coffee_request_button_antes != pressed   the_coffee_request_button = pressed   the_request_timer <= 30.0   | D
+V1    T                          T                         T                               T                                            T                                     T                           | T
+V2    T                          T                         T                               T                                            T                                     F                           | F
+V3    T                          T                         T                               T                                            F                                     T                           | F
+V4    T                          T                         T                               T                                            F                                     F                           | F
+V5    T                          T                         T                               F                                            T                                     T                           | F
+V6    T                          T                         T                               F                                            T                                     F                           | F
+V7    T                          T                         T                               F                                            F                                     T                           | F
+V8    T                          T                         T                               F                                            F                                     F                           | F
+V9    T                          T                         F                               T                                            T                                     T                           | F
+V10   T                          T                         F                               T                                            T                                     F                           | F
+V11   T                          T                         F                               T                                            F                                     T                           | F
+V12   T                          T                         F                               T                                            F                                     F                           | F
+V13   T                          T                         F                               F                                            T                                     T                           | F
+V14   T                          T                         F                               F                                            T                                     F                           | F
+V15   T                          T                         F                               F                                            F                                     T                           | F
+V16   T                          T                         F                               F                                            F                                     F                           | F
+V17   T                          F                         T                               T                                            T                                     T                           | F
+V18   T                          F                         T                               T                                            T                                     F                           | F
+V19   T                          F                         T                               T                                            F                                     T                           | F
+V20   T                          F                         T                               T                                            F                                     F                           | F
+V21   T                          F                         T                               F                                            T                                     T                           | F
+V22   T                          F                         T                               F                                            T                                     F                           | F
+V23   T                          F                         T                               F                                            F                                     T                           | F
+V24   T                          F                         T                               F                                            F                                     F                           | F
+V25   T                          F                         F                               T                                            T                                     T                           | F
+V26   T                          F                         F                               T                                            T                                     F                           | F
+V27   T                          F                         F                               T                                            F                                     T                           | F
+V28   T                          F                         F                               T                                            F                                     F                           | F
+V29   T                          F                         F                               F                                            T                                     T                           | F
+V30   T                          F                         F                               F                                            T                                     F                           | F
+V31   T                          F                         F                               F                                            F                                     T                           | F
+V32   T                          F                         F                               F                                            F                                     F                           | F
+V33   F                          T                         T                               T                                            T                                     T                           | F
+V34   F                          T                         T                               T                                            T                                     F                           | F
+V35   F                          T                         T                               T                                            F                                     T                           | F
+V36   F                          T                         T                               T                                            F                                     F                           | F
+V37   F                          T                         T                               F                                            T                                     T                           | F
+V38   F                          T                         T                               F                                            T                                     F                           | F
+V39   F                          T                         T                               F                                            F                                     T                           | F
+V40   F                          T                         T                               F                                            F                                     F                           | F
+V41   F                          T                         F                               T                                            T                                     T                           | F
+V42   F                          T                         F                               T                                            T                                     F                           | F
+V43   F                          T                         F                               T                                            F                                     T                           | F
+V44   F                          T                         F                               T                                            F                                     F                           | F
+V45   F                          T                         F                               F                                            T                                     T                           | F
+V46   F                          T                         F                               F                                            T                                     F                           | F
+V47   F                          T                         F                               F                                            F                                     T                           | F
+V48   F                          T                         F                               F                                            F                                     F                           | F
+V49   F                          F                         T                               T                                            T                                     T                           | F
+V50   F                          F                         T                               T                                            T                                     F                           | F
+V51   F                          F                         T                               T                                            F                                     T                           | F
+V52   F                          F                         T                               T                                            F                                     F                           | F
+V53   F                          F                         T                               F                                            T                                     T                           | F
+V54   F                          F                         T                               F                                            T                                     F                           | F
+V55   F                          F                         T                               F                                            F                                     T                           | F
+V56   F                          F                         T                               F                                            F                                     F                           | F
+V57   F                          F                         F                               T                                            T                                     T                           | F
+V58   F                          F                         F                               T                                            T                                     F                           | F
+V59   F                          F                         F                               T                                            F                                     T                           | F
+V60   F                          F                         F                               T                                            F                                     F                           | F
+V61   F                          F                         F                               F                                            T                                     T                           | F
+V62   F                          F                         F                               F                                            T                                     F                           | F
+V63   F                          F                         F                               F                                            F                                     T                           | F
+V64   F                          F                         F                               F                                            F                                     F                           | F
+
+Pares de independência:
+  the_system_mode = choice: (V1, V33)
+  the_coin_sensor = false: (V1, V17)
+  the_coin_sensor_antes = false: (V1, V9)
+  the_coffee_request_button_antes != pressed: (V1, V5)
+  the_coffee_request_button = pressed: (V1, V3)
+  the_request_timer <= 30.0: (V1, V2)
+
+Suíte mínima (7 testes):
+  V1  TTTTTT  -> T   demonstra the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes != pressed, the_coffee_request_button = pressed, the_request_timer <= 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+  V2  TTTTTF  -> F   demonstra the_request_timer <= 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+  V3  TTTTFT  -> F   demonstra the_coffee_request_button = pressed   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = released, the_request_timer = 0]
+  V5  TTTFTT  -> F   demonstra the_coffee_request_button_antes != pressed   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = pressed, the_coffee_request_button = pressed, the_request_timer = 0]
+  V9  TTFTTT  -> F   demonstra the_coin_sensor_antes = false   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = true, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+  V17  TFTTTT  -> F   demonstra the_coin_sensor = false   [the_system_mode = choice, the_coin_sensor = true, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+  V33  FTTTTT  -> F   demonstra the_system_mode = choice   [the_system_mode = idle, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+
+Testes de fronteira (7):
+  V1 com the_request_timer = 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30]
+  V2 com the_request_timer = 30.01   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30.01]
+  V3 com the_request_timer = 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = released, the_request_timer = 30]
+  V5 com the_request_timer = 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = pressed, the_coffee_request_button = pressed, the_request_timer = 30]
+  V9 com the_request_timer = 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = true, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30]
+  V17 com the_request_timer = 30.0   [the_system_mode = choice, the_coin_sensor = true, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30]
+  V33 com the_request_timer = 30.0   [the_system_mode = idle, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30]
+
+Validação por mutação: 100,0% das falhas detectáveis foram detectadas
+  troca de operador (ORF): 5 de 5
+  negação de subexpressão (ENF): 5 de 5
+  negação de variável (VNF): 6 de 6
+  variável ausente (MVF): 6 de 6
+  troca de variável (VRF): 30 de 30
+
+Demonstração por condição:
+  the_system_mode = choice: V1 (T) e V33 (F), só ela muda
+  the_coin_sensor = false: V1 (T) e V17 (F), só ela muda
+  the_coin_sensor_antes = false: V1 (T) e V9 (F), só ela muda
+  the_coffee_request_button_antes != pressed: V1 (T) e V5 (F), só ela muda
+  the_coffee_request_button = pressed: V1 (T) e V3 (F), só ela muda
+  the_request_timer <= 30.0: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   vm#3
+Requisito: REQ003
+Guarda:    the_system_mode = choice /\ the_coin_sensor = false /\ the_coin_sensor_antes = false /\ the_coffee_request_button_antes != pressed /\ the_coffee_request_button = pressed /\ the_request_timer > 30.0
+Ações:     the_request_timer := 0; the_system_mode := preparing_strong
+Variante:  mascaramento
+
+Vetor the_system_mode = choice   the_coin_sensor = false   the_coin_sensor_antes = false   the_coffee_request_button_antes != pressed   the_coffee_request_button = pressed   the_request_timer > 30.0   | D
+V1    T                          T                         T                               T                                            T                                     T                          | T
+V2    T                          T                         T                               T                                            T                                     F                          | F
+V3    T                          T                         T                               T                                            F                                     T                          | F
+V4    T                          T                         T                               T                                            F                                     F                          | F
+V5    T                          T                         T                               F                                            T                                     T                          | F
+V6    T                          T                         T                               F                                            T                                     F                          | F
+V7    T                          T                         T                               F                                            F                                     T                          | F
+V8    T                          T                         T                               F                                            F                                     F                          | F
+V9    T                          T                         F                               T                                            T                                     T                          | F
+V10   T                          T                         F                               T                                            T                                     F                          | F
+V11   T                          T                         F                               T                                            F                                     T                          | F
+V12   T                          T                         F                               T                                            F                                     F                          | F
+V13   T                          T                         F                               F                                            T                                     T                          | F
+V14   T                          T                         F                               F                                            T                                     F                          | F
+V15   T                          T                         F                               F                                            F                                     T                          | F
+V16   T                          T                         F                               F                                            F                                     F                          | F
+V17   T                          F                         T                               T                                            T                                     T                          | F
+V18   T                          F                         T                               T                                            T                                     F                          | F
+V19   T                          F                         T                               T                                            F                                     T                          | F
+V20   T                          F                         T                               T                                            F                                     F                          | F
+V21   T                          F                         T                               F                                            T                                     T                          | F
+V22   T                          F                         T                               F                                            T                                     F                          | F
+V23   T                          F                         T                               F                                            F                                     T                          | F
+V24   T                          F                         T                               F                                            F                                     F                          | F
+V25   T                          F                         F                               T                                            T                                     T                          | F
+V26   T                          F                         F                               T                                            T                                     F                          | F
+V27   T                          F                         F                               T                                            F                                     T                          | F
+V28   T                          F                         F                               T                                            F                                     F                          | F
+V29   T                          F                         F                               F                                            T                                     T                          | F
+V30   T                          F                         F                               F                                            T                                     F                          | F
+V31   T                          F                         F                               F                                            F                                     T                          | F
+V32   T                          F                         F                               F                                            F                                     F                          | F
+V33   F                          T                         T                               T                                            T                                     T                          | F
+V34   F                          T                         T                               T                                            T                                     F                          | F
+V35   F                          T                         T                               T                                            F                                     T                          | F
+V36   F                          T                         T                               T                                            F                                     F                          | F
+V37   F                          T                         T                               F                                            T                                     T                          | F
+V38   F                          T                         T                               F                                            T                                     F                          | F
+V39   F                          T                         T                               F                                            F                                     T                          | F
+V40   F                          T                         T                               F                                            F                                     F                          | F
+V41   F                          T                         F                               T                                            T                                     T                          | F
+V42   F                          T                         F                               T                                            T                                     F                          | F
+V43   F                          T                         F                               T                                            F                                     T                          | F
+V44   F                          T                         F                               T                                            F                                     F                          | F
+V45   F                          T                         F                               F                                            T                                     T                          | F
+V46   F                          T                         F                               F                                            T                                     F                          | F
+V47   F                          T                         F                               F                                            F                                     T                          | F
+V48   F                          T                         F                               F                                            F                                     F                          | F
+V49   F                          F                         T                               T                                            T                                     T                          | F
+V50   F                          F                         T                               T                                            T                                     F                          | F
+V51   F                          F                         T                               T                                            F                                     T                          | F
+V52   F                          F                         T                               T                                            F                                     F                          | F
+V53   F                          F                         T                               F                                            T                                     T                          | F
+V54   F                          F                         T                               F                                            T                                     F                          | F
+V55   F                          F                         T                               F                                            F                                     T                          | F
+V56   F                          F                         T                               F                                            F                                     F                          | F
+V57   F                          F                         F                               T                                            T                                     T                          | F
+V58   F                          F                         F                               T                                            T                                     F                          | F
+V59   F                          F                         F                               T                                            F                                     T                          | F
+V60   F                          F                         F                               T                                            F                                     F                          | F
+V61   F                          F                         F                               F                                            T                                     T                          | F
+V62   F                          F                         F                               F                                            T                                     F                          | F
+V63   F                          F                         F                               F                                            F                                     T                          | F
+V64   F                          F                         F                               F                                            F                                     F                          | F
+
+Pares de independência:
+  the_system_mode = choice: (V1, V33)
+  the_coin_sensor = false: (V1, V17)
+  the_coin_sensor_antes = false: (V1, V9)
+  the_coffee_request_button_antes != pressed: (V1, V5)
+  the_coffee_request_button = pressed: (V1, V3)
+  the_request_timer > 30.0: (V1, V2)
+
+Suíte mínima (7 testes):
+  V1  TTTTTT  -> T   demonstra the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes != pressed, the_coffee_request_button = pressed, the_request_timer > 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+  V2  TTTTTF  -> F   demonstra the_request_timer > 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+  V3  TTTTFT  -> F   demonstra the_coffee_request_button = pressed   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = released, the_request_timer = 31]
+  V5  TTTFTT  -> F   demonstra the_coffee_request_button_antes != pressed   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = pressed, the_coffee_request_button = pressed, the_request_timer = 31]
+  V9  TTFTTT  -> F   demonstra the_coin_sensor_antes = false   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = true, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+  V17  TFTTTT  -> F   demonstra the_coin_sensor = false   [the_system_mode = choice, the_coin_sensor = true, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+  V33  FTTTTT  -> F   demonstra the_system_mode = choice   [the_system_mode = idle, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+
+Testes de fronteira (7):
+  V1 com the_request_timer = 30.01   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30.01]
+  V2 com the_request_timer = 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30]
+  V3 com the_request_timer = 30.01   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = released, the_request_timer = 30.01]
+  V5 com the_request_timer = 30.01   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = pressed, the_coffee_request_button = pressed, the_request_timer = 30.01]
+  V9 com the_request_timer = 30.01   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = true, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30.01]
+  V17 com the_request_timer = 30.01   [the_system_mode = choice, the_coin_sensor = true, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30.01]
+  V33 com the_request_timer = 30.01   [the_system_mode = idle, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 30.01]
+
+Validação por mutação: 100,0% das falhas detectáveis foram detectadas
+  troca de operador (ORF): 5 de 5
+  negação de subexpressão (ENF): 5 de 5
+  negação de variável (VNF): 6 de 6
+  variável ausente (MVF): 6 de 6
+  troca de variável (VRF): 30 de 30
+
+Demonstração por condição:
+  the_system_mode = choice: V1 (T) e V33 (F), só ela muda
+  the_coin_sensor = false: V1 (T) e V17 (F), só ela muda
+  the_coin_sensor_antes = false: V1 (T) e V9 (F), só ela muda
+  the_coffee_request_button_antes != pressed: V1 (T) e V5 (F), só ela muda
+  the_coffee_request_button = pressed: V1 (T) e V3 (F), só ela muda
+  the_request_timer > 30.0: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   vm#4
+Requisito: REQ004
+Guarda:    the_system_mode = preparing_weak /\ the_request_timer >= 10.0 /\ the_request_timer <= 30.0
+Ações:     the_system_mode := idle; the_coffee_machine_output := weak
+Variante:  mascaramento
+
+Vetor the_system_mode = preparing_weak   the_request_timer >= 10.0   the_request_timer <= 30.0   | D
+V1    T                                  T                           T                           | T
+V2    T                                  T                           F                           | F
+V3    T                                  F                           T                           | F
+V4    T                                  F                           F                           | F  (impossível)
+V5    F                                  T                           T                           | F
+V6    F                                  T                           F                           | F
+V7    F                                  F                           T                           | F
+V8    F                                  F                           F                           | F  (impossível)
+
+Pares de independência:
+  the_system_mode = preparing_weak: (V1, V5)
+  the_request_timer >= 10.0: (V1, V3)
+  the_request_timer <= 30.0: (V1, V2)
+
+Suíte mínima (4 testes):
+  V1  TTT  -> T   demonstra the_system_mode = preparing_weak, the_request_timer >= 10.0, the_request_timer <= 30.0   [the_system_mode = preparing_weak, the_request_timer = 10]
+  V2  TTF  -> F   demonstra the_request_timer <= 30.0   [the_system_mode = preparing_weak, the_request_timer = 31]
+  V3  TFT  -> F   demonstra the_request_timer >= 10.0   [the_system_mode = preparing_weak, the_request_timer = 0]
+  V5  FTT  -> F   demonstra the_system_mode = preparing_weak   [the_system_mode = choice, the_request_timer = 10]
+
+Testes de fronteira (6):
+  V1 com the_request_timer = 10.0   [the_system_mode = preparing_weak, the_request_timer = 10]
+  V1 com the_request_timer = 30.0   [the_system_mode = preparing_weak, the_request_timer = 30]
+  V2 com the_request_timer = 30.01   [the_system_mode = preparing_weak, the_request_timer = 30.01]
+  V3 com the_request_timer = 9.99   [the_system_mode = preparing_weak, the_request_timer = 9.99]
+  V5 com the_request_timer = 10.0   [the_system_mode = choice, the_request_timer = 10]
+  V5 com the_request_timer = 30.0   [the_system_mode = choice, the_request_timer = 30]
+
+Validação por mutação: 100,0% das falhas detectáveis foram detectadas
+  troca de operador (ORF): 2 de 2
+  negação de subexpressão (ENF): 2 de 2
+  negação de variável (VNF): 3 de 3
+  variável ausente (MVF): 3 de 3
+  troca de variável (VRF): 6 de 6
+
+Demonstração por condição:
+  the_system_mode = preparing_weak: V1 (T) e V5 (F), só ela muda
+  the_request_timer >= 10.0: V1 (T) e V3 (F), só ela muda
+  the_request_timer <= 30.0: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   vm#5
+Requisito: REQ005
+Guarda:    the_system_mode = preparing_strong /\ the_request_timer >= 30.0 /\ the_request_timer <= 50.0
+Ações:     the_system_mode := idle; the_coffee_machine_output := strong
+Variante:  mascaramento
+
+Vetor the_system_mode = preparing_strong   the_request_timer >= 30.0   the_request_timer <= 50.0   | D
+V1    T                                    T                           T                           | T
+V2    T                                    T                           F                           | F
+V3    T                                    F                           T                           | F
+V4    T                                    F                           F                           | F  (impossível)
+V5    F                                    T                           T                           | F
+V6    F                                    T                           F                           | F
+V7    F                                    F                           T                           | F
+V8    F                                    F                           F                           | F  (impossível)
+
+Pares de independência:
+  the_system_mode = preparing_strong: (V1, V5)
+  the_request_timer >= 30.0: (V1, V3)
+  the_request_timer <= 50.0: (V1, V2)
+
+Suíte mínima (4 testes):
+  V1  TTT  -> T   demonstra the_system_mode = preparing_strong, the_request_timer >= 30.0, the_request_timer <= 50.0   [the_system_mode = preparing_strong, the_request_timer = 30]
+  V2  TTF  -> F   demonstra the_request_timer <= 50.0   [the_system_mode = preparing_strong, the_request_timer = 51]
+  V3  TFT  -> F   demonstra the_request_timer >= 30.0   [the_system_mode = preparing_strong, the_request_timer = 0]
+  V5  FTT  -> F   demonstra the_system_mode = preparing_strong   [the_system_mode = preparing_weak, the_request_timer = 30]
+
+Testes de fronteira (6):
+  V1 com the_request_timer = 30.0   [the_system_mode = preparing_strong, the_request_timer = 30]
+  V1 com the_request_timer = 50.0   [the_system_mode = preparing_strong, the_request_timer = 50]
+  V2 com the_request_timer = 50.01   [the_system_mode = preparing_strong, the_request_timer = 50.01]
+  V3 com the_request_timer = 29.99   [the_system_mode = preparing_strong, the_request_timer = 29.99]
+  V5 com the_request_timer = 30.0   [the_system_mode = preparing_weak, the_request_timer = 30]
+  V5 com the_request_timer = 50.0   [the_system_mode = preparing_weak, the_request_timer = 50]
+
+Validação por mutação: 100,0% das falhas detectáveis foram detectadas
+  troca de operador (ORF): 2 de 2
+  negação de subexpressão (ENF): 2 de 2
+  negação de variável (VNF): 3 de 3
+  variável ausente (MVF): 3 de 3
+  troca de variável (VRF): 6 de 6
+
+Demonstração por condição:
+  the_system_mode = preparing_strong: V1 (T) e V5 (F), só ela muda
+  the_request_timer >= 30.0: V1 (T) e V3 (F), só ela muda
+  the_request_timer <= 50.0: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa

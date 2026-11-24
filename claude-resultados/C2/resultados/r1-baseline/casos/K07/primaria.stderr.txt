@@ -1,0 +1,1 @@
+Erro: C:\Users\User\requirements-quality-llm-test-oracles\claude-resultados\C2\experimento\entradas\c07-coluna-faltando.csv: falta a coluna "value" no cabeçalho

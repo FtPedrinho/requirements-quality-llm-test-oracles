@@ -1,0 +1,503 @@
+{
+  "meta": {
+    "rodada": "r4-determinados-extensao",
+    "inicio": "2026-11-24T14:54:51-03:00",
+    "fim": "2026-11-24T14:55:30-03:00",
+    "oraculo_sha256": "35fd04611e4d9aec5cbc66dd819b5c6005dfb24dd0cca7bb90a6ec313887dc2e",
+    "runner_sha256": "7e8d78a526de7aec0a20b3fe82ee647903d41770fbb18c1b09cf443e88d7dd41",
+    "classpath": "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C2/experimento/build/classes/mcdc-cli;C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C2/experimento/build/classes/mcdc-z3;C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C2/experimento/build/classes/mcdc-requirements;C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C2/experimento/build/classes/mcdc-core;C:/Users/User/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar;C:/Users/User/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar;C:/Users/User/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar",
+    "jacoco_agent": "C:\\Users\\User/.m2/repository\\org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar",
+    "z3_dir": "C:/Users/User/AppData/Roaming/Python/bin",
+    "contagem": {
+      "PASSOU": 12
+    }
+  },
+  "casos": [
+    {
+      "id": "X01",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(x < 3) or ((y <= x) and (z >= -2))",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "exit_auxiliar": null,
+      "segundos": 1.77,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 0,
+          "observado": 0,
+          "ok": true
+        },
+        {
+          "assercao": "concretos_realizam",
+          "esperado": true,
+          "observado": {
+            "testes_conferidos": 12,
+            "problemas": [],
+            "qtd_problemas": 0
+          },
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X02",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(m != idle) and (n = 4)",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "exit_auxiliar": null,
+      "segundos": 1.78,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 0,
+          "observado": 0,
+          "ok": true
+        },
+        {
+          "assercao": "concretos_realizam",
+          "esperado": true,
+          "observado": {
+            "testes_conferidos": 7,
+            "problemas": [],
+            "qtd_problemas": 0
+          },
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X03",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C2/experimento/extensao-r2/entradas/x03-real.json",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "exit_auxiliar": null,
+      "segundos": 2.07,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 0,
+          "observado": 0,
+          "ok": true
+        },
+        {
+          "assercao": "concretos_realizam",
+          "esperado": true,
+          "observado": {
+            "testes_conferidos": 8,
+            "problemas": [],
+            "qtd_problemas": 0
+          },
+          "ok": true
+        },
+        {
+          "assercao": "todas_condicoes_com_par",
+          "esperado": true,
+          "observado": "nenhuma condição sem par",
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X04",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "speed > 100 or (speed > 50 and rain)",
+        "--z3",
+        "--boundary",
+        "--format",
+        "csv"
+      ],
+      "exit": 0,
+      "exit_auxiliar": 0,
+      "segundos": 1.1,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 0,
+          "observado": 0,
+          "ok": true
+        },
+        {
+          "assercao": "csv_resultado_esperado_correto",
+          "esperado": true,
+          "observado": {
+            "testes": 10,
+            "divergentes": []
+          },
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X05",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "check",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/decisoes.json",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/testes.csv",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "exit_auxiliar": null,
+      "segundos": 1.22,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 2,
+          "observado": 2,
+          "ok": true
+        },
+        {
+          "assercao": "json_valido",
+          "esperado": true,
+          "observado": true,
+          "ok": true
+        },
+        {
+          "assercao": "check_divergentes",
+          "esperado": [
+            "T4"
+          ],
+          "observado": {
+            "problemas": [
+              "T4: resultado esperado T, mas a guarda dá F para esses valores"
+            ]
+          },
+          "ok": true
+        },
+        {
+          "assercao": "check_nao_demonstrada",
+          "esperado": true,
+          "observado": [
+            [
+              "the_coffee_machine_system#1",
+              1,
+              2
+            ],
+            [
+              "the_coffee_machine_system#2",
+              0,
+              4
+            ],
+            [
+              "the_coffee_machine_system#3",
+              1,
+              3
+            ],
+            [
+              "the_coffee_machine_system#4",
+              0,
+              3
+            ]
+          ],
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X06",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--direct",
+        "--unique-cause",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "exit_auxiliar": null,
+      "segundos": 3.89,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 0,
+          "observado": 0,
+          "ok": true
+        },
+        {
+          "assercao": "todas_condicoes_com_par",
+          "esperado": true,
+          "observado": "nenhuma condição sem par",
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X07",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "exit_auxiliar": null,
+      "segundos": 9.02,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 0,
+          "observado": 0,
+          "ok": true
+        },
+        {
+          "assercao": "todas_condicoes_com_par",
+          "esperado": true,
+          "observado": "nenhuma condição sem par",
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X08",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "-f",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/requisitos.mcdc",
+        "--direct",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "exit_auxiliar": null,
+      "segundos": 2.92,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 2,
+          "observado": 2,
+          "ok": true
+        },
+        {
+          "assercao": "requisito_tem_classe",
+          "esperado": {
+            "REQ-003": "redundante"
+          },
+          "observado": {
+            "REQ-001": [],
+            "REQ-002": [],
+            "REQ-003": [
+              "redundante",
+              "redundante"
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X09",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "verify",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/npp-decisoes.json",
+        "-o",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C2/resultados/r4-determinados-extensao/arquivos-o/X09-verify.txt"
+      ],
+      "exit": 2,
+      "exit_auxiliar": null,
+      "segundos": 1.68,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 2,
+          "observado": 2,
+          "ok": true
+        },
+        {
+          "assercao": "arquivo_gerado",
+          "esperado": "{OUT}/X09-verify.txt",
+          "observado": "existe, 612 bytes",
+          "ok": true
+        },
+        {
+          "assercao": "stdout_sem_relatorio",
+          "esperado": true,
+          "observado": "Relatório gravado em C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C2/resultados/r4-determinados-extensao/arquivos-o/X09-verify.txt",
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X10",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "--json",
+        "C:/Users/User/requirements-quality-llm-test-oracles/exemplos/vm-decisoes.json",
+        "--z3",
+        "--boundary",
+        "--mutation"
+      ],
+      "exit": 0,
+      "exit_auxiliar": 0,
+      "segundos": 4.66,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 0,
+          "observado": 0,
+          "ok": true
+        },
+        {
+          "assercao": "mutantes",
+          "esperado": {
+            "total": 152,
+            "equivalentes": 0,
+            "detectados": 152
+          },
+          "observado": {
+            "total": 152,
+            "equivalentes": 0,
+            "detectados": 152
+          },
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X11",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "analyze",
+        "(A and B) or C",
+        "--unique-cause",
+        "--format",
+        "truth-csv"
+      ],
+      "exit": 0,
+      "exit_auxiliar": 0,
+      "segundos": 1.04,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 0,
+          "observado": 0,
+          "ok": true
+        },
+        {
+          "assercao": "truth_linhas",
+          "esperado": 8,
+          "observado": 8,
+          "ok": true
+        },
+        {
+          "assercao": "truth_primeira_tudo_verdadeiro",
+          "esperado": true,
+          "observado": {
+            "A": "T",
+            "B": "T",
+            "C": "T"
+          },
+          "ok": true
+        },
+        {
+          "assercao": "truth_resultado_correto",
+          "esperado": true,
+          "observado": {
+            "linhas_divergentes": []
+          },
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    },
+    {
+      "id": "X12",
+      "status_oraculo": "DETERMINADO",
+      "comando": [
+        "check",
+        "A and B",
+        "--tests",
+        "C:/Users/User/requirements-quality-llm-test-oracles/claude-resultados/C2/experimento/entradas/c04-esperado-errado.csv",
+        "--format",
+        "json"
+      ],
+      "exit": 2,
+      "exit_auxiliar": null,
+      "segundos": 1.17,
+      "assercoes": [
+        {
+          "assercao": "exit",
+          "esperado": 2,
+          "observado": 2,
+          "ok": true
+        },
+        {
+          "assercao": "json_valido",
+          "esperado": true,
+          "observado": true,
+          "ok": true
+        },
+        {
+          "assercao": "check_divergentes",
+          "esperado": [
+            "T3"
+          ],
+          "observado": {
+            "problemas": [
+              "T3: resultado esperado T, mas a guarda dá F para esses valores"
+            ]
+          },
+          "ok": true
+        }
+      ],
+      "erro_tecnico": null,
+      "resultado": "PASSOU"
+    }
+  ]
+}

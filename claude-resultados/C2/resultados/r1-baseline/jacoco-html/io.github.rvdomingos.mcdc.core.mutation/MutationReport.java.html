@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MutationReport.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C2 r1-baseline</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core.mutation</a> &gt; <span class="el_source">MutationReport.java</span></div><h1>MutationReport.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core.mutation;
+
+import io.github.rvdomingos.mcdc.core.McdcReport;
+import io.github.rvdomingos.mcdc.core.TestVector;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Validação por mutação: para cada versão com uma falha, se ela é equivalente à original e, se não for,
+ * qual teste da suíte a detecta.
+ */
+<span class="fc" id="L15">public record MutationReport(List&lt;Result&gt; results) {</span>
+
+    /**
+     * @param equivalent dá o mesmo resultado que a original em toda linha possível
+     * @param killedBy   teste da suíte que detecta a falha; null se nenhum detecta
+     */
+<span class="fc" id="L21">    public record Result(Mutants.Mutant mutant, boolean equivalent, String killedBy) {</span>
+
+        public boolean survived() {
+<span class="fc bfc" id="L24" title="All 4 branches covered.">            return !equivalent &amp;&amp; killedBy == null;</span>
+        }
+    }
+
+    /** Totais de um tipo de falha. */
+<span class="fc" id="L29">    public record Summary(int total, int equivalent, int killed) {</span>
+
+        public int detectable() {
+<span class="fc" id="L32">            return total - equivalent;</span>
+        }
+    }
+
+    /** Gera os mutantes da expressão e os confronta com a suíte do relatório. */
+    public static MutationReport of(McdcReport report) {
+<span class="fc" id="L38">        Expr original = report.expression();</span>
+<span class="fc" id="L39">        List&lt;Result&gt; results = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (Mutants.Mutant mutant : Mutants.of(original)) {</span>
+<span class="fc" id="L41">            boolean equivalent = report.table().rows().stream()</span>
+<span class="fc" id="L42">                    .filter(TestVector::feasible)</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">                    .allMatch(row -&gt; mutant.expression().eval(row.values()) == row.outcome());</span>
+<span class="fc" id="L44">            String killedBy = null;</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">            if (!equivalent) {</span>
+<span class="fc" id="L46">                killedBy = report.minimalSuite().stream()</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">                        .filter(test -&gt; mutant.expression().eval(test.values()) != test.outcome())</span>
+<span class="fc" id="L48">                        .map(TestVector::name)</span>
+<span class="fc" id="L49">                        .findFirst().orElse(null);</span>
+            }
+<span class="fc" id="L51">            results.add(new Result(mutant, equivalent, killedBy));</span>
+<span class="fc" id="L52">        }</span>
+<span class="fc" id="L53">        return new MutationReport(List.copyOf(results));</span>
+    }
+
+    public Map&lt;FaultClass, Summary&gt; byFault() {
+<span class="fc" id="L57">        Map&lt;FaultClass, Summary&gt; summaries = new EnumMap&lt;&gt;(FaultClass.class);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        for (FaultClass fault : FaultClass.values()) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            List&lt;Result&gt; of = results.stream().filter(r -&gt; r.mutant().fault() == fault).toList();</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">            if (!of.isEmpty()) {</span>
+<span class="fc" id="L61">                summaries.put(fault, new Summary(of.size(),</span>
+<span class="fc" id="L62">                        (int) of.stream().filter(Result::equivalent).count(),</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">                        (int) of.stream().filter(r -&gt; r.killedBy() != null).count()));</span>
+            }
+        }
+<span class="fc" id="L66">        return summaries;</span>
+    }
+
+    public List&lt;Result&gt; survivors() {
+<span class="fc" id="L70">        return results.stream().filter(Result::survived).toList();</span>
+    }
+
+    /** Detectados / detectáveis, em porcentagem. */
+    public double score() {
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        long detectable = results.stream().filter(r -&gt; !r.equivalent()).count();</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        long killed = results.stream().filter(r -&gt; r.killedBy() != null).count();</span>
+<span class="pc bpc" id="L77" title="1 of 2 branches missed.">        return detectable == 0 ? 100.0 : 100.0 * killed / detectable;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

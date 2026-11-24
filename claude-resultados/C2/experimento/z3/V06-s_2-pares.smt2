@@ -1,0 +1,13 @@
+; consulta V06-s_2-pares -- par de causa única viável por entrada de s#2
+(set-logic ALL)
+(declare-datatypes () ((E_mode mode__idle mode__busy)))
+(declare-const mode_1 E_mode)
+(declare-const s_1 Bool)
+(declare-const mode_2 E_mode)
+(declare-const s_2 Bool)
+(push)
+(assert (= mode_1 mode__idle))
+(assert (not (= mode_2 mode__idle)))
+(assert (distinct (= mode_1 mode__idle) (= mode_2 mode__idle)))
+(check-sat)
+(pop)

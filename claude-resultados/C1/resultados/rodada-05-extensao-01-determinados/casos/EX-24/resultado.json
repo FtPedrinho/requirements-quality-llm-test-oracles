@@ -1,0 +1,27 @@
+{
+  "id": "EX-24",
+  "veredito": "PASSOU",
+  "nota": "",
+  "verificacoes": [
+    {
+      "ok": true,
+      "verificacao": "exit esperado 0, observado 0 (analyze A and (B1 or B2 or B3 or B4 or B5 or B6 or B7 or B8 or B9 or B10 or B11))"
+    },
+    {
+      "ok": true,
+      "verificacao": "pares guardados para A: 1000 (0 < n <= 1000)"
+    }
+  ],
+  "comandos": [
+    {
+      "args": [
+        "analyze",
+        "A and (B1 or B2 or B3 or B4 or B5 or B6 or B7 or B8 or B9 or B10 or B11)",
+        "--format",
+        "json"
+      ],
+      "exit": 0,
+      "segundos": 1.77
+    }
+  ]
+}

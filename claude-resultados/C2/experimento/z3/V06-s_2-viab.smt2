@@ -1,0 +1,13 @@
+; consulta V06-s_2-viab -- viabilidade das combinações de s#2
+(set-logic ALL)
+(declare-datatypes () ((E_mode mode__idle mode__busy)))
+(declare-const mode E_mode)
+(declare-const s Bool)
+(push)
+(assert (= mode mode__idle))
+(check-sat)
+(pop)
+(push)
+(assert (not (= mode mode__idle)))
+(check-sat)
+(pop)

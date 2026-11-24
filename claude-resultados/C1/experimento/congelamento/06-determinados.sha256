@@ -1,0 +1,8 @@
+# Rodadas só com determinados — 2026-11-24T15:23:04-03:00
+d2fb642a792757dbd61bc6cbca5b74289a9f4d8562a3ea9ea94c5fa3de80dd05 *experimento/determinados/README.md
+5e0ce6eb69f351a5e29e564a868d3fca2d9434cffc346d57ce03891efc107ee4 *experimento/determinados/ids-baseline.txt
+6319846f7a056ae6a694dc7829986db30961fbf2f65d1db4a7b25758e601f957 *experimento/determinados/ids-extensao-01.txt
+01ef3ca11eaaee73a1945090caaf91a3610e09ecb9b4d6479597ae5786a3f94d *suite/run_suite.py
+edca9153792e2dc71a35eff88c517bffacfc68d3da995f969751bdbd814e9ab9 *suite/coverage.sh
+97d47a3c571319c437504cbf9c45e80c014f6e48360253e7ca015fe7d81a091e *experimento/oraculo.json
+5f06e3271deef03b4456a0b260eefe99390981c950dd2d46dbb012f08e602a50 *experimento/extensao-01/oraculo-extensao-01.json

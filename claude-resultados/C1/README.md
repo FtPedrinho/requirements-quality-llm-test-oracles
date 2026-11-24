@@ -14,6 +14,10 @@ fonte das expectativas é `experimentacao-pesquisa/experimentacao-1/documentatio
 | Testes falhos | **1** (EX-27: `verify` sem Z3 não avisou) |
 | Testes indeterminados | **12** |
 
+**Cobertura só com os casos determinados** (regra do pesquisador definida depois, durante o C3; indeterminados não
+executados): **1107 / 1296 = 85,42%** (`resultados/acumulado-determinados`). Os vereditos são idênticos: 97 aprovados
+e 1 falho. Detalhes em `experimento/determinados/README.md`.
+
 Unidade de contagem: um caso = um ID do oráculo (110 casos: 79 no baseline e 31 na extensão). Erro técnico: AN-22 na
 rodada-01 (codificação do stdout no harness), corrigido na rodada-02 sem mudar a expectativa.
 
@@ -31,6 +35,8 @@ rodada-01 (codificação do stdout no harness), corrigido na rodada-02 sem mudar
   - `rodada-02-correcao/`: os 79 casos com a correção 01.
   - `rodada-03-extensao-01/`: os 31 casos da extensão.
   - `acumulado/`: merge do `jacoco.exec` das rodadas 02 e 03.
+  - `rodada-04-determinados/`, `rodada-05-extensao-01-determinados/` e `acumulado-determinados/`: as mesmas
+    suítes sem os indeterminados (regra posterior do pesquisador).
   - Em cada rodada: `casos/<ID>/` (stdout, stderr, `resultado.json`), `resultados.json`, `execucao.log`,
     `jacoco.exec`, `jacoco.csv`, `jacoco.xml`, `jacoco-html/` e `cobertura.txt`.
 - `experimento/`
