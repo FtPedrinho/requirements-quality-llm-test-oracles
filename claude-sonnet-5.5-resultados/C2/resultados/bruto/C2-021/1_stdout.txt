@@ -1,0 +1,659 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "X1"
+    }, {
+      "name" : "X2"
+    }, {
+      "name" : "X3"
+    }, {
+      "name" : "X4"
+    }, {
+      "name" : "X5"
+    }, {
+      "name" : "X6"
+    }, {
+      "name" : "X7"
+    }, {
+      "name" : "X8"
+    }, {
+      "name" : "X9"
+    }, {
+      "name" : "X10"
+    }, {
+      "name" : "X11"
+    }, {
+      "name" : "X12"
+    }, {
+      "name" : "X13"
+    } ],
+    "conditions" : [ {
+      "label" : "X1",
+      "input" : "X1",
+      "occurrence" : 1
+    }, {
+      "label" : "X2",
+      "input" : "X2",
+      "occurrence" : 1
+    }, {
+      "label" : "X3",
+      "input" : "X3",
+      "occurrence" : 1
+    }, {
+      "label" : "X4",
+      "input" : "X4",
+      "occurrence" : 1
+    }, {
+      "label" : "X5",
+      "input" : "X5",
+      "occurrence" : 1
+    }, {
+      "label" : "X6",
+      "input" : "X6",
+      "occurrence" : 1
+    }, {
+      "label" : "X7",
+      "input" : "X7",
+      "occurrence" : 1
+    }, {
+      "label" : "X8",
+      "input" : "X8",
+      "occurrence" : 1
+    }, {
+      "label" : "X9",
+      "input" : "X9",
+      "occurrence" : 1
+    }, {
+      "label" : "X10",
+      "input" : "X10",
+      "occurrence" : 1
+    }, {
+      "label" : "X11",
+      "input" : "X11",
+      "occurrence" : 1
+    }, {
+      "label" : "X12",
+      "input" : "X12",
+      "occurrence" : 1
+    }, {
+      "label" : "X13",
+      "input" : "X13",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "DIRECT",
+    "truthTableRows" : 8192,
+    "truthTableBuilt" : false,
+    "independencePairs" : {
+      "X1" : [ [ "V1", "V4097" ] ],
+      "X2" : [ [ "V1", "V2049" ] ],
+      "X3" : [ [ "V1", "V1025" ] ],
+      "X4" : [ [ "V1", "V513" ] ],
+      "X5" : [ [ "V1", "V257" ] ],
+      "X6" : [ [ "V1", "V129" ] ],
+      "X7" : [ [ "V1", "V65" ] ],
+      "X8" : [ [ "V1", "V33" ] ],
+      "X9" : [ [ "V1", "V17" ] ],
+      "X10" : [ [ "V1", "V9" ] ],
+      "X11" : [ [ "V1", "V5" ] ],
+      "X12" : [ [ "V1", "V3" ] ],
+      "X13" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X1", "X2", "X3", "X4", "X5", "X6", "X7", "X8", "X9", "X10", "X11", "X12", "X13" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "false"
+      },
+      "demonstrates" : [ "X13" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : false,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "false",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X12" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : false,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "false",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X11" ]
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : false,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "false",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X10" ]
+    }, {
+      "vector" : "V17",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : false,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "false",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X9" ]
+    }, {
+      "vector" : "V33",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : false,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "false",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X8" ]
+    }, {
+      "vector" : "V65",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : false,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "false",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X7" ]
+    }, {
+      "vector" : "V129",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : false,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "false",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X6" ]
+    }, {
+      "vector" : "V257",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : false,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "false",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X5" ]
+    }, {
+      "vector" : "V513",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : true,
+        "X4" : false,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "false",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X4" ]
+    }, {
+      "vector" : "V1025",
+      "values" : {
+        "X1" : true,
+        "X2" : true,
+        "X3" : false,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "true",
+        "X3" : "false",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X3" ]
+    }, {
+      "vector" : "V2049",
+      "values" : {
+        "X1" : true,
+        "X2" : false,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "true",
+        "X2" : "false",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X2" ]
+    }, {
+      "vector" : "V4097",
+      "values" : {
+        "X1" : false,
+        "X2" : true,
+        "X3" : true,
+        "X4" : true,
+        "X5" : true,
+        "X6" : true,
+        "X7" : true,
+        "X8" : true,
+        "X9" : true,
+        "X10" : true,
+        "X11" : true,
+        "X12" : true,
+        "X13" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "X1" : "false",
+        "X2" : "true",
+        "X3" : "true",
+        "X4" : "true",
+        "X5" : "true",
+        "X6" : "true",
+        "X7" : "true",
+        "X8" : "true",
+        "X9" : "true",
+        "X10" : "true",
+        "X11" : "true",
+        "X12" : "true",
+        "X13" : "true"
+      },
+      "demonstrates" : [ "X1" ]
+    } ],
+    "chosenPairs" : {
+      "X1" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V4097",
+        "uniqueCause" : true
+      },
+      "X2" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2049",
+        "uniqueCause" : true
+      },
+      "X3" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V1025",
+        "uniqueCause" : true
+      },
+      "X4" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V513",
+        "uniqueCause" : true
+      },
+      "X5" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V257",
+        "uniqueCause" : true
+      },
+      "X6" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V129",
+        "uniqueCause" : true
+      },
+      "X7" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V65",
+        "uniqueCause" : true
+      },
+      "X8" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V33",
+        "uniqueCause" : true
+      },
+      "X9" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V17",
+        "uniqueCause" : true
+      },
+      "X10" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V9",
+        "uniqueCause" : true
+      },
+      "X11" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V5",
+        "uniqueCause" : true
+      },
+      "X12" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "X13" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

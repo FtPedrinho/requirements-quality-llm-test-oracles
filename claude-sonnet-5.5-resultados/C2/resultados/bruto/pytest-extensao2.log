@@ -1,0 +1,30 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- C:\Python313\python.exe
+rootdir: C:\Users\User\requirements-quality-llm-test-oracles
+plugins: cov-7.1.0
+collecting ... collected 2 items
+
+claude-sonnet-5.5-resultados/C2/suite/test_c2_ext2.py::test_C2_020 PASSED [ 50%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2_ext2.py::test_C2_E07 FAILED [100%]
+
+================================== FAILURES ===================================
+_________________________________ test_C2_E07 _________________________________
+
+run = <function run.<locals>._run at 0x00000203719F3100>
+
+    def test_C2_E07(run):
+        r = run("analyze", "--json", SISTEMAS["VM"][0], "--z3", "--format", "truth-csv", z3=True, timeout=600)
+        rd = csv.reader(io.StringIO(r.out))
+        head = next(rd)
+        i0, i1 = head.index("row") + 1, head.index("outcome")
+        by = {}
+        for w in rd:
+>           by.setdefault(w[0], []).append(w[i0:i1])
+                          ^^^^
+E           IndexError: list index out of range
+
+claude-sonnet-5.5-resultados\C2\suite\test_c2_ext2.py:26: IndexError
+- generated xml file: C:\Users\User\requirements-quality-llm-test-oracles\claude-sonnet-5.5-resultados\C2\resultados\junit-extensao2.xml -
+=========================== short test summary info ===========================
+FAILED claude-sonnet-5.5-resultados/C2/suite/test_c2_ext2.py::test_C2_E07 - I...
+========================= 1 failed, 1 passed in 4.82s =========================

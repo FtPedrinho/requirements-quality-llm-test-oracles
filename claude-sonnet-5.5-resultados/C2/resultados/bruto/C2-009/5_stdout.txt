@@ -1,0 +1,71 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "x <= 5",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "x <= 5",
+      "variable" : "x",
+      "operator" : "<=",
+      "value" : "5"
+    } ],
+    "conditions" : [ {
+      "label" : "x <= 5",
+      "input" : "x <= 5",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 2,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x <= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x <= 5" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "x <= 5" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x <= 5" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "x <= 5" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x <= 5" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "x <= 5" ]
+    } ],
+    "chosenPairs" : {
+      "x <= 5" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

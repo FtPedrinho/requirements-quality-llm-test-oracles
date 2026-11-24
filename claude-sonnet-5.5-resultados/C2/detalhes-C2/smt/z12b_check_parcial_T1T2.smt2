@@ -1,0 +1,6 @@
+(set-logic QF_LIA)
+(define-fun f ((A Bool)(B Bool)(C Bool)) Bool (or (and A B) C))
+(define-fun sens ((A Bool)(B Bool)(C Bool) (c Int)) Bool (ite (= c 0) (not (= (f A B C) (f (not A) B C))) (ite (= c 1) (not (= (f A B C) (f A (not B) C))) (not (= (f A B C) (f A B (not C)))))))
+(echo "condicao A demonstrada no conjunto?")(push 1)(assert (or (and (not (= (f true true false) (f false true false))) (sens true true false 0) (sens false true false 0)) (and (not (= (f false true false) (f true true false))) (sens false true false 0) (sens true true false 0))))(check-sat)(pop 1)
+(echo "condicao B demonstrada no conjunto?")(push 1)(assert false)(check-sat)(pop 1)
+(echo "condicao C demonstrada no conjunto?")(push 1)(assert false)(check-sat)(pop 1)

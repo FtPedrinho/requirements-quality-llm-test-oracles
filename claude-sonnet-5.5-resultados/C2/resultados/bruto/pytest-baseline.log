@@ -1,0 +1,81 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- C:\Python313\python.exe
+rootdir: C:\Users\User\requirements-quality-llm-test-oracles
+plugins: cov-7.1.0
+collecting ... collected 50 items
+
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_001 PASSED     [  2%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_002 PASSED     [  4%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_003 PASSED     [  6%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_004 PASSED     [  8%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_006 PASSED     [ 10%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_007 PASSED     [ 12%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_008 PASSED     [ 14%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_009 PASSED     [ 16%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_010 PASSED     [ 18%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_011 PASSED     [ 20%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_012 PASSED     [ 22%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_013 PASSED     [ 24%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_014 PASSED     [ 26%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_015 PASSED     [ 28%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_016 PASSED     [ 30%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_017 PASSED     [ 32%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_020 FAILED     [ 34%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_021 PASSED     [ 36%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_022 PASSED     [ 38%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_023 PASSED     [ 40%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_026 PASSED     [ 42%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_027 PASSED     [ 44%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_028 PASSED     [ 46%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_029 PASSED     [ 48%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_030 PASSED     [ 50%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_031 PASSED     [ 52%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_032 PASSED     [ 54%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_033 PASSED     [ 56%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_034 PASSED     [ 58%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_036 PASSED     [ 60%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_037 PASSED     [ 62%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_038 PASSED     [ 64%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_039 PASSED     [ 66%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_040 PASSED     [ 68%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_041 PASSED     [ 70%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_042 PASSED     [ 72%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_043 PASSED     [ 74%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_044 PASSED     [ 76%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_045 PASSED     [ 78%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_046 PASSED     [ 80%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_047 PASSED     [ 82%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_049 PASSED     [ 84%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_050 PASSED     [ 86%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_051 PASSED     [ 88%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_052 PASSED     [ 90%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_053 PASSED     [ 92%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_054 PASSED     [ 94%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_055 PASSED     [ 96%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_056 PASSED     [ 98%]
+claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_057 PASSED     [100%]
+
+================================== FAILURES ===================================
+_________________________________ test_C2_020 _________________________________
+
+run = <function run.<locals>._run at 0x0000023D185D4040>
+tmp_path = WindowsPath('C:/Users/User/AppData/Local/Temp/pytest-of-User/pytest-1/test_C2_0200')
+
+    def test_C2_020(run, tmp_path):
+        out = tmp_path / "t20.txt"
+        r = run("analyze", _conj(20), "-o", out)
+        assert r.code == 0
+        txt = out.read_text(encoding="utf-8")
+        assert "Cobertura MC/DC: completa" in txt
+>       assert len(re.findall(r"^V\d+ ", txt, re.M)) == 2 ** 20
+E       AssertionError: assert 0 == (2 ** 20)
+E        +  where 0 = len([])
+E        +    where [] = <function findall at 0x0000023D165BDA80>('^V\\d+ ', 'Decisão:   REQ\nGuarda:    X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20\nVariante:  mascaramento\n\nTabela verdade: 1048576 linhas, 1048576 possíveis (grande demais para o texto; use --format json até 4096 linhas)\n\nPares de independência:\n  X1: (V1, V524289)\n  X2: (V1, V262145)\n  X3: (V1, V131073)\n  X4: (V1, V65537)\n  X5: (V1, V32769)\n  X6: (V1, V16385)\n  X7: (V1, V8193)\n  X8: (V1, V4097)\n  X9: (V1, V2049)\n  X10: (V1, V1025)\n  X11: (V1, V513)\n  X12: (V1, V257)\n  X13: (V1, V129)\n  X14: (V1, V65)\n  X15: (V1, V33)\n  X16: (V1, V17)\n  X17: (V1, V9)\n  X18: (V1, V5)\n  X19: (V1, V3)\n  X20: (V1, V2)\n\nSuíte mínima (21 testes):\n  V1  TTTTTTTTTTTTTTTTTTTT  -> T   demonstra X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, X15, X16, X17, X18, X19, X20\n  V2  TTTTTTTTTTTTTTTTTTTF  -> F   demonstra X20\n  V3  TTTTTTTTTTTTTTTTTTFT  -> F   demonstra X19\n  V5  TTTTTTTTTTTTTTTTTFTT  -> F   demonstra X18\n  V9  TTTTTTTTTTTTTTTTFTTT  -> F   demonstra X17\n  V17  TTTTTTTTTTTTTTTFTTTT  -> F   demonstra X16\n  V33  TTTTTTTTTTTTTTFTTTTT  -> F   demonstra X15\n  V65  ...TTFTTTTTTTTTTTTT  -> F   demonstra X7\n  V16385  TTTTTFTTTTTTTTTTTTTT  -> F   demonstra X6\n  V32769  TTTTFTTTTTTTTTTTTTTT  -> F   demonstra X5\n  V65537  TTTFTTTTTTTTTTTTTTTT  -> F   demonstra X4\n  V131073  TTFTTTTTTTTTTTTTTTTT  -> F   demonstra X3\n  V262145  TFTTTTTTTTTTTTTTTTTT  -> F   demonstra X2\n  V524289  FTTTTTTTTTTTTTTTTTTT  -> F   demonstra X1\n\nDemonstração por condição:\n  X1: V1 (T) e V524289 (F), só ela muda\n  X2: V1 (T) e V262145 (F), só ela muda\n  X3: V1 (T) e V131073 (F), só ela muda\n  X4: V1 (T) e V65537 (F), só ela muda\n  X5: V1 (T) e V32769 (F), só ela muda\n  X6: V1 (T) e V16385 (F), só ela muda\n  X7: V1 (T) e V8193 (F), só ela muda\n  X8: V1 (T) e V4097 (F), só ela muda\n  X9: V1 (T) e V2049 (F), só ela muda\n  X10: V1 (T) e V1025 (F), só ela muda\n  X11: V1 (T) e V513 (F), só ela muda\n  X12: V1 (T) e V257 (F), só ela muda\n  X13: V1 (T) e V129 (F), só ela muda\n  X14: V1 (T) e V65 (F), só ela muda\n  X15: V1 (T) e V33 (F), só ela muda\n  X16: V1 (T) e V17 (F), só ela muda\n  X17: V1 (T) e V9 (F), só ela muda\n  X18: V1 (T) e V5 (F), só ela muda\n  X19: V1 (T) e V3 (F), só ela muda\n  X20: V1 (T) e V2 (F), só ela muda\n\nCobertura MC/DC: completa\n', re.MULTILINE)
+E        +      where <function findall at 0x0000023D165BDA80> = re.findall
+E        +      and   re.MULTILINE = re.M
+
+claude-sonnet-5.5-resultados\C2\suite\test_c2.py:257: AssertionError
+- generated xml file: C:\Users\User\requirements-quality-llm-test-oracles\claude-sonnet-5.5-resultados\C2\resultados\junit-baseline.xml -
+=========================== short test summary info ===========================
+FAILED claude-sonnet-5.5-resultados/C2/suite/test_c2.py::test_C2_020 - Assert...
+================== 1 failed, 49 passed in 114.88s (0:01:54) ===================

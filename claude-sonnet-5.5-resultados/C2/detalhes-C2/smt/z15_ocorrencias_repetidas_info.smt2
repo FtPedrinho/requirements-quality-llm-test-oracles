@@ -1,0 +1,5 @@
+(set-logic QF_UF)
+(declare-const A Bool)(declare-const B Bool)(declare-const C Bool)
+(define-fun f ((A Bool)(B Bool)(C Bool)) Bool (or (and A B) (and (not A) C)))
+(echo "INFORMATIVO: par mascaramento para A#1 (A#1 muda; A#2 mantido por ocorrencia): B=T,C=F")
+(push 1)(assert B)(assert (not C))(assert (not (= (f true B C) (f false B C))))(check-sat)(pop 1)

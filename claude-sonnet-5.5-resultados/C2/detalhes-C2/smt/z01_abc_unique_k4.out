@@ -1,0 +1,27 @@
+sat
+(
+  (define-fun B_3 () Bool
+    true)
+  (define-fun B_0 () Bool
+    false)
+  (define-fun B_1 () Bool
+    false)
+  (define-fun A_0 () Bool
+    true)
+  (define-fun C_0 () Bool
+    true)
+  (define-fun C_1 () Bool
+    false)
+  (define-fun B_2 () Bool
+    true)
+  (define-fun A_1 () Bool
+    true)
+  (define-fun C_2 () Bool
+    false)
+  (define-fun A_2 () Bool
+    true)
+  (define-fun C_3 () Bool
+    false)
+  (define-fun A_3 () Bool
+    false)
+)

@@ -1,0 +1,14 @@
+VM: testes = condicoes + requisitos (todos completos)
+sat
+NPP: 29+11 = 40
+sat
+TIS: incompletos = 17-14 = 3; nao-equivalentes = 450-21 = 429 >= 428 pegos
+sat
+VM: 152 mutantes, 0 equivalentes, 152 pegos
+sat
+NPP: 146 mutantes, 0 equivalentes, 146 pegos
+sat
+total combinacoes 152+268+76 = 496; impossiveis 4+4+1 = 9; testes 26+80+40=146; req 5+17+11=33; cond 21+69+29=119
+sat
+2^20 aproximadamente 1 milhao
+sat

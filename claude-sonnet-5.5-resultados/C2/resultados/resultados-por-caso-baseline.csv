@@ -1,0 +1,69 @@
+id,grupo,titulo,status_oraculo,resultado,detalhe
+C2-001,A-analyze,analyze (A and B) or C (mascaramento),DETERMINADO,PASSOU,
+C2-002,A-analyze,analyze (A and B) or C --unique-cause,DETERMINADO,PASSOU,
+C2-003,A-analyze,analyze A and not B,DETERMINADO,PASSOU,
+C2-004,A-analyze,entrada repetida: (A and B) or (not A and C),DETERMINADO,PASSOU,
+C2-005,A-analyze,pares de A#1/A#2 com entradas repetidas e causa unica,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-006,A-analyze,operadores simbolicos && || !,DETERMINADO,PASSOU,
+C2-007,A-analyze,operadores /\ \/ not,DETERMINADO,PASSOU,
+C2-008,A-analyze,comparacao como condicao: speed > 100 /\ mode = idle,DETERMINADO,PASSOU,
+C2-009,A-analyze,operadores de comparacao = == != < <= > >=,DETERMINADO,PASSOU,
+C2-010,B-diagnostico,--constraint 'not A or B' em A or (B and C),DETERMINADO,PASSOU,
+C2-011,B-diagnostico,condicao bloqueada por combinacoes impossiveis,DETERMINADO,PASSOU,
+C2-012,B-diagnostico,condicao redundante: A or (A and B),DETERMINADO,PASSOU,
+C2-013,B-diagnostico,--z3: combinacoes impossiveis numericas e valores concretos,DETERMINADO,PASSOU,
+C2-014,B-diagnostico,--z3 --boundary: valores de fronteira,DETERMINADO,PASSOU,
+C2-015,B-diagnostico,--z3 sem Z3 instalado: aviso,DETERMINADO,PASSOU,
+C2-016,C-exact,--exact: suites minimas conhecidas,DETERMINADO,PASSOU,
+C2-017,C-exact,--exact --unique-cause em (A or B) and (C or D),DETERMINADO,PASSOU,
+C2-018,C-exact,--exact em mascaramento de (A or B) and (C or D),INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-019,C-exact,exemplo ((E or D) and (not ? or D)) or B: 5 exata e 6 gulosa,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-020,C-exact,limites: 20 entradas na tabela-verdade completa,DETERMINADO,FALHOU,"E        +  where 0 = len([]) | E        +    where [] = <function findall at 0x0000023D165BDA80>('^V\\d+ ', 'Decisão:   REQ\nGuarda:    X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20\nVariante:  mascaramento\n\nTabela verdade: 1048576 linhas, 1048576 possíveis (grande demais para o texto; use --format json até 4096 linhas)\n\nPares de independência:\n  X1: (V1, V524289)\n  X2: (V1, V262145)\n  X3: (V1, V131073)\n  X4: (V1, V65537)\n  X5: (V1, V32769)\n  X6: (V1, V16385)\n  X7: (V1, V8193)\n  X8"
+C2-021,C-exact,--z3 acima de 12 entradas passa sozinho ao modo direto,DETERMINADO,PASSOU,
+C2-022,C-exact,--direct com 30 entradas,DETERMINADO,PASSOU,
+C2-023,C-exact,--direct equivale a tabela completa (cobertura e diagnostico),DETERMINADO,PASSOU,
+C2-024,C-exact,21 entradas sem --z3 (acima do limite de 20),INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-025,C-exact,31 entradas com --direct,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-026,D-exemplos,analyze VM (--z3): numeros travados,DETERMINADO,PASSOU,
+C2-029,D-exemplos,analyze VM --mutation: mutantes,DETERMINADO,PASSOU,
+C2-032,D-exemplos,verify VM: conflitos,DETERMINADO,PASSOU,
+C2-027,D-exemplos,analyze TIS (--z3): numeros travados,DETERMINADO,PASSOU,
+C2-030,D-exemplos,analyze TIS --mutation: mutantes,DETERMINADO,PASSOU,
+C2-033,D-exemplos,verify TIS: conflitos,DETERMINADO,PASSOU,
+C2-028,D-exemplos,analyze NPP (--z3): numeros travados,DETERMINADO,PASSOU,
+C2-031,D-exemplos,analyze NPP --mutation: mutantes,DETERMINADO,PASSOU,
+C2-034,D-exemplos,verify NPP: conflitos,DETERMINADO,PASSOU,
+C2-035,D-exemplos,verify VM --context 'the_system_mode = preparing_weak',INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-036,D-exemplos,analyze -f exemplos/requisitos.mcdc: REQ-003 redundante,DETERMINADO,PASSOU,
+C2-037,E-formatos,arquivo .mcdc do texto,DETERMINADO,PASSOU,
+C2-038,E-formatos,JSON de decisoes da NAT2TEST,DETERMINADO,PASSOU,
+C2-039,E-formatos,--format csv: uma linha por teste,DETERMINADO,PASSOU,
+C2-040,E-formatos,--format truth-csv: tabela-verdade interna,DETERMINADO,PASSOU,
+C2-041,E-formatos,--format json: JSON valido,DETERMINADO,PASSOU,
+C2-042,E-formatos,-o grava o relatorio em arquivo,DETERMINADO,PASSOU,
+C2-043,F-check,check: suite completa de MC/DC,DETERMINADO,PASSOU,
+C2-044,F-check,check: suite incompleta,DETERMINADO,PASSOU,
+C2-045,F-check,check: resultado esperado divergente,DETERMINADO,PASSOU,
+C2-046,F-check,"check com JSON, valores concretos e coluna decision",DETERMINADO,PASSOU,
+C2-047,F-check,check: CSV sem coluna obrigatoria,DETERMINADO,PASSOU,
+C2-048,F-check,check --format csv,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-049,G-verify,"verify: conflito (guardas sobrepostas, valores diferentes)",DETERMINADO,PASSOU,
+C2-050,G-verify,verify: guardas disjuntas nao conflitam,DETERMINADO,PASSOU,
+C2-051,G-verify,verify: mesmo valor nao e conflito,DETERMINADO,PASSOU,
+C2-052,G-verify,verify --context: lacuna,DETERMINADO,PASSOU,
+C2-053,G-verify,verify --context: sem lacuna,DETERMINADO,PASSOU,
+C2-054,H-invalidos,expressao invalida: A and,DETERMINADO,PASSOU,
+C2-055,H-invalidos,expressao invalida: parenteses nao balanceados,DETERMINADO,PASSOU,
+C2-056,H-invalidos,.mcdc com erro de sintaxe no requisito,DETERMINADO,PASSOU,
+C2-057,H-invalidos,JSON de decisoes malformado,DETERMINADO,PASSOU,
+C2-058,I-indeterminados,precedencia de operadores (A or B and C),INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-059,I-indeterminados,ids repetidos no JSON de decisoes,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-060,I-indeterminados,linha sem identificador em arquivo .mcdc,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-061,I-indeterminados,sufixo _antes e acoes em guardas,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-062,I-indeterminados,funcao de paridade de 3 entradas exige 8 testes,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-063,I-indeterminados,--z3 sem Z3: codigo de saida,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-064,I-indeterminados,lista exata de mutantes de uma expressao,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-065,I-indeterminados,limite de 1000 pares guardados por condicao,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-066,I-indeterminados,arquivo de entrada inexistente,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-067,I-indeterminados,Z3 travado: limite de 60 s,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado
+C2-068,I-indeterminados,parentesess deslocados em mutacao,INDETERMINADO,INDETERMINADO,registrado no oraculo; nao executado

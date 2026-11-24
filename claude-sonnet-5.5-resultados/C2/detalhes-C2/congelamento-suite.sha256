@@ -1,0 +1,15 @@
+# Congelamento da suite C2 (baseline) - 2026-11-24T17:58:56-03:00 - antes da execucao
+04e0a4760da039a62b315e9741260083ddf7d01cd097b544e28c5ab18e17b008 *suite/test_c2.py
+29d9c098af36fe69613fa501c9555e53833ded94f9c7c4c7972abc80f85c10c5 *suite/conftest.py
+c42e20d38db2f5cdb44eae00c3c9d416a3dc5080c9f91d8b650be1d684251a5e *suite/README.md
+b441cc933b83251ab74b226b9de48d844cf424aa0c9d42ed92f1acb7a2656f1e *detalhes-C2/oraculo.json
+# Congelamento da extensao 1 - 2026-11-24T18:01:52-03:00 - antes da execucao; baseline preservado
+0aa73e6a55ac00bcc1fd650f00136eeb55abfc1352e38a8efe235cb6e4371a8b *suite/test_c2_ext1.py
+106c9835ea423705f2fd87ce15877eabad068c3413ff8178d5f8d2299926a04d *detalhes-C2/oraculo-extensao1.json
+b3a1e62271e3ea39939e341d9e865ad370686a7855b09525f630b003484d1ed7 *detalhes-C2/gerar_oraculo_extensao1.py
+04e0a4760da039a62b315e9741260083ddf7d01cd097b544e28c5ab18e17b008 *suite/test_c2.py
+29d9c098af36fe69613fa501c9555e53833ded94f9c7c4c7972abc80f85c10c5 *suite/conftest.py
+# Congelamento da extensao 2 - 2026-11-24T18:02:30-03:00 - antes da execucao
+976fc3b379f1e947b5c8efa60bdc832f0a80dd47570dc4b2fa6442168f5ae2fd *suite/test_c2_ext2.py
+# Congelamento da extensao 3 - 2026-11-24T18:02:57-03:00 - antes da execucao
+10ef1b5d8e81fc8b82b8348b8f488c4268b27c62945a549ccfe3cab72c2e3154 *suite/test_c2_ext3.py

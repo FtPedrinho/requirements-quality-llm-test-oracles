@@ -1,0 +1,18 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "s",
+  "decisions" : 1,
+  "pairsChecked" : 0,
+  "conflicts" : [ ],
+  "compatibleOverlaps" : [ ],
+  "gaps" : {
+    "checked" : true,
+    "context" : "sw = on or sw = off",
+    "found" : true,
+    "witness" : {
+      "sw" : "off"
+    }
+  },
+  "ok" : false
+}

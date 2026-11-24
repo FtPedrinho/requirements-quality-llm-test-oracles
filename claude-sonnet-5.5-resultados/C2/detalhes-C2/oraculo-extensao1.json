@@ -1,0 +1,109 @@
+{
+ "condicao": "C2",
+ "extensao": 1,
+ "casos": [
+  {
+   "id": "C2-020",
+   "grupo": "X-extensao1",
+   "titulo": "REAVALIACAO do C2-020 (defeito da suite no baseline)",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"20 entradas   tabela-verdade cmpeta\"",
+   "expectativa": [
+    "codigo 0",
+    "o relatorio declara a tabela-verdade com 2^20 = 1048576 linhas (sem exigir que o formato texto imprima todas)",
+    "cobertura completa, 20 condicoes demonstradas"
+   ],
+   "justificativa": "A expectativa documental e a mesma do oraculo; a suite baseline assumiu indevidamente que o formato texto lista as linhas. Baseline preservado como FALHOU; esta extensao corrige somente a verificacao."
+  },
+  {
+   "id": "C2-E01",
+   "grupo": "X-extensao1",
+   "titulo": "check --format text, suite completa",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"check  verify acetam text e json\" / \"0: comndo concluido\"",
+   "expectativa": [
+    "codigo 0"
+   ],
+   "justificativa": ""
+  },
+  {
+   "id": "C2-E02",
+   "grupo": "X-extensao1",
+   "titulo": "check --format text, suite incompleta",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"2: ... condição não demonstrda\"",
+   "expectativa": [
+    "codigo 2"
+   ],
+   "justificativa": ""
+  },
+  {
+   "id": "C2-E03",
+   "grupo": "X-extensao1",
+   "titulo": "verify --format text com conflito",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"check  verify acetam text e json\" / \"2: ... um cnfito\"",
+   "expectativa": [
+    "codigo 2"
+   ],
+   "justificativa": ""
+  },
+  {
+   "id": "C2-E04",
+   "grupo": "X-extensao1",
+   "titulo": "verify --format text sem conflito",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"0: comndo concluido\"",
+   "expectativa": [
+    "codigo 0"
+   ],
+   "justificativa": ""
+  },
+  {
+   "id": "C2-E05",
+   "grupo": "X-extensao1",
+   "titulo": "analyze VM --z3 --format text",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"text | Tabea verdde, pres, suíte, dmonstração por cond ição, fronteras, mutção e o mtivo   prblema\"",
+   "expectativa": [
+    "codigo 0 (todos os requisitos completos)",
+    "saida nao vazia"
+   ],
+   "justificativa": ""
+  },
+  {
+   "id": "C2-E06",
+   "grupo": "X-extensao1",
+   "titulo": "analyze (A and B) or C --z3 --boundary --format text",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"--z3 --boundary\"",
+   "expectativa": [
+    "codigo 0"
+   ],
+   "justificativa": ""
+  },
+  {
+   "id": "C2-E07",
+   "grupo": "X-extensao1",
+   "titulo": "truth-csv do sistema VM: 2^n linhas por decisao e linha 0 tudo verdadeiro",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"truth-csv | A tabela-verdade intea\" / \"A  linha 0  tudo verdadiro\"",
+   "expectativa": [
+    "para cada decisao, numero de linhas = 2^(entradas)",
+    "a primeira linha de cada decisao tem todas as entradas verdadeiras"
+   ],
+   "justificativa": ""
+  },
+  {
+   "id": "C2-E08",
+   "grupo": "X-extensao1",
+   "titulo": "verify com -o grava arquivo",
+   "status": "DETERMINADO",
+   "trecho_literal": "\"-o <arquivo> | Grava  relatorio  arqivo\"",
+   "expectativa": [
+    "arquivo gravado nao vazio e codigo 2 (conflito)"
+   ],
+   "justificativa": ""
+  }
+ ]
+}

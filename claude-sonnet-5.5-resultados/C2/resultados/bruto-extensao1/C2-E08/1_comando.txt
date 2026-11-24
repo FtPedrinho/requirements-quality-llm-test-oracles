@@ -1,0 +1,3 @@
+mcdc verify --json C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-2\test_C2_E080\c.json -o C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-2\test_C2_E080\v.txt
+z3_no_PATH=True
+exit=2

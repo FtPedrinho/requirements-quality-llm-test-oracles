@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="4.765" timestamp="2026-11-24T18:02:32.709398-03:00" hostname="DESKTOP-E7NANC1"><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext2" name="test_C2_020" time="1.247" /><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext2" name="test_C2_E07" time="3.258"><failure message="IndexError: list index out of range">run = &lt;function run.&lt;locals&gt;._run at 0x00000203719F3100&gt;
+
+    def test_C2_E07(run):
+        r = run("analyze", "--json", SISTEMAS["VM"][0], "--z3", "--format", "truth-csv", z3=True, timeout=600)
+        rd = csv.reader(io.StringIO(r.out))
+        head = next(rd)
+        i0, i1 = head.index("row") + 1, head.index("outcome")
+        by = {}
+        for w in rd:
+&gt;           by.setdefault(w[0], []).append(w[i0:i1])
+                          ^^^^
+E           IndexError: list index out of range
+
+claude-sonnet-5.5-resultados\C2\suite\test_c2_ext2.py:26: IndexError</failure></testcase></testsuite></testsuites>

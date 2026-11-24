@@ -1,0 +1,7 @@
+(set-logic ALL)
+(declare-datatypes ((M 0)) (((a) (b))))
+(declare-const mode M)
+(echo "contexto mode=a|b, guardas {mode=a}: lacuna?")
+(push 1)(assert (or (= mode a) (= mode b)))(assert (not (= mode a)))(check-sat)(get-model)(pop 1)
+(echo "contexto mode=a|b, guardas {mode=a, mode=b}: lacuna?")
+(push 1)(assert (or (= mode a) (= mode b)))(assert (not (= mode a)))(assert (not (= mode b)))(check-sat)(pop 1)

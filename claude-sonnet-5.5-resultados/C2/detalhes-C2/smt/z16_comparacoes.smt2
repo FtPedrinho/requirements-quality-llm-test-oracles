@@ -1,0 +1,8 @@
+(set-logic QF_LIA)
+(declare-const x Int)
+(echo "x != 5 e x = 5 incompativeis")
+(push 1)(assert (distinct x 5))(assert (= x 5))(check-sat)(pop 1)
+(echo "x >= 5 e x < 5 incompativeis")
+(push 1)(assert (>= x 5))(assert (< x 5))(check-sat)(pop 1)
+(echo "x <= 5 e x > 5 incompativeis")
+(push 1)(assert (<= x 5))(assert (> x 5))(check-sat)(pop 1)

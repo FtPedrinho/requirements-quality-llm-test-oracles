@@ -1,0 +1,10 @@
+id,grupo,titulo,status_oraculo,resultado,detalhe
+C2-020,X-extensao1,REAVALIACAO do C2-020 (defeito da suite no baseline),DETERMINADO,NAO_AVALIADO,teste nao executado
+C2-E01,X-extensao1,"check --format text, suite completa",DETERMINADO,NAO_AVALIADO,teste nao executado
+C2-E02,X-extensao1,"check --format text, suite incompleta",DETERMINADO,NAO_AVALIADO,teste nao executado
+C2-E03,X-extensao1,verify --format text com conflito,DETERMINADO,NAO_AVALIADO,teste nao executado
+C2-E04,X-extensao1,verify --format text sem conflito,DETERMINADO,NAO_AVALIADO,teste nao executado
+C2-E05,X-extensao1,analyze VM --z3 --format text,DETERMINADO,NAO_AVALIADO,teste nao executado
+C2-E06,X-extensao1,analyze (A and B) or C --z3 --boundary --format text,DETERMINADO,NAO_AVALIADO,teste nao executado
+C2-E07,X-extensao1,truth-csv do sistema VM: 2^n linhas por decisao e linha 0 tudo verdadeiro,DETERMINADO,PASSOU,
+C2-E08,X-extensao1,verify com -o grava arquivo,DETERMINADO,NAO_AVALIADO,teste nao executado

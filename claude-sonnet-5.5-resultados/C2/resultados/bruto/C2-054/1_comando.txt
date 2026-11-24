@@ -1,0 +1,3 @@
+mcdc analyze A and
+z3_no_PATH=False
+exit=1

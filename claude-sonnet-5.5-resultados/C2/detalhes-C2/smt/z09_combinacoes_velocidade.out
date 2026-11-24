@@ -1,0 +1,24 @@
+c1=true c2=true rain=true
+sat
+((speed 101))
+c1=true c2=true rain=false
+sat
+((speed 101))
+c1=true c2=false rain=true
+unsat
+(error "line 5 column 156: model is not available")
+c1=true c2=false rain=false
+unsat
+(error "line 6 column 158: model is not available")
+c1=false c2=true rain=true
+sat
+((speed 51))
+c1=false c2=true rain=false
+sat
+((speed 51))
+c1=false c2=false rain=true
+sat
+((speed 0))
+c1=false c2=false rain=false
+sat
+((speed 0))

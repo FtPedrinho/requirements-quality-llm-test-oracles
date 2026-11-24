@@ -1,0 +1,4 @@
+G1: sw=on, G2: sw=on  (sobrepoe)
+sat
+G1: sw=on, G3: sw=off (nao sobrepoe)
+unsat

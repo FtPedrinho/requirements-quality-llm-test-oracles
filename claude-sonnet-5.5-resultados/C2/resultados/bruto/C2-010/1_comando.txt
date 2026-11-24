@@ -1,0 +1,3 @@
+mcdc analyze A or (B and C) --constraint not A or B --format json
+z3_no_PATH=False
+exit=0

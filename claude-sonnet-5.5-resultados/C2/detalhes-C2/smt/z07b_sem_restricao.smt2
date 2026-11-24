@@ -1,0 +1,6 @@
+(set-logic QF_UF)
+(declare-const A Bool)(declare-const B Bool)
+(define-fun f ((A Bool)(B Bool)) Bool (and A B))
+(assert (not (= (f A B) (f (not A) B))))
+(check-sat)
+(get-model)

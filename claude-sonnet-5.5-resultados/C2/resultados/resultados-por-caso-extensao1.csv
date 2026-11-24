@@ -1,0 +1,10 @@
+id,grupo,titulo,status_oraculo,resultado,detalhe
+C2-020,X-extensao1,REAVALIACAO do C2-020 (defeito da suite no baseline),DETERMINADO,FALHOU,"E        +  where 0 = len([]) | E        +    where [] = <function findall at 0x000002059B4FDBC0>('^\\s+X\\d+: V', '\n  X1: (V1, V524289)\n  X2: (V1, V262145)\n  X3: (V1, V131073)\n  X4: (V1, V65537)\n  X5: (V1, V32769)\n  X6: (V1, V16385)\n  X7: (V1, V8193)\n  X8: (V1, V4097)\n  X9: (V1, V2049)\n  X10: (V1, V1025)\n  X11: (V1, V513)\n  X12: (V1, V257)\n  X13: (V1, V129)\n  X14: (V1, V65)\n  X15: (V1, V33)\n  X16: (V1, V17)\n  X17: (V1, V9)\n  X18: (V1, V5)\n  X19: (V1, V3)\n  X20: (V1, V2)\n\n', re.MULTILINE) | E        +      where <function findall at 0x000002059B4FDBC0> = re.findall | E   "
+C2-E01,X-extensao1,"check --format text, suite completa",DETERMINADO,PASSOU,
+C2-E02,X-extensao1,"check --format text, suite incompleta",DETERMINADO,PASSOU,
+C2-E03,X-extensao1,verify --format text com conflito,DETERMINADO,PASSOU,
+C2-E04,X-extensao1,verify --format text sem conflito,DETERMINADO,PASSOU,
+C2-E05,X-extensao1,analyze VM --z3 --format text,DETERMINADO,PASSOU,
+C2-E06,X-extensao1,analyze (A and B) or C --z3 --boundary --format text,DETERMINADO,PASSOU,
+C2-E07,X-extensao1,truth-csv do sistema VM: 2^n linhas por decisao e linha 0 tudo verdadeiro,DETERMINADO,FALHOU,"E           AssertionError: decision | E           assert 4 == (2 ** 4) | E            +  where 4 = len([{'decision': 'decision', 'requirement': 'requirement', 'row': 'row', 'the_system_mode = idle': 'the_system_mode = choice', ...}, {'decision': 'decision', 'requirement': 'requirement', 'row': 'row', 'the_system_mode = idle': 'the_system_mode = choice', ...}, {'concrete_values': 'concrete_values', 'decision': 'decision', 'demonstrates': 'demonstrates', 'feasible': 'feasible', ...}, {'concrete_values': 'concrete_values', 'decision': 'decision', 'demonstrates': 'demonstrates', 'feasible': 'feas"
+C2-E08,X-extensao1,verify com -o grava arquivo,DETERMINADO,PASSOU,

@@ -1,0 +1,6 @@
+x != 5 e x = 5 incompativeis
+unsat
+x >= 5 e x < 5 incompativeis
+unsat
+x <= 5 e x > 5 incompativeis
+unsat

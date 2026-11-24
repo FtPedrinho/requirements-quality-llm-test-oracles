@@ -1,0 +1,3 @@
+mcdc analyze -f exemplos/requisitos.mcdc --format json
+z3_no_PATH=False
+exit=2

@@ -1,0 +1,3 @@
+mcdc analyze A or (A and B) --direct --format json
+z3_no_PATH=True
+exit=2

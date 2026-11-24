@@ -1,0 +1,3 @@
+mcdc analyze X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20 -o C:\Users\User\AppData\Local\Temp\pytest-of-User\pytest-3\test_C2_0200\t20.txt
+z3_no_PATH=False
+exit=0

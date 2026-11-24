@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="9" time="15.716" timestamp="2026-11-24T18:01:59.298618-03:00" hostname="DESKTOP-E7NANC1"><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_020" time="1.118"><failure message="AssertionError: assert 0 == 20&#10; +  where 0 = len([])&#10; +    where [] = &lt;function findall at 0x000002059B4FDBC0&gt;('^\\s+X\\d+: V', '\n  X1: (V1, V524289)\n  X2: (V1, V262145)\n  X3: (V1, V131073)\n  X4: (V1, V65537)\n  X5: (V1, V32769)\n  X6: (V1, V16385)\n  X7: (V1, V8193)\n  X8: (V1, V4097)\n  X9: (V1, V2049)\n  X10: (V1, V1025)\n  X11: (V1, V513)\n  X12: (V1, V257)\n  X13: (V1, V129)\n  X14: (V1, V65)\n  X15: (V1, V33)\n  X16: (V1, V17)\n  X17: (V1, V9)\n  X18: (V1, V5)\n  X19: (V1, V3)\n  X20: (V1, V2)\n\n', re.MULTILINE)&#10; +      where &lt;function findall at 0x000002059B4FDBC0&gt; = re.findall&#10; +      and   re.MULTILINE = re.M">run = &lt;function run.&lt;locals&gt;._run at 0x000002059CF2F420&gt;
+tmp_path = WindowsPath('C:/Users/User/AppData/Local/Temp/pytest-of-User/pytest-2/test_C2_0200')
+
+    def test_C2_020(run, tmp_path):
+        out = tmp_path / "t20.txt"
+        r = run("analyze", _conj(20), "-o", out)
+        assert r.code == 0
+        txt = out.read_text(encoding="utf-8")
+        assert re.search(r"Tabela verdade: 1048576 linhas", txt)
+        assert "Cobertura MC/DC: completa" in txt
+&gt;       assert len(re.findall(r"^\s+X\d+: V", txt.split("Pares de independência:")[1].split("Suíte mínima")[0], re.M)) == 20
+E       AssertionError: assert 0 == 20
+E        +  where 0 = len([])
+E        +    where [] = &lt;function findall at 0x000002059B4FDBC0&gt;('^\\s+X\\d+: V', '\n  X1: (V1, V524289)\n  X2: (V1, V262145)\n  X3: (V1, V131073)\n  X4: (V1, V65537)\n  X5: (V1, V32769)\n  X6: (V1, V16385)\n  X7: (V1, V8193)\n  X8: (V1, V4097)\n  X9: (V1, V2049)\n  X10: (V1, V1025)\n  X11: (V1, V513)\n  X12: (V1, V257)\n  X13: (V1, V129)\n  X14: (V1, V65)\n  X15: (V1, V33)\n  X16: (V1, V17)\n  X17: (V1, V9)\n  X18: (V1, V5)\n  X19: (V1, V3)\n  X20: (V1, V2)\n\n', re.MULTILINE)
+E        +      where &lt;function findall at 0x000002059B4FDBC0&gt; = re.findall
+E        +      and   re.MULTILINE = re.M
+
+claude-sonnet-5.5-resultados\C2\suite\test_c2_ext1.py:14: AssertionError</failure></testcase><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_E01" time="0.585" /><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_E02" time="0.624" /><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_E03" time="2.265" /><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_E04" time="1.936" /><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_E05" time="2.811" /><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_E06" time="0.877" /><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_E07" time="2.913"><failure message="AssertionError: decision&#10;assert 4 == (2 ** 4)&#10; +  where 4 = len([{'decision': 'decision', 'requirement': 'requirement', 'row': 'row', 'the_system_mode = idle': 'the_system_mode = choice', ...}, {'decision': 'decision', 'requirement': 'requirement', 'row': 'row', 'the_system_mode = idle': 'the_system_mode = choice', ...}, {'concrete_values': 'concrete_values', 'decision': 'decision', 'demonstrates': 'demonstrates', 'feasible': 'feasible', ...}, {'concrete_values': 'concrete_values', 'decision': 'decision', 'demonstrates': 'demonstrates', 'feasible': 'feasible', ...}])&#10; +  and   4 = len(['the_system_mode = idle', 'the_coin_sensor_antes = false', 'the_coin_sensor = true', None])">run = &lt;function run.&lt;locals&gt;._run at 0x000002059D5E42C0&gt;
+
+    def test_C2_E07(run):
+        r = run("analyze", "--json", SISTEMAS["VM"][0], "--z3", "--format", "truth-csv", z3=True, timeout=600)
+        by = {}
+        for w in csv.DictReader(io.StringIO(r.out)):
+            by.setdefault(w["decision"], []).append(w)
+        assert by
+        for d, rows in by.items():
+            ins = [k for k in rows[0] if k not in ("decision", "requirement", "row", "outcome", "feasible", "in_suite", "demonstrates", "concrete_values")]
+&gt;           assert len(rows) == 2 ** len(ins), d
+E           AssertionError: decision
+E           assert 4 == (2 ** 4)
+E            +  where 4 = len([{'decision': 'decision', 'requirement': 'requirement', 'row': 'row', 'the_system_mode = idle': 'the_system_mode = choice', ...}, {'decision': 'decision', 'requirement': 'requirement', 'row': 'row', 'the_system_mode = idle': 'the_system_mode = choice', ...}, {'concrete_values': 'concrete_values', 'decision': 'decision', 'demonstrates': 'demonstrates', 'feasible': 'feasible', ...}, {'concrete_values': 'concrete_values', 'decision': 'decision', 'demonstrates': 'demonstrates', 'feasible': 'feasible', ...}])
+E            +  and   4 = len(['the_system_mode = idle', 'the_coin_sensor_antes = false', 'the_coin_sensor = true', None])
+
+claude-sonnet-5.5-resultados\C2\suite\test_c2_ext1.py:55: AssertionError</failure></testcase><testcase classname="claude-sonnet-5.5-resultados.C2.suite.test_c2_ext1" name="test_C2_E08" time="2.275" /></testsuite></testsuites>

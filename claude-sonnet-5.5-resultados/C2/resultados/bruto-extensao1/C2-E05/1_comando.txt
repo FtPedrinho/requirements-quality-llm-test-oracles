@@ -1,0 +1,3 @@
+mcdc analyze --json exemplos/vm-decisoes.json --z3 --format text
+z3_no_PATH=True
+exit=0

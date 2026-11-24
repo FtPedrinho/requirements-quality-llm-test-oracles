@@ -1,0 +1,6 @@
+(set-logic QF_LIA)
+(declare-const speed Int)
+(push 1)(assert (= speed 100))(assert (> speed 100))(check-sat)(pop 1)
+(push 1)(assert (= speed 101))(assert (> speed 100))(check-sat)(pop 1)
+(push 1)(assert (= speed 50))(assert (> speed 50))(check-sat)(pop 1)
+(push 1)(assert (= speed 51))(assert (> speed 50))(check-sat)(pop 1)

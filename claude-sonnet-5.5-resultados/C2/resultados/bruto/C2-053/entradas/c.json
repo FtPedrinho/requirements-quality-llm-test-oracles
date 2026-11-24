@@ -1,0 +1,1 @@
+{"system":"s","inputs":[{"name":"sw","type":"enum","values":["on","off"]},{"name":"out","type":"enum","values":["lo","hi"]}],"decisions":[{"id":"d1","requirement":"R1","guard":"sw = on","actions":["out := lo"]},{"id":"d2","requirement":"R2","guard":"sw = off","actions":["out := lo"]}]}

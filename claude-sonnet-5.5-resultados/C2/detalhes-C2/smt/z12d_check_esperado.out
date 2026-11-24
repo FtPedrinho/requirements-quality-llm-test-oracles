@@ -1,0 +1,8 @@
+T1 (True, True, False)
+true
+T2 (False, True, False)
+false
+T3 (True, False, False)
+false
+T4 (True, False, True)
+true

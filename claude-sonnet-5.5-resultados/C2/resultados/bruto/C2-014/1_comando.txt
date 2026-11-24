@@ -1,0 +1,3 @@
+mcdc analyze speed > 100 or (speed > 50 and rain) --z3 --boundary --format csv
+z3_no_PATH=True
+exit=0

@@ -1,0 +1,73 @@
+# Resumo das respostas Z3 (gerado)
+
+- z01_abc [masking]: respostas por k = {2: 'unsat', 3: 'unsat', 4: 'sat'}; minimo = 4
+- z01_abc [unique]: respostas por k = {2: 'unsat', 3: 'unsat', 4: 'sat'}; minimo = 4
+- z02_anotb [masking]: respostas por k = {2: 'unsat', 3: 'sat'}; minimo = 3
+- z02_anotb [unique]: respostas por k = {2: 'unsat', 3: 'sat'}; minimo = 3
+- z03_aorb_and_cord [masking]: respostas por k = {2: 'unsat', 3: 'unsat', 4: 'sat'}; minimo = 4
+- z03_aorb_and_cord [unique]: respostas por k = {2: 'unsat', 3: 'unsat', 4: 'unsat', 5: 'sat'}; minimo = 5
+- z04_and3 [masking]: respostas por k = {2: 'unsat', 3: 'unsat', 4: 'sat'}; minimo = 4
+- z04_and3 [unique]: respostas por k = {2: 'unsat', 3: 'unsat', 4: 'sat'}; minimo = 4
+- z05_1cond [masking]: respostas por k = {2: 'sat'}; minimo = 2
+- z05_1cond [unique]: respostas por k = {2: 'sat'}; minimo = 2
+- z06b_ab_or_notc [masking]: respostas por k = {2: 'unsat', 3: 'unsat', 4: 'sat'}; minimo = 4
+- z06b_ab_or_notc [unique]: respostas por k = {2: 'unsat', 3: 'unsat', 4: 'sat'}; minimo = 4
+
+- z01_abc_masking_k2: unsat
+- z01_abc_masking_k3: unsat
+- z01_abc_masking_k4: sat
+- z01_abc_masking_k4: sat | ( |   (define-fun C_3 () Bool |     true) |   (define-fun B_0 () Bool |     true) |   (define-fun B_1 () Bool |     true) |   (define-fun A_0 () Bool |   
+- z01_abc_unique_k2: unsat
+- z01_abc_unique_k3: unsat
+- z01_abc_unique_k4: sat
+- z01_abc_unique_k4: sat | ( |   (define-fun B_3 () Bool |     true) |   (define-fun B_0 () Bool |     false) |   (define-fun B_1 () Bool |     false) |   (define-fun A_0 () Bool | 
+- z02_anotb_masking_k2: unsat
+- z02_anotb_masking_k3: sat
+- z02_anotb_masking_k3: sat | ( |   (define-fun B_2 () Bool |     true) |   (define-fun B_0 () Bool |     false) |   (define-fun A_1 () Bool |     true) |   (define-fun B_1 () Bool |  
+- z02_anotb_unique_k2: unsat
+- z02_anotb_unique_k3: sat
+- z02_anotb_unique_k3: sat | ( |   (define-fun B_2 () Bool |     true) |   (define-fun B_0 () Bool |     false) |   (define-fun A_1 () Bool |     true) |   (define-fun B_1 () Bool |  
+- z03_aorb_and_cord_masking_k2: unsat
+- z03_aorb_and_cord_masking_k3: unsat
+- z03_aorb_and_cord_masking_k4: sat
+- z03_aorb_and_cord_masking_k4: sat | ( |   (define-fun B_0 () Bool |     false) |   (define-fun B_1 () Bool |     false) |   (define-fun D_0 () Bool |     true) |   (define-fun A_0 () Bool | 
+- z03_aorb_and_cord_unique_k2: unsat
+- z03_aorb_and_cord_unique_k3: unsat
+- z03_aorb_and_cord_unique_k4: unsat
+- z03_aorb_and_cord_unique_k5: sat
+- z03_aorb_and_cord_unique_k5: sat | ( |   (define-fun B_0 () Bool |     false) |   (define-fun B_1 () Bool |     false) |   (define-fun D_0 () Bool |     true) |   (define-fun A_0 () Bool | 
+- z04_and3_masking_k2: unsat
+- z04_and3_masking_k3: unsat
+- z04_and3_masking_k4: sat
+- z04_and3_masking_k4: sat | ( |   (define-fun B_3 () Bool |     true) |   (define-fun B_0 () Bool |     true) |   (define-fun B_1 () Bool |     false) |   (define-fun A_0 () Bool |  
+- z04_and3_unique_k2: unsat
+- z04_and3_unique_k3: unsat
+- z04_and3_unique_k4: sat
+- z04_and3_unique_k4: sat | ( |   (define-fun B_3 () Bool |     true) |   (define-fun B_0 () Bool |     true) |   (define-fun B_1 () Bool |     false) |   (define-fun A_0 () Bool |  
+- z05_1cond_masking_k2: sat
+- z05_1cond_masking_k2: sat | ( |   (define-fun A_1 () Bool |     true) |   (define-fun A_0 () Bool |     false) | )
+- z05_1cond_unique_k2: sat
+- z05_1cond_unique_k2: sat | ( |   (define-fun A_1 () Bool |     true) |   (define-fun A_0 () Bool |     false) | )
+- z06b_ab_or_notc_masking_k2: unsat
+- z06b_ab_or_notc_masking_k3: unsat
+- z06b_ab_or_notc_masking_k4: sat
+- z06b_ab_or_notc_masking_k4: sat | ( |   (define-fun C_3 () Bool |     false) |   (define-fun B_0 () Bool |     true) |   (define-fun B_1 () Bool |     true) |   (define-fun A_0 () Bool |  
+- z06b_ab_or_notc_unique_k2: unsat
+- z06b_ab_or_notc_unique_k3: unsat
+- z06b_ab_or_notc_unique_k4: sat
+- z06b_ab_or_notc_unique_k4: sat | ( |   (define-fun B_3 () Bool |     true) |   (define-fun B_0 () Bool |     false) |   (define-fun B_1 () Bool |     false) |   (define-fun A_0 () Bool | 
+- z06_redundante_B: unsat
+- z07_bloqueada: unsat | sat
+- z07b_sem_restricao: sat | ( |   (define-fun A () Bool |     false) |   (define-fun B () Bool |     true) | )
+- z08_constraint_A_implica_B: linha 0: A=true B=true C=true | sat | linha 1: A=true B=true C=false | sat | linha 2: A=true B=false C=true | unsat | linha 3: A=true B=false C=false | unsat | 
+- z09_combinacoes_velocidade: c1=true c2=true rain=true | sat | ((speed 101)) | c1=true c2=true rain=false | sat | ((speed 101)) | c1=true c2=false rain=true | unsat | (error "line 5 column 
+- z10_fronteira: unsat | sat | unsat | sat
+- z11_tabela_regressao: VM: testes = condicoes + requisitos (todos completos) | sat | NPP: 29+11 = 40 | sat | TIS: incompletos = 17-14 = 3; nao-equivalentes = 450-21 = 429 >= 428 pegos
+- z12_check_completo: condicao A demonstrada no conjunto? | sat | condicao B demonstrada no conjunto? | sat | condicao C demonstrada no conjunto? | sat
+- z12b_check_parcial_T1T2: condicao A demonstrada no conjunto? | sat | condicao B demonstrada no conjunto? | unsat | condicao C demonstrada no conjunto? | unsat
+- z12c_check_parcial_T1T3: condicao A demonstrada no conjunto? | unsat | condicao B demonstrada no conjunto? | sat | condicao C demonstrada no conjunto? | unsat
+- z12d_check_esperado: T1 (True, True, False) | true | T2 (False, True, False) | false | T3 (True, False, False) | false | T4 (True, False, True) | true
+- z13_verify_conflito: G1: sw=on, G2: sw=on  (sobrepoe) | sat | G1: sw=on, G3: sw=off (nao sobrepoe) | unsat
+- z14_verify_lacuna: contexto mode=a|b, guardas {mode=a}: lacuna? | sat | ( |   (define-fun mode () M |     b) | ) | contexto mode=a|b, guardas {mode=a, mode=b}: lacuna? | unsat
+- z15_ocorrencias_repetidas_info: INFORMATIVO: par mascaramento para A#1 (A#1 muda; A#2 mantido por ocorrencia): B=T,C=F | sat
+- z16_comparacoes: x != 5 e x = 5 incompativeis | unsat | x >= 5 e x < 5 incompativeis | unsat | x <= 5 e x > 5 incompativeis | unsat

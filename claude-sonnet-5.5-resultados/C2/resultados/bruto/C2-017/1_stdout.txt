@@ -1,0 +1,286 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "UNIQUE_CAUSE",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "(A or B) and (C or D)",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "A"
+    }, {
+      "name" : "B"
+    }, {
+      "name" : "C"
+    }, {
+      "name" : "D"
+    } ],
+    "conditions" : [ {
+      "label" : "A",
+      "input" : "A",
+      "occurrence" : 1
+    }, {
+      "label" : "B",
+      "input" : "B",
+      "occurrence" : 1
+    }, {
+      "label" : "C",
+      "input" : "C",
+      "occurrence" : 1
+    }, {
+      "label" : "D",
+      "input" : "D",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "EXACT",
+    "truthTableRows" : 16,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : true,
+        "D" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : true,
+        "D" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : false,
+        "D" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : false,
+        "D" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true,
+        "D" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true,
+        "D" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : false,
+        "D" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : false,
+        "D" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : true,
+        "D" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : true,
+        "D" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false,
+        "D" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false,
+        "D" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V13",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : true,
+        "D" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : true,
+        "D" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V15",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : false,
+        "D" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V16",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : false,
+        "D" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "A" : [ [ "V5", "V13" ], [ "V6", "V14" ], [ "V7", "V15" ] ],
+      "B" : [ [ "V9", "V13" ], [ "V10", "V14" ], [ "V11", "V15" ] ],
+      "C" : [ [ "V2", "V4" ], [ "V6", "V8" ], [ "V10", "V12" ] ],
+      "D" : [ [ "V3", "V4" ], [ "V7", "V8" ], [ "V11", "V12" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V6",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true,
+        "D" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "A" ]
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : true,
+        "D" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "B", "C" ]
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false,
+        "D" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "D" ]
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false,
+        "D" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "C", "D" ]
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : true,
+        "D" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "A", "B" ]
+    } ],
+    "chosenPairs" : {
+      "A" : {
+        "whenTrue" : "V6",
+        "whenFalse" : "V14",
+        "uniqueCause" : true
+      },
+      "B" : {
+        "whenTrue" : "V10",
+        "whenFalse" : "V14",
+        "uniqueCause" : true
+      },
+      "C" : {
+        "whenTrue" : "V10",
+        "whenFalse" : "V12",
+        "uniqueCause" : true
+      },
+      "D" : {
+        "whenTrue" : "V11",
+        "whenFalse" : "V12",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

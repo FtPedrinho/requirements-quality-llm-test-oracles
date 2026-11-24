@@ -1,0 +1,3 @@
+mcdc analyze A and B --constraint not A or not B
+z3_no_PATH=False
+exit=2

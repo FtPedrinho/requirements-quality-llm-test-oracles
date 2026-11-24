@@ -1,0 +1,13 @@
+test,input,value
+T1,A,T
+T1,B,T
+T1,C,F
+T2,A,F
+T2,B,T
+T2,C,F
+T3,A,T
+T3,B,F
+T3,C,F
+T4,A,T
+T4,B,F
+T4,C,T

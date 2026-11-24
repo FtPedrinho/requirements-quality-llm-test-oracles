@@ -1,0 +1,6 @@
+(set-logic QF_UF)
+(define-fun f ((A Bool)(B Bool)(C Bool)) Bool (or (and A B) C))
+(echo "T1 (True, True, False)")(simplify (f true true false))
+(echo "T2 (False, True, False)")(simplify (f false true false))
+(echo "T3 (True, False, False)")(simplify (f true false false))
+(echo "T4 (True, False, True)")(simplify (f true false true))

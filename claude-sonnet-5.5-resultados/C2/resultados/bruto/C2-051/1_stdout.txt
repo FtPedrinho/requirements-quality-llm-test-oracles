@@ -1,0 +1,26 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "s",
+  "decisions" : 2,
+  "pairsChecked" : 1,
+  "conflicts" : [ ],
+  "compatibleOverlaps" : [ {
+    "first" : "d1",
+    "firstRequirement" : "R1",
+    "second" : "d2",
+    "secondRequirement" : "R2",
+    "sharedVariables" : [ "out" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "sw" : "on"
+    }
+  } ],
+  "gaps" : {
+    "checked" : false,
+    "context" : null,
+    "found" : false,
+    "witness" : null
+  },
+  "ok" : true
+}

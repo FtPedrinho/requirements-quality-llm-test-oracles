@@ -1,0 +1,16 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "s",
+  "decisions" : 2,
+  "pairsChecked" : 1,
+  "conflicts" : [ ],
+  "compatibleOverlaps" : [ ],
+  "gaps" : {
+    "checked" : false,
+    "context" : null,
+    "found" : false,
+    "witness" : null
+  },
+  "ok" : true
+}

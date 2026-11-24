@@ -1,0 +1,3 @@
+mcdc analyze speed > 100 /\ mode = idle --format json
+z3_no_PATH=False
+exit=0

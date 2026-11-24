@@ -1,0 +1,10 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- C:\Python313\python.exe
+rootdir: C:\Users\User\requirements-quality-llm-test-oracles
+plugins: cov-7.1.0
+collecting ... collected 1 item
+
+claude-sonnet-5.5-resultados/C2/suite/test_c2_ext3.py::test_C2_E07 PASSED [100%]
+
+- generated xml file: C:\Users\User\requirements-quality-llm-test-oracles\claude-sonnet-5.5-resultados\C2\resultados\junit-extensao3.xml -
+============================== 1 passed in 4.23s ==============================

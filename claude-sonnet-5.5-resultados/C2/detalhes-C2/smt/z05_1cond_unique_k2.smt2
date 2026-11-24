@@ -1,0 +1,7 @@
+(set-logic QF_UF)
+(define-fun f ((A Bool)) Bool A)
+(declare-const A_0 Bool)
+(declare-const A_1 Bool)
+(assert (or (and (not (= A_0 A_1))  (not (= (f A_0) (f A_1)))) (and (not (= A_1 A_0))  (not (= (f A_1) (f A_0))))))
+(check-sat)
+(get-model)

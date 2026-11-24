@@ -1,0 +1,7 @@
+(set-logic ALL)
+(declare-datatypes ((Sw 0)) (((on) (off))))
+(declare-const sw Sw)
+(echo "G1: sw=on, G2: sw=on  (sobrepoe)")
+(push 1)(assert (= sw on))(assert (= sw on))(check-sat)(pop 1)
+(echo "G1: sw=on, G3: sw=off (nao sobrepoe)")
+(push 1)(assert (= sw on))(assert (= sw off))(check-sat)(pop 1)

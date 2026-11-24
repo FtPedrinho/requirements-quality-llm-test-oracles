@@ -1,0 +1,8 @@
+contexto mode=a|b, guardas {mode=a}: lacuna?
+sat
+(
+  (define-fun mode () M
+    b)
+)
+contexto mode=a|b, guardas {mode=a, mode=b}: lacuna?
+unsat

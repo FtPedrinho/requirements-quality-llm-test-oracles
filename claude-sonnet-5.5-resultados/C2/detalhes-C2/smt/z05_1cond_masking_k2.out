@@ -1,0 +1,7 @@
+sat
+(
+  (define-fun A_1 () Bool
+    true)
+  (define-fun A_0 () Bool
+    false)
+)
