@@ -1,0 +1,272 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ-001",
+    "requirement" : "REQ-001",
+    "guard" : "(A and B) or C",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "A"
+    }, {
+      "name" : "B"
+    }, {
+      "name" : "C"
+    } ],
+    "conditions" : [ {
+      "label" : "A",
+      "input" : "A",
+      "occurrence" : 1
+    }, {
+      "label" : "B",
+      "input" : "B",
+      "occurrence" : 1
+    }, {
+      "label" : "C",
+      "input" : "C",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "A" : [ [ "V2", "V6" ] ],
+      "B" : [ [ "V2", "V4" ] ],
+      "C" : [ [ "V3", "V4" ], [ "V3", "V6" ], [ "V3", "V8" ], [ "V5", "V4" ], [ "V5", "V6" ], [ "V5", "V8" ], [ "V7", "V4" ], [ "V7", "V6" ], [ "V7", "V8" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "A", "B" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "C" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "B", "C" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "A" ]
+    } ],
+    "chosenPairs" : {
+      "A" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "B" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "C" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  }, {
+    "id" : "REQ-002",
+    "requirement" : "REQ-002",
+    "guard" : "porta_fechada and not obstaculo",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "porta_fechada"
+    }, {
+      "name" : "obstaculo"
+    } ],
+    "conditions" : [ {
+      "label" : "porta_fechada",
+      "input" : "porta_fechada",
+      "occurrence" : 1
+    }, {
+      "label" : "obstaculo",
+      "input" : "obstaculo",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "porta_fechada" : [ [ "V2", "V4" ] ],
+      "obstaculo" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "obstaculo" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "porta_fechada", "obstaculo" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "porta_fechada" ]
+    } ],
+    "chosenPairs" : {
+      "porta_fechada" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "obstaculo" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

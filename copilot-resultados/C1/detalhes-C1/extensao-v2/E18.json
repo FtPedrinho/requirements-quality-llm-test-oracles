@@ -1,0 +1,23 @@
+{
+  "id": "E18",
+  "argumentos": [
+    "verify",
+    "--json",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E18-entrada.json"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E18.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "verify",
+    "--json",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E18-entrada.json"
+  ],
+  "codigo": 0,
+  "stdout": "Verifica��o entre requisitos: C1\n2 decis�es, 1 pares que escrevem alguma vari�vel em comum\n\nConflitos: nenhum\n\nSobreposi��es sem conflito: 1\n  R1 � R2: mesmo valor em x\n\nLacunas: n�o conferidas (use --context \"<express�o>\" para dizer em que situa��o alguma guarda deve valer)\n",
+  "stderr": "",
+  "duracao_segundos": 6.1
+}

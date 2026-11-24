@@ -1,0 +1,7 @@
+{
+  "system": "lacuna_nova",
+  "inputs": [{"name": "A", "type": "bool"}],
+  "decisions": [
+    {"id": "D1", "requirement": "R1", "guard": "A", "actions": ["estado := ativo"]}
+  ]
+}

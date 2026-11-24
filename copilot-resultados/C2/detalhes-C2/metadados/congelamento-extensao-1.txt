@@ -1,0 +1,6 @@
+﻿Congelamento da extensão 1 antes da execução: 2026-11-23T11:26:35.3144150-03:00
+EE8D9F965C5E6F751D938BFDCF4E9DC2A12A7446DFA1E44EFB327BC84545FADE  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\extensao-1\casos.json
+A20399AA0F4EDD67D99282781BE036F2C2CCC63072645B0596474F2EBA29917E  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\extensao-1\executar.ps1
+DB9CE2DF7247BB6143856B3680804B240693CA0D4DC0541AB3FF505BC4E73F18  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\extensao-1\ExtensionHarness.java
+D35D39A0E9CF2D2E8932A071C7037EDDE1F7E0744ED88EE9F0B2E09F6C0B29C8  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\extensao-1\mapa.md
+7B2DB128752F173C794F7C33CB58545FF6452B42B6836359681B2D8C88C4868A  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\extensao-1\preparar.py

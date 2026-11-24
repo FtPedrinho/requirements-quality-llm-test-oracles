@@ -1,0 +1,1 @@
+Erro: C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\entradas\csv-vlue.csv: falta a coluna "value" no cabeçalho

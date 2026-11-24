@@ -1,0 +1,23 @@
+Decisão:   REQ
+Guarda:    A and B
+Restrição: A
+Variante:  causa única
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | F
+V3    F   T   | F  (impossível)
+V4    F   F   | F  (impossível)
+
+Pares de independência:
+  A: nenhum par
+  B: (V1, V2)
+
+Suíte mínima (2 testes):
+  V1  TT  -> T   demonstra B
+  V2  TF  -> F   demonstra B
+
+Demonstração por condição:
+  B: V1 (T) e V2 (F), só ela muda
+
+  A: bloqueada pelas restrições: os pares (V1, V3) usam linhas impossíveis

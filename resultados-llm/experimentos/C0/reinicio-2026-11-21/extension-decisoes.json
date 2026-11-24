@@ -1,0 +1,11 @@
+{
+  "system": "exemplo_novo",
+  "inputs": [
+    {"name": "A", "type": "bool"},
+    {"name": "B", "type": "bool"}
+  ],
+  "decisions": [
+    {"id": "D1", "requirement": "REQ-1", "guard": "A and B", "actions": ["estado := ativo"]},
+    {"id": "D2", "requirement": "REQ-2", "guard": "A or B", "actions": ["estado := inativo"]}
+  ]
+}

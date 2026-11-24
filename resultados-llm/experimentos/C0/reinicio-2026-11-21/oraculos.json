@@ -1,0 +1,1311 @@
+[
+  {
+    "id": "and-word-00",
+    "tipo": "linha_tabela",
+    "expressao": "A and B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-word-00"
+  },
+  {
+    "id": "and-word-01",
+    "tipo": "linha_tabela",
+    "expressao": "A and B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-word-01"
+  },
+  {
+    "id": "and-word-10",
+    "tipo": "linha_tabela",
+    "expressao": "A and B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-word-10"
+  },
+  {
+    "id": "and-word-11",
+    "tipo": "linha_tabela",
+    "expressao": "A and B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-word-11"
+  },
+  {
+    "id": "and-symbol-00",
+    "tipo": "linha_tabela",
+    "expressao": "A && B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-symbol-00"
+  },
+  {
+    "id": "and-symbol-01",
+    "tipo": "linha_tabela",
+    "expressao": "A && B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-symbol-01"
+  },
+  {
+    "id": "and-symbol-10",
+    "tipo": "linha_tabela",
+    "expressao": "A && B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-symbol-10"
+  },
+  {
+    "id": "and-symbol-11",
+    "tipo": "linha_tabela",
+    "expressao": "A && B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-symbol-11"
+  },
+  {
+    "id": "and-dfrs-00",
+    "tipo": "linha_tabela",
+    "expressao": "A /\\ B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-dfrs-00"
+  },
+  {
+    "id": "and-dfrs-01",
+    "tipo": "linha_tabela",
+    "expressao": "A /\\ B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-dfrs-01"
+  },
+  {
+    "id": "and-dfrs-10",
+    "tipo": "linha_tabela",
+    "expressao": "A /\\ B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-dfrs-10"
+  },
+  {
+    "id": "and-dfrs-11",
+    "tipo": "linha_tabela",
+    "expressao": "A /\\ B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "and-dfrs-11"
+  },
+  {
+    "id": "or-word-00",
+    "tipo": "linha_tabela",
+    "expressao": "A or B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-word-00"
+  },
+  {
+    "id": "or-word-01",
+    "tipo": "linha_tabela",
+    "expressao": "A or B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-word-01"
+  },
+  {
+    "id": "or-word-10",
+    "tipo": "linha_tabela",
+    "expressao": "A or B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-word-10"
+  },
+  {
+    "id": "or-word-11",
+    "tipo": "linha_tabela",
+    "expressao": "A or B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-word-11"
+  },
+  {
+    "id": "or-symbol-00",
+    "tipo": "linha_tabela",
+    "expressao": "A || B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-symbol-00"
+  },
+  {
+    "id": "or-symbol-01",
+    "tipo": "linha_tabela",
+    "expressao": "A || B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-symbol-01"
+  },
+  {
+    "id": "or-symbol-10",
+    "tipo": "linha_tabela",
+    "expressao": "A || B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-symbol-10"
+  },
+  {
+    "id": "or-symbol-11",
+    "tipo": "linha_tabela",
+    "expressao": "A || B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-symbol-11"
+  },
+  {
+    "id": "or-dfrs-00",
+    "tipo": "linha_tabela",
+    "expressao": "A \\/ B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-dfrs-00"
+  },
+  {
+    "id": "or-dfrs-01",
+    "tipo": "linha_tabela",
+    "expressao": "A \\/ B",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-dfrs-01"
+  },
+  {
+    "id": "or-dfrs-10",
+    "tipo": "linha_tabela",
+    "expressao": "A \\/ B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-dfrs-10"
+  },
+  {
+    "id": "or-dfrs-11",
+    "tipo": "linha_tabela",
+    "expressao": "A \\/ B",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "or-dfrs-11"
+  },
+  {
+    "id": "not-word-0",
+    "tipo": "linha_tabela",
+    "expressao": "not A",
+    "opcoes": [],
+    "entradas": {
+      "A": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "not-word-0"
+  },
+  {
+    "id": "not-word-1",
+    "tipo": "linha_tabela",
+    "expressao": "not A",
+    "opcoes": [],
+    "entradas": {
+      "A": true
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "not-word-1"
+  },
+  {
+    "id": "not-symbol-0",
+    "tipo": "linha_tabela",
+    "expressao": "!A",
+    "opcoes": [],
+    "entradas": {
+      "A": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "not-symbol-0"
+  },
+  {
+    "id": "not-symbol-1",
+    "tipo": "linha_tabela",
+    "expressao": "!A",
+    "opcoes": [],
+    "entradas": {
+      "A": true
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "not-symbol-1"
+  },
+  {
+    "id": "nested-000",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "nested-000"
+  },
+  {
+    "id": "nested-001",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "nested-001"
+  },
+  {
+    "id": "nested-010",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "nested-010"
+  },
+  {
+    "id": "nested-011",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "nested-011"
+  },
+  {
+    "id": "nested-100",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "nested-100"
+  },
+  {
+    "id": "nested-101",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "nested-101"
+  },
+  {
+    "id": "nested-110",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "nested-110"
+  },
+  {
+    "id": "nested-111",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "nested-111"
+  },
+  {
+    "id": "unique-000",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [
+      "--unique-cause"
+    ],
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "unique-000"
+  },
+  {
+    "id": "unique-001",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [
+      "--unique-cause"
+    ],
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "unique-001"
+  },
+  {
+    "id": "unique-010",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [
+      "--unique-cause"
+    ],
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "unique-010"
+  },
+  {
+    "id": "unique-011",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [
+      "--unique-cause"
+    ],
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "unique-011"
+  },
+  {
+    "id": "unique-100",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [
+      "--unique-cause"
+    ],
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "unique-100"
+  },
+  {
+    "id": "unique-101",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [
+      "--unique-cause"
+    ],
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "unique-101"
+  },
+  {
+    "id": "unique-110",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [
+      "--unique-cause"
+    ],
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "unique-110"
+  },
+  {
+    "id": "unique-111",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or C",
+    "opcoes": [
+      "--unique-cause"
+    ],
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "unique-111"
+  },
+  {
+    "id": "repeated-000",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or (not A and C)",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "repeated-000"
+  },
+  {
+    "id": "repeated-001",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or (not A and C)",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "repeated-001"
+  },
+  {
+    "id": "repeated-010",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or (not A and C)",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "repeated-010"
+  },
+  {
+    "id": "repeated-011",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or (not A and C)",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "repeated-011"
+  },
+  {
+    "id": "repeated-100",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or (not A and C)",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "repeated-100"
+  },
+  {
+    "id": "repeated-101",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or (not A and C)",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "repeated-101"
+  },
+  {
+    "id": "repeated-110",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or (not A and C)",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "repeated-110"
+  },
+  {
+    "id": "repeated-111",
+    "tipo": "linha_tabela",
+    "expressao": "(A and B) or (not A and C)",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "repeated-111"
+  },
+  {
+    "id": "grouping-000",
+    "tipo": "linha_tabela",
+    "expressao": "A and (B or C)",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "grouping-000"
+  },
+  {
+    "id": "grouping-001",
+    "tipo": "linha_tabela",
+    "expressao": "A and (B or C)",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "grouping-001"
+  },
+  {
+    "id": "grouping-010",
+    "tipo": "linha_tabela",
+    "expressao": "A and (B or C)",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "grouping-010"
+  },
+  {
+    "id": "grouping-011",
+    "tipo": "linha_tabela",
+    "expressao": "A and (B or C)",
+    "opcoes": [],
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "grouping-011"
+  },
+  {
+    "id": "grouping-100",
+    "tipo": "linha_tabela",
+    "expressao": "A and (B or C)",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "grouping-100"
+  },
+  {
+    "id": "grouping-101",
+    "tipo": "linha_tabela",
+    "expressao": "A and (B or C)",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "grouping-101"
+  },
+  {
+    "id": "grouping-110",
+    "tipo": "linha_tabela",
+    "expressao": "A and (B or C)",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "grouping-110"
+  },
+  {
+    "id": "grouping-111",
+    "tipo": "linha_tabela",
+    "expressao": "A and (B or C)",
+    "opcoes": [],
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "grouping-111"
+  },
+  {
+    "id": "tautology-0",
+    "tipo": "linha_tabela",
+    "expressao": "A or not A",
+    "opcoes": [],
+    "entradas": {
+      "A": false
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "tautology-0"
+  },
+  {
+    "id": "tautology-1",
+    "tipo": "linha_tabela",
+    "expressao": "A or not A",
+    "opcoes": [],
+    "entradas": {
+      "A": true
+    },
+    "esperado": true,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R7"
+    ],
+    "evidencia_z3": "tautology-1"
+  },
+  {
+    "id": "invalid-expression",
+    "tipo": "codigo_saida",
+    "expressao": "A and",
+    "opcoes": [],
+    "entradas": {},
+    "esperado": 1,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R6"
+    ],
+    "evidencia_z3": "não aplicável: sintaxe"
+  },
+  {
+    "id": "tautology-no-pair",
+    "tipo": "codigo_saida",
+    "expressao": "A or not A",
+    "opcoes": [],
+    "entradas": {},
+    "esperado": 2,
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "referencias": [
+      "R2",
+      "R6"
+    ],
+    "evidencia_z3": "tautology-0 e tautology-1"
+  }
+]

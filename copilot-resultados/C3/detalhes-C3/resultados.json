@@ -1,0 +1,270 @@
+[
+  {
+    "id": "T01",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T01.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "A and B",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.835259
+  },
+  {
+    "id": "T02",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T02.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "A && B",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.758958
+  },
+  {
+    "id": "T03",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T03.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "A /\\ B",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.721814
+  },
+  {
+    "id": "T04",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T04.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "A or B",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.806831
+  },
+  {
+    "id": "T05",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T05.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "A || B",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.72566
+  },
+  {
+    "id": "T06",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T06.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "A \\/ B",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.889302
+  },
+  {
+    "id": "T07",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T07.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "not A",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.880445
+  },
+  {
+    "id": "T08",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T08.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "!A",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.648048
+  },
+  {
+    "id": "T09",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T09.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "(A and B) or C",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.731031
+  },
+  {
+    "id": "T10",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T10.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "porta_fechada and not obstaculo",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.998796
+  },
+  {
+    "id": "T11",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\T11.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "(A and B) or (not A and C)",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.901119
+  },
+  {
+    "id": "F01",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\F01.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "-f",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\entradas\\requisitos.mcdc",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 1.869051
+  },
+  {
+    "id": "F02",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\F02.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "--json",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\entradas\\decisoes.json",
+      "--format",
+      "json"
+    ],
+    "status": "PASSOU",
+    "detalhe": null,
+    "codigo_saida": 0,
+    "duracao_segundos": 2.391912
+  },
+  {
+    "id": "F03",
+    "classificacao_oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "comando": [
+      "java",
+      "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\cobertura\\F03.exec,append=false",
+      "-cp",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\build\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+      "io.github.rvdomingos.mcdc.cli.Main",
+      "analyze",
+      "(A and B) or C",
+      "-o",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C3\\2026-11-23-experimento-1158\\evidencias\\F03\\relatorio.txt"
+    ],
+    "status": "ERRO DE EXECUÇÃO",
+    "detalhe": "'utf-8' codec can't decode byte 0xf3 in position 5: invalid continuation byte",
+    "codigo_saida": null,
+    "duracao_segundos": 0.6864
+  }
+]

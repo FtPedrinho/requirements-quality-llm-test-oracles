@@ -4,6 +4,8 @@
 
 O sistema é uma ferramenta Java de linha de comando para geração, avaliação e verificação de decisões MC/DC.
 
+Esta descrição é apoio à metodologia. A documentação do produto em [docs/README.md](../docs/README.md) e os documentos de requisitos experimentais C0-C4 foram preservados sem alteração.
+
 ## Implementação real
 
 O repositório Maven contém quatro módulos:
@@ -41,6 +43,12 @@ O repositório Maven contém quatro módulos:
 - mutação interna de expressões;
 - detecção de conflitos e lacunas entre decisões;
 - formatos text, JSON, CSV e truth-csv.
+
+A mutação interna de expressões é uma funcionalidade do SUT; não é Mutation Testing da pesquisa, que foi removido do protocolo atual.
+
+## Uso metodológico do código
+
+Primeiro, derive e congele os oráculos da documentação da condição, usando um solver Z3 independente para formalizar restrições e obter entradas concretas quando aplicável. Não use a saída de `mcdc-z3` para definir expectativas, pois esse módulo integra o SUT. Depois, inspecione o código para localizar módulos, funções, pontos de entrada, branches e condições e criar a suíte contra o sistema real. A documentação determina a expectativa: se o SUT divergir de um oráculo documental determinado, a asserção deve falhar. Registre a divergência; não ajuste o oráculo para coincidir com o código.
 
 ## Limites atuais
 

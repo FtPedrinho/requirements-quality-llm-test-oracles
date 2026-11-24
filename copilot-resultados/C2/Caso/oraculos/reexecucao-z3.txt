@@ -1,0 +1,1022 @@
+Z3 independente: 5.4.1.0 145c0c51570a357cc558ce898ce77573ba9d4fbf 145c0c5
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    false)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    true)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    false)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun C () Bool
+    true)
+  (define-fun D () Bool
+    false)
+  (define-fun A () Bool
+    true)
+  (define-fun B () Bool
+    true)
+)
+unsat
+unsat
+sat
+(
+  (define-fun speed () Real
+    100.0)
+)
+sat
+(
+  (define-fun speed () Real
+    101.0)
+)
+sat
+(
+  (define-fun A () Bool
+    false)
+)
+unsat
+unsat
+unsat
+unsat
+unsat
+unsat
+unsat
+sat
+(
+  (define-fun A_before () Bool
+    true)
+  (define-fun A_after () Bool
+    false)
+)
+sat
+(
+  (define-fun A_before () Bool
+    false)
+  (define-fun A_after () Bool
+    true)
+  (define-fun B_before () Bool
+    true)
+  (define-fun B_after () Bool
+    true)
+)
+sat
+(
+  (define-fun B_before () Bool
+    false)
+  (define-fun A_before () Bool
+    true)
+  (define-fun A_after () Bool
+    true)
+  (define-fun B_after () Bool
+    true)
+)
+sat
+(
+  (define-fun A_before () Bool
+    true)
+  (define-fun A_after () Bool
+    false)
+  (define-fun B_before () Bool
+    false)
+  (define-fun B_after () Bool
+    false)
+)
+sat
+(
+  (define-fun B_before () Bool
+    true)
+  (define-fun A_before () Bool
+    false)
+  (define-fun A_after () Bool
+    false)
+  (define-fun B_after () Bool
+    false)
+)
+sat
+(
+  (define-fun A_before () Bool
+    true)
+  (define-fun A_after () Bool
+    false)
+)
+sat
+(
+  (define-fun A_before () Bool
+    false)
+  (define-fun A_after () Bool
+    true)
+  (define-fun B_before () Bool
+    false)
+  (define-fun B_after () Bool
+    false)
+)
+sat
+(
+  (define-fun B_before () Bool
+    false)
+  (define-fun A_before () Bool
+    true)
+  (define-fun A_after () Bool
+    true)
+  (define-fun B_after () Bool
+    true)
+)
+sat
+(
+  (define-fun A_before () Bool
+    false)
+  (define-fun A_after () Bool
+    true)
+  (define-fun B_before () Bool
+    false)
+  (define-fun B_after () Bool
+    false)
+)
+sat
+(
+  (define-fun B_before () Bool
+    false)
+  (define-fun A_before () Bool
+    true)
+  (define-fun A_after () Bool
+    true)
+  (define-fun B_after () Bool
+    true)
+)
+sat
+(
+  (define-fun A_before () Bool
+    false)
+  (define-fun A_after () Bool
+    true)
+  (define-fun C_before () Bool
+    false)
+  (define-fun B_before () Bool
+    true)
+  (define-fun C_after () Bool
+    false)
+  (define-fun B_after () Bool
+    true)
+)
+sat
+(
+  (define-fun B_before () Bool
+    false)
+  (define-fun C_before () Bool
+    false)
+  (define-fun A_before () Bool
+    true)
+  (define-fun A_after () Bool
+    true)
+  (define-fun C_after () Bool
+    false)
+  (define-fun B_after () Bool
+    true)
+)
+sat
+(
+  (define-fun A_before () Bool
+    false)
+  (define-fun C_before () Bool
+    true)
+  (define-fun B_before () Bool
+    false)
+  (define-fun A_after () Bool
+    false)
+  (define-fun C_after () Bool
+    false)
+  (define-fun B_after () Bool
+    false)
+)
+sat
+(
+  (define-fun A_before () Bool
+    true)
+  (define-fun A_after () Bool
+    false)
+  (define-fun B_before () Bool
+    false)
+  (define-fun C_before () Bool
+    true)
+  (define-fun C_after () Bool
+    true)
+  (define-fun B_after () Bool
+    false)
+)
+sat
+(
+  (define-fun B_before () Bool
+    true)
+  (define-fun A_before () Bool
+    false)
+  (define-fun C_before () Bool
+    true)
+  (define-fun A_after () Bool
+    false)
+  (define-fun C_after () Bool
+    true)
+  (define-fun B_after () Bool
+    false)
+)
+sat
+(
+  (define-fun A_before () Bool
+    true)
+  (define-fun C_before () Bool
+    false)
+  (define-fun B_before () Bool
+    false)
+  (define-fun A_after () Bool
+    true)
+  (define-fun C_after () Bool
+    true)
+  (define-fun B_after () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun selected_1 () Bool
+    true)
+  (define-fun selected_0 () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun selected_1 () Bool
+    true)
+  (define-fun selected_2 () Bool
+    true)
+  (define-fun selected_0 () Bool
+    false)
+  (define-fun selected_3 () Bool
+    true)
+)
+unsat
+sat
+(
+  (define-fun selected_1 () Bool
+    true)
+  (define-fun selected_0 () Bool
+    true)
+  (define-fun selected_2 () Bool
+    true)
+  (define-fun selected_3 () Bool
+    false)
+)
+unsat
+sat
+(
+  (define-fun selected_7 () Bool
+    false)
+  (define-fun selected_1 () Bool
+    false)
+  (define-fun selected_5 () Bool
+    false)
+  (define-fun selected_0 () Bool
+    false)
+  (define-fun selected_3 () Bool
+    true)
+  (define-fun selected_6 () Bool
+    true)
+  (define-fun selected_4 () Bool
+    true)
+  (define-fun selected_2 () Bool
+    true)
+  (define-fun k!0 () Bool
+    false)
+)

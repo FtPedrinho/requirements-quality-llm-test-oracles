@@ -1,0 +1,213 @@
+[
+  {
+    "id": "Y001",
+    "tipo": "conflict",
+    "objetivo": "mesma guarda e valores diferentes",
+    "entrada": {
+      "guards": [
+        "A",
+        "A"
+      ],
+      "actions": [
+        "x := one",
+        "x := two"
+      ]
+    },
+    "esperado": true,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "Confltos (dois requistos valem jtos  escrvem valoes diferetes)",
+    "referencia": "R11",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y001",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y002",
+    "tipo": "conflict",
+    "objetivo": "guardas mutuamente exclusivas",
+    "entrada": {
+      "guards": [
+        "A",
+        "not A"
+      ],
+      "actions": [
+        "x := one",
+        "x := two"
+      ]
+    },
+    "esperado": false,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "Confltos (dois requistos valem jtos  escrvem valoes diferetes)",
+    "referencia": "R11",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y002",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y003",
+    "tipo": "conflict",
+    "objetivo": "mesma variável e mesmo valor",
+    "entrada": {
+      "guards": [
+        "A",
+        "A"
+      ],
+      "actions": [
+        "x := one",
+        "x := one"
+      ]
+    },
+    "esperado": false,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "Confltos (dois requistos valem jtos  escrvem valoes diferetes)",
+    "referencia": "R11",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y003",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y004",
+    "tipo": "conflict",
+    "objetivo": "variáveis escritas distintas",
+    "entrada": {
+      "guards": [
+        "A",
+        "A"
+      ],
+      "actions": [
+        "x := one",
+        "y := two"
+      ]
+    },
+    "esperado": false,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "Confltos (dois requistos valem jtos  escrvem valoes diferetes)",
+    "referencia": "R11",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y004",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y005",
+    "tipo": "gap",
+    "objetivo": "lacuna em contexto universal explícito",
+    "entrada": {
+      "guards": [
+        "A"
+      ],
+      "context": "A or not A"
+    },
+    "esperado": true,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "lacunas (nnum requisito vale)",
+    "referencia": "R11",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y005",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y006",
+    "tipo": "gap",
+    "objetivo": "guardas complementares sem lacuna",
+    "entrada": {
+      "guards": [
+        "A",
+        "not A"
+      ],
+      "context": "A or not A"
+    },
+    "esperado": false,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "lacunas (nnum requisito vale)",
+    "referencia": "R11",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y006",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y007",
+    "tipo": "gap",
+    "objetivo": "contexto coberto pela guarda",
+    "entrada": {
+      "guards": [
+        "A"
+      ],
+      "context": "A"
+    },
+    "esperado": false,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "lacunas (nnum requisito vale)",
+    "referencia": "R11",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y007",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y008",
+    "tipo": "feasibility",
+    "objetivo": "combinação de comparações numéricas",
+    "entrada": {
+      "expression": "speed > 100 or speed > 50",
+      "first": true,
+      "second": true
+    },
+    "esperado": true,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "Combinaçoes impossiveis descrtadas  valoes concretos",
+    "referencia": "R07",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y008",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y009",
+    "tipo": "feasibility",
+    "objetivo": "combinação de comparações numéricas",
+    "entrada": {
+      "expression": "speed > 100 or speed > 50",
+      "first": true,
+      "second": false
+    },
+    "esperado": false,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "Combinaçoes impossiveis descrtadas  valoes concretos",
+    "referencia": "R07",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y009",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y010",
+    "tipo": "feasibility",
+    "objetivo": "combinação de comparações numéricas",
+    "entrada": {
+      "expression": "speed > 100 or speed > 50",
+      "first": false,
+      "second": true
+    },
+    "esperado": true,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "Combinaçoes impossiveis descrtadas  valoes concretos",
+    "referencia": "R07",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y010",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  },
+  {
+    "id": "Y011",
+    "tipo": "feasibility",
+    "objetivo": "combinação de comparações numéricas",
+    "entrada": {
+      "expression": "speed > 100 or speed > 50",
+      "first": false,
+      "second": false
+    },
+    "esperado": true,
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "regra": "Combinaçoes impossiveis descrtadas  valoes concretos",
+    "referencia": "R07",
+    "vinculo": "Instância da regra geral congelada no inventário",
+    "evidencia_z3": "Y011",
+    "precondicao": "variáveis booleanas ou numéricas conforme descrito"
+  }
+]

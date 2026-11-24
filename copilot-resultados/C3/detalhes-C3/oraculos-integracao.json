@@ -1,0 +1,62 @@
+[
+  {
+    "id": "F01",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "objetivo": "Arquivo de requisitos com duas linhas e comentário",
+    "citacoes": [
+      "um requisito por linha, `ID: expressão`. Linhas com `#` são comentários.",
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma"
+    ],
+    "entrada": {
+      "argumentos": ["analyze", "-f", "requisitos.mcdc"],
+      "arquivos": {
+        "requisitos.mcdc": "# comentario\nREQ-001: (A and B) or C\nREQ-002: porta_fechada and not obstaculo\n"
+      }
+    },
+    "formalizacao": "REQ-001 tem os vetores e resultados de T09; REQ-002 tem os vetores e resultados de T10. O comentario nao e requisito.",
+    "esperado": {
+      "decisoes": [
+        {"id": "REQ-001", "tabela": "T09"},
+        {"id": "REQ-002", "tabela": "T10"}
+      ],
+      "numero_decisoes": 2
+    },
+    "limite": "Sem julgamento de ordem, pares, diagnostico, codigos de saida ou formato CSV.",
+    "instrucao": "Invocar analyze no arquivo; examinar as decisoes e suas tabelas."
+  },
+  {
+    "id": "F02",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "objetivo": "Relatorio JSON vincula decisao ao requisito de origem",
+    "citacoes": [
+      "contém as variáveis e seus tipos, além das decisões, cada uma com sua guarda e suas ações.",
+      "`json` | Resultado completo de cada decisão, ligado ao requisito de origem (formato de integração)"
+    ],
+    "entrada": {
+      "argumentos": ["analyze", "--json", "decisoes.json", "--format", "json"],
+      "arquivos": {
+        "decisoes.json": "{\"system\":\"the_coffee_machine_system\",\"inputs\":[{\"name\":\"the_system_mode\",\"type\":\"enum\",\"values\":[\"idle\",\"choice\"]},{\"name\":\"the_coin_sensor\",\"type\":\"bool\"}],\"decisions\":[{\"id\":\"vm#1\",\"requirement\":\"REQ-001\",\"guard\":\"the_system_mode = idle /\\\\ the_coin_sensor = true\",\"actions\":[\"the_system_mode := choice\"]}]}"
+      }
+    },
+    "formalizacao": "Existe decisao com identificador vm#1 e requisito de origem REQ-001; a relacao e especificada pela entrada.",
+    "esperado": {"decisao": "vm#1", "requisito": "REQ-001", "relacionados": true},
+    "limite": "Os nomes dos campos, os pares, a contagem de condicoes e os codigos de saida nao sao esperados.",
+    "instrucao": "Invocar analyze; localizar a relacao decisao-requisito no relatorio JSON."
+  },
+  {
+    "id": "F03",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "objetivo": "Destino de relatorio especificado por -o",
+    "citacoes": [
+      "`-o <arquivo>` | Grava o relatório no arquivo em vez de mostrar na tela"
+    ],
+    "entrada": {
+      "argumentos": ["analyze", "(A and B) or C", "-o", "relatorio.txt"],
+      "arquivos": {}
+    },
+    "formalizacao": "Existe relatorio no arquivo solicitado; o relatorio nao e exibido na tela.",
+    "esperado": {"relatorio_em_arquivo": true, "relatorio_na_tela": false},
+    "limite": "Mensagens que nao sejam o relatorio e codigo de saida nao sao julgados.",
+    "instrucao": "Invocar analyze em diretorio novo e comparar saidas de arquivo e tela."
+  }
+]

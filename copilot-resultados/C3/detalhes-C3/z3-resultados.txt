@@ -1,0 +1,205 @@
+Z3 5.4.1.0 145c0c51570a357cc558ce898ce77573ba9d4fbf 145c0c5
+sat
+((A false)
+ (B false)
+ (decisao false))
+sat
+((A false)
+ (B true)
+ (decisao false))
+sat
+((A true)
+ (B false)
+ (decisao false))
+sat
+((A true)
+ (B true)
+ (decisao true))
+sat
+((A false)
+ (B false)
+ (decisao false))
+sat
+((A false)
+ (B true)
+ (decisao false))
+sat
+((A true)
+ (B false)
+ (decisao false))
+sat
+((A true)
+ (B true)
+ (decisao true))
+sat
+((A false)
+ (B false)
+ (decisao false))
+sat
+((A false)
+ (B true)
+ (decisao false))
+sat
+((A true)
+ (B false)
+ (decisao false))
+sat
+((A true)
+ (B true)
+ (decisao true))
+sat
+((A false)
+ (B false)
+ (decisao false))
+sat
+((A false)
+ (B true)
+ (decisao true))
+sat
+((A true)
+ (B false)
+ (decisao true))
+sat
+((A true)
+ (B true)
+ (decisao true))
+sat
+((A false)
+ (B false)
+ (decisao false))
+sat
+((A false)
+ (B true)
+ (decisao true))
+sat
+((A true)
+ (B false)
+ (decisao true))
+sat
+((A true)
+ (B true)
+ (decisao true))
+sat
+((A false)
+ (B false)
+ (decisao false))
+sat
+((A false)
+ (B true)
+ (decisao true))
+sat
+((A true)
+ (B false)
+ (decisao true))
+sat
+((A true)
+ (B true)
+ (decisao true))
+sat
+((A false)
+ (decisao true))
+sat
+((A true)
+ (decisao false))
+sat
+((A false)
+ (decisao true))
+sat
+((A true)
+ (decisao false))
+sat
+((A false)
+ (B false)
+ (C false)
+ (decisao false))
+sat
+((A false)
+ (B false)
+ (C true)
+ (decisao true))
+sat
+((A false)
+ (B true)
+ (C false)
+ (decisao false))
+sat
+((A false)
+ (B true)
+ (C true)
+ (decisao true))
+sat
+((A true)
+ (B false)
+ (C false)
+ (decisao false))
+sat
+((A true)
+ (B false)
+ (C true)
+ (decisao true))
+sat
+((A true)
+ (B true)
+ (C false)
+ (decisao true))
+sat
+((A true)
+ (B true)
+ (C true)
+ (decisao true))
+sat
+((porta_fechada false)
+ (obstaculo false)
+ (decisao false))
+sat
+((porta_fechada false)
+ (obstaculo true)
+ (decisao false))
+sat
+((porta_fechada true)
+ (obstaculo false)
+ (decisao true))
+sat
+((porta_fechada true)
+ (obstaculo true)
+ (decisao false))
+sat
+((A false)
+ (B false)
+ (C false)
+ (decisao false))
+sat
+((A false)
+ (B false)
+ (C true)
+ (decisao true))
+sat
+((A false)
+ (B true)
+ (C false)
+ (decisao false))
+sat
+((A false)
+ (B true)
+ (C true)
+ (decisao true))
+sat
+((A true)
+ (B false)
+ (C false)
+ (decisao false))
+sat
+((A true)
+ (B false)
+ (C true)
+ (decisao false))
+sat
+((A true)
+ (B true)
+ (C false)
+ (decisao true))
+sat
+((A true)
+ (B true)
+ (C true)
+ (decisao true))

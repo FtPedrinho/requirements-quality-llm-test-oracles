@@ -1,0 +1,1 @@
+﻿DuraÃ§Ã£o das duas JVMs em ms: 14638; exit baseline: 1; exit extensÃ£o: 0

@@ -1,0 +1,73 @@
+{
+  "versao": "5.4.1.0 145c0c51570a357cc558ce898ce77573ba9d4fbf 145c0c5",
+  "timeout_ms": 60000,
+  "consultas": [
+    {
+      "id": "Y001",
+      "status": "sat",
+      "testemunha": "[A = True]",
+      "smtlib": "(declare-fun A () Bool)\n(assert A)\n(assert (distinct \"one\" \"two\"))\n(model-add A () Bool true)\n"
+    },
+    {
+      "id": "Y002",
+      "status": "unsat",
+      "testemunha": null,
+      "smtlib": "(declare-fun A () Bool)\n(assert A)\n(assert (not A))\n"
+    },
+    {
+      "id": "Y003",
+      "status": "unsat",
+      "testemunha": null,
+      "smtlib": "(declare-fun A () Bool)\n(assert A)\n(assert (distinct \"one\" \"one\"))\n"
+    },
+    {
+      "id": "Y004",
+      "status": "unsat",
+      "testemunha": null,
+      "smtlib": "(declare-fun A () Bool)\n(assert A)\n(assert (= \"x\" \"y\"))\n"
+    },
+    {
+      "id": "Y005",
+      "status": "sat",
+      "testemunha": "[A = False]",
+      "smtlib": "(declare-fun A () Bool)\n(assert (or A (not A)))\n(assert (not A))\n(model-add A () Bool false)\n"
+    },
+    {
+      "id": "Y006",
+      "status": "unsat",
+      "testemunha": null,
+      "smtlib": "(declare-fun A () Bool)\n(assert (or A (not A)))\n(assert (not (or A (not A))))\n"
+    },
+    {
+      "id": "Y007",
+      "status": "unsat",
+      "testemunha": null,
+      "smtlib": "(declare-fun A () Bool)\n(assert A)\n(assert (not A))\n"
+    },
+    {
+      "id": "Y008",
+      "status": "sat",
+      "testemunha": "[speed = 101]",
+      "smtlib": "(declare-fun speed () Real)\n(assert (> speed 100.0))\n(assert (> speed 50.0))\n(model-add speed () Real 101.0)\n"
+    },
+    {
+      "id": "Y009",
+      "status": "unsat",
+      "testemunha": null,
+      "smtlib": "(declare-fun speed () Real)\n(assert (> speed 100.0))\n(assert (not (> speed 50.0)))\n"
+    },
+    {
+      "id": "Y010",
+      "status": "sat",
+      "testemunha": "[speed = 51]",
+      "smtlib": "(declare-fun speed () Real)\n(assert (not (> speed 100.0)))\n(assert (> speed 50.0))\n(model-add speed () Real 51.0)\n"
+    },
+    {
+      "id": "Y011",
+      "status": "sat",
+      "testemunha": "[speed = 0]",
+      "smtlib": "(declare-fun speed () Real)\n(assert (not (> speed 100.0)))\n(assert (not (> speed 50.0)))\n(model-add speed () Real 0.0)\n"
+    }
+  ],
+  "limite": "Z3 verifica as fórmulas, não a fidelidade da tradução."
+}

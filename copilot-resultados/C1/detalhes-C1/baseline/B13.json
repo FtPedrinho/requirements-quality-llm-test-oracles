@@ -1,0 +1,21 @@
+{
+  "id": "B13",
+  "argumentos": [
+    "analyze",
+    "A and"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\baseline\\B13.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "analyze",
+    "A and"
+  ],
+  "codigo": 1,
+  "stdout": "",
+  "stderr": "Erro: REQ: Express�o incompleta: esperava uma condi��o\n",
+  "duracao_segundos": 1.48
+}

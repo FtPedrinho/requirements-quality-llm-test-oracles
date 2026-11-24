@@ -1,0 +1,24 @@
+Decisão:   REQ
+Guarda:    A /\ B
+Variante:  causa única
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | F
+V3    F   T   | F
+V4    F   F   | F
+
+Pares de independência:
+  A: (V1, V3)
+  B: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra A, B
+  V2  TF  -> F   demonstra B
+  V3  FT  -> F   demonstra A
+
+Demonstração por condição:
+  A: V1 (T) e V3 (F), só ela muda
+  B: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa

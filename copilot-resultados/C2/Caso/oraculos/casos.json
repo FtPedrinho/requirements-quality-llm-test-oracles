@@ -1,0 +1,2175 @@
+[
+  {
+    "tipo": "truth",
+    "expressao": "A",
+    "entradas": {
+      "A": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "A",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-001; unico-001",
+    "id": "C001"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A",
+    "entradas": {
+      "A": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "A",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-002; unico-002",
+    "id": "C002"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A and B",
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-003; unico-003",
+    "id": "C003"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A and B",
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-004; unico-004",
+    "id": "C004"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A and B",
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-005; unico-005",
+    "id": "C005"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A and B",
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-006; unico-006",
+    "id": "C006"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A && B",
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-007; unico-007",
+    "id": "C007"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A && B",
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-008; unico-008",
+    "id": "C008"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A && B",
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-009; unico-009",
+    "id": "C009"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A && B",
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-010; unico-010",
+    "id": "C010"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A /\\ B",
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-011; unico-011",
+    "id": "C011"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A /\\ B",
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-012; unico-012",
+    "id": "C012"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A /\\ B",
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-013; unico-013",
+    "id": "C013"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A /\\ B",
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-014; unico-014",
+    "id": "C014"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A or B",
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-015; unico-015",
+    "id": "C015"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A or B",
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-016; unico-016",
+    "id": "C016"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A or B",
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-017; unico-017",
+    "id": "C017"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A or B",
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-018; unico-018",
+    "id": "C018"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A || B",
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-019; unico-019",
+    "id": "C019"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A || B",
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-020; unico-020",
+    "id": "C020"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A || B",
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-021; unico-021",
+    "id": "C021"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A || B",
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-022; unico-022",
+    "id": "C022"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A \\/ B",
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-023; unico-023",
+    "id": "C023"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A \\/ B",
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-024; unico-024",
+    "id": "C024"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A \\/ B",
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-025; unico-025",
+    "id": "C025"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A \\/ B",
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or A B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-026; unico-026",
+    "id": "C026"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not A",
+    "entradas": {
+      "A": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not A)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-027; unico-027",
+    "id": "C027"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not A",
+    "entradas": {
+      "A": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not A)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-028; unico-028",
+    "id": "C028"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "! A",
+    "entradas": {
+      "A": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not A)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-029; unico-029",
+    "id": "C029"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "! A",
+    "entradas": {
+      "A": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not A)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-030; unico-030",
+    "id": "C030"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A and (not B)",
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A (not B))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-031; unico-031",
+    "id": "C031"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A and (not B)",
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A (not B))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-032; unico-032",
+    "id": "C032"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A and (not B)",
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A (not B))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-033; unico-033",
+    "id": "C033"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "A and (not B)",
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and A (not B))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-034; unico-034",
+    "id": "C034"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(not A) or B",
+    "entradas": {
+      "A": false,
+      "B": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (not A) B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-035; unico-035",
+    "id": "C035"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(not A) or B",
+    "entradas": {
+      "A": false,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (not A) B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-036; unico-036",
+    "id": "C036"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(not A) or B",
+    "entradas": {
+      "A": true,
+      "B": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (not A) B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-037; unico-037",
+    "id": "C037"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(not A) or B",
+    "entradas": {
+      "A": true,
+      "B": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (not A) B)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-038; unico-038",
+    "id": "C038"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or C",
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-039; unico-039",
+    "id": "C039"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or C",
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-040; unico-040",
+    "id": "C040"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or C",
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-041; unico-041",
+    "id": "C041"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or C",
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-042; unico-042",
+    "id": "C042"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or C",
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-043; unico-043",
+    "id": "C043"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or C",
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-044; unico-044",
+    "id": "C044"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or C",
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-045; unico-045",
+    "id": "C045"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or C",
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-046; unico-046",
+    "id": "C046"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A or B) and C",
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and (or A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-047; unico-047",
+    "id": "C047"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A or B) and C",
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and (or A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-048; unico-048",
+    "id": "C048"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A or B) and C",
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and (or A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-049; unico-049",
+    "id": "C049"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A or B) and C",
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and (or A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-050; unico-050",
+    "id": "C050"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A or B) and C",
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and (or A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-051; unico-051",
+    "id": "C051"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A or B) and C",
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and (or A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-052; unico-052",
+    "id": "C052"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A or B) and C",
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and (or A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-053; unico-053",
+    "id": "C053"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A or B) and C",
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(and (or A B) C)",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-054; unico-054",
+    "id": "C054"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or (not A and C)",
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) (and (not A) C))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-055; unico-055",
+    "id": "C055"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or (not A and C)",
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) (and (not A) C))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-056; unico-056",
+    "id": "C056"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or (not A and C)",
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) (and (not A) C))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-057; unico-057",
+    "id": "C057"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or (not A and C)",
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) (and (not A) C))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-058; unico-058",
+    "id": "C058"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or (not A and C)",
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) (and (not A) C))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-059; unico-059",
+    "id": "C059"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or (not A and C)",
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) (and (not A) C))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-060; unico-060",
+    "id": "C060"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or (not A and C)",
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) (and (not A) C))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-061; unico-061",
+    "id": "C061"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "(A and B) or (not A and C)",
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(or (and A B) (and (not A) C))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-062; unico-062",
+    "id": "C062"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not (A and (B or C))",
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not (and A (or B C)))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-063; unico-063",
+    "id": "C063"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not (A and (B or C))",
+    "entradas": {
+      "A": false,
+      "B": false,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not (and A (or B C)))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-064; unico-064",
+    "id": "C064"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not (A and (B or C))",
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not (and A (or B C)))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-065; unico-065",
+    "id": "C065"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not (A and (B or C))",
+    "entradas": {
+      "A": false,
+      "B": true,
+      "C": true
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not (and A (or B C)))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-066; unico-066",
+    "id": "C066"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not (A and (B or C))",
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": false
+    },
+    "esperado": true,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not (and A (or B C)))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-067; unico-067",
+    "id": "C067"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not (A and (B or C))",
+    "entradas": {
+      "A": true,
+      "B": false,
+      "C": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not (and A (or B C)))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-068; unico-068",
+    "id": "C068"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not (A and (B or C))",
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": false
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not (and A (or B C)))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-069; unico-069",
+    "id": "C069"
+  },
+  {
+    "tipo": "truth",
+    "expressao": "not (A and (B or C))",
+    "entradas": {
+      "A": true,
+      "B": true,
+      "C": true
+    },
+    "esperado": false,
+    "precondicao": "entradas booleanas sem restrição",
+    "regra": "(not (and A (or B C)))",
+    "vinculo": "Conectivos de R02 e tabela de R01",
+    "referencia": "R01, R02",
+    "citacao": "para  entradas distintas  expressão, são consideradas  2ⁿ combinações  calculado  resultado da guada em cada",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "truth-070; unico-070",
+    "id": "C070"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "A"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C071"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "A",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C072"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "not A"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C073"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "not A",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C074"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "A and B"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C075"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C076"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "A or B"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C077"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "A or B",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C078"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "A and (not B)"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C079"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "A and (not B)",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C080"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "(not A) or B"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C081"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "(not A) or B",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C082"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "(A and B) or C"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C083"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "(A and B) or C",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C084"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "(A or B) and C"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C085"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Análise de guarda com par para cada ocorrência",
+    "argumentos": [
+      "analyze",
+      "(A or B) and C",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "cada condição tem par independente; logo não há condição sem par",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "essa conição muda,  resultado  decisão  muda",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C086"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Decisão constante sem par",
+    "argumentos": [
+      "analyze",
+      "A and not A"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "a decisão constante não pode mudar entre duas linhas",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "`0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "constantes",
+    "id": "C087"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Decisão constante sem par",
+    "argumentos": [
+      "analyze",
+      "A and not A",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "a decisão constante não pode mudar entre duas linhas",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "`0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "constantes",
+    "id": "C088"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Decisão constante sem par",
+    "argumentos": [
+      "analyze",
+      "A or not A"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "a decisão constante não pode mudar entre duas linhas",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "`0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "constantes",
+    "id": "C089"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Decisão constante sem par",
+    "argumentos": [
+      "analyze",
+      "A or not A",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "a decisão constante não pode mudar entre duas linhas",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R13",
+    "citacao": "`0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "constantes",
+    "id": "C090"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Restrição impede ao menos um par de causa única",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--constraint",
+      "A",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "não existe par viável de causa única para ao menos uma ocorrência",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R10, R13",
+    "citacao": "`0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "restricao-and-a; restricao-or-a; restricao-implica",
+    "id": "C091"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Restrição impede ao menos um par de causa única",
+    "argumentos": [
+      "analyze",
+      "A or B",
+      "--constraint",
+      "A",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "não existe par viável de causa única para ao menos uma ocorrência",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R10, R13",
+    "citacao": "`0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "restricao-and-a; restricao-or-a; restricao-implica",
+    "id": "C092"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Restrição impede ao menos um par de causa única",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--constraint",
+      "not A or B",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "não existe par viável de causa única para ao menos uma ocorrência",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R10, R13",
+    "citacao": "`0`: comndo concluido  apontr os prblemas dscrtos pra  cdgo `2`; `1`: entraa invalida; `2`: resutado vido  processamto",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "restricao-and-a; restricao-or-a; restricao-implica",
+    "id": "C093"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Suíte exata mínima em causa única",
+    "argumentos": [
+      "analyze",
+      "A",
+      "--exact",
+      "--unique-cause",
+      "--format",
+      "json"
+    ],
+    "esperado": 2,
+    "validacao": "exact_size",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "mínimo de 2 vetores para os pares independentes",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R05, R09",
+    "citacao": "`--exact`,  Z   3 pocura  suíte de tamanho mnimo",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "minimo-A-1; minimo-A-2",
+    "id": "C094"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Suíte exata mínima em causa única",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--exact",
+      "--unique-cause",
+      "--format",
+      "json"
+    ],
+    "esperado": 3,
+    "validacao": "exact_size",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "mínimo de 3 vetores para os pares independentes",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R05, R09",
+    "citacao": "`--exact`,  Z   3 pocura  suíte de tamanho mnimo",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "minimo-A and B-2; minimo-A and B-3",
+    "id": "C095"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Suíte exata mínima em causa única",
+    "argumentos": [
+      "analyze",
+      "A or B",
+      "--exact",
+      "--unique-cause",
+      "--format",
+      "json"
+    ],
+    "esperado": 3,
+    "validacao": "exact_size",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "mínimo de 3 vetores para os pares independentes",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R05, R09",
+    "citacao": "`--exact`,  Z   3 pocura  suíte de tamanho mnimo",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "minimo-A or B-2; minimo-A or B-3",
+    "id": "C096"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Suíte exata mínima em causa única",
+    "argumentos": [
+      "analyze",
+      "(A and B) or C",
+      "--exact",
+      "--unique-cause",
+      "--format",
+      "json"
+    ],
+    "esperado": 4,
+    "validacao": "exact_size",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "mínimo de 4 vetores para os pares independentes",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R05, R09",
+    "citacao": "`--exact`,  Z   3 pocura  suíte de tamanho mnimo",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "minimo-(A and B) or C-3; minimo-(A and B) or C-4",
+    "id": "C097"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Pares em modo direto",
+    "argumentos": [
+      "analyze",
+      "A",
+      "--direct",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "há par para cada condição; modo direto não constrói tabela completa",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R09, R13",
+    "citacao": "Paes pedds dreto  Z   3,  mnar a tabela ( 30 entradas)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C098"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Pares em modo direto",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--direct",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "há par para cada condição; modo direto não constrói tabela completa",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R09, R13",
+    "citacao": "Paes pedds dreto  Z   3,  mnar a tabela ( 30 entradas)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C099"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Pares em modo direto",
+    "argumentos": [
+      "analyze",
+      "A or B",
+      "--direct",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "há par para cada condição; modo direto não constrói tabela completa",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R09, R13",
+    "citacao": "Paes pedds dreto  Z   3,  mnar a tabela ( 30 entradas)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C100"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Pares em modo direto",
+    "argumentos": [
+      "analyze",
+      "(A and B) or C",
+      "--direct",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "há par para cada condição; modo direto não constrói tabela completa",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R09, R13",
+    "citacao": "Paes pedds dreto  Z   3,  mnar a tabela ( 30 entradas)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C101"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Formato documentado",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--format",
+      "text"
+    ],
+    "esperado": 0,
+    "validacao": "nonempty",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "guarda completa e relatório no formato pedido",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R13, R16",
+    "citacao": "`text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C102"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Formato documentado",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "validacao": "json",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "guarda completa e relatório no formato pedido",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R13, R16",
+    "citacao": "`text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C103"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Formato documentado",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--format",
+      "csv"
+    ],
+    "esperado": 0,
+    "validacao": "nonempty",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "guarda completa e relatório no formato pedido",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R13, R16",
+    "citacao": "`text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C104"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Formato documentado",
+    "argumentos": [
+      "analyze",
+      "A and B",
+      "--format",
+      "truth-csv"
+    ],
+    "esperado": 0,
+    "validacao": "nonempty",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "guarda completa e relatório no formato pedido",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R13, R16",
+    "citacao": "`text` (pdrão), `json`, `csv` (suíte)  `truth-csv` (tabela-verdade intea)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C105"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Restrição numérica implica impossibilidade",
+    "argumentos": [
+      "analyze",
+      "speed > 100 or speed > 50",
+      "--z3",
+      "--format",
+      "json"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "speed > 100 implica speed > 50; primeira ocorrência fica sem par viável",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R07, R13",
+    "citacao": "Combinaçoes impossiveis descrtadas  valoes concretos",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "implicacao",
+    "id": "C106"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Fronteira documentada",
+    "argumentos": [
+      "analyze",
+      "speed > 100",
+      "--z3",
+      "--boundary",
+      "--format",
+      "json"
+    ],
+    "esperado": [
+      100,
+      101
+    ],
+    "validacao": "boundary",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "fronteiras do exemplo são 100 e 101",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R08",
+    "citacao": "`speed > 100` → 100  101",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "fronteira",
+    "id": "C107"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Verificação de lacunas",
+    "argumentos": [
+      "verify",
+      "-f",
+      "@simples"
+    ],
+    "esperado": 2,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "A falsa produz lacuna",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R11, R13",
+    "citacao": "lacunas (nnum requisito vale)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "gap-a",
+    "id": "C108"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Verificação de lacunas",
+    "argumentos": [
+      "verify",
+      "-f",
+      "@complementar"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "A ou não A é sempre verdadeira; sem ações conflitantes",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R11, R13",
+    "citacao": "lacunas (nnum requisito vale)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "gap-complementar",
+    "id": "C109"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Verificação de lacunas",
+    "argumentos": [
+      "verify",
+      "-f",
+      "@simples",
+      "--context",
+      "A"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "no contexto A, A é verdadeira",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R11, R13",
+    "citacao": "lacunas (nnum requisito vale)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "gap-contexto",
+    "id": "C110"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Verificação de lacunas",
+    "argumentos": [
+      "verify",
+      "-f",
+      "@complementar",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "guardas complementares, sem lacuna",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R11, R13",
+    "citacao": "lacunas (nnum requisito vale)",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "gap-complementar",
+    "id": "C111"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Fonte mcdc com comentário",
+    "argumentos": [
+      "analyze",
+      "-f",
+      "@complementar"
+    ],
+    "esperado": 0,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "duas guardas simples possuem pares",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R04, R14",
+    "citacao": "um requisito  linha, `ID: expressão`. Lnhas com `#`  comentrios",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "pares-simples",
+    "id": "C112"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Expressão sintaticamente incompleta ou inválida",
+    "argumentos": [
+      "analyze",
+      "A and"
+    ],
+    "esperado": 1,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "entrada não constitui expressão lógica válida",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R01, R13",
+    "citacao": "`1`: entraa invalida",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "não aplicável",
+    "id": "C113"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Expressão sintaticamente incompleta ou inválida",
+    "argumentos": [
+      "analyze",
+      "(A or B"
+    ],
+    "esperado": 1,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "entrada não constitui expressão lógica válida",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R01, R13",
+    "citacao": "`1`: entraa invalida",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "não aplicável",
+    "id": "C114"
+  },
+  {
+    "tipo": "diagnostico",
+    "objetivo": "Operador não descrito na tabela",
+    "argumentos": [
+      "analyze",
+      "A @ B"
+    ],
+    "esperado": null,
+    "precondicao": "entrada textual de expressão",
+    "regra": "Não há afirmação de que os operadores listados são os únicos aceitos",
+    "vinculo": "Omissão documental",
+    "referencia": "R02, R13",
+    "citacao": "`1`: entraa invalida",
+    "classificacao": "INDETERMINADO — OMISSÃO",
+    "evidencia_z3": "não aplicável",
+    "id": "C115"
+  },
+  {
+    "tipo": "cli",
+    "objetivo": "Expressão sintaticamente incompleta ou inválida",
+    "argumentos": [
+      "analyze",
+      ""
+    ],
+    "esperado": 1,
+    "validacao": "exit",
+    "precondicao": "fontes e dependências da rodada disponíveis",
+    "regra": "entrada não constitui expressão lógica válida",
+    "vinculo": "Regra deduzida da definição citada e, quando aplicável, da fórmula SMT",
+    "referencia": "R01, R13",
+    "citacao": "`1`: entraa invalida",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "evidencia_z3": "não aplicável",
+    "id": "C116"
+  },
+  {
+    "tipo": "diagnostico",
+    "objetivo": "Grafia da coluna CSV vlue",
+    "argumentos": [
+      "check",
+      "A",
+      "--tests",
+      "@csv-vlue"
+    ],
+    "esperado": null,
+    "precondicao": "CSV com valores booleanos",
+    "regra": "O exemplo contém vlue; não especifica inequivocamente a grafia aceita em geral",
+    "vinculo": "Omissão/ambiguidade documental",
+    "referencia": "R12",
+    "citacao": "As colunas `decision`  `expected_outcome` são opcionis",
+    "classificacao": "INDETERMINADO — AMBIGUIDADE",
+    "evidencia_z3": "não aplicável",
+    "id": "C117"
+  },
+  {
+    "tipo": "diagnostico",
+    "objetivo": "Grafia da coluna CSV value",
+    "argumentos": [
+      "check",
+      "A",
+      "--tests",
+      "@csv-value"
+    ],
+    "esperado": null,
+    "precondicao": "CSV com valores booleanos",
+    "regra": "O exemplo contém vlue; não especifica inequivocamente a grafia aceita em geral",
+    "vinculo": "Omissão/ambiguidade documental",
+    "referencia": "R12",
+    "citacao": "As colunas `decision`  `expected_outcome` são opcionis",
+    "classificacao": "INDETERMINADO — AMBIGUIDADE",
+    "evidencia_z3": "não aplicável",
+    "id": "C118"
+  },
+  {
+    "tipo": "diagnostico",
+    "objetivo": "Campo de guarda JSON literal do exemplo",
+    "argumentos": [
+      "analyze",
+      "--json",
+      "@json-literal"
+    ],
+    "esperado": null,
+    "precondicao": "JSON baseado no formato apresentado",
+    "regra": "O exemplo usa gard; o texto não resolve se essa grafia representa o campo obrigatório",
+    "vinculo": "Ambiguidade documental",
+    "referencia": "R15",
+    "citacao": "\"gard\": \"the_system_mode = idle /\\\\ the_coin_sensor = true\"",
+    "classificacao": "INDETERMINADO — AMBIGUIDADE",
+    "evidencia_z3": "não aplicável",
+    "id": "C119"
+  }
+]

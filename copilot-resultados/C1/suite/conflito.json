@@ -1,0 +1,8 @@
+{
+  "system": "C1",
+  "inputs": [{"name": "A", "type": "bool"}],
+  "decisions": [
+    {"id": "R1", "requirement": "R1", "guard": "A", "actions": ["x := 0"]},
+    {"id": "R2", "requirement": "R2", "guard": "A", "actions": ["x := 1"]}
+  ]
+}

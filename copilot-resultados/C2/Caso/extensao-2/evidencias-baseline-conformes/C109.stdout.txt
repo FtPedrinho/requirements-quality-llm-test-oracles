@@ -1,0 +1,8 @@
+Verificação entre requisitos
+2 decisões, 0 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: não conferidas (use --context "<expressão>" para dizer em que situação alguma guarda deve valer)

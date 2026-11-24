@@ -1,0 +1,68 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "!A",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "A"
+    } ],
+    "conditions" : [ {
+      "label" : "A",
+      "input" : "A",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 2,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "A" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "A" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "A" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "A" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "A" ]
+    } ],
+    "chosenPairs" : {
+      "A" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

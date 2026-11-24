@@ -1,0 +1,25 @@
+{
+  "id": "B16",
+  "argumentos": [
+    "analyze",
+    "A and B",
+    "--format",
+    "truth-csv"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\baseline\\B16.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "analyze",
+    "A and B",
+    "--format",
+    "truth-csv"
+  ],
+  "codigo": 0,
+  "stdout": "decision,requirement,row,A,B,outcome,feasible,in_suite,demonstrates,concrete_values\nREQ,,V1,T,T,T,T,T,A; B,\nREQ,,V2,T,F,F,T,T,B,\nREQ,,V3,F,T,F,T,T,A,\nREQ,,V4,F,F,F,T,F,,\n",
+  "stderr": "",
+  "duracao_segundos": 1.176
+}

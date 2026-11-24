@@ -1,54 +1,15 @@
-# Proposta de corpus experimental
+# Corpus experimental
 
-## Objetivo do corpus
+## Sistema e documentos
 
-Fornecer ao LLM documentação da ferramenta MC/DC, não documentação dos sistemas usados como entradas.
+O objeto de teste é a ferramenta MC/DC implementada em Java. A fonte e as cópias experimentais de requisitos C0-C4 estão em [experimentacao-pesquisa/](../experimentacao-pesquisa/). Os documentos são congelados, identificados por hashes e não devem ser modificados.
 
-## Corpus recomendado
+O README técnico do SUT e os documentos de requisitos condicionais devem ser distinguidos: o material entregue ao modelo em cada execução é registrado por arquivo/hash. Não misturar documentação de condições. Exemplos VM/TIS/NPP são dados analisados pela ferramenta; não descrevem implementações de domínio sob teste.
 
-1. [README da ferramenta](../docs/README.md);
-2. seção de uso da `Main` em Java;
-3. Javadocs relevantes de:
-   - `RequirementsFile`;
-   - `Nat2TestJsonReader`;
-   - `ExpressionParser`;
-   - `TruthTable`;
-   - `IndependencePairs`;
-   - `MinimalSuite`;
-   - `Z3FeasibilityChecker`;
-   - `Z3RequirementsVerifier`;
-   - formato de saída da CLI.
+## Uso do corpus
 
-4. Exemplos sintéticos curtos criados apenas a partir da documentação já existente, sem introduzir comportamento novo.
-
-## Conteúdo reservado para validação independente
-
-Não fornecer ao gerador inicial:
-
-- código-fonte da implementação;
-- testes JUnit existentes;
-- Mutation Reports;
-- resultados históricos;
-- saídas já geradas;
-- scripts de validação.
-
-## Documentação auxiliar e referência arquitetural
-
-- PDF técnico como especificação de referência da tarefa, com seções não implementadas marcadas como propostas não confirmadas;
-- relatórios JaCoCo/PIT;
-- análise histórica em `docs/`;
-- arquivos VM, TIS e NPP;
-- arquivos de saída dos exemplos.
-
-## Funcionalidades sem especificação suficiente
-
-Até decidir-se uma fonte normativa adicional, não gerar oráculos para:
-
-- plugin Eclipse;
-- execução sobre AST Java;
-- instrumentação de bytecode;
-- geração Gherkin;
-- cobertura dinâmica de código;
-- integração Eclipse.
-
-Esses itens aparecem no PDF, mas não estão implementados no repositório atual.
+Cada condição é independente e entrega ao modelo somente sua fonte normativa.
+A documentação e o SUT não devem ser alterados. O procedimento, o uso
+obrigatório de Z3 e as métricas estão no
+[protocolo comum](../experimentacao-pesquisa/protocolo/metodologia.md).
+Resultados de outras execuções não são parte do corpus de geração.

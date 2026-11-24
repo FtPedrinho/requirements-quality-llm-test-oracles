@@ -1,0 +1,1479 @@
+{
+  "versao": "5.4.1.0 145c0c51570a357cc558ce898ce77573ba9d4fbf 145c0c5",
+  "timeout_ms": 60000,
+  "consultas": [
+    {
+      "id": "truth-001",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= D A))\n(model-add A () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-001",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= D A))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-002",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= D A))\n(model-add A () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-002",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= D A))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-003",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (and A B)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-003",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-004",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (and A B)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-004",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-005",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (and A B)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-005",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-006",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (and A B)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-006",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (and A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-007",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (and A B)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-007",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-008",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (and A B)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-008",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-009",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (and A B)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-009",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-010",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (and A B)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-010",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (and A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-011",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (and A B)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-011",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-012",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (and A B)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-012",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-013",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (and A B)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-013",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (and A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-014",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (and A B)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-014",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (and A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-015",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (or A B)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-015",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (or A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-016",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (or A B)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-016",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-017",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (or A B)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-017",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-018",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (or A B)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-018",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-019",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (or A B)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-019",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (or A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-020",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (or A B)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-020",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-021",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (or A B)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-021",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-022",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (or A B)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-022",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-023",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (or A B)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-023",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (or A B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-024",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (or A B)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-024",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-025",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (or A B)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-025",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-026",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (or A B)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-026",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (or A B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-027",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= D (not A)))\n(model-add A () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-027",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= D (not A)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-028",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= D (not A)))\n(model-add A () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-028",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= D (not A)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-029",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= D (not A)))\n(model-add A () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-029",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= D (not A)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-030",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= D (not A)))\n(model-add A () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-030",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= D (not A)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-031",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (and A (not B))))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-031",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (and A (not B))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-032",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (and A (not B))))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-032",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (and A (not B))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-033",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (and A (not B))))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-033",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (and A (not B))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-034",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (and A (not B))))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-034",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (and A (not B))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-035",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (or (not A) B)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-035",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= D (or (not A) B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-036",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (or (not A) B)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-036",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= D (or (not A) B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-037",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (or (not A) B)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-037",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= D (or (not A) B)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-038",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (or (not A) B)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-038",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= D (or (not A) B)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-039",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (or (and A B) C)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-039",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (or (and A B) C)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-040",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (or (and A B) C)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-040",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (or (and A B) C)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-041",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (or (and A B) C)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-041",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (or (and A B) C)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-042",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (or (and A B) C)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-042",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (or (and A B) C)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-043",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (or (and A B) C)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-043",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (or (and A B) C)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-044",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (or (and A B) C)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-044",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (or (and A B) C)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-045",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (or (and A B) C)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add C () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-045",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (or (and A B) C)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-046",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (or (and A B) C)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-046",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (or (and A B) C)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-047",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (and (or A B) C)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-047",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (and (or A B) C)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-048",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (and (or A B) C)))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add C () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-048",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (and (or A B) C)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-049",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (and (or A B) C)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-049",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (and (or A B) C)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-050",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (and (or A B) C)))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-050",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (and (or A B) C)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-051",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (and (or A B) C)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-051",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (and (or A B) C)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-052",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (and (or A B) C)))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-052",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (and (or A B) C)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-053",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (and (or A B) C)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-053",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (and (or A B) C)))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-054",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (and (or A B) C)))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-054",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (and (or A B) C)))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-055",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (or (and A B) (and (not A) C))))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-055",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (or (and A B) (and (not A) C))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-056",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (or (and A B) (and (not A) C))))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-056",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (or (and A B) (and (not A) C))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-057",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (or (and A B) (and (not A) C))))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-057",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (or (and A B) (and (not A) C))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-058",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (or (and A B) (and (not A) C))))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-058",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (or (and A B) (and (not A) C))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-059",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (or (and A B) (and (not A) C))))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-059",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (or (and A B) (and (not A) C))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-060",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (or (and A B) (and (not A) C))))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add C () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-060",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (or (and A B) (and (not A) C))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-061",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (or (and A B) (and (not A) C))))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add C () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-061",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (or (and A B) (and (not A) C))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-062",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (or (and A B) (and (not A) C))))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-062",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (or (and A B) (and (not A) C))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-063",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (not (and A (or B C)))))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add C () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-063",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (not (and A (or B C)))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-064",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (not (and A (or B C)))))\n(model-add A () Bool false)\n(model-add B () Bool false)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-064",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (not (and A (or B C)))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-065",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (not (and A (or B C)))))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add C () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-065",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (not (and A (or B C)))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-066",
+      "status": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "True",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (not (and A (or B C)))))\n(model-add A () Bool false)\n(model-add B () Bool true)\n(model-add C () Bool true)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-066",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A false))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (not (and A (or B C)))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-067",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "False",
+        "D": "True"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (not (and A (or B C)))))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add C () Bool false)\n(model-add D () Bool true)\n"
+    },
+    {
+      "id": "unico-067",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C false))\n(assert (= D (not (and A (or B C)))))\n(assert (distinct D true))\n"
+    },
+    {
+      "id": "truth-068",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (not (and A (or B C)))))\n(model-add A () Bool true)\n(model-add B () Bool false)\n(model-add C () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-068",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B false))\n(assert (= C true))\n(assert (= D (not (and A (or B C)))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-069",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "False",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (not (and A (or B C)))))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add C () Bool false)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-069",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C false))\n(assert (= D (not (and A (or B C)))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "truth-070",
+      "status": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "True",
+        "D": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (not (and A (or B C)))))\n(model-add A () Bool true)\n(model-add B () Bool true)\n(model-add C () Bool true)\n(model-add D () Bool false)\n"
+    },
+    {
+      "id": "unico-070",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(declare-fun D () Bool)\n(assert (= A true))\n(assert (= B true))\n(assert (= C true))\n(assert (= D (not (and A (or B C)))))\n(assert (distinct D false))\n"
+    },
+    {
+      "id": "implicacao",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun speed () Real)\n(assert (> speed 100.0))\n(assert (not (> speed 50.0)))\n"
+    },
+    {
+      "id": "fronteira-100",
+      "status": "sat",
+      "testemunha": {
+        "speed": "100"
+      },
+      "smtlib": "(declare-fun speed () Real)\n(assert (= speed 100.0))\n(assert (not (> speed 100.0)))\n(model-add speed () Real 100.0)\n"
+    },
+    {
+      "id": "fronteira-101",
+      "status": "sat",
+      "testemunha": {
+        "speed": "101"
+      },
+      "smtlib": "(declare-fun speed () Real)\n(assert (= speed 101.0))\n(assert (> speed 100.0))\n(model-add speed () Real 101.0)\n"
+    },
+    {
+      "id": "gap-a",
+      "status": "sat",
+      "testemunha": {
+        "A": "False"
+      },
+      "smtlib": "(declare-fun A () Bool)\n(assert (not A))\n(model-add A () Bool false)\n"
+    },
+    {
+      "id": "gap-complementar",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(assert (not (or A (not A))))\n"
+    },
+    {
+      "id": "gap-contexto",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun A () Bool)\n(assert A)\n(assert (not A))\n"
+    },
+    {
+      "id": "constantes-false",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun B () Bool)\n(declare-fun A () Bool)\n(assert (xor (and A (not A)) (and B (not B))))\n"
+    },
+    {
+      "id": "constantes-true",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun B () Bool)\n(declare-fun A () Bool)\n(assert (xor (or A (not A)) (or B (not B))))\n"
+    },
+    {
+      "id": "restricao-and-a",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun a0 () Bool)\n(declare-fun a1 () Bool)\n(declare-fun b1 () Bool)\n(declare-fun b0 () Bool)\n(assert a0)\n(assert a1)\n(assert (distinct a0 a1))\n(assert (= b0 b1))\n(assert (distinct (and a0 b0) (and a1 b1)))\n"
+    },
+    {
+      "id": "restricao-or-a",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun a0 () Bool)\n(declare-fun a1 () Bool)\n(declare-fun b1 () Bool)\n(declare-fun b0 () Bool)\n(assert a0)\n(assert a1)\n(assert (distinct a0 a1))\n(assert (= b0 b1))\n(assert (distinct (or a0 b0) (or a1 b1)))\n"
+    },
+    {
+      "id": "restricao-implica",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun b0 () Bool)\n(declare-fun a0 () Bool)\n(declare-fun b1 () Bool)\n(declare-fun a1 () Bool)\n(assert (or (not a0) b0))\n(assert (or (not a1) b1))\n(assert (distinct b0 b1))\n(assert (= a0 a1))\n(assert (distinct (and a0 b0) (and a1 b1)))\n"
+    },
+    {
+      "id": "par-A-A",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "A_after": "False"
+      },
+      "smtlib": "(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct A_before A_after))\n(assert (distinct A_before A_after))\n(model-add A_before () Bool true)\n(model-add A_after () Bool false)\n"
+    },
+    {
+      "id": "par-A and B-A",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "False",
+        "B_before": "True",
+        "A_after": "True",
+        "B_after": "True"
+      },
+      "smtlib": "(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(assert (distinct A_before A_after))\n(assert (distinct (and A_before B_before) (and A_after B_after)))\n(assert (= B_before B_after))\n(model-add A_before () Bool false)\n(model-add A_after () Bool true)\n(model-add B_before () Bool true)\n(model-add B_after () Bool true)\n"
+    },
+    {
+      "id": "par-A and B-B",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "B_before": "False",
+        "A_after": "True",
+        "B_after": "True"
+      },
+      "smtlib": "(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct B_before B_after))\n(assert (distinct (and A_before B_before) (and A_after B_after)))\n(assert (= A_before A_after))\n(model-add B_before () Bool false)\n(model-add B_after () Bool true)\n(model-add A_before () Bool true)\n(model-add A_after () Bool true)\n"
+    },
+    {
+      "id": "par-A or B-A",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "B_before": "False",
+        "A_after": "False",
+        "B_after": "False"
+      },
+      "smtlib": "(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(assert (distinct A_before A_after))\n(assert (distinct (or A_before B_before) (or A_after B_after)))\n(assert (= B_before B_after))\n(model-add A_before () Bool true)\n(model-add A_after () Bool false)\n(model-add B_before () Bool false)\n(model-add B_after () Bool false)\n"
+    },
+    {
+      "id": "par-A or B-B",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "False",
+        "B_before": "True",
+        "A_after": "False",
+        "B_after": "False"
+      },
+      "smtlib": "(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct B_before B_after))\n(assert (distinct (or A_before B_before) (or A_after B_after)))\n(assert (= A_before A_after))\n(model-add B_before () Bool true)\n(model-add B_after () Bool false)\n(model-add A_before () Bool false)\n(model-add A_after () Bool false)\n"
+    },
+    {
+      "id": "par-not A-A",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "A_after": "False"
+      },
+      "smtlib": "(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct A_before A_after))\n(assert (distinct (not A_before) (not A_after)))\n(model-add A_before () Bool true)\n(model-add A_after () Bool false)\n"
+    },
+    {
+      "id": "par-A and (not B)-A",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "False",
+        "B_before": "False",
+        "A_after": "True",
+        "B_after": "False"
+      },
+      "smtlib": "(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(assert (distinct A_before A_after))\n(assert (distinct (and A_before (not B_before)) (and A_after (not B_after))))\n(assert (= B_before B_after))\n(model-add A_before () Bool false)\n(model-add A_after () Bool true)\n(model-add B_before () Bool false)\n(model-add B_after () Bool false)\n"
+    },
+    {
+      "id": "par-A and (not B)-B",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "B_before": "False",
+        "A_after": "True",
+        "B_after": "True"
+      },
+      "smtlib": "(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct B_before B_after))\n(assert (distinct (and A_before (not B_before)) (and A_after (not B_after))))\n(assert (= A_before A_after))\n(model-add B_before () Bool false)\n(model-add B_after () Bool true)\n(model-add A_before () Bool true)\n(model-add A_after () Bool true)\n"
+    },
+    {
+      "id": "par-(not A) or B-A",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "False",
+        "B_before": "False",
+        "A_after": "True",
+        "B_after": "False"
+      },
+      "smtlib": "(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(assert (distinct A_before A_after))\n(assert (distinct (or (not A_before) B_before) (or (not A_after) B_after)))\n(assert (= B_before B_after))\n(model-add A_before () Bool false)\n(model-add A_after () Bool true)\n(model-add B_before () Bool false)\n(model-add B_after () Bool false)\n"
+    },
+    {
+      "id": "par-(not A) or B-B",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "B_before": "False",
+        "A_after": "True",
+        "B_after": "True"
+      },
+      "smtlib": "(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct B_before B_after))\n(assert (distinct (or (not A_before) B_before) (or (not A_after) B_after)))\n(assert (= A_before A_after))\n(model-add B_before () Bool false)\n(model-add B_after () Bool true)\n(model-add A_before () Bool true)\n(model-add A_after () Bool true)\n"
+    },
+    {
+      "id": "par-(A and B) or C-A",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "False",
+        "B_before": "True",
+        "C_before": "False",
+        "A_after": "True",
+        "B_after": "True",
+        "C_after": "False"
+      },
+      "smtlib": "(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(declare-fun C_after () Bool)\n(declare-fun B_after () Bool)\n(declare-fun C_before () Bool)\n(declare-fun B_before () Bool)\n(assert (distinct A_before A_after))\n(assert (distinct (or (and A_before B_before) C_before)\n          (or (and A_after B_after) C_after)))\n(assert (= B_before B_after))\n(assert (= C_before C_after))\n(model-add A_before () Bool false)\n(model-add A_after () Bool true)\n(model-add C_before () Bool false)\n(model-add B_before () Bool true)\n(model-add C_after () Bool false)\n(model-add B_after () Bool true)\n"
+    },
+    {
+      "id": "par-(A and B) or C-B",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "B_before": "False",
+        "C_before": "False",
+        "A_after": "True",
+        "B_after": "True",
+        "C_after": "False"
+      },
+      "smtlib": "(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(declare-fun C_after () Bool)\n(declare-fun A_after () Bool)\n(declare-fun C_before () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct B_before B_after))\n(assert (distinct (or (and A_before B_before) C_before)\n          (or (and A_after B_after) C_after)))\n(assert (= A_before A_after))\n(assert (= C_before C_after))\n(model-add B_before () Bool false)\n(model-add B_after () Bool true)\n(model-add C_before () Bool false)\n(model-add A_before () Bool true)\n(model-add C_after () Bool false)\n(model-add A_after () Bool true)\n"
+    },
+    {
+      "id": "par-(A and B) or C-C",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "False",
+        "B_before": "False",
+        "C_before": "True",
+        "A_after": "False",
+        "B_after": "False",
+        "C_after": "False"
+      },
+      "smtlib": "(declare-fun C_after () Bool)\n(declare-fun C_before () Bool)\n(declare-fun B_after () Bool)\n(declare-fun A_after () Bool)\n(declare-fun B_before () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct C_before C_after))\n(assert (distinct (or (and A_before B_before) C_before)\n          (or (and A_after B_after) C_after)))\n(assert (= A_before A_after))\n(assert (= B_before B_after))\n(model-add C_before () Bool true)\n(model-add C_after () Bool false)\n(model-add A_before () Bool false)\n(model-add B_before () Bool false)\n(model-add A_after () Bool false)\n(model-add B_after () Bool false)\n"
+    },
+    {
+      "id": "par-(A or B) and C-A",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "B_before": "False",
+        "C_before": "True",
+        "A_after": "False",
+        "B_after": "False",
+        "C_after": "True"
+      },
+      "smtlib": "(declare-fun A_after () Bool)\n(declare-fun A_before () Bool)\n(declare-fun C_after () Bool)\n(declare-fun B_after () Bool)\n(declare-fun C_before () Bool)\n(declare-fun B_before () Bool)\n(assert (distinct A_before A_after))\n(assert (distinct (and (or A_before B_before) C_before)\n          (and (or A_after B_after) C_after)))\n(assert (= B_before B_after))\n(assert (= C_before C_after))\n(model-add A_before () Bool true)\n(model-add A_after () Bool false)\n(model-add C_before () Bool true)\n(model-add B_before () Bool false)\n(model-add B_after () Bool false)\n(model-add C_after () Bool true)\n"
+    },
+    {
+      "id": "par-(A or B) and C-B",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "False",
+        "B_before": "True",
+        "C_before": "True",
+        "A_after": "False",
+        "B_after": "False",
+        "C_after": "True"
+      },
+      "smtlib": "(declare-fun B_after () Bool)\n(declare-fun B_before () Bool)\n(declare-fun C_after () Bool)\n(declare-fun A_after () Bool)\n(declare-fun C_before () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct B_before B_after))\n(assert (distinct (and (or A_before B_before) C_before)\n          (and (or A_after B_after) C_after)))\n(assert (= A_before A_after))\n(assert (= C_before C_after))\n(model-add B_before () Bool true)\n(model-add B_after () Bool false)\n(model-add A_before () Bool false)\n(model-add C_before () Bool true)\n(model-add A_after () Bool false)\n(model-add C_after () Bool true)\n"
+    },
+    {
+      "id": "par-(A or B) and C-C",
+      "status": "sat",
+      "testemunha": {
+        "A_before": "True",
+        "B_before": "False",
+        "C_before": "False",
+        "A_after": "True",
+        "B_after": "False",
+        "C_after": "True"
+      },
+      "smtlib": "(declare-fun C_after () Bool)\n(declare-fun C_before () Bool)\n(declare-fun B_after () Bool)\n(declare-fun A_after () Bool)\n(declare-fun B_before () Bool)\n(declare-fun A_before () Bool)\n(assert (distinct C_before C_after))\n(assert (distinct (and (or A_before B_before) C_before)\n          (and (or A_after B_after) C_after)))\n(assert (= A_before A_after))\n(assert (= B_before B_after))\n(model-add C_before () Bool false)\n(model-add C_after () Bool true)\n(model-add A_before () Bool true)\n(model-add B_before () Bool false)\n(model-add A_after () Bool true)\n(model-add B_after () Bool false)\n"
+    },
+    {
+      "id": "minimo-A-1",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun selected_1 () Bool)\n(declare-fun selected_0 () Bool)\n(assert (or (and selected_0 selected_1)))\n(assert ((_ at-most 1) selected_0 selected_1))\n"
+    },
+    {
+      "id": "minimo-A-2",
+      "status": "sat",
+      "testemunha": {
+        "selected_0": "True",
+        "selected_1": "True"
+      },
+      "smtlib": "(declare-fun selected_1 () Bool)\n(declare-fun selected_0 () Bool)\n(assert (or (and selected_0 selected_1)))\n(assert ((_ at-most 2) selected_0 selected_1))\n(model-add selected_0 () Bool true)\n(model-add selected_1 () Bool true)\n"
+    },
+    {
+      "id": "minimo-A and B-2",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun selected_3 () Bool)\n(declare-fun selected_1 () Bool)\n(declare-fun selected_2 () Bool)\n(declare-fun selected_0 () Bool)\n(assert (or (and selected_1 selected_3)))\n(assert (or (and selected_2 selected_3)))\n(assert ((_ at-most 2) selected_0 selected_1 selected_2 selected_3))\n"
+    },
+    {
+      "id": "minimo-A and B-3",
+      "status": "sat",
+      "testemunha": {
+        "selected_0": "False",
+        "selected_1": "True",
+        "selected_2": "True",
+        "selected_3": "True"
+      },
+      "smtlib": "(declare-fun selected_3 () Bool)\n(declare-fun selected_1 () Bool)\n(declare-fun selected_2 () Bool)\n(declare-fun selected_0 () Bool)\n(assert (or (and selected_1 selected_3)))\n(assert (or (and selected_2 selected_3)))\n(assert ((_ at-most 3) selected_0 selected_1 selected_2 selected_3))\n(model-add selected_1 () Bool true)\n(model-add selected_2 () Bool true)\n(model-add selected_0 () Bool false)\n(model-add selected_3 () Bool true)\n"
+    },
+    {
+      "id": "minimo-A or B-2",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun selected_2 () Bool)\n(declare-fun selected_0 () Bool)\n(declare-fun selected_1 () Bool)\n(declare-fun selected_3 () Bool)\n(assert (or (and selected_0 selected_2)))\n(assert (or (and selected_0 selected_1)))\n(assert ((_ at-most 2) selected_0 selected_1 selected_2 selected_3))\n"
+    },
+    {
+      "id": "minimo-A or B-3",
+      "status": "sat",
+      "testemunha": {
+        "selected_0": "True",
+        "selected_1": "True",
+        "selected_2": "True",
+        "selected_3": "False"
+      },
+      "smtlib": "(declare-fun selected_2 () Bool)\n(declare-fun selected_0 () Bool)\n(declare-fun selected_1 () Bool)\n(declare-fun selected_3 () Bool)\n(assert (or (and selected_0 selected_2)))\n(assert (or (and selected_0 selected_1)))\n(assert ((_ at-most 3) selected_0 selected_1 selected_2 selected_3))\n(model-add selected_0 () Bool true)\n(model-add selected_3 () Bool false)\n(model-add selected_1 () Bool true)\n(model-add selected_2 () Bool true)\n"
+    },
+    {
+      "id": "minimo-(A and B) or C-3",
+      "status": "unsat",
+      "testemunha": {},
+      "smtlib": "(declare-fun selected_6 () Bool)\n(declare-fun selected_2 () Bool)\n(declare-fun selected_4 () Bool)\n(declare-fun selected_5 () Bool)\n(declare-fun selected_3 () Bool)\n(declare-fun selected_1 () Bool)\n(declare-fun selected_0 () Bool)\n(declare-fun selected_7 () Bool)\n(assert (or (and selected_2 selected_6)))\n(assert (or (and selected_4 selected_6)))\n(assert (or (and selected_0 selected_1)\n    (and selected_2 selected_3)\n    (and selected_4 selected_5)))\n(assert ((_ at-most 3)\n  selected_0\n  selected_1\n  selected_2\n  selected_3\n  selected_4\n  selected_5\n  selected_6\n  selected_7))\n"
+    },
+    {
+      "id": "minimo-(A and B) or C-4",
+      "status": "sat",
+      "testemunha": {
+        "selected_0": "False",
+        "selected_1": "False",
+        "selected_2": "True",
+        "selected_3": "True",
+        "selected_4": "True",
+        "selected_5": "False",
+        "selected_6": "True",
+        "selected_7": "False"
+      },
+      "smtlib": "(declare-fun selected_2 () Bool)\n(declare-fun selected_4 () Bool)\n(declare-fun selected_6 () Bool)\n(declare-fun k!0 () Bool)\n(declare-fun selected_7 () Bool)\n(declare-fun selected_5 () Bool)\n(declare-fun selected_3 () Bool)\n(declare-fun selected_1 () Bool)\n(declare-fun selected_0 () Bool)\n(assert (or (and selected_2 selected_6)))\n(assert (or (and selected_4 selected_6)))\n(assert (or (and selected_0 selected_1)\n    (and selected_2 selected_3)\n    (and selected_4 selected_5)))\n(assert ((_ at-most 4)\n  selected_0\n  selected_1\n  selected_2\n  selected_3\n  selected_4\n  selected_5\n  selected_6\n  selected_7))\n(model-add selected_2 () Bool true)\n(model-add selected_4 () Bool true)\n(model-add selected_6 () Bool true)\n(model-del k!0)\n(model-add selected_7 () Bool (not k!0))\n(model-add k!0 () Bool true)\n(model-add selected_1 () Bool false)\n(model-add selected_5 () Bool false)\n(model-add selected_0 () Bool false)\n(model-add selected_3 () Bool true)\n"
+    }
+  ],
+  "limite": "Z3 verifica as fórmulas, não a fidelidade de tradução documental."
+}

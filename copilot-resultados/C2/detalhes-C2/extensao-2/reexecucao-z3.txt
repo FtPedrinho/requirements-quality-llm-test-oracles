@@ -1,0 +1,32 @@
+Z3 independente: 5.4.1.0 145c0c51570a357cc558ce898ce77573ba9d4fbf 145c0c5
+sat
+(
+  (define-fun A () Bool
+    true)
+)
+unsat
+unsat
+unsat
+sat
+(
+  (define-fun A () Bool
+    false)
+)
+unsat
+unsat
+sat
+(
+  (define-fun speed () Real
+    101.0)
+)
+unsat
+sat
+(
+  (define-fun speed () Real
+    51.0)
+)
+sat
+(
+  (define-fun speed () Real
+    0.0)
+)

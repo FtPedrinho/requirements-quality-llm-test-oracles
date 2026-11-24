@@ -1,0 +1,98 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "speed > 100",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "speed > 100",
+      "variable" : "speed",
+      "operator" : ">",
+      "value" : "100"
+    } ],
+    "conditions" : [ {
+      "label" : "speed > 100",
+      "input" : "speed > 100",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 2,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "speed > 100" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "speed" : "101"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "speed > 100" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "speed" : "0"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "speed > 100" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "speed > 100" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "speed" : "101"
+      },
+      "demonstrates" : [ "speed > 100" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "speed > 100" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "speed" : "0"
+      },
+      "demonstrates" : [ "speed > 100" ]
+    } ],
+    "chosenPairs" : {
+      "speed > 100" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    },
+    "boundaryTests" : [ {
+      "base" : "V1",
+      "condition" : "speed > 100",
+      "boundary" : "speed = 101",
+      "assignment" : {
+        "speed" : "101"
+      }
+    }, {
+      "base" : "V2",
+      "condition" : "speed > 100",
+      "boundary" : "speed = 100",
+      "assignment" : {
+        "speed" : "100"
+      }
+    } ]
+  } ]
+}

@@ -1,0 +1,470 @@
+{
+  "duracao_segundos": 29.560763000001316,
+  "casos": [
+    {
+      "id": "E2-eq-correto",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": false,
+        "T3": true,
+        "T4": false
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x = 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-eq-correto.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 0,
+      "stderr": "",
+      "stdout_sha256": "C874B195860B68D534D7EE3F05F6E3203941FFB1A17DF2AB1F0D31D0B5CC1D37",
+      "observado": {
+        "T2": false,
+        "T3": true,
+        "T4": false
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-eq-divergente",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": false,
+        "T3": true,
+        "T4": false
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x = 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-eq-divergente.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 2,
+      "stderr": "",
+      "stdout_sha256": "AC0D3503C343E3E88494A959CE2B1BADB761331E3B1C1444768B9F2B98C6B42D",
+      "observado": {
+        "T2": false,
+        "T3": true,
+        "T4": false
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-ne-correto",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": true,
+        "T3": false,
+        "T4": true
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x != 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-ne-correto.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 0,
+      "stderr": "",
+      "stdout_sha256": "568D168DBCF0FA94A3CEC7B17FB07EE8F325AB7130893F70473F96752BC38BDE",
+      "observado": {
+        "T2": true,
+        "T3": false,
+        "T4": true
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-ne-divergente",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": true,
+        "T3": false,
+        "T4": true
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x != 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-ne-divergente.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 2,
+      "stderr": "",
+      "stdout_sha256": "D9A404B2EEF09A9D1F9548C00F6BCF7294E66DD2AF208A7A3AB10A816B462B15",
+      "observado": {
+        "T2": true,
+        "T3": false,
+        "T4": true
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-lt-correto",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": true,
+        "T3": false,
+        "T4": false
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x < 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-lt-correto.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 0,
+      "stderr": "",
+      "stdout_sha256": "0A1D05E7B993825057066C613E164391ECF9116093A8E31CC16BA33C201AAC4E",
+      "observado": {
+        "T2": true,
+        "T3": false,
+        "T4": false
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-lt-divergente",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": true,
+        "T3": false,
+        "T4": false
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x < 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-lt-divergente.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 2,
+      "stderr": "",
+      "stdout_sha256": "C09C5ACCBEFEEAE87891EEFA79A037F38D21785CFB7905C01073A1C2B1EEE315",
+      "observado": {
+        "T2": true,
+        "T3": false,
+        "T4": false
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-le-correto",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": true,
+        "T3": true,
+        "T4": false
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x <= 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-le-correto.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 0,
+      "stderr": "",
+      "stdout_sha256": "7F92291519023549BD868433D9DB734EBC1574CBBB114F00E37F53A3F13E0E45",
+      "observado": {
+        "T2": true,
+        "T3": true,
+        "T4": false
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-le-divergente",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": true,
+        "T3": true,
+        "T4": false
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x <= 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-le-divergente.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 2,
+      "stderr": "",
+      "stdout_sha256": "0ED16D21F13B063033A1A5438E755F1F04AEB6BFBA1382841ADFF1D48E8545EF",
+      "observado": {
+        "T2": true,
+        "T3": true,
+        "T4": false
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-gt-correto",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": false,
+        "T3": false,
+        "T4": true
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x > 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-gt-correto.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 0,
+      "stderr": "",
+      "stdout_sha256": "16256507BE96C233474CDD2945840F7CBBE0925D131B214C88148D3A653F806A",
+      "observado": {
+        "T2": false,
+        "T3": false,
+        "T4": true
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-gt-divergente",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": false,
+        "T3": false,
+        "T4": true
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x > 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-gt-divergente.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 2,
+      "stderr": "",
+      "stdout_sha256": "BE4F7C6B1E23001F73195A879D976915860F249E84BC9D81A22B9FF78C078A2E",
+      "observado": {
+        "T2": false,
+        "T3": false,
+        "T4": true
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-ge-correto",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": false,
+        "T3": true,
+        "T4": true
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x >= 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-ge-correto.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 0,
+      "stderr": "",
+      "stdout_sha256": "E58809EB3A04516E8FE5552E6B1E827AE5C549A8DBA737FB290BF21310EB312C",
+      "observado": {
+        "T2": false,
+        "T3": true,
+        "T4": true
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-ge-divergente",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": {
+        "T2": false,
+        "T3": true,
+        "T4": true
+      },
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "check",
+        "x >= 3",
+        "--tests",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-ge-divergente.csv",
+        "--format",
+        "json"
+      ],
+      "codigo": 2,
+      "stderr": "",
+      "stdout_sha256": "403CBE9FC6F6BD7F5800B4BB92AFDDCEFB383B4395D7F31C9F72D7423F438679",
+      "observado": {
+        "T2": false,
+        "T3": true,
+        "T4": true
+      },
+      "status": "PASSOU"
+    },
+    {
+      "id": "E2-fronteira-gt",
+      "oraculo": "CONFORME À DOCUMENTAÇÃO",
+      "esperado": [
+        3,
+        4
+      ],
+      "comando": [
+        "java",
+        "-Dfile.encoding=UTF-8",
+        "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec,append=true",
+        "-cp",
+        "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+        "io.github.rvdomingos.mcdc.cli.Main",
+        "analyze",
+        "x > 3",
+        "--z3",
+        "--boundary",
+        "--format",
+        "json"
+      ],
+      "codigo": 0,
+      "stderr": "",
+      "stdout_sha256": "3B430275FAABEB9F3F963AFE0C03959F2B6451BAFDFDB021DB1CA3671978EA81",
+      "stdout": "{\n  \"tool\" : \"mcdc\",\n  \"system\" : null,\n  \"variant\" : \"MASKING\",\n  \"constraint\" : null,\n  \"complete\" : true,\n  \"decisions\" : [ {\n    \"id\" : \"REQ\",\n    \"requirement\" : null,\n    \"guard\" : \"x > 3\",\n    \"actions\" : [ ],\n    \"complete\" : true,\n    \"uncoveredConditions\" : [ ],\n    \"uncovered\" : [ ],\n    \"inputs\" : [ {\n      \"name\" : \"x > 3\",\n      \"variable\" : \"x\",\n      \"operator\" : \">\",\n      \"value\" : \"3\"\n    } ],\n    \"conditions\" : [ {\n      \"label\" : \"x > 3\",\n      \"input\" : \"x > 3\",\n      \"occurrence\" : 1\n    } ],\n    \"suiteMethod\" : \"GREEDY\",\n    \"truthTableRows\" : 2,\n    \"truthTableBuilt\" : true,\n    \"truthTable\" : [ {\n      \"vector\" : \"V1\",\n      \"values\" : {\n        \"x > 3\" : true\n      },\n      \"outcome\" : true,\n      \"assignment\" : {\n        \"x\" : \"4\"\n      },\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"x > 3\" : false\n      },\n      \"outcome\" : false,\n      \"assignment\" : {\n        \"x\" : \"0\"\n      },\n      \"feasible\" : true\n    } ],\n    \"independencePairs\" : {\n      \"x > 3\" : [ [ \"V1\", \"V2\" ] ]\n    },\n    \"pairsTruncated\" : [ ],\n    \"minimalSuite\" : [ {\n      \"vector\" : \"V1\",\n      \"values\" : {\n        \"x > 3\" : true\n      },\n      \"outcome\" : true,\n      \"assignment\" : {\n        \"x\" : \"4\"\n      },\n      \"demonstrates\" : [ \"x > 3\" ]\n    }, {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"x > 3\" : false\n      },\n      \"outcome\" : false,\n      \"assignment\" : {\n        \"x\" : \"0\"\n      },\n      \"demonstrates\" : [ \"x > 3\" ]\n    } ],\n    \"chosenPairs\" : {\n      \"x > 3\" : {\n        \"whenTrue\" : \"V1\",\n        \"whenFalse\" : \"V2\",\n        \"uniqueCause\" : true\n      }\n    },\n    \"boundaryTests\" : [ {\n      \"base\" : \"V1\",\n      \"condition\" : \"x > 3\",\n      \"boundary\" : \"x = 4\",\n      \"assignment\" : {\n        \"x\" : \"4\"\n      }\n    }, {\n      \"base\" : \"V2\",\n      \"condition\" : \"x > 3\",\n      \"boundary\" : \"x = 3\",\n      \"assignment\" : {\n        \"x\" : \"3\"\n      }\n    } ]\n  } ]\n}\n",
+      "observado": [
+        3,
+        4
+      ],
+      "status": "PASSOU"
+    }
+  ],
+  "jacoco_extensao": {
+    "comando": [
+      "java",
+      "-jar",
+      "C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.cli\\0.8.16\\org.jacoco.cli-0.8.16-nodeps.jar",
+      "report",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec",
+      "--classfiles",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes",
+      "--xml",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2-jacoco.xml",
+      "--name",
+      "extension2"
+    ],
+    "stdout": "[INFO] Loading execution data file C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec.\n[INFO] Analyzing 69 classes.\n",
+    "stderr": "",
+    "cobertos": 430,
+    "nao_cobertos": 866
+  },
+  "jacoco_combinado": {
+    "comando": [
+      "java",
+      "-jar",
+      "C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.cli\\0.8.16\\org.jacoco.cli-0.8.16-nodeps.jar",
+      "report",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\combinado2.exec",
+      "--classfiles",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\classes",
+      "--xml",
+      "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\combinado2-jacoco.xml",
+      "--name",
+      "combinado2"
+    ],
+    "stdout": "[INFO] Loading execution data file C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\combinado2.exec.\n[INFO] Analyzing 69 classes.\n",
+    "stderr": "",
+    "cobertos": 847,
+    "nao_cobertos": 449
+  },
+  "comando_merge": [
+    "java",
+    "-jar",
+    "C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.cli\\0.8.16\\org.jacoco.cli-0.8.16-nodeps.jar",
+    "merge",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\combinado.exec",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec",
+    "--destfile",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\combinado2.exec"
+  ],
+  "stdout_merge": "[INFO] Loading execution data file C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\combinado.exec.\n[INFO] Loading execution data file C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\extension2.exec.\n[INFO] Writing execution data to C:\\Users\\User\\requirements-quality-llm-test-oracles\\experimentacao-pesquisa\\experimentos\\C0\\reinicio-2026-11-21\\combinado2.exec.\n",
+  "stderr_merge": ""
+}

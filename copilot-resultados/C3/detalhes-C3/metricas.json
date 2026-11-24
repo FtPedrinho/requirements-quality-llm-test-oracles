@@ -1,0 +1,361 @@
+{
+  "baseline": {
+    "casos": 14,
+    "status": {
+      "PASSOU": 13,
+      "ERRO DE EXECUÇÃO": 1
+    },
+    "assercoes_compostas_avaliadas": 13,
+    "assercoes_satisfeitas": 13,
+    "aprovacao_percentual": 100.0,
+    "duracao_segundos_soma": 24.844626
+  },
+  "repeticao_tecnica": {
+    "casos": 1,
+    "status": {
+      "PASSOU": 1
+    },
+    "assercoes_compostas_avaliadas": 1,
+    "assercoes_satisfeitas": 1,
+    "aprovacao_percentual": 100.0,
+    "duracao_segundos_soma": 0.741502
+  },
+  "extensao": {
+    "casos": 16,
+    "status": {
+      "PASSOU": 16
+    },
+    "assercoes_compostas_avaliadas": 16,
+    "assercoes_satisfeitas": 16,
+    "aprovacao_percentual": 100.0,
+    "duracao_segundos_soma": 14.402325
+  },
+  "execucoes_incluindo_repeticao": {
+    "casos": 31,
+    "status": {
+      "PASSOU": 30,
+      "ERRO DE EXECUÇÃO": 1
+    },
+    "assercoes_compostas_avaliadas": 30,
+    "assercoes_satisfeitas": 30,
+    "aprovacao_percentual": 100.0,
+    "duracao_segundos_soma": 39.988453
+  },
+  "oraculos_determinados_distintos": 14,
+  "registros_indeterminados_de_conflito": 15,
+  "taxa_indeterminacao_registros_percentual": 51.7241,
+  "nota_contagem_indeterminacao": "Contagem conservadora de registros de conflito; nao sao casos com entradas completas.",
+  "revisao": "autoavaliacao; nao houve revisor independente",
+  "classfiles_producao": 73,
+  "classfiles_mutacao_incluidas": [
+    "io/github/rvdomingos/mcdc/core/mutation/FaultClass",
+    "io/github/rvdomingos/mcdc/core/mutation/Mutants",
+    "io/github/rvdomingos/mcdc/core/mutation/Mutants$Mutant",
+    "io/github/rvdomingos/mcdc/core/mutation/MutationReport",
+    "io/github/rvdomingos/mcdc/core/mutation/MutationReport$Result",
+    "io/github/rvdomingos/mcdc/core/mutation/MutationReport$Summary"
+  ],
+  "branch_coverage": {
+    "baseline-total": {
+      "total": {
+        "cobertos": 304,
+        "total": 1296,
+        "percentual": 23.4568
+      },
+      "modulos": {
+        "core": {
+          "cobertos": 125,
+          "total": 411,
+          "percentual": 30.4136
+        },
+        "requirements": {
+          "cobertos": 82,
+          "total": 162,
+          "percentual": 50.6173
+        },
+        "z3": {
+          "cobertos": 0,
+          "total": 386,
+          "percentual": 0.0
+        },
+        "cli": {
+          "cobertos": 97,
+          "total": 337,
+          "percentual": 28.7834
+        }
+      },
+      "classfiles": 73
+    },
+    "baseline-conformes-conclusivos": {
+      "total": {
+        "cobertos": 266,
+        "total": 1296,
+        "percentual": 20.5247
+      },
+      "modulos": {
+        "core": {
+          "cobertos": 112,
+          "total": 411,
+          "percentual": 27.2506
+        },
+        "requirements": {
+          "cobertos": 82,
+          "total": 162,
+          "percentual": 50.6173
+        },
+        "z3": {
+          "cobertos": 0,
+          "total": 386,
+          "percentual": 0.0
+        },
+        "cli": {
+          "cobertos": 72,
+          "total": 337,
+          "percentual": 21.365
+        }
+      },
+      "classfiles": 73
+    },
+    "repeticao-f03": {
+      "total": {
+        "cobertos": 219,
+        "total": 1296,
+        "percentual": 16.8981
+      },
+      "modulos": {
+        "core": {
+          "cobertos": 102,
+          "total": 411,
+          "percentual": 24.8175
+        },
+        "requirements": {
+          "cobertos": 52,
+          "total": 162,
+          "percentual": 32.0988
+        },
+        "z3": {
+          "cobertos": 0,
+          "total": 386,
+          "percentual": 0.0
+        },
+        "cli": {
+          "cobertos": 65,
+          "total": 337,
+          "percentual": 19.2878
+        }
+      },
+      "classfiles": 73
+    },
+    "acumulado-total": {
+      "total": {
+        "cobertos": 304,
+        "total": 1296,
+        "percentual": 23.4568
+      },
+      "modulos": {
+        "core": {
+          "cobertos": 125,
+          "total": 411,
+          "percentual": 30.4136
+        },
+        "requirements": {
+          "cobertos": 82,
+          "total": 162,
+          "percentual": 50.6173
+        },
+        "z3": {
+          "cobertos": 0,
+          "total": 386,
+          "percentual": 0.0
+        },
+        "cli": {
+          "cobertos": 97,
+          "total": 337,
+          "percentual": 28.7834
+        }
+      },
+      "classfiles": 73
+    },
+    "acumulado-conformes-conclusivos": {
+      "total": {
+        "cobertos": 304,
+        "total": 1296,
+        "percentual": 23.4568
+      },
+      "modulos": {
+        "core": {
+          "cobertos": 125,
+          "total": 411,
+          "percentual": 30.4136
+        },
+        "requirements": {
+          "cobertos": 82,
+          "total": 162,
+          "percentual": 50.6173
+        },
+        "z3": {
+          "cobertos": 0,
+          "total": 386,
+          "percentual": 0.0
+        },
+        "cli": {
+          "cobertos": 97,
+          "total": 337,
+          "percentual": 28.7834
+        }
+      },
+      "classfiles": 73
+    },
+    "extensao": {
+      "total": {
+        "cobertos": 323,
+        "total": 1296,
+        "percentual": 24.9228
+      },
+      "modulos": {
+        "core": {
+          "cobertos": 140,
+          "total": 411,
+          "percentual": 34.0633
+        },
+        "requirements": {
+          "cobertos": 82,
+          "total": 162,
+          "percentual": 50.6173
+        },
+        "z3": {
+          "cobertos": 0,
+          "total": 386,
+          "percentual": 0.0
+        },
+        "cli": {
+          "cobertos": 101,
+          "total": 337,
+          "percentual": 29.9703
+        }
+      },
+      "classfiles": 73
+    },
+    "final-total": {
+      "total": {
+        "cobertos": 323,
+        "total": 1296,
+        "percentual": 24.9228
+      },
+      "modulos": {
+        "core": {
+          "cobertos": 140,
+          "total": 411,
+          "percentual": 34.0633
+        },
+        "requirements": {
+          "cobertos": 82,
+          "total": 162,
+          "percentual": 50.6173
+        },
+        "z3": {
+          "cobertos": 0,
+          "total": 386,
+          "percentual": 0.0
+        },
+        "cli": {
+          "cobertos": 101,
+          "total": 337,
+          "percentual": 29.9703
+        }
+      },
+      "classfiles": 73
+    },
+    "final-conformes-conclusivos": {
+      "total": {
+        "cobertos": 323,
+        "total": 1296,
+        "percentual": 24.9228
+      },
+      "modulos": {
+        "core": {
+          "cobertos": 140,
+          "total": 411,
+          "percentual": 34.0633
+        },
+        "requirements": {
+          "cobertos": 82,
+          "total": 162,
+          "percentual": 50.6173
+        },
+        "z3": {
+          "cobertos": 0,
+          "total": 386,
+          "percentual": 0.0
+        },
+        "cli": {
+          "cobertos": 101,
+          "total": 337,
+          "percentual": 29.9703
+        }
+      },
+      "classfiles": 73
+    }
+  },
+  "branch_coverage_baseline_conformes_validos_executaveis": {
+    "total": {
+      "cobertos": 304,
+      "total": 1296,
+      "percentual": 23.4568
+    },
+    "modulos": {
+      "core": {
+        "cobertos": 125,
+        "total": 411,
+        "percentual": 30.4136
+      },
+      "requirements": {
+        "cobertos": 82,
+        "total": 162,
+        "percentual": 50.6173
+      },
+      "z3": {
+        "cobertos": 0,
+        "total": 386,
+        "percentual": 0.0
+      },
+      "cli": {
+        "cobertos": 97,
+        "total": 337,
+        "percentual": 28.7834
+      }
+    },
+    "classfiles": 73
+  },
+  "branch_coverage_final_conformes_validos_executaveis": {
+    "total": {
+      "cobertos": 323,
+      "total": 1296,
+      "percentual": 24.9228
+    },
+    "modulos": {
+      "core": {
+        "cobertos": 140,
+        "total": 411,
+        "percentual": 34.0633
+      },
+      "requirements": {
+        "cobertos": 82,
+        "total": 162,
+        "percentual": 50.6173
+      },
+      "z3": {
+        "cobertos": 0,
+        "total": 386,
+        "percentual": 0.0
+      },
+      "cli": {
+        "cobertos": 101,
+        "total": 337,
+        "percentual": 29.9703
+      }
+    },
+    "classfiles": 73
+  },
+  "nota_escopo_conforme": "Todos os casos foram invocados, estruturalmente validos e autoavaliados conformes; F03 baseline teve erro tecnico posterior a invocacao. Os subconjuntos conclusivos sao adicionais."
+}

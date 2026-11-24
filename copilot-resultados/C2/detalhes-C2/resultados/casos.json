@@ -1,0 +1,4848 @@
+[
+  {
+    "rodada": "baseline",
+    "id": "C001",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A {\"A\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-001; unico-001",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 389.2048
+  },
+  {
+    "rodada": "baseline",
+    "id": "C002",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A {\"A\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-002; unico-002",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 2.294
+  },
+  {
+    "rodada": "baseline",
+    "id": "C003",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A and B {\"A\":false,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-003; unico-003",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.0918
+  },
+  {
+    "rodada": "baseline",
+    "id": "C004",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A and B {\"A\":false,\"B\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-004; unico-004",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.631801
+  },
+  {
+    "rodada": "baseline",
+    "id": "C005",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A and B {\"A\":true,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-005; unico-005",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 2.8805
+  },
+  {
+    "rodada": "baseline",
+    "id": "C006",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A and B {\"A\":true,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-006; unico-006",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.7345
+  },
+  {
+    "rodada": "baseline",
+    "id": "C007",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A && B {\"A\":false,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-007; unico-007",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.2496
+  },
+  {
+    "rodada": "baseline",
+    "id": "C008",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A && B {\"A\":false,\"B\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-008; unico-008",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.499801
+  },
+  {
+    "rodada": "baseline",
+    "id": "C009",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A && B {\"A\":true,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-009; unico-009",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.459799
+  },
+  {
+    "rodada": "baseline",
+    "id": "C010",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A && B {\"A\":true,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-010; unico-010",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3943
+  },
+  {
+    "rodada": "baseline",
+    "id": "C011",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A /\\ B {\"A\":false,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-011; unico-011",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3843
+  },
+  {
+    "rodada": "baseline",
+    "id": "C012",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A /\\ B {\"A\":false,\"B\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-012; unico-012",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3673
+  },
+  {
+    "rodada": "baseline",
+    "id": "C013",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A /\\ B {\"A\":true,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-013; unico-013",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3798
+  },
+  {
+    "rodada": "baseline",
+    "id": "C014",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A /\\ B {\"A\":true,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-014; unico-014",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.4339
+  },
+  {
+    "rodada": "baseline",
+    "id": "C015",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A or B {\"A\":false,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-015; unico-015",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.023101
+  },
+  {
+    "rodada": "baseline",
+    "id": "C016",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A or B {\"A\":false,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-016; unico-016",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5427
+  },
+  {
+    "rodada": "baseline",
+    "id": "C017",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A or B {\"A\":true,\"B\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-017; unico-017",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.4861
+  },
+  {
+    "rodada": "baseline",
+    "id": "C018",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A or B {\"A\":true,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-018; unico-018",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.6111
+  },
+  {
+    "rodada": "baseline",
+    "id": "C019",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A || B {\"A\":false,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-019; unico-019",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.488
+  },
+  {
+    "rodada": "baseline",
+    "id": "C020",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A || B {\"A\":false,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-020; unico-020",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5026
+  },
+  {
+    "rodada": "baseline",
+    "id": "C021",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A || B {\"A\":true,\"B\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-021; unico-021",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5419
+  },
+  {
+    "rodada": "baseline",
+    "id": "C022",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A || B {\"A\":true,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-022; unico-022",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5593
+  },
+  {
+    "rodada": "baseline",
+    "id": "C023",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A \\/ B {\"A\":false,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-023; unico-023",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5156
+  },
+  {
+    "rodada": "baseline",
+    "id": "C024",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A \\/ B {\"A\":false,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-024; unico-024",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.996501
+  },
+  {
+    "rodada": "baseline",
+    "id": "C025",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A \\/ B {\"A\":true,\"B\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-025; unico-025",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5441
+  },
+  {
+    "rodada": "baseline",
+    "id": "C026",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A \\/ B {\"A\":true,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-026; unico-026",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.518699
+  },
+  {
+    "rodada": "baseline",
+    "id": "C027",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not A {\"A\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-027; unico-027",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.8671
+  },
+  {
+    "rodada": "baseline",
+    "id": "C028",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not A {\"A\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-028; unico-028",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.4387
+  },
+  {
+    "rodada": "baseline",
+    "id": "C029",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "! A {\"A\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-029; unico-029",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3684
+  },
+  {
+    "rodada": "baseline",
+    "id": "C030",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "! A {\"A\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-030; unico-030",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.311599
+  },
+  {
+    "rodada": "baseline",
+    "id": "C031",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A and (not B) {\"A\":false,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-031; unico-031",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3981
+  },
+  {
+    "rodada": "baseline",
+    "id": "C032",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A and (not B) {\"A\":false,\"B\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-032; unico-032",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.401199
+  },
+  {
+    "rodada": "baseline",
+    "id": "C033",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A and (not B) {\"A\":true,\"B\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-033; unico-033",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.413999
+  },
+  {
+    "rodada": "baseline",
+    "id": "C034",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "A and (not B) {\"A\":true,\"B\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-034; unico-034",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3989
+  },
+  {
+    "rodada": "baseline",
+    "id": "C035",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(not A) or B {\"A\":false,\"B\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-035; unico-035",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.4986
+  },
+  {
+    "rodada": "baseline",
+    "id": "C036",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(not A) or B {\"A\":false,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-036; unico-036",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.4584
+  },
+  {
+    "rodada": "baseline",
+    "id": "C037",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(not A) or B {\"A\":true,\"B\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-037; unico-037",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.4372
+  },
+  {
+    "rodada": "baseline",
+    "id": "C038",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(not A) or B {\"A\":true,\"B\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-038; unico-038",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.4205
+  },
+  {
+    "rodada": "baseline",
+    "id": "C039",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or C {\"A\":false,\"B\":false,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-039; unico-039",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.556299
+  },
+  {
+    "rodada": "baseline",
+    "id": "C040",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or C {\"A\":false,\"B\":false,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-040; unico-040",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.507
+  },
+  {
+    "rodada": "baseline",
+    "id": "C041",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or C {\"A\":false,\"B\":true,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-041; unico-041",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5473
+  },
+  {
+    "rodada": "baseline",
+    "id": "C042",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or C {\"A\":false,\"B\":true,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-042; unico-042",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5882
+  },
+  {
+    "rodada": "baseline",
+    "id": "C043",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or C {\"A\":true,\"B\":false,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-043; unico-043",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.564999
+  },
+  {
+    "rodada": "baseline",
+    "id": "C044",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or C {\"A\":true,\"B\":false,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-044; unico-044",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.523099
+  },
+  {
+    "rodada": "baseline",
+    "id": "C045",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or C {\"A\":true,\"B\":true,\"C\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-045; unico-045",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.500799
+  },
+  {
+    "rodada": "baseline",
+    "id": "C046",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or C {\"A\":true,\"B\":true,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-046; unico-046",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.913
+  },
+  {
+    "rodada": "baseline",
+    "id": "C047",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A or B) and C {\"A\":false,\"B\":false,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-047; unico-047",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5622
+  },
+  {
+    "rodada": "baseline",
+    "id": "C048",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A or B) and C {\"A\":false,\"B\":false,\"C\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-048; unico-048",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.720599
+  },
+  {
+    "rodada": "baseline",
+    "id": "C049",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A or B) and C {\"A\":false,\"B\":true,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-049; unico-049",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5936
+  },
+  {
+    "rodada": "baseline",
+    "id": "C050",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A or B) and C {\"A\":false,\"B\":true,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-050; unico-050",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5543
+  },
+  {
+    "rodada": "baseline",
+    "id": "C051",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A or B) and C {\"A\":true,\"B\":false,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-051; unico-051",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.6507
+  },
+  {
+    "rodada": "baseline",
+    "id": "C052",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A or B) and C {\"A\":true,\"B\":false,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-052; unico-052",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.3019
+  },
+  {
+    "rodada": "baseline",
+    "id": "C053",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A or B) and C {\"A\":true,\"B\":true,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-053; unico-053",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.556
+  },
+  {
+    "rodada": "baseline",
+    "id": "C054",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A or B) and C {\"A\":true,\"B\":true,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-054; unico-054",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5442
+  },
+  {
+    "rodada": "baseline",
+    "id": "C055",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or (not A and C) {\"A\":false,\"B\":false,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-055; unico-055",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 12.0484
+  },
+  {
+    "rodada": "baseline",
+    "id": "C056",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or (not A and C) {\"A\":false,\"B\":false,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-056; unico-056",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 2.182701
+  },
+  {
+    "rodada": "baseline",
+    "id": "C057",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or (not A and C) {\"A\":false,\"B\":true,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-057; unico-057",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.0368
+  },
+  {
+    "rodada": "baseline",
+    "id": "C058",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or (not A and C) {\"A\":false,\"B\":true,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-058; unico-058",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.371399
+  },
+  {
+    "rodada": "baseline",
+    "id": "C059",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or (not A and C) {\"A\":true,\"B\":false,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-059; unico-059",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.7032
+  },
+  {
+    "rodada": "baseline",
+    "id": "C060",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or (not A and C) {\"A\":true,\"B\":false,\"C\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-060; unico-060",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5928
+  },
+  {
+    "rodada": "baseline",
+    "id": "C061",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or (not A and C) {\"A\":true,\"B\":true,\"C\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-061; unico-061",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5566
+  },
+  {
+    "rodada": "baseline",
+    "id": "C062",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "(A and B) or (not A and C) {\"A\":true,\"B\":true,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-062; unico-062",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5384
+  },
+  {
+    "rodada": "baseline",
+    "id": "C063",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not (A and (B or C)) {\"A\":false,\"B\":false,\"C\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-063; unico-063",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.4921
+  },
+  {
+    "rodada": "baseline",
+    "id": "C064",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not (A and (B or C)) {\"A\":false,\"B\":false,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-064; unico-064",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5166
+  },
+  {
+    "rodada": "baseline",
+    "id": "C065",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not (A and (B or C)) {\"A\":false,\"B\":true,\"C\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-065; unico-065",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5179
+  },
+  {
+    "rodada": "baseline",
+    "id": "C066",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not (A and (B or C)) {\"A\":false,\"B\":true,\"C\":true}",
+    "esperado": true,
+    "evidencia_z3": "truth-066; unico-066",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5174
+  },
+  {
+    "rodada": "baseline",
+    "id": "C067",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not (A and (B or C)) {\"A\":true,\"B\":false,\"C\":false}",
+    "esperado": true,
+    "evidencia_z3": "truth-067; unico-067",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.453001
+  },
+  {
+    "rodada": "baseline",
+    "id": "C068",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not (A and (B or C)) {\"A\":true,\"B\":false,\"C\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-068; unico-068",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.562199
+  },
+  {
+    "rodada": "baseline",
+    "id": "C069",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not (A and (B or C)) {\"A\":true,\"B\":true,\"C\":false}",
+    "esperado": false,
+    "evidencia_z3": "truth-069; unico-069",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.064
+  },
+  {
+    "rodada": "baseline",
+    "id": "C070",
+    "tipo": "truth",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": "not (A and (B or C)) {\"A\":true,\"B\":true,\"C\":true}",
+    "esperado": false,
+    "evidencia_z3": "truth-070; unico-070",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.594
+  },
+  {
+    "rodada": "baseline",
+    "id": "C071",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C071.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C071.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 246.7839
+  },
+  {
+    "rodada": "baseline",
+    "id": "C072",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C072.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C072.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 22.694
+  },
+  {
+    "rodada": "baseline",
+    "id": "C073",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "not A"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C073.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C073.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 4.2058
+  },
+  {
+    "rodada": "baseline",
+    "id": "C074",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "not A",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C074.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C074.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 8.5244
+  },
+  {
+    "rodada": "baseline",
+    "id": "C075",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C075.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C075.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 5.583501
+  },
+  {
+    "rodada": "baseline",
+    "id": "C076",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C076.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C076.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 16.879001
+  },
+  {
+    "rodada": "baseline",
+    "id": "C077",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A or B"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C077.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C077.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 6.374799
+  },
+  {
+    "rodada": "baseline",
+    "id": "C078",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A or B",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C078.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C078.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 6.707001
+  },
+  {
+    "rodada": "baseline",
+    "id": "C079",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and (not B)"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C079.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C079.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 4.912601
+  },
+  {
+    "rodada": "baseline",
+    "id": "C080",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and (not B)",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C080.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C080.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 11.924099
+  },
+  {
+    "rodada": "baseline",
+    "id": "C081",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(not A) or B"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C081.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C081.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 15.0032
+  },
+  {
+    "rodada": "baseline",
+    "id": "C082",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(not A) or B",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C082.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C082.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 12.8157
+  },
+  {
+    "rodada": "baseline",
+    "id": "C083",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(A and B) or C"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C083.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C083.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 8.602
+  },
+  {
+    "rodada": "baseline",
+    "id": "C084",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(A and B) or C",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C084.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C084.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 13.979399
+  },
+  {
+    "rodada": "baseline",
+    "id": "C085",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(A or B) and C"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C085.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C085.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 19.0702
+  },
+  {
+    "rodada": "baseline",
+    "id": "C086",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(A or B) and C",
+      "--unique-cause"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C086.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C086.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 12.0335
+  },
+  {
+    "rodada": "baseline",
+    "id": "C087",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and not A"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "constantes",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C087.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C087.stderr.txt",
+    "observado": "exit=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 12.434
+  },
+  {
+    "rodada": "baseline",
+    "id": "C088",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and not A",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "constantes",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C088.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C088.stderr.txt",
+    "observado": "exit=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 5.2557
+  },
+  {
+    "rodada": "baseline",
+    "id": "C089",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A or not A"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "constantes",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C089.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C089.stderr.txt",
+    "observado": "exit=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 4.1404
+  },
+  {
+    "rodada": "baseline",
+    "id": "C090",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A or not A",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "constantes",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C090.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C090.stderr.txt",
+    "observado": "exit=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 8.4566
+  },
+  {
+    "rodada": "baseline",
+    "id": "C091",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--constraint",
+      "A",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "restricao-and-a; restricao-or-a; restricao-implica",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C091.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C091.stderr.txt",
+    "observado": "exit=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 33.3647
+  },
+  {
+    "rodada": "baseline",
+    "id": "C092",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A or B",
+      "--constraint",
+      "A",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "restricao-and-a; restricao-or-a; restricao-implica",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C092.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C092.stderr.txt",
+    "observado": "exit=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 5.4398
+  },
+  {
+    "rodada": "baseline",
+    "id": "C093",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--constraint",
+      "not A or B",
+      "--unique-cause"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "restricao-and-a; restricao-or-a; restricao-implica",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C093.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C093.stderr.txt",
+    "observado": "exit=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 10.6619
+  },
+  {
+    "rodada": "baseline",
+    "id": "C094",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A",
+      "--exact",
+      "--unique-cause",
+      "--format",
+      "json"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "minimo-A-1; minimo-A-2",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C094.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C094.stderr.txt",
+    "observado": "exit=0; tamanho=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 606.2723
+  },
+  {
+    "rodada": "baseline",
+    "id": "C095",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--exact",
+      "--unique-cause",
+      "--format",
+      "json"
+    ],
+    "esperado": 3,
+    "evidencia_z3": "minimo-A and B-2; minimo-A and B-3",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C095.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C095.stderr.txt",
+    "observado": "exit=0; tamanho=3",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 648.5698
+  },
+  {
+    "rodada": "baseline",
+    "id": "C096",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A or B",
+      "--exact",
+      "--unique-cause",
+      "--format",
+      "json"
+    ],
+    "esperado": 3,
+    "evidencia_z3": "minimo-A or B-2; minimo-A or B-3",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C096.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C096.stderr.txt",
+    "observado": "exit=0; tamanho=3",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 282.6926
+  },
+  {
+    "rodada": "baseline",
+    "id": "C097",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(A and B) or C",
+      "--exact",
+      "--unique-cause",
+      "--format",
+      "json"
+    ],
+    "esperado": 4,
+    "evidencia_z3": "minimo-(A and B) or C-3; minimo-(A and B) or C-4",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C097.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C097.stderr.txt",
+    "observado": "exit=0; tamanho=4",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 287.173101
+  },
+  {
+    "rodada": "baseline",
+    "id": "C098",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A",
+      "--direct",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C098.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C098.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 315.6822
+  },
+  {
+    "rodada": "baseline",
+    "id": "C099",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--direct",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C099.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C099.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 543.0318
+  },
+  {
+    "rodada": "baseline",
+    "id": "C100",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A or B",
+      "--direct",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C100.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C100.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 507.082699
+  },
+  {
+    "rodada": "baseline",
+    "id": "C101",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(A and B) or C",
+      "--direct",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C101.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C101.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 734.728401
+  },
+  {
+    "rodada": "baseline",
+    "id": "C102",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--format",
+      "text"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C102.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C102.stderr.txt",
+    "observado": "exit=0; saída não vazia=true",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 7.494501
+  },
+  {
+    "rodada": "baseline",
+    "id": "C103",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C103.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C103.stderr.txt",
+    "observado": "exit=0; JSON válido=true",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 6.3004
+  },
+  {
+    "rodada": "baseline",
+    "id": "C104",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--format",
+      "csv"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C104.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C104.stderr.txt",
+    "observado": "exit=0; saída não vazia=true",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 9.2549
+  },
+  {
+    "rodada": "baseline",
+    "id": "C105",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and B",
+      "--format",
+      "truth-csv"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C105.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C105.stderr.txt",
+    "observado": "exit=0; saída não vazia=true",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 8.635301
+  },
+  {
+    "rodada": "baseline",
+    "id": "C106",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "speed > 100 or speed > 50",
+      "--z3",
+      "--format",
+      "json"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "implicacao",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C106.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C106.stderr.txt",
+    "observado": "exit=2",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 490.2213
+  },
+  {
+    "rodada": "baseline",
+    "id": "C107",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "speed > 100",
+      "--z3",
+      "--boundary",
+      "--format",
+      "json"
+    ],
+    "esperado": [
+      100,
+      101
+    ],
+    "evidencia_z3": "fronteira",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C107.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C107.stderr.txt",
+    "observado": "exit=0; valores de speed=[101, 100]",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1057.197499
+  },
+  {
+    "rodada": "baseline",
+    "id": "C108",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "verify",
+      "-f",
+      "@simples"
+    ],
+    "esperado": 2,
+    "evidencia_z3": "gap-a",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C108.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C108.stderr.txt",
+    "observado": "exit=0",
+    "status": "FALHOU",
+    "erro": "",
+    "duracao_ms": 32.144301
+  },
+  {
+    "rodada": "baseline",
+    "id": "C109",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "verify",
+      "-f",
+      "@complementar"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "gap-complementar",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C109.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C109.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 8.826699
+  },
+  {
+    "rodada": "baseline",
+    "id": "C110",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "verify",
+      "-f",
+      "@simples",
+      "--context",
+      "A"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "gap-contexto",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C110.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C110.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 338.6767
+  },
+  {
+    "rodada": "baseline",
+    "id": "C111",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "verify",
+      "-f",
+      "@complementar",
+      "--format",
+      "json"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "gap-complementar",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C111.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C111.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 16.8044
+  },
+  {
+    "rodada": "baseline",
+    "id": "C112",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "-f",
+      "@complementar"
+    ],
+    "esperado": 0,
+    "evidencia_z3": "pares-simples",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C112.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C112.stderr.txt",
+    "observado": "exit=0",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 8.7408
+  },
+  {
+    "rodada": "baseline",
+    "id": "C113",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "A and"
+    ],
+    "esperado": 1,
+    "evidencia_z3": "não aplicável",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C113.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C113.stderr.txt",
+    "observado": "exit=1",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 5.096
+  },
+  {
+    "rodada": "baseline",
+    "id": "C114",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      "(A or B"
+    ],
+    "esperado": 1,
+    "evidencia_z3": "não aplicável",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C114.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C114.stderr.txt",
+    "observado": "exit=1",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 3.635499
+  },
+  {
+    "rodada": "baseline",
+    "id": "C115",
+    "tipo": "diagnostico",
+    "classificacao": "INDETERMINADO — OMISSÃO",
+    "entrada": [
+      "analyze",
+      "A @ B"
+    ],
+    "esperado": null,
+    "evidencia_z3": "não aplicável",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C115.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C115.stderr.txt",
+    "observado": "exit=1",
+    "status": "SEM JULGAMENTO",
+    "erro": "",
+    "duracao_ms": 14.668701
+  },
+  {
+    "rodada": "baseline",
+    "id": "C116",
+    "tipo": "cli",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": [
+      "analyze",
+      ""
+    ],
+    "esperado": 1,
+    "evidencia_z3": "não aplicável",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C116.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C116.stderr.txt",
+    "observado": "exit=1",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 16.8964
+  },
+  {
+    "rodada": "baseline",
+    "id": "C117",
+    "tipo": "diagnostico",
+    "classificacao": "INDETERMINADO — AMBIGUIDADE",
+    "entrada": [
+      "check",
+      "A",
+      "--tests",
+      "@csv-vlue"
+    ],
+    "esperado": null,
+    "evidencia_z3": "não aplicável",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C117.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C117.stderr.txt",
+    "observado": "exit=1",
+    "status": "SEM JULGAMENTO",
+    "erro": "",
+    "duracao_ms": 13.414601
+  },
+  {
+    "rodada": "baseline",
+    "id": "C118",
+    "tipo": "diagnostico",
+    "classificacao": "INDETERMINADO — AMBIGUIDADE",
+    "entrada": [
+      "check",
+      "A",
+      "--tests",
+      "@csv-value"
+    ],
+    "esperado": null,
+    "evidencia_z3": "não aplicável",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C118.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C118.stderr.txt",
+    "observado": "exit=0",
+    "status": "SEM JULGAMENTO",
+    "erro": "",
+    "duracao_ms": 74.4145
+  },
+  {
+    "rodada": "baseline",
+    "id": "C119",
+    "tipo": "diagnostico",
+    "classificacao": "INDETERMINADO — AMBIGUIDADE",
+    "entrada": [
+      "analyze",
+      "--json",
+      "@json-literal"
+    ],
+    "esperado": null,
+    "evidencia_z3": "não aplicável",
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C119.stdout.txt",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\baseline\\evidencias-total\\C119.stderr.txt",
+    "observado": "exit=1",
+    "status": "SEM JULGAMENTO",
+    "erro": "",
+    "duracao_ms": 292.1777
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X001",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C001",
+          "entradas": {
+            "A": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C002",
+          "entradas": {
+            "A": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X001",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "2/2 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 183.018901
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X002",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C001",
+          "entradas": {
+            "A": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C002",
+          "entradas": {
+            "A": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X002",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "2/2 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5035
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X003",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "A",
+      "linhas": [
+        {
+          "id_oraculo": "C001",
+          "entradas": {
+            "A": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C002",
+          "entradas": {
+            "A": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X003",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X003.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X003.stderr.txt",
+    "observado": "exit=0; 2/2 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 135.6395
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X004",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A and B",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C003",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C004",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C005",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C006",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X004",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 2.462101
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X005",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A and B",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C003",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C004",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C005",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C006",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X005",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.433899
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X006",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "A and B",
+      "linhas": [
+        {
+          "id_oraculo": "C003",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C004",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C005",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C006",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X006",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X006.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X006.stderr.txt",
+    "observado": "exit=0; 4/4 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 19.1774
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X007",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A && B",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C007",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C008",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C009",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C010",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X007",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.9456
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X008",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A && B",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C007",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C008",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C009",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C010",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X008",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.822299
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X009",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "A && B",
+      "linhas": [
+        {
+          "id_oraculo": "C007",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C008",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C009",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C010",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X009",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X009.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X009.stderr.txt",
+    "observado": "exit=0; 4/4 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 4.9982
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X010",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A /\\ B",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C011",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C012",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C013",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C014",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X010",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.943899
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X011",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A /\\ B",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C011",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C012",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C013",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C014",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X011",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.937099
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X012",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "A /\\ B",
+      "linhas": [
+        {
+          "id_oraculo": "C011",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C012",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C013",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C014",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X012",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X012.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X012.stderr.txt",
+    "observado": "exit=0; 4/4 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 12.012401
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X013",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A or B",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C015",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C016",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C017",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C018",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X013",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.3983
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X014",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A or B",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C015",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C016",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C017",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C018",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X014",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.852601
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X015",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "A or B",
+      "linhas": [
+        {
+          "id_oraculo": "C015",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C016",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C017",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C018",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X015",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X015.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X015.stderr.txt",
+    "observado": "exit=0; 4/4 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 9.532099
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X016",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A || B",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C019",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C020",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C021",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C022",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X016",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.8458
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X017",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A || B",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C019",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C020",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C021",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C022",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X017",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.7161
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X018",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "A || B",
+      "linhas": [
+        {
+          "id_oraculo": "C019",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C020",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C021",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C022",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X018",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X018.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X018.stderr.txt",
+    "observado": "exit=0; 4/4 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 14.8044
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X019",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A \\/ B",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C023",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C024",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C025",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C026",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X019",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.902
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X020",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A \\/ B",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C023",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C024",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C025",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C026",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X020",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.569401
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X021",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "A \\/ B",
+      "linhas": [
+        {
+          "id_oraculo": "C023",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C024",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C025",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C026",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X021",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X021.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X021.stderr.txt",
+    "observado": "exit=0; 4/4 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 4.5285
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X022",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "not A",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C027",
+          "entradas": {
+            "A": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C028",
+          "entradas": {
+            "A": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X022",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "2/2 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.7726
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X023",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "not A",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C027",
+          "entradas": {
+            "A": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C028",
+          "entradas": {
+            "A": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X023",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "2/2 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3269
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X024",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "not A",
+      "linhas": [
+        {
+          "id_oraculo": "C027",
+          "entradas": {
+            "A": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C028",
+          "entradas": {
+            "A": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X024",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X024.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X024.stderr.txt",
+    "observado": "exit=0; 2/2 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 7.756901
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X025",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "! A",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C029",
+          "entradas": {
+            "A": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C030",
+          "entradas": {
+            "A": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X025",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "2/2 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5598
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X026",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "! A",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C029",
+          "entradas": {
+            "A": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C030",
+          "entradas": {
+            "A": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X026",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "2/2 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.3067
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X027",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "! A",
+      "linhas": [
+        {
+          "id_oraculo": "C029",
+          "entradas": {
+            "A": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C030",
+          "entradas": {
+            "A": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X027",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X027.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X027.stderr.txt",
+    "observado": "exit=0; 2/2 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 38.1593
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X028",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A and (not B)",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C031",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C032",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C033",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C034",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X028",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.8484
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X029",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "A and (not B)",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C031",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C032",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C033",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C034",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X029",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.6902
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X030",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "A and (not B)",
+      "linhas": [
+        {
+          "id_oraculo": "C031",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C032",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C033",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C034",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X030",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X030.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X030.stderr.txt",
+    "observado": "exit=0; 4/4 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 8.612899
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X031",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "(not A) or B",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C035",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C036",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C037",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C038",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X031",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.754
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X032",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "(not A) or B",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C035",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C036",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C037",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C038",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X032",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "4/4 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.562
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X033",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "(not A) or B",
+      "linhas": [
+        {
+          "id_oraculo": "C035",
+          "entradas": {
+            "A": false,
+            "B": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C036",
+          "entradas": {
+            "A": false,
+            "B": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C037",
+          "entradas": {
+            "A": true,
+            "B": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C038",
+          "entradas": {
+            "A": true,
+            "B": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X033",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X033.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X033.stderr.txt",
+    "observado": "exit=0; 4/4 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 5.2374
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X034",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "(A and B) or C",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C039",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C040",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C041",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C042",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C043",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C044",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C045",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C046",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X034",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "8/8 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.6037
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X035",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "(A and B) or C",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C039",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C040",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C041",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C042",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C043",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C044",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C045",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C046",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X035",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "8/8 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.1424
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X036",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "(A and B) or C",
+      "linhas": [
+        {
+          "id_oraculo": "C039",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C040",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C041",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C042",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C043",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C044",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C045",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C046",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X036",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X036.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X036.stderr.txt",
+    "observado": "exit=0; 8/8 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 7.5644
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X037",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "(A or B) and C",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C047",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C048",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C049",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C050",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C051",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C052",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C053",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C054",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X037",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "8/8 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.6723
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X038",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "(A or B) and C",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C047",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C048",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C049",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C050",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C051",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C052",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C053",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C054",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X038",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "8/8 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.8667
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X039",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "(A or B) and C",
+      "linhas": [
+        {
+          "id_oraculo": "C047",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C048",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C049",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C050",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C051",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C052",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C053",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C054",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X039",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X039.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X039.stderr.txt",
+    "observado": "exit=0; 8/8 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 13.0149
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X040",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "(A and B) or (not A and C)",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C055",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C056",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C057",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C058",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C059",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C060",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C061",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C062",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X040",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "8/8 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 12.7077
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X041",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "(A and B) or (not A and C)",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C055",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C056",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C057",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C058",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C059",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C060",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C061",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C062",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X041",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "8/8 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.2007
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X042",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "(A and B) or (not A and C)",
+      "linhas": [
+        {
+          "id_oraculo": "C055",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C056",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C057",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C058",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C059",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C060",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C061",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C062",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X042",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X042.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X042.stderr.txt",
+    "observado": "exit=0; 8/8 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 80.6753
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X043",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "not (A and (B or C))",
+      "variante": "masking",
+      "linhas": [
+        {
+          "id_oraculo": "C063",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C064",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C065",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C066",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C067",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C068",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C069",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C070",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X043",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "8/8 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 1.424801
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X044",
+    "tipo": "avaliacao",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "avaliacao",
+      "expressao": "not (A and (B or C))",
+      "variante": "unique",
+      "linhas": [
+        {
+          "id_oraculo": "C063",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C064",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C065",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C066",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C067",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C068",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C069",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C070",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R12",
+      "id": "X044",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "8/8 decisões correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.8709
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X045",
+    "tipo": "truth_csv",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "truth_csv",
+      "expressao": "not (A and (B or C))",
+      "linhas": [
+        {
+          "id_oraculo": "C063",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C064",
+          "entradas": {
+            "A": false,
+            "B": false,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C065",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C066",
+          "entradas": {
+            "A": false,
+            "B": true,
+            "C": true
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C067",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": false
+          },
+          "esperado": true
+        },
+        {
+          "id_oraculo": "C068",
+          "entradas": {
+            "A": true,
+            "B": false,
+            "C": true
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C069",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": false
+          },
+          "esperado": false
+        },
+        {
+          "id_oraculo": "C070",
+          "entradas": {
+            "A": true,
+            "B": true,
+            "C": true
+          },
+          "esperado": false
+        }
+      ],
+      "regra": "cada combinação deve aparecer com o resultado de decisão congelado",
+      "vinculo": "Conjunção dos casos de verdade citados; R01, R02 e R16",
+      "id": "X045",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "stdout": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X045.stdout.csv",
+    "stderr": "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X045.stderr.txt",
+    "observado": "exit=0; 8/8 vetores correspondem",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 7.064599
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X046",
+    "tipo": "numeric",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "numeric",
+      "expressao": "speed > 100",
+      "entradas": {
+        "speed": "100"
+      },
+      "esperado": false,
+      "referencia_smt": "fronteira-100",
+      "regra": "avaliar a comparação para a testemunha de fronteira congelada",
+      "vinculo": "R08 e consulta SMT congelada",
+      "id": "X046",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "false",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 17.4019
+  },
+  {
+    "rodada": "extensao-1",
+    "id": "X047",
+    "tipo": "numeric",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "tipo": "numeric",
+      "expressao": "speed > 100",
+      "entradas": {
+        "speed": "101"
+      },
+      "esperado": true,
+      "referencia_smt": "fronteira-101",
+      "regra": "avaliar a comparação para a testemunha de fronteira congelada",
+      "vinculo": "R08 e consulta SMT congelada",
+      "id": "X047",
+      "classificacao": "CONFORME À DOCUMENTAÇÃO"
+    },
+    "observado": "true",
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.116
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y001",
+    "tipo": "conflict",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "guards": [
+        "A",
+        "A"
+      ],
+      "actions": [
+        "x := one",
+        "x := two"
+      ]
+    },
+    "esperado": true,
+    "evidencia_z3": "Y001",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 623.3183
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y002",
+    "tipo": "conflict",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "guards": [
+        "A",
+        "not A"
+      ],
+      "actions": [
+        "x := one",
+        "x := two"
+      ]
+    },
+    "esperado": false,
+    "evidencia_z3": "Y002",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 268.3998
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y003",
+    "tipo": "conflict",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "guards": [
+        "A",
+        "A"
+      ],
+      "actions": [
+        "x := one",
+        "x := one"
+      ]
+    },
+    "esperado": false,
+    "evidencia_z3": "Y003",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 592.3973
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y004",
+    "tipo": "conflict",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "guards": [
+        "A",
+        "A"
+      ],
+      "actions": [
+        "x := one",
+        "y := two"
+      ]
+    },
+    "esperado": false,
+    "evidencia_z3": "Y004",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 0.5693
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y005",
+    "tipo": "gap",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "guards": [
+        "A"
+      ],
+      "context": "A or not A"
+    },
+    "esperado": true,
+    "evidencia_z3": "Y005",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 327.7726
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y006",
+    "tipo": "gap",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "guards": [
+        "A",
+        "not A"
+      ],
+      "context": "A or not A"
+    },
+    "esperado": false,
+    "evidencia_z3": "Y006",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 167.7843
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y007",
+    "tipo": "gap",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "guards": [
+        "A"
+      ],
+      "context": "A"
+    },
+    "esperado": false,
+    "evidencia_z3": "Y007",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 180.4683
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y008",
+    "tipo": "feasibility",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "expression": "speed > 100 or speed > 50",
+      "first": true,
+      "second": true
+    },
+    "esperado": true,
+    "evidencia_z3": "Y008",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 951.354499
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y009",
+    "tipo": "feasibility",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "expression": "speed > 100 or speed > 50",
+      "first": true,
+      "second": false
+    },
+    "esperado": false,
+    "evidencia_z3": "Y009",
+    "observado": false,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 413.616401
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y010",
+    "tipo": "feasibility",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "expression": "speed > 100 or speed > 50",
+      "first": false,
+      "second": true
+    },
+    "esperado": true,
+    "evidencia_z3": "Y010",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 598.78
+  },
+  {
+    "rodada": "extensao-2",
+    "id": "Y011",
+    "tipo": "feasibility",
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "entrada": {
+      "expression": "speed > 100 or speed > 50",
+      "first": false,
+      "second": false
+    },
+    "esperado": true,
+    "evidencia_z3": "Y011",
+    "observado": true,
+    "status": "PASSOU",
+    "erro": "",
+    "duracao_ms": 519.4447
+  }
+]

@@ -1,0 +1,9 @@
+# Revisão documental antes da inspeção
+
+Os casos T01–T11 verificam tabelas-verdade completas de guardas lógicas documentadas, inclusive formas alternativas dos operadores e uma guarda com entrada repetida. As expectativas distinguem entradas, não a contagem conflitante de condições. F01–F03 cobrem arquivo de requisitos, rastreabilidade JSON e destino do relatório. A unidade de contagem proposta é um caso por tabela ou propriedade de integração; os vetores internos não são contados como casos separados.
+
+A busca Z3 enumera exaustivamente as atribuições booleanas do conjunto finito de entradas de cada guarda, com critério de parada após todas as 2ⁿ atribuições. Não busca minimizar os vetores: todos são necessários para verificar cada tabela inteira. As fórmulas de integração verificam satisfatibilidade de predicados e identificadores declarados, não a existência de uma implementação que os satisfaça. A relação fórmula-texto e a classificação são autorrevisão, sem revisor independente. Z3 não prova fidelidade da tradução.
+
+I01–I15 do inventário são registros de conflitos, não casos executáveis e não devem ser incluídos na contagem de oráculos gerados como se tivessem entradas completas. Não há expectativa única para as situações conflituosas apontadas. A geração não supõe detalhes de mensagens, ordem de pares ou formato CSV. A especificação de teste após a inspeção deve preservar rigorosamente as propriedades congeladas, sem criar novas expectativas comportamentais.
+
+O inventário ainda não implica que todos os comportamentos sejam executáveis ou cobertos. Comparações, fronteiras, restrições, avaliação de testes existentes, verificação de requisitos e diversas opções não têm casos determinados concretos neste conjunto. Não atribuir cobertura máxima global. Opções e algoritmos de mutação não serão executados, mesmo que suas classes de produção integrem o denominador de branches.

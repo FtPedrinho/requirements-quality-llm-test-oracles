@@ -1,0 +1,27 @@
+{
+  "id": "E15",
+  "argumentos": [
+    "analyze",
+    "x > 0",
+    "--z3",
+    "--format",
+    "json"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E15.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "analyze",
+    "x > 0",
+    "--z3",
+    "--format",
+    "json"
+  ],
+  "codigo": 0,
+  "stdout": "{\n  \"tool\" : \"mcdc\",\n  \"system\" : null,\n  \"variant\" : \"MASKING\",\n  \"constraint\" : null,\n  \"complete\" : true,\n  \"decisions\" : [ {\n    \"id\" : \"REQ\",\n    \"requirement\" : null,\n    \"guard\" : \"x > 0\",\n    \"actions\" : [ ],\n    \"complete\" : true,\n    \"uncoveredConditions\" : [ ],\n    \"uncovered\" : [ ],\n    \"inputs\" : [ {\n      \"name\" : \"x > 0\",\n      \"variable\" : \"x\",\n      \"operator\" : \">\",\n      \"value\" : \"0\"\n    } ],\n    \"conditions\" : [ {\n      \"label\" : \"x > 0\",\n      \"input\" : \"x > 0\",\n      \"occurrence\" : 1\n    } ],\n    \"suiteMethod\" : \"GREEDY\",\n    \"truthTableRows\" : 2,\n    \"truthTableBuilt\" : true,\n    \"truthTable\" : [ {\n      \"vector\" : \"V1\",\n      \"values\" : {\n        \"x > 0\" : true\n      },\n      \"outcome\" : true,\n      \"assignment\" : {\n        \"x\" : \"1\"\n      },\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"x > 0\" : false\n      },\n      \"outcome\" : false,\n      \"assignment\" : {\n        \"x\" : \"0\"\n      },\n      \"feasible\" : true\n    } ],\n    \"independencePairs\" : {\n      \"x > 0\" : [ [ \"V1\", \"V2\" ] ]\n    },\n    \"pairsTruncated\" : [ ],\n    \"minimalSuite\" : [ {\n      \"vector\" : \"V1\",\n      \"values\" : {\n        \"x > 0\" : true\n      },\n      \"outcome\" : true,\n      \"assignment\" : {\n        \"x\" : \"1\"\n      },\n      \"demonstrates\" : [ \"x > 0\" ]\n    }, {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"x > 0\" : false\n      },\n      \"outcome\" : false,\n      \"assignment\" : {\n        \"x\" : \"0\"\n      },\n      \"demonstrates\" : [ \"x > 0\" ]\n    } ],\n    \"chosenPairs\" : {\n      \"x > 0\" : {\n        \"whenTrue\" : \"V1\",\n        \"whenFalse\" : \"V2\",\n        \"uniqueCause\" : true\n      }\n    }\n  } ]\n}\n",
+  "stderr": "",
+  "duracao_segundos": 5.707
+}

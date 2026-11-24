@@ -1,0 +1,3 @@
+decision,requirement,row,A,outcome,feasible,in_suite,demonstrates,concrete_values
+REQ,,V1,T,F,T,T,A,
+REQ,,V2,F,T,T,T,A,

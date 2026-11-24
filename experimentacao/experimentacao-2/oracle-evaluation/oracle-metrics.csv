@@ -1,2 +1,0 @@
-experiment,execution,tp,fp,fn,non_evaluable,precision,recall,f1,unit,calculation_status
-C2,agent-generated-1,18,0,16,0,1.0,0.5294117647058824,0.6923076923076923,comportamento do gabarito,C2 oracles from literal C2 text

@@ -1,0 +1,8 @@
+Verificação entre requisitos
+1 decisões, 0 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: nenhuma: sob A, sempre alguma guarda vale

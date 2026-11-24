@@ -1,0 +1,10 @@
+Alteração posterior ao congelamento, autorizada pelo pesquisador.
+Data de verificação: 2026-11-23T08:16:50-03:00
+Arquivo alterado: copilot-resultados\README.md
+Alteração: somente o item pendente de C1, substituído por link ao relatório.
+SHA-256 do índice antes: 9D7982C7DC11974529A3D7D54E503ABB0FFDDA18ADE34C5CCAEA9026284A64E4
+SHA-256 do índice depois: FEB1E61738874ABFCCE20A5A8B7DEA46B4624DF6751940AC3B6355322A6D4F21
+Relatório: relatorio-final.md
+SHA-256 do relatório: AB253546F9A14682DC4D2A3593A7427E16961E3E6E95D711C1D91EFB21CF88D6
+SHA-256 de manifesto-final.sha256 anterior: 880F6DDAB58379E314540ABDB8A55640A7A7156202DF1A93068CA8EE5B9AFD22
+O manifesto e os artefatos congelados do experimento não foram alterados.

@@ -1,2 +1,0 @@
-condition,execution,tp,fp,fn,non_evaluable,precision,recall,f1,unit
-C2,agent-generated-1,18,0,16,0,1.0,0.5294117647058824,0.6923076923076924,34 behaviors

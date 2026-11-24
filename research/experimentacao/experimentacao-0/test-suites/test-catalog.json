@@ -1,7 +1,0 @@
-{
-  "experiment": "EXP0",
-  "sut": "Ferramenta MC/DC",
-  "count": 21,
-  "source": "research/experimentacao/run_rebuilt_suites.py",
-  "types": ["CLI usage", "parser", "formats", "Z3", "verify", "invalid inputs"]
-}

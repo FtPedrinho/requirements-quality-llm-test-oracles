@@ -1,0 +1,10 @@
+Atualização de links após realocação: 2026-11-23.
+
+O relatório oficial foi atualizado apenas para corrigir caminhos e registrar
+esta atualização. As métricas, resultados e limitações não foram alterados.
+Os registros de congelamento e adoção anteriores continuam inalterados.
+
+SHA-256:
+CA069A1899FF6F0295D4BA2557029D4FDADBB0011507968DE80F954720149671  copilot-resultados\C0\C0-copilot.md
+0D0527BC4162778C7D3F3B46507C7D1CA273D54C4B571B7C71EDC4CE8D976D60  experimentacao-pesquisa\experimentos\C0\reinicio-2026-11-21\manifesto-final.txt
+208DB773F773B82FEE87532235FAF4482B277F383312527781C76AEE9B0E54DC  experimentacao-pesquisa\experimentos\C0\reinicio-2026-11-21\adocao-oficial.txt

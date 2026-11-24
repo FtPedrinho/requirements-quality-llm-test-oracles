@@ -1,0 +1,12 @@
+{
+  "system": "the_coffee_machine_system",
+  "inputs": [
+    { "name": "the_system_mode", "type": "enum", "values": ["idle", "choice"] },
+    { "name": "the_coin_sensor", "type": "bool" }
+  ],
+  "decisions": [
+    { "id": "vm#1", "requirement": "REQ-001",
+      "gard": "the_system_mode = idle /\\ the_coin_sensor = true",
+      "actions": ["the_system_mode := choce"] }
+  ]
+}

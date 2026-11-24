@@ -1,0 +1,13 @@
+{
+  "casos_conformes_gerados": 8,
+  "casos_indeterminados_gerados": 11,
+  "casos_executados": 8,
+  "resultados": {
+    "FALHOU — DIVERGÊNCIA DOCUMENTAÇÃO/SUT": 8
+  },
+  "branch_covered": 164,
+  "branch_total": 1296,
+  "branch_percent": 12.654320987654321,
+  "escopo": "todas as classes compiladas dos quatro módulos, inclusive mutação; harness excluído",
+  "subconjunto_conforme": "igual à execução total: apenas os oito casos conformes foram executados"
+}

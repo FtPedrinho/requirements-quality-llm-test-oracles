@@ -1,5 +1,7 @@
 # Análise da implementação real
 
+Este inventário técnico auxilia a localizar o SUT e os pontos de entrada após congelar os oráculos derivados da documentação. A implementação serve para planejar a execução e observar o comportamento; não substitui a documentação como referência normativa do oráculo. Divergências entre comportamento e expectativa documental devem ser registradas como falhas, sem corrigir o oráculo a partir do código.
+
 ## Processamento de requisitos
 
 ### Fontes

@@ -1,0 +1,18 @@
+﻿Congelamento de análise, prompt e oráculos: 2026-11-23T11:19:57.9185130-03:00
+185ABBD354D2B790EBFD57B76576AAE10FF693912D72D0EAEEEA4F7F82E13A84  copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\metadados\preparacao.md
+9807E6BCB8D1C787C0CD8F63E7AB0A4C86B15585B6C6E767454F2689859EA675  copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\metadados\ambiente-adicional.md
+EC5E1A4D0F86BB5332970F43B075FAAD9246D7B884914FEBD80AD59308F2388A  copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\metadados\solicitacao.md
+42DE477868D2B3D688E7F999AE0BE33CA852E3A86A99AAAFA3ADED60A26540E4  copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\documentacao\inventario.md
+A6905CF6EB55D25B010ABA4D0760B1C98A13E5BF26B9F6214D27C58D154C632E  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\analise.md
+C54EA9B1F5D0EFF85BD8BBF4FAEAE17AAD9B64CCC14CE05EBCEB0EF4211D94AE  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\casos.json
+E3994EAD7B9A61F912C200251E1DAB1160CAD6FDCB0C51E845CE6D320F1D7E17  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\entradas\complementar.mcdc
+E9D8AE75F3160806A9283B5859907FEA6535F3B59740E95F04B561DA91E52360  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\entradas\csv-value.csv
+1D927C75B487A2BC668BEFE13B0C8B08F53F9F0275225621599004D8AFA68C53  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\entradas\csv-vlue.csv
+19BE4AEA04043C44ADCD9823EF696F0DC81DE0BD2A87C43D0E6FD5D61B8030DD  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\entradas\json-literal.json
+A80FA1E0279BCD2414D73EBEF30A42A038511058FE73D6B92F12D2C71DE5AFB8  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\entradas\simples.mcdc
+63EC3EB27EAA1B3B6AAD9FD217D325C117CDF9307A1F6CDB11DE808DD74626E0  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\formulas.smt2
+34283D0BA358962694427B20C0832C0B5FB95442796E319F9EBD1A8B31D2E238  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\gerar.py
+A89A9F10E579B0189AB83CD845A42764637AB6754BD28D2E567D8D6A6B401E3F  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\prompt.md
+6CEE4070ECEB30C350BB723A860DF4D00248297829F71587F7C9C97EFF90989E  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\reexecucao-z3.txt
+F51693714E3FF1186EF2439077E4D16CB55B794E5BFDC75D4988A2C06BA4A61D  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\reexecutar_smt.py
+3449B521C50F082718E6402B5B2E84E6E2DB8D8A9190047EC3ABDD1CABDD4DC2  C:\Users\User\requirements-quality-llm-test-oracles\copilot-resultados\C2\20261123T1109-7f9b1cb76e1b4ef7845a\oraculos\resultado-z3.json

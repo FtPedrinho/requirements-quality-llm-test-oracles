@@ -1,0 +1,27 @@
+{
+  "id": "B24",
+  "argumentos": [
+    "analyze",
+    "(A and B) or C",
+    "--exact",
+    "--format",
+    "json"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\baseline\\B24.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "analyze",
+    "(A and B) or C",
+    "--exact",
+    "--format",
+    "json"
+  ],
+  "codigo": 0,
+  "stdout": "{\n  \"tool\" : \"mcdc\",\n  \"system\" : null,\n  \"variant\" : \"MASKING\",\n  \"constraint\" : null,\n  \"complete\" : true,\n  \"decisions\" : [ {\n    \"id\" : \"REQ\",\n    \"requirement\" : null,\n    \"guard\" : \"(A and B) or C\",\n    \"actions\" : [ ],\n    \"complete\" : true,\n    \"uncoveredConditions\" : [ ],\n    \"uncovered\" : [ ],\n    \"inputs\" : [ {\n      \"name\" : \"A\"\n    }, {\n      \"name\" : \"B\"\n    }, {\n      \"name\" : \"C\"\n    } ],\n    \"conditions\" : [ {\n      \"label\" : \"A\",\n      \"input\" : \"A\",\n      \"occurrence\" : 1\n    }, {\n      \"label\" : \"B\",\n      \"input\" : \"B\",\n      \"occurrence\" : 1\n    }, {\n      \"label\" : \"C\",\n      \"input\" : \"C\",\n      \"occurrence\" : 1\n    } ],\n    \"suiteMethod\" : \"EXACT\",\n    \"truthTableRows\" : 8,\n    \"truthTableBuilt\" : true,\n    \"truthTable\" : [ {\n      \"vector\" : \"V1\",\n      \"values\" : {\n        \"A\" : true,\n        \"B\" : true,\n        \"C\" : true\n      },\n      \"outcome\" : true,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"A\" : true,\n        \"B\" : true,\n        \"C\" : false\n      },\n      \"outcome\" : true,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V3\",\n      \"values\" : {\n        \"A\" : true,\n        \"B\" : false,\n        \"C\" : true\n      },\n      \"outcome\" : true,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V4\",\n      \"values\" : {\n        \"A\" : true,\n        \"B\" : false,\n        \"C\" : false\n      },\n      \"outcome\" : false,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V5\",\n      \"values\" : {\n        \"A\" : false,\n        \"B\" : true,\n        \"C\" : true\n      },\n      \"outcome\" : true,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V6\",\n      \"values\" : {\n        \"A\" : false,\n        \"B\" : true,\n        \"C\" : false\n      },\n      \"outcome\" : false,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V7\",\n      \"values\" : {\n        \"A\" : false,\n        \"B\" : false,\n        \"C\" : true\n      },\n      \"outcome\" : true,\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V8\",\n      \"values\" : {\n        \"A\" : false,\n        \"B\" : false,\n        \"C\" : false\n      },\n      \"outcome\" : false,\n      \"feasible\" : true\n    } ],\n    \"independencePairs\" : {\n      \"A\" : [ [ \"V2\", \"V6\" ] ],\n      \"B\" : [ [ \"V2\", \"V4\" ] ],\n      \"C\" : [ [ \"V3\", \"V4\" ], [ \"V3\", \"V6\" ], [ \"V3\", \"V8\" ], [ \"V5\", \"V4\" ], [ \"V5\", \"V6\" ], [ \"V5\", \"V8\" ], [ \"V7\", \"V4\" ], [ \"V7\", \"V6\" ], [ \"V7\", \"V8\" ] ]\n    },\n    \"pairsTruncated\" : [ ],\n    \"minimalSuite\" : [ {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"A\" : true,\n        \"B\" : true,\n        \"C\" : false\n      },\n      \"outcome\" : true,\n      \"demonstrates\" : [ \"A\", \"B\" ]\n    }, {\n      \"vector\" : \"V4\",\n      \"values\" : {\n        \"A\" : true,\n        \"B\" : false,\n        \"C\" : false\n      },\n      \"outcome\" : false,\n      \"demonstrates\" : [ \"B\" ]\n    }, {\n      \"vector\" : \"V5\",\n      \"values\" : {\n        \"A\" : false,\n        \"B\" : true,\n        \"C\" : true\n      },\n      \"outcome\" : true,\n      \"demonstrates\" : [ \"C\" ]\n    }, {\n      \"vector\" : \"V6\",\n      \"values\" : {\n        \"A\" : false,\n        \"B\" : true,\n        \"C\" : false\n      },\n      \"outcome\" : false,\n      \"demonstrates\" : [ \"A\", \"C\" ]\n    } ],\n    \"chosenPairs\" : {\n      \"A\" : {\n        \"whenTrue\" : \"V2\",\n        \"whenFalse\" : \"V6\",\n        \"uniqueCause\" : true\n      },\n      \"B\" : {\n        \"whenTrue\" : \"V2\",\n        \"whenFalse\" : \"V4\",\n        \"uniqueCause\" : true\n      },\n      \"C\" : {\n        \"whenTrue\" : \"V5\",\n        \"whenFalse\" : \"V6\",\n        \"uniqueCause\" : true\n      }\n    }\n  } ]\n}\n",
+  "stderr": "",
+  "duracao_segundos": 2.391
+}

@@ -1,0 +1,275 @@
+{
+  "versao": "5.4.1",
+  "evidencias": [
+    {
+      "id": "eq-2",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (= x 3))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (let (($x7 (= x 3)))\n(not $x7)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 2]"
+        }
+      ]
+    },
+    {
+      "id": "eq-3",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (= x 3))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 3]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (let (($x7 (= x 3)))\n(not $x7)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "eq-4",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (= x 3))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (let (($x7 (= x 3)))\n(not $x7)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 4]"
+        }
+      ]
+    },
+    {
+      "id": "ne-2",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (and (distinct x 3) true))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 2]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (let (($x8 (and (distinct x 3) true)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "ne-3",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (and (distinct x 3) true))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (let (($x8 (and (distinct x 3) true)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 3]"
+        }
+      ]
+    },
+    {
+      "id": "ne-4",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (and (distinct x 3) true))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 4]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (let (($x8 (and (distinct x 3) true)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "lt-2",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (< x 3))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 2]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (let (($x9 (< x 3)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "lt-3",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (< x 3))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (let (($x9 (< x 3)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 3]"
+        }
+      ]
+    },
+    {
+      "id": "lt-4",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (< x 3))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (let (($x9 (< x 3)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 4]"
+        }
+      ]
+    },
+    {
+      "id": "le-2",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (<= x 3))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 2]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (let (($x10 (<= x 3)))\n(not $x10)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "le-3",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (<= x 3))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 3]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (let (($x10 (<= x 3)))\n(not $x10)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "le-4",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (<= x 3))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (let (($x10 (<= x 3)))\n(not $x10)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 4]"
+        }
+      ]
+    },
+    {
+      "id": "gt-2",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (> x 3))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (let (($x11 (> x 3)))\n(not $x11)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 2]"
+        }
+      ]
+    },
+    {
+      "id": "gt-3",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (> x 3))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (let (($x11 (> x 3)))\n(not $x11)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 3]"
+        }
+      ]
+    },
+    {
+      "id": "gt-4",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (> x 3))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 4]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (let (($x11 (> x 3)))\n(not $x11)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "ge-2",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (>= x 3))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 2))\n(assert\n (let (($x12 (>= x 3)))\n(not $x12)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 2]"
+        }
+      ]
+    },
+    {
+      "id": "ge-3",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (>= x 3))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 3]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (let (($x12 (>= x 3)))\n(not $x12)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "ge-4",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (>= x 3))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[x = 4]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (let (($x12 (>= x 3)))\n(not $x12)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    }
+  ]
+}

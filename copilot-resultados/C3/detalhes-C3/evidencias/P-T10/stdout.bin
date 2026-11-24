@@ -1,0 +1,24 @@
+Decisão:   REQ
+Guarda:    porta_fechada and not obstaculo
+Variante:  mascaramento
+
+Vetor porta_fechada   obstaculo   | D
+V1    T               T           | F
+V2    T               F           | T
+V3    F               T           | F
+V4    F               F           | F
+
+Pares de independência:
+  porta_fechada: (V2, V4)
+  obstaculo: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> F   demonstra obstaculo
+  V2  TF  -> T   demonstra porta_fechada, obstaculo
+  V4  FF  -> F   demonstra porta_fechada
+
+Demonstração por condição:
+  porta_fechada: V2 (T) e V4 (F), só ela muda
+  obstaculo: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa

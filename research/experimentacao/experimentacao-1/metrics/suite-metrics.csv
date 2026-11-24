@@ -1,4 +1,0 @@
-experiment,metric,value,denominator,unit,observation
-EXP1,passed_tests,21,21,test,Suíte real contra SUT
-EXP1,failed_tests,0,21,test,Suíte real contra SUT
-EXP1,non_evaluable_tests,0,21,test,Todos os casos selecionados foram executáveis

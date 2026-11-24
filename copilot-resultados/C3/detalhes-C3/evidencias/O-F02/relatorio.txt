@@ -1,0 +1,114 @@
+{
+  "tool" : "mcdc",
+  "system" : "the_coffee_machine_system",
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "vm#1",
+    "requirement" : "REQ-001",
+    "guard" : "the_system_mode = idle /\\ the_coin_sensor = true",
+    "actions" : [ "the_system_mode := choice" ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "the_system_mode = idle",
+      "variable" : "the_system_mode",
+      "operator" : "=",
+      "value" : "idle"
+    }, {
+      "name" : "the_coin_sensor = true",
+      "variable" : "the_coin_sensor",
+      "operator" : "=",
+      "value" : "true"
+    } ],
+    "conditions" : [ {
+      "label" : "the_system_mode = idle",
+      "input" : "the_system_mode = idle",
+      "occurrence" : 1
+    }, {
+      "label" : "the_coin_sensor = true",
+      "input" : "the_coin_sensor = true",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "the_system_mode = idle" : [ [ "V1", "V3" ] ],
+      "the_coin_sensor = true" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "the_system_mode = idle", "the_coin_sensor = true" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "the_system_mode = idle" : true,
+        "the_coin_sensor = true" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_coin_sensor = true" ]
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "the_system_mode = idle" : false,
+        "the_coin_sensor = true" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "the_system_mode = idle" ]
+    } ],
+    "chosenPairs" : {
+      "the_system_mode = idle" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V3",
+        "uniqueCause" : true
+      },
+      "the_coin_sensor = true" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

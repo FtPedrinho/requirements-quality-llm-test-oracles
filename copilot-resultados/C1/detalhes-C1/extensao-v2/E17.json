@@ -1,0 +1,25 @@
+{
+  "id": "E17",
+  "argumentos": [
+    "check",
+    "A",
+    "--tests",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E17-entrada.csv"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E17.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "check",
+    "A",
+    "--tests",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E17-entrada.csv"
+  ],
+  "codigo": 0,
+  "stdout": "Decis�o:   REQ\nGuarda:    A\nTestes:    2\n  T1 = V2  F  -> F\n  T2 = V1  T  -> T\n\nCondi��es:\n  A: demonstrada por T2 (T) e T1 (F)\n\nResultados de condi��o demonstrados: 2 de 2 (100,0%)\nCobertura MC/DC: completa, 1 de 1 condi��es demonstradas",
+  "stderr": "",
+  "duracao_segundos": 2.078
+}

@@ -1,0 +1,18 @@
+{
+  "experiment": "C0",
+  "condition": "original",
+  "source_commit": "256e78f404527bcdfa76e7629c83376d4d719c3d",
+  "baseline": {
+    "file": "tool-readme-original.md",
+    "original_path": "research/archive/legacy-experimental-results/research-experimentacao/experimentacao-0/documentation/document-copies/tool-readme.md",
+    "sha256": "72B827BDEE6CE859527765CFF574A473519C00A1AF9AA9F3AACCE4236A4995F8",
+    "role": "normative user documentation"
+  },
+  "reference_only": {
+    "file": "technical-specification.pdf",
+    "original_path": "research/archive/legacy-experimental-results/research-experimentacao/experimentacao-0/documentation/document-copies/technical-specification.pdf",
+    "sha256": "D163CE8AB7764DF17906609F39A363FFA5D6F29CDEDCDC87EFDC4C7A1E7B59E9",
+    "role": "architecture/proposal reference; not normative for behavior absent from the README"
+  },
+  "scope_note": "This manifest freezes source documentation only; the active methodology does not derive or use a behavioral gold standard. Links in the byte-identical copy are preserved from the source and resolve from the repository root; referenced product reports are not results of this research."
+}

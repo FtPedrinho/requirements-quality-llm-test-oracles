@@ -1,0 +1,27 @@
+{
+  "experiment": "C1",
+  "commit": "256e78f404527bcdfa76e7629c83376d4d719c3d",
+  "documents": [
+    {
+      "name": "tool-readme.md",
+      "path": "experimentacao/experimentacao-1/documentation/tool-readme.md",
+      "role": "original documentation copy with local-link adjustments",
+      "modified": true,
+      "sha256": "141c693db506b2025d5ead924c4c628660fef7c163ec54bb7437c21faa5c4856"
+    },
+    {
+      "name": "tool-readme-C1.md",
+      "path": "experimentacao/experimentacao-1/documentation/tool-readme-C1.md",
+      "role": "improved-documentation",
+      "modified": true,
+      "sha256": "dddef91862d3f0180e06d86112d9861a3c0eedb9d1cf1bdcdac43f51c062eb88"
+    },
+    {
+      "name": "technical-specification.pdf",
+      "path": "experimentacao/experimentacao-1/documentation/technical-specification.pdf",
+      "role": "reference-specification",
+      "modified": false,
+      "sha256": "d163ce8ab7764df17906609f39a363ffa5d6f29cdedcdc87efdc4c7a1e7b59e9"
+    }
+  ]
+}

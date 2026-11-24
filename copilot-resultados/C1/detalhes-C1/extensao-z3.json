@@ -1,0 +1,89 @@
+{
+  "versao": "5.4.1",
+  "consultas": [
+    {
+      "operador": "=",
+      "esperado": true,
+      "resultado": "sat",
+      "testemunha": "0"
+    },
+    {
+      "operador": "=",
+      "esperado": false,
+      "resultado": "sat",
+      "testemunha": "1"
+    },
+    {
+      "operador": "==",
+      "esperado": true,
+      "resultado": "sat",
+      "testemunha": "0"
+    },
+    {
+      "operador": "==",
+      "esperado": false,
+      "resultado": "sat",
+      "testemunha": "1"
+    },
+    {
+      "operador": "!=",
+      "esperado": true,
+      "resultado": "sat",
+      "testemunha": "1"
+    },
+    {
+      "operador": "!=",
+      "esperado": false,
+      "resultado": "sat",
+      "testemunha": "0"
+    },
+    {
+      "operador": "<",
+      "esperado": true,
+      "resultado": "sat",
+      "testemunha": "-1"
+    },
+    {
+      "operador": "<",
+      "esperado": false,
+      "resultado": "sat",
+      "testemunha": "0"
+    },
+    {
+      "operador": "<=",
+      "esperado": true,
+      "resultado": "sat",
+      "testemunha": "0"
+    },
+    {
+      "operador": "<=",
+      "esperado": false,
+      "resultado": "sat",
+      "testemunha": "1"
+    },
+    {
+      "operador": ">",
+      "esperado": true,
+      "resultado": "sat",
+      "testemunha": "1"
+    },
+    {
+      "operador": ">",
+      "esperado": false,
+      "resultado": "sat",
+      "testemunha": "0"
+    },
+    {
+      "operador": ">=",
+      "esperado": true,
+      "resultado": "sat",
+      "testemunha": "0"
+    },
+    {
+      "operador": ">=",
+      "esperado": false,
+      "resultado": "sat",
+      "testemunha": "-1"
+    }
+  ]
+}

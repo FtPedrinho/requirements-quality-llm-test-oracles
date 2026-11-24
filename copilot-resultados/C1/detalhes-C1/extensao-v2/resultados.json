@@ -1,0 +1,116 @@
+[
+  {
+    "id": "E01",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E02",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "FALHOU — DIVERGÊNCIA DOCUMENTAÇÃO/SUT",
+    "mensagem": "componentes textuais ausentes"
+  },
+  {
+    "id": "E03",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E04",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E05",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E06",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E07",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E08",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E09",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E10",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E11",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E12",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E13",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E14",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E15",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E16",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E17",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E18",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "E19",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  }
+]

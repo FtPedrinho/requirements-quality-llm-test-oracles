@@ -1,0 +1,23 @@
+[
+  {"id":"E01-check-completo", "args":["check","A and B","--tests","@extension-check-completo.csv","--format","json"],"esperado":0,"regra":"R6,R13: pares TT/FT e TT/TF demonstram ambas as condições","z3":"and-word-11, and-word-01, and-word-10"},
+  {"id":"E02-check-incompleto", "args":["check","A and B","--tests","@extension-check-incompleto.csv","--format","json"],"esperado":2,"regra":"R6,R13: uma linha não contém par","z3":"and-word-11"},
+  {"id":"E03-check-divergente", "args":["check","A and B","--tests","@extension-check-divergente.csv","--format","json"],"esperado":2,"regra":"R6,R13: TT produz T, não F","z3":"and-word-11"},
+  {"id":"E04-check-causa-unica", "args":["check","A and B","--tests","@extension-check-completo.csv","--unique-cause","--format","json"],"esperado":0,"regra":"R4,R6,R13: cada par difere somente na condição exercitada","z3":"and-word-11, and-word-01, and-word-10"},
+  {"id":"E05-requisitos", "args":["analyze","-f","@extension-requisitos.mcdc","--format","json"],"esperado":0,"regra":"R6,R11: duas guardas simples têm pares para cada condição","z3":"and-word-*, or-word-*"},
+  {"id":"E06-nat2test", "args":["analyze","--json","@extension-decisoes.json","--format","json"],"esperado":0,"regra":"R6,R12: duas guardas simples têm pares para cada condição","z3":"and-word-*, or-word-*"},
+  {"id":"E07-csv", "args":["analyze","A and B","--format","csv"],"esperado":0,"regra":"R6,R15: guarda com pares tem sucesso no formato CSV","z3":"and-word-*"},
+  {"id":"E08-json", "args":["analyze","A or B","--format","json"],"esperado":0,"regra":"R6,R15: guarda com pares tem sucesso no formato JSON","z3":"or-word-*"},
+  {"id":"E09-texto", "args":["analyze","not A"],"esperado":0,"regra":"R6,R15: guarda com par tem sucesso no formato texto padrão","z3":"not-word-*"},
+  {"id":"E10-restricao", "args":["analyze","A and B","--constraint","A","--format","json"],"esperado":2,"regra":"R6,R8: A não pode mudar entre linhas aceitas, portanto não tem par","z3":"extension-z3.json"},
+  {"id":"E11-expressao-invalida", "args":["analyze","A or"],"esperado":1,"regra":"R6: operação binária incompleta é entrada inválida","z3":"não aplicável: sintaxe"},
+  {"id":"E12-parentese-invalido", "args":["analyze","(A and B"],"esperado":1,"regra":"R6: parêntese não fechado é entrada inválida","z3":"não aplicável: sintaxe"},
+  {"id":"E13-repeticao-condicoes", "args":["analyze","(A and B) or (not A and C)","--format","json"],"tipo":"condicoes","esperado":4,"regra":"R5: o exemplo tem quatro condições","z3":"repeated-*"},
+  {"id":"E14-csv-check-sem-expected", "args":["check","A and B","--tests","@extension-check-incompleto.csv","--unique-cause","--format","json"],"esperado":2,"regra":"R4,R6,R13: expected_outcome é opcional; uma linha não forma par","z3":"and-word-11"},
+  {"id":"E15-z3", "args":["analyze","A and B","--z3","--format","json"],"esperado":0,"regra":"R6,R9: ambas as condições têm par viável","z3":"and-word-*"},
+  {"id":"E16-exato", "args":["analyze","A and B","--exact","--format","json"],"esperado":0,"regra":"R6,R10: os dois pares têm suíte viável","z3":"and-word-*"},
+  {"id":"E17-direto", "args":["analyze","A and B","--direct","--format","json"],"esperado":0,"regra":"R6,R10: os dois pares têm suíte viável","z3":"and-word-*"},
+  {"id":"E18-fronteira", "args":["analyze","x > 3","--z3","--boundary","--format","json"],"esperado":0,"regra":"R6,R9: x=3 e x=4 demonstram a comparação","z3":"extension-z3.json"},
+  {"id":"E19-verifica-conflito", "args":["verify","--json","@extension-decisoes.json","--format","json"],"esperado":2,"regra":"R6,R12,R14: com A=B=true, guardas valem e escrevem valores diferentes","z3":"extension-z3.json"},
+  {"id":"E20-verifica-sem-problema", "args":["verify","--json","@extension-verificacao.json","--context","A or not A","--format","json"],"esperado":0,"regra":"R6,R14: guardas complementares, sem sobreposição ou lacuna","z3":"extension-z3.json"},
+  {"id":"E21-verifica-lacuna", "args":["verify","--json","@extension-lacuna.json","--context","A or not A","--format","json"],"esperado":2,"regra":"R6,R14: com A=false a guarda falha sob contexto tautológico","z3":"extension-z3.json"}
+]

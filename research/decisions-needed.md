@@ -1,25 +1,12 @@
-# Decisões metodológicas pendentes
+# Decisões pendentes antes da nova coleta
 
-1. Qual conjunto dos documentos atuais será considerado corpus normativo do Experimento 0 da nova pesquisa?
+As escolhas abaixo não estão especificadas com evidência suficiente e não foram inventadas nesta revisão. Registrar as decisões antes de gerar qualquer resultado:
 
-2. Como o README da ferramenta será revisado no Experimento 1 sem alterar comportamentos?
+1. Modelo, versão, parâmetros e número de repetições por condição.
+2. Commit do SUT e ambiente exato (SO, arquitetura, Java, Maven, Z3 e dependências).
+3. Escopo de classes/módulos e ferramenta de Branch Coverage, fixados para comparações.
+4. Harness para os testes gerados e comando de execução por condição, mantendo a independência das coletas.
+5. Procedimento de caracterização de clareza/consistência, incluindo avaliadores e forma de registrar divergências.
+6. Revisor independente e procedimento para conferir a correspondência texto–SMT; na ausência, registrar a autorrevisão.
 
-3. A documentação experimental pode incluir texto da ajuda da CLI embutida no código, ou somente documentos Markdown/PDF?
-
-4. O PDF deve ser incluído como fonte explicativa ou excluído por ser uma proposta arquitetural divergente?
-
-5. Qual referência independente aprova os oráculos da ferramenta?
-
-6. Os oráculos serão avaliados por testes JUnit, execução da CLI, inspeção humana ou combinação?
-
-7. PIT será aplicado a quais módulos ou a toda a ferramenta?
-
-8. Precision, Recall e F1 serão utilizados e, em caso afirmativo, qual é a unidade positiva/negativa?
-
-9. Correção semântica e Mutation Score serão reportados separadamente?
-
-10. Como casos não avaliáveis serão excluídos sem inflar os resultados?
-
-11. Quantas repetições do LLM serão necessárias por condição?
-
-12. O modelo e os parâmetros do LLM serão definidos e registrados antes da geração?
+Não são decisões pendentes: C0-C4 seguem o mesmo protocolo de forma independente; a documentação congelada é a referência absoluta para o oráculo; o Z3 independente é obrigatório; as métricas são Branch Coverage e quantidades de testes aprovados, falhos e indeterminados.

@@ -1,49 +1,20 @@
-# Lacunas, ambiguidades e inconsistências documentais
+# Lacunas e riscos documentais
 
-## PDF técnico
+Este inventário descreve riscos a observar durante a pesquisa. Não é uma especificação normativa nem um gabarito.
 
-O PDF declara um status explícito de proposta de arquitetura e descreve:
+## Fontes
 
-- plugin Eclipse;
-- Eclipse JDT AST;
-- integração Java bytecode/Javassist/ASM;
-- modo caixa-branca;
-- Gherkin;
-- cobertura dinâmica;
-- Rich Client Platform.
+- O README da ferramenta é documentação do usuário, preservada em `docs/README.md`.
+- A cópia original de requisitos usada como base está em `experimentacao-pesquisa/documentacao-original/`; C1-C4 estão nas subpastas correspondentes.
+- O PDF técnico contém uma proposta arquitetural e funcionalidades que podem não corresponder ao snapshot implementado. Não tratá-lo como contrato funcional sem reconciliação documental prévia.
+- VM, TIS e NPP são exemplos de entrada da ferramenta, não sistemas de domínio implementados no repositório.
 
-No snapshot atual:
+## Lacunas candidatas a registro
 
-- não há plugin Eclipse implementado;
-- não há parser ANTLR implementado;
-- não há integração Java AST/Javassist/ASM;
-- não há execução JUnit do código-fonte do sistema;
-- não há formato Gherkin aceito;
-- o projeto é CLI Maven com módulos Java.
+- Mensagens de erro, prioridade de opções e comportamento de combinações inválidas podem não estar inteiramente especificados.
+- Limites e caminhos que dependem do Z3 podem ser descritos em locais diferentes e requerer verificação de consistência.
+- A documentação pode não definir todos os esquemas de entrada/saída, domínios ou estados.
+- Uma expectativa pode divergir da implementação observada; a discrepância deve ser registrada sem usar o código para corrigir o texto.
+- C1-C4 têm níveis de tratamento pretendidos; a eficácia da manipulação precisa ser caracterizada com evidência, não presumida.
 
-O PDF é usado como especificação de referência desta reconstrução, mas suas seções de Eclipse/plugin, AST, bytecode, Gherkin e cobertura dinâmica devem ser reconciliadas com o código antes de serem tratadas como comportamentos implementados.
-
-## README da ferramenta
-
-Fornece descrição externa útil, mas pode incluir valores históricos de testes e notas de qualidade que não foram reexecutadas nesta etapa.
-
-Não substitui a especificação detalhada de todos os códigos de erro e formatos.
-
-## Implementação
-
-Limitações que podem exigir especificação adicional:
-
-- comportamento exato de `unknown` do Z3 em cada operação;
-- limites entre 12, 20 e 30 entradas em linguagem externa;
-- limites do número de pares por condição;
-- mensagens completas de erro;
-- precedência de opções da CLI;
-- quais fontes podem ser usadas com cada opção;
-- diferenças entre mascaramento e causa única em entradas repetidas;
-- comportamento com arquivos vazios ou campos JSON ausentes;
-- comportamento sem Z3;
-- timeout de Z3.
-
-## Corpus não documentado
-
-VM, TIS e NPP não são especificação da ferramenta. Eles são exemplos de dados de entrada e não devem ser usados como requisitos do SUT.
+Registrar cada ocorrência por arquivo, seção, trecho literal, interpretação, alternativas, teste afetado e evidência de execução. Nenhuma lista pré-fabricada de lacunas deve ser confundida com verdade comportamental.

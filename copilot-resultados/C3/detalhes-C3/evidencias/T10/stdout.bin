@@ -1,0 +1,108 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "porta_fechada and not obstaculo",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "porta_fechada"
+    }, {
+      "name" : "obstaculo"
+    } ],
+    "conditions" : [ {
+      "label" : "porta_fechada",
+      "input" : "porta_fechada",
+      "occurrence" : 1
+    }, {
+      "label" : "obstaculo",
+      "input" : "obstaculo",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 4,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "porta_fechada" : [ [ "V2", "V4" ] ],
+      "obstaculo" : [ [ "V1", "V2" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V1",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : true
+      },
+      "outcome" : false,
+      "demonstrates" : [ "obstaculo" ]
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "porta_fechada" : true,
+        "obstaculo" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "porta_fechada", "obstaculo" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "porta_fechada" : false,
+        "obstaculo" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "porta_fechada" ]
+    } ],
+    "chosenPairs" : {
+      "porta_fechada" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      },
+      "obstaculo" : {
+        "whenTrue" : "V1",
+        "whenFalse" : "V2",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

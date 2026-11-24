@@ -1,0 +1,19 @@
+Decisão:   REQ
+Guarda:    A or B
+Restrição: A
+Variante:  causa única
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | T
+V3    F   T   | T  (impossível)
+V4    F   F   | F  (impossível)
+
+Pares de independência:
+  A: nenhum par
+  B: nenhum par
+
+Suíte mínima (0 testes):
+
+  A: bloqueada pelas restrições: os pares (V2, V4) usam linhas impossíveis
+  B: bloqueada pelas restrições: os pares (V3, V4) usam linhas impossíveis

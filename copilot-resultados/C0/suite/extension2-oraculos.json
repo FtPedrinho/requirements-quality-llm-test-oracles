@@ -1,0 +1,233 @@
+[
+  {
+    "id": "E2-eq-correto",
+    "expressao": "x = 3",
+    "arquivo": "extension2-eq-correto.csv",
+    "codigo_esperado": 0,
+    "resultados": {
+      "T2": false,
+      "T3": true,
+      "T4": false
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "eq-2",
+      "eq-3",
+      "eq-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-eq-divergente",
+    "expressao": "x = 3",
+    "arquivo": "extension2-eq-divergente.csv",
+    "codigo_esperado": 2,
+    "resultados": {
+      "T2": false,
+      "T3": true,
+      "T4": false
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "eq-2",
+      "eq-3",
+      "eq-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-ne-correto",
+    "expressao": "x != 3",
+    "arquivo": "extension2-ne-correto.csv",
+    "codigo_esperado": 0,
+    "resultados": {
+      "T2": true,
+      "T3": false,
+      "T4": true
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "ne-2",
+      "ne-3",
+      "ne-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-ne-divergente",
+    "expressao": "x != 3",
+    "arquivo": "extension2-ne-divergente.csv",
+    "codigo_esperado": 2,
+    "resultados": {
+      "T2": true,
+      "T3": false,
+      "T4": true
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "ne-2",
+      "ne-3",
+      "ne-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-lt-correto",
+    "expressao": "x < 3",
+    "arquivo": "extension2-lt-correto.csv",
+    "codigo_esperado": 0,
+    "resultados": {
+      "T2": true,
+      "T3": false,
+      "T4": false
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "lt-2",
+      "lt-3",
+      "lt-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-lt-divergente",
+    "expressao": "x < 3",
+    "arquivo": "extension2-lt-divergente.csv",
+    "codigo_esperado": 2,
+    "resultados": {
+      "T2": true,
+      "T3": false,
+      "T4": false
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "lt-2",
+      "lt-3",
+      "lt-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-le-correto",
+    "expressao": "x <= 3",
+    "arquivo": "extension2-le-correto.csv",
+    "codigo_esperado": 0,
+    "resultados": {
+      "T2": true,
+      "T3": true,
+      "T4": false
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "le-2",
+      "le-3",
+      "le-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-le-divergente",
+    "expressao": "x <= 3",
+    "arquivo": "extension2-le-divergente.csv",
+    "codigo_esperado": 2,
+    "resultados": {
+      "T2": true,
+      "T3": true,
+      "T4": false
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "le-2",
+      "le-3",
+      "le-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-gt-correto",
+    "expressao": "x > 3",
+    "arquivo": "extension2-gt-correto.csv",
+    "codigo_esperado": 0,
+    "resultados": {
+      "T2": false,
+      "T3": false,
+      "T4": true
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "gt-2",
+      "gt-3",
+      "gt-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-gt-divergente",
+    "expressao": "x > 3",
+    "arquivo": "extension2-gt-divergente.csv",
+    "codigo_esperado": 2,
+    "resultados": {
+      "T2": false,
+      "T3": false,
+      "T4": true
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "gt-2",
+      "gt-3",
+      "gt-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-ge-correto",
+    "expressao": "x >= 3",
+    "arquivo": "extension2-ge-correto.csv",
+    "codigo_esperado": 0,
+    "resultados": {
+      "T2": false,
+      "T3": true,
+      "T4": true
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "ge-2",
+      "ge-3",
+      "ge-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-ge-divergente",
+    "expressao": "x >= 3",
+    "arquivo": "extension2-ge-divergente.csv",
+    "codigo_esperado": 2,
+    "resultados": {
+      "T2": false,
+      "T3": true,
+      "T4": true
+    },
+    "regra": "R3,R6,R13: comparação numérica e check de valores concretos",
+    "z3": [
+      "ge-2",
+      "ge-3",
+      "ge-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  },
+  {
+    "id": "E2-fronteira-gt",
+    "tipo": "fronteira",
+    "expressao": "x > 3",
+    "esperado": [
+      3,
+      4
+    ],
+    "regra": "R9: comparação > acrescenta valores no limite e imediatamente acima",
+    "z3": [
+      "gt-3",
+      "gt-4"
+    ],
+    "oraculo": "CONFORME À DOCUMENTAÇÃO"
+  }
+]

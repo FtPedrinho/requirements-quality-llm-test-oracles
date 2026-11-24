@@ -1,0 +1,11 @@
+Adoção oficial: 2026-11-21
+Decisão do pesquisador: "adote este como o resultado C0 único e oficial do copilot"
+
+O manifesto original permanece inalterado e registra o estado anterior à
+adoção. Apenas o relatório e o índice foram atualizados para registrar a
+decisão; os resultados, evidências e limitações da execução não mudaram.
+
+SHA-256 após a adoção:
+E64FD3ED917F9FBD9136D488705B641DD88303DB3A18381BD0690A70A2AF2109  experimentacao-pesquisa\resultados\C0-reinicio.md
+2F5C5081FBC7A3E6CE550A63079677B01C8755CC9FE543BEDF2F7C6848EB5148  experimentacao-pesquisa\resultados\README.md
+0D0527BC4162778C7D3F3B46507C7D1CA273D54C4B571B7C71EDC4CE8D976D60  experimentacao-pesquisa\experimentos\C0\reinicio-2026-11-21\manifesto-final.txt

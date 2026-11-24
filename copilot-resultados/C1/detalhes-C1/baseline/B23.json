@@ -1,0 +1,29 @@
+{
+  "id": "B23",
+  "argumentos": [
+    "analyze",
+    "speed > 100 or speed > 50",
+    "--z3",
+    "--boundary",
+    "--format",
+    "json"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\baseline\\B23.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "analyze",
+    "speed > 100 or speed > 50",
+    "--z3",
+    "--boundary",
+    "--format",
+    "json"
+  ],
+  "codigo": 2,
+  "stdout": "{\n  \"tool\" : \"mcdc\",\n  \"system\" : null,\n  \"variant\" : \"MASKING\",\n  \"constraint\" : null,\n  \"complete\" : false,\n  \"decisions\" : [ {\n    \"id\" : \"REQ\",\n    \"requirement\" : null,\n    \"guard\" : \"speed > 100 or speed > 50\",\n    \"actions\" : [ ],\n    \"complete\" : false,\n    \"uncoveredConditions\" : [ \"speed > 100\" ],\n    \"uncovered\" : [ {\n      \"condition\" : \"speed > 100\",\n      \"reason\" : \"INFEASIBLE\",\n      \"blockedPairs\" : [ [ \"V2\", \"V4\" ] ]\n    } ],\n    \"inputs\" : [ {\n      \"name\" : \"speed > 100\",\n      \"variable\" : \"speed\",\n      \"operator\" : \">\",\n      \"value\" : \"100\"\n    }, {\n      \"name\" : \"speed > 50\",\n      \"variable\" : \"speed\",\n      \"operator\" : \">\",\n      \"value\" : \"50\"\n    } ],\n    \"conditions\" : [ {\n      \"label\" : \"speed > 100\",\n      \"input\" : \"speed > 100\",\n      \"occurrence\" : 1\n    }, {\n      \"label\" : \"speed > 50\",\n      \"input\" : \"speed > 50\",\n      \"occurrence\" : 1\n    } ],\n    \"suiteMethod\" : \"GREEDY\",\n    \"truthTableRows\" : 4,\n    \"truthTableBuilt\" : true,\n    \"truthTable\" : [ {\n      \"vector\" : \"V1\",\n      \"values\" : {\n        \"speed > 100\" : true,\n        \"speed > 50\" : true\n      },\n      \"outcome\" : true,\n      \"assignment\" : {\n        \"speed\" : \"101\"\n      },\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V2\",\n      \"values\" : {\n        \"speed > 100\" : true,\n        \"speed > 50\" : false\n      },\n      \"outcome\" : true,\n      \"feasible\" : false\n    }, {\n      \"vector\" : \"V3\",\n      \"values\" : {\n        \"speed > 100\" : false,\n        \"speed > 50\" : true\n      },\n      \"outcome\" : true,\n      \"assignment\" : {\n        \"speed\" : \"51\"\n      },\n      \"feasible\" : true\n    }, {\n      \"vector\" : \"V4\",\n      \"values\" : {\n        \"speed > 100\" : false,\n        \"speed > 50\" : false\n      },\n      \"outcome\" : false,\n      \"assignment\" : {\n        \"speed\" : \"0\"\n      },\n      \"feasible\" : true\n    } ],\n    \"independencePairs\" : {\n      \"speed > 100\" : [ ],\n      \"speed > 50\" : [ [ \"V3\", \"V4\" ] ]\n    },\n    \"pairsTruncated\" : [ ],\n    \"minimalSuite\" : [ {\n      \"vector\" : \"V3\",\n      \"values\" : {\n        \"speed > 100\" : false,\n        \"speed > 50\" : true\n      },\n      \"outcome\" : true,\n      \"assignment\" : {\n        \"speed\" : \"51\"\n      },\n      \"demonstrates\" : [ \"speed > 50\" ]\n    }, {\n      \"vector\" : \"V4\",\n      \"values\" : {\n        \"speed > 100\" : false,\n        \"speed > 50\" : false\n      },\n      \"outcome\" : false,\n      \"assignment\" : {\n        \"speed\" : \"0\"\n      },\n      \"demonstrates\" : [ \"speed > 50\" ]\n    } ],\n    \"chosenPairs\" : {\n      \"speed > 50\" : {\n        \"whenTrue\" : \"V3\",\n        \"whenFalse\" : \"V4\",\n        \"uniqueCause\" : true\n      }\n    },\n    \"boundaryTests\" : [ {\n      \"base\" : \"V3\",\n      \"condition\" : \"speed > 100\",\n      \"boundary\" : \"speed = 100\",\n      \"assignment\" : {\n        \"speed\" : \"100\"\n      }\n    }, {\n      \"base\" : \"V3\",\n      \"condition\" : \"speed > 50\",\n      \"boundary\" : \"speed = 51\",\n      \"assignment\" : {\n        \"speed\" : \"51\"\n      }\n    }, {\n      \"base\" : \"V4\",\n      \"condition\" : \"speed > 50\",\n      \"boundary\" : \"speed = 50\",\n      \"assignment\" : {\n        \"speed\" : \"50\"\n      }\n    } ]\n  } ]\n}\n",
+  "stderr": "",
+  "duracao_segundos": 3.811
+}

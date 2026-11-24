@@ -1,0 +1,651 @@
+[
+  {
+    "id": "T01",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "A and B"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(and A B)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T02",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "A && B"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(and A B)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T03",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "A /\\ B"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(and A B)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T04",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "A or B"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(or A B)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T05",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "A || B"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(or A B)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T06",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "A \\/ B"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(or A B)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false,
+          "B": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T07",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "not A"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(not A)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true
+        },
+        "resultado": false,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T08",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "!A"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(not A)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true
+        },
+        "resultado": false,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T09",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "(A and B) or C"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(or (and A B) C)",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": false,
+          "C": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true,
+          "C": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true,
+          "C": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false,
+          "C": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false,
+          "C": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true,
+          "C": false
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true,
+          "C": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T10",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03,D05",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "porta_fechada and not obstaculo"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(and porta_fechada (not obstaculo))",
+    "esperado": [
+      {
+        "entradas": {
+          "porta_fechada": false,
+          "obstaculo": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "porta_fechada": false,
+          "obstaculo": true
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "porta_fechada": true,
+          "obstaculo": false
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "porta_fechada": true,
+          "obstaculo": true
+        },
+        "resultado": false,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  },
+  {
+    "id": "T11",
+    "objetivo": "Tabela-verdade completa da guarda",
+    "fonte": "tool-readme-C3.md",
+    "referencias": "D02,D03",
+    "citacoes": [
+      "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações e calculado o resultado da guarda em cada uma",
+      "| e | `and`, `&&`, `/\\` |",
+      "| ou | `or`, `\\|\\|`, `\\/` |",
+      "| não | `not`, `!` |"
+    ],
+    "entrada": {
+      "fonte": "expressao direta",
+      "expressao": "(A and B) or (not A and C)"
+    },
+    "precondicoes": "entradas logicas distintas e sem restricoes",
+    "formula_smt": "(or (and A B) (and (not A) C))",
+    "esperado": [
+      {
+        "entradas": {
+          "A": false,
+          "B": false,
+          "C": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": false,
+          "C": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true,
+          "C": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": false,
+          "B": true,
+          "C": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false,
+          "C": false
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": false,
+          "C": true
+        },
+        "resultado": false,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true,
+          "C": false
+        },
+        "resultado": true,
+        "z3": "sat"
+      },
+      {
+        "entradas": {
+          "A": true,
+          "B": true,
+          "C": true
+        },
+        "resultado": true,
+        "z3": "sat"
+      }
+    ],
+    "classificacao": "CONFORME À DOCUMENTAÇÃO",
+    "instrucao": "Invocar analyze sem mutacao; examinar tabela da guarda, sem julgar pares ou codigo de saida.",
+    "limite": "Sem julgamento de ordem, formatos CSV, pares ou classes de condicao."
+  }
+]

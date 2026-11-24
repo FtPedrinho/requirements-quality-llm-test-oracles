@@ -1,0 +1,3 @@
+test,input,vlue,expected_outcome
+T1,A,T,T
+T2,A,F,F

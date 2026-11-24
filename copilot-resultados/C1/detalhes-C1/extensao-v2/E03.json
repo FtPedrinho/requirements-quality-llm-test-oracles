@@ -1,0 +1,29 @@
+{
+  "id": "E03",
+  "argumentos": [
+    "check",
+    "x = 0",
+    "--tests",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E03-entrada.csv",
+    "--format",
+    "json"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E03.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "check",
+    "x = 0",
+    "--tests",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E03-entrada.csv",
+    "--format",
+    "json"
+  ],
+  "codigo": 0,
+  "stdout": "{\n  \"tool\": \"mcdc\",\n  \"mode\": \"check\",\n  \"system\": null,\n  \"variant\": \"MASKING\",\n  \"complete\": true,\n  \"decisions\": [\n    {\n      \"id\": \"REQ\",\n      \"requirement\": null,\n      \"guard\": \"x = 0\",\n      \"complete\": true,\n      \"conditionsDemonstrated\": 1,\n      \"conditionsTotal\": 1,\n      \"tests\": [\n        {\n          \"test\": \"T\",\n          \"vector\": \"V1\",\n          \"outcome\": true\n        },\n        {\n          \"test\": \"F\",\n          \"vector\": \"V2\",\n          \"outcome\": false\n        }\n      ],\n      \"conditions\": [\n        {\n          \"condition\": \"x = 0\",\n          \"demonstrated\": true,\n          \"whenTrue\": [\n            \"T\"\n          ],\n          \"whenFalse\": [\n            \"F\"\n          ]\n        }\n      ],\n      \"problems\": []\n    }\n  ]\n}",
+  "stderr": "",
+  "duracao_segundos": 5.254
+}

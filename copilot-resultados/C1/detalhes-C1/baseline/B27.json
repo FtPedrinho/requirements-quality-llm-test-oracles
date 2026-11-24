@@ -1,0 +1,31 @@
+{
+  "id": "B27",
+  "argumentos": [
+    "verify",
+    "--json",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\lacuna.json",
+    "--context",
+    "not A",
+    "--format",
+    "json"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\baseline\\B27.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "verify",
+    "--json",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\lacuna.json",
+    "--context",
+    "not A",
+    "--format",
+    "json"
+  ],
+  "codigo": 2,
+  "stdout": "{\n  \"tool\" : \"mcdc\",\n  \"check\" : \"verify\",\n  \"system\" : \"C1\",\n  \"decisions\" : 1,\n  \"pairsChecked\" : 0,\n  \"conflicts\" : [ ],\n  \"compatibleOverlaps\" : [ ],\n  \"gaps\" : {\n    \"checked\" : true,\n    \"context\" : \"not A\",\n    \"found\" : true,\n    \"witness\" : {\n      \"A\" : \"false\"\n    }\n  },\n  \"ok\" : false\n}\n",
+  "stderr": "",
+  "duracao_segundos": 3.411
+}

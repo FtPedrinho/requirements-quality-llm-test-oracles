@@ -1,0 +1,8 @@
+{
+  "system": "verificacao_nova",
+  "inputs": [{"name": "A", "type": "bool"}],
+  "decisions": [
+    {"id": "D1", "requirement": "R1", "guard": "A", "actions": ["estado := ativo"]},
+    {"id": "D2", "requirement": "R2", "guard": "not A", "actions": ["estado := inativo"]}
+  ]
+}

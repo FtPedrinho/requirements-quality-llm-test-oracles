@@ -1,5 +1,7 @@
 # Análise técnica abrangente do repositório
 
+Este documento descreve tecnicamente o SUT e não define a metodologia experimental. Resultados de cobertura/mutação do produto ou de suas suítes internas não são resultados das novas suítes LLM. O protocolo ativo está em [experimentacao-pesquisa/](../experimentacao-pesquisa/).
+
 ## 1. Visão geral
 
 O projeto original chama-se **Ferramenta MC/DC**. Sua finalidade é gerar suítes de testes de MC/DC (Modified Condition/Decision Coverage) a partir de expressões lógicas ou decisões, avaliar suítes existentes e verificar conflitos entre decisões escritas como requisitos.
@@ -34,7 +36,7 @@ A configuração exige JDK 21 ou superior, Maven e, apenas para recursos especí
 Arquivos relevantes:
 
 - [setup.sh](../setup.sh): esqueleto histórico de criação do projeto; não deve ser executado sobre o repositório atual, pois termina com erro se módulos já existirem.
-- [.gitignore](../.gitignore): exclui `target/`, IDEs e `docs/`, além de requisitos locais em `exemplos/pc-*`.
+- [.gitignore](../.gitignore): exclui `target/`, IDEs e requisitos locais em `exemplos/pc-*`.
 - [relatorios/](../relatorios/): relatórios HTML/XML/CSV já gerados.
 
 ## 3. Documentação de requisitos
@@ -140,4 +142,4 @@ Relacionamentos não confirmados:
 - não foi encontrada uma matriz original requisito-teste;
 - o PDF técnico não pôde ser associado a requisitos específicos nesta inspeção.
 
-A matriz detalhada está em [traceability-matrix.md](traceability-matrix.md).
+A matriz antiga de rastreabilidade dos exemplos de domínio foi arquivada e não é uma referência comportamental da metodologia atual. Consulte os [documentos e modelos de coleta](../experimentacao-pesquisa/).

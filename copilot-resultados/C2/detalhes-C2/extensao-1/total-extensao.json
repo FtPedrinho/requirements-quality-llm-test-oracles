@@ -1,0 +1,2416 @@
+[ {
+  "id" : "X001",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C001",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C002",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X001",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "2/2 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 183.018901
+}, {
+  "id" : "X002",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C001",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C002",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X002",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "2/2 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.5035
+}, {
+  "id" : "X003",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "A",
+    "linhas" : [ {
+      "id_oraculo" : "C001",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C002",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X003",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X003.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X003.stderr.txt",
+  "observado" : "exit=0; 2/2 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 135.6395
+}, {
+  "id" : "X004",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A and B",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C003",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C004",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C005",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C006",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X004",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 2.462101
+}, {
+  "id" : "X005",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A and B",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C003",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C004",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C005",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C006",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X005",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 1.433899
+}, {
+  "id" : "X006",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "A and B",
+    "linhas" : [ {
+      "id_oraculo" : "C003",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C004",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C005",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C006",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X006",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X006.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X006.stderr.txt",
+  "observado" : "exit=0; 4/4 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 19.1774
+}, {
+  "id" : "X007",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A && B",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C007",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C008",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C009",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C010",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X007",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.9456
+}, {
+  "id" : "X008",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A && B",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C007",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C008",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C009",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C010",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X008",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.822299
+}, {
+  "id" : "X009",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "A && B",
+    "linhas" : [ {
+      "id_oraculo" : "C007",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C008",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C009",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C010",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X009",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X009.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X009.stderr.txt",
+  "observado" : "exit=0; 4/4 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 4.9982
+}, {
+  "id" : "X010",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A /\\ B",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C011",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C012",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C013",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C014",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X010",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.943899
+}, {
+  "id" : "X011",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A /\\ B",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C011",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C012",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C013",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C014",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X011",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.937099
+}, {
+  "id" : "X012",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "A /\\ B",
+    "linhas" : [ {
+      "id_oraculo" : "C011",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C012",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C013",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C014",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X012",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X012.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X012.stderr.txt",
+  "observado" : "exit=0; 4/4 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 12.012401
+}, {
+  "id" : "X013",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A or B",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C015",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C016",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C017",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C018",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X013",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 1.3983
+}, {
+  "id" : "X014",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A or B",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C015",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C016",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C017",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C018",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X014",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.852601
+}, {
+  "id" : "X015",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "A or B",
+    "linhas" : [ {
+      "id_oraculo" : "C015",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C016",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C017",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C018",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X015",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X015.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X015.stderr.txt",
+  "observado" : "exit=0; 4/4 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 9.532099
+}, {
+  "id" : "X016",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A || B",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C019",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C020",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C021",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C022",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X016",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.8458
+}, {
+  "id" : "X017",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A || B",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C019",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C020",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C021",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C022",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X017",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.7161
+}, {
+  "id" : "X018",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "A || B",
+    "linhas" : [ {
+      "id_oraculo" : "C019",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C020",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C021",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C022",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X018",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X018.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X018.stderr.txt",
+  "observado" : "exit=0; 4/4 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 14.8044
+}, {
+  "id" : "X019",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A \\/ B",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C023",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C024",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C025",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C026",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X019",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.902
+}, {
+  "id" : "X020",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A \\/ B",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C023",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C024",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C025",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C026",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X020",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.569401
+}, {
+  "id" : "X021",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "A \\/ B",
+    "linhas" : [ {
+      "id_oraculo" : "C023",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C024",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C025",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C026",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X021",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X021.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X021.stderr.txt",
+  "observado" : "exit=0; 4/4 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 4.5285
+}, {
+  "id" : "X022",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "not A",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C027",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C028",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X022",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "2/2 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.7726
+}, {
+  "id" : "X023",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "not A",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C027",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C028",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X023",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "2/2 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.3269
+}, {
+  "id" : "X024",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "not A",
+    "linhas" : [ {
+      "id_oraculo" : "C027",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C028",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X024",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X024.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X024.stderr.txt",
+  "observado" : "exit=0; 2/2 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 7.756901
+}, {
+  "id" : "X025",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "! A",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C029",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C030",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X025",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "2/2 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.5598
+}, {
+  "id" : "X026",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "! A",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C029",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C030",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X026",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "2/2 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.3067
+}, {
+  "id" : "X027",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "! A",
+    "linhas" : [ {
+      "id_oraculo" : "C029",
+      "entradas" : {
+        "A" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C030",
+      "entradas" : {
+        "A" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X027",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X027.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X027.stderr.txt",
+  "observado" : "exit=0; 2/2 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 38.1593
+}, {
+  "id" : "X028",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A and (not B)",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C031",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C032",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C033",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C034",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X028",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.8484
+}, {
+  "id" : "X029",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "A and (not B)",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C031",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C032",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C033",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C034",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X029",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.6902
+}, {
+  "id" : "X030",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "A and (not B)",
+    "linhas" : [ {
+      "id_oraculo" : "C031",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C032",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C033",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C034",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X030",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X030.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X030.stderr.txt",
+  "observado" : "exit=0; 4/4 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 8.612899
+}, {
+  "id" : "X031",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "(not A) or B",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C035",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C036",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C037",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C038",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X031",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.754
+}, {
+  "id" : "X032",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "(not A) or B",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C035",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C036",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C037",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C038",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X032",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "4/4 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.562
+}, {
+  "id" : "X033",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "(not A) or B",
+    "linhas" : [ {
+      "id_oraculo" : "C035",
+      "entradas" : {
+        "A" : false,
+        "B" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C036",
+      "entradas" : {
+        "A" : false,
+        "B" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C037",
+      "entradas" : {
+        "A" : true,
+        "B" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C038",
+      "entradas" : {
+        "A" : true,
+        "B" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X033",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X033.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X033.stderr.txt",
+  "observado" : "exit=0; 4/4 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 5.2374
+}, {
+  "id" : "X034",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "(A and B) or C",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C039",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C040",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C041",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C042",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C043",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C044",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C045",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C046",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X034",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "8/8 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 1.6037
+}, {
+  "id" : "X035",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "(A and B) or C",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C039",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C040",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C041",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C042",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C043",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C044",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C045",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C046",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X035",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "8/8 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 1.1424
+}, {
+  "id" : "X036",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "(A and B) or C",
+    "linhas" : [ {
+      "id_oraculo" : "C039",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C040",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C041",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C042",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C043",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C044",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C045",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C046",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X036",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X036.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X036.stderr.txt",
+  "observado" : "exit=0; 8/8 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 7.5644
+}, {
+  "id" : "X037",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "(A or B) and C",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C047",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C048",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C049",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C050",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C051",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C052",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C053",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C054",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X037",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "8/8 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 1.6723
+}, {
+  "id" : "X038",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "(A or B) and C",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C047",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C048",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C049",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C050",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C051",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C052",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C053",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C054",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X038",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "8/8 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.8667
+}, {
+  "id" : "X039",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "(A or B) and C",
+    "linhas" : [ {
+      "id_oraculo" : "C047",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C048",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C049",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C050",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C051",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C052",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C053",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C054",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X039",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X039.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X039.stderr.txt",
+  "observado" : "exit=0; 8/8 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 13.0149
+}, {
+  "id" : "X040",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "(A and B) or (not A and C)",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C055",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C056",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C057",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C058",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C059",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C060",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C061",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C062",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X040",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "8/8 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 12.7077
+}, {
+  "id" : "X041",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "(A and B) or (not A and C)",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C055",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C056",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C057",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C058",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C059",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C060",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C061",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C062",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X041",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "8/8 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 1.2007
+}, {
+  "id" : "X042",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "(A and B) or (not A and C)",
+    "linhas" : [ {
+      "id_oraculo" : "C055",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C056",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C057",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C058",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C059",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C060",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C061",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C062",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X042",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X042.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X042.stderr.txt",
+  "observado" : "exit=0; 8/8 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 80.6753
+}, {
+  "id" : "X043",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "not (A and (B or C))",
+    "variante" : "masking",
+    "linhas" : [ {
+      "id_oraculo" : "C063",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C064",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C065",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C066",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C067",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C068",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C069",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C070",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X043",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "8/8 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 1.424801
+}, {
+  "id" : "X044",
+  "tipo" : "avaliacao",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "avaliacao",
+    "expressao" : "not (A and (B or C))",
+    "variante" : "unique",
+    "linhas" : [ {
+      "id_oraculo" : "C063",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C064",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C065",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C066",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C067",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C068",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C069",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C070",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada resultado de decisão deve corresponder ao oráculo booleano congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R12",
+    "id" : "X044",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "8/8 decisões correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.8709
+}, {
+  "id" : "X045",
+  "tipo" : "truth_csv",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "truth_csv",
+    "expressao" : "not (A and (B or C))",
+    "linhas" : [ {
+      "id_oraculo" : "C063",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C064",
+      "entradas" : {
+        "A" : false,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C065",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C066",
+      "entradas" : {
+        "A" : false,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C067",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : false
+      },
+      "esperado" : true
+    }, {
+      "id_oraculo" : "C068",
+      "entradas" : {
+        "A" : true,
+        "B" : false,
+        "C" : true
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C069",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : false
+      },
+      "esperado" : false
+    }, {
+      "id_oraculo" : "C070",
+      "entradas" : {
+        "A" : true,
+        "B" : true,
+        "C" : true
+      },
+      "esperado" : false
+    } ],
+    "regra" : "cada combinação deve aparecer com o resultado de decisão congelado",
+    "vinculo" : "Conjunção dos casos de verdade citados; R01, R02 e R16",
+    "id" : "X045",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "stdout" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X045.stdout.csv",
+  "stderr" : "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C2\\20261123T1109-7f9b1cb76e1b4ef7845a\\extensao-1\\evidencias-extensao-total\\X045.stderr.txt",
+  "observado" : "exit=0; 8/8 vetores correspondem",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 7.064599
+}, {
+  "id" : "X046",
+  "tipo" : "numeric",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "numeric",
+    "expressao" : "speed > 100",
+    "entradas" : {
+      "speed" : "100"
+    },
+    "esperado" : false,
+    "referencia_smt" : "fronteira-100",
+    "regra" : "avaliar a comparação para a testemunha de fronteira congelada",
+    "vinculo" : "R08 e consulta SMT congelada",
+    "id" : "X046",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "false",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 17.4019
+}, {
+  "id" : "X047",
+  "tipo" : "numeric",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "tipo" : "numeric",
+    "expressao" : "speed > 100",
+    "entradas" : {
+      "speed" : "101"
+    },
+    "esperado" : true,
+    "referencia_smt" : "fronteira-101",
+    "regra" : "avaliar a comparação para a testemunha de fronteira congelada",
+    "vinculo" : "R08 e consulta SMT congelada",
+    "id" : "X047",
+    "classificacao" : "CONFORME À DOCUMENTAÇÃO"
+  },
+  "observado" : "true",
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.116
+} ]

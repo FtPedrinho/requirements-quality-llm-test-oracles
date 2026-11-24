@@ -1,0 +1,42 @@
+[
+  {
+    "id": "I04-csv-aspas",
+    "entrada": "check com campo CSV entre aspas contendo vírgula",
+    "branch_alvo": "mcdc-requirements/TestCasesFile: tratamento de aspas",
+    "oraculo": "INDETERMINADO — OMISSÃO",
+    "razao": "o texto não explicita regras ou erros para essa forma específica",
+    "execucao": "NÃO EXECUTADO — SEM JULGAMENTO"
+  },
+  {
+    "id": "I05-opcoes-combinadas",
+    "entrada": "analyze A --exact --direct",
+    "branch_alvo": "mcdc-cli/Main: validação de combinações de opções",
+    "oraculo": "INDETERMINADO — OMISSÃO",
+    "razao": "não há regra explícita para combinar os dois modos",
+    "execucao": "NÃO EXECUTADO — SEM JULGAMENTO"
+  },
+  {
+    "id": "I06-z3-timeout",
+    "entrada": "analyze A --z3 com processo Z3 que não responde por 60 segundos",
+    "branch_alvo": "mcdc-z3/Z3Process: timeout e diagnóstico",
+    "oraculo": "INDETERMINADO — OMISSÃO",
+    "razao": "o prazo é especificado, mas não o código e a mensagem após timeout",
+    "execucao": "NÃO EXECUTADO — SEM JULGAMENTO"
+  },
+  {
+    "id": "I07-json-id-duplicado",
+    "entrada": "analyze --json com duas decisões de mesmo id",
+    "branch_alvo": "mcdc-requirements/Nat2TestJsonReader: validação de identificadores",
+    "oraculo": "INDETERMINADO — OMISSÃO",
+    "razao": "a documentação não define o resultado para identificadores duplicados",
+    "execucao": "NÃO EXECUTADO — SEM JULGAMENTO"
+  },
+  {
+    "id": "I08-enum-caixa",
+    "entrada": "check de comparação de enumeração com valor em caixa diferente",
+    "branch_alvo": "mcdc-core/model/Predicate: comparação textual",
+    "oraculo": "INDETERMINADO — OMISSÃO",
+    "razao": "não há regra explícita sobre sensibilidade a maiúsculas",
+    "execucao": "NÃO EXECUTADO — SEM JULGAMENTO"
+  }
+]

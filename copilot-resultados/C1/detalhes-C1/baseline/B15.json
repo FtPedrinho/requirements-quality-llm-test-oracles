@@ -1,0 +1,25 @@
+{
+  "id": "B15",
+  "argumentos": [
+    "analyze",
+    "A and B",
+    "--format",
+    "csv"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\baseline\\B15.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "analyze",
+    "A and B",
+    "--format",
+    "csv"
+  ],
+  "codigo": 0,
+  "stdout": "decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values\nREQ,,V1,A,T,T,A; B,\nREQ,,V1,B,T,T,A; B,\nREQ,,V2,A,T,F,B,\nREQ,,V2,B,F,F,B,\nREQ,,V3,A,F,F,A,\nREQ,,V3,B,T,F,A,\n",
+  "stderr": "",
+  "duracao_segundos": 1.366
+}

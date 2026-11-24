@@ -1,0 +1,26 @@
+[
+  {
+    "id": "I01-cabecalho-csv",
+    "entrada": "analyze A --format truth-csv",
+    "observacao": "nomes exatos e ordem das colunas",
+    "oraculo": "INDETERMINADO — OMISSÃO",
+    "razao": "R7 exige a tabela, mas não fixa seu cabeçalho exato",
+    "execucao": "NÃO EXECUTADO — SEM JULGAMENTO"
+  },
+  {
+    "id": "I02-mensagem-invalida",
+    "entrada": "analyze 'A and'",
+    "observacao": "mensagem textual de erro",
+    "oraculo": "INDETERMINADO — OMISSÃO",
+    "razao": "R6 fixa o código, não a redação da mensagem",
+    "execucao": "NÃO EXECUTADO — SEM JULGAMENTO"
+  },
+  {
+    "id": "I03-desempate",
+    "entrada": "analyze '(A and B) or C'",
+    "observacao": "identidade exata do par selecionado em empate equivalente",
+    "oraculo": "INDETERMINADO — OMISSÃO",
+    "razao": "o texto não ordena pares equivalentes após o critério de desempate documentado",
+    "execucao": "NÃO EXECUTADO — SEM JULGAMENTO"
+  }
+]

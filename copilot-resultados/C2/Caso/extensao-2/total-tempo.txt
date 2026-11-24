@@ -1,0 +1,1 @@
+﻿DuraÃ§Ã£o das trÃªs JVMs em ms: 20161; exit baseline: 1; exit extensÃ£o 1: 0; exit extensÃ£o 2: 0

@@ -1,6 +1,0 @@
-property,c1,c2,xor_status,equivalence,consistency_status,model
-table_limit,preserved,preserved,UNSAT,NO_DIVERGENCE_FOUND,SAT,[n = 20]
-direct_limit,preserved,preserved,UNSAT,NO_DIVERGENCE_FOUND,SAT,[n = 0]
-z3_row_limit,preserved,preserved,UNSAT,NO_DIVERGENCE_FOUND,SAT,[n = 1760]
-pair_limit,preserved,preserved,UNSAT,NO_DIVERGENCE_FOUND,SAT,[n = 8]
-timeout_limit,preserved,preserved,UNSAT,NO_DIVERGENCE_FOUND,SAT,[n = 0]

@@ -1,0 +1,188 @@
+[
+  {
+    "id": "B01",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B02",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B03",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B04",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B05",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B06",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B07",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B08",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B09",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B10",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B11",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B12",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B13",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B14",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B15",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B16",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B17",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B18",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B19",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B20",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B21",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B22",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B23",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "FALHOU — DIVERGÊNCIA DOCUMENTAÇÃO/SUT",
+    "mensagem": "fronteiras 100 e 101 ausentes: {'51', '50', '100'}"
+  },
+  {
+    "id": "B24",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B25",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B26",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B27",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B28",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B29",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B30",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "PASSOU",
+    "mensagem": ""
+  },
+  {
+    "id": "B31",
+    "oraculo": "CONFORME À DOCUMENTAÇÃO",
+    "resultado": "FALHOU — DIVERGÊNCIA DOCUMENTAÇÃO/SUT",
+    "mensagem": "aviso de ausência do Z3 não identificado"
+  }
+]

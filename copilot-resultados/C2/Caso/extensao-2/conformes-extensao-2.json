@@ -1,0 +1,159 @@
+[ {
+  "id" : "Y001",
+  "tipo" : "conflict",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "guards" : [ "A", "A" ],
+    "actions" : [ "x := one", "x := two" ]
+  },
+  "esperado" : true,
+  "evidencia_z3" : "Y001",
+  "observado" : true,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 617.4905
+}, {
+  "id" : "Y002",
+  "tipo" : "conflict",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "guards" : [ "A", "not A" ],
+    "actions" : [ "x := one", "x := two" ]
+  },
+  "esperado" : false,
+  "evidencia_z3" : "Y002",
+  "observado" : false,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 203.013
+}, {
+  "id" : "Y003",
+  "tipo" : "conflict",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "guards" : [ "A", "A" ],
+    "actions" : [ "x := one", "x := one" ]
+  },
+  "esperado" : false,
+  "evidencia_z3" : "Y003",
+  "observado" : false,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 383.5312
+}, {
+  "id" : "Y004",
+  "tipo" : "conflict",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "guards" : [ "A", "A" ],
+    "actions" : [ "x := one", "y := two" ]
+  },
+  "esperado" : false,
+  "evidencia_z3" : "Y004",
+  "observado" : false,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 0.528801
+}, {
+  "id" : "Y005",
+  "tipo" : "gap",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "guards" : [ "A" ],
+    "context" : "A or not A"
+  },
+  "esperado" : true,
+  "evidencia_z3" : "Y005",
+  "observado" : true,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 438.121401
+}, {
+  "id" : "Y006",
+  "tipo" : "gap",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "guards" : [ "A", "not A" ],
+    "context" : "A or not A"
+  },
+  "esperado" : false,
+  "evidencia_z3" : "Y006",
+  "observado" : false,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 214.6968
+}, {
+  "id" : "Y007",
+  "tipo" : "gap",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "guards" : [ "A" ],
+    "context" : "A"
+  },
+  "esperado" : false,
+  "evidencia_z3" : "Y007",
+  "observado" : false,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 320.017999
+}, {
+  "id" : "Y008",
+  "tipo" : "feasibility",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "expression" : "speed > 100 or speed > 50",
+    "first" : true,
+    "second" : true
+  },
+  "esperado" : true,
+  "evidencia_z3" : "Y008",
+  "observado" : true,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 673.889499
+}, {
+  "id" : "Y009",
+  "tipo" : "feasibility",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "expression" : "speed > 100 or speed > 50",
+    "first" : true,
+    "second" : false
+  },
+  "esperado" : false,
+  "evidencia_z3" : "Y009",
+  "observado" : false,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 581.2661
+}, {
+  "id" : "Y010",
+  "tipo" : "feasibility",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "expression" : "speed > 100 or speed > 50",
+    "first" : false,
+    "second" : true
+  },
+  "esperado" : true,
+  "evidencia_z3" : "Y010",
+  "observado" : true,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 614.259901
+}, {
+  "id" : "Y011",
+  "tipo" : "feasibility",
+  "classificacao" : "CONFORME À DOCUMENTAÇÃO",
+  "entrada" : {
+    "expression" : "speed > 100 or speed > 50",
+    "first" : false,
+    "second" : false
+  },
+  "esperado" : true,
+  "evidencia_z3" : "Y011",
+  "observado" : true,
+  "status" : "PASSOU",
+  "erro" : "",
+  "duracao_ms" : 712.3068
+} ]

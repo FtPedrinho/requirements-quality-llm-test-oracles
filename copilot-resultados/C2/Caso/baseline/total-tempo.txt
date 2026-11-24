@@ -1,0 +1,1 @@
+﻿DuraÃ§Ã£o da JVM em ms: 10357; exit code do harness: 1

@@ -1,0 +1,319 @@
+{
+  "versao": "5.4.1",
+  "resultados": [
+    {
+      "objetivo": "A vetor=0 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False"
+      }
+    },
+    {
+      "objetivo": "A vetor=0 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A vetor=1 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A vetor=1 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True"
+      }
+    },
+    {
+      "objetivo": "not_A vetor=0 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "not_A vetor=0 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False"
+      }
+    },
+    {
+      "objetivo": "not_A vetor=1 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True"
+      }
+    },
+    {
+      "objetivo": "not_A vetor=1 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B vetor=0 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False"
+      }
+    },
+    {
+      "objetivo": "A_and_B vetor=0 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B vetor=1 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False"
+      }
+    },
+    {
+      "objetivo": "A_and_B vetor=1 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B vetor=2 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True"
+      }
+    },
+    {
+      "objetivo": "A_and_B vetor=2 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B vetor=3 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B vetor=3 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True"
+      }
+    },
+    {
+      "objetivo": "A_or_B vetor=0 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False"
+      }
+    },
+    {
+      "objetivo": "A_or_B vetor=0 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_or_B vetor=1 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_or_B vetor=1 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False"
+      }
+    },
+    {
+      "objetivo": "A_or_B vetor=2 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_or_B vetor=2 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True"
+      }
+    },
+    {
+      "objetivo": "A_or_B vetor=3 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_or_B vetor=3 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True"
+      }
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=0 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "False"
+      }
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=0 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=1 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "False"
+      }
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=1 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=2 saida=False",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "False"
+      }
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=2 saida=True",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=3 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=3 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "False"
+      }
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=4 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=4 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False",
+        "C": "True"
+      }
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=5 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=5 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "False",
+        "C": "True"
+      }
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=6 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=6 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "True",
+        "C": "True"
+      }
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=7 saida=False",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "A_and_B_or_C vetor=7 saida=True",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True",
+        "B": "True",
+        "C": "True"
+      }
+    },
+    {
+      "objetivo": "B22 restricao exclui A=T B=F",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "B22 restricao admite A=F B=F",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False",
+        "B": "False"
+      }
+    },
+    {
+      "objetivo": "B23 impossibilidade speed>100 e nao speed>50",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "B23 fronteira falsa",
+      "resultado": "sat",
+      "testemunha": {
+        "speed": "100"
+      }
+    },
+    {
+      "objetivo": "B23 fronteira verdadeira",
+      "resultado": "sat",
+      "testemunha": {
+        "speed": "101"
+      }
+    },
+    {
+      "objetivo": "B26 conflito",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "True"
+      }
+    },
+    {
+      "objetivo": "B27 lacuna",
+      "resultado": "sat",
+      "testemunha": {
+        "A": "False"
+      }
+    },
+    {
+      "objetivo": "B29 B muda decisao",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "B30 A muda entre vetores validos",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "B24 cobertura causa unica com no maximo 3 vetores",
+      "resultado": "unsat"
+    },
+    {
+      "objetivo": "B24 cobertura causa unica com no maximo 4 vetores",
+      "resultado": "sat",
+      "testemunha": {
+        "v0": "False",
+        "v1": "True",
+        "v2": "True",
+        "v3": "True",
+        "v4": "False",
+        "v5": "True",
+        "v6": "False",
+        "v7": "False"
+      }
+    }
+  ]
+}

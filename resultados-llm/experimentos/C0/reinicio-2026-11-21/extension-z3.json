@@ -1,0 +1,59 @@
+{
+  "versao": "5.4.1",
+  "consultas": [
+    {
+      "id": "restricao-A-falso",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n A)\n(assert\n (not A))\n(check-sat)\n",
+      "resultado": "unsat",
+      "testemunha": null
+    },
+    {
+      "id": "restricao-B-falso",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n A)\n(assert\n (not B))\n(check-sat)\n",
+      "resultado": "sat",
+      "testemunha": "[A = True, B = False]"
+    },
+    {
+      "id": "restricao-B-verdadeiro",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n A)\n(assert\n B)\n(check-sat)\n",
+      "resultado": "sat",
+      "testemunha": "[A = True, B = True]"
+    },
+    {
+      "id": "conflito-duas-guardas",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n A)\n(assert\n B)\n(assert\n (and A B))\n(assert\n (or A B))\n(check-sat)\n",
+      "resultado": "sat",
+      "testemunha": "[A = True, B = True]"
+    },
+    {
+      "id": "guardas-complementares-nao-se-sobrepoem",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n A)\n(assert\n (not A))\n(check-sat)\n",
+      "resultado": "unsat",
+      "testemunha": null
+    },
+    {
+      "id": "complementares-sem-lacuna",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (let (($x8 (not A)))\n (or A $x8)))\n(assert\n (let (($x8 (not A)))\n(let (($x12 (or A $x8)))\n(not $x12))))\n(check-sat)\n",
+      "resultado": "unsat",
+      "testemunha": null
+    },
+    {
+      "id": "lacuna",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (let (($x8 (not A)))\n (or A $x8)))\n(assert\n (not A))\n(check-sat)\n",
+      "resultado": "sat",
+      "testemunha": "[A = False]"
+    },
+    {
+      "id": "fronteira-nao-satisfaz",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 3))\n(assert\n (let (($x16 (> x 3)))\n(not $x16)))\n(check-sat)\n",
+      "resultado": "sat",
+      "testemunha": "[x = 3]"
+    },
+    {
+      "id": "fronteira-satisfaz",
+      "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun x () Int)\n(assert\n (= x 4))\n(assert\n (> x 3))\n(check-sat)\n",
+      "resultado": "sat",
+      "testemunha": "[x = 4]"
+    }
+  ]
+}

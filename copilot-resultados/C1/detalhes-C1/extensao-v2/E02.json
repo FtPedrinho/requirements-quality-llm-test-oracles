@@ -1,0 +1,21 @@
+{
+  "id": "E02",
+  "argumentos": [
+    "analyze",
+    "A and B"
+  ],
+  "comando": [
+    "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath\\java.exe",
+    "-Dfile.encoding=UTF-8",
+    "-javaagent:C:\\Users\\User\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.16\\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\extensao-v2\\E02.exec,append=false",
+    "-cp",
+    "C:\\Users\\User\\requirements-quality-llm-test-oracles\\copilot-resultados\\C1\\20261123-bloqueio-fonte-8c72ef64\\classes;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-annotations\\2.17.2\\jackson-annotations-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-core\\2.17.2\\jackson-core-2.17.2.jar;C:\\Users\\User\\.m2\\repository\\com\\fasterxml\\jackson\\core\\jackson-databind\\2.17.2\\jackson-databind-2.17.2.jar",
+    "io.github.rvdomingos.mcdc.cli.Main",
+    "analyze",
+    "A and B"
+  ],
+  "codigo": 0,
+  "stdout": "Decis�o:   REQ\nGuarda:    A and B\nVariante:  mascaramento\n\nVetor A   B   | D\nV1    T   T   | T\nV2    T   F   | F\nV3    F   T   | F\nV4    F   F   | F\n\nPares de independ�ncia:\n  A: (V1, V3)\n  B: (V1, V2)\n\nSu�te m�nima (3 testes):\n  V1  TT  -> T   demonstra A, B\n  V2  TF  -> F   demonstra B\n  V3  FT  -> F   demonstra A\n\nDemonstra��o por condi��o:\n  A: V1 (T) e V3 (F), s� ela muda\n  B: V1 (T) e V2 (F), s� ela muda\n\nCobertura MC/DC: completa\n",
+  "stderr": "",
+  "duracao_segundos": 2.336
+}

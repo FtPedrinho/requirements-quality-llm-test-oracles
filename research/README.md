@@ -1,24 +1,20 @@
-# Pesquisa — Levantamento documental da ferramenta MC/DC
+# Pesquisa C0-C4
 
-Esta área registra o reinício metodológico da pesquisa sobre o impacto da documentação técnica na geração de oráculos para a ferramenta MC/DC.
+Este diretório contém inventários e análises de contexto do estudo. A fonte ativa de metodologia, documentos das condições e formulários de nova coleta está em [experimentacao-pesquisa/](../experimentacao-pesquisa/).
 
-## Sistema sob teste
+## Contexto e escopo
 
-A ferramenta MC/DC implementada neste repositório é o SUT.
-
-VM, TIS e NPP são dados de entrada processados pela ferramenta e não constituem o objeto principal desta pesquisa.
-
-## Estrutura
-
-- [Objetivo da pesquisa](research-objective.md)
+- [Objetivo e questões de pesquisa](research-objective.md)
 - [Sistema sob teste](system-under-test.md)
-- [Inventário documental](documentation-inventory.md)
-- [Análise da implementação](implementation-analysis.md)
-- [Matriz de rastreabilidade](traceability-matrix.csv)
+- [Inventário de documentação](documentation-inventory.md)
 - [Lacunas documentais](documentation-gaps.md)
-- [Corpus experimental](experimental-corpus.md)
-- [Proposta metodológica](methodology-proposal.md)
+- [Análise da implementação](implementation-analysis.md)
+- [Corpus e procedimento](experimental-corpus.md)
+- [Ameaças à validade e decisões pendentes](decisions-needed.md)
 - [Artefatos históricos](historical-artifacts.md)
-- [Status da reconstrução](experimentacao/reconstruction-status.md)
-- [Experimentos reconstruídos](experimentacao/README.md)
-- [Comparação dos experimentos reconstruídos](experimentacao/comparison-experiment-0-1.md)
+
+As análises de `docs/` complementam o inventário; [docs/README.md](../docs/README.md) é documentação do SUT e foi preservado sem alterações.
+
+## Resultados e documentos preservados
+
+O primeiro conjunto de resultados adotado está em [copilot-resultados/](../copilot-resultados/), com evidências complementares de C0 em [resultados-llm/](../resultados-llm/). O estado e as limitações de cada coleta devem ser consultados no seu relatório. Cópias de documentos técnicos permanecem no [arquivo de documentação](archive/legacy-experimental-results/).

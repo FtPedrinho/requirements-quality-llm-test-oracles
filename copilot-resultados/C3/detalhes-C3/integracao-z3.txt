@@ -1,0 +1,12 @@
+Z3 5.4.1.0 145c0c51570a357cc558ce898ce77573ba9d4fbf 145c0c5
+sat
+((quantidade 2)
+ (primeira "REQ-001")
+ (segunda "REQ-002"))
+sat
+((decisao "vm#1")
+ (requisito "REQ-001")
+ (vinculados true))
+sat
+((relatorio-em-arquivo true)
+ (relatorio-na-tela false))

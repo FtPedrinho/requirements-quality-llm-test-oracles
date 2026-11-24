@@ -1,9 +1,0 @@
-indicador,C1,C2,classificação
-ambiguidade lexical,baixa,máxima controlada,clareza extremamente reduzida
-especificidade,alta,extremamente baixa,clareza extremamente reduzida
-explicitação das condições,alta,extremamente indireta,clareza extremamente reduzida
-estrutura sintática,direta,muito indireta e fragmentada,clareza extremamente reduzida
-consistência terminológica,alta,alta,consistência preservada
-consistência lógica,alta,alta,consistência preservada
-limites,explícitos,explícitos,sem alteração
-codigos de saida,explícitos,explícitos,sem alteração

@@ -1,0 +1,13 @@
+[
+  {"id":"D01","fonte":"I01, I02","situacao":"formato de tabela csv ou truth-csv","estado":"INDETERMINADO — CONFLITO"},
+  {"id":"D02","fonte":"I06","situacao":"restrição manual no exemplo incompleto","estado":"INDETERMINADO — OMISSÃO"},
+  {"id":"D03","fonte":"I08","situacao":"leitura de arquivo de requisitos sem formato completo","estado":"INDETERMINADO — OMISSÃO"},
+  {"id":"D04","fonte":"I09","situacao":"entrada NAT2TEST sem esquema completo","estado":"INDETERMINADO — OMISSÃO"},
+  {"id":"D05","fonte":"I10, I14","situacao":"garantia de minimalidade da suíte exata","estado":"INDETERMINADO — CONFLITO"},
+  {"id":"D06","fonte":"I11","situacao":"saída de verify e check","estado":"INDETERMINADO — OMISSÃO"},
+  {"id":"D07","fonte":"I13","situacao":"par com condição alterada e decisão inalterada","estado":"INDETERMINADO — CONFLITO"},
+  {"id":"D08","fonte":"I15","situacao":"classificação de condição sem par","estado":"INDETERMINADO — CONFLITO"},
+  {"id":"D09","fonte":"I17","situacao":"reação a entradas nos limites","estado":"INDETERMINADO — OMISSÃO"},
+  {"id":"D10","fonte":"I19","situacao":"arquitetura de execução de Z3 e timeout","estado":"INDETERMINADO — CONFLITO"},
+  {"id":"D11","fonte":"I20","situacao":"alcançabilidade de estados com guardas temporais","estado":"INDETERMINADO — OMISSÃO"}
+]

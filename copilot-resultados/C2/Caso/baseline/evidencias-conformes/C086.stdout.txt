@@ -1,0 +1,30 @@
+Decisão:   REQ
+Guarda:    (A or B) and C
+Variante:  causa única
+
+Vetor A   B   C   | D
+V1    T   T   T   | T
+V2    T   T   F   | F
+V3    T   F   T   | T
+V4    T   F   F   | F
+V5    F   T   T   | T
+V6    F   T   F   | F
+V7    F   F   T   | F
+V8    F   F   F   | F
+
+Pares de independência:
+  A: (V3, V7)
+  B: (V5, V7)
+  C: (V1, V2), (V3, V4), (V5, V6)
+
+Suíte mínima (4 testes):
+  V3  TFT  -> T   demonstra A, C
+  V4  TFF  -> F   demonstra C
+  V5  FTT  -> T   demonstra B
+  V7  FFT  -> F   demonstra A, B
+
+Demonstração por condição:
+  A: V3 (T) e V7 (F), só ela muda
+  B: V5 (T) e V7 (F), só ela muda
+  C: V3 (T) e V4 (F), só ela muda
+

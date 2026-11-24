@@ -1,0 +1,7 @@
+﻿rodada,subconjunto,branches_cobertos,branches_totais,percentual
+baseline,total,797,1296,61.4969
+baseline,conformes,683,1296,52.7006
+extensao-1,total,823,1296,63.5031
+extensao-1,conformes,753,1296,58.1019
+extensao-2,total,843,1296,65.0463
+extensao-2,conformes,774,1296,59.7222

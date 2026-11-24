@@ -1,0 +1,998 @@
+{
+  "versao": "5.4.1",
+  "objetivo": "enumeração exaustiva por expressão",
+  "evidencias": [
+    {
+      "id": "and-word-00",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "and-word-01",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = True]"
+        }
+      ]
+    },
+    {
+      "id": "and-word-10",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "and-word-11",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "and-symbol-00",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "and-symbol-01",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = True]"
+        }
+      ]
+    },
+    {
+      "id": "and-symbol-10",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "and-symbol-11",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "and-dfrs-00",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "and-dfrs-01",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = True]"
+        }
+      ]
+    },
+    {
+      "id": "and-dfrs-10",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "and-dfrs-11",
+      "formula": "And(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (and A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (let (($x8 (and A B)))\n(not $x8)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-word-00",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "or-word-01",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-word-10",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-word-11",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-symbol-00",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "or-symbol-01",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-symbol-10",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-symbol-11",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-dfrs-00",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "or-dfrs-01",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-dfrs-10",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "or-dfrs-11",
+      "formula": "Or(A, B)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (or A B))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (let (($x9 (or A B)))\n(not $x9)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "not-word-0",
+      "formula": "Not(A)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A false))\n(assert\n (not A))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A false))\n(assert\n (let (($x10 (not A)))\n(not $x10)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "not-word-1",
+      "formula": "Not(A)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A true))\n(assert\n (not A))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A true))\n(assert\n (let (($x10 (not A)))\n(not $x10)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True]"
+        }
+      ]
+    },
+    {
+      "id": "not-symbol-0",
+      "formula": "Not(A)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A false))\n(assert\n (not A))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A false))\n(assert\n (let (($x10 (not A)))\n(not $x10)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "not-symbol-1",
+      "formula": "Not(A)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A true))\n(assert\n (not A))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A true))\n(assert\n (let (($x10 (not A)))\n(not $x10)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True]"
+        }
+      ]
+    },
+    {
+      "id": "nested-000",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "nested-001",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = False, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "nested-010",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = False, B = True]"
+        }
+      ]
+    },
+    {
+      "id": "nested-011",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = False, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "nested-100",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = True, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "nested-101",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = True, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "nested-110",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "nested-111",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "unique-000",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "unique-001",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = False, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "unique-010",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = False, B = True]"
+        }
+      ]
+    },
+    {
+      "id": "unique-011",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = False, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "unique-100",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = True, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "unique-101",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = True, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "unique-110",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "unique-111",
+      "formula": "Or(And(A, B), C)",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 C)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(let (($x11 (or $x8 C)))\n(not $x11))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "repeated-000",
+      "formula": "Or(And(A, B), And(Not(A), C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 (and (not A) C))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x10 (not A)))\n(let (($x12 (and $x10 C)))\n(let (($x8 (and A B)))\n(let (($x13 (or $x8 $x12)))\n(not $x13))))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "repeated-001",
+      "formula": "Or(And(A, B), And(Not(A), C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 (and (not A) C))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = False, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x10 (not A)))\n(let (($x12 (and $x10 C)))\n(let (($x8 (and A B)))\n(let (($x13 (or $x8 $x12)))\n(not $x13))))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "repeated-010",
+      "formula": "Or(And(A, B), And(Not(A), C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 (and (not A) C))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x10 (not A)))\n(let (($x12 (and $x10 C)))\n(let (($x8 (and A B)))\n(let (($x13 (or $x8 $x12)))\n(not $x13))))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = False, B = True]"
+        }
+      ]
+    },
+    {
+      "id": "repeated-011",
+      "formula": "Or(And(A, B), And(Not(A), C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 (and (not A) C))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = False, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x10 (not A)))\n(let (($x12 (and $x10 C)))\n(let (($x8 (and A B)))\n(let (($x13 (or $x8 $x12)))\n(not $x13))))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "repeated-100",
+      "formula": "Or(And(A, B), And(Not(A), C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 (and (not A) C))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x10 (not A)))\n(let (($x12 (and $x10 C)))\n(let (($x8 (and A B)))\n(let (($x13 (or $x8 $x12)))\n(not $x13))))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = True, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "repeated-101",
+      "formula": "Or(And(A, B), And(Not(A), C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 (and (not A) C))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x10 (not A)))\n(let (($x12 (and $x10 C)))\n(let (($x8 (and A B)))\n(let (($x13 (or $x8 $x12)))\n(not $x13))))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = True, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "repeated-110",
+      "formula": "Or(And(A, B), And(Not(A), C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x8 (and A B)))\n(or $x8 (and (not A) C))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x10 (not A)))\n(let (($x12 (and $x10 C)))\n(let (($x8 (and A B)))\n(let (($x13 (or $x8 $x12)))\n(not $x13))))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "repeated-111",
+      "formula": "Or(And(A, B), And(Not(A), C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x8 (and A B)))\n(or $x8 (and (not A) C))))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x10 (not A)))\n(let (($x12 (and $x10 C)))\n(let (($x8 (and A B)))\n(let (($x13 (or $x8 $x12)))\n(not $x13))))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "grouping-000",
+      "formula": "And(A, Or(B, C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x14 (or B C)))\n(and A $x14)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x15 (and A (or B C))))\n(not $x15)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "grouping-001",
+      "formula": "And(A, Or(B, C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x14 (or B C)))\n(and A $x14)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x15 (and A (or B C))))\n(not $x15)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = False, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "grouping-010",
+      "formula": "And(A, Or(B, C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x14 (or B C)))\n(and A $x14)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x15 (and A (or B C))))\n(not $x15)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = False, B = True]"
+        }
+      ]
+    },
+    {
+      "id": "grouping-011",
+      "formula": "And(A, Or(B, C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x14 (or B C)))\n(and A $x14)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A false))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x15 (and A (or B C))))\n(not $x15)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = False, B = True]"
+        }
+      ]
+    },
+    {
+      "id": "grouping-100",
+      "formula": "And(A, Or(B, C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x14 (or B C)))\n(and A $x14)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C false))\n(assert\n (let (($x15 (and A (or B C))))\n(not $x15)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = True, B = False]"
+        }
+      ]
+    },
+    {
+      "id": "grouping-101",
+      "formula": "And(A, Or(B, C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x14 (or B C)))\n(and A $x14)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = True, B = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B false))\n(assert\n (= C true))\n(assert\n (let (($x15 (and A (or B C))))\n(not $x15)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "grouping-110",
+      "formula": "And(A, Or(B, C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x14 (or B C)))\n(and A $x14)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = False, A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C false))\n(assert\n (let (($x15 (and A (or B C))))\n(not $x15)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "grouping-111",
+      "formula": "And(A, Or(B, C))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x14 (or B C)))\n(and A $x14)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[C = True, A = True, B = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(declare-fun B () Bool)\n(declare-fun C () Bool)\n(assert\n (= A true))\n(assert\n (= B true))\n(assert\n (= C true))\n(assert\n (let (($x15 (and A (or B C))))\n(not $x15)))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "tautology-0",
+      "formula": "Or(A, Not(A))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A false))\n(assert\n (let (($x10 (not A)))\n(or A $x10)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = False]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A false))\n(assert\n (let (($x10 (not A)))\n(let (($x16 (or A $x10)))\n(not $x16))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    },
+    {
+      "id": "tautology-1",
+      "formula": "Or(A, Not(A))",
+      "consultas": [
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A true))\n(assert\n (let (($x10 (not A)))\n(or A $x10)))\n(check-sat)\n",
+          "resultado": "sat",
+          "testemunha": "[A = True]"
+        },
+        {
+          "smtlib": "; benchmark generated from python API\n(set-info :status unknown)\n(declare-fun A () Bool)\n(assert\n (= A true))\n(assert\n (let (($x10 (not A)))\n(let (($x16 (or A $x10)))\n(not $x16))))\n(check-sat)\n",
+          "resultado": "unsat",
+          "testemunha": null
+        }
+      ]
+    }
+  ]
+}

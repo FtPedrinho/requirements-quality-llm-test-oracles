@@ -1,2 +1,0 @@
-total,equivalent,unknown,killed,survived,tp,tn,fp,fn,mutation_score_reported,mutation_score_corrected,precision,recall,f1
-981,21,24,894,42,894,21,0,42,93.125,95.51282051282051,1.0,0.9551282051282052,0.9770491803278688

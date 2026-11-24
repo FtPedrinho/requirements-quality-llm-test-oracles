@@ -1,0 +1,10 @@
+[
+  {"id":"F01","p":false,"q":false,"rain":false,"viabilidade_documental":"descartada"},
+  {"id":"F02","p":false,"q":false,"rain":true,"viabilidade_documental":"descartada"},
+  {"id":"F03","p":false,"q":true,"rain":false,"viabilidade_documental":"descartada"},
+  {"id":"F04","p":false,"q":true,"rain":true,"viabilidade_documental":"descartada"},
+  {"id":"F05","p":true,"q":false,"rain":false,"viabilidade_documental":"mantida"},
+  {"id":"F06","p":true,"q":false,"rain":true,"viabilidade_documental":"mantida"},
+  {"id":"F07","p":true,"q":true,"rain":false,"viabilidade_documental":"descartada"},
+  {"id":"F08","p":true,"q":true,"rain":true,"viabilidade_documental":"descartada"}
+]

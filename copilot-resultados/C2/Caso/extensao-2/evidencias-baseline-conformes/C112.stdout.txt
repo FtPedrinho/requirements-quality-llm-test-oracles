@@ -1,0 +1,37 @@
+Decisão:   R1
+Guarda:    A
+Variante:  mascaramento
+
+Vetor A   | D
+V1    T   | T
+V2    F   | F
+
+Pares de independência:
+  A: (V1, V2)
+
+Suíte mínima (2 testes):
+  V1  T  -> T   demonstra A
+  V2  F  -> F   demonstra A
+
+Demonstração por condição:
+  A: V1 (T) e V2 (F), só ela muda
+
+
+Decisão:   R2
+Guarda:    not A
+Variante:  mascaramento
+
+Vetor A   | D
+V1    T   | F
+V2    F   | T
+
+Pares de independência:
+  A: (V1, V2)
+
+Suíte mínima (2 testes):
+  V1  T  -> F   demonstra A
+  V2  F  -> T   demonstra A
+
+Demonstração por condição:
+  A: V1 (T) e V2 (F), só ela muda
+

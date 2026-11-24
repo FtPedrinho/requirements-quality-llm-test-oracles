@@ -1,6 +1,0 @@
-metric,value,numerator,denominator,formula,status,notes
-Cobertura de requisitos,47.37,9,19,"Rc/Rt*100",calculável,"Nove comportamentos independentes do gabarito têm assertions válidas."
-Mutation Score,,,"","K/(M-E)*100",não_avaliável,"PIT não executado porque a linha de base teve 11 falhas."
-Precision,69.23,9,13,"TP/(TP+FP)",calculável,"Nove TP e quatro FP; casos ambíguos/não comparáveis foram separados."
-Recall,47.37,9,19,"TP/(TP+FN)",calculável,"Nove TP e dez FN."
-F1-score,56.25,,"","2*P*R/(P+R)",calculável,"P=9/13 e R=9/19."

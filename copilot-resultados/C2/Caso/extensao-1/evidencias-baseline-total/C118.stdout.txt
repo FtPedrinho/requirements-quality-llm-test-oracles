@@ -1,0 +1,9 @@
+Decisão:   REQ
+Guarda:    A
+Testes:    2
+  T1 = V1  T  -> T
+  T2 = V2  F  -> F
+
+Condições:
+  A: demonstrada por T1 (T) e T2 (F)
+

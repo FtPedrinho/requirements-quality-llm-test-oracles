@@ -1,0 +1,18 @@
+Decisão:   REQ
+Guarda:    A and not A
+Variante:  mascaramento
+
+Condições: A#1, A#2
+
+Vetor A   | D
+V1    T   | F
+V2    F   | F
+
+Pares de independência:
+  A#1: nenhum par
+  A#2: nenhum par
+
+Suíte mínima (0 testes):
+
+  A#1: redundante: não muda o resultado em nenhuma combinação; o requisito pode ser simplificado
+  A#2: redundante: não muda o resultado em nenhuma combinação; o requisito pode ser simplificado

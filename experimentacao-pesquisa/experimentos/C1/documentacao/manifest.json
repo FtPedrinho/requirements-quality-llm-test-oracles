@@ -1,0 +1,10 @@
+{
+  "condition": "C1",
+  "clarity": "high-intended",
+  "consistency": "high-intended",
+  "file": "documentacao-C1.md",
+  "original_path": "experimentacao/experimentacao-1/documentation/tool-readme-C1.md",
+  "sha256": "DDDEF91862D3F0180E06D86112D9861A3C0EEDB9D1CF1BDCDAC43F51C062EB88",
+  "modified": true,
+  "note": "The intended consistency level is not a claim that all source contradictions were eliminated."
+}
