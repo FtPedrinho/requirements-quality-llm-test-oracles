@@ -23,7 +23,7 @@ Os manifestos `congelamento/*.sha256` são históricos e **não** foram editados
 |---|---|---|
 | `suite/conftest.py` | `29d9c098af36fe69613fa501c9555e53833ded94f9c7c4c7972abc80f85c10c5` | `dbc9cb9f466744a4fe17ee8ff43d9e6f0ccd315fc62fdd528b8bbbb698523cac` |
 | `suite/test_c2.py` (só o caminho padrão do bruto) | `04e0a4760da039a62b315e9741260083ddf7d01cd097b544e28c5ab18e17b008` | `2fb07a007ccf2f41671265b2ebdc5ff7e29f96ac89ffc29a14702f93ad839d98` |
-| `suite/README.md` | `c42e20d38db2f5cdb44eae00c3c9d416a3dc5080c9f91d8b650be1d684251a5e` | `88de68e203ef2e56028fea2eafa5a9e9844860e28b8830beb9b3a3c19be90b7e` |
+| `suite/README.md` | `c42e20d38db2f5cdb44eae00c3c9d416a3dc5080c9f91d8b650be1d684251a5e` | `256e8ae48307f77ae81fc71b846a77488e1006bbf21688085719bd81c8084920` |
 
 `test_c2_ext1/2/3.py`, `oraculo.json`, `oraculo-extensao1.json` e `gerar_smt.py` não mudaram. As extensões usam as variáveis `C2_RAW`, `C2_CSV` e `C2_ORACULO`
 para redirecionar saídas.
