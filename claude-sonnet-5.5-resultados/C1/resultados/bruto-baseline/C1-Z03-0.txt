@@ -1,0 +1,60 @@
+$ mcdc analyze X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 --z3
+[exit 0]
+--- stdout ---
+Decisão:   REQ
+Guarda:    X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 8192 combinações)
+
+Pares de independência:
+  X1: (V1, V4097)
+  X2: (V1, V2049)
+  X3: (V1, V1025)
+  X4: (V1, V513)
+  X5: (V1, V257)
+  X6: (V1, V129)
+  X7: (V1, V65)
+  X8: (V1, V33)
+  X9: (V1, V17)
+  X10: (V1, V9)
+  X11: (V1, V5)
+  X12: (V1, V3)
+  X13: (V1, V2)
+
+Suíte do modo direto (14 testes):
+  V1  TTTTTTTTTTTTT  -> T   demonstra X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+  V2  TTTTTTTTTTTTF  -> F   demonstra X13   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = false]
+  V3  TTTTTTTTTTTFT  -> F   demonstra X12   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = false, X13 = true]
+  V5  TTTTTTTTTTFTT  -> F   demonstra X11   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = false, X12 = true, X13 = true]
+  V9  TTTTTTTTTFTTT  -> F   demonstra X10   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = false, X11 = true, X12 = true, X13 = true]
+  V17  TTTTTTTTFTTTT  -> F   demonstra X9   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = false, X10 = true, X11 = true, X12 = true, X13 = true]
+  V33  TTTTTTTFTTTTT  -> F   demonstra X8   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = false, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+  V65  TTTTTTFTTTTTT  -> F   demonstra X7   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = false, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+  V129  TTTTTFTTTTTTT  -> F   demonstra X6   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = true, X6 = false, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+  V257  TTTTFTTTTTTTT  -> F   demonstra X5   [X1 = true, X2 = true, X3 = true, X4 = true, X5 = false, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+  V513  TTTFTTTTTTTTT  -> F   demonstra X4   [X1 = true, X2 = true, X3 = true, X4 = false, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+  V1025  TTFTTTTTTTTTT  -> F   demonstra X3   [X1 = true, X2 = true, X3 = false, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+  V2049  TFTTTTTTTTTTT  -> F   demonstra X2   [X1 = true, X2 = false, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+  V4097  FTTTTTTTTTTTT  -> F   demonstra X1   [X1 = false, X2 = true, X3 = true, X4 = true, X5 = true, X6 = true, X7 = true, X8 = true, X9 = true, X10 = true, X11 = true, X12 = true, X13 = true]
+
+Demonstração por condição:
+  X1: V1 (T) e V4097 (F), só ela muda
+  X2: V1 (T) e V2049 (F), só ela muda
+  X3: V1 (T) e V1025 (F), só ela muda
+  X4: V1 (T) e V513 (F), só ela muda
+  X5: V1 (T) e V257 (F), só ela muda
+  X6: V1 (T) e V129 (F), só ela muda
+  X7: V1 (T) e V65 (F), só ela muda
+  X8: V1 (T) e V33 (F), só ela muda
+  X9: V1 (T) e V17 (F), só ela muda
+  X10: V1 (T) e V9 (F), só ela muda
+  X11: V1 (T) e V5 (F), só ela muda
+  X12: V1 (T) e V3 (F), só ela muda
+  X13: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

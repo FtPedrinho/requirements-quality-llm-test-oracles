@@ -1,0 +1,10 @@
+$ mcdc analyze speed < 100 --format csv
+[exit 0]
+--- stdout ---
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V1,speed < 100,T,T,speed < 100,
+REQ,,V2,speed < 100,F,F,speed < 100,
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

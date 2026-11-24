@@ -1,0 +1,5 @@
+# Congelado em 2026-11-24T17:41:51-03:00 antes da execucao do baseline. Entradas = fixtures em oraculo.json (hash incluido).
+93fa2d11771440cb8366e6edadcc520ad2712b966781700faa44f8d34a394bfc *suite/test_c1.py
+606cd96471c729b26acaf21db5052befb507a2c1430b0764170bb924c1f3164c *suite/conftest.py
+7d01378c561cfb68a419a343a446d1e9fa7b86ee916cbcf50813a1d027a72c71 *suite/README.md
+7172379d529315b4268238dffa5e409c1704732486284846cb4deaacabf2adad *detalhes-C1/oraculo.json

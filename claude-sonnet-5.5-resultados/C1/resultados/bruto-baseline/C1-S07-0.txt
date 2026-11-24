@@ -1,0 +1,32 @@
+$ mcdc analyze (((A and not B) or (not A and B)) and not C) or (not ((A and not B) or (not A and B)) and C) --format csv
+[exit 0]
+--- stdout ---
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V1,A,T,T,B#3; A#4; C#2,
+REQ,,V1,B,T,T,B#3; A#4; C#2,
+REQ,,V1,C,T,T,B#3; A#4; C#2,
+REQ,,V2,A,T,F,B#1; A#2; C#2,
+REQ,,V2,B,T,F,B#1; A#2; C#2,
+REQ,,V2,C,F,F,B#1; A#2; C#2,
+REQ,,V3,A,T,F,C#1; A#3; B#3,
+REQ,,V3,B,F,F,C#1; A#3; B#3,
+REQ,,V3,C,T,F,C#1; A#3; B#3,
+REQ,,V4,A,T,T,A#1; B#1; C#1,
+REQ,,V4,B,F,T,A#1; B#1; C#1,
+REQ,,V4,C,F,T,A#1; B#1; C#1,
+REQ,,V5,A,F,F,A#4; B#4,
+REQ,,V5,B,T,F,A#4; B#4,
+REQ,,V5,C,T,F,A#4; B#4,
+REQ,,V6,A,F,T,A#2; B#2,
+REQ,,V6,B,T,T,A#2; B#2,
+REQ,,V6,C,F,T,A#2; B#2,
+REQ,,V7,A,F,T,A#3; B#4,
+REQ,,V7,B,F,T,A#3; B#4,
+REQ,,V7,C,T,T,A#3; B#4,
+REQ,,V8,A,F,F,A#1; B#2,
+REQ,,V8,B,F,F,A#1; B#2,
+REQ,,V8,C,F,F,A#1; B#2,
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

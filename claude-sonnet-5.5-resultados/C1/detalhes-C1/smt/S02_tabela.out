@@ -1,0 +1,9 @@
+sat
+(((f true true true) true)
+ ((f true true false) true)
+ ((f true false true) true)
+ ((f true false false) false)
+ ((f false true true) true)
+ ((f false true false) false)
+ ((f false false true) true)
+ ((f false false false) false))

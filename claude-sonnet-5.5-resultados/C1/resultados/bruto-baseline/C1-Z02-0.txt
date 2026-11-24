@@ -1,0 +1,14 @@
+$ mcdc analyze --json C:\Users\User\AppData\Local\Temp\tmpcpgfhca5\vm_like.json --z3 --format csv
+[exit 0]
+--- stdout ---
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+vm#1,REQ-001,V1,the_system_mode = idle,T,T,the_system_mode = idle; the_coin_sensor = true,the_system_mode = idle; the_coin_sensor = true
+vm#1,REQ-001,V1,the_coin_sensor = true,T,T,the_system_mode = idle; the_coin_sensor = true,the_system_mode = idle; the_coin_sensor = true
+vm#1,REQ-001,V2,the_system_mode = idle,T,F,the_coin_sensor = true,the_system_mode = idle; the_coin_sensor = false
+vm#1,REQ-001,V2,the_coin_sensor = true,F,F,the_coin_sensor = true,the_system_mode = idle; the_coin_sensor = false
+vm#1,REQ-001,V3,the_system_mode = idle,F,F,the_system_mode = idle,the_system_mode = choice; the_coin_sensor = true
+vm#1,REQ-001,V3,the_coin_sensor = true,T,F,the_system_mode = idle,the_system_mode = choice; the_coin_sensor = true
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

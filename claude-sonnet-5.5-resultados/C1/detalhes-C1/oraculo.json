@@ -1,0 +1,517 @@
+{
+  "condicao": "C1",
+  "fonte": "experimentacao-pesquisa/experimentacao-1/documentation/tool-readme-C1.md",
+  "sha256_fonte": "91981FA0181E5CC1BC5A67DAAFC965BB82D6F8EB0A6D47EB58CE291A3EF5D33B",
+  "modelo": "Claude Sonnet 5.5",
+  "revisao": "autorrevisao (sem revisor independente)",
+  "unidade_de_contagem": "um caso (ID estavel) = um teste pytest",
+  "convencoes": {
+    "invocacao_abstrata": "campo 'cli' = argumentos de linha de comando apos o nome do comando; 'fx:<nome>' referencia um arquivo em 'fixtures'; '{tmp}' e um diretorio temporario",
+    "chaves_de_expectativa": {
+      "exit": "codigo de saida documentado (0, 1 ou 2)",
+      "contem": "texto (sem diferenciar maiusculas) que deve aparecer na saida combinada",
+      "nao_contem": "texto que nao deve aparecer",
+      "n_testes": "numero de testes da suite gerada (testes distintos no relatorio)",
+      "n_linhas_csv": "numero de linhas de dados aceitaveis no CSV (com ou sem cabecalho)",
+      "linha0_todo_verdadeiro": "primeira linha da tabela-verdade tem todas as entradas verdadeiras",
+      "n_linhas_verdade": "numero de combinacoes (linhas) da tabela-verdade",
+      "n_resultado_verdadeiro": "numero de linhas da tabela-verdade com resultado verdadeiro",
+      "json_valido": "a saida e JSON sintaticamente valido",
+      "exit_em": "lista de codigos de saida aceitaveis (0 ou 2: o texto nao fixa o diagnostico do caso)",
+      "arquivo_nao_vazio": "arquivo gravado por -o existe e nao esta vazio",
+      "tela_sem_relatorio": "a saida padrao nao repete o conteudo do arquivo",
+      "metricas_sistema": "requisitos, condicoes, combinacoes, impossiveis, testes, mutantes, equivalentes extraidos do relatorio"
+    },
+    "definicao_adotada": "par de causa unica = duas linhas que diferem apenas na condicao analisada e cujo resultado da decisao difere (leitura do termo documental 'causa unica'); a definicao exata de mascaramento NAO e dada pelo texto e nenhum caso depende dela"
+  },
+  "fixtures": {
+    "requisitos.mcdc": "# requisitos (formato do README C1)\nREQ-001: (alarme_ativo and porta_aberta) or botao_emergencia\nREQ-002: porta_fechada and not obstaculo\n",
+    "req_redundante.mcdc": "REQ-001: A and B\nREQ-003: A or (A and B)\n",
+    "req_sintaxe.mcdc": "REQ-001: A and B\nREQ-002: A and\n",
+    "vm_like.json": "{\"system\":\"the_coffee_machine_system\",\"inputs\":[{\"name\":\"the_system_mode\",\"type\":\"enum\",\"values\":[\"idle\",\"choice\"]},{\"name\":\"the_coin_sensor\",\"type\":\"bool\"}],\"decisions\":[{\"id\":\"vm#1\",\"requirement\":\"REQ-001\",\"guard\":\"the_system_mode = idle /\\\\ the_coin_sensor = true\",\"actions\":[\"the_system_mode := choice\"]}]}",
+    "conflito.json": "{\"system\":\"s\",\"inputs\":[{\"name\":\"the_coin_sensor\",\"type\":\"bool\"},{\"name\":\"the_system_mode\",\"type\":\"enum\",\"values\":[\"idle\",\"choice\"]},{\"name\":\"the_light\",\"type\":\"enum\",\"values\":[\"on\",\"off\"]}],\"decisions\":[{\"id\":\"d#1\",\"requirement\":\"REQ-001\",\"guard\":\"the_coin_sensor = true\",\"actions\":[\"the_light := on\"]},{\"id\":\"d#2\",\"requirement\":\"REQ-002\",\"guard\":\"the_system_mode = idle\",\"actions\":[\"the_light := off\"]}]}",
+    "disjunto.json": "{\"system\":\"s\",\"inputs\":[{\"name\":\"the_coin_sensor\",\"type\":\"bool\"},{\"name\":\"the_light\",\"type\":\"enum\",\"values\":[\"on\",\"off\"]}],\"decisions\":[{\"id\":\"d#1\",\"requirement\":\"REQ-001\",\"guard\":\"the_coin_sensor = true\",\"actions\":[\"the_light := on\"]},{\"id\":\"d#2\",\"requirement\":\"REQ-002\",\"guard\":\"the_coin_sensor = false\",\"actions\":[\"the_light := off\"]}]}",
+    "lacuna.json": "{\"system\":\"s\",\"inputs\":[{\"name\":\"the_system_mode\",\"type\":\"enum\",\"values\":[\"idle\",\"choice\",\"preparing\"]}],\"decisions\":[{\"id\":\"d#1\",\"requirement\":\"REQ-001\",\"guard\":\"the_system_mode = idle\",\"actions\":[]},{\"id\":\"d#2\",\"requirement\":\"REQ-002\",\"guard\":\"the_system_mode = choice\",\"actions\":[]}]}",
+    "k01.csv": "test,input,value,expected_outcome\nT1,A,T,T\nT1,B,T,T\nT2,A,F,F\nT2,B,T,F\nT3,A,T,F\nT3,B,F,F\n",
+    "k02.csv": "test,input,value,expected_outcome\nT1,A,T,T\nT1,B,T,T\nT2,A,F,F\nT2,B,T,F\n",
+    "k03.csv": "test,input,value,expected_outcome\nT1,A,T,T\nT1,B,T,T\nT2,A,F,T\nT2,B,T,T\nT3,A,T,F\nT3,B,F,F\n",
+    "k05.csv": "test,input,value,expected_outcome\nR1,A,T,T\nR1,B,T,T\nR1,C,F,T\nR2,A,F,F\nR2,B,T,F\nR2,C,F,F\nR3,A,T,F\nR3,B,F,F\nR3,C,F,F\nR4,A,T,T\nR4,B,F,T\nR4,C,T,T\n",
+    "k06.csv": "test,input,value,expected_outcome\nR1,A,T,T\nR1,B,T,T\nR1,C,F,T\nR2,A,F,F\nR2,B,T,F\nR2,C,F,F\nR3,A,T,F\nR3,B,F,F\nR3,C,F,F\n"
+  },
+  "casos": [
+    {
+      "id": "C1-A01", "grupo": "codigo-de-saida", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B) or C"],
+      "trecho": "`0`: comando concluído sem apontar os problemas descritos para o código `2`",
+      "regra": "Exemplo canonico; toda condicao possui par (Z3 S02_par_A/B/C = sat), logo nao ha condicao sem par.",
+      "expectativa": {"exit": 0}, "z3": ["S02_par_A", "S02_par_B", "S02_par_C"]
+    },
+    {
+      "id": "C1-A02", "grupo": "codigo-de-saida", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B) or C", "--unique-cause"],
+      "trecho": "As duas variantes de MC/DC são suportadas: **mascaramento** (padrão) e **causa única** (`--unique-cause`).",
+      "regra": "Pares de causa unica existem para A, B e C (Z3 sat); sem problemas, saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["S02_par_A", "S02_par_B", "S02_par_C"]
+    },
+    {
+      "id": "C1-A03", "grupo": "codigo-de-saida", "status": "DETERMINADO",
+      "cli": ["analyze", "A or (A and B)"],
+      "trecho": "Para cada condição sem par: **redundante** (o requisito pode ser simplificado) ou **bloqueada** por combinações impossíveis / `2`: ... uma condição sem par no `analyze`",
+      "regra": "A or (A and B) equivale a A (Z3 unsat para diferenca); B nao tem par em combinacao alguma (Z3 unsat) => redundante, saida 2.",
+      "expectativa": {"exit": 2, "contem": ["redundante"]}, "z3": ["A03_equivalencia_com_A", "A03_par_B"]
+    },
+    {
+      "id": "C1-A04", "grupo": "codigo-de-saida", "status": "DETERMINADO",
+      "cli": ["analyze", "A or not A"],
+      "trecho": "para cada condição, são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda",
+      "regra": "Tautologia (Z3 unsat para a negacao): o resultado nunca muda, nenhuma condicao tem par => redundante(s), saida 2.",
+      "expectativa": {"exit": 2, "contem": ["redundante"]}, "z3": ["A04_tautologia"]
+    },
+    {
+      "id": "C1-A05", "grupo": "codigo-de-saida", "status": "DETERMINADO",
+      "cli": ["analyze", "A and B", "--constraint", "not A or not B"],
+      "trecho": "se deixa de possuir pares por causa das combinações impossíveis, é classificada como bloqueada",
+      "regra": "Sem a restricao A tem par (Z3 sat); com a restricao a linha A=B=verdadeiro e impossivel e A e B ficam sem par (Z3 unsat) => bloqueada(s), saida 2, e nenhuma e 'redundante' (tinham par sem a restricao).",
+      "expectativa": {"exit": 2, "contem": ["bloqueada"], "nao_contem": ["redundante"]},
+      "z3": ["A05_par_A_sem_restricao", "A05_par_A_com_restricao", "A05_par_B_com_restricao"]
+    },
+    {
+      "id": "C1-A06", "grupo": "entrada-invalida", "status": "DETERMINADO",
+      "cli": ["analyze", "A and"],
+      "trecho": "`1`: entrada inválida / ExpressionParserTest: ... expressões inválidas recusadas",
+      "regra": "Operador sem operando direito e expressao invalida.", "expectativa": {"exit": 1}, "z3": []
+    },
+    {
+      "id": "C1-A07", "grupo": "entrada-invalida", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B"],
+      "trecho": "`1`: entrada inválida / expressões inválidas recusadas",
+      "regra": "Parentese nao fechado e expressao invalida.", "expectativa": {"exit": 1}, "z3": []
+    },
+    {
+      "id": "C1-A08", "grupo": "entrada-invalida", "status": "DETERMINADO",
+      "cli": ["analyze", "A and and B"],
+      "trecho": "`1`: entrada inválida / expressões inválidas recusadas",
+      "regra": "Dois operadores binarios consecutivos formam expressao invalida.", "expectativa": {"exit": 1}, "z3": []
+    },
+    {
+      "id": "C1-A09", "grupo": "operadores", "status": "DETERMINADO",
+      "cli": ["analyze", "<grafia>", "--format", "csv"], "variantes": ["A and B", "A && B", "A /\\ B"],
+      "trecho": "| e | `and`, `&&`, `/\\` |",
+      "regra": "As tres grafias de 'e' sao aceitas e equivalentes: saida 0 e suite de 3 testes (A and B tem 3 testes, forcados).",
+      "expectativa": {"exit": 0, "n_testes": 3}, "z3": ["T01_tabela"]
+    },
+    {
+      "id": "C1-A10", "grupo": "operadores", "status": "DETERMINADO",
+      "cli": ["analyze", "<grafia>", "--format", "csv"], "variantes": ["A or B", "A || B", "A \\/ B"],
+      "trecho": "| ou | `or`, `\\|\\|`, `\\/` |",
+      "regra": "As tres grafias de 'ou' sao aceitas e equivalentes: saida 0 e suite de 3 testes (pares A:{TF,FF} e B:{FT,FF} forcam 3 testes: TF, FT, FF).",
+      "expectativa": {"exit": 0, "n_testes": 3}, "z3": []
+    },
+    {
+      "id": "C1-A11", "grupo": "operadores", "status": "DETERMINADO",
+      "cli": ["analyze", "<grafia>", "--format", "csv"], "variantes": ["not A and B", "!A and B"],
+      "trecho": "| não | `not`, `!` |",
+      "regra": "As duas grafias de 'nao' sao aceitas: saida 0 e suite de 3 testes.",
+      "expectativa": {"exit": 0, "n_testes": 3}, "z3": ["S01_minsuite_causa_unica"]
+    },
+    {
+      "id": "C1-A12", "grupo": "operadores", "status": "DETERMINADO",
+      "cli": ["analyze", "speed <op> 100", "--format", "csv"],
+      "variantes": ["speed = 100", "speed == 100", "speed != 100", "speed < 100", "speed <= 100", "speed > 100", "speed >= 100"],
+      "trecho": "| comparação | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |",
+      "regra": "Todos os operadores de comparacao sao aceitos; uma unica condicao tem par (2 testes) e a saida e 0.",
+      "expectativa": {"exit": 0, "n_testes": 2}, "z3": []
+    },
+    {
+      "id": "C1-A13", "grupo": "operadores", "status": "DETERMINADO",
+      "cli": ["analyze", "x > -3 and B"],
+      "trecho": "InputEdgeCasesTest: ... sinal de menos só em números",
+      "regra": "Sinal de menos antes de numero e aceito: saida 0.", "expectativa": {"exit": 0}, "z3": []
+    },
+    {
+      "id": "C1-A14", "grupo": "formatos", "status": "DETERMINADO",
+      "cli": ["analyze", "-f", "fx:requisitos.mcdc"],
+      "trecho": "**Arquivo `.mcdc`:** um requisito por linha, `ID: expressão`. Linhas com `#` são comentários.",
+      "regra": "Dois requisitos, ambos completos; comentario ignorado; saida 0 e ambos IDs aparecem.",
+      "expectativa": {"exit": 0, "contem": ["REQ-001", "REQ-002"]}, "z3": []
+    },
+    {
+      "id": "C1-A15", "grupo": "formatos", "status": "DETERMINADO",
+      "cli": ["analyze", "-f", "fx:req_redundante.mcdc"],
+      "trecho": "# vários requisitos de um arquivo; REQ-003 tem uma condição redundante",
+      "regra": "REQ-003 (A or (A and B)) tem B redundante (Z3 unsat): saida 2, relatorio cita REQ-003 e 'redundante'.",
+      "expectativa": {"exit": 2, "contem": ["REQ-003", "redundante"]}, "z3": ["A03_par_B"]
+    },
+    {
+      "id": "C1-A16", "grupo": "formatos", "status": "DETERMINADO",
+      "cli": ["analyze", "-f", "exemplos/requisitos.mcdc"],
+      "trecho": "./mcdc analyze -f exemplos/requisitos.mcdc  (comentario: REQ-003 tem uma condição redundante)",
+      "regra": "O arquivo de exemplo documentado contem um requisito REQ-003 com condicao redundante: saida 2.",
+      "expectativa": {"exit": 2, "contem": ["REQ-003", "redundante"]}, "z3": []
+    },
+    {
+      "id": "C1-A17", "grupo": "entrada-invalida", "status": "DETERMINADO",
+      "cli": ["analyze", "-f", "fx:req_sintaxe.mcdc"],
+      "trecho": "RequirementsFileTest: ... erro de sintaxe com o requisito",
+      "regra": "Expressao invalida em REQ-002: entrada invalida (saida 1) e a mensagem identifica o requisito.",
+      "expectativa": {"exit": 1, "contem": ["REQ-002"]}, "z3": []
+    },
+    {
+      "id": "C1-A18", "grupo": "formatos", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B) or C", "--format", "json"],
+      "trecho": "| `json` | Resultado completo de cada decisão, ligado ao requisito de origem (formato de integração) |",
+      "regra": "Formato json produz JSON valido; saida 0.", "expectativa": {"exit": 0, "json_valido": true}, "z3": []
+    },
+    {
+      "id": "C1-A19", "grupo": "formatos", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B) or C", "-o", "{tmp}/rel.txt"],
+      "trecho": "| `-o <arquivo>` | Grava o relatório no arquivo em vez de mostrar na tela |",
+      "regra": "O relatorio e gravado no arquivo (nao vazio) e nao e mostrado na tela; saida 0.",
+      "expectativa": {"exit": 0, "arquivo_nao_vazio": "{tmp}/rel.txt", "tela_sem_relatorio": true}, "z3": []
+    },
+    {
+      "id": "C1-A20", "grupo": "formatos", "status": "DETERMINADO",
+      "cli": ["analyze", "A and B", "--format", "csv"],
+      "trecho": "| `csv` | A suíte: uma linha por teste e entrada, com o resultado esperado ... |",
+      "regra": "A and B tem 3 testes x 2 entradas = 6 linhas de dados (mais cabecalho opcional).",
+      "expectativa": {"exit": 0, "n_linhas_csv": [6, 7]}, "z3": ["T01_tabela"]
+    },
+    {
+      "id": "C1-A21", "grupo": "formatos", "status": "DETERMINADO",
+      "cli": ["analyze", "A and B", "--format", "truth-csv"],
+      "trecho": "| `truth-csv` | A tabela-verdade inteira, com as combinações impossíveis marcadas |",
+      "regra": "2 entradas => 4 combinacoes (linhas), sem cabecalho opcional; linha 0 tudo verdadeiro; 1 resultado verdadeiro (Z3 T01_tabela).",
+      "expectativa": {"exit": 0, "n_linhas_verdade": 4, "linha0_todo_verdadeiro": true, "n_resultado_verdadeiro": 1}, "z3": ["T01_tabela"]
+    },
+    {
+      "id": "C1-S01", "grupo": "suite", "status": "DETERMINADO",
+      "cli": ["analyze", "A and not B", "--format", "csv"],
+      "trecho": "MinimalSuiteTest: Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes, A ∧ ¬B com 3)",
+      "regra": "A and not B tem suite de 3 testes (Z3 minimo de causa unica = 3).",
+      "expectativa": {"exit": 0, "n_testes": 3}, "z3": ["S01_tabela", "S01_minsuite_causa_unica"]
+    },
+    {
+      "id": "C1-S02", "grupo": "suite", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B) or C", "--format", "csv"],
+      "trecho": "MinimalSuiteTest: Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes, A ∧ ¬B com 3)",
+      "regra": "(A and B) or C tem suite de 4 testes (N+1; Z3 minimo = 4).",
+      "expectativa": {"exit": 0, "n_testes": 4}, "z3": ["S02_tabela", "S02_minsuite_causa_unica"]
+    },
+    {
+      "id": "C1-S03", "grupo": "suite", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B) or C", "--unique-cause", "--exact", "--format", "csv"],
+      "trecho": "| `--exact` | Suíte exata: a menor possível, escolhida pelo Z3 |",
+      "regra": "Menor suite de causa unica de (A and B) or C tem 4 testes (Z3).",
+      "expectativa": {"exit": 0, "n_testes": 4}, "z3": ["S02_minsuite_causa_unica"]
+    },
+    {
+      "id": "C1-S04", "grupo": "suite", "status": "DETERMINADO",
+      "cli": ["analyze", "A and B and C and D", "--unique-cause", "--exact", "--format", "csv"],
+      "trecho": "Para as guardas simples consideradas pela ferramenta, a suíte pode ter **N + 1** testes",
+      "regra": "Menor suite de causa unica de um 'e' de 4 entradas tem 5 testes (Z3 = 5 = N+1).",
+      "expectativa": {"exit": 0, "n_testes": 5}, "z3": ["S04_minsuite_causa_unica"]
+    },
+    {
+      "id": "C1-S05", "grupo": "suite", "status": "DETERMINADO",
+      "cli": ["analyze", "((E or D) and (not A or D)) or B", "--exact", "--format", "csv"],
+      "trecho": "# suíte exata (aqui, 5 testes em vez dos 6 da escolha gulosa)",
+      "regra": "Exemplo documentado: com --exact a suite tem 5 testes (valor documental; Z3 de causa unica tambem da 5, informativo).",
+      "expectativa": {"exit": 0, "n_testes": 5}, "z3": ["S06_tabela", "S06_minsuite_causa_unica_informativo"]
+    },
+    {
+      "id": "C1-S06", "grupo": "suite", "status": "DETERMINADO",
+      "cli": ["analyze", "((E or D) and (not A or D)) or B", "--format", "csv"],
+      "trecho": "# suíte exata (aqui, 5 testes em vez dos 6 da escolha gulosa)",
+      "regra": "Exemplo documentado: a escolha gulosa (padrao, sem --exact) produz 6 testes.",
+      "expectativa": {"exit": 0, "n_testes": 6}, "z3": ["S06_tabela"]
+    },
+    {
+      "id": "C1-S07", "grupo": "suite", "status": "DETERMINADO",
+      "cli": ["analyze", "(((A and not B) or (not A and B)) and not C) or (not ((A and not B) or (not A and B)) and C)", "--format", "csv"],
+      "trecho": "a função de paridade de 3 entradas exige 8 testes",
+      "regra": "Expressao e a paridade de A,B,C (Z3 S07_equivalencia_com_paridade = unsat para a diferenca); a documentacao afirma 8 testes. Nota: o Z3 por entrada (nao por ocorrencia) da 4 (S07_minsuite_causa_unica); a divergencia e de granularidade (condicao = ocorrencia) e e registrada, nao resolvida; vale a afirmacao documental.",
+      "expectativa": {"exit": 0, "n_testes": 8}, "z3": ["S07_equivalencia_com_paridade", "S07_minsuite_causa_unica"]
+    },
+    {
+      "id": "C1-C01", "grupo": "condicoes", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B) or (not A and C)"],
+      "trecho": "há 3 entradas distintas (`A`, `B` e `C`) e 4 ocorrências de condição (`A#1`, `B`, `A#2` e `C`)",
+      "regra": "As condicoes sao nomeadas A#1, A#2 (A repetida) e B, C sem sufixo.",
+      "expectativa": {"exit_em": [0, 2], "contem": ["A#1", "A#2"], "nao_contem": ["B#1", "C#1"]}, "z3": ["C01_tabela_entradas_distintas"]
+    },
+    {
+      "id": "C1-T01", "grupo": "tabela-verdade", "status": "DETERMINADO",
+      "cli": ["analyze", "(A and B) or (not A and C)", "--format", "truth-csv"],
+      "trecho": "tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações",
+      "regra": "3 entradas distintas => 8 linhas; resultado verdadeiro em 4 (Z3 C01_tabela_entradas_distintas); linha 0 tudo verdadeiro.",
+      "expectativa": {"exit_em": [0, 2], "n_linhas_verdade": 8, "n_resultado_verdadeiro": 4, "linha0_todo_verdadeiro": true}, "z3": ["C01_tabela_entradas_distintas"]
+    },
+    {
+      "id": "C1-T02", "grupo": "tabela-verdade", "status": "DETERMINADO",
+      "cli": ["analyze", "A or (B and C)", "--format", "truth-csv"],
+      "trecho": "TruthTableTest: Uma linha por combinação; a linha 0 é tudo verdadeiro; a saída de cada linha",
+      "regra": "8 linhas; resultado verdadeiro em 5 (Z3 T02_tabela).",
+      "expectativa": {"exit": 0, "n_linhas_verdade": 8, "n_resultado_verdadeiro": 5, "linha0_todo_verdadeiro": true}, "z3": ["T02_tabela"]
+    },
+    {
+      "id": "C1-T03", "grupo": "tabela-verdade", "status": "DETERMINADO",
+      "cli": ["analyze", "A or B and C", "--format", "truth-csv"],
+      "trecho": "ExpressionParserTest: Precedência (e antes de ou)",
+      "regra": "A or B and C le-se A or (B and C): 5 linhas verdadeiras (T03_tabela_leitura_e_antes_de_ou); a leitura (A or B) and C daria 3 (refutada).",
+      "expectativa": {"exit": 0, "n_linhas_verdade": 8, "n_resultado_verdadeiro": 5}, "z3": ["T03_tabela_leitura_e_antes_de_ou", "T03_tabela_leitura_alternativa_refutada"]
+    },
+    {
+      "id": "C1-T04", "grupo": "tabela-verdade", "status": "DETERMINADO",
+      "cli": ["analyze", "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20"],
+      "trecho": "até 20 entradas com a tabela-verdade completa",
+      "regra": "20 entradas distintas estao dentro do limite documentado; cada entrada tem par (todas as demais verdadeiras): saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["L_par_cadeia_and_20_entrada_1"]
+    },
+    {
+      "id": "C1-K01", "grupo": "check", "status": "DETERMINADO",
+      "cli": ["check", "A and B", "--tests", "fx:k01.csv"],
+      "trecho": "| Avaliar testes existentes | `mcdc check` | Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado |",
+      "regra": "T1(TT),T2(FT),T3(TF) demonstram A (T1/T2) e B (T1/T3) e os resultados esperados conferem (Z3): MC/DC completo, saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["K01_check"]
+    },
+    {
+      "id": "C1-K02", "grupo": "check", "status": "DETERMINADO",
+      "cli": ["check", "A and B", "--tests", "fx:k02.csv"],
+      "trecho": "`2`: ... uma condição não demonstrada ou um resultado esperado divergente no `check`",
+      "regra": "Sem T3 nao ha par para B (Z3 unsat): condicao nao demonstrada, saida 2.",
+      "expectativa": {"exit": 2}, "z3": ["K02_check_sem_T3"]
+    },
+    {
+      "id": "C1-K03", "grupo": "check", "status": "DETERMINADO",
+      "cli": ["check", "A and B", "--tests", "fx:k03.csv"],
+      "trecho": "`2`: ... um resultado esperado divergente no `check`",
+      "regra": "T2 (A=F,B=T) esperado V, mas A and B = F (Z3): resultado esperado divergente, saida 2 e T2 e citado.",
+      "expectativa": {"exit": 2, "contem": ["T2"]}, "z3": ["K03_check_esperado_errado"]
+    },
+    {
+      "id": "C1-K04", "grupo": "check", "status": "DETERMINADO",
+      "cli": ["check", "A and B", "--tests", "fx:k01.csv", "--unique-cause"],
+      "trecho": "As duas variantes de MC/DC são suportadas",
+      "regra": "Os pares T1/T2 e T1/T3 sao de causa unica: completo tambem nessa variante, saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["K01_check"]
+    },
+    {
+      "id": "C1-K05", "grupo": "check", "status": "DETERMINADO",
+      "cli": ["check", "(A and B) or C", "--tests", "fx:k05.csv"],
+      "trecho": "Cobertura MC/DC de um conjunto de testes",
+      "regra": "R1..R4 contem pares de causa unica para A (R1/R2), B (R1/R3) e C (R3/R4) e resultados corretos (Z3): saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["K05_check_completa"]
+    },
+    {
+      "id": "C1-K06", "grupo": "check", "status": "DETERMINADO",
+      "cli": ["check", "(A and B) or C", "--tests", "fx:k06.csv"],
+      "trecho": "`2`: ... uma condição não demonstrada",
+      "regra": "Sem R4 nao ha par para C (Z3 unsat): condicao nao demonstrada, saida 2.",
+      "expectativa": {"exit": 2}, "z3": ["K06_check_sem_R4"]
+    },
+    {
+      "id": "C1-Z01", "grupo": "z3", "status": "DETERMINADO",
+      "cli": ["analyze", "speed > 100 or (speed > 50 and rain)", "--z3", "--boundary"],
+      "trecho": "| Testes de fronteira | `--z3 --boundary` | Variações no limite de cada comparação (`speed > 100` → 100 e 101) |",
+      "regra": "Fronteiras de speed>100 sao 100 (maior falso) e 101 (menor verdadeiro); de speed>50, 50 e 51 (Z3). Cada condicao tem par sob P implica Q (Z3 sat): saida 0.",
+      "expectativa": {"exit": 0, "contem": ["100", "101", "50", "51"]},
+      "z3": ["Z01_P_implica_Q", "Z01_fronteira_P_falso_max", "Z01_fronteira_P_verdadeiro_min", "Z01_fronteira_Q_falso_max", "Z01_fronteira_Q_verdadeiro_min", "Z01_par_P_com_P_implica_Q", "Z01_par_Q_com_P_implica_Q", "Z01_par_R_com_P_implica_Q"]
+    },
+    {
+      "id": "C1-Z02", "grupo": "z3", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "fx:vm_like.json", "--z3", "--format", "csv"],
+      "trecho": "{ \"name\": \"the_system_mode\", \"type\": \"enum\", \"values\": [\"idle\", \"choice\"] } ... \"guard\": \"the_system_mode = idle /\\ the_coin_sensor = true\"",
+      "regra": "Quando 'the_system_mode = idle' e falsa o unico valor possivel e 'choice' (Z3 unsat para terceiro valor); ambos os valores concretos aparecem nos testes.",
+      "expectativa": {"exit": 0, "contem": ["idle", "choice"]}, "z3": ["Z03_enum_falso_idle", "Z03_enum_so_dois_valores"]
+    },
+    {
+      "id": "C1-Z03", "grupo": "z3", "status": "DETERMINADO",
+      "cli": ["analyze", "<13 entradas>", "--z3"],
+      "expr": "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13",
+      "trecho": "`--z3` ... acima de 12 entradas, passa sozinho ao modo direto",
+      "regra": "13 entradas com --z3 nao falham (modo direto automatico, limite 30); cada entrada tem par (Z3): saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["L_par_cadeia_and_13_entrada_1"]
+    },
+    {
+      "id": "C1-Z04", "grupo": "z3", "status": "DETERMINADO",
+      "cli": ["analyze", "<26 entradas>", "--direct"],
+      "expr": "X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20 and X21 and X22 and X23 and X24 and X25 and X26",
+      "trecho": "| `--direct` | Pares pedidos direto ao Z3, sem montar a tabela (até 30 entradas) |",
+      "regra": "26 entradas no modo direto estao no limite documentado (30) e cada entrada tem par (Z3): saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["L_par_cadeia_and_26_entrada_1"]
+    },
+    {
+      "id": "C1-V01", "grupo": "verify", "status": "DETERMINADO",
+      "cli": ["verify", "--json", "fx:conflito.json"],
+      "trecho": "Conflitos (dois requisitos valem juntos e escrevem valores diferentes)",
+      "regra": "As guardas coin=true e mode=idle valem juntas (Z3 sat) e escrevem the_light := on / off: conflito, saida 2.",
+      "expectativa": {"exit": 2}, "z3": ["V01_guardas_coexistem"]
+    },
+    {
+      "id": "C1-V02", "grupo": "verify", "status": "DETERMINADO",
+      "cli": ["verify", "--json", "fx:disjunto.json"],
+      "trecho": "`2`: ... um conflito ou uma lacuna no `verify`",
+      "regra": "Guardas coin=true e coin=false nunca valem juntas (Z3 unsat) e cobrem todas as situacoes (Z3 unsat para lacuna): sem conflito nem lacuna, saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["V03_guardas_disjuntas", "V02_cobertura_total"]
+    },
+    {
+      "id": "C1-V03", "grupo": "verify", "status": "DETERMINADO",
+      "cli": ["verify", "--json", "fx:lacuna.json", "--context", "the_system_mode = preparing"],
+      "trecho": "| `--context \"<expr>\"` | No `verify`: confere se, nessa situação, sempre alguma guarda vale |",
+      "regra": "No contexto mode=preparing nenhuma guarda (idle, choice) vale (Z3 sat com mode=preparing): lacuna, saida 2.",
+      "expectativa": {"exit": 2}, "z3": ["V04_lacuna_em_preparing"]
+    },
+    {
+      "id": "C1-V04", "grupo": "verify", "status": "DETERMINADO",
+      "cli": ["verify", "--json", "fx:lacuna.json", "--context", "the_system_mode = idle"],
+      "trecho": "confere se, nessa situação, sempre alguma guarda vale",
+      "regra": "No contexto mode=idle a guarda d#1 sempre vale (Z3 unsat para lacuna) e nao ha conflito: saida 0.",
+      "expectativa": {"exit": 0}, "z3": ["V05_sem_lacuna_em_idle"]
+    },
+    {
+      "id": "C1-V05", "grupo": "verify", "status": "DETERMINADO",
+      "cli": ["verify", "--json", "exemplos/npp-decisoes.json"],
+      "trecho": "| NPP · injeção de segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |  (coluna Conflitos = 1)",
+      "regra": "O sistema NPP tem 1 conflito documentado: saida 2.",
+      "expectativa": {"exit": 2}, "z3": []
+    },
+    {
+      "id": "C1-V06", "grupo": "verify", "status": "DETERMINADO",
+      "cli": ["verify", "--json", "exemplos/tis-decisoes.json"],
+      "trecho": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |  (coluna Conflitos = 3)",
+      "regra": "O sistema TIS tem 3 conflitos documentados: saida 2.",
+      "expectativa": {"exit": 2}, "z3": []
+    },
+    {
+      "id": "C1-E01", "grupo": "exemplos", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "exemplos/vm-decisoes.json", "--z3", "--format", "json"],
+      "trecho": "| VM · máquina de café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |",
+      "regra": "VM: 5 requisitos (todos completos), 21 condicoes, 152 combinacoes, 4 impossiveis, 26 testes; saida 0.",
+      "expectativa": {"exit": 0, "metricas_sistema": {"requisitos": 5, "condicoes": 21, "combinacoes": 152, "impossiveis": 4, "testes": 26}}, "z3": []
+    },
+    {
+      "id": "C1-E02", "grupo": "exemplos", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "exemplos/npp-decisoes.json", "--z3", "--format", "json"],
+      "trecho": "| NPP · injeção de segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |",
+      "regra": "NPP: 11 requisitos (todos completos), 29 condicoes, 76 combinacoes, 1 impossivel, 40 testes; saida 0.",
+      "expectativa": {"exit": 0, "metricas_sistema": {"requisitos": 11, "condicoes": 29, "combinacoes": 76, "impossiveis": 1, "testes": 40}}, "z3": []
+    },
+    {
+      "id": "C1-E03", "grupo": "exemplos", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "exemplos/tis-decisoes.json", "--z3", "--format", "json"],
+      "trecho": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |",
+      "regra": "TIS: 17 requisitos (14 completos), 69 condicoes, 268 combinacoes, 4 impossiveis, 80 testes; ha requisitos incompletos (condicao sem par): saida 2.",
+      "expectativa": {"exit": 2, "metricas_sistema": {"requisitos": 17, "condicoes": 69, "combinacoes": 268, "impossiveis": 4, "testes": 80}}, "z3": []
+    },
+    {
+      "id": "C1-M01", "grupo": "mutacao", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "exemplos/vm-decisoes.json", "--z3", "--mutation", "--format", "json"],
+      "trecho": "| VM · máquina de café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |",
+      "regra": "VM: 152 mutantes, 0 equivalentes (a contagem nao depende da suite).",
+      "expectativa": {"exit": 0, "metricas_sistema": {"mutantes": 152, "equivalentes": 0}}, "z3": []
+    },
+    {
+      "id": "C1-M02", "grupo": "mutacao", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "exemplos/npp-decisoes.json", "--z3", "--mutation", "--format", "json"],
+      "trecho": "| NPP · injeção de segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |",
+      "regra": "NPP: 146 mutantes, 0 equivalentes.",
+      "expectativa": {"exit": 0, "metricas_sistema": {"mutantes": 146, "equivalentes": 0}}, "z3": []
+    },
+    {
+      "id": "C1-M03", "grupo": "mutacao", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "exemplos/tis-decisoes.json", "--z3", "--mutation", "--format", "json"],
+      "trecho": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |  /  versões equivalentes ao requisito original não entram na contagem",
+      "regra": "TIS: 450 mutantes, 21 equivalentes.",
+      "expectativa": {"exit_em": [0, 2], "metricas_sistema": {"mutantes": 450, "equivalentes": 21}}, "z3": []
+    },
+    {
+      "id": "C1-D01", "grupo": "modos", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "exemplos/vm-decisoes.json", "--direct"],
+      "trecho": "Z3DirectAnalyzerTest: O modo direto concorda com a tabela",
+      "regra": "No modo direto o diagnostico concorda com o da tabela (VM: todos completos): saida 0.",
+      "expectativa": {"exit": 0}, "z3": []
+    },
+    {
+      "id": "C1-D02", "grupo": "modos", "status": "DETERMINADO",
+      "cli": ["analyze", "--json", "exemplos/vm-decisoes.json", "--exact"],
+      "trecho": "RequirementsRegressionTest: A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos.",
+      "regra": "Com --exact no VM a suite tem 26 testes (mesmo numero da regressao) e saida 0.",
+      "expectativa": {"exit": 0, "metricas_sistema": {"testes": 26}}, "z3": []
+    },
+    {
+      "id": "C1-I01", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "A and B", "--z3"],
+      "trecho": "As opções que exigem o Z3 avisam quando o executável não está instalado.",
+      "regra": "Nao se define o texto do aviso nem o codigo de saida sem o Z3.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I02", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "<21 entradas>"],
+      "trecho": "até 20 entradas com a tabela-verdade completa",
+      "regra": "Comportamento acima do limite (erro? saida?) nao e especificado.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I03", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "<31 entradas>", "--direct"],
+      "trecho": "até 30 entradas",
+      "regra": "Comportamento acima de 30 entradas nao especificado.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I04", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["check", "A and B", "--tests", "k01.csv", "--format", "csv"],
+      "trecho": "`check` e `verify` aceitam `text` e `json`",
+      "regra": "O que ocorre ao pedir csv em check/verify nao e dito (rejeicao? codigo?).", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I05", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["verify", "--json", "lacuna.json"],
+      "trecho": "lacunas só com contexto",
+      "regra": "Sem --context nao e claro se lacunas sao verificadas; a frase admite duas leituras.", "expectativa": null, "motivo": "ambiguidade"
+    },
+    {
+      "id": "C1-I06", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "--json", "<guarda com x_antes>"],
+      "trecho": "esse valor é identificado pelo sufixo `_antes`",
+      "regra": "Nao se diz como _antes altera entradas, condicoes ou tabela-verdade.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I07", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "--json", "<ids repetidos>"],
+      "trecho": "Nat2TestJsonReaderTest: ... arquivos inválidos, ids repetidos",
+      "regra": "Nao e dito se ids repetidos sao rejeitados nem com que codigo.", "expectativa": null, "motivo": "ambiguidade"
+    },
+    {
+      "id": "C1-I08", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["check", "A and B", "--tests", "<csv sem coluna value>"],
+      "trecho": "TestCasesFileTest: ... colunas faltando",
+      "regra": "Nao se define o resultado de colunas faltando.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I09", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "A and (B or C)", "--mutation"],
+      "trecho": "Suítes de causa única pegam todo defeito garantido por Kapoor e Bowen",
+      "regra": "Quais mutantes de uma expressao arbitraria sao pegos nao e determinavel pelo texto (so ha totais para os tres sistemas de exemplo).", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I10", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "(A and B) or (not A and C)"],
+      "trecho": "a condição satisfaz o critério da variante de MC/DC selecionada",
+      "regra": "O criterio de mascaramento para condicoes repetidas (A#1/A#2) e a suite resultante nao sao definidos pelo texto.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I11", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "A and B", "--format", "truth-csv"],
+      "trecho": "| `truth-csv` | A tabela-verdade inteira ... |",
+      "regra": "Ordem das linhas alem da linha 0, nomes de colunas, cabecalho e campos do JSON nao sao especificados.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I12", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "speed > 100 or (speed > 50 and rain)", "--format", "truth-csv"],
+      "trecho": "entrada é uma variável distinta da expressão ... A = speed > 100 implica B = speed > 50",
+      "regra": "Sem --z3 nao esta claro se 'speed > 100' e 'speed > 50' contam como entradas distintas ou como ocorrencias da variavel speed; o numero de linhas e de combinacoes impossiveis fica ambiguo.", "expectativa": null, "motivo": "ambiguidade"
+    },
+    {
+      "id": "C1-I13", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "A and B", "--boundary"],
+      "trecho": "| `--boundary` | Com `--z3`, acrescenta variantes de fronteira |",
+      "regra": "Uso de --boundary sem --z3 nao e especificado.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I14", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "A and B", "--constraint", "A", "--json", "x.json"],
+      "trecho": "Restrição entre condições escrita à mão (só com expressão direta)",
+      "regra": "Efeito de --constraint com fonte nao direta nao e especificado.", "expectativa": null, "motivo": "omissao"
+    },
+    {
+      "id": "C1-I15", "grupo": "indeterminado", "status": "INDETERMINADO", "cli": ["analyze", "-f", "linha-sem-id.mcdc"],
+      "trecho": "RequirementsFileTest: ... linha sem identificador",
+      "regra": "Tratamento de linha sem 'ID:' nao e especificado.", "expectativa": null, "motivo": "omissao"
+    }
+  ]
+}

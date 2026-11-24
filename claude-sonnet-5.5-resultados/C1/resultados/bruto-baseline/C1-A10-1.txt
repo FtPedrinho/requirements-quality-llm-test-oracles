@@ -1,0 +1,14 @@
+$ mcdc analyze A || B --format csv
+[exit 0]
+--- stdout ---
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V2,A,T,T,A,
+REQ,,V2,B,F,T,A,
+REQ,,V3,A,F,T,B,
+REQ,,V3,B,T,T,B,
+REQ,,V4,A,F,F,A; B,
+REQ,,V4,B,F,F,A; B,
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

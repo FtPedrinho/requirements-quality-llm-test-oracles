@@ -1,0 +1,15 @@
+$ mcdc verify --json C:\Users\User\AppData\Local\Temp\tmptp3gakm8\lacuna.json --context the_system_mode = idle
+[exit 0]
+--- stdout ---
+Verificação entre requisitos: s
+2 decisões, 0 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: nenhuma: sob the_system_mode = idle, sempre alguma guarda vale
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

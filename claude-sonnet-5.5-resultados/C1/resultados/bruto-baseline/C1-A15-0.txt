@@ -1,0 +1,59 @@
+$ mcdc analyze -f C:\Users\User\AppData\Local\Temp\tmphq4iiojv\req_redundante.mcdc
+[exit 2]
+--- stdout ---
+Decisão:   REQ-001
+Guarda:    A and B
+Variante:  mascaramento
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | F
+V3    F   T   | F
+V4    F   F   | F
+
+Pares de independência:
+  A: (V1, V3)
+  B: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra A, B
+  V2  TF  -> F   demonstra B
+  V3  FT  -> F   demonstra A
+
+Demonstração por condição:
+  A: V1 (T) e V3 (F), só ela muda
+  B: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   REQ-003
+Guarda:    A or (A and B)
+Variante:  mascaramento
+
+Condições: A#1, A#2, B
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | T
+V3    F   T   | F
+V4    F   F   | F
+
+Pares de independência:
+  A#1: (V2, V3), (V2, V4)
+  A#2: nenhum par
+  B: nenhum par
+
+Suíte mínima (2 testes):
+  V2  TF  -> T   demonstra A#1
+  V4  FF  -> F   demonstra A#1
+
+Demonstração por condição:
+  A#1: V2 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: incompleta, sem par para A#2, B
+  A#2: redundante: não muda o resultado em nenhuma combinação; o requisito pode ser simplificado
+  B: redundante: não muda o resultado em nenhuma combinação; o requisito pode ser simplificado
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

@@ -1,0 +1,31 @@
+$ mcdc analyze x > -3 and B
+[exit 0]
+--- stdout ---
+Decisão:   REQ
+Guarda:    x > -3 and B
+Variante:  mascaramento
+
+Vetor x > -3   B   | D
+V1    T        T   | T
+V2    T        F   | F
+V3    F        T   | F
+V4    F        F   | F
+
+Pares de independência:
+  x > -3: (V1, V3)
+  B: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra x > -3, B
+  V2  TF  -> F   demonstra B
+  V3  FT  -> F   demonstra x > -3
+
+Demonstração por condição:
+  x > -3: V1 (T) e V3 (F), só ela muda
+  B: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

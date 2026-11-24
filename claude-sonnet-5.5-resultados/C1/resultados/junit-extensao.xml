@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="2.976" timestamp="2026-11-24T17:44:40.500558-03:00" hostname="DESKTOP-E7NANC1"><testcase classname="claude-sonnet-5.5-resultados.C1.suite.test_c1_extensao" name="test_caso_extensao_D02" time="2.933" /></testsuite></testsuites>

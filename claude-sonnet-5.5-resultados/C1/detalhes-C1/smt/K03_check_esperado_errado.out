@@ -1,0 +1,11 @@
+entrada A: par existe?
+sat
+entrada B: par existe?
+sat
+sat
+T1: valor calculado de f abaixo; esperado=true
+(((f true true) true))
+T2: valor calculado de f abaixo; esperado=true
+(((f false true) false))
+T3: valor calculado de f abaixo; esperado=false
+(((f true false) false))

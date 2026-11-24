@@ -1,0 +1,6 @@
+(set-logic ALL)
+(declare-const x Int)
+(assert (> x 50))
+(minimize x)
+(check-sat)
+(get-objectives)

@@ -1,0 +1,27 @@
+$ mcdc analyze A and B --constraint not A or not B
+[exit 2]
+--- stdout ---
+Decisão:   REQ
+Guarda:    A and B
+Restrição: not A or not B
+Variante:  mascaramento
+
+Vetor A   B   | D
+V1    T   T   | T  (impossível)
+V2    T   F   | F
+V3    F   T   | F
+V4    F   F   | F
+
+Pares de independência:
+  A: nenhum par
+  B: nenhum par
+
+Suíte mínima (0 testes):
+
+Cobertura MC/DC: incompleta, sem par para A, B
+  A: bloqueada pelas restrições: os pares (V1, V3) usam linhas impossíveis
+  B: bloqueada pelas restrições: os pares (V1, V2) usam linhas impossíveis
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

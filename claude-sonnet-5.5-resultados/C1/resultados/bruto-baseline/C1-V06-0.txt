@@ -1,0 +1,35 @@
+$ mcdc verify --json exemplos/tis-decisoes.json
+[exit 2]
+--- stdout ---
+Verificação entre requisitos: turn_indicator_system
+17 decisões, 136 pares que escrevem alguma variável em comum
+
+Conflitos: 3
+  REQ002 × REQ006: as duas guardas valem no mesmo passo
+    the_indication_lights: left_flashing (REQ002) × off (REQ006)
+    exemplo: the_voltage_antes = 0, the_voltage = 81, the_flashing_mode_antes = no_flashing, the_flashing_mode = left_flashing, the_flashing_timer = 340, the_indication_lights = left_flashing
+  REQ003 × REQ006: as duas guardas valem no mesmo passo
+    the_indication_lights: right_flashing (REQ003) × off (REQ006)
+    exemplo: the_voltage_antes = 0, the_voltage = 81, the_flashing_mode_antes = no_flashing, the_flashing_mode = right_flashing, the_flashing_timer = 340, the_indication_lights = left_flashing
+  REQ004 × REQ006: as duas guardas valem no mesmo passo
+    the_indication_lights: both_flashing (REQ004) × off (REQ006)
+    exemplo: the_voltage_antes = 0, the_voltage = 81, the_flashing_mode_antes = no_flashing, the_flashing_mode = both_flashing, the_flashing_timer = 340, the_indication_lights = left_flashing
+
+Sobreposições sem conflito: 70
+  REQ001 × REQ010: mesmo valor em the_flashing_timer
+  REQ001 × REQ011: mesmo valor em the_flashing_timer
+  REQ001 × REQ012: mesmo valor em the_flashing_timer
+  REQ001 × REQ013: mesmo valor em the_flashing_timer
+  REQ001 × REQ014: mesmo valor em the_flashing_timer
+  REQ001 × REQ015: mesmo valor em the_flashing_timer
+  REQ001 × REQ016: mesmo valor em the_flashing_timer
+  REQ001 × REQ017: mesmo valor em the_flashing_timer
+  REQ002 × REQ007: mesmo valor em the_indication_lights, the_flashing_timer
+  REQ002 × REQ010: mesmo valor em the_flashing_timer
+  ... e mais 60 (lista completa com --format json)
+
+Lacunas: não conferidas (use --context "<expressão>" para dizer em que situação alguma guarda deve valer)
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

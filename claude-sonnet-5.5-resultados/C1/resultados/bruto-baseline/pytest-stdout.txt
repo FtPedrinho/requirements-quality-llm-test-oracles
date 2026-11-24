@@ -1,0 +1,24 @@
+........................................................F                [100%]
+================================== FAILURES ===================================
+______________________________ test_caso[C1-D02] ______________________________
+
+caso = {'cli': ['analyze', '--json', 'exemplos/vm-decisoes.json', '--exact'], 'expectativa': {'exit': 0, 'metricas_sistema': {'testes': 26}}, 'grupo': 'modos', 'id': 'C1-D02', ...}
+
+    @pytest.mark.parametrize("caso", CASOS, ids=[c["id"] for c in CASOS])
+    def test_caso(caso):
+        falhas = []
+        with tempfile.TemporaryDirectory() as tmp:
+            for i, v in enumerate(_variantes(caso)):
+                args = _resolve(_expr_com_variante(caso, v), tmp)
+                rc, out, err = invocar(args, f"{caso['id']}-{i}")
+                sub = []
+                _checa(caso, args, rc, out, err, tmp, sub)
+                falhas += [(f"[{v}] " if v is not None else "") + s for s in sub]
+>       assert not falhas, "; ".join(falhas)
+E       AssertionError: metricas ilegiveis: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+E       assert not ['metricas ilegiveis: JSONDecodeError: Expecting value: line 1 column 1 (char 0)']
+
+claude-sonnet-5.5-resultados\C1\suite\test_c1.py:224: AssertionError
+=========================== short test summary info ===========================
+FAILED claude-sonnet-5.5-resultados/C1/suite/test_c1.py::test_caso[C1-D02] - ...
+1 failed, 56 passed in 133.94s (0:02:13)

@@ -1,0 +1,63 @@
+$ mcdc analyze -f C:\Users\User\AppData\Local\Temp\tmpa19cykl0\requisitos.mcdc
+[exit 0]
+--- stdout ---
+Decisão:   REQ-001
+Guarda:    (alarme_ativo and porta_aberta) or botao_emergencia
+Variante:  mascaramento
+
+Vetor alarme_ativo   porta_aberta   botao_emergencia   | D
+V1    T              T              T                  | T
+V2    T              T              F                  | T
+V3    T              F              T                  | T
+V4    T              F              F                  | F
+V5    F              T              T                  | T
+V6    F              T              F                  | F
+V7    F              F              T                  | T
+V8    F              F              F                  | F
+
+Pares de independência:
+  alarme_ativo: (V2, V6)
+  porta_aberta: (V2, V4)
+  botao_emergencia: (V3, V4), (V3, V6), (V3, V8), (V5, V4), (V5, V6), (V5, V8), ... (9 pares)
+
+Suíte mínima (4 testes):
+  V2  TTF  -> T   demonstra alarme_ativo, porta_aberta
+  V3  TFT  -> T   demonstra botao_emergencia
+  V4  TFF  -> F   demonstra porta_aberta, botao_emergencia
+  V6  FTF  -> F   demonstra alarme_ativo
+
+Demonstração por condição:
+  alarme_ativo: V2 (T) e V6 (F), só ela muda
+  porta_aberta: V2 (T) e V4 (F), só ela muda
+  botao_emergencia: V3 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   REQ-002
+Guarda:    porta_fechada and not obstaculo
+Variante:  mascaramento
+
+Vetor porta_fechada   obstaculo   | D
+V1    T               T           | F
+V2    T               F           | T
+V3    F               T           | F
+V4    F               F           | F
+
+Pares de independência:
+  porta_fechada: (V2, V4)
+  obstaculo: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> F   demonstra obstaculo
+  V2  TF  -> T   demonstra porta_fechada, obstaculo
+  V4  FF  -> F   demonstra porta_fechada
+
+Demonstração por condição:
+  porta_fechada: V2 (T) e V4 (F), só ela muda
+  obstaculo: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

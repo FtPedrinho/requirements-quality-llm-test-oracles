@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun x0 () Bool
+    true)
+  (define-fun y0 () Bool
+    false)
+  (define-fun x1 () Bool
+    false)
+  (define-fun y1 () Bool
+    false)
+)

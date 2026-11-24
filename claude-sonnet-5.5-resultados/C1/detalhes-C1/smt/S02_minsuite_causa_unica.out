@@ -1,0 +1,11 @@
+sat
+(objectives
+ ((+ (ite s0 1 0)
+   (ite s1 1 0)
+   (ite s2 1 0)
+   (ite s3 1 0)
+   (ite s4 1 0)
+   (ite s5 1 0)
+   (ite s6 1 0)
+   (ite s7 1 0)) 4)
+)

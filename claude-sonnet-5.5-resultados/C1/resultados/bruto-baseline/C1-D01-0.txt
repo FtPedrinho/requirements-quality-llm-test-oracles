@@ -1,0 +1,154 @@
+$ mcdc analyze --json exemplos/vm-decisoes.json --direct
+[exit 0]
+--- stdout ---
+Decisão:   vm#1
+Requisito: REQ001
+Guarda:    the_system_mode = idle /\ the_coin_sensor_antes = false /\ the_coin_sensor = true
+Ações:     the_request_timer := 0; the_system_mode := choice
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 8 combinações)
+
+Pares de independência:
+  the_system_mode = idle: (V1, V5)
+  the_coin_sensor_antes = false: (V1, V3)
+  the_coin_sensor = true: (V1, V2)
+
+Suíte do modo direto (4 testes):
+  V1  TTT  -> T   demonstra the_system_mode = idle, the_coin_sensor_antes = false, the_coin_sensor = true   [the_system_mode = idle, the_coin_sensor_antes = false, the_coin_sensor = true]
+  V2  TTF  -> F   demonstra the_coin_sensor = true   [the_system_mode = idle, the_coin_sensor_antes = false, the_coin_sensor = false]
+  V3  TFT  -> F   demonstra the_coin_sensor_antes = false   [the_system_mode = idle, the_coin_sensor_antes = true, the_coin_sensor = true]
+  V5  FTT  -> F   demonstra the_system_mode = idle   [the_system_mode = choice, the_coin_sensor_antes = false, the_coin_sensor = true]
+
+Demonstração por condição:
+  the_system_mode = idle: V1 (T) e V5 (F), só ela muda
+  the_coin_sensor_antes = false: V1 (T) e V3 (F), só ela muda
+  the_coin_sensor = true: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   vm#2
+Requisito: REQ002
+Guarda:    the_system_mode = choice /\ the_coin_sensor = false /\ the_coin_sensor_antes = false /\ the_coffee_request_button_antes != pressed /\ the_coffee_request_button = pressed /\ the_request_timer <= 30.0
+Ações:     the_request_timer := 0; the_system_mode := preparing_weak
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 64 combinações)
+
+Pares de independência:
+  the_system_mode = choice: (V1, V33)
+  the_coin_sensor = false: (V1, V17)
+  the_coin_sensor_antes = false: (V1, V9)
+  the_coffee_request_button_antes != pressed: (V1, V5)
+  the_coffee_request_button = pressed: (V1, V3)
+  the_request_timer <= 30.0: (V1, V2)
+
+Suíte do modo direto (7 testes):
+  V1  TTTTTT  -> T   demonstra the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes != pressed, the_coffee_request_button = pressed, the_request_timer <= 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+  V2  TTTTTF  -> F   demonstra the_request_timer <= 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+  V3  TTTTFT  -> F   demonstra the_coffee_request_button = pressed   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = released, the_request_timer = 0]
+  V5  TTTFTT  -> F   demonstra the_coffee_request_button_antes != pressed   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = pressed, the_coffee_request_button = pressed, the_request_timer = 0]
+  V9  TTFTTT  -> F   demonstra the_coin_sensor_antes = false   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = true, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+  V17  TFTTTT  -> F   demonstra the_coin_sensor = false   [the_system_mode = choice, the_coin_sensor = true, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+  V33  FTTTTT  -> F   demonstra the_system_mode = choice   [the_system_mode = preparing_weak, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+
+Demonstração por condição:
+  the_system_mode = choice: V1 (T) e V33 (F), só ela muda
+  the_coin_sensor = false: V1 (T) e V17 (F), só ela muda
+  the_coin_sensor_antes = false: V1 (T) e V9 (F), só ela muda
+  the_coffee_request_button_antes != pressed: V1 (T) e V5 (F), só ela muda
+  the_coffee_request_button = pressed: V1 (T) e V3 (F), só ela muda
+  the_request_timer <= 30.0: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   vm#3
+Requisito: REQ003
+Guarda:    the_system_mode = choice /\ the_coin_sensor = false /\ the_coin_sensor_antes = false /\ the_coffee_request_button_antes != pressed /\ the_coffee_request_button = pressed /\ the_request_timer > 30.0
+Ações:     the_request_timer := 0; the_system_mode := preparing_strong
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 64 combinações)
+
+Pares de independência:
+  the_system_mode = choice: (V1, V33)
+  the_coin_sensor = false: (V1, V17)
+  the_coin_sensor_antes = false: (V1, V9)
+  the_coffee_request_button_antes != pressed: (V1, V5)
+  the_coffee_request_button = pressed: (V1, V3)
+  the_request_timer > 30.0: (V1, V2)
+
+Suíte do modo direto (7 testes):
+  V1  TTTTTT  -> T   demonstra the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes != pressed, the_coffee_request_button = pressed, the_request_timer > 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+  V2  TTTTTF  -> F   demonstra the_request_timer > 30.0   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 0]
+  V3  TTTTFT  -> F   demonstra the_coffee_request_button = pressed   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = released, the_request_timer = 31]
+  V5  TTTFTT  -> F   demonstra the_coffee_request_button_antes != pressed   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = pressed, the_coffee_request_button = pressed, the_request_timer = 31]
+  V9  TTFTTT  -> F   demonstra the_coin_sensor_antes = false   [the_system_mode = choice, the_coin_sensor = false, the_coin_sensor_antes = true, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+  V17  TFTTTT  -> F   demonstra the_coin_sensor = false   [the_system_mode = choice, the_coin_sensor = true, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+  V33  FTTTTT  -> F   demonstra the_system_mode = choice   [the_system_mode = preparing_weak, the_coin_sensor = false, the_coin_sensor_antes = false, the_coffee_request_button_antes = released, the_coffee_request_button = pressed, the_request_timer = 31]
+
+Demonstração por condição:
+  the_system_mode = choice: V1 (T) e V33 (F), só ela muda
+  the_coin_sensor = false: V1 (T) e V17 (F), só ela muda
+  the_coin_sensor_antes = false: V1 (T) e V9 (F), só ela muda
+  the_coffee_request_button_antes != pressed: V1 (T) e V5 (F), só ela muda
+  the_coffee_request_button = pressed: V1 (T) e V3 (F), só ela muda
+  the_request_timer > 30.0: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   vm#4
+Requisito: REQ004
+Guarda:    the_system_mode = preparing_weak /\ the_request_timer >= 10.0 /\ the_request_timer <= 30.0
+Ações:     the_system_mode := idle; the_coffee_machine_output := weak
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 8 combinações)
+
+Pares de independência:
+  the_system_mode = preparing_weak: (V1, V5)
+  the_request_timer >= 10.0: (V1, V3)
+  the_request_timer <= 30.0: (V1, V2)
+
+Suíte do modo direto (4 testes):
+  V1  TTT  -> T   demonstra the_system_mode = preparing_weak, the_request_timer >= 10.0, the_request_timer <= 30.0   [the_system_mode = preparing_weak, the_request_timer = 10]
+  V2  TTF  -> F   demonstra the_request_timer <= 30.0   [the_system_mode = preparing_weak, the_request_timer = 31]
+  V3  TFT  -> F   demonstra the_request_timer >= 10.0   [the_system_mode = preparing_weak, the_request_timer = 0]
+  V5  FTT  -> F   demonstra the_system_mode = preparing_weak   [the_system_mode = preparing_strong, the_request_timer = 10]
+
+Demonstração por condição:
+  the_system_mode = preparing_weak: V1 (T) e V5 (F), só ela muda
+  the_request_timer >= 10.0: V1 (T) e V3 (F), só ela muda
+  the_request_timer <= 30.0: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+Decisão:   vm#5
+Requisito: REQ005
+Guarda:    the_system_mode = preparing_strong /\ the_request_timer >= 30.0 /\ the_request_timer <= 50.0
+Ações:     the_system_mode := idle; the_coffee_machine_output := strong
+Variante:  mascaramento
+
+Tabela verdade: não montada (modo direto: os pares foram pedidos ao Z3; 8 combinações)
+
+Pares de independência:
+  the_system_mode = preparing_strong: (V1, V5)
+  the_request_timer >= 30.0: (V1, V3)
+  the_request_timer <= 50.0: (V1, V2)
+
+Suíte do modo direto (4 testes):
+  V1  TTT  -> T   demonstra the_system_mode = preparing_strong, the_request_timer >= 30.0, the_request_timer <= 50.0   [the_system_mode = preparing_strong, the_request_timer = 30]
+  V2  TTF  -> F   demonstra the_request_timer <= 50.0   [the_system_mode = preparing_strong, the_request_timer = 51]
+  V3  TFT  -> F   demonstra the_request_timer >= 30.0   [the_system_mode = preparing_strong, the_request_timer = 0]
+  V5  FTT  -> F   demonstra the_system_mode = preparing_strong   [the_system_mode = idle, the_request_timer = 30]
+
+Demonstração por condição:
+  the_system_mode = preparing_strong: V1 (T) e V5 (F), só ela muda
+  the_request_timer >= 30.0: V1 (T) e V3 (F), só ela muda
+  the_request_timer <= 50.0: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

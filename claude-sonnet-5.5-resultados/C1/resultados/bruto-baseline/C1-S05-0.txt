@@ -1,0 +1,28 @@
+$ mcdc analyze ((E or D) and (not A or D)) or B --exact --format csv
+[exit 0]
+--- stdout ---
+decision,requirement,test,input,value,expected_outcome,demonstrates,concrete_values
+REQ,,V6,E,T,F,A; D#2,
+REQ,,V6,D,F,F,A; D#2,
+REQ,,V6,A,T,F,A; D#2,
+REQ,,V6,B,F,F,A; D#2,
+REQ,,V8,E,T,T,E; A,
+REQ,,V8,D,F,T,E; A,
+REQ,,V8,A,F,T,E; A,
+REQ,,V8,B,F,T,E; A,
+REQ,,V10,E,F,T,D#1; D#2,
+REQ,,V10,D,T,T,D#1; D#2,
+REQ,,V10,A,T,T,D#1; D#2,
+REQ,,V10,B,F,T,D#1; D#2,
+REQ,,V15,E,F,T,B,
+REQ,,V15,D,F,T,B,
+REQ,,V15,A,F,T,B,
+REQ,,V15,B,T,T,B,
+REQ,,V16,E,F,F,E; D#1; B,
+REQ,,V16,D,F,F,E; D#1; B,
+REQ,,V16,A,F,F,E; D#1; B,
+REQ,,V16,B,F,F,E; D#1; B,
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

@@ -1,0 +1,81 @@
+$ mcdc analyze X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20
+[exit 0]
+--- stdout ---
+Decisão:   REQ
+Guarda:    X1 and X2 and X3 and X4 and X5 and X6 and X7 and X8 and X9 and X10 and X11 and X12 and X13 and X14 and X15 and X16 and X17 and X18 and X19 and X20
+Variante:  mascaramento
+
+Tabela verdade: 1048576 linhas, 1048576 possíveis (grande demais para o texto; use --format json até 4096 linhas)
+
+Pares de independência:
+  X1: (V1, V524289)
+  X2: (V1, V262145)
+  X3: (V1, V131073)
+  X4: (V1, V65537)
+  X5: (V1, V32769)
+  X6: (V1, V16385)
+  X7: (V1, V8193)
+  X8: (V1, V4097)
+  X9: (V1, V2049)
+  X10: (V1, V1025)
+  X11: (V1, V513)
+  X12: (V1, V257)
+  X13: (V1, V129)
+  X14: (V1, V65)
+  X15: (V1, V33)
+  X16: (V1, V17)
+  X17: (V1, V9)
+  X18: (V1, V5)
+  X19: (V1, V3)
+  X20: (V1, V2)
+
+Suíte mínima (21 testes):
+  V1  TTTTTTTTTTTTTTTTTTTT  -> T   demonstra X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14, X15, X16, X17, X18, X19, X20
+  V2  TTTTTTTTTTTTTTTTTTTF  -> F   demonstra X20
+  V3  TTTTTTTTTTTTTTTTTTFT  -> F   demonstra X19
+  V5  TTTTTTTTTTTTTTTTTFTT  -> F   demonstra X18
+  V9  TTTTTTTTTTTTTTTTFTTT  -> F   demonstra X17
+  V17  TTTTTTTTTTTTTTTFTTTT  -> F   demonstra X16
+  V33  TTTTTTTTTTTTTTFTTTTT  -> F   demonstra X15
+  V65  TTTTTTTTTTTTTFTTTTTT  -> F   demonstra X14
+  V129  TTTTTTTTTTTTFTTTTTTT  -> F   demonstra X13
+  V257  TTTTTTTTTTTFTTTTTTTT  -> F   demonstra X12
+  V513  TTTTTTTTTTFTTTTTTTTT  -> F   demonstra X11
+  V1025  TTTTTTTTTFTTTTTTTTTT  -> F   demonstra X10
+  V2049  TTTTTTTTFTTTTTTTTTTT  -> F   demonstra X9
+  V4097  TTTTTTTFTTTTTTTTTTTT  -> F   demonstra X8
+  V8193  TTTTTTFTTTTTTTTTTTTT  -> F   demonstra X7
+  V16385  TTTTTFTTTTTTTTTTTTTT  -> F   demonstra X6
+  V32769  TTTTFTTTTTTTTTTTTTTT  -> F   demonstra X5
+  V65537  TTTFTTTTTTTTTTTTTTTT  -> F   demonstra X4
+  V131073  TTFTTTTTTTTTTTTTTTTT  -> F   demonstra X3
+  V262145  TFTTTTTTTTTTTTTTTTTT  -> F   demonstra X2
+  V524289  FTTTTTTTTTTTTTTTTTTT  -> F   demonstra X1
+
+Demonstração por condição:
+  X1: V1 (T) e V524289 (F), só ela muda
+  X2: V1 (T) e V262145 (F), só ela muda
+  X3: V1 (T) e V131073 (F), só ela muda
+  X4: V1 (T) e V65537 (F), só ela muda
+  X5: V1 (T) e V32769 (F), só ela muda
+  X6: V1 (T) e V16385 (F), só ela muda
+  X7: V1 (T) e V8193 (F), só ela muda
+  X8: V1 (T) e V4097 (F), só ela muda
+  X9: V1 (T) e V2049 (F), só ela muda
+  X10: V1 (T) e V1025 (F), só ela muda
+  X11: V1 (T) e V513 (F), só ela muda
+  X12: V1 (T) e V257 (F), só ela muda
+  X13: V1 (T) e V129 (F), só ela muda
+  X14: V1 (T) e V65 (F), só ela muda
+  X15: V1 (T) e V33 (F), só ela muda
+  X16: V1 (T) e V17 (F), só ela muda
+  X17: V1 (T) e V9 (F), só ela muda
+  X18: V1 (T) e V5 (F), só ela muda
+  X19: V1 (T) e V3 (F), só ela muda
+  X20: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

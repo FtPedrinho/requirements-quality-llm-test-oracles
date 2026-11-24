@@ -1,0 +1,7 @@
+(set-logic ALL)
+(declare-datatypes ((Mode 0)) (((idle) (choice) (preparing))))
+(declare-const m Mode)
+(assert (= m idle))
+(assert (not (= m idle)))
+(assert (not (= m choice)))
+(check-sat)

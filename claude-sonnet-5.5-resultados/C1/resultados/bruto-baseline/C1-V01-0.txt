@@ -1,0 +1,18 @@
+$ mcdc verify --json C:\Users\User\AppData\Local\Temp\tmpd7fpj7xw\conflito.json
+[exit 2]
+--- stdout ---
+Verificação entre requisitos: s
+2 decisões, 1 pares que escrevem alguma variável em comum
+
+Conflitos: 1
+  REQ-001 × REQ-002: as duas guardas valem no mesmo passo
+    the_light: on (REQ-001) × off (REQ-002)
+    exemplo: the_coin_sensor = true, the_system_mode = idle
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: não conferidas (use --context "<expressão>" para dizer em que situação alguma guarda deve valer)
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

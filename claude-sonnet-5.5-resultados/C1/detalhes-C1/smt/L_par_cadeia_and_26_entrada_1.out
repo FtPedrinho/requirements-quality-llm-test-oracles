@@ -1,0 +1,107 @@
+sat
+(
+  (define-fun y1 () Bool
+    true)
+  (define-fun y23 () Bool
+    true)
+  (define-fun x15 () Bool
+    true)
+  (define-fun x12 () Bool
+    true)
+  (define-fun x2 () Bool
+    true)
+  (define-fun x19 () Bool
+    true)
+  (define-fun x0 () Bool
+    true)
+  (define-fun y10 () Bool
+    true)
+  (define-fun x14 () Bool
+    true)
+  (define-fun y5 () Bool
+    true)
+  (define-fun y19 () Bool
+    true)
+  (define-fun y0 () Bool
+    false)
+  (define-fun y8 () Bool
+    true)
+  (define-fun x9 () Bool
+    true)
+  (define-fun y22 () Bool
+    true)
+  (define-fun x1 () Bool
+    true)
+  (define-fun x22 () Bool
+    true)
+  (define-fun y3 () Bool
+    true)
+  (define-fun y24 () Bool
+    true)
+  (define-fun y2 () Bool
+    true)
+  (define-fun y7 () Bool
+    true)
+  (define-fun y14 () Bool
+    true)
+  (define-fun y11 () Bool
+    true)
+  (define-fun y17 () Bool
+    true)
+  (define-fun x10 () Bool
+    true)
+  (define-fun y9 () Bool
+    true)
+  (define-fun y6 () Bool
+    true)
+  (define-fun y12 () Bool
+    true)
+  (define-fun y21 () Bool
+    true)
+  (define-fun x25 () Bool
+    true)
+  (define-fun x7 () Bool
+    true)
+  (define-fun y20 () Bool
+    true)
+  (define-fun y18 () Bool
+    true)
+  (define-fun x8 () Bool
+    true)
+  (define-fun x21 () Bool
+    true)
+  (define-fun x23 () Bool
+    true)
+  (define-fun x20 () Bool
+    true)
+  (define-fun x5 () Bool
+    true)
+  (define-fun x11 () Bool
+    true)
+  (define-fun x17 () Bool
+    true)
+  (define-fun x6 () Bool
+    true)
+  (define-fun x18 () Bool
+    true)
+  (define-fun y15 () Bool
+    true)
+  (define-fun x24 () Bool
+    true)
+  (define-fun y4 () Bool
+    true)
+  (define-fun y16 () Bool
+    true)
+  (define-fun x13 () Bool
+    true)
+  (define-fun y13 () Bool
+    true)
+  (define-fun y25 () Bool
+    true)
+  (define-fun x4 () Bool
+    true)
+  (define-fun x16 () Bool
+    true)
+  (define-fun x3 () Bool
+    true)
+)

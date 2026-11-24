@@ -1,0 +1,16 @@
+$ mcdc analyze (A and B) or (not A and C) --format truth-csv
+[exit 0]
+--- stdout ---
+decision,requirement,row,A,B,C,outcome,feasible,in_suite,demonstrates,concrete_values
+REQ,,V1,T,T,T,T,T,F,,
+REQ,,V2,T,T,F,T,T,T,A#1; B,
+REQ,,V3,T,F,T,F,T,T,B; A#2,
+REQ,,V4,T,F,F,F,T,F,,
+REQ,,V5,F,T,T,T,T,F,,
+REQ,,V6,F,T,F,F,T,T,A#1; C,
+REQ,,V7,F,F,T,T,T,T,A#2; C,
+REQ,,V8,F,F,F,F,T,F,,
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

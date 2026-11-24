@@ -1,0 +1,6 @@
+(set-logic ALL)
+(define-fun f ((A Bool) (B Bool) (C Bool)) Bool (or (and (or (and A (not B)) (and (not A) B)) (not C)) (and (not (or (and A (not B)) (and (not A) B))) C)))
+(define-fun g ((A Bool) (B Bool) (C Bool)) Bool (xor (xor A B) C))
+(declare-const A Bool)(declare-const B Bool)(declare-const C Bool)
+(assert (not (= (f A B C) (g A B C))))
+(check-sat)

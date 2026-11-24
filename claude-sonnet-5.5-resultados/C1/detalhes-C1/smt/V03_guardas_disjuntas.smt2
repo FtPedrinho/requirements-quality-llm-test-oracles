@@ -1,0 +1,5 @@
+(set-logic ALL)
+(declare-const coin Bool)
+(assert coin)
+(assert (not coin))
+(check-sat)

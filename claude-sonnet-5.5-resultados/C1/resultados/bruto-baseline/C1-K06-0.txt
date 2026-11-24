@@ -1,0 +1,21 @@
+$ mcdc check (A and B) or C --tests C:\Users\User\AppData\Local\Temp\tmphyb5zcel\k06.csv
+[exit 2]
+--- stdout ---
+Decisão:   REQ
+Guarda:    (A and B) or C
+Testes:    3
+  R1 = V2  TTF  -> T
+  R2 = V6  FTF  -> F
+  R3 = V4  TFF  -> F
+
+Condições:
+  A: demonstrada por R1 (T) e R2 (F)
+  B: demonstrada por R1 (T) e R3 (F)
+  C: falta; acrescente V3 (TFT -> T)
+
+Resultados de condição demonstrados: 5 de 6 (83,3%)
+Cobertura MC/DC: incompleta, 2 de 3 condições demonstradas
+
+--- stderr ---
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:/Users/User/.m2/repository/org/jacoco/org.jacoco.agent/0.8.16/org.jacoco.agent-0.8.16-runtime.jar=destfile=C:/Users/User/requirements-quality-llm-test-oracles/claude-sonnet-5.5-resultados/C1/resultados/jacoco.exec,append=true
+

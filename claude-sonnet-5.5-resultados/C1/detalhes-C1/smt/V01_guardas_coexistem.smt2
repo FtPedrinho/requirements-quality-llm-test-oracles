@@ -1,0 +1,5 @@
+(set-logic ALL)
+(declare-const coin Bool)(declare-const mode_idle Bool)
+(assert coin)
+(assert mode_idle)
+(check-sat)
