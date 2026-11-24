@@ -38,7 +38,7 @@ Cobertura total final por módulo, em branches cobertos/total:
 | C3 | 140/411 | 82/162 | 0/386 | 101/337 |
 | C4 | 10/411 | 52/162 | 102/386 | 0/337 |
 
-O detalhamento C0 foi obtido do [XML acumulado final](../resultados-llm/experimentos/C0/reinicio-2026-11-21/combinado2-jacoco.xml);
+O detalhamento C0 foi obtido do [XML acumulado final](C0/detalhes-C0/evidencias-originais/combinado2-jacoco.xml);
 os demais estão nos relatórios ou evidências de cada condição.
 
 ## 2. Testes e classificações comparados
@@ -59,6 +59,10 @@ Em C3, os 15 grupos de conflito não são testes completos nem devem ser
 somados aos 30 casos como testes adicionais. Em C4, as oito falhas brutas
 incluem seis para as quais não se descartou `unknown` técnico; somente duas
 divergências são conclusivas.
+
+As taxas adicionais abaixo são indicadores históricos preservados nesta
+comparação; não são métricas exigidas pelo protocolo atual e não substituem
+as contagens acima.
 
 | Experimento | Executabilidade | Aprovação | Indeterminação | Conformidade documental | Divergência documentação–SUT |
 |---|---:|---:|---:|---:|---:|

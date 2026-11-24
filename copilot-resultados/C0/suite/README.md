@@ -10,7 +10,7 @@ Os executores, entradas, evidências Z3, classes Java compiladas e executável
 Z3 usado nas extensões estão nesta pasta.
 O [manifesto da cópia](manifesto-copia.txt) contém os hashes dos arquivos
 copiados. Os congelamentos, resultados brutos e demais evidências originais
-permanecem no [experimento original](../../../resultados-llm/experimentos/C0/reinicio-2026-11-21/);
+permanecem nas [evidências originais](../detalhes-C0/evidencias-originais/);
 o [relatório C0](../C0-copilot.md) registra os resultados e limitações.
 Em particular, não houve cegamento contextual integral.
 
@@ -22,7 +22,9 @@ diretório; recusam sobrescrever resultados já existentes. Usam Python e Java
 indicados em `executar-baseline.py`. As extensões usam o Z3 local copiado.
 O comando `--run` usa as classes copiadas. Após a realocação desta pasta,
 o comando `--compile` do executor preservado não localiza corretamente as
-fontes do SUT; para recompilar, use o executor no experimento original.
+fontes do SUT. Para recompilar sem alterar as evidências, use uma cópia do
+executor original e de seus insumos em um workspace separado, com a mesma
+profundidade de diretórios em relação à raiz do repositório.
 Para executar, a partir da raiz do repositório, em PowerShell:
 
 ```powershell

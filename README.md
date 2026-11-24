@@ -4,8 +4,8 @@ Esta pesquisa estuda como clareza e consistência da documentação técnica inf
 
 - **Protocolo e condições:** [experimentacao-pesquisa/](experimentacao-pesquisa/)
 - **Relatórios e suítes do Copilot:** [copilot-resultados/](copilot-resultados/)
-- **Evidências complementares do C0 oficial:** [resultados-llm/](resultados-llm/)
 - **Documentos de contexto e inventários:** [research/](research/)
+- **Documentação do produto e acesso aos seus arquivos:** [research/](research/README.md#acesso-aos-arquivos-do-produto)
 - **Fontes experimentais C0-C4:** [protocolo e fontes](experimentacao-pesquisa/protocolo/metodologia.md)
 
 O conjunto de resultados do Copilot é adotado como a primeira coleta da

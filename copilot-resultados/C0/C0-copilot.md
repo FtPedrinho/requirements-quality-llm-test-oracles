@@ -6,7 +6,7 @@ limitações da execução.
 
 Após a realocação do relatório, os links abaixo foram atualizados. Os
 manifestos originais preservam os hashes e caminhos registrados à época;
-o [registro da atualização](detalhes-C0/atualizacao-links.txt) identifica esta versão.
+o [registro da reorganização](detalhes-C0/reorganizacao.md) descreve os ajustes.
 
 ## Limitação crítica de isolamento
 
@@ -29,13 +29,13 @@ Fonte normativa exclusiva:
 [documentação original](../../experimentacao-pesquisa/documentacao-original/tool-readme-original.md),
 SHA-256 `72B827BDEE6CE859527765CFF574A473519C00A1AF9AA9F3AACCE4236A4995F8`.
 Prompt operacional
-[v2](../../resultados-llm/prompts/geracao-de-oraculos-v2.md), SHA-256
+[v2](detalhes-C0/evidencias-originais/prompt-v2.md), SHA-256
 `A89A9F10E579B0189AB83CD845A42764637AB6754BD28D2E567D8D6A6B401E3F`;
 [metodologia da pesquisa](../../experimentacao-pesquisa/protocolo/metodologia.md), SHA-256 na execução
 `10FC0B6BBA977B514065511DEBB075FAC1FA42FB7EA5072EA2B3BC619B1F3CB7`.
-Foi registrado o [pedido integral](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/pedido-integral.md)
+Foi registrado o [pedido integral](detalhes-C0/evidencias-originais/pedido-integral.md)
 e uma cópia integral do prompt operacional. A
-[resposta final](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/resposta-integral.md)
+[resposta final](detalhes-C0/evidencias-originais/resposta-integral.md)
 também foi preservada.
 
 Análise, citações, regras, omissões e oráculos do baseline foram congelados
@@ -76,7 +76,7 @@ executados; indeterminados não foram executados. Esta é a melhor cobertura
 observada nesta busca, não uma máxima global. Permaneceram 449 branches não
 cobertos, incluindo caminhos sem expectativa textual única; exemplos
 registrados em
-[indeterminados pós-cobertura](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/indeterminados-pos-cobertura.json).
+[indeterminados pós-cobertura](detalhes-C0/evidencias-originais/indeterminados-pos-cobertura.json).
 Não foi feita busca exaustiva de todos os comportamentos documentados.
 
 ## Contagens e taxas
@@ -121,25 +121,25 @@ e usada localmente apenas nos subprocessos da extensão. A distribuição,
 executável e DLL estão preservados e têm hashes no manifesto. O binário
 baixado não teve assinatura ou hash oficial independente verificado.
 O hash das fontes e dependências usadas na compilação está em
-[`compilacao.json`](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/compilacao.json).
+[`compilacao.json`](detalhes-C0/evidencias-originais/compilacao.json).
 
 Artefatos da rodada em
-[reinicio-2026-11-21](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/):
-[análise](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/analise-documental.md),
-[oráculos](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/oraculos.json),
-[evidências Z3](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/z3-evidencias.json),
-[congelamento documental](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/congelamento-documental.txt),
-[congelamento baseline](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/congelamento-baseline.txt),
-[congelamento extensão 1](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/congelamento-extensao.txt)
-e [extensão 2](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/congelamento-extensao2.txt).
-O [manifesto final](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/manifesto-final.txt)
+[evidências originais](detalhes-C0/evidencias-originais/):
+[análise](detalhes-C0/evidencias-originais/analise-documental.md),
+[oráculos](detalhes-C0/evidencias-originais/oraculos.json),
+[evidências Z3](detalhes-C0/evidencias-originais/z3-evidencias.json),
+[congelamento documental](detalhes-C0/evidencias-originais/congelamento-documental.txt),
+[congelamento baseline](detalhes-C0/evidencias-originais/congelamento-baseline.txt),
+[congelamento extensão 1](detalhes-C0/evidencias-originais/congelamento-extensao.txt)
+e [extensão 2](detalhes-C0/evidencias-originais/congelamento-extensao2.txt).
+O [manifesto final](detalhes-C0/evidencias-originais/manifesto-final.txt)
 registra hashes das evidências e das versões do relatório e índice anteriores
 à adoção oficial. Os hashes posteriores à adoção estão no
-[registro de adoção](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/adocao-oficial.txt).
+[registro de adoção](detalhes-C0/evidencias-originais/adocao-oficial.txt).
 Resultados individuais e saídas estão em
-[baseline](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/baseline-resultados.json),
-[extensão 1](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/extension-resultados.json)
-e [extensão 2](../../resultados-llm/experimentos/C0/reinicio-2026-11-21/extension2-resultados.json);
+[baseline](detalhes-C0/evidencias-originais/baseline-resultados.json),
+[extensão 1](detalhes-C0/evidencias-originais/extension-resultados.json)
+e [extensão 2](detalhes-C0/evidencias-originais/extension2-resultados.json);
 execuções `check` preservam hash de stdout e resultados pertinentes, não
 as métricas adicionais da ferramenta. Dados instrumentados e relatórios
 XML de cada rodada e agregados estão no mesmo diretório. A reprodução
