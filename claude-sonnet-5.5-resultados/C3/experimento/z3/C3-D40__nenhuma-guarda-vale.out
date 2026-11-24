@@ -1,0 +1,7 @@
+sat
+(
+  (define-fun mode () Modo
+    off)
+  (define-fun coin () Bool
+    false)
+)

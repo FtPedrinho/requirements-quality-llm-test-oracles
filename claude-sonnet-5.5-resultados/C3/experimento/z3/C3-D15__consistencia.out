@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun semPar () Int
+    1)
+)

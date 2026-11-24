@@ -1,0 +1,4 @@
+2ea6922970a0e2a690d80a5e30c0b4658d228128e296ca31963cc6e42266cbcd *resultados/rodada-01-baseline/junit.xml
+7a31c105a76378b1727a25781733eb79a7203089ff960b870e285d493f8d3a22 *resultados/rodada-01-baseline/jacoco.exec
+8364fc8142cc7e598f0e628d5515c7481b078ea651a652eab9eda32a662295fb *resultados/rodada-01-baseline/jacoco.csv
+f64abdfa823b11d5fd173fdf53256cf85550e03f554529f69c675b8cc0bee117 *resultados/rodada-01-baseline/pytest-bruto.txt

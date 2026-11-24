@@ -1,0 +1,16 @@
+; Caso C3-D34 - par-A
+; Resposta esperada da formula: sat
+(set-logic QF_UF)
+(define-fun f ((A Bool) (B Bool) (C Bool)) Bool (or (and A B) C))
+(declare-const a_A Bool)
+(declare-const b_A Bool)
+(declare-const a_B Bool)
+(declare-const b_B Bool)
+(declare-const a_C Bool)
+(declare-const b_C Bool)
+(assert (= a_B b_B))
+(assert (= a_C b_C))
+(assert (not (= a_A b_A)))
+(assert (not (= (f a_A a_B a_C) (f b_A b_B b_C))))
+(check-sat)
+(get-model)

@@ -1,0 +1,386 @@
+# -*- coding: utf-8 -*-
+"""Suite C3 (baseline): um teste por caso DETERMINADO de experimento/oraculo.json.
+Expectativas vem exclusivamente do oraculo congelado (documentacao C3); nunca do comportamento do SUT.
+Os casos INDETERMINADOS (C3-I01..I24) nao sao executados.
+"""
+import json
+import os
+import re
+import tempfile
+
+import pytest
+
+from c3util import (RAIZ, assinatura, cronometrar, d1, dado, decisoes, mcdc, mcdc_json, rel,
+                    tudo_demonstrado, vetores_suite)
+
+SEIS = {"ORF", "ENF", "VNF", "MVF", "VRF", "ASF"}
+
+
+def _sistema(nome, *extra):
+    return mcdc_json("analyze", "--json", "exemplos/%s-decisoes.json" % nome, "--z3", *extra)
+
+
+def _soma(sistema, *extra):
+    ds = _sistema(sistema, *extra)["decisions"]
+    return ds
+
+
+# ------------------------------------------------------------------ operadores
+def test_C3_D01_formas_e_nao():
+    base = None
+    for expr in ("A and not B", "A && !B", "A /\\ !B"):
+        x = d1(expr)
+        assert len(x["conditions"]) == 2
+        assert x["truthTableRows"] == 4
+        assert len(x["minimalSuite"]) == 3
+        tudo_demonstrado(x)
+        a = assinatura(x)
+        base = base or a
+        assert a == base
+    return None
+
+
+def test_C3_D02_formas_ou():
+    base = None
+    for expr in ("A or B", "A || B", "A \\/ B"):
+        x = d1(expr)
+        assert len(x["conditions"]) == 2
+        assert x["truthTableRows"] == 4
+        tudo_demonstrado(x)
+        a = assinatura(x)
+        base = base or a
+        assert a == base
+
+
+def test_C3_D03_operadores_de_comparacao():
+    for op in ("=", "==", "!=", "<", "<=", ">", ">="):
+        x = d1("speed %s 100" % op)
+        assert len(x["conditions"]) == 1, op
+
+
+def test_C3_D04_precedencia_e_antes_de_ou():
+    a = d1("A or B and C")
+    b = d1("A or (B and C)")
+    assert assinatura(a) == assinatura(b)
+
+
+# ---------------------------------------------------------------------- motor
+def test_C3_D05_abc_mascaramento():
+    x = d1("(A and B) or C")
+    assert len(x["conditions"]) == 3
+    assert x["truthTableRows"] == 8
+    assert len(x["minimalSuite"]) == 4
+    tudo_demonstrado(x)
+
+
+def test_C3_D06_abc_causa_unica():
+    x = d1("(A and B) or C", "--unique-cause")
+    assert len(x["conditions"]) == 3
+    assert x["truthTableRows"] == 8
+    tudo_demonstrado(x)
+
+
+def test_C3_D07_entrada_repetida_tem_8_combinacoes():
+    x = d1("(A and B) or (not A and C)")
+    assert x["truthTableRows"] == 8
+
+
+def test_C3_D08_suite_exata_abc():
+    x = d1("(A and B) or C", "--exact")
+    assert len(x["minimalSuite"]) == 4
+    tudo_demonstrado(x)
+
+
+def test_C3_D09_restricao_manual():
+    x = d1("A or (B and C)", "--constraint", "not A or B")
+    inviaveis = [r for r in x["truthTable"] if not r["feasible"]]
+    assert len(x["truthTable"]) == 8
+    assert len(inviaveis) == 2
+    assert {(r["values"]["A"], r["values"]["B"]) for r in inviaveis} == {(True, False)}
+    ids = {r["vector"] for r in inviaveis}
+    usados = {v["vector"] for v in x["minimalSuite"]}
+    for pares in x["independencePairs"].values():
+        for p in pares:
+            usados.update(p)
+    assert ids.isdisjoint(usados)
+
+
+# ------------------------------------------------------------------------ Z3
+def _boundary(x):
+    return {(b["condition"], b["boundary"]) for b in x["boundaryTests"]}
+
+
+def test_C3_D10_fronteira_speed_100():
+    x = d1("speed > 100 /\\ mode = idle", "--z3", "--boundary")
+    b = _boundary(x)
+    assert ("speed > 100", "speed = 100") in b
+    assert ("speed > 100", "speed = 101") in b
+
+
+def test_C3_D11_fronteiras_de_duas_comparacoes():
+    x = d1("speed > 100 or (speed > 50 and rain)", "--z3", "--boundary")
+    b = _boundary(x)
+    for c, v in (("speed > 100", "100"), ("speed > 100", "101"), ("speed > 50", "50"), ("speed > 50", "51")):
+        assert (c, "speed = " + v) in b, (c, v, sorted(b))
+
+
+def test_C3_D12_valores_concretos_realizam_a_combinacao():
+    x = d1("speed > 100 /\\ mode = idle", "--z3")
+    assert x["minimalSuite"]
+    for t in x["minimalSuite"]:
+        a = t["assignment"]
+        assert (int(a["speed"]) > 100) == t["values"]["speed > 100"]
+        assert (a["mode"] == "idle") == t["values"]["mode = idle"]
+        assert t["outcome"] == (t["values"]["speed > 100"] and t["values"]["mode = idle"])
+
+
+# ------------------------------------------------------------------ mutacao
+def _faltas(x):
+    m = x["mutation"]
+    assert m, "sem resultado de mutacao"
+    return m
+
+
+def test_C3_D13_mutacao_estrutura_e_contagem():
+    m = _faltas(d1("A and (B or C)", "--mutation"))
+    assert set(m["faults"]) <= SEIS
+    total = sum(f["total"] for f in m["faults"].values())
+    equiv = sum(f["equivalent"] for f in m["faults"].values())
+    mortos = sum(f["killed"] for f in m["faults"].values())
+    assert total > 0
+    assert mortos + len(m["survivors"]) == total - equiv
+
+
+def test_C3_D14_causa_unica_mata_mutantes_garantidos():
+    m = _faltas(d1("A and (B or C)", "--unique-cause", "--mutation"))
+    for tipo, f in m["faults"].items():
+        if tipo != "ASF":
+            assert f["killed"] == f["total"] - f["equivalent"], tipo
+    assert [s for s in m["survivors"] if not s.startswith("ASF")] == []
+
+
+# ----------------------------------------------------------------- exemplos
+def test_C3_D15_req003_uma_condicao_sem_par():
+    ds = {x["id"]: x for x in decisoes("-f", "exemplos/requisitos.mcdc")}
+    assert len(ds["REQ-003"]["uncoveredConditions"]) == 1, ds["REQ-003"]["uncoveredConditions"]
+
+
+def _regressao(sistema, req, completos, comb, imp, testes):
+    ds = _soma(sistema)
+    assert len(ds) == req
+    assert sum(1 for x in ds if x["complete"]) == completos
+    assert sum(x["truthTableRows"] for x in ds) == comb
+    assert sum(1 for x in ds for r in x["truthTable"] if not r["feasible"]) == imp
+    assert sum(len(x["minimalSuite"]) for x in ds) == testes
+
+
+def test_C3_D16_regressao_vm():
+    _regressao("vm", 5, 5, 152, 4, 26)
+
+
+def test_C3_D17_regressao_tis():
+    _regressao("tis", 17, 14, 268, 4, 80)
+
+
+def test_C3_D18_regressao_npp():
+    _regressao("npp", 11, 11, 76, 1, 40)
+
+
+def _mutacao(sistema, tot, eq, pegos):
+    ds = _soma(sistema, "--mutation")
+    faltas = [f for x in ds for f in x["mutation"]["faults"].values()]
+    assert (sum(f["total"] for f in faltas), sum(f["equivalent"] for f in faltas),
+            sum(f["killed"] for f in faltas)) == (tot, eq, pegos)
+
+
+def test_C3_D19_mutacao_vm():
+    _mutacao("vm", 152, 0, 152)
+
+
+def test_C3_D20_mutacao_tis():
+    _mutacao("tis", 450, 21, 428)
+
+
+def test_C3_D21_mutacao_npp():
+    _mutacao("npp", 146, 0, 146)
+
+
+def _testes(sistema, n):
+    for flag in ("--exact", "--unique-cause"):
+        ds = _soma(sistema, flag)
+        assert sum(len(x["minimalSuite"]) for x in ds) == n, flag
+
+
+def test_C3_D22_exata_e_causa_unica_vm():
+    _testes("vm", 26)
+
+
+def test_C3_D23_exata_e_causa_unica_tis():
+    _testes("tis", 80)
+
+
+def test_C3_D24_exata_e_causa_unica_npp():
+    _testes("npp", 40)
+
+
+def _conflitos(sistema, n):
+    d = mcdc_json("verify", "--json", "exemplos/%s-decisoes.json" % sistema)
+    assert len(d["conflicts"]) == n
+
+
+def test_C3_D25_conflitos_vm():
+    _conflitos("vm", 0)
+
+
+def test_C3_D26_conflitos_tis():
+    _conflitos("tis", 3)
+
+
+def test_C3_D27_conflitos_npp():
+    _conflitos("npp", 1)
+
+
+def test_C3_D28_modo_direto_concorda_com_a_tabela():
+    tab = {x["id"]: x for x in _soma("vm")}
+    d = mcdc_json("analyze", "--json", "exemplos/vm-decisoes.json", "--direct")["decisions"]
+    assert len(d) == len(tab)
+    for x in d:
+        t = tab[x["id"]]
+        assert x["uncoveredConditions"] == t["uncoveredConditions"]
+        assert sorted(x["chosenPairs"]) == sorted(t["chosenPairs"])
+        assert x["complete"] == t["complete"]
+
+
+# ------------------------------------------------------------------- saidas
+def test_C3_D29_json_liga_decisao_ao_requisito():
+    entrada = json.load(open(os.path.join(RAIZ, "exemplos", "vm-decisoes.json"), encoding="utf-8"))
+    esperado = {d["id"]: d["requirement"] for d in entrada["decisions"]}
+    ds = mcdc_json("analyze", "--json", "exemplos/vm-decisoes.json")["decisions"]
+    assert {x["id"]: x["requirement"] for x in ds} == esperado
+
+
+def test_C3_D30_opcao_o_grava_arquivo():
+    with tempfile.TemporaryDirectory() as td:
+        arq = os.path.join(td, "rel.txt")
+        rc, out, err = mcdc("analyze", "A and B", "-o", arq)
+        assert os.path.isfile(arq)
+        conteudo = open(arq, encoding="utf-8").read()
+        assert "Suíte" in conteudo
+        assert "Suíte" not in out and "Vetor" not in out
+
+
+def test_C3_D31_arquivo_mcdc_com_comentarios():
+    ds = decisoes("-f", rel("dois-requisitos.mcdc"))
+    assert [x["id"] for x in ds] == ["REQ-001", "REQ-002"]
+
+
+def _recusa(*args):
+    rc, out, err = mcdc(*args)
+    assert "Suíte" not in out and "Vetor" not in out
+    assert "Erro" in err or "Erro" in out
+
+
+def test_C3_D32_expressoes_invalidas_recusadas():
+    for e in ("A and", "(A and B", "A and and B"):
+        _recusa("analyze", e)
+
+
+def test_C3_D33_erro_de_sintaxe_cita_o_requisito():
+    rc, out, err = mcdc("analyze", "-f", rel("erro-sintaxe.mcdc"))
+    assert "REQ-002" in (out + err)
+
+
+# --------------------------------------------------------------------- check
+def _check(csv):
+    d = mcdc_json("check", "--json", rel("decisao-abc.json"), "--tests", rel(csv))
+    return d["decisions"][0]
+
+
+def test_C3_D34_check_suite_completa():
+    x = _check("testes-completo.csv")
+    assert x["conditionsDemonstrated"] == 3 and x["conditionsTotal"] == 3
+    assert x["problems"] == []
+    assert all(c["demonstrated"] for c in x["conditions"])
+
+
+def test_C3_D35_check_esperado_errado_apontado():
+    x = _check("testes-esperado-errado.csv")
+    assert len(x["problems"]) == 1 and x["problems"][0].startswith("T1:")
+
+
+def test_C3_D36_check_condicao_faltando():
+    x = _check("testes-incompleto.csv")
+    dem = {c["condition"]: c["demonstrated"] for c in x["conditions"]}
+    assert dem == {"A = true": True, "B = true": True, "C = true": False}
+    assert x["conditionsDemonstrated"] == 2
+
+
+# -------------------------------------------------------------------- verify
+def _verify(arq, *extra):
+    return mcdc_json("verify", "--json", rel(arq), *extra)
+
+
+def test_C3_D37_verify_conflito():
+    d = _verify("verify-conflito.json")
+    assert len(d["conflicts"]) == 1
+    assert {d["conflicts"][0]["firstRequirement"], d["conflicts"][0]["secondRequirement"]} == {"R1", "R2"}
+
+
+def test_C3_D38_verify_mesmo_valor_sem_conflito():
+    assert _verify("verify-mesmo-valor.json")["conflicts"] == []
+
+
+def test_C3_D39_verify_guardas_disjuntas():
+    assert _verify("verify-disjuntas.json")["conflicts"] == []
+
+
+def test_C3_D40_verify_lacuna_com_contexto():
+    d = _verify("verify-disjuntas.json", "--context", "mode = off")
+    assert d["gaps"]["checked"] is True and d["gaps"]["found"] is True
+
+
+def test_C3_D41_verify_sem_lacuna_quando_guarda_vale():
+    d = _verify("verify-disjuntas.json", "--context", "mode = idle")
+    assert d["gaps"]["checked"] is True and d["gaps"]["found"] is False
+
+
+def test_C3_D42_verify_sem_contexto_nao_relata_lacunas():
+    d = _verify("verify-disjuntas.json")
+    assert d["gaps"]["found"] is False
+
+
+# -------------------------------------------------------------------- limites
+def test_C3_D43_vinte_entradas():
+    expr = " and ".join("X%d" % i for i in range(1, 21))
+    base, _ = cronometrar("analyze", "A and B")
+    dt, (rc, out, err) = cronometrar("analyze", expr)
+    assert "1048576 linhas" in out
+    assert "Cobertura MC/DC: completa" in out
+    assert len(re.findall(r"só ela muda", out)) == 20
+    assert dt - base < 5.0, "tempo %.2fs (partida da JVM %.2fs)" % (dt, base)
+
+
+def test_C3_D44_vinte_e_uma_entradas_recusadas():
+    expr = " and ".join("X%d" % i for i in range(1, 22))
+    _recusa("analyze", expr)
+
+
+def test_C3_D45_guarda_temporal_antes():
+    x = d1("--json", rel("temporal.json"))
+    assert len(x["conditions"]) == 2
+
+
+def test_C3_D46_numero_negativo():
+    x = d1("x > -3 and y < 2")
+    assert len(x["conditions"]) == 2
+
+
+def test_C3_D47_check_e_verify_aceitam_json():
+    json.loads(mcdc("check", "--json", rel("decisao-abc.json"), "--tests", rel("testes-completo.csv"), "--format", "json")[1])
+    json.loads(mcdc("verify", "--json", rel("verify-conflito.json"), "--format", "json")[1])
+
+
+def test_C3_D48_json_invalido_recusado():
+    rc, out, err = mcdc("analyze", "--json", rel("invalido.json"))
+    assert "Suíte" not in out and "Vetor" not in out
+    assert "Erro" in err or "Erro" in out

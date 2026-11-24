@@ -1,0 +1,1791 @@
+{
+  "condicao": "C3",
+  "fonte": "experimentacao-pesquisa/experimentacao-3/documentation/tool-readme-C3.md",
+  "sha256": "F18B0821D79C7315486C13D5260FA2F6D6E9418EF03B86CDE58E66B91B7B87A3",
+  "unidade": "um caso do oraculo = um teste",
+  "resumo": {
+    "determinados": 48,
+    "indeterminados": 24
+  },
+  "casos": [
+    {
+      "id": "C3-D01",
+      "status": "DETERMINADO",
+      "titulo": "Formas aceitas de 'e' e 'nao' (A e nao B)",
+      "secao": "operadores",
+      "entrada": [
+        "analyze \"A and not B\"",
+        "analyze \"A && !B\"",
+        "analyze 'A /\\ !B'"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "e | `and`, `&&`, `/\\`",
+        "não | `not`, `!`",
+        "`MinimalSuiteTest` | 4 | Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes, A ∧ ¬B com 3)"
+      ],
+      "regra": "Operadores equivalentes; A ∧ ¬B tem suite de 3 testes.",
+      "expectativa": "As tres formas sao aceitas e produzem a mesma analise: 2 condicoes, 4 combinacoes na tabela-verdade, suite de 3 testes, ambas as condicoes demonstradas por um par e nenhuma sem par.",
+      "justificativa": "Os tres operadores sao listados como formas aceitas; o numero 3 vem do exemplo conhecido A ∧ ¬B.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D01__min-suite-2-insat.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D01__min-suite-3-sat.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D02",
+      "status": "DETERMINADO",
+      "titulo": "Formas aceitas de 'ou'",
+      "secao": "operadores",
+      "entrada": [
+        "analyze \"A or B\"",
+        "analyze \"A || B\"",
+        "analyze 'A \\/ B'"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "ou | `or`, `\\|\\|`, `\\/`"
+      ],
+      "regra": "Operadores equivalentes.",
+      "expectativa": "As tres formas sao aceitas e produzem a mesma analise: 2 condicoes, 4 combinacoes, ambas as condicoes demonstradas, nenhuma sem par, mesma quantidade de testes entre as formas.",
+      "justificativa": "Formas listadas como equivalentes na tabela de operadores.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D02__par-A.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D02__par-B.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D03",
+      "status": "DETERMINADO",
+      "titulo": "Operadores de comparacao aceitos",
+      "secao": "operadores",
+      "entrada": [
+        "analyze \"speed OP 100\" para OP em =, ==, !=, <, <=, >, >="
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| comparação | `=`, `==`, `!=`, `<`, `<=`, `>`, `>=` |"
+      ],
+      "regra": "Lista de comparacoes aceitas.",
+      "expectativa": "Cada uma das sete comparacoes e aceita e gera analise de uma decisao com 1 condicao.",
+      "justificativa": "A tabela de operadores lista as sete formas como aceitas; uma comparacao isolada e uma unica condicao (entrada distinta unica, sem repeticao).",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D03__comparacoes-sat-e-falsificaveis.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D04",
+      "status": "DETERMINADO",
+      "titulo": "Precedencia: 'e' antes de 'ou'",
+      "secao": "parser",
+      "entrada": [
+        "analyze \"A or B and C\"",
+        "analyze \"A or (B and C)\""
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `ExpressionParserTest` | 9 | Precedência (e antes de ou), parênteses, comparações, operadores do DFRS; expressões inválidas recusadas |"
+      ],
+      "regra": "A or B and C e A or (B and C) sao a mesma decisao.",
+      "expectativa": "As duas entradas produzem analises identicas (mesma tabela-verdade: saidas por linha, mesmos pares e mesma quantidade de testes).",
+      "justificativa": "Precedencia declarada: 'e' antes de 'ou'. O Z3 mostra que o agrupamento alternativo seria uma decisao diferente (testemunha).",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D04__agrupamento-alternativo-difere.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D05",
+      "status": "DETERMINADO",
+      "titulo": "(A and B) or C, mascaramento (padrao)",
+      "secao": "motor",
+      "entrada": [
+        "analyze \"(A and B) or C\""
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "./mcdc analyze \"(A and B) or C\"",
+        "`MinimalSuiteTest` | 4 | Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes, A ∧ ¬B com 3)",
+        "1. tabela-verdade: para as entradas distintas da expressão, são consideradas as 2ⁿ combinações"
+      ],
+      "regra": "Tabela com 2^3 linhas; suite de 4 testes; um par que demonstra cada condicao.",
+      "expectativa": "3 condicoes, 8 combinacoes, suite de 4 testes; cada uma das 3 condicoes tem par que a demonstra; nenhuma condicao sem par.",
+      "justificativa": "Numero de testes dado pelo exemplo conhecido; 2^n com n=3 entradas distintas.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D05__min-suite-3-insat.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D05__min-suite-4-sat.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D05__par-A.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D05__par-B.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D05__par-C.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D06",
+      "status": "DETERMINADO",
+      "titulo": "(A and B) or C com --unique-cause",
+      "secao": "motor",
+      "entrada": [
+        "analyze \"(A and B) or C\" --unique-cause"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "As duas variantes de MC/DC são suportadas: **mascaramento** (padrão) e **causa única** (`--unique-cause`).",
+        "todo par de causa única vale em mascaramento"
+      ],
+      "regra": "Variante causa unica aceita; cada condicao demonstrada.",
+      "expectativa": "A variante e aceita; 3 condicoes, 8 combinacoes; cada uma das 3 condicoes demonstrada por par e nenhuma sem par.",
+      "justificativa": "A decisao admite par de causa unica para cada condicao (testemunhas Z3). Tamanho da suite nao e afirmado (ver I23).",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D06__par-A.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D06__par-B.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D06__par-C.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D07",
+      "status": "DETERMINADO",
+      "titulo": "Entrada repetida: (A and B) or (not A and C) tem 3 entradas distintas",
+      "secao": "motor",
+      "entrada": [
+        "analyze \"(A and B) or (not A and C)\""
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "em `(A and B) or (not A and C)`, há 3 entradas distintas (`A`, `B` e `C`)",
+        "para as entradas distintas da expressão, são consideradas as 2ⁿ combinações"
+      ],
+      "regra": "A tabela-verdade usa as entradas distintas: 2^3 linhas.",
+      "expectativa": "A analise e concluida e a tabela-verdade tem 8 combinacoes. (A quantidade de condicoes NAO e afirmada: ver I01.)",
+      "justificativa": "Ambas as leituras do texto concordam em 3 entradas distintas e a tabela e sobre entradas distintas.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D07__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D08",
+      "status": "DETERMINADO",
+      "titulo": "Suite exata de (A and B) or C",
+      "secao": "z3",
+      "entrada": [
+        "analyze \"(A and B) or C\" --exact"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `--exact` | Suíte exata: a menor possível, escolhida pelo Z3 |",
+        "`MinimalSuiteTest` | 4 | ... (A ∧ B) ∨ C com 4 testes"
+      ],
+      "regra": "Com --exact a suite tem o minimo; para esta decisao o minimo e 4 (e tambem o resultado da heuristica).",
+      "expectativa": "A analise e concluida com suite de 4 testes e as 3 condicoes demonstradas.",
+      "justificativa": "Tanto a leitura 'menor possivel' quanto a leitura 'mesma heuristica' (L303) levam a 4 para esta decisao; nao ha conflito observavel neste caso.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D08__min-suite-3-insat.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D08__min-suite-4-sat.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D09",
+      "status": "DETERMINADO",
+      "titulo": "Restricao manual --constraint",
+      "secao": "restricao",
+      "entrada": [
+        "analyze \"A or (B and C)\" --constraint \"not A or B\""
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "# restrição escrita à mão: A = speed > 100 implica B = speed > 50",
+        "./mcdc analyze \"A or (B and C)\" --constraint \"not A or B\"",
+        "`TruthTableTest` | 8 | Uma linha por combinação; ... restrições",
+        "linhas impossíveis nunca entram"
+      ],
+      "regra": "Linhas que violam a restricao sao impossiveis e nunca entram em pares/testes.",
+      "expectativa": "Das 8 combinacoes, exatamente 2 sao impossiveis ((A,B,C) = (T,F,F) e (T,F,T)); nenhum teste da suite nem par usa essas linhas.",
+      "justificativa": "A restricao 'not A or B' e explicita; combinacoes que a violam sao as com A verdadeiro e B falso.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D09__linha-000.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D09__linha-001.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D09__linha-010.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D09__linha-011.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D09__linha-100.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D09__linha-101.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D09__linha-110.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D09__linha-111.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D10",
+      "status": "DETERMINADO",
+      "titulo": "Fronteira de speed > 100",
+      "secao": "z3",
+      "entrada": [
+        "analyze 'speed > 100 /\\ mode = idle' --z3 --boundary"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `--z3 --boundary` | Variações no limite de cada comparação (`speed > 100` → 100 e 101) |"
+      ],
+      "regra": "Teste de fronteira usa os valores 100 e 101 para speed > 100.",
+      "expectativa": "A analise inclui testes de fronteira com speed = 100 (comparacao falsa) e speed = 101 (comparacao verdadeira).",
+      "justificativa": "Exemplo literal do texto.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D10__fronteira-100-falso.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D10__fronteira-101-verdadeiro.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D10__virada-unica-em-100.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D11",
+      "status": "DETERMINADO",
+      "titulo": "Fronteiras de duas comparacoes sobre a mesma variavel",
+      "secao": "z3",
+      "entrada": [
+        "analyze \"speed > 100 or (speed > 50 and rain)\" --z3 --boundary"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "./mcdc analyze \"speed > 100 or (speed > 50 and rain)\" --z3 --boundary",
+        "Variações no limite de cada comparação (`speed > 100` → 100 e 101)"
+      ],
+      "regra": "Cada comparacao recebe variantes no seu limite: speed > 50 gera 50 e 51 (mesma regra do exemplo 100/101).",
+      "expectativa": "A analise inclui testes de fronteira com speed em {100, 101} e em {50, 51}.",
+      "justificativa": "'limite de cada comparacao': aplica-se a ambas as comparacoes da decisao.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D11__fronteira-50-51.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D11__fronteira-50-unica.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D12",
+      "status": "DETERMINADO",
+      "titulo": "Valores concretos realizam cada combinacao",
+      "secao": "z3",
+      "entrada": [
+        "analyze 'speed > 100 /\\ mode = idle' --z3 --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `--z3` | Usa o Z3 para descobrir combinações impossíveis e dar valores concretos",
+        "os valores concretos realizam a combinação declarada e o resultado esperado é o que a guarda dá"
+      ],
+      "regra": "Cada teste tem valores concretos que realizam a combinacao declarada; o resultado esperado e o valor da guarda.",
+      "expectativa": "Para todo teste gerado, os valores concretos de speed e mode satisfazem exatamente os valores logicos das duas condicoes do teste e o resultado esperado e a conjuncao dos dois.",
+      "justificativa": "Afirmacao literal de ReportsContentTest; cada uma das 4 combinacoes e realizavel.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D12__combinacao-00.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D12__combinacao-01.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D12__combinacao-10.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D12__combinacao-11.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D13",
+      "status": "DETERMINADO",
+      "titulo": "Mutacao: relatorio com contagem e equivalentes fora da conta",
+      "secao": "mutacao",
+      "entrada": [
+        "analyze \"A and (B or C)\" --mutation"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `--mutation` | Confere se a suíte pega versões do requisito com um defeito |",
+        "versões equivalentes ao requisito original não entram na contagem",
+        "seis tipos de defeito de Kapoor e Bowen (ORF, ENF, VNF, MVF, VRF, ASF)"
+      ],
+      "regra": "A saida traz resultado de mutacao: total de mutantes, equivalentes (excluidos da contagem) e detectados; tipos entre ORF, ENF, VNF, MVF, VRF, ASF.",
+      "expectativa": "A analise inclui resultado de mutacao com mutantes > 0; detectados + sobreviventes = total - equivalentes; so aparecem tipos dentre os seis.",
+      "justificativa": "Estrutura minima declarada no texto; nenhum numero especifico e afirmado.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D13__mutantes-nao-equivalentes.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D14",
+      "status": "DETERMINADO",
+      "titulo": "Suite de causa unica detecta mutantes dos tipos garantidos",
+      "secao": "mutacao",
+      "entrada": [
+        "analyze \"A and (B or C)\" --unique-cause --mutation"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "Suítes de causa única pegam todo defeito garantido por Kapoor e Bowen",
+        "os seis tipos de defeito"
+      ],
+      "regra": "Com causa unica, nenhum mutante nao equivalente dos tipos ORF, ENF, VNF, MVF e VRF sobrevive.",
+      "expectativa": "Zero mutantes sobreviventes (nao equivalentes) dos tipos ORF, ENF, VNF, MVF e VRF. O tipo ASF NAO e avaliado (ver I16).",
+      "justificativa": "Texto explicito; o Z3 confirma que uma suite de causa unica concreta mata mutantes representativos de cada tipo.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D14__ORF-and-no-lugar-de-or.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D14__ENF-nega-expressao.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D14__VNF-nega-variavel.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D14__MVF-omite-variavel.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D14__VRF-troca-variavel.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D15",
+      "status": "DETERMINADO",
+      "titulo": "Arquivo .mcdc de exemplo: REQ-003 tem uma condicao sem par",
+      "secao": "exemplos",
+      "entrada": [
+        "analyze -f exemplos/requisitos.mcdc"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "# vários requisitos de um arquivo; REQ-003 tem uma condição redundante",
+        "./mcdc analyze -f exemplos/requisitos.mcdc"
+      ],
+      "regra": "REQ-003 possui exatamente uma condicao sem par de independencia.",
+      "expectativa": "No resultado de REQ-003 ha exatamente 1 condicao sem par. O rotulo (redundante x bloqueada) NAO e afirmado (ver I11).",
+      "justificativa": "O comentario do exemplo afirma uma condicao redundante em REQ-003.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D15__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D16",
+      "status": "DETERMINADO",
+      "titulo": "Regressao do sistema VM (maquina de cafe): requisitos, combinacoes, impossiveis e testes",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/vm-decisoes.json --z3 --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| VM · máquina de café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |",
+        "Verifica se os resultados dos três sistemas de exemplo permanecem iguais aos valores registrados para requisitos, condições, combinações, combinações impossíveis, testes, condições sem par, mutantes (total, equivalentes e detectados) e conflitos."
+      ],
+      "regra": "Valores registrados da tabela 'Numeros travados pela regressao'.",
+      "expectativa": "5 requisitos (5 completos), 152 combinacoes, 4 combinacoes impossiveis e 26 testes na suite. (Numero de condicoes nao afirmado: ver I01.)",
+      "justificativa": "Valores explicitos; a tabela e internamente consistente com os totais do texto (33, 496, 9, 146).",
+      "valoresDoTexto": {
+        "requisitos": 5,
+        "completos": 5,
+        "combinacoes": 152,
+        "impossiveis": 4,
+        "testes": 26
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D16__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D17",
+      "status": "DETERMINADO",
+      "titulo": "Regressao do sistema TIS (pisca-pisca): requisitos, combinacoes, impossiveis e testes",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/tis-decisoes.json --z3 --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |",
+        "Verifica se os resultados dos três sistemas de exemplo permanecem iguais aos valores registrados para requisitos, condições, combinações, combinações impossíveis, testes, condições sem par, mutantes (total, equivalentes e detectados) e conflitos."
+      ],
+      "regra": "Valores registrados da tabela 'Numeros travados pela regressao'.",
+      "expectativa": "17 requisitos (14 completos), 268 combinacoes, 4 combinacoes impossiveis e 80 testes na suite. (Numero de condicoes nao afirmado: ver I01.)",
+      "justificativa": "Valores explicitos; a tabela e internamente consistente com os totais do texto (33, 496, 9, 146).",
+      "valoresDoTexto": {
+        "requisitos": 17,
+        "completos": 14,
+        "combinacoes": 268,
+        "impossiveis": 4,
+        "testes": 80
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D17__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D18",
+      "status": "DETERMINADO",
+      "titulo": "Regressao do sistema NPP (injecao de seguranca): requisitos, combinacoes, impossiveis e testes",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/npp-decisoes.json --z3 --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| NPP · injeção de segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |",
+        "Verifica se os resultados dos três sistemas de exemplo permanecem iguais aos valores registrados para requisitos, condições, combinações, combinações impossíveis, testes, condições sem par, mutantes (total, equivalentes e detectados) e conflitos."
+      ],
+      "regra": "Valores registrados da tabela 'Numeros travados pela regressao'.",
+      "expectativa": "11 requisitos (11 completos), 76 combinacoes, 1 combinacoes impossiveis e 40 testes na suite. (Numero de condicoes nao afirmado: ver I01.)",
+      "justificativa": "Valores explicitos; a tabela e internamente consistente com os totais do texto (33, 496, 9, 146).",
+      "valoresDoTexto": {
+        "requisitos": 11,
+        "completos": 11,
+        "combinacoes": 76,
+        "impossiveis": 1,
+        "testes": 40
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D18__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D19",
+      "status": "DETERMINADO",
+      "titulo": "Regressao de mutacao do sistema VM",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/vm-decisoes.json --z3 --mutation --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "mutantes (total, equivalentes e detectados)",
+        "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+      ],
+      "regra": "Valores registrados na tabela.",
+      "expectativa": "152 mutantes no total, 0 equivalentes e 152 detectados.",
+      "justificativa": "Valores explicitos na tabela; 748 - 21 = 727 detectaveis e 726 pegos (1 escapou), como diz o texto.",
+      "valoresDoTexto": {
+        "mutantes": 152,
+        "equivalentes": 0,
+        "detectados": 152
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D19__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D20",
+      "status": "DETERMINADO",
+      "titulo": "Regressao de mutacao do sistema TIS",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/tis-decisoes.json --z3 --mutation --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "mutantes (total, equivalentes e detectados)",
+        "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+      ],
+      "regra": "Valores registrados na tabela.",
+      "expectativa": "450 mutantes no total, 21 equivalentes e 428 detectados.",
+      "justificativa": "Valores explicitos na tabela; 748 - 21 = 727 detectaveis e 726 pegos (1 escapou), como diz o texto.",
+      "valoresDoTexto": {
+        "mutantes": 450,
+        "equivalentes": 21,
+        "detectados": 428
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D20__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D21",
+      "status": "DETERMINADO",
+      "titulo": "Regressao de mutacao do sistema NPP",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/npp-decisoes.json --z3 --mutation --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "mutantes (total, equivalentes e detectados)",
+        "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+      ],
+      "regra": "Valores registrados na tabela.",
+      "expectativa": "146 mutantes no total, 0 equivalentes e 146 detectados.",
+      "justificativa": "Valores explicitos na tabela; 748 - 21 = 727 detectaveis e 726 pegos (1 escapou), como diz o texto.",
+      "valoresDoTexto": {
+        "mutantes": 146,
+        "equivalentes": 0,
+        "detectados": 146
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D21__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D22",
+      "status": "DETERMINADO",
+      "titulo": "Busca exata e causa unica mantem o numero de testes (VM)",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/vm-decisoes.json --z3 --exact",
+        "analyze --json exemplos/vm-decisoes.json --z3 --unique-cause"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos."
+      ],
+      "regra": "Mesmo numero de testes que o registrado.",
+      "expectativa": "Com --exact e com --unique-cause a suite tem 26 testes.",
+      "justificativa": "Afirmacao literal combinada com a tabela de numeros travados.",
+      "valoresDoTexto": {
+        "testes": 26
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D22__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D23",
+      "status": "DETERMINADO",
+      "titulo": "Busca exata e causa unica mantem o numero de testes (TIS)",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/tis-decisoes.json --z3 --exact",
+        "analyze --json exemplos/tis-decisoes.json --z3 --unique-cause"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos."
+      ],
+      "regra": "Mesmo numero de testes que o registrado.",
+      "expectativa": "Com --exact e com --unique-cause a suite tem 80 testes.",
+      "justificativa": "Afirmacao literal combinada com a tabela de numeros travados.",
+      "valoresDoTexto": {
+        "testes": 80
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D23__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D24",
+      "status": "DETERMINADO",
+      "titulo": "Busca exata e causa unica mantem o numero de testes (NPP)",
+      "secao": "regressao",
+      "entrada": [
+        "analyze --json exemplos/npp-decisoes.json --z3 --exact",
+        "analyze --json exemplos/npp-decisoes.json --z3 --unique-cause"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "A busca exata e a variante de causa única produzem o mesmo número de testes nesses exemplos."
+      ],
+      "regra": "Mesmo numero de testes que o registrado.",
+      "expectativa": "Com --exact e com --unique-cause a suite tem 40 testes.",
+      "justificativa": "Afirmacao literal combinada com a tabela de numeros travados.",
+      "valoresDoTexto": {
+        "testes": 40
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D24__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D25",
+      "status": "DETERMINADO",
+      "titulo": "verify: conflitos do sistema VM",
+      "secao": "verify",
+      "entrada": [
+        "verify --json exemplos/vm-decisoes.json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "./mcdc verify --json exemplos/npp-decisoes.json",
+        "Conflitos (dois requisitos valem juntos e escrevem valores diferentes) e lacunas (nenhum requisito vale)"
+      ],
+      "regra": "Numero de conflitos registrado na tabela.",
+      "expectativa": "O relatorio aponta exatamente 0 conflito(s).",
+      "justificativa": "Valor explicito na coluna Conflitos; soma 0+3+1 = 4.",
+      "valoresDoTexto": {
+        "conflitos": 0
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D25__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D26",
+      "status": "DETERMINADO",
+      "titulo": "verify: conflitos do sistema TIS",
+      "secao": "verify",
+      "entrada": [
+        "verify --json exemplos/tis-decisoes.json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "./mcdc verify --json exemplos/npp-decisoes.json",
+        "Conflitos (dois requisitos valem juntos e escrevem valores diferentes) e lacunas (nenhum requisito vale)"
+      ],
+      "regra": "Numero de conflitos registrado na tabela.",
+      "expectativa": "O relatorio aponta exatamente 3 conflito(s).",
+      "justificativa": "Valor explicito na coluna Conflitos; soma 0+3+1 = 4.",
+      "valoresDoTexto": {
+        "conflitos": 3
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D26__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D27",
+      "status": "DETERMINADO",
+      "titulo": "verify: conflitos do sistema NPP",
+      "secao": "verify",
+      "entrada": [
+        "verify --json exemplos/npp-decisoes.json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "./mcdc verify --json exemplos/npp-decisoes.json",
+        "Conflitos (dois requisitos valem juntos e escrevem valores diferentes) e lacunas (nenhum requisito vale)"
+      ],
+      "regra": "Numero de conflitos registrado na tabela.",
+      "expectativa": "O relatorio aponta exatamente 1 conflito(s).",
+      "justificativa": "Valor explicito na coluna Conflitos; soma 0+3+1 = 4.",
+      "valoresDoTexto": {
+        "conflitos": 1
+      },
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D27__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D28",
+      "status": "DETERMINADO",
+      "titulo": "Modo direto concorda com a tabela",
+      "secao": "z3",
+      "entrada": [
+        "analyze --json exemplos/vm-decisoes.json --direct",
+        "analyze --json exemplos/vm-decisoes.json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `Z3DirectAnalyzerTest` | 5 | O modo direto concorda com a tabela;",
+        "| `--direct` | Pares pedidos direto ao Z3, sem montar a tabela (até 30 entradas) |"
+      ],
+      "regra": "O modo direto da a mesma cobertura e o mesmo diagnostico da tabela-verdade.",
+      "expectativa": "Para cada decisao de VM, o conjunto de condicoes com par e o conjunto de condicoes sem par coincidem entre --direct e o modo padrao.",
+      "justificativa": "Afirmacao do teste; nao depende dos limites de entradas contestados (VM tem poucas entradas).",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D29",
+      "status": "DETERMINADO",
+      "titulo": "Formato json liga a decisao ao requisito de origem",
+      "secao": "saidas",
+      "entrada": [
+        "analyze --json exemplos/vm-decisoes.json --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `json` | Resultado completo de cada decisão, ligado ao requisito de origem (formato de integração) |"
+      ],
+      "regra": "A saida json e valida e referencia o requisito de origem de cada decisao.",
+      "expectativa": "A saida e JSON valido e, para cada decisao do arquivo de entrada, contem seu identificador de requisito.",
+      "justificativa": "Linha da tabela de saidas.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D30",
+      "status": "DETERMINADO",
+      "titulo": "-o grava o relatorio em arquivo",
+      "secao": "saidas",
+      "entrada": [
+        "analyze \"A and B\" -o <arquivo>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `-o <arquivo>` | Grava o relatório no arquivo em vez de mostrar na tela |"
+      ],
+      "regra": "Relatorio vai para o arquivo e nao para a tela.",
+      "expectativa": "O arquivo e criado com o relatorio da analise e a saida padrao nao contem o relatorio (tabela/suite).",
+      "justificativa": "Linha literal da tabela de opcoes.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D31",
+      "status": "DETERMINADO",
+      "titulo": "Arquivo .mcdc com comentarios e varios requisitos",
+      "secao": "entrada",
+      "entrada": [
+        "analyze -f <arquivo com 2 requisitos e linhas # comentario>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "**Arquivo `.mcdc`:** um requisito por linha, `ID: expressão`. Linhas com `#` são comentários."
+      ],
+      "regra": "Um requisito por linha; # = comentario.",
+      "expectativa": "Dois requisitos (REQ-001, REQ-002) geram duas analises identificadas pelos IDs; as linhas de comentario sao ignoradas.",
+      "justificativa": "Formato descrito literalmente.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D32",
+      "status": "DETERMINADO",
+      "titulo": "Expressoes invalidas sao recusadas",
+      "secao": "parser",
+      "entrada": [
+        "analyze \"A and\"",
+        "analyze \"(A and B\"",
+        "analyze \"A and and B\""
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "`ExpressionParserTest` | 9 | ... expressões inválidas recusadas",
+        "`1`: entrada inválida"
+      ],
+      "regra": "Expressao invalida e recusada.",
+      "expectativa": "Nenhuma das tres entradas produz tabela-verdade nem suite; ha mensagem de erro. (O codigo de saida NAO e afirmado: ver I03.)",
+      "justificativa": "Teste do parser declara recusa de expressoes invalidas.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D33",
+      "status": "DETERMINADO",
+      "titulo": "Erro de sintaxe em .mcdc cita o requisito",
+      "secao": "entrada",
+      "entrada": [
+        "analyze -f <arquivo com REQ-002: A and>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `RequirementsFileTest` | 3 | Arquivo `.mcdc`, comentários, linha sem identificador, erro de sintaxe com o requisito |"
+      ],
+      "regra": "O erro de sintaxe vem acompanhado do requisito.",
+      "expectativa": "A mensagem de erro menciona o identificador REQ-002 da linha com erro.",
+      "justificativa": "Descricao do teste.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D34",
+      "status": "DETERMINADO",
+      "titulo": "check: suite completa demonstra todas as condicoes",
+      "secao": "check",
+      "entrada": [
+        "check --json <decisao propria> --tests <csv completo>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| Avaliar testes existentes | `mcdc check` | Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado |",
+        "| `TestSetEvaluationTest` | 6 | Avaliação de testes existentes: suíte completa, o que falta, resultado esperado errado, valores concretos |"
+      ],
+      "regra": "Suite que contem um par por condicao: cobertura completa.",
+      "expectativa": "Para a decisao A e B ou C com os testes TTF(T), FTF(F), TFF(F), TFT(T): as 3 condicoes demonstradas, nada faltando e nenhum resultado esperado errado.",
+      "justificativa": "Suite de causa unica da decisao; Z3 confirma os pares.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D34__par-A.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D34__par-B.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-D34__par-C.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D35",
+      "status": "DETERMINADO",
+      "titulo": "check: resultado esperado errado e apontado",
+      "secao": "check",
+      "entrada": [
+        "check --json <decisao propria> --tests <csv com um expected_outcome trocado>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "testes com resultado esperado errado",
+        "`TestSetEvaluationTest` ... resultado esperado errado"
+      ],
+      "regra": "Teste cujo expected_outcome difere do valor da guarda e sinalizado.",
+      "expectativa": "O teste com resultado esperado trocado (TTF com expected F) e apontado como divergente; os demais nao.",
+      "justificativa": "A guarda vale T em (T,T,F), logo F e errado.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D35__guarda-em-TTF.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D36",
+      "status": "DETERMINADO",
+      "titulo": "check: suite incompleta aponta o que falta",
+      "secao": "check",
+      "entrada": [
+        "check --json <decisao propria> --tests <csv sem par para C>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "Cobertura MC/DC de um conjunto de testes, o que falta e testes com resultado esperado errado",
+        "uma condição não demonstrada"
+      ],
+      "regra": "Sem par para uma condicao, ela fica nao demonstrada.",
+      "expectativa": "Com apenas TTF, FTF e TFF (sem linha que altere C): A e B demonstradas, C nao demonstrada e reportada como faltando.",
+      "justificativa": "Nenhum par dentro das tres linhas varia apenas C com resultado diferente.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D36__C-sem-par-nas-3-linhas.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D37",
+      "status": "DETERMINADO",
+      "titulo": "verify: dois requisitos que valem juntos e escrevem valores diferentes = conflito",
+      "secao": "verify",
+      "entrada": [
+        "verify --json <json proprio: R1 guarda mode = idle, acao out := a; R2 guarda mode = idle e coin = true, acao out := b>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "Conflitos (dois requisitos valem juntos e escrevem valores diferentes)",
+        "contradição só com valores diferentes na mesma variável"
+      ],
+      "regra": "Guardas simultaneamente satisfazíveis + valores diferentes na mesma variável = conflito.",
+      "expectativa": "O relatorio aponta 1 conflito entre R1 e R2.",
+      "justificativa": "Em mode=idle e coin=true ambas valem.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D37__guardas-simultaneas.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D38",
+      "status": "DETERMINADO",
+      "titulo": "verify: mesmo valor nao e conflito",
+      "secao": "verify",
+      "entrada": [
+        "verify --json <json proprio: R1 mode = idle, out := a; R2 mode = idle e coin = true, out := a>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `Z3RequirementsVerifierTest` | 4 | Conflitos, guardas que não se sobrepõem, mesmo valor sem conflito, lacunas só com contexto |",
+        "contradição só com valores diferentes na mesma variável"
+      ],
+      "regra": "Valores iguais na mesma variavel nao contradizem.",
+      "expectativa": "Nenhum conflito e apontado.",
+      "justificativa": "Texto declara 'mesmo valor sem conflito'.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D38__valores-iguais.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D39",
+      "status": "DETERMINADO",
+      "titulo": "verify: guardas que nao se sobrepoem nao conflitam",
+      "secao": "verify",
+      "entrada": [
+        "verify --json <json proprio: R1 mode = idle, out := a; R2 mode = busy, out := b>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "guardas que não se sobrepõem"
+      ],
+      "regra": "Guardas disjuntas nao valem juntas.",
+      "expectativa": "Nenhum conflito e apontado.",
+      "justificativa": "mode = idle e mode = busy nao podem valer juntas.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D39__disjuntas.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D40",
+      "status": "DETERMINADO",
+      "titulo": "verify --context: lacuna quando nenhuma guarda vale",
+      "secao": "verify",
+      "entrada": [
+        "verify --json <json proprio: R1 mode = idle; R2 mode = busy> --context 'mode = off'"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "| `--context \"<expr>\"` | No `verify`: confere se, nessa situação, sempre alguma guarda vale |"
+      ],
+      "regra": "No contexto, se existe situacao em que nenhuma guarda vale, ha lacuna.",
+      "expectativa": "Com contexto mode = off (modo off ∈ {idle, busy, off}), nenhuma guarda vale: 1 lacuna e reportada.",
+      "justificativa": "Definicao de lacuna: nenhum requisito vale.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D40__nenhuma-guarda-vale.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D41",
+      "status": "DETERMINADO",
+      "titulo": "verify --context: sem lacuna quando uma guarda sempre vale",
+      "secao": "verify",
+      "entrada": [
+        "verify --json <json proprio: R1 mode = idle; R2 mode = busy> --context 'mode = idle'"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "confere se, nessa situação, sempre alguma guarda vale"
+      ],
+      "regra": "No contexto onde uma guarda vale sempre, nao ha lacuna.",
+      "expectativa": "Nenhuma lacuna e reportada.",
+      "justificativa": "No contexto mode = idle, R1 vale.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D41__sempre-alguma-guarda.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D42",
+      "status": "DETERMINADO",
+      "titulo": "verify sem --context nao relata lacunas",
+      "secao": "verify",
+      "entrada": [
+        "verify --json <json proprio: R1 mode = idle; R2 mode = busy>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "lacunas só com contexto"
+      ],
+      "regra": "Lacunas so surgem com contexto.",
+      "expectativa": "O relatorio nao aponta lacunas.",
+      "justificativa": "Texto do teste do verificador.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D43",
+      "status": "DETERMINADO",
+      "titulo": "20 entradas na tabela-verdade completa",
+      "secao": "limites",
+      "entrada": [
+        "analyze \"X1 and X2 and ... and X20\""
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "até 20 entradas com a tabela-verdade completa",
+        "`PerformanceTest` | 4 | Motor sem o Z3: 20 entradas (cerca de 1 milhão de combinações) nas duas variantes ... cada caso abaixo de 5 s"
+      ],
+      "regra": "20 entradas sao suportadas pela tabela completa em menos de 5 s.",
+      "expectativa": "A analise de 20 entradas e concluida em menos de 5 s (sem contar a partida da JVM), com 20 condicoes, 1048576 combinacoes e todas as condicoes demonstradas.",
+      "justificativa": "Limite documentado e teste de desempenho com 20 entradas; 2^20 = 1048576.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D43__cada-condicao-tem-par.smt2",
+          "esperado": "unsat"
+        },
+        {
+          "arquivo": "z3/C3-D43__2-elevado-20.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D44",
+      "status": "DETERMINADO",
+      "titulo": "21 entradas na tabela-verdade completa sao recusadas",
+      "secao": "limites",
+      "entrada": [
+        "analyze \"X1 and ... and X21\""
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "`TruthTableTest` | 8 | ... limite de 20 entradas",
+        "**Tamanho:** 20 entradas com a tabela-verdade completa"
+      ],
+      "regra": "Acima de 20 entradas nao ha tabela-verdade completa.",
+      "expectativa": "Nenhuma suite e produzida para 21 entradas sem flags; ha mensagem de erro. (Codigo de saida nao afirmado: I03.)",
+      "justificativa": "Limite documentado em dois pontos; sem flags nao ha modo alternativo.",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-D44__consistencia.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-D45",
+      "status": "DETERMINADO",
+      "titulo": "JSON NAT2TEST com guarda temporal (_antes)",
+      "secao": "entrada",
+      "entrada": [
+        "analyze --json <json proprio com guarda 'the_mode_antes = idle /\\ the_coin = true'>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "Quando uma expressão se refere ao valor de uma variável no passo anterior, esse valor é identificado pelo sufixo `_antes`.",
+        "`Nat2TestJsonReaderTest` | 4 | JSON da NAT2TEST, guarda temporal"
+      ],
+      "regra": "O sufixo _antes e aceito em guardas.",
+      "expectativa": "A analise e concluida: 1 decisao com 2 condicoes.",
+      "justificativa": "Sintaxe documentada.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D46",
+      "status": "DETERMINADO",
+      "titulo": "Numero negativo em comparacao",
+      "secao": "parser",
+      "entrada": [
+        "analyze \"x > -3 and y < 2\""
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "`InputEdgeCasesTest` | 4 | Aspas no CSV, número da linha com erro, sinal de menos só em números",
+        "booleanos, reais e negativos"
+      ],
+      "regra": "Sinal de menos e aceito em numeros.",
+      "expectativa": "A analise e concluida com 2 condicoes.",
+      "justificativa": "Texto menciona numeros negativos e sinal de menos em numeros.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D47",
+      "status": "DETERMINADO",
+      "titulo": "check e verify aceitam --format json",
+      "secao": "saidas",
+      "entrada": [
+        "check --json <decisao propria> --tests <csv> --format json",
+        "verify --json <json proprio> --format json"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "`check` e `verify` aceitam `text` e `json`"
+      ],
+      "regra": "Formato json disponivel nos tres comandos.",
+      "expectativa": "Ambas as saidas sao JSON validos.",
+      "justificativa": "Texto literal.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-D48",
+      "status": "DETERMINADO",
+      "titulo": "Arquivo JSON invalido e recusado",
+      "secao": "entrada",
+      "entrada": [
+        "analyze --json <arquivo com conteudo que nao e JSON>"
+      ],
+      "preCondicoes": "Ferramenta instalada; Z3 disponivel no PATH (ver I02: sem Z3 a expectativa seria indeterminada).",
+      "trechoLiteral": [
+        "`Nat2TestJsonReaderTest` | 4 | JSON da NAT2TEST, guarda temporal, arquivos inválidos, ids repetidos"
+      ],
+      "regra": "Arquivos invalidos sao recusados.",
+      "expectativa": "Nenhuma analise e produzida; ha mensagem de erro.",
+      "justificativa": "Teste declara tratamento de arquivos invalidos.",
+      "z3Consultas": []
+    },
+    {
+      "id": "C3-I01",
+      "status": "INDETERMINADO",
+      "titulo": "Quantas condicoes tem (A and B) or (not A and C)? 4 ou 3",
+      "entrada": "analyze \"(A and B) or (not A and C)\"",
+      "trechoLiteral": [
+        "há 3 entradas distintas (`A`, `B` e `C`) e 4 ocorrências de condição (`A#1`, `B`, `A#2` e `C`)",
+        "Regra complementar: a ferramenta considera cada variável distinta como uma única condição ... Portanto, a expressão do exemplo possui exatamente 3 condições e 3 entradas.",
+        "entrada repetida: cada aparição é uma condição com par próprio (A#1, A#2)"
+      ],
+      "motivoIndeterminacao": "O texto afirma 4 condicoes (L55, L238, `ConditionTest`) e 3 condicoes (L57); o proprio texto nao resolve.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I01__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I01__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I01__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I02",
+      "status": "INDETERMINADO",
+      "titulo": "Comportamento sem Z3 instalado",
+      "entrada": "analyze \"(A and B) or C\" sem z3 no PATH",
+      "trechoLiteral": [
+        "Sem o Z3, continuam disponíveis os recursos que não dependem dele.",
+        "Sem o Z3, nenhum comando pode ser iniciado.",
+        "a instalação do Z3 é opcional"
+      ],
+      "motivoIndeterminacao": "Obrigatorio para qualquer execucao x opcional (so recursos avancados). Por isso as execucoes do baseline mantem o Z3 no PATH.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I02__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I02__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I02__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I03",
+      "status": "INDETERMINADO",
+      "titulo": "Codigos de saida",
+      "entrada": "analyze/check/verify: codigos 0, 1, 2",
+      "trechoLiteral": [
+        "**Código de saída:** `0`: comando concluído sem apontar os problemas ... `1`: entrada inválida; `2`: resultado válido ... com uma condição sem par",
+        "o código 0 indica entrada inválida; o código 1 indica execução concluída sem problemas; o código 2 significa exclusivamente falha de instalação do Z3"
+      ],
+      "motivoIndeterminacao": "Dois mapeamentos incompativeis para o codigo 0 (sucesso x invalido). Nenhum teste afirma codigo de saida.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I03__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I03__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I03__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I04",
+      "status": "INDETERMINADO",
+      "titulo": "Z3 linha a linha: acima de 12 entradas muda ao modo direto?",
+      "entrada": "analyze <decisao com 13 entradas> --z3",
+      "trechoLiteral": [
+        "acima de 12 entradas, passa sozinho ao modo direto",
+        "A partir da 13ª entrada, a ferramenta continua obrigatoriamente na tabela-verdade completa e não pode mudar de modo."
+      ],
+      "motivoIndeterminacao": "Muda para o modo direto x nao muda de modo.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I04__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I04__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I04__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I05",
+      "status": "INDETERMINADO",
+      "titulo": "Limite do modo direto: 30 ou 12 entradas; exige tabela?",
+      "entrada": "analyze <decisao com 26 entradas> --direct",
+      "trechoLiteral": [
+        "| `--direct` | Pares pedidos direto ao Z3, sem montar a tabela (até 30 entradas) |",
+        "O modo direto, por sua vez, só funciona até 12 entradas e exige que a tabela-verdade já tenha sido construída.",
+        "o modo direto com 26 entradas abaixo de 10 s"
+      ],
+      "motivoIndeterminacao": "Limite 30 x limite 12.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I05__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I05__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I05__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I06",
+      "status": "INDETERMINADO",
+      "titulo": "Colunas decision e expected_outcome do CSV: obrigatorias ou opcionais",
+      "entrada": "check ... --tests <csv sem as colunas>",
+      "trechoLiteral": [
+        "As colunas `decision` e `expected_outcome` são opcionais.",
+        "Sem essas duas colunas, a ferramenta não interpreta os testes. Ao mesmo tempo, a ausência delas é aceita e substituída automaticamente por valores inferidos."
+      ],
+      "motivoIndeterminacao": "Opcionais x obrigatorias; o proprio paragrafo se autocontradiz. Todos os CSVs do baseline trazem as duas colunas.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I06__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I06__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I06__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I07",
+      "status": "INDETERMINADO",
+      "titulo": "Conteudo dos formatos csv e truth-csv",
+      "entrada": "analyze ... --format csv / --format truth-csv",
+      "trechoLiteral": [
+        "| `csv` | A suíte: uma linha por teste e entrada ...",
+        "| `truth-csv` | A tabela-verdade inteira, com as combinações impossíveis marcadas |",
+        "`truth-csv` contém somente os pares de independência, nunca a tabela-verdade. A tabela-verdade completa é exportada exclusivamente em `csv`, que não contém os testes gerados."
+      ],
+      "motivoIndeterminacao": "Atribuicoes trocadas entre csv e truth-csv; conteudo dos dois nao tem expectativa unica.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I07__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I07__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I07__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I08",
+      "status": "INDETERMINADO",
+      "titulo": "Mapeamento sat/unsat do Z3 para combinacao possivel/impossivel",
+      "entrada": "analyze 'speed > 100 or (speed > 50 and rain)' --z3 (quais linhas sao descartadas)",
+      "trechoLiteral": [
+        "as que retornam `unsat` são consideradas impossíveis e não participam da análise",
+        "Regra de satisfatibilidade: resultados `unsat` representam combinações possíveis e devem ser mantidos. Resultados `sat` representam combinações impossíveis e devem ser descartados."
+      ],
+      "motivoIndeterminacao": "unsat=impossivel x unsat=possivel. Linhas descartadas pelo Z3 em exemplos nao anotados nao tem expectativa unica.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I08__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I08__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I08__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I09",
+      "status": "INDETERMINADO",
+      "titulo": "Pares quando o resultado da decisao nao muda",
+      "entrada": "analyze \"A and (B or not B)\"  (condicao B sem efeito)",
+      "trechoLiteral": [
+        "são procurados dois testes possíveis nos quais essa condição muda, o resultado da decisão também muda",
+        "para demonstrar MC/DC, basta que a condição mude entre dois testes; o resultado da decisão pode permanecer igual."
+      ],
+      "motivoIndeterminacao": "Exige mudanca do resultado x nao exige. Define se B tem par; sem expectativa unica.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I09__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I09__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I09__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I10",
+      "status": "INDETERMINADO",
+      "titulo": "Minimalidade da suite gulosa e da busca exata",
+      "entrada": "analyze \"((E or D) and (not A or D)) or B\" --exact; e sem --exact",
+      "trechoLiteral": [
+        "aqui, 5 testes em vez dos 6 da escolha gulosa",
+        "a estratégia gulosa sempre encontra a suíte globalmente mínima. A opção `--exact` executa a mesma heurística aproximada e pode retornar uma suíte maior"
+      ],
+      "motivoIndeterminacao": "Exata 5 < gulosa 6 x gulosa sempre minima e exata sem garantia.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I10__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I10__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I10__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I11",
+      "status": "INDETERMINADO",
+      "titulo": "Rotulo redundante x bloqueada",
+      "entrada": "analyze -f exemplos/requisitos.mcdc (REQ-003) e decisoes com --constraint",
+      "trechoLiteral": [
+        "se uma condição não possui par mesmo considerando todas as combinações, é classificada como redundante; se deixa de possuir pares por causa das combinações impossíveis, é classificada como bloqueada",
+        "uma condição sem par em qualquer cenário é bloqueada; uma condição que perde seus pares apenas por combinações impossíveis é redundante."
+      ],
+      "motivoIndeterminacao": "Rotulos trocados.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I11__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I11__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I11__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I12",
+      "status": "INDETERMINADO",
+      "titulo": "Arquitetura do Z3: processo externo x biblioteca nativa; PATH; 60 s",
+      "entrada": "qualquer analise com --z3",
+      "trechoLiteral": [
+        "O Z3 é executado como um processo externo. ... Cada chamada ao processo tem limite de 60 segundos.",
+        "o programa utiliza sempre a implementação interna do Java.",
+        "o Z3 é carregado como biblioteca nativa dentro da JVM e não é iniciado como processo externo. As chamadas não possuem limite de tempo"
+      ],
+      "motivoIndeterminacao": "Tres descricoes incompativeis.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I12__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I12__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I12__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I13",
+      "status": "INDETERMINADO",
+      "titulo": "Cobertura de linhas e de desvios: mesma metrica? total = media simples?",
+      "entrada": "build Maven (nao e comportamento da CLI)",
+      "trechoLiteral": [
+        "cobertura de linhas e cobertura de desvios são a mesma métrica",
+        "A linha Total apresenta a cobertura agregada ... não corresponde necessariamente à média aritmética",
+        "Linhas cobertas 95,5% ... Desvios cobertos 90,3%"
+      ],
+      "motivoIndeterminacao": "Metricas distintas (95,5 x 90,3) x mesma metrica; media simples x agregada. Fora do escopo da CLI.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I13__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I13__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I13__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I14",
+      "status": "INDETERMINADO",
+      "titulo": "Interpretacao da mutacao PIT",
+      "entrada": "build Maven -Pqualidade (nao e CLI)",
+      "trechoLiteral": [
+        "o PIT introduz alterações artificiais no código da ferramenta",
+        "o PIT altera os requisitos de entrada, não o código da ferramenta."
+      ],
+      "motivoIndeterminacao": "Objeto da mutacao PIT contraditorio; fora da CLI.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I14__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I14__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I14__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I15",
+      "status": "INDETERMINADO",
+      "titulo": "Aprovacao do build: por modulo ou agregada",
+      "entrada": "mvn clean verify (nao e CLI)",
+      "trechoLiteral": [
+        "A cobertura é conferida pelo JaCoCo separadamente em cada módulo",
+        "o JaCoCo agrega todos os módulos antes de verificar os limites. Um módulo abaixo da nota mínima nunca interrompe o build"
+      ],
+      "motivoIndeterminacao": "Verificacao por modulo x agregada; fora da CLI.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I15__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I15__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I15__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I16",
+      "status": "INDETERMINADO",
+      "titulo": "Garantia do MC/DC para parenteses deslocados (ASF)",
+      "entrada": "analyze \"A and (B or C)\" --mutation: mutante ASF",
+      "trechoLiteral": [
+        "**Parênteses deslocados:** é o único tipo de defeito sem garantia do MC/DC",
+        "o MC/DC garante a detecção de qualquer alteração de parênteses ... nenhum defeito de agrupamento pode escapar da suíte."
+      ],
+      "motivoIndeterminacao": "Sem garantia x com garantia total. Sobrevivencia do mutante ASF nao tem expectativa unica (nota: no exemplo do texto, 1 de 727 escapou).",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I16__afirmacao-1.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I16__afirmacao-2.smt2",
+          "esperado": "sat"
+        },
+        {
+          "arquivo": "z3/C3-I16__conjuncao.smt2",
+          "esperado": "unsat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I17",
+      "status": "INDETERMINADO",
+      "titulo": "--constraint com -f ou --json",
+      "entrada": "analyze -f exemplos/requisitos.mcdc --constraint \"...\"",
+      "trechoLiteral": [
+        "| `--constraint \"<expr>\"` | Restrição entre condições escrita à mão (só com expressão direta) |"
+      ],
+      "motivoIndeterminacao": "O texto restringe o uso mas nao diz o que acontece (recusa, ignora, aplica).",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I17__sem-formalizacao-conflitante.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I18",
+      "status": "INDETERMINADO",
+      "titulo": "Linha sem identificador e ids repetidos em .mcdc/JSON",
+      "entrada": "analyze -f <arquivo com linha sem 'ID:'> ; analyze --json <ids repetidos>",
+      "trechoLiteral": [
+        "| `RequirementsFileTest` | 3 | Arquivo `.mcdc`, comentários, linha sem identificador, erro de sintaxe com o requisito |",
+        "arquivos inválidos, ids repetidos"
+      ],
+      "motivoIndeterminacao": "O texto cita os cenarios mas nao diz se sao aceitos, recusados ou numerados automaticamente.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I18__sem-formalizacao-conflitante.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I19",
+      "status": "INDETERMINADO",
+      "titulo": "Resultado de verify com --context 'the_system_mode = preparing_weak' (VM)",
+      "entrada": "verify --json exemplos/vm-decisoes.json --context 'the_system_mode = preparing_weak'",
+      "trechoLiteral": [
+        "./mcdc verify --json exemplos/vm-decisoes.json --context 'the_system_mode = preparing_weak'"
+      ],
+      "motivoIndeterminacao": "O texto mostra o comando mas nao afirma se ha lacuna.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I19__sem-formalizacao-conflitante.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I20",
+      "status": "INDETERMINADO",
+      "titulo": "Paridade de 3 entradas exige 8 testes",
+      "entrada": "analyze <expressao de paridade de 3 entradas>",
+      "trechoLiteral": [
+        "a função de paridade de 3 entradas exige 8 testes"
+      ],
+      "motivoIndeterminacao": "O texto nao fornece a expressao; a contagem por ocorrencia (I01) tambem afeta o resultado.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I20__sem-formalizacao-conflitante.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I21",
+      "status": "INDETERMINADO",
+      "titulo": "check --json exemplos/decisoes.json --tests exemplos/testes.csv",
+      "entrada": "check --json exemplos/decisoes.json --tests exemplos/testes.csv",
+      "trechoLiteral": [
+        "./mcdc check --json exemplos/decisoes.json --tests exemplos/testes.csv"
+      ],
+      "motivoIndeterminacao": "O texto nao informa o resultado esperado desses arquivos.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I21__sem-formalizacao-conflitante.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I22",
+      "status": "INDETERMINADO",
+      "titulo": "Sinal de menos antes de variavel (-A and B)",
+      "entrada": "analyze \"-A and B\"",
+      "trechoLiteral": [
+        "sinal de menos só em números"
+      ],
+      "motivoIndeterminacao": "Nao e dito se o uso fora de numeros e recusado ou como e tratado.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I22__sem-formalizacao-conflitante.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I23",
+      "status": "INDETERMINADO",
+      "titulo": "Tamanho da suite de causa unica de (A and B) or C",
+      "entrada": "analyze \"(A and B) or C\" --unique-cause",
+      "trechoLiteral": [
+        "Para as guardas simples consideradas pela ferramenta, a suíte pode ter **N + 1** testes"
+      ],
+      "motivoIndeterminacao": "'pode ter N+1' nao fixa o tamanho para a variante causa unica; tambem sob conflito I09/I10.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I23__sem-formalizacao-conflitante.smt2",
+          "esperado": "sat"
+        }
+      ]
+    },
+    {
+      "id": "C3-I24",
+      "status": "INDETERMINADO",
+      "titulo": "Tempo/estimativa de desempenho e demais metricas do build",
+      "entrada": "mvn / testes JUnit (nao e CLI)",
+      "trechoLiteral": [
+        "171 testes",
+        "Os limites definidos para os testes de desempenho são aproximadamente 10 vezes maiores que os tempos medidos"
+      ],
+      "motivoIndeterminacao": "Descreve a suite de desenvolvimento e o build, nao comportamento observavel da CLI.",
+      "expectativa": "INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+      "z3Consultas": [
+        {
+          "arquivo": "z3/C3-I24__sem-formalizacao-conflitante.smt2",
+          "esperado": "sat"
+        }
+      ]
+    }
+  ]
+}

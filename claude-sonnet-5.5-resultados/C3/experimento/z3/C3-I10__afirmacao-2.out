@@ -1,0 +1,7 @@
+sat
+(
+  (define-fun gulosa () Int
+    0)
+  (define-fun exata () Int
+    0)
+)

@@ -1,0 +1,7 @@
+sat
+(
+  (define-fun linhas () Real
+    2.0)
+  (define-fun desvios () Real
+    2.0)
+)

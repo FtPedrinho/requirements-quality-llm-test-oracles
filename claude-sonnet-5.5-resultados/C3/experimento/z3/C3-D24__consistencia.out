@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun t () Int
+    40)
+)

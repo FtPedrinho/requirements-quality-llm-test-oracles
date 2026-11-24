@@ -1,0 +1,5 @@
+# comentario
+REQ-001: (alarme_ativo and porta_aberta) or botao_emergencia
+
+# outro comentario
+REQ-002: porta_fechada and not obstaculo

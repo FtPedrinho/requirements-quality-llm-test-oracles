@@ -1,0 +1,13 @@
+decision,test,input,value,expected_outcome
+d1,T1,A,true,T
+d1,T1,B,true,T
+d1,T1,C,false,T
+d1,T2,A,false,F
+d1,T2,B,true,F
+d1,T2,C,false,F
+d1,T3,A,true,F
+d1,T3,B,false,F
+d1,T3,C,false,F
+d1,T4,A,true,T
+d1,T4,B,false,T
+d1,T4,C,true,T

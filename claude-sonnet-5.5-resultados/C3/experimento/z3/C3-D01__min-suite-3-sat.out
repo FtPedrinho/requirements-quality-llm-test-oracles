@@ -1,0 +1,15 @@
+sat
+(
+  (define-fun r2_B () Bool
+    true)
+  (define-fun r1_B () Bool
+    false)
+  (define-fun r1_A () Bool
+    true)
+  (define-fun r0_A () Bool
+    false)
+  (define-fun r2_A () Bool
+    true)
+  (define-fun r0_B () Bool
+    false)
+)
