@@ -1,0 +1,5 @@
+mcdc-requirements/src/main/java/io/github/rvdomingos/mcdc/requirements/ExpressionParser.java
+mcdc-requirements/src/main/java/io/github/rvdomingos/mcdc/requirements/Nat2TestJsonReader.java
+mcdc-requirements/src/main/java/io/github/rvdomingos/mcdc/requirements/package-info.java
+mcdc-requirements/src/main/java/io/github/rvdomingos/mcdc/requirements/RequirementsFile.java
+mcdc-requirements/src/main/java/io/github/rvdomingos/mcdc/requirements/TestCasesFile.java

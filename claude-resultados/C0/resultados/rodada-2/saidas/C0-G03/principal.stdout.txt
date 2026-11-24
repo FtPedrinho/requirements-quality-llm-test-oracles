@@ -1,0 +1,8 @@
+Verificação entre requisitos: s_disjuntas
+2 decisões, 1 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: não conferidas (use --context "<expressão>" para dizer em que situação alguma guarda deve valer)

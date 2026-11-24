@@ -1,0 +1,761 @@
+{
+ "z3": "Z3 version 5.4.1 - 64 bit - build hashcode 145c0c51570a357cc558ce898ce77573ba9d4fbf",
+ "z3_exe": "C:\\Users\\User\\AppData\\Roaming\\Python\\bin\\z3.exe",
+ "total": 94,
+ "conforme": 94,
+ "divergentes": [],
+ "consultas": [
+  {
+   "id": "Q-E1-par-A",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A01/A02",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_B () Bool\n    true)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E1-parUC-A",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A03",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_B () Bool\n    true)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E1-par-B",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A01/A02",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_A () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E1-parUC-B",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A03",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_A () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E1-par-C",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A01/A02",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    true)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_A () Bool\n    false)\n  (define-fun t2_B () Bool\n    false)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E1-parUC-C",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A03",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    true)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_A () Bool\n    false)\n  (define-fun t2_B () Bool\n    false)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E1-min-3",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A02: 3 testes nao bastam",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E1-min-4",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A02: 4 testes bastam",
+   "testemunha": "(\n  (define-fun s2_C () Bool\n    false)\n  (define-fun s0_A () Bool\n    true)\n  (define-fun s0_B () Bool\n    false)\n  (define-fun s1_A () Bool\n    false)\n  (define-fun s2_A () Bool\n    true)\n  (define-fun s2_B () Bool\n    true)\n  (define-fun s3_C () Bool\n    true)\n  (define-fun s0_C () Bool\n    false)\n  (define-fun s1_B () Bool\n    true)\n  (define-fun s3_A () Bool\n    true)\n  (define-fun s1_C () Bool\n    false)\n  (define-fun s3_B () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E1-minUC-3",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A03 (informativo)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E1-minUC-4",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A03 (informativo)",
+   "testemunha": "(\n  (define-fun s2_C () Bool\n    false)\n  (define-fun s0_A () Bool\n    false)\n  (define-fun s0_B () Bool\n    true)\n  (define-fun s1_A () Bool\n    true)\n  (define-fun s2_A () Bool\n    true)\n  (define-fun s2_B () Bool\n    false)\n  (define-fun s3_B () Bool\n    false)\n  (define-fun s0_C () Bool\n    false)\n  (define-fun s1_B () Bool\n    true)\n  (define-fun s3_A () Bool\n    true)\n  (define-fun s1_C () Bool\n    false)\n  (define-fun s3_C () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E2-min-2",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A04",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E2-min-3",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A04",
+   "testemunha": "(\n  (define-fun s1_B () Bool\n    true)\n  (define-fun s0_A () Bool\n    false)\n  (define-fun s0_B () Bool\n    false)\n  (define-fun s1_A () Bool\n    true)\n  (define-fun s2_A () Bool\n    true)\n  (define-fun s2_B () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E3-min-4",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A12: --exact nao acha 4",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E3-min-5",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A12: --exact acha 5",
+   "testemunha": "(\n  (define-fun s0_B () Bool\n    false)\n  (define-fun s0_A () Bool\n    false)\n  (define-fun s1_A () Bool\n    true)\n  (define-fun s2_D () Bool\n    false)\n  (define-fun s0_E () Bool\n    true)\n  (define-fun s1_B () Bool\n    false)\n  (define-fun s1_E () Bool\n    false)\n  (define-fun s2_E () Bool\n    false)\n  (define-fun s3_E () Bool\n    true)\n  (define-fun s4_D () Bool\n    false)\n  (define-fun s0_D () Bool\n    false)\n  (define-fun s2_A () Bool\n    false)\n  (define-fun s2_B () Bool\n    false)\n  (define-fun s3_B () Bool\n    false)\n  (define-fun s4_E () Bool\n    false)\n  (define-fun s3_A () Bool\n    true)\n  (define-fun s4_B () Bool\n    true)\n  (define-fun s1_D () Bool\n    true)\n  (define-fun s4_A () Bool\n    false)\n  (define-fun s3_D () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E4-min-7",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A13",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E4-min-8",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A13",
+   "testemunha": "(\n  (define-fun s2_C () Bool\n    false)\n  (define-fun s0_A () Bool\n    true)\n  (define-fun s0_B () Bool\n    true)\n  (define-fun s1_A () Bool\n    false)\n  (define-fun s3_C () Bool\n    false)\n  (define-fun s5_B () Bool\n    false)\n  (define-fun s7_C () Bool\n    true)\n  (define-fun s0_C () Bool\n    true)\n  (define-fun s1_B () Bool\n    false)\n  (define-fun s4_C () Bool\n    false)\n  (define-fun s6_A () Bool\n    true)\n  (define-fun s6_C () Bool\n    true)\n  (define-fun s7_A () Bool\n    false)\n  (define-fun s6_B () Bool\n    false)\n  (define-fun s2_A () Bool\n    false)\n  (define-fun s2_B () Bool\n    true)\n  (define-fun s3_B () Bool\n    false)\n  (define-fun s4_B () Bool\n    true)\n  (define-fun s3_A () Bool\n    true)\n  (define-fun s5_A () Bool\n    false)\n  (define-fun s5_C () Bool\n    true)\n  (define-fun s1_C () Bool\n    false)\n  (define-fun s7_B () Bool\n    true)\n  (define-fun s4_A () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E5-par-A_1",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A05",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_B () Bool\n    true)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E5-par-B",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A05",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_A () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E5-par-A_2",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A05",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    true)\n  (define-fun t1_C () Bool\n    true)\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_B () Bool\n    false)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E5-par-C",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A05",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    true)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_A () Bool\n    false)\n  (define-fun t2_B () Bool\n    false)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E6-par-A_1",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A06",
+   "testemunha": "(\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_B () Bool\n    false)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E6-par-A_2",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A06: A#2 sem par",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E6-par-B",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A06: B sem par",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E7-par-A-restrito",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A08: sem par com restricao",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E7-par-A-livre",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A08: com par sem restricao => bloqueada",
+   "testemunha": "(\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_B () Bool\n    true)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E7-par-B-restrito",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A08: sem par com restricao",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E7-par-B-livre",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A08: com par sem restricao => bloqueada",
+   "testemunha": "(\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t2_A () Bool\n    true)\n  (define-fun t1_A () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E7-linha-TT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A08: 1 impossivel",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-linha-TTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10/B08",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-linha-TTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10/B08",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-linha-TFT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A10/B08",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-linha-TFF",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A10/B08",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-linha-FTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10/B08",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-linha-FTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10/B08",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-linha-FFT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10/B08",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-linha-FFF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10/B08",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E8-par-A",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    false)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t2_A () Bool\n    false)\n  (define-fun t1_B () Bool\n    true)\n  (define-fun t2_B () Bool\n    false)\n  (define-fun t1_A () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E8-par-B",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    true)\n  (define-fun t1_C () Bool\n    true)\n  (define-fun t1_B () Bool\n    false)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t2_A () Bool\n    false)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E8-par-C",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A10",
+   "testemunha": "(\n  (define-fun t2_C () Bool\n    true)\n  (define-fun t1_C () Bool\n    false)\n  (define-fun t1_B () Bool\n    true)\n  (define-fun t2_A () Bool\n    false)\n  (define-fun t2_B () Bool\n    true)\n  (define-fun t1_A () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E9-linha-TTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: impossiveis = 2",
+   "testemunha": "(\n  (define-fun speed () Int\n    101)\n  (define-fun rain () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E9-linha-TTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: impossiveis = 2",
+   "testemunha": "(\n  (define-fun speed () Int\n    101)\n  (define-fun rain () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E9-linha-TFT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-D01: impossiveis = 2",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E9-linha-TFF",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-D01: impossiveis = 2",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E9-linha-FTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: impossiveis = 2",
+   "testemunha": "(\n  (define-fun speed () Int\n    51)\n  (define-fun rain () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E9-linha-FTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: impossiveis = 2",
+   "testemunha": "(\n  (define-fun speed () Int\n    51)\n  (define-fun rain () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E9-linha-FFT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: impossiveis = 2",
+   "testemunha": "(\n  (define-fun speed () Int\n    0)\n  (define-fun rain () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E9-linha-FFF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: impossiveis = 2",
+   "testemunha": "(\n  (define-fun speed () Int\n    0)\n  (define-fun rain () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E9-fronteira-100",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-D01: fronteira",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E9-fronteira-50",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-D01: fronteira",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E9-par-A",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: todas com par",
+   "testemunha": "(\n  (define-fun t1_rain () Bool\n    false)\n  (define-fun t1_speed () Int\n    101)\n  (define-fun t2_rain () Bool\n    true)\n  (define-fun t2_speed () Int\n    0)\n)"
+  },
+  {
+   "id": "Q-E9-par-B",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: todas com par",
+   "testemunha": "(\n  (define-fun t1_rain () Bool\n    true)\n  (define-fun t1_speed () Int\n    0)\n  (define-fun t2_rain () Bool\n    true)\n  (define-fun t2_speed () Int\n    51)\n)"
+  },
+  {
+   "id": "Q-E9-par-C",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-D01: todas com par",
+   "testemunha": "(\n  (define-fun t1_rain () Bool\n    false)\n  (define-fun t1_speed () Int\n    51)\n  (define-fun t2_speed () Int\n    51)\n  (define-fun t2_rain () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E10-linha-TT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C08: 0 impossiveis",
+   "testemunha": "(\n  (define-fun coin () Bool\n    true)\n  (define-fun mode () Mode\n    idle)\n)"
+  },
+  {
+   "id": "Q-E10-linha-TF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C08: 0 impossiveis",
+   "testemunha": "(\n  (define-fun coin () Bool\n    false)\n  (define-fun mode () Mode\n    idle)\n)"
+  },
+  {
+   "id": "Q-E10-linha-FT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C08: 0 impossiveis",
+   "testemunha": "(\n  (define-fun coin () Bool\n    true)\n  (define-fun mode () Mode\n    choice)\n)"
+  },
+  {
+   "id": "Q-E10-linha-FF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C08: 0 impossiveis",
+   "testemunha": "(\n  (define-fun coin () Bool\n    false)\n  (define-fun mode () Mode\n    choice)\n)"
+  },
+  {
+   "id": "Q-E10-min-2",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-C07: 3 testes",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E10-min-3",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C07: 3 testes",
+   "testemunha": "(\n  (define-fun s2_M () Bool\n    true)\n  (define-fun s1_S () Bool\n    false)\n  (define-fun s0_S () Bool\n    true)\n  (define-fun s2_S () Bool\n    true)\n  (define-fun s0_M () Bool\n    false)\n  (define-fun s1_M () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E11a-conflito",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-G01",
+   "testemunha": "(\n  (define-fun c () Bool\n    true)\n  (define-fun d () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E11b-disjuntas",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-G03",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E11c-lacuna",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-G04",
+   "testemunha": "(\n  (define-fun c () Bool\n    false)\n  (define-fun d () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E11d-sem-lacuna",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-G05",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E12-completa-A",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-F01",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E12-completa-B",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-F01",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E12-completa-C",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-F01",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E12-incompleta-A",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-F02",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E12-incompleta-B",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-F02",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E12-incompleta-C",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-F02",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E12-esperado-T2",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-F03: guarda em T2 e F, CSV declara T",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E13-par-A",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-F04",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E13-par-B",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-F04",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E13-esperados",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-F04: esperados coerentes",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-min-14",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A16: 14 testes bastam",
+   "testemunha": "(\n  (define-fun s3_A4 () Bool\n    true)\n  (define-fun s12_A9 () Bool\n    true)\n  (define-fun s0_A2 () Bool\n    true)\n  (define-fun s6_A4 () Bool\n    true)\n  (define-fun s10_A5 () Bool\n    true)\n  (define-fun s6_A5 () Bool\n    true)\n  (define-fun s11_A6 () Bool\n    true)\n  (define-fun s11_A10 () Bool\n    true)\n  (define-fun s13_A2 () Bool\n    true)\n  (define-fun s9_A12 () Bool\n    true)\n  (define-fun s1_A4 () Bool\n    true)\n  (define-fun s13_A12 () Bool\n    true)\n  (define-fun s10_A4 () Bool\n    true)\n  (define-fun s9_A6 () Bool\n    true)\n  (define-fun s6_A10 () Bool\n    true)\n  (define-fun s9_A10 () Bool\n    false)\n  (define-fun s12_A10 () Bool\n    true)\n  (define-fun s2_A4 () Bool\n    true)\n  (define-fun s12_A5 () Bool\n    true)\n  (define-fun s9_A8 () Bool\n    true)\n  (define-fun s7_A8 () Bool\n    true)\n  (define-fun s0_A5 () Bool\n    true)\n  (define-fun s7_A12 () Bool\n    true)\n  (define-fun s8_A6 () Bool\n    true)\n  (define-fun s5_A3 () Bool\n    true)\n  (define-fun s9_A1 () Bool\n    true)\n  (define-fun s4_A1 () Bool\n    true)\n  (define-fun s0_A9 () Bool\n    true)\n  (define-fun s13_A9 () Bool\n    true)\n  (define-fun s7_A13 () Bool\n    false)\n  (define-fun s5_A7 () Bool\n    true)\n  (define-fun s7_A4 () Bool\n    true)\n  (define-fun s10_A1 () Bool\n    true)\n  (define-fun s6_A13 () Bool\n    true)\n  (define-fun s10_A9 () Bool\n    false)\n  (define-fun s11_A7 () Bool\n    true)\n  (define-fun s5_A5 () Bool\n    true)\n  (define-fun s7_A9 () Bool\n    true)\n  (define-fun s3_A3 () Bool\n    true)\n  (define-fun s0_A13 () Bool\n    true)\n  (define-fun s9_A4 () Bool\n    true)\n  (define-fun s4_A4 () Bool\n    true)\n  (define-fun s0_A6 () Bool\n    true)\n  (define-fun s9_A5 () Bool\n    true)\n  (define-fun s8_A8 () Bool\n    true)\n  (define-fun s1_A7 () Bool\n    true)\n  (define-fun s4_A8 () Bool\n    true)\n  (define-fun s13_A4 () Bool\n    true)\n  (define-fun s3_A1 () Bool\n    true)\n  (define-fun s2_A12 () Bool\n    true)\n  (define-fun s11_A3 () Bool\n    true)\n  (define-fun s4_A9 () Bool\n   "
+  },
+  {
+   "id": "Q-E14-n13-A1-par-sem-todaT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A14/A16: lema 1 (n=13)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n13-A1-par-outra-linha",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A14/A16: lema 2 (n=13)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n13-A1-par-existe",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A14/A16 (n=13)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n13-A13-par-sem-todaT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A14/A16: lema 1 (n=13)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n13-A13-par-outra-linha",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A14/A16: lema 2 (n=13)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n13-A13-par-existe",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A14/A16 (n=13)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n20-A1-par-sem-todaT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A14/A16: lema 1 (n=20)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n20-A1-par-outra-linha",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A14/A16: lema 2 (n=20)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n20-A1-par-existe",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A14/A16 (n=20)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n20-A20-par-sem-todaT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A14/A16: lema 1 (n=20)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n20-A20-par-outra-linha",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-A14/A16: lema 2 (n=20)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E14-n20-A20-par-existe",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-A14/A16 (n=20)",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E16-REQ001-alarme_ativo",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C03",
+   "testemunha": "(\n  (define-fun t1_alarme_ativo () Bool\n    false)\n  (define-fun t2_alarme_ativo () Bool\n    true)\n  (define-fun t1_botao_emergencia () Bool\n    false)\n  (define-fun t1_porta_aberta () Bool\n    true)\n  (define-fun t2_botao_emergencia () Bool\n    false)\n  (define-fun t2_porta_aberta () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E16-REQ001-porta_aberta",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C03",
+   "testemunha": "(\n  (define-fun t1_botao_emergencia () Bool\n    false)\n  (define-fun t1_alarme_ativo () Bool\n    true)\n  (define-fun t2_alarme_ativo () Bool\n    true)\n  (define-fun t1_porta_aberta () Bool\n    false)\n  (define-fun t2_porta_aberta () Bool\n    true)\n  (define-fun t2_botao_emergencia () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E16-REQ001-botao_emergencia",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C03",
+   "testemunha": "(\n  (define-fun t1_botao_emergencia () Bool\n    true)\n  (define-fun t1_alarme_ativo () Bool\n    false)\n  (define-fun t2_alarme_ativo () Bool\n    false)\n  (define-fun t2_botao_emergencia () Bool\n    false)\n  (define-fun t1_porta_aberta () Bool\n    false)\n  (define-fun t2_porta_aberta () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E16-REQ002-porta_fechada",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C03",
+   "testemunha": "(\n  (define-fun t1_obstaculo () Bool\n    false)\n  (define-fun t2_porta_fechada () Bool\n    true)\n  (define-fun t2_obstaculo () Bool\n    false)\n  (define-fun t1_porta_fechada () Bool\n    false)\n)"
+  },
+  {
+   "id": "Q-E16-REQ002-obstaculo",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C03",
+   "testemunha": "(\n  (define-fun t1_porta_fechada () Bool\n    true)\n  (define-fun t2_obstaculo () Bool\n    false)\n  (define-fun t2_porta_fechada () Bool\n    true)\n  (define-fun t1_obstaculo () Bool\n    true)\n)"
+  },
+  {
+   "id": "Q-E18-linha-TT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C09",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E18-linha-TF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C09",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E18-linha-FT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C09",
+   "testemunha": ""
+  },
+  {
+   "id": "Q-E18-linha-FF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-C09",
+   "testemunha": ""
+  }
+ ]
+}

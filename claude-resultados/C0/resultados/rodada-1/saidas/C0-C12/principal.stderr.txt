@@ -1,0 +1,1 @@
+Erro: --constraint só vale com uma expressão direta.

@@ -1,0 +1,31 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "s_conflito",
+  "decisions" : 2,
+  "pairsChecked" : 1,
+  "conflicts" : [ {
+    "first" : "s#1",
+    "firstRequirement" : "R1",
+    "second" : "s#2",
+    "secondRequirement" : "R2",
+    "sharedVariables" : [ "m" ],
+    "conflicts" : [ {
+      "variable" : "m",
+      "first" : "choice",
+      "second" : "weak"
+    } ],
+    "witness" : {
+      "c" : "true",
+      "d" : "true"
+    }
+  } ],
+  "compatibleOverlaps" : [ ],
+  "gaps" : {
+    "checked" : false,
+    "context" : null,
+    "found" : false,
+    "witness" : null
+  },
+  "ok" : false
+}

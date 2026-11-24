@@ -1,0 +1,6 @@
+(declare-const T2_A Bool)
+(declare-const T2_B Bool)
+(declare-const T2_C Bool)
+(assert (and (not T2_A) T2_B (not T2_C)))
+(assert (= (or (and T2_A T2_B) T2_C) true))
+(check-sat)

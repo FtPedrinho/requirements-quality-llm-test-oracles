@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C0 extensao-1</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.cli</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.cli;
+
+import io.github.rvdomingos.mcdc.core.DecisionAnalysis;
+import io.github.rvdomingos.mcdc.core.Mcdc;
+import io.github.rvdomingos.mcdc.core.McdcOptions;
+import io.github.rvdomingos.mcdc.core.McdcVariant;
+import io.github.rvdomingos.mcdc.core.TestCase;
+import io.github.rvdomingos.mcdc.core.TestSetEvaluation;
+import io.github.rvdomingos.mcdc.core.model.Decision;
+import io.github.rvdomingos.mcdc.core.model.DecisionSet;
+import io.github.rvdomingos.mcdc.core.mutation.MutationReport;
+import io.github.rvdomingos.mcdc.requirements.ExpressionParser;
+import io.github.rvdomingos.mcdc.requirements.Nat2TestJsonReader;
+import io.github.rvdomingos.mcdc.requirements.RequirementsFile;
+import io.github.rvdomingos.mcdc.requirements.TestCasesFile;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import io.github.rvdomingos.mcdc.z3.Z3DirectAnalyzer;
+import io.github.rvdomingos.mcdc.z3.Z3FeasibilityChecker;
+import io.github.rvdomingos.mcdc.z3.Z3RequirementsVerifier;
+import io.github.rvdomingos.mcdc.z3.Z3SuiteOptimizer;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+/** Comando {@code mcdc}. */
+public final class Main {
+
+    static final int OK = 0;
+    static final int INPUT_ERROR = 1;
+    static final int UNCOVERED = 2;
+
+    private static final String USAGE = &quot;&quot;&quot;
+            Uso:
+              mcdc analyze &lt;fonte&gt; [opções]                gera a suíte mínima de testes MC/DC
+              mcdc check   &lt;fonte&gt; --tests &lt;testes.csv&gt;    mede o MC/DC de testes já existentes
+              mcdc verify  &lt;fonte&gt; [--context &quot;&lt;expr&gt;&quot;]    confere os requisitos entre si (usa o Z3)
+
+            Fonte (uma só):
+              &quot;&lt;expressão&gt;&quot;           ex.: &quot;(A and B) or C&quot;, 'speed &gt; 100 /\\ mode = idle'
+              -f &lt;arquivo.mcdc&gt;       um requisito por linha: ID: expressão
+              --json &lt;decisoes.json&gt;  decisões no formato do Extractor da NAT2TEST
+
+            Opções:
+              --unique-cause          causa única em vez de mascaramento
+              --constraint &quot;&lt;expr&gt;&quot;   restrição entre condições (só com expressão direta)
+              --z3                    usa o Z3 para descobrir linhas impossíveis e gerar valores concretos;
+                                      decisões com mais de 12 entradas passam ao modo direto
+              --exact                 suíte exata: a menor possível, escolhida pelo Z3 (em vez da gulosa)
+              --direct                pede os pares direto ao Z3, sem montar a tabela (até 30 entradas)
+              --boundary              com --z3, acrescenta variantes de fronteira (speed &gt; 100 -&gt; speed = 101)
+              --mutation              confere se a suíte detecta versões do requisito com uma falha
+              --context &quot;&lt;expr&gt;&quot;      verify: confere se, nessa situação, sempre alguma guarda vale
+              --format &lt;formato&gt;      text (padrão), json, csv (suíte) ou truth-csv (tabela verdade inteira);
+                                      check e verify aceitam text e json
+              -o &lt;arquivo&gt;            grava o relatório no arquivo em vez de mostrar na tela
+
+            Exemplos:
+              mcdc analyze &quot;(A and B) or C&quot;
+              mcdc analyze &quot;speed &gt; 100 or (speed &gt; 50 and rain)&quot; --z3 --boundary
+              mcdc analyze --json exemplos/decisoes.json --format json -o relatorio.json
+              mcdc analyze --json exemplos/vm-decisoes.json --z3 --format truth-csv -o tabela.csv
+              mcdc check --json exemplos/decisoes.json --tests exemplos/testes.csv
+              mcdc verify --json exemplos/npp-decisoes.json
+            &quot;&quot;&quot;;
+
+    /** Opções lidas da linha de comando. */
+<span class="fc" id="L70">    private record Options(String command, String expression, String file, String json, String constraint,</span>
+            String tests, String format, String output, McdcVariant variant, boolean z3, boolean boundary,
+            boolean mutation, boolean exact, boolean direct, String context) {
+    }
+
+    private Main() {
+    }
+
+    public static void main(String[] args) {
+<span class="nc" id="L79">        System.exit(run(args));</span>
+<span class="nc" id="L80">    }</span>
+
+    static int run(String[] args) {
+<span class="pc bpc" id="L83" title="2 of 4 branches missed.">        if (args.length == 0 || !List.of(&quot;analyze&quot;, &quot;check&quot;, &quot;verify&quot;).contains(args[0])) {</span>
+<span class="nc" id="L84">            System.err.print(USAGE);</span>
+<span class="nc" id="L85">            return INPUT_ERROR;</span>
+        }
+        try {
+<span class="fc" id="L88">            Options options = parse(args);</span>
+<span class="fc" id="L89">            DecisionSet set = load(options);</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">            if (options.command().equals(&quot;verify&quot;)) {</span>
+<span class="fc" id="L91">                return verify(options, set);</span>
+            }
+<span class="fc bfc" id="L93" title="All 2 branches covered.">            Z3FeasibilityChecker checker = options.z3() ? new Z3FeasibilityChecker(set.inputs()) : null;</span>
+<span class="fc" id="L94">            McdcOptions mcdc = McdcOptions.defaults()</span>
+<span class="fc" id="L95">                    .withVariant(options.variant())</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">                    .withConstraint(options.constraint() == null ? null : ExpressionParser.parse(options.constraint()))</span>
+<span class="fc" id="L97">                    .withFeasibility(checker)</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">                    .withOptimizer(options.exact() ? new Z3SuiteOptimizer() : null);</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">            return options.command().equals(&quot;check&quot;)</span>
+<span class="fc" id="L100">                    ? check(options, set, mcdc)</span>
+<span class="fc" id="L101">                    : analyze(options, set, mcdc, checker);</span>
+<span class="fc" id="L102">        } catch (IllegalArgumentException | IllegalStateException e) {</span>
+<span class="fc" id="L103">            System.err.println(&quot;Erro: &quot; + e.getMessage());</span>
+<span class="fc" id="L104">            return INPUT_ERROR;</span>
+<span class="nc" id="L105">        } catch (IOException e) {</span>
+<span class="nc" id="L106">            System.err.println(&quot;Erro de arquivo: &quot; + e.getMessage());</span>
+<span class="nc" id="L107">            return INPUT_ERROR;</span>
+        }
+    }
+
+    private static int analyze(Options options, DecisionSet set, McdcOptions mcdc, Z3FeasibilityChecker checker)
+            throws IOException {
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        Z3DirectAnalyzer direct = options.z3() ? new Z3DirectAnalyzer(set.inputs()) : null;</span>
+<span class="fc" id="L114">        List&lt;DecisionAnalysis&gt; analyses = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">        for (Decision decision : set.decisions()) {</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">            DecisionAnalysis a = useDirect(options, decision)</span>
+<span class="fc" id="L117">                    ? new DecisionAnalysis(decision, direct.analyze(decision.expression(), mcdc))</span>
+<span class="fc" id="L118">                    : Mcdc.analyze(decision, mcdc);</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">            if (options.boundary()) {</span>
+<span class="fc" id="L120">                a = a.withBoundaryTests(checker.boundaryTests(decision.expression(), a.report().minimalSuite()));</span>
+            }
+<span class="fc bfc" id="L122" title="All 2 branches covered.">            if (options.mutation()) {</span>
+<span class="pc bpc" id="L123" title="1 of 2 branches missed.">                if (!a.report().table().isFull()) {</span>
+<span class="nc" id="L124">                    throw new IllegalArgumentException(decision.id() + &quot;: --mutation precisa da tabela inteira, &quot;</span>
+<span class="nc" id="L125">                            + &quot;que o modo direto não monta (&quot; + decision.expression().inputs().size() + &quot; entradas).&quot;);</span>
+                }
+<span class="fc" id="L127">                a = a.withMutation(MutationReport.of(a.report()));</span>
+            }
+<span class="fc" id="L129">            analyses.add(a);</span>
+<span class="fc" id="L130">        }</span>
+<span class="fc bfc" id="L131" title="All 4 branches covered.">        String report = switch (options.format()) {</span>
+<span class="fc" id="L132">            case &quot;json&quot; -&gt; JsonReport.format(set.system(), mcdc, options.constraint(), analyses);</span>
+<span class="fc" id="L133">            case &quot;csv&quot; -&gt; CsvReport.format(analyses);</span>
+<span class="fc" id="L134">            case &quot;truth-csv&quot; -&gt; TruthTableCsvReport.format(analyses);</span>
+<span class="fc" id="L135">            default -&gt; TextReport.format(analyses, options.constraint());</span>
+        };
+<span class="fc" id="L137">        write(report, options.output());</span>
+<span class="fc bfc" id="L138" title="All 2 branches covered.">        return analyses.stream().allMatch(a -&gt; a.report().isComplete()) ? OK : UNCOVERED;</span>
+    }
+
+    /** Modo direto quando pedido, ou com --z3 quando a verificação linha a linha não cabe (mais de 12 entradas). */
+    private static boolean useDirect(Options options, Decision decision) {
+<span class="fc" id="L143">        int inputs = decision.expression().inputs().size();</span>
+<span class="pc bpc" id="L144" title="1 of 6 branches missed.">        return options.direct() || (options.z3() &amp;&amp; (1L &lt;&lt; inputs) &gt; Z3FeasibilityChecker.MAX_ROWS);</span>
+    }
+
+    private static int verify(Options options, DecisionSet set) throws IOException {
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">        Expr context = options.context() == null ? null : ExpressionParser.parse(options.context());</span>
+<span class="fc" id="L149">        Z3RequirementsVerifier.Result result = new Z3RequirementsVerifier().verify(set, context);</span>
+<span class="pc bpc" id="L150" title="1 of 2 branches missed.">        String report = options.format().equals(&quot;json&quot;)</span>
+<span class="fc" id="L151">                ? VerifyReport.json(set.system(), options.context(), result)</span>
+<span class="pc" id="L152">                : VerifyReport.text(set.system(), options.context(), result);</span>
+<span class="fc" id="L153">        write(report, options.output());</span>
+<span class="pc bpc" id="L154" title="1 of 2 branches missed.">        return result.hasProblems() ? UNCOVERED : OK;</span>
+    }
+
+    private static int check(Options options, DecisionSet set, McdcOptions mcdc) throws IOException {
+<span class="fc" id="L158">        TestCasesFile.Contents contents = TestCasesFile.read(Path.of(options.tests()));</span>
+<span class="pc bpc" id="L159" title="1 of 4 branches missed.">        if (!contents.hasDecisionColumn() &amp;&amp; set.decisions().size() &gt; 1) {</span>
+<span class="nc" id="L160">            throw new IllegalArgumentException(&quot;O arquivo de testes precisa da coluna \&quot;decision\&quot; quando há mais de uma decisão.&quot;);</span>
+        }
+<span class="fc" id="L162">        List&lt;CheckReport.Entry&gt; entries = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L163" title="All 2 branches covered.">        for (Decision decision : set.decisions()) {</span>
+<span class="fc bfc" id="L164" title="All 2 branches covered.">            Map&lt;String, TestCasesFile.RawTest&gt; raw = contents.hasDecisionColumn()</span>
+<span class="fc" id="L165">                    ? contents.byDecision().getOrDefault(decision.id(), Map.of())</span>
+<span class="fc" id="L166">                    : contents.byDecision().get(&quot;&quot;);</span>
+<span class="fc" id="L167">            List&lt;TestCase&gt; tests = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L168">            raw.forEach((name, test) -&gt;</span>
+<span class="fc" id="L169">                    tests.add(TestCase.resolve(decision.expression(), name, test.values(), test.expected())));</span>
+<span class="fc" id="L170">            TestSetEvaluation evaluation = Mcdc.evaluate(decision.expression(), mcdc, tests);</span>
+<span class="fc" id="L171">            entries.add(new CheckReport.Entry(decision, evaluation));</span>
+<span class="fc" id="L172">        }</span>
+<span class="fc bfc" id="L173" title="All 2 branches covered.">        String report = options.format().equals(&quot;json&quot;)</span>
+<span class="fc" id="L174">                ? CheckReport.json(set.system(), mcdc, entries)</span>
+<span class="fc" id="L175">                : CheckReport.text(entries);</span>
+<span class="fc" id="L176">        write(report, options.output());</span>
+<span class="fc bfc" id="L177" title="All 2 branches covered.">        return entries.stream().allMatch(e -&gt; e.evaluation().isComplete()) ? OK : UNCOVERED;</span>
+    }
+
+    private static Options parse(String[] args) {
+<span class="fc" id="L181">        String command = args[0];</span>
+<span class="fc" id="L182">        String expression = null;</span>
+<span class="fc" id="L183">        String file = null;</span>
+<span class="fc" id="L184">        String json = null;</span>
+<span class="fc" id="L185">        String constraint = null;</span>
+<span class="fc" id="L186">        String tests = null;</span>
+<span class="fc" id="L187">        String format = &quot;text&quot;;</span>
+<span class="fc" id="L188">        String output = null;</span>
+<span class="fc" id="L189">        McdcVariant variant = McdcVariant.MASKING;</span>
+<span class="fc" id="L190">        boolean z3 = false;</span>
+<span class="fc" id="L191">        boolean boundary = false;</span>
+<span class="fc" id="L192">        boolean mutation = false;</span>
+<span class="fc" id="L193">        boolean exact = false;</span>
+<span class="fc" id="L194">        boolean direct = false;</span>
+<span class="fc" id="L195">        String context = null;</span>
+
+<span class="fc bfc" id="L197" title="All 2 branches covered.">        for (int i = 1; i &lt; args.length; i++) {</span>
+<span class="pc bpc" id="L198" title="1 of 14 branches missed.">            switch (args[i]) {</span>
+<span class="fc" id="L199">                case &quot;--unique-cause&quot; -&gt; variant = McdcVariant.UNIQUE_CAUSE;</span>
+<span class="fc" id="L200">                case &quot;--z3&quot; -&gt; z3 = true;</span>
+<span class="fc" id="L201">                case &quot;--boundary&quot; -&gt; boundary = true;</span>
+<span class="fc" id="L202">                case &quot;--mutation&quot; -&gt; mutation = true;</span>
+<span class="fc" id="L203">                case &quot;--exact&quot; -&gt; exact = true;</span>
+<span class="fc" id="L204">                case &quot;--direct&quot; -&gt; direct = true;</span>
+<span class="fc" id="L205">                case &quot;--context&quot; -&gt; context = valueAfter(args, i++);</span>
+<span class="fc" id="L206">                case &quot;--constraint&quot; -&gt; constraint = valueAfter(args, i++);</span>
+<span class="nc" id="L207">                case &quot;-f&quot; -&gt; file = valueAfter(args, i++);</span>
+<span class="fc" id="L208">                case &quot;--json&quot; -&gt; json = valueAfter(args, i++);</span>
+<span class="fc" id="L209">                case &quot;--tests&quot; -&gt; tests = valueAfter(args, i++);</span>
+<span class="fc" id="L210">                case &quot;--format&quot; -&gt; format = valueAfter(args, i++);</span>
+<span class="fc" id="L211">                case &quot;-o&quot; -&gt; output = valueAfter(args, i++);</span>
+                default -&gt; {
+<span class="pc bpc" id="L213" title="1 of 2 branches missed.">                    if (args[i].startsWith(&quot;-&quot;)) {</span>
+<span class="nc" id="L214">                        throw new IllegalArgumentException(&quot;Opção desconhecida: &quot; + args[i]);</span>
+                    }
+<span class="fc" id="L216">                    expression = args[i];</span>
+                }
+            }
+        }
+
+<span class="pc bpc" id="L221" title="1 of 6 branches missed.">        int sources = (expression != null ? 1 : 0) + (file != null ? 1 : 0) + (json != null ? 1 : 0);</span>
+<span class="pc bpc" id="L222" title="1 of 2 branches missed.">        if (sources != 1) {</span>
+<span class="nc" id="L223">            throw new IllegalArgumentException(&quot;Informe uma única fonte: uma expressão, -f &lt;arquivo&gt; ou --json &lt;arquivo&gt;.&quot;);</span>
+        }
+<span class="fc bfc" id="L225" title="All 2 branches covered.">        List&lt;String&gt; formats = command.equals(&quot;analyze&quot;) ? List.of(&quot;text&quot;, &quot;json&quot;, &quot;csv&quot;, &quot;truth-csv&quot;) : List.of(&quot;text&quot;, &quot;json&quot;);</span>
+<span class="pc bpc" id="L226" title="1 of 2 branches missed.">        if (!formats.contains(format)) {</span>
+<span class="nc" id="L227">            throw new IllegalArgumentException(&quot;Formato desconhecido para &quot; + command + &quot;: &quot; + format + &quot;. Use &quot; + String.join(&quot;, &quot;, formats) + &quot;.&quot;);</span>
+        }
+<span class="fc bfc" id="L229" title="All 2 branches covered.">        if (direct) {</span>
+<span class="fc" id="L230">            z3 = true; // o modo direto usa o Z3</span>
+        }
+<span class="pc bpc" id="L232" title="1 of 4 branches missed.">        if (boundary &amp;&amp; !z3) {</span>
+<span class="nc" id="L233">            throw new IllegalArgumentException(&quot;--boundary precisa de --z3.&quot;);</span>
+        }
+<span class="pc bpc" id="L235" title="2 of 6 branches missed.">        if (!command.equals(&quot;analyze&quot;) &amp;&amp; (exact || direct)) {</span>
+<span class="nc" id="L236">            throw new IllegalArgumentException(&quot;--exact e --direct só valem para analyze.&quot;);</span>
+        }
+<span class="pc bpc" id="L238" title="1 of 4 branches missed.">        if (exact &amp;&amp; direct) {</span>
+<span class="nc" id="L239">            throw new IllegalArgumentException(&quot;--exact escolhe sobre a tabela inteira; não vale com --direct.&quot;);</span>
+        }
+<span class="pc bpc" id="L241" title="2 of 6 branches missed.">        if (direct &amp;&amp; (mutation || format.equals(&quot;truth-csv&quot;))) {</span>
+<span class="nc" id="L242">            throw new IllegalArgumentException(&quot;--mutation e truth-csv precisam da tabela inteira, que --direct não monta.&quot;);</span>
+        }
+<span class="pc bpc" id="L244" title="1 of 4 branches missed.">        if (context != null &amp;&amp; !command.equals(&quot;verify&quot;)) {</span>
+<span class="nc" id="L245">            throw new IllegalArgumentException(&quot;--context só vale para verify.&quot;);</span>
+        }
+<span class="pc bpc" id="L247" title="4 of 12 branches missed.">        if (command.equals(&quot;verify&quot;) &amp;&amp; (z3 || boundary || mutation || constraint != null || tests != null)) {</span>
+<span class="fc" id="L248">            throw new IllegalArgumentException(&quot;verify aceita só a fonte, --context, --format e -o.&quot;);</span>
+        }
+<span class="pc bpc" id="L250" title="1 of 6 branches missed.">        if ((boundary || mutation) &amp;&amp; command.equals(&quot;check&quot;)) {</span>
+<span class="nc" id="L251">            throw new IllegalArgumentException(&quot;--boundary e --mutation só valem para analyze.&quot;);</span>
+        }
+<span class="pc bpc" id="L253" title="1 of 4 branches missed.">        if (expression == null &amp;&amp; constraint != null) {</span>
+<span class="nc" id="L254">            throw new IllegalArgumentException(&quot;--constraint só vale com uma expressão direta.&quot;);</span>
+        }
+<span class="pc bpc" id="L256" title="1 of 4 branches missed.">        if (command.equals(&quot;check&quot;) &amp;&amp; tests == null) {</span>
+<span class="nc" id="L257">            throw new IllegalArgumentException(&quot;check precisa de --tests &lt;arquivo.csv&gt;.&quot;);</span>
+        }
+<span class="fc" id="L259">        return new Options(command, expression, file, json, constraint, tests, format, output, variant, z3, boundary,</span>
+                mutation, exact, direct, context);
+    }
+
+    private static DecisionSet load(Options options) throws IOException {
+<span class="pc bpc" id="L264" title="1 of 2 branches missed.">        if (options.file() != null) {</span>
+<span class="nc" id="L265">            return RequirementsFile.read(Path.of(options.file()));</span>
+        }
+<span class="fc bfc" id="L267" title="All 2 branches covered.">        if (options.json() != null) {</span>
+<span class="fc" id="L268">            return Nat2TestJsonReader.read(Path.of(options.json()));</span>
+        }
+<span class="fc" id="L270">        return new DecisionSet(null, List.of(), List.of(RequirementsFile.expression(&quot;REQ&quot;, null, options.expression())));</span>
+    }
+
+    private static void write(String report, String output) throws IOException {
+<span class="fc bfc" id="L274" title="All 2 branches covered.">        if (output == null) {</span>
+<span class="fc" id="L275">            System.out.print(report);</span>
+        } else {
+<span class="fc" id="L277">            Files.writeString(Path.of(output), report);</span>
+<span class="fc" id="L278">            System.out.println(&quot;Relatório gravado em &quot; + output);</span>
+        }
+<span class="fc" id="L280">    }</span>
+
+    /** Valor da opção em args[i + 1]. Quem chama avança o índice com i++. */
+    private static String valueAfter(String[] args, int i) {
+<span class="pc bpc" id="L284" title="1 of 2 branches missed.">        if (i + 1 &gt;= args.length) {</span>
+<span class="nc" id="L285">            throw new IllegalArgumentException(&quot;Faltou o valor de &quot; + args[i]);</span>
+        }
+<span class="fc" id="L287">        return args[i + 1];</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

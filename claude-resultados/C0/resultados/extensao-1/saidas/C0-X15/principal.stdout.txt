@@ -1,0 +1,30 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "s_mesmo_valor",
+  "decisions" : 2,
+  "pairsChecked" : 1,
+  "conflicts" : [ ],
+  "compatibleOverlaps" : [ {
+    "first" : "s#1",
+    "firstRequirement" : "R1",
+    "second" : "s#2",
+    "secondRequirement" : "R2",
+    "sharedVariables" : [ "m" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "c" : "true",
+      "d" : "true"
+    }
+  } ],
+  "gaps" : {
+    "checked" : true,
+    "context" : "c = false",
+    "found" : true,
+    "witness" : {
+      "c" : "false",
+      "d" : "false"
+    }
+  },
+  "ok" : false
+}

@@ -1,0 +1,11 @@
+; Q-E2-min-3: existe suite de 3 testes com par mascaramento de cada condicao
+(declare-const s0_A Bool)
+(declare-const s0_B Bool)
+(declare-const s1_A Bool)
+(declare-const s1_B Bool)
+(declare-const s2_A Bool)
+(declare-const s2_B Bool)
+(assert (or (and (distinct s0_A s1_A) (distinct (and s0_A (not s0_B)) (and s1_A (not s1_B))) (distinct (and s0_A (not s0_B)) (and (not s0_A) (not s0_B))) (distinct (and s1_A (not s1_B)) (and (not s1_A) (not s1_B)))) (and (distinct s0_A s2_A) (distinct (and s0_A (not s0_B)) (and s2_A (not s2_B))) (distinct (and s0_A (not s0_B)) (and (not s0_A) (not s0_B))) (distinct (and s2_A (not s2_B)) (and (not s2_A) (not s2_B)))) (and (distinct s1_A s2_A) (distinct (and s1_A (not s1_B)) (and s2_A (not s2_B))) (distinct (and s1_A (not s1_B)) (and (not s1_A) (not s1_B))) (distinct (and s2_A (not s2_B)) (and (not s2_A) (not s2_B))))))
+(assert (or (and (distinct s0_B s1_B) (distinct (and s0_A (not s0_B)) (and s1_A (not s1_B))) (distinct (and s0_A (not s0_B)) (and s0_A (not (not s0_B)))) (distinct (and s1_A (not s1_B)) (and s1_A (not (not s1_B))))) (and (distinct s0_B s2_B) (distinct (and s0_A (not s0_B)) (and s2_A (not s2_B))) (distinct (and s0_A (not s0_B)) (and s0_A (not (not s0_B)))) (distinct (and s2_A (not s2_B)) (and s2_A (not (not s2_B))))) (and (distinct s1_B s2_B) (distinct (and s1_A (not s1_B)) (and s2_A (not s2_B))) (distinct (and s1_A (not s1_B)) (and s1_A (not (not s1_B)))) (distinct (and s2_A (not s2_B)) (and s2_A (not (not s2_B)))))))
+(check-sat)
+(get-model)

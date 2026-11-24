@@ -1,0 +1,521 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "a == 1 or b != 2 or c < 3 or d <= 4 or e >= 5",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "a = 1",
+      "variable" : "a",
+      "operator" : "=",
+      "value" : "1"
+    }, {
+      "name" : "b != 2",
+      "variable" : "b",
+      "operator" : "!=",
+      "value" : "2"
+    }, {
+      "name" : "c < 3",
+      "variable" : "c",
+      "operator" : "<",
+      "value" : "3"
+    }, {
+      "name" : "d <= 4",
+      "variable" : "d",
+      "operator" : "<=",
+      "value" : "4"
+    }, {
+      "name" : "e >= 5",
+      "variable" : "e",
+      "operator" : ">=",
+      "value" : "5"
+    } ],
+    "conditions" : [ {
+      "label" : "a = 1",
+      "input" : "a = 1",
+      "occurrence" : 1
+    }, {
+      "label" : "b != 2",
+      "input" : "b != 2",
+      "occurrence" : 1
+    }, {
+      "label" : "c < 3",
+      "input" : "c < 3",
+      "occurrence" : 1
+    }, {
+      "label" : "d <= 4",
+      "input" : "d <= 4",
+      "occurrence" : 1
+    }, {
+      "label" : "e >= 5",
+      "input" : "e >= 5",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 32,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : true,
+        "c < 3" : true,
+        "d <= 4" : true,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : true,
+        "c < 3" : true,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : true,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : true,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V9",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : true,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V10",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V11",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V12",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V13",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V14",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V15",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V16",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V17",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : true,
+        "d <= 4" : true,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V18",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : true,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V19",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V20",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V21",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V22",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V23",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V24",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V25",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : true,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V26",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V27",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V28",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V29",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V30",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V31",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "feasible" : true
+    }, {
+      "vector" : "V32",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : false,
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "a = 1" : [ [ "V16", "V32" ] ],
+      "b != 2" : [ [ "V24", "V32" ] ],
+      "c < 3" : [ [ "V28", "V32" ] ],
+      "d <= 4" : [ [ "V30", "V32" ] ],
+      "e >= 5" : [ [ "V31", "V32" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V16",
+      "values" : {
+        "a = 1" : true,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "a = 1" ]
+    }, {
+      "vector" : "V24",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : true,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "b != 2" ]
+    }, {
+      "vector" : "V28",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : true,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "c < 3" ]
+    }, {
+      "vector" : "V30",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : true,
+        "e >= 5" : false
+      },
+      "outcome" : true,
+      "demonstrates" : [ "d <= 4" ]
+    }, {
+      "vector" : "V31",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : true
+      },
+      "outcome" : true,
+      "demonstrates" : [ "e >= 5" ]
+    }, {
+      "vector" : "V32",
+      "values" : {
+        "a = 1" : false,
+        "b != 2" : false,
+        "c < 3" : false,
+        "d <= 4" : false,
+        "e >= 5" : false
+      },
+      "outcome" : false,
+      "demonstrates" : [ "a = 1", "b != 2", "c < 3", "d <= 4", "e >= 5" ]
+    } ],
+    "chosenPairs" : {
+      "a = 1" : {
+        "whenTrue" : "V16",
+        "whenFalse" : "V32",
+        "uniqueCause" : true
+      },
+      "b != 2" : {
+        "whenTrue" : "V24",
+        "whenFalse" : "V32",
+        "uniqueCause" : true
+      },
+      "c < 3" : {
+        "whenTrue" : "V28",
+        "whenFalse" : "V32",
+        "uniqueCause" : true
+      },
+      "d <= 4" : {
+        "whenTrue" : "V30",
+        "whenFalse" : "V32",
+        "uniqueCause" : true
+      },
+      "e >= 5" : {
+        "whenTrue" : "V31",
+        "whenFalse" : "V32",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

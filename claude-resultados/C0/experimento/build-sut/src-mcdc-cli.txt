@@ -1,0 +1,7 @@
+mcdc-cli/src/main/java/io/github/rvdomingos/mcdc/cli/CheckReport.java
+mcdc-cli/src/main/java/io/github/rvdomingos/mcdc/cli/CsvReport.java
+mcdc-cli/src/main/java/io/github/rvdomingos/mcdc/cli/JsonReport.java
+mcdc-cli/src/main/java/io/github/rvdomingos/mcdc/cli/Main.java
+mcdc-cli/src/main/java/io/github/rvdomingos/mcdc/cli/TextReport.java
+mcdc-cli/src/main/java/io/github/rvdomingos/mcdc/cli/TruthTableCsvReport.java
+mcdc-cli/src/main/java/io/github/rvdomingos/mcdc/cli/VerifyReport.java

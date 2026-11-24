@@ -1,0 +1,5 @@
+(define-fun T1_A () Bool (> 150 100))(define-fun T1_B () Bool true)
+(define-fun T2_A () Bool (> 50 100))(define-fun T2_B () Bool true)
+(define-fun T3_A () Bool (> 150 100))(define-fun T3_B () Bool false)
+(assert (not (and (= (and T1_A T1_B) true) (= (and T2_A T2_B) false) (= (and T3_A T3_B) false))))
+(check-sat)

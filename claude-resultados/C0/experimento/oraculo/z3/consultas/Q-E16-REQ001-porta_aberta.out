@@ -1,0 +1,15 @@
+sat
+(
+  (define-fun t1_botao_emergencia () Bool
+    false)
+  (define-fun t1_alarme_ativo () Bool
+    true)
+  (define-fun t2_alarme_ativo () Bool
+    true)
+  (define-fun t1_porta_aberta () Bool
+    false)
+  (define-fun t2_porta_aberta () Bool
+    true)
+  (define-fun t2_botao_emergencia () Bool
+    false)
+)

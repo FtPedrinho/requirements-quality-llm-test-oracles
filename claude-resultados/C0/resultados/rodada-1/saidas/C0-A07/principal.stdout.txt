@@ -1,0 +1,27 @@
+Decisão:   REQ
+Guarda:    A or (A and B)
+Variante:  mascaramento
+
+Condições: A#1, A#2, B
+
+Vetor A   B   | D
+V1    T   T   | T
+V2    T   F   | T
+V3    F   T   | F
+V4    F   F   | F
+
+Pares de independência:
+  A#1: (V2, V3), (V2, V4)
+  A#2: nenhum par
+  B: nenhum par
+
+Suíte mínima (2 testes):
+  V2  TF  -> T   demonstra A#1
+  V4  FF  -> F   demonstra A#1
+
+Demonstração por condição:
+  A#1: V2 (T) e V4 (F), só ela muda
+
+Cobertura MC/DC: incompleta, sem par para A#2, B
+  A#2: redundante: não muda o resultado em nenhuma combinação; o requisito pode ser simplificado
+  B: redundante: não muda o resultado em nenhuma combinação; o requisito pode ser simplificado

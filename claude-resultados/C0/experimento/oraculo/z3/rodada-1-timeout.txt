@@ -1,0 +1,2 @@
+Rodada 1 (2026-11-24T09:41:05-03:00): Q-E14-min-13 (existe suite de 13 testes para conjuncao de 13 entradas?) retornou "timeout" com -T:60 no Z3 5.4.1.
+Classificado como erro tecnico (protocolo 3.2.5). Consulta substituida por lemas por condicao (Q-E14-n13-*, Q-E14-n20-*) na rodada 2.

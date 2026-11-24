@@ -1,0 +1,5 @@
+(declare-datatypes () ((Mode idle choice)))
+(declare-const mode Mode)(declare-const coin Bool)
+(assert (and (= mode idle) (not coin)))
+(check-sat)
+(get-model)

@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun t1_obstaculo () Bool
+    false)
+  (define-fun t2_porta_fechada () Bool
+    true)
+  (define-fun t2_obstaculo () Bool
+    false)
+  (define-fun t1_porta_fechada () Bool
+    false)
+)

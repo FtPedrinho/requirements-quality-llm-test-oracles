@@ -1,0 +1,9 @@
+Verificação entre requisitos: the_coffee_machine_system
+5 decisões, 10 pares que escrevem alguma variável em comum
+
+Conflitos: nenhum
+
+Sobreposições sem conflito: nenhuma
+
+Lacunas: encontrada: sob the_system_mode = preparing_weak, nenhuma guarda vale em
+    the_system_mode = preparing_weak, the_coin_sensor_antes = false, the_coin_sensor = false, the_coffee_request_button_antes = released, the_coffee_request_button = released, the_request_timer = 31

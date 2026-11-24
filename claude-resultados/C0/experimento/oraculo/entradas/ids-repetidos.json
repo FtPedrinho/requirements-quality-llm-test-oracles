@@ -1,0 +1,8 @@
+{
+  "system": "s_dup",
+  "inputs": [ { "name": "c", "type": "bool" }, { "name": "d", "type": "bool" } ],
+  "decisions": [
+    { "id": "x#1", "requirement": "R1", "guard": "c = true", "actions": [] },
+    { "id": "x#1", "requirement": "R2", "guard": "d = true", "actions": [] }
+  ]
+}

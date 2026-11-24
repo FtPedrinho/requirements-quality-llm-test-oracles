@@ -1,0 +1,5 @@
+(declare-datatypes () ((Mode idle choice)))
+(declare-const t1_x Int)(declare-const t1_y Int)(declare-const t1_mode Mode)
+(declare-const t2_x Int)(declare-const t2_y Int)(declare-const t2_mode Mode)
+(assert (and (distinct (<= t1_y t1_x) (<= t2_y t2_x)) (distinct (or (> t1_x 3) (and (<= t1_y t1_x) (not (= t1_mode idle)))) (or (> t2_x 3) (and (<= t2_y t2_x) (not (= t2_mode idle))))) (distinct (or (> t1_x 3) (and (<= t1_y t1_x) (not (= t1_mode idle)))) (or (> t1_x 3) (and (not (<= t1_y t1_x)) (not (= t1_mode idle))))) (distinct (or (> t2_x 3) (and (<= t2_y t2_x) (not (= t2_mode idle)))) (or (> t2_x 3) (and (not (<= t2_y t2_x)) (not (= t2_mode idle)))))))
+(check-sat)

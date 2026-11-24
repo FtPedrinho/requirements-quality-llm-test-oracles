@@ -1,0 +1,10 @@
+; Q-E16-REQ001-porta_aberta: par mascaramento de porta_aberta
+(declare-const t1_alarme_ativo Bool)
+(declare-const t1_porta_aberta Bool)
+(declare-const t1_botao_emergencia Bool)
+(declare-const t2_alarme_ativo Bool)
+(declare-const t2_porta_aberta Bool)
+(declare-const t2_botao_emergencia Bool)
+(assert (and (distinct t1_porta_aberta t2_porta_aberta) (distinct (or (and t1_alarme_ativo t1_porta_aberta) t1_botao_emergencia) (or (and t2_alarme_ativo t2_porta_aberta) t2_botao_emergencia)) (distinct (or (and t1_alarme_ativo t1_porta_aberta) t1_botao_emergencia) (or (and t1_alarme_ativo (not t1_porta_aberta)) t1_botao_emergencia)) (distinct (or (and t2_alarme_ativo t2_porta_aberta) t2_botao_emergencia) (or (and t2_alarme_ativo (not t2_porta_aberta)) t2_botao_emergencia))))
+(check-sat)
+(get-model)

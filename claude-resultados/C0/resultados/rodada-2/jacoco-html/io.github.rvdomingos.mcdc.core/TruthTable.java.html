@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TruthTable.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">C0 rodada-2</a> &gt; <a href="index.source.html" class="el_package">io.github.rvdomingos.mcdc.core</a> &gt; <span class="el_source">TruthTable.java</span></div><h1>TruthTable.java</h1><pre class="source lang-java linenums">package io.github.rvdomingos.mcdc.core;
+
+import io.github.rvdomingos.mcdc.core.model.And;
+import io.github.rvdomingos.mcdc.core.model.Cond;
+import io.github.rvdomingos.mcdc.core.model.Expr;
+import io.github.rvdomingos.mcdc.core.model.Not;
+import io.github.rvdomingos.mcdc.core.model.Or;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+/**
+ * Tabela verdade de uma expressão, montada sobre as entradas. A linha 0 tem todas as entradas verdadeiras.
+ *
+ * @param conditions cada ocorrência de uma entrada na expressão
+ */
+<span class="fc" id="L19">public record TruthTable(Expr expression, List&lt;String&gt; inputs, List&lt;Condition&gt; conditions, List&lt;TestVector&gt; rows) {</span>
+
+    public static final int MAX_INPUTS = 20;
+
+    public static TruthTable of(Expr expr) {
+<span class="nc" id="L24">        return of(expr, null, null);</span>
+    }
+
+    public static TruthTable of(Expr expr, Expr constraint) {
+<span class="nc" id="L28">        return of(expr, constraint, null);</span>
+    }
+
+    /**
+     * @param constraint  restrição que toda linha possível satisfaz; null quando não há
+     * @param feasibility verificação das linhas pelos predicados (ex.: Z3); null para não verificar
+     */
+    public static TruthTable of(Expr expr, Expr constraint, FeasibilityChecker feasibility) {
+<span class="fc" id="L36">        List&lt;String&gt; inputs = expr.inputs();</span>
+<span class="fc" id="L37">        int n = inputs.size();</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (n &gt; MAX_INPUTS) {</span>
+<span class="fc" id="L39">            throw new IllegalArgumentException(</span>
+                    &quot;Decisão com &quot; + n + &quot; entradas; o limite é &quot; + MAX_INPUTS);
+        }
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (constraint != null) {</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">            for (String id : constraint.inputs()) {</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">                if (!inputs.contains(id)) {</span>
+<span class="nc" id="L45">                    throw new IllegalArgumentException(&quot;A restrição usa uma entrada que não está na decisão: &quot; + id);</span>
+                }
+<span class="fc" id="L47">            }</span>
+        }
+
+<span class="fc" id="L50">        Map&lt;String, Integer&gt; bits = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L52">            bits.put(inputs.get(i), bit(n, i));</span>
+        }
+<span class="fc" id="L54">        List&lt;TestVector&gt; rows = new ArrayList&lt;&gt;(1 &lt;&lt; n);</span>
+        // cada linha é um número de n bits: bit 0 = entrada verdadeira
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        for (int row = 0; row &lt; (1 &lt;&lt; n); row++) {</span>
+<span class="fc bfc" id="L57" title="All 4 branches covered.">            boolean feasible = constraint == null || eval(constraint, row, bits);</span>
+<span class="fc" id="L58">            rows.add(new TestVector(row, inputs, eval(expr, row, bits), feasible, null));</span>
+        }
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        if (feasibility != null) {</span>
+<span class="fc" id="L61">            rows = checkFeasibility(expr, rows, feasibility);</span>
+        }
+<span class="fc" id="L63">        return new TruthTable(expr, inputs, Condition.of(expr), List.copyOf(rows));</span>
+    }
+
+    /** Avalia direto sobre os bits da linha, sem montar mapas. */
+    private static boolean eval(Expr expr, int row, Map&lt;String, Integer&gt; bits) {
+<span class="fc bfc" id="L68" title="All 4 branches covered.">        return switch (expr) {</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">            case Cond c -&gt; (row &amp; bits.get(c.id())) == 0;</span>
+<span class="fc bfc" id="L70" title="All 4 branches covered.">            case And(var left, var right) -&gt; eval(left, row, bits) &amp;&amp; eval(right, row, bits);</span>
+<span class="fc bfc" id="L71" title="All 4 branches covered.">            case Or(var left, var right) -&gt; eval(left, row, bits) || eval(right, row, bits);</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">            case Not(var operand) -&gt; !eval(operand, row, bits);</span>
+        };
+    }
+
+    /** Pergunta ao verificador só pelas linhas que a restrição manual já aceitou. */
+    private static List&lt;TestVector&gt; checkFeasibility(Expr expr, List&lt;TestVector&gt; rows, FeasibilityChecker feasibility) {
+<span class="fc" id="L78">        List&lt;TestVector&gt; candidates = rows.stream().filter(TestVector::feasible).toList();</span>
+<span class="fc" id="L79">        List&lt;Optional&lt;Map&lt;String, String&gt;&gt;&gt; answers = feasibility.solve(expr, candidates);</span>
+
+<span class="fc" id="L81">        Map&lt;Integer, Optional&lt;Map&lt;String, String&gt;&gt;&gt; byIndex = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">        for (int i = 0; i &lt; candidates.size(); i++) {</span>
+<span class="fc" id="L83">            byIndex.put(candidates.get(i).index(), answers.get(i));</span>
+        }
+<span class="fc" id="L85">        List&lt;TestVector&gt; checked = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        for (TestVector row : rows) {</span>
+<span class="fc" id="L87">            Optional&lt;Map&lt;String, String&gt;&gt; answer = byIndex.getOrDefault(row.index(), Optional.empty());</span>
+<span class="fc" id="L88">            checked.add(new TestVector(row.index(), row.inputs(), row.outcome(), answer.isPresent(), answer.orElse(null)));</span>
+<span class="fc" id="L89">        }</span>
+<span class="fc" id="L90">        return checked;</span>
+    }
+
+    /** Limite do modo direto: os índices das linhas ainda cabem num int. */
+    public static final int MAX_DIRECT_INPUTS = 30;
+
+    /** Tabela só com as linhas dadas (modo direto), sem montar as 2ⁿ; as linhas não ficam na posição do índice. */
+    public static TruthTable partial(Expr expr, List&lt;TestVector&gt; rows) {
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">        if (expr.inputs().size() &gt; MAX_DIRECT_INPUTS) {</span>
+<span class="nc" id="L99">            throw new IllegalArgumentException(</span>
+<span class="nc" id="L100">                    &quot;Decisão com &quot; + expr.inputs().size() + &quot; entradas; o limite do modo direto é &quot; + MAX_DIRECT_INPUTS);</span>
+        }
+<span class="fc" id="L102">        return new TruthTable(expr, expr.inputs(), Condition.of(expr), List.copyOf(rows));</span>
+    }
+
+    /** 2ⁿ, mesmo quando a tabela não foi montada. */
+    public long combinations() {
+<span class="fc" id="L107">        return 1L &lt;&lt; inputs.size();</span>
+    }
+
+    /** Se todas as 2ⁿ linhas estão na tabela; falso no modo direto. */
+    public boolean isFull() {
+<span class="fc bfc" id="L112" title="All 2 branches covered.">        return rows.size() == combinations();</span>
+    }
+
+    /** A mesma tabela com todas as linhas possíveis, para saber se uma condição sem par é redundante. */
+    public TruthTable withoutConstraints() {
+<span class="fc" id="L117">        List&lt;TestVector&gt; all = rows.stream()</span>
+<span class="fc" id="L118">                .map(r -&gt; new TestVector(r.index(), r.inputs(), r.outcome(), true, r.assignment()))</span>
+<span class="fc" id="L119">                .toList();</span>
+<span class="fc" id="L120">        return new TruthTable(expression, inputs, conditions, all);</span>
+    }
+
+    /** Máscara do bit da entrada i. A primeira entrada é o bit mais significativo. */
+    static int bit(int n, int i) {
+<span class="fc" id="L125">        return 1 &lt;&lt; (n - 1 - i);</span>
+    }
+
+    public String format() {
+<span class="fc" id="L129">        var sb = new StringBuilder();</span>
+<span class="fc" id="L130">        sb.append(String.format(&quot;%-6s&quot;, &quot;Vetor&quot;));</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">        for (String input : inputs) {</span>
+<span class="fc" id="L132">            sb.append(column(input, input));</span>
+<span class="fc" id="L133">        }</span>
+<span class="fc" id="L134">        sb.append(&quot;| D\n&quot;);</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">        for (TestVector row : rows) {</span>
+<span class="fc" id="L136">            sb.append(String.format(&quot;%-6s&quot;, row.name()));</span>
+<span class="fc bfc" id="L137" title="All 2 branches covered.">            for (String input : inputs) {</span>
+<span class="fc bfc" id="L138" title="All 2 branches covered.">                sb.append(column(row.values().get(input) ? &quot;T&quot; : &quot;F&quot;, input));</span>
+<span class="fc" id="L139">            }</span>
+<span class="fc bfc" id="L140" title="All 2 branches covered.">            sb.append(&quot;| &quot;).append(row.outcome() ? &quot;T&quot; : &quot;F&quot;);</span>
+<span class="fc bfc" id="L141" title="All 2 branches covered.">            if (!row.feasible()) {</span>
+<span class="fc" id="L142">                sb.append(&quot;  (impossível)&quot;);</span>
+            }
+<span class="fc" id="L144">            sb.append('\n');</span>
+<span class="fc" id="L145">        }</span>
+<span class="fc" id="L146">        return sb.toString();</span>
+    }
+
+    /** Alinha o texto na largura da coluna, que acompanha o tamanho do nome da entrada. */
+    private static String column(String text, String input) {
+<span class="fc" id="L151">        return String.format(&quot;%-&quot; + (input.length() + 3) + &quot;s&quot;, text);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.16.202610240946</span></div></body></html>

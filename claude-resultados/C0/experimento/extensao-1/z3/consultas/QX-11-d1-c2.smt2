@@ -1,0 +1,5 @@
+(define-fun t0_v0 () Bool true)(define-fun t0_v1 () Bool true)
+(define-fun t1_v0 () Bool false)(define-fun t1_v1 () Bool true)
+(define-fun t2_v0 () Bool true)(define-fun t2_v1 () Bool false)
+(assert (or (and (distinct t0_v1 t1_v1) (distinct (and t0_v0 t0_v1) (and t1_v0 t1_v1)) (distinct (and t0_v0 t0_v1) (and t0_v0 (not t0_v1))) (distinct (and t1_v0 t1_v1) (and t1_v0 (not t1_v1)))) (and (distinct t0_v1 t2_v1) (distinct (and t0_v0 t0_v1) (and t2_v0 t2_v1)) (distinct (and t0_v0 t0_v1) (and t0_v0 (not t0_v1))) (distinct (and t2_v0 t2_v1) (and t2_v0 (not t2_v1)))) (and (distinct t1_v1 t2_v1) (distinct (and t1_v0 t1_v1) (and t2_v0 t2_v1)) (distinct (and t1_v0 t1_v1) (and t1_v0 (not t1_v1))) (distinct (and t2_v0 t2_v1) (and t2_v0 (not t2_v1))))))
+(check-sat)

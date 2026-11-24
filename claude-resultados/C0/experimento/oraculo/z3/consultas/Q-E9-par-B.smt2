@@ -1,0 +1,5 @@
+(declare-const t1_speed Int)(declare-const t1_rain Bool)
+(declare-const t2_speed Int)(declare-const t2_rain Bool)
+(assert (and (distinct (> t1_speed 50) (> t2_speed 50)) (distinct (or (> t1_speed 100) (and (> t1_speed 50) t1_rain)) (or (> t2_speed 100) (and (> t2_speed 50) t2_rain))) (distinct (or (> t1_speed 100) (and (> t1_speed 50) t1_rain)) (or (> t1_speed 100) (and (not (> t1_speed 50)) t1_rain))) (distinct (or (> t2_speed 100) (and (> t2_speed 50) t2_rain)) (or (> t2_speed 100) (and (not (> t2_speed 50)) t2_rain)))))
+(check-sat)
+(get-model)

@@ -1,0 +1,43 @@
+sat
+(
+  (define-fun s0_B () Bool
+    false)
+  (define-fun s0_A () Bool
+    false)
+  (define-fun s1_A () Bool
+    true)
+  (define-fun s2_D () Bool
+    false)
+  (define-fun s0_E () Bool
+    true)
+  (define-fun s1_B () Bool
+    false)
+  (define-fun s1_E () Bool
+    false)
+  (define-fun s2_E () Bool
+    false)
+  (define-fun s3_E () Bool
+    true)
+  (define-fun s4_D () Bool
+    false)
+  (define-fun s0_D () Bool
+    false)
+  (define-fun s2_A () Bool
+    false)
+  (define-fun s2_B () Bool
+    false)
+  (define-fun s3_B () Bool
+    false)
+  (define-fun s4_E () Bool
+    false)
+  (define-fun s3_A () Bool
+    true)
+  (define-fun s4_B () Bool
+    true)
+  (define-fun s1_D () Bool
+    true)
+  (define-fun s4_A () Bool
+    false)
+  (define-fun s3_D () Bool
+    false)
+)

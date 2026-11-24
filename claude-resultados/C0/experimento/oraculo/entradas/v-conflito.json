@@ -1,0 +1,11 @@
+{
+  "system": "s_conflito",
+  "inputs": [
+    { "name": "c", "type": "bool" }, { "name": "d", "type": "bool" },
+    { "name": "m", "type": "enum", "values": ["idle", "choice", "weak"] }
+  ],
+  "decisions": [
+    { "id": "s#1", "requirement": "R1", "guard": "c = true", "actions": ["m := choice"] },
+    { "id": "s#2", "requirement": "R2", "guard": "d = true", "actions": ["m := weak"] }
+  ]
+}

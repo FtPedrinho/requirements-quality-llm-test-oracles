@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun t2_A () Bool
+    true)
+  (define-fun t1_B () Bool
+    false)
+  (define-fun t2_B () Bool
+    false)
+  (define-fun t1_A () Bool
+    false)
+)

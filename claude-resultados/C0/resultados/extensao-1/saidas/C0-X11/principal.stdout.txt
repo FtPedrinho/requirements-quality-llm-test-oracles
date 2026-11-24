@@ -1,0 +1,29 @@
+Decisão:   d#1
+Requisito: R1
+Guarda:    a = true /\ b = true
+Testes:    3
+  T1 = V1  TT  -> T
+  T2 = V3  FT  -> F
+  T3 = V2  TF  -> F
+
+Condições:
+  a = true: demonstrada por T1 (T) e T2 (F)
+  b = true: demonstrada por T1 (T) e T3 (F)
+
+Resultados de condição demonstrados: 4 de 4 (100,0%)
+Cobertura MC/DC: completa, 2 de 2 condições demonstradas
+
+Decisão:   d#2
+Requisito: R2
+Guarda:    c = true \/ d = true
+Testes:    3
+  U1 = V4  FF  -> F
+  U2 = V2  TF  -> T
+  U3 = V3  FT  -> T
+
+Condições:
+  c = true: demonstrada por U2 (T) e U1 (F)
+  d = true: demonstrada por U3 (T) e U1 (F)
+
+Resultados de condição demonstrados: 4 de 4 (100,0%)
+Cobertura MC/DC: completa, 2 de 2 condições demonstradas

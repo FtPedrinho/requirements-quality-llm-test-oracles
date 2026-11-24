@@ -1,0 +1,16 @@
+{
+  "system": "s",
+  "inputs": [
+    {
+      "name": "c",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "g#1",
+      "requirement": "R1",
+      "actions": []
+    }
+  ]
+}

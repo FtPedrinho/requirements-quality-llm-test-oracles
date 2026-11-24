@@ -1,0 +1,11 @@
+sat
+(
+  (define-fun t1_rain () Bool
+    false)
+  (define-fun t1_speed () Int
+    101)
+  (define-fun t2_rain () Bool
+    true)
+  (define-fun t2_speed () Int
+    0)
+)

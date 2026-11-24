@@ -1,0 +1,278 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "x > 3 or (y <= x and mode != idle)",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "x > 3",
+      "variable" : "x",
+      "operator" : ">",
+      "value" : "3"
+    }, {
+      "name" : "y <= x",
+      "variable" : "y",
+      "operator" : "<=",
+      "value" : "x"
+    }, {
+      "name" : "mode != idle",
+      "variable" : "mode",
+      "operator" : "!=",
+      "value" : "idle"
+    } ],
+    "conditions" : [ {
+      "label" : "x > 3",
+      "input" : "x > 3",
+      "occurrence" : 1
+    }, {
+      "label" : "y <= x",
+      "input" : "y <= x",
+      "occurrence" : 1
+    }, {
+      "label" : "mode != idle",
+      "input" : "mode != idle",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x > 3" : true,
+        "y <= x" : true,
+        "mode != idle" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "4",
+        "y" : "0",
+        "mode" : "_outro"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x > 3" : true,
+        "y <= x" : true,
+        "mode != idle" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "4",
+        "y" : "0",
+        "mode" : "idle"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x > 3" : true,
+        "y <= x" : false,
+        "mode != idle" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "4",
+        "y" : "5",
+        "mode" : "_outro"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x > 3" : true,
+        "y <= x" : false,
+        "mode != idle" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "4",
+        "y" : "5",
+        "mode" : "idle"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "x > 3" : false,
+        "y <= x" : true,
+        "mode != idle" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "y" : "0",
+        "mode" : "_outro"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "x > 3" : false,
+        "y <= x" : true,
+        "mode != idle" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "0",
+        "y" : "0",
+        "mode" : "idle"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "x > 3" : false,
+        "y <= x" : false,
+        "mode != idle" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "-1",
+        "y" : "0",
+        "mode" : "_outro"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "x > 3" : false,
+        "y <= x" : false,
+        "mode != idle" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "0",
+        "y" : "1",
+        "mode" : "idle"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "x > 3" : [ [ "V2", "V6" ], [ "V2", "V7" ], [ "V2", "V8" ], [ "V3", "V6" ], [ "V3", "V7" ], [ "V3", "V8" ], [ "V4", "V6" ], [ "V4", "V7" ], [ "V4", "V8" ] ],
+      "y <= x" : [ [ "V5", "V7" ] ],
+      "mode != idle" : [ [ "V5", "V6" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "x > 3" : true,
+        "y <= x" : true,
+        "mode != idle" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "4",
+        "y" : "0",
+        "mode" : "idle"
+      },
+      "demonstrates" : [ "x > 3" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "x > 3" : false,
+        "y <= x" : true,
+        "mode != idle" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "y" : "0",
+        "mode" : "_outro"
+      },
+      "demonstrates" : [ "y <= x", "mode != idle" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "x > 3" : false,
+        "y <= x" : true,
+        "mode != idle" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "0",
+        "y" : "0",
+        "mode" : "idle"
+      },
+      "demonstrates" : [ "x > 3", "mode != idle" ]
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "x > 3" : false,
+        "y <= x" : false,
+        "mode != idle" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "-1",
+        "y" : "0",
+        "mode" : "_outro"
+      },
+      "demonstrates" : [ "y <= x" ]
+    } ],
+    "chosenPairs" : {
+      "x > 3" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "y <= x" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V7",
+        "uniqueCause" : true
+      },
+      "mode != idle" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      }
+    },
+    "boundaryTests" : [ {
+      "base" : "V2",
+      "condition" : "x > 3",
+      "boundary" : "x = 4",
+      "assignment" : {
+        "x" : "4",
+        "y" : "0",
+        "mode" : "idle"
+      }
+    }, {
+      "base" : "V5",
+      "condition" : "x > 3",
+      "boundary" : "x = 3",
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "mode" : "_outro"
+      }
+    }, {
+      "base" : "V6",
+      "condition" : "x > 3",
+      "boundary" : "x = 3",
+      "assignment" : {
+        "x" : "3",
+        "y" : "0",
+        "mode" : "idle"
+      }
+    }, {
+      "base" : "V7",
+      "condition" : "x > 3",
+      "boundary" : "x = 3",
+      "assignment" : {
+        "x" : "3",
+        "y" : "4",
+        "mode" : "_outro"
+      }
+    } ]
+  } ]
+}

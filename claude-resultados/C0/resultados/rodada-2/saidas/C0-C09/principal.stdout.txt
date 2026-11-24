@@ -1,0 +1,25 @@
+Decisão:   t#1
+Requisito: REQ-T1
+Guarda:    the_coin_sensor_antes = false /\ the_coin_sensor = true
+Variante:  mascaramento
+
+Vetor the_coin_sensor_antes = false   the_coin_sensor = true   | D
+V1    T                               T                        | T
+V2    T                               F                        | F
+V3    F                               T                        | F
+V4    F                               F                        | F
+
+Pares de independência:
+  the_coin_sensor_antes = false: (V1, V3)
+  the_coin_sensor = true: (V1, V2)
+
+Suíte mínima (3 testes):
+  V1  TT  -> T   demonstra the_coin_sensor_antes = false, the_coin_sensor = true   [the_coin_sensor_antes = false, the_coin_sensor = true]
+  V2  TF  -> F   demonstra the_coin_sensor = true   [the_coin_sensor_antes = false, the_coin_sensor = false]
+  V3  FT  -> F   demonstra the_coin_sensor_antes = false   [the_coin_sensor_antes = true, the_coin_sensor = true]
+
+Demonstração por condição:
+  the_coin_sensor_antes = false: V1 (T) e V3 (F), só ela muda
+  the_coin_sensor = true: V1 (T) e V2 (F), só ela muda
+
+Cobertura MC/DC: completa

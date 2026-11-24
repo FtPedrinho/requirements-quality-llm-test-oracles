@@ -1,0 +1,13 @@
+test,input,value,expected_outcome
+"T1","A","T","T"
+"T1","B","T","T"
+"T1","C","F","T"
+"T2","A","F","F"
+"T2","B","T","F"
+"T2","C","F","F"
+"T3","A","T","F"
+"T3","B","F","F"
+"T3","C","F","F"
+"T4","A","F","T"
+"T4","B","T","T"
+"T4","C","T","T"

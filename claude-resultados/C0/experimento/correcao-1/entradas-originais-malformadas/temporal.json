@@ -1,0 +1,9 @@
+{
+  "system": "s_temporal",
+  "inputs": [ { "name": "the_coin_sensor", "type": "bool" } ],
+  "decisions": [
+    { "id": "t#1", "requirement": "REQ-T1",
+      "guard": "the_coin_sensor_antes = false /\ the_coin_sensor = true",
+      "actions": [] }
+  ]
+}

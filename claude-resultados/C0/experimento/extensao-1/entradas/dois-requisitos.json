@@ -1,0 +1,35 @@
+{
+  "system": "dois",
+  "inputs": [
+    {
+      "name": "a",
+      "type": "bool"
+    },
+    {
+      "name": "b",
+      "type": "bool"
+    },
+    {
+      "name": "c",
+      "type": "bool"
+    },
+    {
+      "name": "d",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "d#1",
+      "requirement": "R1",
+      "guard": "a = true /\\ b = true",
+      "actions": []
+    },
+    {
+      "id": "d#2",
+      "requirement": "R2",
+      "guard": "c = true \\/ d = true",
+      "actions": []
+    }
+  ]
+}

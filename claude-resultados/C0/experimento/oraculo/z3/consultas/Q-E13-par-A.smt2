@@ -1,0 +1,5 @@
+(define-fun T1_A () Bool (> 150 100))(define-fun T1_B () Bool true)
+(define-fun T2_A () Bool (> 50 100))(define-fun T2_B () Bool true)
+(define-fun T3_A () Bool (> 150 100))(define-fun T3_B () Bool false)
+(assert (or (and (distinct T1_A T2_A) (distinct (and T1_A T1_B) (and T2_A T2_B)) (distinct (and T1_A T1_B) (and (not T1_A) T1_B)) (distinct (and T2_A T2_B) (and (not T2_A) T2_B))) (and (distinct T1_A T3_A) (distinct (and T1_A T1_B) (and T3_A T3_B)) (distinct (and T1_A T1_B) (and (not T1_A) T1_B)) (distinct (and T3_A T3_B) (and (not T3_A) T3_B))) (and (distinct T2_A T3_A) (distinct (and T2_A T2_B) (and T3_A T3_B)) (distinct (and T2_A T2_B) (and (not T2_A) T2_B)) (distinct (and T3_A T3_B) (and (not T3_A) T3_B)))))
+(check-sat)

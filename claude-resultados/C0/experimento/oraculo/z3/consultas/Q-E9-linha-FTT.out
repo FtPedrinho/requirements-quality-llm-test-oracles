@@ -1,0 +1,7 @@
+sat
+(
+  (define-fun speed () Int
+    51)
+  (define-fun rain () Bool
+    true)
+)

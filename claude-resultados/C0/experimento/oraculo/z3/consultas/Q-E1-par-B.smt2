@@ -1,0 +1,10 @@
+; Q-E1-par-B: par mascaramento de B
+(declare-const t1_A Bool)
+(declare-const t1_B Bool)
+(declare-const t1_C Bool)
+(declare-const t2_A Bool)
+(declare-const t2_B Bool)
+(declare-const t2_C Bool)
+(assert (and (distinct t1_B t2_B) (distinct (or (and t1_A t1_B) t1_C) (or (and t2_A t2_B) t2_C)) (distinct (or (and t1_A t1_B) t1_C) (or (and t1_A (not t1_B)) t1_C)) (distinct (or (and t2_A t2_B) t2_C) (or (and t2_A (not t2_B)) t2_C))))
+(check-sat)
+(get-model)

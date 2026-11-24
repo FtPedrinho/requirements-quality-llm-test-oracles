@@ -1,0 +1,367 @@
+sat
+(
+  (define-fun s3_A4 () Bool
+    true)
+  (define-fun s12_A9 () Bool
+    true)
+  (define-fun s0_A2 () Bool
+    true)
+  (define-fun s6_A4 () Bool
+    true)
+  (define-fun s10_A5 () Bool
+    true)
+  (define-fun s6_A5 () Bool
+    true)
+  (define-fun s11_A6 () Bool
+    true)
+  (define-fun s11_A10 () Bool
+    true)
+  (define-fun s13_A2 () Bool
+    true)
+  (define-fun s9_A12 () Bool
+    true)
+  (define-fun s1_A4 () Bool
+    true)
+  (define-fun s13_A12 () Bool
+    true)
+  (define-fun s10_A4 () Bool
+    true)
+  (define-fun s9_A6 () Bool
+    true)
+  (define-fun s6_A10 () Bool
+    true)
+  (define-fun s9_A10 () Bool
+    false)
+  (define-fun s12_A10 () Bool
+    true)
+  (define-fun s2_A4 () Bool
+    true)
+  (define-fun s12_A5 () Bool
+    true)
+  (define-fun s9_A8 () Bool
+    true)
+  (define-fun s7_A8 () Bool
+    true)
+  (define-fun s0_A5 () Bool
+    true)
+  (define-fun s7_A12 () Bool
+    true)
+  (define-fun s8_A6 () Bool
+    true)
+  (define-fun s5_A3 () Bool
+    true)
+  (define-fun s9_A1 () Bool
+    true)
+  (define-fun s4_A1 () Bool
+    true)
+  (define-fun s0_A9 () Bool
+    true)
+  (define-fun s13_A9 () Bool
+    true)
+  (define-fun s7_A13 () Bool
+    false)
+  (define-fun s5_A7 () Bool
+    true)
+  (define-fun s7_A4 () Bool
+    true)
+  (define-fun s10_A1 () Bool
+    true)
+  (define-fun s6_A13 () Bool
+    true)
+  (define-fun s10_A9 () Bool
+    false)
+  (define-fun s11_A7 () Bool
+    true)
+  (define-fun s5_A5 () Bool
+    true)
+  (define-fun s7_A9 () Bool
+    true)
+  (define-fun s3_A3 () Bool
+    true)
+  (define-fun s0_A13 () Bool
+    true)
+  (define-fun s9_A4 () Bool
+    true)
+  (define-fun s4_A4 () Bool
+    true)
+  (define-fun s0_A6 () Bool
+    true)
+  (define-fun s9_A5 () Bool
+    true)
+  (define-fun s8_A8 () Bool
+    true)
+  (define-fun s1_A7 () Bool
+    true)
+  (define-fun s4_A8 () Bool
+    true)
+  (define-fun s13_A4 () Bool
+    true)
+  (define-fun s3_A1 () Bool
+    true)
+  (define-fun s2_A12 () Bool
+    true)
+  (define-fun s11_A3 () Bool
+    true)
+  (define-fun s4_A9 () Bool
+    true)
+  (define-fun s8_A10 () Bool
+    true)
+  (define-fun s1_A13 () Bool
+    true)
+  (define-fun s0_A1 () Bool
+    true)
+  (define-fun s0_A8 () Bool
+    true)
+  (define-fun s2_A7 () Bool
+    true)
+  (define-fun s8_A11 () Bool
+    false)
+  (define-fun s3_A9 () Bool
+    true)
+  (define-fun s13_A8 () Bool
+    true)
+  (define-fun s8_A7 () Bool
+    true)
+  (define-fun s10_A7 () Bool
+    true)
+  (define-fun s0_A11 () Bool
+    true)
+  (define-fun s1_A11 () Bool
+    true)
+  (define-fun s9_A11 () Bool
+    true)
+  (define-fun s12_A13 () Bool
+    true)
+  (define-fun s10_A12 () Bool
+    true)
+  (define-fun s1_A1 () Bool
+    true)
+  (define-fun s6_A11 () Bool
+    true)
+  (define-fun s12_A4 () Bool
+    true)
+  (define-fun s11_A12 () Bool
+    true)
+  (define-fun s1_A2 () Bool
+    false)
+  (define-fun s3_A6 () Bool
+    true)
+  (define-fun s10_A3 () Bool
+    true)
+  (define-fun s12_A3 () Bool
+    false)
+  (define-fun s12_A12 () Bool
+    true)
+  (define-fun s12_A1 () Bool
+    true)
+  (define-fun s2_A10 () Bool
+    true)
+  (define-fun s5_A8 () Bool
+    true)
+  (define-fun s7_A1 () Bool
+    true)
+  (define-fun s12_A7 () Bool
+    true)
+  (define-fun s4_A2 () Bool
+    true)
+  (define-fun s2_A9 () Bool
+    true)
+  (define-fun s6_A8 () Bool
+    false)
+  (define-fun s5_A11 () Bool
+    true)
+  (define-fun s12_A11 () Bool
+    true)
+  (define-fun s11_A11 () Bool
+    true)
+  (define-fun s12_A8 () Bool
+    true)
+  (define-fun s6_A2 () Bool
+    true)
+  (define-fun s1_A10 () Bool
+    true)
+  (define-fun s13_A1 () Bool
+    true)
+  (define-fun s1_A8 () Bool
+    true)
+  (define-fun s2_A13 () Bool
+    true)
+  (define-fun s5_A10 () Bool
+    true)
+  (define-fun s6_A9 () Bool
+    true)
+  (define-fun s6_A6 () Bool
+    true)
+  (define-fun s7_A5 () Bool
+    true)
+  (define-fun s11_A13 () Bool
+    true)
+  (define-fun s7_A3 () Bool
+    true)
+  (define-fun s5_A6 () Bool
+    true)
+  (define-fun s13_A7 () Bool
+    true)
+  (define-fun s5_A4 () Bool
+    false)
+  (define-fun s10_A8 () Bool
+    true)
+  (define-fun s8_A13 () Bool
+    true)
+  (define-fun s0_A12 () Bool
+    false)
+  (define-fun s3_A13 () Bool
+    true)
+  (define-fun s11_A8 () Bool
+    true)
+  (define-fun s7_A11 () Bool
+    true)
+  (define-fun s4_A11 () Bool
+    true)
+  (define-fun s13_A3 () Bool
+    true)
+  (define-fun s4_A7 () Bool
+    true)
+  (define-fun s9_A3 () Bool
+    true)
+  (define-fun s0_A7 () Bool
+    true)
+  (define-fun s0_A4 () Bool
+    true)
+  (define-fun s7_A7 () Bool
+    true)
+  (define-fun s9_A9 () Bool
+    true)
+  (define-fun s1_A6 () Bool
+    true)
+  (define-fun s2_A6 () Bool
+    true)
+  (define-fun s10_A11 () Bool
+    true)
+  (define-fun s4_A13 () Bool
+    true)
+  (define-fun s8_A3 () Bool
+    true)
+  (define-fun s3_A11 () Bool
+    true)
+  (define-fun s11_A4 () Bool
+    true)
+  (define-fun s13_A5 () Bool
+    false)
+  (define-fun s13_A10 () Bool
+    true)
+  (define-fun s2_A3 () Bool
+    true)
+  (define-fun s2_A11 () Bool
+    true)
+  (define-fun s5_A1 () Bool
+    true)
+  (define-fun s8_A9 () Bool
+    true)
+  (define-fun s9_A2 () Bool
+    true)
+  (define-fun s2_A5 () Bool
+    true)
+  (define-fun s13_A11 () Bool
+    true)
+  (define-fun s6_A7 () Bool
+    true)
+  (define-fun s2_A1 () Bool
+    true)
+  (define-fun s0_A3 () Bool
+    true)
+  (define-fun s3_A7 () Bool
+    false)
+  (define-fun s4_A6 () Bool
+    false)
+  (define-fun s7_A10 () Bool
+    true)
+  (define-fun s8_A4 () Bool
+    true)
+  (define-fun s8_A5 () Bool
+    true)
+  (define-fun s11_A2 () Bool
+    true)
+  (define-fun s10_A2 () Bool
+    true)
+  (define-fun s3_A8 () Bool
+    true)
+  (define-fun s3_A2 () Bool
+    true)
+  (define-fun s11_A1 () Bool
+    false)
+  (define-fun s3_A12 () Bool
+    true)
+  (define-fun s13_A13 () Bool
+    true)
+  (define-fun s5_A12 () Bool
+    true)
+  (define-fun s3_A10 () Bool
+    true)
+  (define-fun s4_A3 () Bool
+    true)
+  (define-fun s6_A12 () Bool
+    true)
+  (define-fun s8_A1 () Bool
+    true)
+  (define-fun s11_A5 () Bool
+    true)
+  (define-fun s4_A12 () Bool
+    true)
+  (define-fun s6_A1 () Bool
+    true)
+  (define-fun s6_A3 () Bool
+    true)
+  (define-fun s7_A6 () Bool
+    true)
+  (define-fun s13_A6 () Bool
+    true)
+  (define-fun s12_A6 () Bool
+    true)
+  (define-fun s2_A8 () Bool
+    true)
+  (define-fun s4_A5 () Bool
+    true)
+  (define-fun s7_A2 () Bool
+    true)
+  (define-fun s9_A7 () Bool
+    true)
+  (define-fun s10_A6 () Bool
+    true)
+  (define-fun s8_A12 () Bool
+    true)
+  (define-fun s2_A2 () Bool
+    true)
+  (define-fun s10_A10 () Bool
+    true)
+  (define-fun s12_A2 () Bool
+    true)
+  (define-fun s3_A5 () Bool
+    true)
+  (define-fun s5_A13 () Bool
+    true)
+  (define-fun s1_A9 () Bool
+    true)
+  (define-fun s4_A10 () Bool
+    true)
+  (define-fun s5_A9 () Bool
+    true)
+  (define-fun s1_A12 () Bool
+    true)
+  (define-fun s0_A10 () Bool
+    true)
+  (define-fun s1_A3 () Bool
+    true)
+  (define-fun s5_A2 () Bool
+    true)
+  (define-fun s8_A2 () Bool
+    true)
+  (define-fun s9_A13 () Bool
+    true)
+  (define-fun s10_A13 () Bool
+    true)
+  (define-fun s1_A5 () Bool
+    true)
+  (define-fun s11_A9 () Bool
+    true)
+)

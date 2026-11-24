@@ -1,0 +1,16 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "the_coffee_machine_system",
+  "decisions" : 5,
+  "pairsChecked" : 10,
+  "conflicts" : [ ],
+  "compatibleOverlaps" : [ ],
+  "gaps" : {
+    "checked" : false,
+    "context" : null,
+    "found" : false,
+    "witness" : null
+  },
+  "ok" : true
+}

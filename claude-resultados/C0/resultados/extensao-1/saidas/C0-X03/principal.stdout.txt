@@ -1,0 +1,190 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "x > 5 and x < 3 or b",
+    "actions" : [ ],
+    "complete" : false,
+    "uncoveredConditions" : [ "x > 5", "x < 3" ],
+    "uncovered" : [ {
+      "condition" : "x > 5",
+      "reason" : "INFEASIBLE",
+      "blockedPairs" : [ [ "V2", "V6" ] ]
+    }, {
+      "condition" : "x < 3",
+      "reason" : "INFEASIBLE",
+      "blockedPairs" : [ [ "V2", "V4" ] ]
+    } ],
+    "inputs" : [ {
+      "name" : "x > 5",
+      "variable" : "x",
+      "operator" : ">",
+      "value" : "5"
+    }, {
+      "name" : "x < 3",
+      "variable" : "x",
+      "operator" : "<",
+      "value" : "3"
+    }, {
+      "name" : "b"
+    } ],
+    "conditions" : [ {
+      "label" : "x > 5",
+      "input" : "x > 5",
+      "occurrence" : 1
+    }, {
+      "label" : "x < 3",
+      "input" : "x < 3",
+      "occurrence" : 1
+    }, {
+      "label" : "b",
+      "input" : "b",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "x > 5" : true,
+        "x < 3" : true,
+        "b" : true
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "x > 5" : true,
+        "x < 3" : true,
+        "b" : false
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "x > 5" : true,
+        "x < 3" : false,
+        "b" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "6",
+        "b" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x > 5" : true,
+        "x < 3" : false,
+        "b" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "6",
+        "b" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "x > 5" : false,
+        "x < 3" : true,
+        "b" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "0",
+        "b" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "x > 5" : false,
+        "x < 3" : true,
+        "b" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "0",
+        "b" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "x > 5" : false,
+        "x < 3" : false,
+        "b" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "3",
+        "b" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "x > 5" : false,
+        "x < 3" : false,
+        "b" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "3",
+        "b" : "false"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "x > 5" : [ ],
+      "x < 3" : [ ],
+      "b" : [ [ "V3", "V4" ], [ "V3", "V6" ], [ "V3", "V8" ], [ "V5", "V4" ], [ "V5", "V6" ], [ "V5", "V8" ], [ "V7", "V4" ], [ "V7", "V6" ], [ "V7", "V8" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V3",
+      "values" : {
+        "x > 5" : true,
+        "x < 3" : false,
+        "b" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "6",
+        "b" : "true"
+      },
+      "demonstrates" : [ "b" ]
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "x > 5" : true,
+        "x < 3" : false,
+        "b" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "6",
+        "b" : "false"
+      },
+      "demonstrates" : [ "b" ]
+    } ],
+    "chosenPairs" : {
+      "b" : {
+        "whenTrue" : "V3",
+        "whenFalse" : "V4",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

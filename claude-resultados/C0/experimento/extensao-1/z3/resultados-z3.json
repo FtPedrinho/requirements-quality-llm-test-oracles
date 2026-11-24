@@ -1,0 +1,302 @@
+{
+ "z3": "Z3 version 5.4.1 - 64 bit - build hashcode 145c0c51570a357cc558ce898ce77573ba9d4fbf",
+ "total": 42,
+ "conforme": 42,
+ "divergentes": [],
+ "consultas": [
+  {
+   "id": "QX-01-linha-TTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: 0 impossiveis"
+  },
+  {
+   "id": "QX-01-linha-TTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: 0 impossiveis"
+  },
+  {
+   "id": "QX-01-linha-TFT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: 0 impossiveis"
+  },
+  {
+   "id": "QX-01-linha-TFF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: 0 impossiveis"
+  },
+  {
+   "id": "QX-01-linha-FTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: 0 impossiveis"
+  },
+  {
+   "id": "QX-01-linha-FTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: 0 impossiveis"
+  },
+  {
+   "id": "QX-01-linha-FFT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: 0 impossiveis"
+  },
+  {
+   "id": "QX-01-linha-FFF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: 0 impossiveis"
+  },
+  {
+   "id": "QX-01-par-c1",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: todas com par"
+  },
+  {
+   "id": "QX-01-par-c2",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: todas com par"
+  },
+  {
+   "id": "QX-01-par-c3",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X01: todas com par"
+  },
+  {
+   "id": "QX-01-fronteira",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-X01: 3/4"
+  },
+  {
+   "id": "QX-02-linha-TTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: 2 impossiveis"
+  },
+  {
+   "id": "QX-02-linha-TTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: 2 impossiveis"
+  },
+  {
+   "id": "QX-02-linha-TFT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: 2 impossiveis"
+  },
+  {
+   "id": "QX-02-linha-TFF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: 2 impossiveis"
+  },
+  {
+   "id": "QX-02-linha-FTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: 2 impossiveis"
+  },
+  {
+   "id": "QX-02-linha-FTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: 2 impossiveis"
+  },
+  {
+   "id": "QX-02-linha-FFT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-X02: 2 impossiveis"
+  },
+  {
+   "id": "QX-02-linha-FFF",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-X02: 2 impossiveis"
+  },
+  {
+   "id": "QX-02-par-c1",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: todas com par"
+  },
+  {
+   "id": "QX-02-par-c2",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: todas com par"
+  },
+  {
+   "id": "QX-02-par-c3",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X02: todas com par"
+  },
+  {
+   "id": "QX-02-fronteira",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-X02: 4/5 e 9/10"
+  },
+  {
+   "id": "QX-03-linha-TTT",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-X03: impossiveis"
+  },
+  {
+   "id": "QX-03-linha-TTF",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-X03: impossiveis"
+  },
+  {
+   "id": "QX-03-linha-TFT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: impossiveis"
+  },
+  {
+   "id": "QX-03-linha-TFF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: impossiveis"
+  },
+  {
+   "id": "QX-03-linha-FTT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: impossiveis"
+  },
+  {
+   "id": "QX-03-linha-FTF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: impossiveis"
+  },
+  {
+   "id": "QX-03-linha-FFT",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: impossiveis"
+  },
+  {
+   "id": "QX-03-linha-FFF",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: impossiveis"
+  },
+  {
+   "id": "QX-03-par-c1",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-X03: c1,c2 sem par viavel; b com par"
+  },
+  {
+   "id": "QX-03-par-c2",
+   "esperado": "unsat",
+   "obtido": "unsat",
+   "ok": true,
+   "nota": "C0-X03: c1,c2 sem par viavel; b com par"
+  },
+  {
+   "id": "QX-03-par-c3",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: c1,c2 sem par viavel; b com par"
+  },
+  {
+   "id": "QX-03-livre-par-c1",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: com todas as combinacoes ha par => bloqueadas"
+  },
+  {
+   "id": "QX-03-livre-par-c2",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: com todas as combinacoes ha par => bloqueadas"
+  },
+  {
+   "id": "QX-03-livre-par-c3",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X03: com todas as combinacoes ha par => bloqueadas"
+  },
+  {
+   "id": "QX-11-d1-c1",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X11 d#1"
+  },
+  {
+   "id": "QX-11-d1-c2",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X11 d#1"
+  },
+  {
+   "id": "QX-11-d2-c1",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X11 d#2"
+  },
+  {
+   "id": "QX-11-d2-c2",
+   "esperado": "sat",
+   "obtido": "sat",
+   "ok": true,
+   "nota": "C0-X11 d#2"
+  }
+ ]
+}

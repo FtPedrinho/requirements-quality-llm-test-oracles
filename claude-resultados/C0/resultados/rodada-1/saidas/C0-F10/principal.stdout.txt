@@ -1,0 +1,13 @@
+Decisão:   REQ
+Guarda:    (A and B) or C
+Testes:    2
+  T1 = V2  TTF  -> T
+  T2 = V6  FTF  -> F
+
+Condições:
+  A: demonstrada por T1 (T) e T2 (F)
+  B: falta; acrescente V4 (TFF -> F)
+  C: falta; acrescente V5 (FTT -> T)
+
+Resultados de condição demonstrados: 4 de 6 (66,7%)
+Cobertura MC/DC: incompleta, 1 de 3 condições demonstradas

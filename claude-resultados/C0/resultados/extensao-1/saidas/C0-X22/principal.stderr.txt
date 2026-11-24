@@ -1,0 +1,1 @@
+Erro: verify aceita só a fonte, --context, --format e -o.

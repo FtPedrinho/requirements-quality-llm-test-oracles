@@ -1,0 +1,93 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : false,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "x > 5 and x < 3 or b",
+    "actions" : [ ],
+    "complete" : false,
+    "uncoveredConditions" : [ "x > 5", "x < 3" ],
+    "uncovered" : [ {
+      "condition" : "x > 5",
+      "reason" : "INFEASIBLE",
+      "blockedPairs" : [ [ "V2", "V6" ] ]
+    }, {
+      "condition" : "x < 3",
+      "reason" : "INFEASIBLE",
+      "blockedPairs" : [ [ "V2", "V4" ] ]
+    } ],
+    "inputs" : [ {
+      "name" : "x > 5",
+      "variable" : "x",
+      "operator" : ">",
+      "value" : "5"
+    }, {
+      "name" : "x < 3",
+      "variable" : "x",
+      "operator" : "<",
+      "value" : "3"
+    }, {
+      "name" : "b"
+    } ],
+    "conditions" : [ {
+      "label" : "x > 5",
+      "input" : "x > 5",
+      "occurrence" : 1
+    }, {
+      "label" : "x < 3",
+      "input" : "x < 3",
+      "occurrence" : 1
+    }, {
+      "label" : "b",
+      "input" : "b",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "DIRECT",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : false,
+    "independencePairs" : {
+      "x > 5" : [ ],
+      "x < 3" : [ ],
+      "b" : [ [ "V5", "V6" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V5",
+      "values" : {
+        "x > 5" : false,
+        "x < 3" : true,
+        "b" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "x" : "2",
+        "b" : "true"
+      },
+      "demonstrates" : [ "b" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "x > 5" : false,
+        "x < 3" : true,
+        "b" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "x" : "0",
+        "b" : "false"
+      },
+      "demonstrates" : [ "b" ]
+    } ],
+    "chosenPairs" : {
+      "b" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}
