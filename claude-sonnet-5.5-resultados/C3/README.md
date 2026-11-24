@@ -12,3 +12,5 @@ A primeira tentativa (oráculo mais permissivo: 48 determinados, 47 passaram, 1 
 
 - [`avaliacao/relatorio.md`](avaliacao/relatorio.md), [`avaliacao/resultados-por-caso.csv`](avaliacao/resultados-por-caso.csv)
 - [`experimento/`](experimento/README.md), [`resultados/`](resultados/), [`suite/`](suite/README.md)
+
+- [`documentacao/`](documentacao/tool-readme-C3.md): cópia da fonte normativa C3 usada (SHA-256 em `documentacao/SHA256.txt`).
