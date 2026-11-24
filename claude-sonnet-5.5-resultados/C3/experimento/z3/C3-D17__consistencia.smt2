@@ -1,7 +1,7 @@
 ; Caso C3-D17 - consistencia
 ; Resposta esperada da formula: sat
 (set-logic QF_LIA)
-(declare-const tot Int)
-(assert (= tot (+ 26 80 40)))(assert (= tot 146))(assert (= (+ 152 268 76) 496))(assert (= (+ 4 4 1) 9))(assert (= (+ 5 17 11) 33))
+(declare-const t Int)(declare-const d Int)
+(assert (= (+ 152 450 146) 748))(assert (= (+ 0 21 0) 21))(assert (= (+ 152 428 146) 726))(assert (= (- 748 21) 727))
 (check-sat)
 (get-model)

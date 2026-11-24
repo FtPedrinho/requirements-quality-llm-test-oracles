@@ -1,0 +1,11 @@
+{
+  "system": "sistema_abc",
+  "inputs": [
+    { "name": "A", "type": "bool" },
+    { "name": "B", "type": "bool" },
+    { "name": "C", "type": "bool" }
+  ],
+  "decisions": [
+    { "id": "d1", "requirement": "R1", "guard": "(A = true and B = true) or C = true", "actions": [] }
+  ]
+}

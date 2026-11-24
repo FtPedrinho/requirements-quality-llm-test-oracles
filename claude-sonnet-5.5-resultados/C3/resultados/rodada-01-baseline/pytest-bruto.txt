@@ -2,69 +2,48 @@
 platform win32 -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- C:\Python313\python.exe
 rootdir: C:\Users\User\requirements-quality-llm-test-oracles
 plugins: cov-7.1.0
-collecting ... collected 48 items
+collecting ... collected 40 items
 
 claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D01_formas_e_nao PASSED [  2%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D02_formas_ou PASSED [  4%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D03_operadores_de_comparacao PASSED [  6%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D04_precedencia_e_antes_de_ou PASSED [  8%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D05_abc_mascaramento PASSED [ 10%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D06_abc_causa_unica PASSED [ 12%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D07_entrada_repetida_tem_8_combinacoes PASSED [ 14%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D08_suite_exata_abc PASSED [ 16%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D09_restricao_manual PASSED [ 18%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D10_fronteira_speed_100 PASSED [ 20%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D11_fronteiras_de_duas_comparacoes PASSED [ 22%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D12_valores_concretos_realizam_a_combinacao PASSED [ 25%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D13_mutacao_estrutura_e_contagem PASSED [ 27%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D14_causa_unica_mata_mutantes_garantidos PASSED [ 29%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D15_req003_uma_condicao_sem_par FAILED [ 31%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D16_regressao_vm PASSED [ 33%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D17_regressao_tis PASSED [ 35%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D18_regressao_npp PASSED [ 37%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D19_mutacao_vm PASSED [ 39%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D20_mutacao_tis PASSED [ 41%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D21_mutacao_npp PASSED [ 43%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D22_exata_e_causa_unica_vm PASSED [ 45%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D23_exata_e_causa_unica_tis PASSED [ 47%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D24_exata_e_causa_unica_npp PASSED [ 50%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D25_conflitos_vm PASSED [ 52%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D26_conflitos_tis PASSED [ 54%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D27_conflitos_npp PASSED [ 56%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D28_modo_direto_concorda_com_a_tabela PASSED [ 58%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D29_json_liga_decisao_ao_requisito PASSED [ 60%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D30_opcao_o_grava_arquivo PASSED [ 62%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D31_arquivo_mcdc_com_comentarios PASSED [ 64%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D32_expressoes_invalidas_recusadas PASSED [ 66%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D33_erro_de_sintaxe_cita_o_requisito PASSED [ 68%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D34_check_suite_completa PASSED [ 70%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D35_check_esperado_errado_apontado PASSED [ 72%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D36_check_condicao_faltando PASSED [ 75%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D37_verify_conflito PASSED [ 77%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D38_verify_mesmo_valor_sem_conflito PASSED [ 79%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D39_verify_guardas_disjuntas PASSED [ 81%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D40_verify_lacuna_com_contexto PASSED [ 83%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D41_verify_sem_lacuna_quando_guarda_vale PASSED [ 85%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D42_verify_sem_contexto_nao_relata_lacunas PASSED [ 87%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D43_vinte_entradas PASSED [ 89%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D44_vinte_e_uma_entradas_recusadas PASSED [ 91%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D45_guarda_temporal_antes PASSED [ 93%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D46_numero_negativo PASSED [ 95%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D47_check_e_verify_aceitam_json PASSED [ 97%]
-claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D48_json_invalido_recusado PASSED [100%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D02_formas_ou PASSED [  5%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D03_operadores_de_comparacao PASSED [  7%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D04_precedencia_e_antes_de_ou PASSED [ 10%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D05_abc_mascaramento PASSED [ 12%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D06_abc_causa_unica PASSED [ 15%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D07_entrada_repetida_tem_8_combinacoes PASSED [ 17%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D08_suite_exata_abc PASSED [ 20%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D09_restricao_manual PASSED [ 22%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D10_fronteira_speed_100 PASSED [ 25%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D11_valores_concretos_realizam_a_combinacao PASSED [ 27%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D12_mutacao_estrutura_e_contagem PASSED [ 30%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D13_causa_unica_mata_mutantes_garantidos PASSED [ 32%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D14_regressao_vm PASSED [ 35%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D15_regressao_tis PASSED [ 37%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D16_regressao_npp PASSED [ 40%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D17_mutacao_vm PASSED [ 42%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D18_mutacao_tis PASSED [ 45%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D19_mutacao_npp PASSED [ 47%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D20_exata_e_causa_unica_vm PASSED [ 50%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D21_exata_e_causa_unica_tis PASSED [ 52%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D22_exata_e_causa_unica_npp PASSED [ 55%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D23_conflitos_vm PASSED [ 57%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D24_conflitos_tis PASSED [ 60%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D25_conflitos_npp PASSED [ 62%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D26_json_liga_decisao_ao_requisito PASSED [ 65%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D27_opcao_o_grava_arquivo PASSED [ 67%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D28_arquivo_mcdc_com_comentarios PASSED [ 70%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D29_check_suite_completa PASSED [ 72%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D30_check_esperado_errado_apontado PASSED [ 75%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D31_check_condicao_faltando PASSED [ 77%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D32_verify_conflito PASSED [ 80%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D33_verify_mesmo_valor_sem_conflito PASSED [ 82%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D34_verify_guardas_disjuntas PASSED [ 85%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D35_verify_lacuna_com_contexto PASSED [ 87%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D36_verify_sem_lacuna_quando_guarda_vale PASSED [ 90%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D37_vinte_entradas PASSED [ 92%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D38_guarda_temporal_antes PASSED [ 95%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D39_numero_negativo PASSED [ 97%]
+claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D40_check_e_verify_aceitam_json PASSED [100%]
 
-================================== FAILURES ===================================
-___________________ test_C3_D15_req003_uma_condicao_sem_par ___________________
-
-    def test_C3_D15_req003_uma_condicao_sem_par():
-        ds = {x["id"]: x for x in decisoes("-f", "exemplos/requisitos.mcdc")}
->       assert len(ds["REQ-003"]["uncoveredConditions"]) == 1, ds["REQ-003"]["uncoveredConditions"]
-E       AssertionError: ['freio_acionado#2', 'pedal_pressionado']
-E       assert 2 == 1
-E        +  where 2 = len(['freio_acionado#2', 'pedal_pressionado'])
-
-claude-sonnet-5.5-resultados\C3\suite\test_c3_baseline.py:165: AssertionError
 - generated xml file: C:\Users\User\requirements-quality-llm-test-oracles\claude-sonnet-5.5-resultados\C3\resultados\rodada-01-baseline\junit.xml -
-=========================== short test summary info ===========================
-FAILED claude-sonnet-5.5-resultados/C3/suite/test_c3_baseline.py::test_C3_D15_req003_uma_condicao_sem_par
-================== 1 failed, 47 passed in 107.50s (0:01:47) ===================
+======================== 40 passed in 85.63s (0:01:25) ========================

@@ -1,5 +1,5 @@
 sat
 (
   (define-fun t () Int
-    26)
+    40)
 )

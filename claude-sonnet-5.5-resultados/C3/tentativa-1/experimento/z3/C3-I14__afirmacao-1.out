@@ -1,0 +1,5 @@
+sat
+(
+  (define-fun pitAlteraCodigo () Bool
+    true)
+)

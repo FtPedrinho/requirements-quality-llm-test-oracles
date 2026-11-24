@@ -1,0 +1,27 @@
+{
+  "system": "sistema_temporal",
+  "inputs": [
+    {
+      "name": "the_mode",
+      "type": "enum",
+      "values": [
+        "idle",
+        "choice"
+      ]
+    },
+    {
+      "name": "the_coin",
+      "type": "bool"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "t#1",
+      "requirement": "REQ-T1",
+      "guard": "the_mode_antes = idle /\\ the_coin = true",
+      "actions": [
+        "the_mode := choice"
+      ]
+    }
+  ]
+}

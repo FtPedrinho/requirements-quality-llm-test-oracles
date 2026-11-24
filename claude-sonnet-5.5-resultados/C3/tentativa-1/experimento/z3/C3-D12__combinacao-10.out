@@ -1,0 +1,7 @@
+sat
+(
+  (define-fun speed () Int
+    101)
+  (define-fun mode () Mode
+    other)
+)

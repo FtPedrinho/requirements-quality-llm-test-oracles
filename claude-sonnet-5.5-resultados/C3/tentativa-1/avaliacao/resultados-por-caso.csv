@@ -1,0 +1,73 @@
+id,titulo,status_oraculo,resultado,tempo_s,observacao
+C3-D01,Formas aceitas de 'e' e 'nao' (A e nao B),DETERMINADO,PASSOU,2.637,
+C3-D02,Formas aceitas de 'ou',DETERMINADO,PASSOU,3.055,
+C3-D03,Operadores de comparacao aceitos,DETERMINADO,PASSOU,7.967,
+C3-D04,Precedencia: 'e' antes de 'ou',DETERMINADO,PASSOU,2.266,
+C3-D05,"(A and B) or C, mascaramento (padrao)",DETERMINADO,PASSOU,0.953,
+C3-D06,(A and B) or C com --unique-cause,DETERMINADO,PASSOU,1.571,
+C3-D07,Entrada repetida: (A and B) or (not A and C) tem 3 entradas distintas,DETERMINADO,PASSOU,1.163,
+C3-D08,Suite exata de (A and B) or C,DETERMINADO,PASSOU,1.156,
+C3-D09,Restricao manual --constraint,DETERMINADO,PASSOU,0.904,
+C3-D10,Fronteira de speed > 100,DETERMINADO,PASSOU,1.824,
+C3-D11,Fronteiras de duas comparacoes sobre a mesma variavel,DETERMINADO,PASSOU,1.703,
+C3-D12,Valores concretos realizam cada combinacao,DETERMINADO,PASSOU,1.613,
+C3-D13,Mutacao: relatorio com contagem e equivalentes fora da conta,DETERMINADO,PASSOU,1.095,
+C3-D14,Suite de causa unica detecta mutantes dos tipos garantidos,DETERMINADO,PASSOU,0.99,
+C3-D15,Arquivo .mcdc de exemplo: REQ-003 tem uma condicao sem par,DETERMINADO,FALHOU,1.074,"AssertionError: ['freio_acionado#2', 'pedal_pressionado']"
+C3-D16,"Regressao do sistema VM (maquina de cafe): requisitos, combinacoes, impossiveis e testes",DETERMINADO,PASSOU,2.648,
+C3-D17,"Regressao do sistema TIS (pisca-pisca): requisitos, combinacoes, impossiveis e testes",DETERMINADO,PASSOU,5.356,
+C3-D18,"Regressao do sistema NPP (injecao de seguranca): requisitos, combinacoes, impossiveis e testes",DETERMINADO,PASSOU,3.671,
+C3-D19,Regressao de mutacao do sistema VM,DETERMINADO,PASSOU,2.157,
+C3-D20,Regressao de mutacao do sistema TIS,DETERMINADO,PASSOU,5.81,
+C3-D21,Regressao de mutacao do sistema NPP,DETERMINADO,PASSOU,3.233,
+C3-D22,Busca exata e causa unica mantem o numero de testes (VM),DETERMINADO,PASSOU,4.675,
+C3-D23,Busca exata e causa unica mantem o numero de testes (TIS),DETERMINADO,PASSOU,12.427,
+C3-D24,Busca exata e causa unica mantem o numero de testes (NPP),DETERMINADO,PASSOU,8.444,
+C3-D25,verify: conflitos do sistema VM,DETERMINADO,PASSOU,0.969,
+C3-D26,verify: conflitos do sistema TIS,DETERMINADO,PASSOU,1.23,
+C3-D27,verify: conflitos do sistema NPP,DETERMINADO,PASSOU,1.021,
+C3-D28,Modo direto concorda com a tabela,DETERMINADO,PASSOU,5.041,
+C3-D29,Formato json liga a decisao ao requisito de origem,DETERMINADO,PASSOU,0.951,
+C3-D30,-o grava o relatorio em arquivo,DETERMINADO,PASSOU,0.618,
+C3-D31,Arquivo .mcdc com comentarios e varios requisitos,DETERMINADO,PASSOU,0.823,
+C3-D32,Expressoes invalidas sao recusadas,DETERMINADO,PASSOU,1.429,
+C3-D33,Erro de sintaxe em .mcdc cita o requisito,DETERMINADO,PASSOU,0.522,
+C3-D34,check: suite completa demonstra todas as condicoes,DETERMINADO,PASSOU,0.92,
+C3-D35,check: resultado esperado errado e apontado,DETERMINADO,PASSOU,0.915,
+C3-D36,check: suite incompleta aponta o que falta,DETERMINADO,PASSOU,0.963,
+C3-D37,verify: dois requisitos que valem juntos e escrevem valores diferentes = conflito,DETERMINADO,PASSOU,1.244,
+C3-D38,verify: mesmo valor nao e conflito,DETERMINADO,PASSOU,1.108,
+C3-D39,verify: guardas que nao se sobrepoem nao conflitam,DETERMINADO,PASSOU,0.993,
+C3-D40,verify --context: lacuna quando nenhuma guarda vale,DETERMINADO,PASSOU,1.136,
+C3-D41,verify --context: sem lacuna quando uma guarda sempre vale,DETERMINADO,PASSOU,1.017,
+C3-D42,verify sem --context nao relata lacunas,DETERMINADO,PASSOU,0.981,
+C3-D43,20 entradas na tabela-verdade completa,DETERMINADO,PASSOU,1.742,
+C3-D44,21 entradas na tabela-verdade completa sao recusadas,DETERMINADO,PASSOU,0.47,
+C3-D45,JSON NAT2TEST com guarda temporal (_antes),DETERMINADO,PASSOU,0.952,
+C3-D46,Numero negativo em comparacao,DETERMINADO,PASSOU,0.795,
+C3-D47,check e verify aceitam --format json,DETERMINADO,PASSOU,1.999,
+C3-D48,Arquivo JSON invalido e recusado,DETERMINADO,PASSOU,0.733,
+C3-I01,Quantas condicoes tem (A and B) or (not A and C)? 4 ou 3,INDETERMINADO,INDETERMINADO (nao executado),,"O texto afirma 4 condicoes (L55, L238, `ConditionTest`) e 3 condicoes (L57); o proprio texto nao resolve."
+C3-I02,Comportamento sem Z3 instalado,INDETERMINADO,INDETERMINADO (nao executado),,Obrigatorio para qualquer execucao x opcional (so recursos avancados). Por isso as execucoes do baseline mantem o Z3 no PATH.
+C3-I03,Codigos de saida,INDETERMINADO,INDETERMINADO (nao executado),,Dois mapeamentos incompativeis para o codigo 0 (sucesso x invalido). Nenhum teste afirma codigo de saida.
+C3-I04,Z3 linha a linha: acima de 12 entradas muda ao modo direto?,INDETERMINADO,INDETERMINADO (nao executado),,Muda para o modo direto x nao muda de modo.
+C3-I05,Limite do modo direto: 30 ou 12 entradas; exige tabela?,INDETERMINADO,INDETERMINADO (nao executado),,Limite 30 x limite 12.
+C3-I06,Colunas decision e expected_outcome do CSV: obrigatorias ou opcionais,INDETERMINADO,INDETERMINADO (nao executado),,Opcionais x obrigatorias; o proprio paragrafo se autocontradiz. Todos os CSVs do baseline trazem as duas colunas.
+C3-I07,Conteudo dos formatos csv e truth-csv,INDETERMINADO,INDETERMINADO (nao executado),,Atribuicoes trocadas entre csv e truth-csv; conteudo dos dois nao tem expectativa unica.
+C3-I08,Mapeamento sat/unsat do Z3 para combinacao possivel/impossivel,INDETERMINADO,INDETERMINADO (nao executado),,unsat=impossivel x unsat=possivel. Linhas descartadas pelo Z3 em exemplos nao anotados nao tem expectativa unica.
+C3-I09,Pares quando o resultado da decisao nao muda,INDETERMINADO,INDETERMINADO (nao executado),,Exige mudanca do resultado x nao exige. Define se B tem par; sem expectativa unica.
+C3-I10,Minimalidade da suite gulosa e da busca exata,INDETERMINADO,INDETERMINADO (nao executado),,Exata 5 < gulosa 6 x gulosa sempre minima e exata sem garantia.
+C3-I11,Rotulo redundante x bloqueada,INDETERMINADO,INDETERMINADO (nao executado),,Rotulos trocados.
+C3-I12,Arquitetura do Z3: processo externo x biblioteca nativa; PATH; 60 s,INDETERMINADO,INDETERMINADO (nao executado),,Tres descricoes incompativeis.
+C3-I13,Cobertura de linhas e de desvios: mesma metrica? total = media simples?,INDETERMINADO,INDETERMINADO (nao executado),,"Metricas distintas (95,5 x 90,3) x mesma metrica; media simples x agregada. Fora do escopo da CLI."
+C3-I14,Interpretacao da mutacao PIT,INDETERMINADO,INDETERMINADO (nao executado),,Objeto da mutacao PIT contraditorio; fora da CLI.
+C3-I15,Aprovacao do build: por modulo ou agregada,INDETERMINADO,INDETERMINADO (nao executado),,Verificacao por modulo x agregada; fora da CLI.
+C3-I16,Garantia do MC/DC para parenteses deslocados (ASF),INDETERMINADO,INDETERMINADO (nao executado),,"Sem garantia x com garantia total. Sobrevivencia do mutante ASF nao tem expectativa unica (nota: no exemplo do texto, 1 de 727 escapou)."
+C3-I17,--constraint com -f ou --json,INDETERMINADO,INDETERMINADO (nao executado),,"O texto restringe o uso mas nao diz o que acontece (recusa, ignora, aplica)."
+C3-I18,Linha sem identificador e ids repetidos em .mcdc/JSON,INDETERMINADO,INDETERMINADO (nao executado),,"O texto cita os cenarios mas nao diz se sao aceitos, recusados ou numerados automaticamente."
+C3-I19,Resultado de verify com --context 'the_system_mode = preparing_weak' (VM),INDETERMINADO,INDETERMINADO (nao executado),,O texto mostra o comando mas nao afirma se ha lacuna.
+C3-I20,Paridade de 3 entradas exige 8 testes,INDETERMINADO,INDETERMINADO (nao executado),,O texto nao fornece a expressao; a contagem por ocorrencia (I01) tambem afeta o resultado.
+C3-I21,check --json exemplos/decisoes.json --tests exemplos/testes.csv,INDETERMINADO,INDETERMINADO (nao executado),,O texto nao informa o resultado esperado desses arquivos.
+C3-I22,Sinal de menos antes de variavel (-A and B),INDETERMINADO,INDETERMINADO (nao executado),,Nao e dito se o uso fora de numeros e recusado ou como e tratado.
+C3-I23,Tamanho da suite de causa unica de (A and B) or C,INDETERMINADO,INDETERMINADO (nao executado),,'pode ter N+1' nao fixa o tamanho para a variante causa unica; tambem sob conflito I09/I10.
+C3-I24,Tempo/estimativa de desempenho e demais metricas do build,INDETERMINADO,INDETERMINADO (nao executado),,"Descreve a suite de desenvolvimento e o build, nao comportamento observavel da CLI."

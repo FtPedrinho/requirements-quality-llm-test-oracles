@@ -2,6 +2,6 @@
 ; Resposta esperada da formula: sat
 (set-logic QF_LIA)
 (declare-const t Int)
-(assert (= t 26))
+(assert (= t 40))
 (check-sat)
 (get-model)

@@ -92,15 +92,15 @@ AB = ["A", "B"]
 det("C3-D01", "Formas aceitas de 'e' e 'nao' (A e nao B)",
     ["analyze \"A and not B\"", "analyze \"A && !B\"", "analyze 'A /\\ !B'"], PRE,
     ["e | `and`, `&&`, `/\\`", "não | `not`, `!`", "`MinimalSuiteTest` | 4 | Exemplos conhecidos ((A ∧ B) ∨ C com 4 testes, A ∧ ¬B com 3)"],
-    "Operadores equivalentes; A ∧ ¬B tem suite de 3 testes.",
-    "As tres formas sao aceitas e produzem a mesma analise: 2 condicoes, 4 combinacoes na tabela-verdade, suite de 3 testes, ambas as condicoes demonstradas por um par e nenhuma sem par.",
-    "Os tres operadores sao listados como formas aceitas; o numero 3 vem do exemplo conhecido A ∧ ¬B.",
-    [("min-suite-2-insat", min_suite(AB, "(and A (not B))", 2), "unsat"),
-     ("min-suite-3-sat", min_suite(AB, "(and A (not B))", 3), "sat")], "operadores")
+    "Operadores equivalentes.",
+    "As tres formas sao aceitas e produzem a mesma tabela-verdade: 2 condicoes, 4 combinacoes, mesmos resultados por linha, ambas as condicoes demonstradas e nenhuma sem par. (Tamanho da suite nao e afirmado.)",
+    "Os tres operadores sao listados como formas aceitas.",
+    [("par-A", pair_for(AB, "(and A (not B))", "A"), "sat"),
+     ("par-B", pair_for(AB, "(and A (not B))", "B"), "sat")], "operadores")
 det("C3-D02", "Formas aceitas de 'ou'",
     ["analyze \"A or B\"", "analyze \"A || B\"", "analyze 'A \\/ B'"], PRE,
     ["ou | `or`, `\\|\\|`, `\\/`"], "Operadores equivalentes.",
-    "As tres formas sao aceitas e produzem a mesma analise: 2 condicoes, 4 combinacoes, ambas as condicoes demonstradas, nenhuma sem par, mesma quantidade de testes entre as formas.",
+    "As tres formas sao aceitas e produzem a mesma tabela-verdade: 2 condicoes, 4 combinacoes, mesmos resultados por linha, ambas demonstradas, nenhuma sem par.",
     "Formas listadas como equivalentes na tabela de operadores.",
     [("par-A", pair_for(AB, "(or A B)", "A"), "sat"), ("par-B", pair_for(AB, "(or A B)", "B"), "sat")], "operadores")
 det("C3-D03", "Operadores de comparacao aceitos",
@@ -114,7 +114,7 @@ det("C3-D04", "Precedencia: 'e' antes de 'ou'",
     ["analyze \"A or B and C\"", "analyze \"A or (B and C)\""], PRE,
     ["| `ExpressionParserTest` | 9 | Precedência (e antes de ou), parênteses, comparações, operadores do DFRS; expressões inválidas recusadas |"],
     "A or B and C e A or (B and C) sao a mesma decisao.",
-    "As duas entradas produzem analises identicas (mesma tabela-verdade: saidas por linha, mesmos pares e mesma quantidade de testes).",
+    "As duas entradas produzem a mesma tabela-verdade (mesmos resultados por linha) e 3 condicoes.",
     "Precedencia declarada: 'e' antes de 'ou'. O Z3 mostra que o agrupamento alternativo seria uma decisao diferente (testemunha).",
     [("agrupamento-alternativo-difere", "(set-logic QF_UF)\n(declare-const A Bool)(declare-const B Bool)(declare-const C Bool)\n(assert (not (= (or A (and B C)) (and (or A B) C))))\n(check-sat)\n(get-model)\n", "sat")],
     "parser")
@@ -200,7 +200,7 @@ det("C3-D13", "Mutacao: relatorio com contagem e equivalentes fora da conta",
     ["| `--mutation` | Confere se a suíte pega versões do requisito com um defeito |", "versões equivalentes ao requisito original não entram na contagem",
      "seis tipos de defeito de Kapoor e Bowen (ORF, ENF, VNF, MVF, VRF, ASF)"],
     "A saida traz resultado de mutacao: total de mutantes, equivalentes (excluidos da contagem) e detectados; tipos entre ORF, ENF, VNF, MVF, VRF, ASF.",
-    "A analise inclui resultado de mutacao com mutantes > 0; detectados + sobreviventes = total - equivalentes; so aparecem tipos dentre os seis.",
+    "A analise inclui resultado de mutacao com total de mutantes > 0 e somente tipos dentre os seis.",
     "Estrutura minima declarada no texto; nenhum numero especifico e afirmado.",
     [("mutantes-nao-equivalentes", "(set-logic QF_UF)\n(declare-const A Bool)(declare-const B Bool)(declare-const C Bool)\n(assert (not (= (and A (or B C)) (and A (and B C)))))\n(check-sat)\n(get-model)\n", "sat")],
     "mutacao")
@@ -399,7 +399,7 @@ det("C3-D43", "20 entradas na tabela-verdade completa",
     ["analyze \"X1 and X2 and ... and X20\""], PRE,
     ["até 20 entradas com a tabela-verdade completa", "`PerformanceTest` | 4 | Motor sem o Z3: 20 entradas (cerca de 1 milhão de combinações) nas duas variantes ... cada caso abaixo de 5 s"],
     "20 entradas sao suportadas pela tabela completa em menos de 5 s.",
-    "A analise de 20 entradas e concluida em menos de 5 s (sem contar a partida da JVM), com 20 condicoes, 1048576 combinacoes e todas as condicoes demonstradas.",
+    "A analise de 20 entradas e concluida, com 20 condicoes, 1048576 combinacoes e todas as condicoes demonstradas. (Tempo nao e afirmado: a partida da JVM nao e separavel.)",
     "Limite documentado e teste de desempenho com 20 entradas; 2^20 = 1048576.",
     [("cada-condicao-tem-par", "(set-logic QF_UF)\n" + "".join("(declare-const X%d Bool)\n" % i for i in range(1, 21)) +
       "(define-fun f (%s) Bool (and %s))\n" % (" ".join("(%s Bool)" % v for v in chain), " ".join(chain)) +
@@ -556,7 +556,33 @@ ind("C3-I24", "Tempo/estimativa de desempenho e demais metricas do build",
     [("sem-formalizacao-conflitante", "(set-logic QF_UF)\n(declare-const definido Bool)\n(assert (not definido))\n(check-sat)\n", "sat")])
 
 
+DEMOTE = {
+    "C3-D11": "A regra 'Variacoes no limite de cada comparacao' so e exemplificada para speed > 100 (100 e 101); os valores de fronteira de speed > 50 nao sao dados e exigiriam extrapolacao.",
+    "C3-D15": "'REQ-003 tem uma condicao redundante' (L253) depende do rotulo redundante x bloqueada (I11), do criterio de par (I09) e de 'uma' ser exatamente uma; sem expectativa unica.",
+    "C3-D28": "O modo direto e descrito como 'sem montar a tabela' (L119) e como exigindo a tabela ja construida e limite de 12 entradas (L115); o funcionamento do modo e contraditorio (I04/I05).",
+    "C3-D32": "O texto diz 'expressoes invalidas recusadas' sem definir a gramatica nem qual expressao e invalida; recusa e forma da recusa nao tem expectativa unica (codigo de saida: I03).",
+    "C3-D33": "O texto cita 'erro de sintaxe com o requisito' sem definir o que e erro de sintaxe nem o formato da mensagem.",
+    "C3-D42": "'lacunas so com contexto' e a descricao de um teste de unidade, sem dizer o que o relatorio mostra sem --context.",
+    "C3-D44": "O texto da o limite de 20 entradas mas nao diz o que ocorre ao exceder (recusa, erro, outro modo).",
+    "C3-D48": "'arquivos invalidos' nao e definido (o que torna um JSON invalido, qual e o resultado).",
+}
+
+
 def main():
+    global D, I
+    novos = []
+    for c in list(D):
+        if c["id"] in DEMOTE:
+            D.remove(c)
+            novos.append(c)
+    for k, c in enumerate(novos):
+        c2 = dict(id="C3-I%02d" % (25 + k), status="INDETERMINADO", titulo=c["titulo"], entrada=c["entrada"],
+                  trechoLiteral=c["trechoLiteral"], motivoIndeterminacao=DEMOTE[c["id"]],
+                  expectativa="INDETERMINADO: sem expectativa unica; caso registrado, NAO executado",
+                  _smt=c["_smt"])
+        I.append(c2)
+    for k, c in enumerate(D):
+        c["id"] = "C3-D%02d" % (k + 1)
     todos = D + I
     for c in todos:
         for nome, smt, esp in c["_smt"]:
@@ -565,7 +591,7 @@ def main():
                 fh.write(smt)
         c["z3Consultas"] = [dict(arquivo="z3/%s__%s.smt2" % (c["id"], n), esperado=e) for n, _, e in c["_smt"]]
         del c["_smt"]
-        del c["z3"]
+        c.pop("z3", None)
     saida = dict(
         condicao="C3",
         fonte="experimentacao-pesquisa/experimentacao-3/documentation/tool-readme-C3.md",

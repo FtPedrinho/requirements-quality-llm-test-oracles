@@ -1,0 +1,44 @@
+{
+  "system": "sistema_verify",
+  "inputs": [
+    {
+      "name": "mode",
+      "type": "enum",
+      "values": [
+        "idle",
+        "busy",
+        "off"
+      ]
+    },
+    {
+      "name": "coin",
+      "type": "bool"
+    },
+    {
+      "name": "out",
+      "type": "enum",
+      "values": [
+        "a",
+        "b"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "d1",
+      "requirement": "R1",
+      "guard": "mode = idle",
+      "actions": [
+        "out := a"
+      ]
+    },
+    {
+      "id": "d2",
+      "requirement": "R2",
+      "guard": "mode = busy",
+      "actions": [
+        "out := b"
+      ]
+    }
+  ]
+}

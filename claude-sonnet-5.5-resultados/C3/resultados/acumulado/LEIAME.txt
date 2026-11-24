@@ -1,2 +1,1 @@
-Nao houve rodada-02-extensoes (nenhuma extensao necessaria; nenhum defeito de suite detectado antes da execucao).
-Acumulado = baseline: 47 passaram, 1 falhou, 24 indeterminados; branches 914/1296 (70,52%).
+Sem rodada-02-extensoes. Acumulado = baseline: 40 passaram, 0 falharam, 32 indeterminados; branches 835/1296 (64,43%).

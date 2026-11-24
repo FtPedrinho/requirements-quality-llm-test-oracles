@@ -1,7 +1,5 @@
 sat
 (
   (define-fun t () Int
-    0)
-  (define-fun d () Int
-    0)
+    26)
 )

@@ -1,5 +1,7 @@
 sat
 (
-  (define-fun tot () Int
-    146)
+  (define-fun t () Int
+    0)
+  (define-fun d () Int
+    0)
 )

@@ -1,66 +1,43 @@
-# Análise documental C3 (antes de ler qualquer código do SUT)
+# Análise documental C3 — segunda tentativa (critério estrito)
 
-- Fonte única: `experimentacao-pesquisa/experimentacao-3/documentation/tool-readme-C3.md`.
-- SHA-256 verificado antes da leitura: `F18B0821D79C7315486C13D5260FA2F6D6E9418EF03B86CDE58E66B91B7B87A3` (confere).
-- Modelo: Claude Sonnet 5.5. Prompt: `geracao-de-oraculos-v3.md`. Revisão: **autorrevisão** (não houve revisor independente).
-- Nenhum código, saída do SUT, `exemplos/*`, `contradictions.csv`, README de `experimentacao-3` ou resultado de outra condição/LLM foi lido antes do congelamento.
+Esta é a **segunda** execução de C3 (a primeira está preservada em `../tentativa-1/`). Foi refeita por determinação do pesquisador:
+a documentação C3 é verdade absoluta; o sistema só serve de entrada para criar a suíte; não criar expectativa por suposição; não ter receio de registrar INDETERMINADO.
 
-## 1. Inventário e contradições internas do texto
+- Fonte única: `experimentacao-pesquisa/experimentacao-3/documentation/tool-readme-C3.md`, SHA-256 `F18B0821D79C7315486C13D5260FA2F6D6E9418EF03B86CDE58E66B91B7B87A3` (conferido).
+- Modelo: Claude Sonnet 5.5; prompt `geracao-de-oraculos-v3.md`; revisão: **autorrevisão**.
+- **Perda de isolamento (declarada):** esta tentativa ocorre na mesma sessão da primeira. O autor já viu a saída do SUT e o resultado da tentativa 1 (inclusive a falha de um caso). Não é possível “esquecer” isso; o oráculo foi derivado do texto e revisado com critério mais estrito, mas a influência não pode ser descartada. Os casos rebaixados abaixo foram justificados por razões documentais, e um deles (antigo D15) coincide com um caso que falhara na tentativa 1.
 
-O texto contém afirmações que se contradizem entre si. Nesses pontos o próprio texto não resolve qual vale
-(não se usou o código nem suposição para desempatar). Cada ponto é um caso INDETERMINADO (`C3-I01`…`I24`), registrado e **não executado**:
+## O que mudou em relação à tentativa 1
 
-| ID | Conflito (linhas do arquivo) |
+Casos que dependiam de interpretação, analogia ou assunção foram rebaixados a INDETERMINADO (agora `C3-I25…I32`):
+
+| Novo ID | Motivo |
 |---|---|
-| I01 | condições: 4 por ocorrência (L55, L238) × 3 por variável distinta (L57) |
-| I02 | Z3 obrigatório para qualquer execução (L77) × opcional / só recursos avançados (L75, L77) |
-| I03 | códigos de saída 0/1/2 (L145) × mapeamento invertido (L147) |
-| I04 | `--z3` acima de 12 entradas passa ao modo direto (L113) × continua na tabela completa (L115) |
-| I05 | modo direto até 30 entradas sem tabela (L119, L617) × só até 12 e exige tabela (L115) |
-| I06 | CSV de `check`: colunas opcionais (L191) × obrigatórias e aceitas-se-ausentes (L193) |
-| I07 | `csv` = suíte / `truth-csv` = tabela (L215–217) × invertido (L219) |
-| I08 | `unsat` = impossível (L293) × `unsat` = possível (L295) |
-| I09 | par exige mudança do resultado (L297) × resultado pode permanecer (L299) |
-| I10 | exata 5 × gulosa 6 (L265, L449) × gulosa sempre mínima, exata sem garantia (L303) |
-| I11 | rótulos redundante/bloqueada (L305) × invertidos (L307) |
-| I12 | Z3 processo externo, 60 s (L331) × implementação interna Java (L333) × biblioteca nativa sem limite (L335) |
-| I13–I15 | métricas/regras de build (cobertura, PIT, agregação JaCoCo; L357–L383): fora do comportamento da CLI |
-| I16 | parênteses deslocados: único sem garantia (L619) × garantia total (L621) |
+| I25 | fronteira de `speed > 50`: o texto só exemplifica `speed > 100`; seria extrapolação |
+| I26 | “REQ-003 tem uma condição redundante”: depende de I09/I11 e de “uma” = exatamente uma |
+| I27 | modo direto concorda com a tabela: o funcionamento do modo é contraditório (I04/I05) |
+| I28 | “expressões inválidas recusadas”: gramática e forma da recusa não definidas |
+| I29 | “erro de sintaxe com o requisito”: não define o erro nem a mensagem |
+| I30 | verify sem `--context`: só há descrição de teste de unidade |
+| I31 | 21 entradas: o texto dá o limite, não o comportamento ao excedê-lo |
+| I32 | “arquivos inválidos” não definido |
 
-Também são INDETERMINADOS por **omissão** (texto não dá expectativa única): I17 (`--constraint` com `-f`/`--json`),
-I18 (linha sem identificador, ids repetidos), I19 (resultado do `verify` com contexto na VM), I20 (paridade de 3 entradas: expressão não dada),
-I21 (resultado do `check` nos arquivos de exemplo), I22 (`-` antes de variável), I23 (tamanho da suíte de causa única), I24 (suíte/desempenho do build).
+Também foram **enxugadas** as expectativas determinadas: não se afirma tamanho de suíte em `A and not B`, não se afirma equivalência de pares, não se afirma tempo (a partida da JVM não é separável) e a contagem de mutantes de `C3-D12` é só a estrutura (total > 0, tipos entre os seis).
 
-## 2. Casos determinados (48)
+## Contradições internas do texto (casos I01–I24)
 
-`C3-D01`…`D48`, cada um com expectativa única sustentada por trecho literal (ver `oraculo.json`). Decisões de modelagem:
+Mantidas as da tentativa 1: condições por ocorrência × por variável (I01); Z3 obrigatório × opcional (I02); códigos de saída (I03); 12 × 30 entradas e modo direto (I04, I05); colunas do CSV (I06); `csv`/`truth-csv` (I07); `unsat` = impossível × possível (I08); par exige mudança de resultado × não (I09); minimalidade gulosa/exata (I10); redundante × bloqueada (I11); arquitetura do Z3 (I12); regras de build (I13–I15); garantia para parênteses (I16); e omissões I17–I24.
 
-- A afirmação **“Z3 obrigatório × opcional”** (I02) torna indeterminada qualquer expectativa para execução *sem* Z3.
-  Por isso os casos determinados assumem Z3 no PATH (única condição em que as duas leituras concordam). Os casos “sem Z3” não são executados.
-- Os valores numéricos “travados pela regressão” (tabela L497–L507) são usados como expectativa direta (requisitos, completos, combinações, impossíveis,
-  testes, mutantes, equivalentes, detectados, conflitos). **O número de condições (21/69/29) não é afirmado**, pois depende de I01.
-- O código de saída **nunca** é afirmado (I03); os casos observam saída, mensagens e arquivos.
-- Não se afirma o rótulo redundante/bloqueada (I11), a distinção de pares quando o resultado não muda (I09) nem o formato `csv`/`truth-csv` (I07).
-- `C3-D05`, `D01` usam os números 4 e 3 do “MinimalSuiteTest” (exemplos conhecidos). Para a variante de causa única não se afirma tamanho (I23).
-- Casos de `check`/`verify` usam arquivos próprios criados pela suíte (tipos `enum`/`bool` documentados; ações `x := v`).
+## Casos determinados (40)
 
-## 3. Z3
+`C3-D01…D40` (ver `oraculo.json`). Sustentados por trecho literal e sem conflito interno: formas de operadores e precedência; tabela-verdade e 4 testes de `(A and B) or C` (exemplo do texto); restrição manual; fronteira 100/101; valores concretos; mutação (estrutura e causa única); valores “travados pela regressão” (requisitos, completos, combinações, impossíveis, testes, mutantes, conflitos) para VM/TIS/NPP; `check`, `verify`, `-o`, `.mcdc`, JSON, 20 entradas, `_antes`, número negativo.
 
-Z3 independente do SUT (`z3.exe` 5.4.1, Python), sem usar o módulo `mcdc-z3`. 122 consultas em `z3/*.smt2` com respostas em `z3/*.out`
-(resumo em `z3/RESUMO.tsv`). Todas as respostas coincidem com a esperada (sem `unknown` nem timeout). Usos:
+Decisão sobre o Z3: como I02 torna a expectativa sem Z3 indeterminada, os casos determinados rodam com Z3 no PATH (única condição em que as duas leituras concordam). Código de saída nunca é afirmado (I03).
 
-- tamanho mínimo da suíte de causa única (k−1 `unsat`, k `sat`) e testemunhas de pares por condição (D01, D02, D05, D06, D08, D34);
-- linhas impossíveis de uma restrição (D09: 2 `unsat` em 8) e fronteiras (D10, D11) e realizabilidade de valores concretos (D12);
-- mutantes por tipo mortos por uma suíte de causa única concreta (D14);
-- consistência aritmética das tabelas do texto (D16–D27);
-- conflito/lacuna do `verify` (D37–D41) e cadeia de 20 entradas (D43);
-- cada INDETERMINADO por conflito: afirmação 1 `sat`, afirmação 2 `sat`, conjunção `unsat` (prova formal de que o texto afirma coisas incompatíveis).
+## Z3
 
-`sat`/`unsat` dizem respeito às fórmulas; o Z3 não prova a fidelidade da tradução texto→fórmula.
-Casos sem restrição lógica (comparação de saídas, formatos, arquivos) não têm consulta própria.
+Z3 5.4.1 independente do SUT; 122 consultas em `z3/*.smt2`, respostas em `z3/*.out`, resumo em `z3/RESUMO.tsv`. Todas coincidem com a resposta esperada da fórmula (sem `unknown`/timeout). Cada conflito textual está formalizado (afirmações isoladas `sat`, conjunção `unsat`). `sat`/`unsat` não provam a fidelidade da tradução. Casos sem lógica formalizável (formatos, arquivos) não têm consulta própria.
 
-## 4. Limitações
+## Limitações
 
-- Autorrevisão; tradução texto→SMT não verificada por terceiro.
-- Algumas expectativas aplicam o texto por analogia (D11: fronteira 50/51 para `speed > 50`).
-- A escolha de tratar parágrafos autocontraditórios como INDETERMINADO é julgamento do modelo.
+Autorrevisão; perda de isolamento descrita acima; a fronteira entre “determinado” e “indeterminado” é julgamento do modelo.
