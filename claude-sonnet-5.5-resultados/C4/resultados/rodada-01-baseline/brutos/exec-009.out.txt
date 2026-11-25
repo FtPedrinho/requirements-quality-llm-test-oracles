@@ -1,0 +1,47 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "safety_injection_system",
+  "decisions" : 11,
+  "pairsChecked" : 15,
+  "conflicts" : [ {
+    "first" : "npp#5",
+    "firstRequirement" : "REQ005",
+    "second" : "npp#8",
+    "secondRequirement" : "REQ008",
+    "sharedVariables" : [ "the_overridden_mode" ],
+    "conflicts" : [ {
+      "variable" : "the_overridden_mode",
+      "first" : "true",
+      "second" : "false"
+    } ],
+    "witness" : {
+      "the_pressure_mode" : "low",
+      "the_blockage_button_antes" : "released",
+      "the_blockage_button" : "pressed",
+      "the_reset_button" : "released",
+      "the_pressure_mode_antes" : "high"
+    }
+  } ],
+  "compatibleOverlaps" : [ {
+    "first" : "npp#6",
+    "firstRequirement" : "REQ006",
+    "second" : "npp#8",
+    "secondRequirement" : "REQ008",
+    "sharedVariables" : [ "the_overridden_mode" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_pressure_mode" : "low",
+      "the_reset_button" : "pressed",
+      "the_reset_button_antes" : "released",
+      "the_pressure_mode_antes" : "high"
+    }
+  } ],
+  "gaps" : {
+    "checked" : false,
+    "context" : null,
+    "found" : false,
+    "witness" : null
+  },
+  "ok" : false
+}

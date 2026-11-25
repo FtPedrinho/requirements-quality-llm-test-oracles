@@ -1,0 +1,218 @@
+{
+  "tool" : "mcdc",
+  "system" : null,
+  "variant" : "MASKING",
+  "constraint" : null,
+  "complete" : true,
+  "decisions" : [ {
+    "id" : "REQ",
+    "requirement" : null,
+    "guard" : "speed > 100 or (speed > 50 and rain)",
+    "actions" : [ ],
+    "complete" : true,
+    "uncoveredConditions" : [ ],
+    "uncovered" : [ ],
+    "inputs" : [ {
+      "name" : "speed > 100",
+      "variable" : "speed",
+      "operator" : ">",
+      "value" : "100"
+    }, {
+      "name" : "speed > 50",
+      "variable" : "speed",
+      "operator" : ">",
+      "value" : "50"
+    }, {
+      "name" : "rain"
+    } ],
+    "conditions" : [ {
+      "label" : "speed > 100",
+      "input" : "speed > 100",
+      "occurrence" : 1
+    }, {
+      "label" : "speed > 50",
+      "input" : "speed > 50",
+      "occurrence" : 1
+    }, {
+      "label" : "rain",
+      "input" : "rain",
+      "occurrence" : 1
+    } ],
+    "suiteMethod" : "GREEDY",
+    "truthTableRows" : 8,
+    "truthTableBuilt" : true,
+    "truthTable" : [ {
+      "vector" : "V1",
+      "values" : {
+        "speed > 100" : true,
+        "speed > 50" : true,
+        "rain" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "speed" : "101",
+        "rain" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V2",
+      "values" : {
+        "speed > 100" : true,
+        "speed > 50" : true,
+        "rain" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "speed" : "101",
+        "rain" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V3",
+      "values" : {
+        "speed > 100" : true,
+        "speed > 50" : false,
+        "rain" : true
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V4",
+      "values" : {
+        "speed > 100" : true,
+        "speed > 50" : false,
+        "rain" : false
+      },
+      "outcome" : true,
+      "feasible" : false
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "speed > 100" : false,
+        "speed > 50" : true,
+        "rain" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "speed" : "51",
+        "rain" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "speed > 100" : false,
+        "speed > 50" : true,
+        "rain" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "speed" : "51",
+        "rain" : "false"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "speed > 100" : false,
+        "speed > 50" : false,
+        "rain" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "speed" : "0",
+        "rain" : "true"
+      },
+      "feasible" : true
+    }, {
+      "vector" : "V8",
+      "values" : {
+        "speed > 100" : false,
+        "speed > 50" : false,
+        "rain" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "speed" : "0",
+        "rain" : "false"
+      },
+      "feasible" : true
+    } ],
+    "independencePairs" : {
+      "speed > 100" : [ [ "V2", "V6" ], [ "V2", "V7" ], [ "V2", "V8" ] ],
+      "speed > 50" : [ [ "V5", "V7" ] ],
+      "rain" : [ [ "V5", "V6" ] ]
+    },
+    "pairsTruncated" : [ ],
+    "minimalSuite" : [ {
+      "vector" : "V2",
+      "values" : {
+        "speed > 100" : true,
+        "speed > 50" : true,
+        "rain" : false
+      },
+      "outcome" : true,
+      "assignment" : {
+        "speed" : "101",
+        "rain" : "false"
+      },
+      "demonstrates" : [ "speed > 100" ]
+    }, {
+      "vector" : "V5",
+      "values" : {
+        "speed > 100" : false,
+        "speed > 50" : true,
+        "rain" : true
+      },
+      "outcome" : true,
+      "assignment" : {
+        "speed" : "51",
+        "rain" : "true"
+      },
+      "demonstrates" : [ "speed > 50", "rain" ]
+    }, {
+      "vector" : "V6",
+      "values" : {
+        "speed > 100" : false,
+        "speed > 50" : true,
+        "rain" : false
+      },
+      "outcome" : false,
+      "assignment" : {
+        "speed" : "51",
+        "rain" : "false"
+      },
+      "demonstrates" : [ "speed > 100", "rain" ]
+    }, {
+      "vector" : "V7",
+      "values" : {
+        "speed > 100" : false,
+        "speed > 50" : false,
+        "rain" : true
+      },
+      "outcome" : false,
+      "assignment" : {
+        "speed" : "0",
+        "rain" : "true"
+      },
+      "demonstrates" : [ "speed > 50" ]
+    } ],
+    "chosenPairs" : {
+      "speed > 100" : {
+        "whenTrue" : "V2",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      },
+      "speed > 50" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V7",
+        "uniqueCause" : true
+      },
+      "rain" : {
+        "whenTrue" : "V5",
+        "whenFalse" : "V6",
+        "uniqueCause" : true
+      }
+    }
+  } ]
+}

@@ -1,0 +1,9 @@
+{
+ "args": [
+  "analyze",
+  "(B and",
+  "--format",
+  "json"
+ ],
+ "returncode": 1
+}

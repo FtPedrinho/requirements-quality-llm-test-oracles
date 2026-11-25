@@ -1,0 +1,14 @@
+G isolada
+sat
+X isolada
+sat
+E isolada
+sat
+M isolada
+sat
+G e X
+unsat
+E e M
+unsat
+G, X, E e M
+unsat

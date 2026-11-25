@@ -1,0 +1,20 @@
+A01 linha Total = soma das tres linhas (todas as colunas)
+sat
+A02 requisito completo: testes = condicoes + 1 (VM e NPP, todos os requisitos completos)
+sat
+A03 TIS: detectados + equivalentes + escapou = total de mutantes, escapou = 1 (linha 407)
+sat
+A04 TIS: com escapou = 0 (linha 409) a soma nao fecha (unsat esperado)
+unsat
+A05 soma dos testes por classe listados = 171 e 34 arquivos
+sat
+A06 testes por modulo 78+24+34+35 = 171
+sat
+A07 arquivos de teste: 12 core + 7 transversais + 5 requisitos + 6 z3 + 4 cli = 34
+sat
+A08 mutacao por modulo: numeradores 319+140+269+196 = 924 e denominadores 333+145+295+256 = 1029
+sat
+A09 percentuais 95,5% (1911/2001), 90,3% (1170/1296), 89,8% (924/1029), 92,7% (924/997)
+sat
+A10 limites: 2^20 = 1048576 ~ 1 milhao; 12 (Z3 linha a linha) < 20 (tabela) < 30 (direto)
+sat

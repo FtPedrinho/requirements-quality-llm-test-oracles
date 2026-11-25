@@ -1,0 +1,19 @@
+{
+ "sistemas": [
+  "exemplos/vm-decisoes.json",
+  "exemplos/tis-decisoes.json",
+  "exemplos/npp-decisoes.json"
+ ],
+ "expressoes": {
+  "D22": "speed > 100 /\\ mode = idle",
+  "D23": "B or (C and D)",
+  "D24_D25": "B or (not B and C)",
+  "D26": "x01 and x02 and x03 and x04 and x05 and x06 and x07 and x08 and x09 and x10 and x11 and x12 and x13 and x14 and x15 and x16 and x17 and x18 and x19 and x20",
+  "D27": "x01 and x02 and x03 and x04 and x05 and x06 and x07 and x08 and x09 and x10 and x11 and x12",
+  "D28": "x01 and x02 and x03 and x04 and x05 and x06 and x07 and x08 and x09 and x10 and x11 and x12 and x13 and x14 and x15 and x16 and x17 and x18 and x19 and x20 and x21 and x22 and x23 and x24 and x25 and x26",
+  "D29": "(B and not C and not D) or (not B and C and not D) or (not B and not C and D) or (B and C and D)",
+  "D30": "speed > 100 or (speed > 50 and rain)",
+  "D33": "(B and"
+ },
+ "nota": "Nomes x01..xNN sao escolhidos pelo gerador da suite (o texto C4 nao define identificadores permitidos)."
+}

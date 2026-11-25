@@ -1,0 +1,6 @@
+S1 isolada (consulta com resposta unsat)
+sat
+S2 isolada (consulta com resposta unsat)
+sat
+S1 e S2
+unsat

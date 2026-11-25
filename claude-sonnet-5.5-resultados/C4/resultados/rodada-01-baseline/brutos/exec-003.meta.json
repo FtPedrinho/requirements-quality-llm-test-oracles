@@ -1,0 +1,10 @@
+{
+ "args": [
+  "verify",
+  "--json",
+  "exemplos/vm-decisoes.json",
+  "--format",
+  "json"
+ ],
+ "returncode": 0
+}

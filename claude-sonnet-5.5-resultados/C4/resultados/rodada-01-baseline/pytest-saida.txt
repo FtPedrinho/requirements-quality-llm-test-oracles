@@ -1,0 +1,51 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- C:\Python313\python.exe
+rootdir: C:\Users\User\requirements-quality-llm-test-oracles
+plugins: cov-7.1.0
+collecting ... collected 42 items
+
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D01_vm_requisitos PASSED [  2%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D02_vm_condicoes PASSED [  4%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D03_vm_combinacoes PASSED [  7%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D04_vm_impossiveis PASSED [  9%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D05_vm_testes PASSED [ 11%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D06_vm_mutantes PASSED [ 14%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D07_vm_conflitos PASSED [ 16%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D08_tis_requisitos PASSED [ 19%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D09_tis_condicoes PASSED [ 21%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D10_tis_combinacoes PASSED [ 23%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D11_tis_impossiveis PASSED [ 26%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D12_tis_testes PASSED [ 28%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D13_tis_mutantes PASSED [ 30%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D14_tis_conflitos PASSED [ 33%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D15_npp_requisitos PASSED [ 35%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D16_npp_condicoes PASSED [ 38%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D17_npp_combinacoes PASSED [ 40%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D18_npp_impossiveis PASSED [ 42%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D19_npp_testes PASSED [ 45%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D20_npp_mutantes PASSED [ 47%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D21_npp_conflitos PASSED [ 50%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D22_dfrs_duas_condicoes_quatro_combinacoes PASSED [ 52%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D23_tres_entradas_oito_combinacoes PASSED [ 54%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D24_entrada_repetida_marcas_1_e_2 PASSED [ 57%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D25_entrada_repetida_quatro_combinacoes PASSED [ 59%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D26_limite_20_entradas_aceito PASSED [ 61%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D27_limite_12_entradas_z3_aceito PASSED [ 64%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D28_modo_direto_26_entradas_aceito PASSED [ 66%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D29_paridade_tres_entradas_oito_testes PASSED [ 69%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D30_valores_concretos_realizam_combinacao_e_resultado PASSED [ 71%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D31_csv_celulas_com_virgula_entre_aspas PASSED [ 73%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D32_formato_json_valido PASSED [ 76%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D33_expressao_invalida_recusada PASSED [ 78%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D34_modo_direto_mesmo_diagnostico_da_tabela PASSED [ 80%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D35_quatro_modulos_maven PASSED [ 83%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D36_requirements_depende_de_core_e_jackson PASSED [ 85%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D37_z3_depende_so_de_core_entre_modulos PASSED [ 88%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D38_cli_depende_dos_tres_modulos PASSED [ 90%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D39_notas_minimas_de_cobertura PASSED [ 92%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D40_notas_minimas_de_mutacao_por_modulo PASSED [ 95%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D41_relatorios_no_repositorio PASSED [ 97%]
+claude-sonnet-5.5-resultados/C4/suite/test_c4_oraculo.py::test_C4_D42_exemplos_citados_existem PASSED [100%]
+
+- generated xml file: C:\Users\User\requirements-quality-llm-test-oracles\claude-sonnet-5.5-resultados\C4\resultados\rodada-01-baseline\junit.xml -
+============================= 42 passed in 48.29s =============================

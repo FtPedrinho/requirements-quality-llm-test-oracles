@@ -1,0 +1,1183 @@
+{
+  "tool" : "mcdc",
+  "check" : "verify",
+  "system" : "turn_indicator_system",
+  "decisions" : 17,
+  "pairsChecked" : 136,
+  "conflicts" : [ {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#6",
+    "secondRequirement" : "REQ006",
+    "sharedVariables" : [ "the_indication_lights", "the_flashing_timer" ],
+    "conflicts" : [ {
+      "variable" : "the_indication_lights",
+      "first" : "left_flashing",
+      "second" : "off"
+    } ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#6",
+    "secondRequirement" : "REQ006",
+    "sharedVariables" : [ "the_indication_lights", "the_flashing_timer" ],
+    "conflicts" : [ {
+      "variable" : "the_indication_lights",
+      "first" : "right_flashing",
+      "second" : "off"
+    } ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#6",
+    "secondRequirement" : "REQ006",
+    "sharedVariables" : [ "the_indication_lights", "the_flashing_timer" ],
+    "conflicts" : [ {
+      "variable" : "the_indication_lights",
+      "first" : "both_flashing",
+      "second" : "off"
+    } ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing"
+    }
+  } ],
+  "compatibleOverlaps" : [ {
+    "first" : "tis#1",
+    "firstRequirement" : "REQ001",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "81",
+      "the_voltage" : "0",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#1",
+    "firstRequirement" : "REQ001",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "81",
+      "the_voltage" : "0",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#1",
+    "firstRequirement" : "REQ001",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "81",
+      "the_voltage" : "0",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#1",
+    "firstRequirement" : "REQ001",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "81",
+      "the_voltage" : "0",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#1",
+    "firstRequirement" : "REQ001",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "81",
+      "the_voltage" : "0",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#1",
+    "firstRequirement" : "REQ001",
+    "second" : "tis#15",
+    "secondRequirement" : "REQ015",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "81",
+      "the_voltage" : "0",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "idle",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#1",
+    "firstRequirement" : "REQ001",
+    "second" : "tis#16",
+    "secondRequirement" : "REQ016",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "81",
+      "the_voltage" : "0",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#1",
+    "firstRequirement" : "REQ001",
+    "second" : "tis#17",
+    "secondRequirement" : "REQ017",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "81",
+      "the_voltage" : "0",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "right",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#7",
+    "secondRequirement" : "REQ007",
+    "sharedVariables" : [ "the_indication_lights", "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off"
+    }
+  }, {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#15",
+    "secondRequirement" : "REQ015",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "idle",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#2",
+    "firstRequirement" : "REQ002",
+    "second" : "tis#17",
+    "secondRequirement" : "REQ017",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "right",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#8",
+    "secondRequirement" : "REQ008",
+    "sharedVariables" : [ "the_indication_lights", "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#15",
+    "secondRequirement" : "REQ015",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "idle",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#3",
+    "firstRequirement" : "REQ003",
+    "second" : "tis#16",
+    "secondRequirement" : "REQ016",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "right_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#9",
+    "secondRequirement" : "REQ009",
+    "sharedVariables" : [ "the_indication_lights", "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#16",
+    "secondRequirement" : "REQ016",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#4",
+    "firstRequirement" : "REQ004",
+    "second" : "tis#17",
+    "secondRequirement" : "REQ017",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage_antes" : "0",
+      "the_voltage" : "81",
+      "the_flashing_mode_antes" : "no_flashing",
+      "the_flashing_mode" : "both_flashing",
+      "the_turn_indicator_lever_antes" : "right",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#6",
+    "secondRequirement" : "REQ006",
+    "sharedVariables" : [ "the_indication_lights", "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#15",
+    "secondRequirement" : "REQ015",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "idle",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#16",
+    "secondRequirement" : "REQ016",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#5",
+    "firstRequirement" : "REQ005",
+    "second" : "tis#17",
+    "secondRequirement" : "REQ017",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_turn_indicator_lever_antes" : "right",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#6",
+    "firstRequirement" : "REQ006",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#6",
+    "firstRequirement" : "REQ006",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#6",
+    "firstRequirement" : "REQ006",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#6",
+    "firstRequirement" : "REQ006",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#6",
+    "firstRequirement" : "REQ006",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#6",
+    "firstRequirement" : "REQ006",
+    "second" : "tis#15",
+    "secondRequirement" : "REQ015",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "idle",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#6",
+    "firstRequirement" : "REQ006",
+    "second" : "tis#16",
+    "secondRequirement" : "REQ016",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#6",
+    "firstRequirement" : "REQ006",
+    "second" : "tis#17",
+    "secondRequirement" : "REQ017",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "no_flashing",
+      "the_flashing_timer" : "340",
+      "the_indication_lights" : "left_flashing",
+      "the_turn_indicator_lever_antes" : "right",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#7",
+    "firstRequirement" : "REQ007",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#7",
+    "firstRequirement" : "REQ007",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#7",
+    "firstRequirement" : "REQ007",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#7",
+    "firstRequirement" : "REQ007",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#7",
+    "firstRequirement" : "REQ007",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#7",
+    "firstRequirement" : "REQ007",
+    "second" : "tis#15",
+    "secondRequirement" : "REQ015",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "idle",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#7",
+    "firstRequirement" : "REQ007",
+    "second" : "tis#17",
+    "secondRequirement" : "REQ017",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "left_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "right",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#8",
+    "firstRequirement" : "REQ008",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#8",
+    "firstRequirement" : "REQ008",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#8",
+    "firstRequirement" : "REQ008",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#8",
+    "firstRequirement" : "REQ008",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#8",
+    "firstRequirement" : "REQ008",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#8",
+    "firstRequirement" : "REQ008",
+    "second" : "tis#15",
+    "secondRequirement" : "REQ015",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "idle",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#8",
+    "firstRequirement" : "REQ008",
+    "second" : "tis#16",
+    "secondRequirement" : "REQ016",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "right_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#9",
+    "firstRequirement" : "REQ009",
+    "second" : "tis#10",
+    "secondRequirement" : "REQ010",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#9",
+    "firstRequirement" : "REQ009",
+    "second" : "tis#11",
+    "secondRequirement" : "REQ011",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off"
+    }
+  }, {
+    "first" : "tis#9",
+    "firstRequirement" : "REQ009",
+    "second" : "tis#12",
+    "secondRequirement" : "REQ012",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "off"
+    }
+  }, {
+    "first" : "tis#9",
+    "firstRequirement" : "REQ009",
+    "second" : "tis#13",
+    "secondRequirement" : "REQ013",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#9",
+    "firstRequirement" : "REQ009",
+    "second" : "tis#14",
+    "secondRequirement" : "REQ014",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "idle",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "on",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#9",
+    "firstRequirement" : "REQ009",
+    "second" : "tis#16",
+    "secondRequirement" : "REQ016",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "left",
+      "the_turn_indicator_lever" : "left",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  }, {
+    "first" : "tis#9",
+    "firstRequirement" : "REQ009",
+    "second" : "tis#17",
+    "secondRequirement" : "REQ017",
+    "sharedVariables" : [ "the_flashing_timer" ],
+    "conflicts" : [ ],
+    "witness" : {
+      "the_voltage" : "81",
+      "the_flashing_mode" : "both_flashing",
+      "the_flashing_timer" : "220",
+      "the_indication_lights" : "off",
+      "the_turn_indicator_lever_antes" : "right",
+      "the_turn_indicator_lever" : "right",
+      "the_emergency_flashing" : "off",
+      "the_emergency_flashing_antes" : "on"
+    }
+  } ],
+  "gaps" : {
+    "checked" : false,
+    "context" : null,
+    "found" : false,
+    "witness" : null
+  },
+  "ok" : false
+}

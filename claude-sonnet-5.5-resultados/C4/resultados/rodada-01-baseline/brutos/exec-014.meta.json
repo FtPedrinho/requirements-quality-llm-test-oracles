@@ -1,0 +1,10 @@
+{
+ "args": [
+  "analyze",
+  "x01 and x02 and x03 and x04 and x05 and x06 and x07 and x08 and x09 and x10 and x11 and x12",
+  "--z3",
+  "--format",
+  "json"
+ ],
+ "returncode": 0
+}

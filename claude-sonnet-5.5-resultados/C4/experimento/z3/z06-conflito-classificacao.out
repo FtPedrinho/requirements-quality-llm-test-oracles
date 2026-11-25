@@ -1,0 +1,12 @@
+R1 isolada
+sat
+R2 isolada
+sat
+R3 isolada
+sat
+R1 e R2
+unsat
+R1 e R3
+unsat
+R1, R2 e R3
+unsat

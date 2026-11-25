@@ -1,0 +1,10 @@
+{
+ "args": [
+  "analyze",
+  "speed > 100 or (speed > 50 and rain)",
+  "--z3",
+  "--format",
+  "json"
+ ],
+ "returncode": 0
+}

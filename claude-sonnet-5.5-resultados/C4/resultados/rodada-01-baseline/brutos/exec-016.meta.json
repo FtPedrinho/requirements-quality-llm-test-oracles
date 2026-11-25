@@ -1,0 +1,9 @@
+{
+ "args": [
+  "analyze",
+  "(B and not C and not D) or (not B and C and not D) or (not B and not C and D) or (B and C and D)",
+  "--format",
+  "json"
+ ],
+ "returncode": 0
+}

@@ -1,0 +1,10 @@
+{
+ "args": [
+  "verify",
+  "--json",
+  "exemplos/tis-decisoes.json",
+  "--format",
+  "json"
+ ],
+ "returncode": 2
+}

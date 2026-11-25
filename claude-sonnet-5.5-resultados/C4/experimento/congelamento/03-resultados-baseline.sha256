@@ -1,0 +1,7 @@
+# Congelamento 03 - resultados do baseline
+e4344f8c8e027c4cb2a6c940ce399eaad22916e39de5acdcb1bca16339b5ecb2 *resultados/rodada-01-baseline/junit.xml
+33d06d3e7fbf968e0ad7ebd606efcb1ee02a5c1c3bc9d7324d3fa0fcfcbbe873 *resultados/rodada-01-baseline/pytest-saida.txt
+396c4b4e959e9b4b3c7ec2976f54eaf96195229a4f51fd49f4723eb16d88038e *resultados/rodada-01-baseline/jacoco/jacoco.csv
+010d047cce8929da308e14fd35b9b75c089c5d7976bf4342f58692a65f6c6b99 *resultados/rodada-01-baseline/jacoco/jacoco.xml
+b2be8f0db25d2706b7b4de59c26ea053532cae0d860f9d0e52d4501c59e9a947 *resultados/rodada-01-baseline/jacoco/jacoco.exec
+e57fceaccbdbb65e2f7c32f9188eba16966fa85086ede886478d9e093bea5205 *avaliacao/resultados-por-caso.csv

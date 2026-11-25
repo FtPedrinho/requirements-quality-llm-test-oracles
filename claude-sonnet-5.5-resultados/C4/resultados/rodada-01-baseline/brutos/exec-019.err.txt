@@ -1,0 +1,2 @@
+Picked up JAVA_TOOL_OPTIONS: -javaagent:C:\Users\User\.m2\repository\org\jacoco\org.jacoco.agent\0.8.16\org.jacoco.agent-0.8.16-runtime.jar=destfile=C:\Users\User\requirements-quality-llm-test-oracles\claude-sonnet-5.5-resultados\C4\resultados\rodada-01-baseline\jacoco\jacoco.exec,append=true,includes=io.github.rvdomingos.*
+Erro: REQ: Expressão incompleta: esperava uma condição

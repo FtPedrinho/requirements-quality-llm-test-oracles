@@ -1,0 +1,11 @@
+{
+ "args": [
+  "analyze",
+  "--json",
+  "exemplos/tis-decisoes.json",
+  "--z3",
+  "--format",
+  "json"
+ ],
+ "returncode": 2
+}

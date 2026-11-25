@@ -1,0 +1,79 @@
+id,classificacao,titulo,expectativa_ou_motivo
+D01,DETERMINADO,VM (maquina de cafe): numero de requisitos,A analise de exemplos/vm-decisoes.json relata 5 requisitos.
+D02,DETERMINADO,VM (maquina de cafe): numero de condicoes,O relatorio soma 21 condicoes (cada aparicao conta como uma condicao).
+D03,DETERMINADO,VM (maquina de cafe): numero de combinacoes,O relatorio soma 152 combinacoes (linhas de tabela-verdade).
+D04,DETERMINADO,VM (maquina de cafe): numero de combinacoes impossiveis,O relatorio soma 4 combinacoes impossiveis.
+D05,DETERMINADO,VM (maquina de cafe): numero de testes da suite,A suite gerada soma 26 testes.
+D06,DETERMINADO,VM (maquina de cafe): mutantes totais e equivalentes,Mutantes totais = 152; equivalentes = 0.
+D07,DETERMINADO,VM (maquina de cafe): numero de conflitos de requisitos,O comando verify relata 0 conflito(s) entre requisitos.
+D08,DETERMINADO,TIS (pisca-pisca): numero de requisitos,A analise de exemplos/tis-decisoes.json relata 17 requisitos.
+D09,DETERMINADO,TIS (pisca-pisca): numero de condicoes,O relatorio soma 69 condicoes (cada aparicao conta como uma condicao).
+D10,DETERMINADO,TIS (pisca-pisca): numero de combinacoes,O relatorio soma 268 combinacoes (linhas de tabela-verdade).
+D11,DETERMINADO,TIS (pisca-pisca): numero de combinacoes impossiveis,O relatorio soma 4 combinacoes impossiveis.
+D12,DETERMINADO,TIS (pisca-pisca): numero de testes da suite,A suite gerada soma 80 testes.
+D13,DETERMINADO,TIS (pisca-pisca): mutantes totais e equivalentes,Mutantes totais = 450; equivalentes = 21.
+D14,DETERMINADO,TIS (pisca-pisca): numero de conflitos de requisitos,O comando verify relata 3 conflito(s) entre requisitos.
+D15,DETERMINADO,NPP (injecao de seguranca): numero de requisitos,A analise de exemplos/npp-decisoes.json relata 11 requisitos.
+D16,DETERMINADO,NPP (injecao de seguranca): numero de condicoes,O relatorio soma 29 condicoes (cada aparicao conta como uma condicao).
+D17,DETERMINADO,NPP (injecao de seguranca): numero de combinacoes,O relatorio soma 76 combinacoes (linhas de tabela-verdade).
+D18,DETERMINADO,NPP (injecao de seguranca): numero de combinacoes impossiveis,O relatorio soma 1 combinacoes impossiveis.
+D19,DETERMINADO,NPP (injecao de seguranca): numero de testes da suite,A suite gerada soma 40 testes.
+D20,DETERMINADO,NPP (injecao de seguranca): mutantes totais e equivalentes,Mutantes totais = 146; equivalentes = 0.
+D21,DETERMINADO,NPP (injecao de seguranca): numero de conflitos de requisitos,O comando verify relata 1 conflito(s) entre requisitos.
+D22,DETERMINADO,Comparacoes com operador DFRS: duas condicoes e quatro combinacoes,O relatorio apresenta 2 condicoes e 4 combinacoes (nao ha erro).
+D23,DETERMINADO,Tres entradas distintas: 3 condicoes e 8 combinacoes,O relatorio apresenta 3 condicoes e 8 combinacoes.
+D24,DETERMINADO,"Entrada repetida: cada aparicao e uma condicao propria (#1, #2)",O relatorio apresenta 3 condicoes; as duas aparicoes de B aparecem distinguidas por #1 e #2.
+D25,DETERMINADO,Entrada repetida: combinacoes sobre entradas distintas,O relatorio apresenta 4 combinacoes (nao 8).
+D26,DETERMINADO,Limite de 20 entradas na tabela-verdade completa e aceito,A analise e realizada (gera suite) e relata 1048576 combinacoes (2^20).
+D27,DETERMINADO,Limite de 12 entradas no processamento Z3 linha a linha e aceito,A analise com Z3 e realizada e relata 4096 combinacoes (2^12).
+D28,DETERMINADO,Modo direto aceita 26 entradas,A analise em modo direto e realizada (gera suite) sem erro de limite.
+D29,DETERMINADO,Funcao de paridade de 3 entradas exige 8 testes,A suite gerada tem 8 testes.
+D30,DETERMINADO,Valores concretos realizam a combinacao declarada e o resultado esperado,"Para cada teste do relatorio, avaliar as comparacoes com os valores concretos reproduz a combinacao declarada e o resultado esperado da decisao."
+D31,DETERMINADO,CSV: celulas com virgula entre aspas,"Ao ler a saida como CSV (RFC 4180), todas as linhas tem o mesmo numero de campos."
+D32,DETERMINADO,Formato json produz JSON valido,A saida padrao e um documento JSON valido.
+D33,DETERMINADO,Expressao invalida e recusada,"A ferramenta nao produz analise (nenhuma condicao, combinacao ou teste na saida padrao)."
+D34,DETERMINADO,Modo direto concorda com a tabela completa no diagnostico,O diagnostico por condicao (conjunto de condicoes com classificacao) e identico nas duas execucoes.
+D35,DETERMINADO,Projeto Maven com os quatro modulos,"Existem os diretorios dos quatro modulos, cada um com pom.xml, e um pom.xml na raiz."
+D36,DETERMINADO,mcdc-requirements depende de mcdc-core e Jackson,O pom.xml de mcdc-requirements declara dependencia de mcdc-core e de Jackson.
+D37,DETERMINADO,mcdc-z3 depende de mcdc-core,O pom.xml de mcdc-z3 declara dependencia de mcdc-core e de nenhum outro modulo do projeto.
+D38,DETERMINADO,mcdc-cli depende dos tres modulos,"O pom.xml de mcdc-cli declara dependencia de mcdc-core, mcdc-requirements e mcdc-z3."
+D39,DETERMINADO,Notas minimas de cobertura configuradas no pom.xml,O pom.xml declara qualidade.linhas.minima = 0.90 e qualidade.desvios.minima = 0.85 (escala 0-1 usada no exemplo 0.99).
+D40,DETERMINADO,Notas minimas de mutacao por modulo,"mcdc-core=90, mcdc-requirements=90, mcdc-z3=85, mcdc-cli=75 (escala 0-100 usada no exemplo 99)."
+D41,DETERMINADO,Relatorios publicados no repositorio,"Existem relatorios/jacoco/ , relatorios/jacoco/jacoco.csv e relatorios/pit/mcdc-core/ (os caminhos legiveis da tabela)."
+D42,DETERMINADO,Exemplos de entrada e saidas citados existem,"Existem exemplos/vm-decisoes.json, exemplos/tis-decisoes.json, exemplos/npp-decisoes.json e o diretorio exemplos/saidas/."
+I01,INDETERMINADO,Conteudo do formato truth-csv,Linha 5 e linha 373 dizem que truth-csv contem a tabela-verdade inteira; linha 7 diz que nunca contem tabela-verdade e que ela so sai em csv. O texto nao resolve.
+I02,INDETERMINADO,"Conteudo exato do formato csv (cabecalho, colunas, numero de linhas)","Nao ha cabecalho, nomes de colunas nem ordem definidos; 'uma linha por teste' vs 'por teste e por entrada' e ambiguo; a celula 3 esta corrompida."
+I03,INDETERMINADO,Rotulo de combinacao impossivel pelo resultado do Z3 (sat/unsat),"As duas regras atribuem sentidos opostos a unsat/sat. A clausula de substituicao nao define qual formula e enviada ao Z3, entao nao ha expectativa observavel unica sobre quais combinacoes sao descartadas (apenas as contagens da tabela de regressao, D04/D11/D18, sao numericas)."
+I04,INDETERMINADO,Criterio de par de independencia (decisao muda ou nao),Linha 85 exige mudanca do resultado da decisao; linha 87 dispensa. Os pares aceitos mudam conforme a leitura.
+I05,INDETERMINADO,Suite minima: guloso x --exact,Linhas 53/89 (exato melhor que guloso) contradizem a linha 91 (guloso sempre minimo; --exact sem garantia). A expressao do exemplo tem token ausente (variavel entre '((' e 'or D').
+I06,INDETERMINADO,Classificacao redundante x bloqueada,Linha 93 e linha 95 atribuem rotulos trocados; a linha 95 ainda afirma que sao intercambiaveis.
+I07,INDETERMINADO,REQ-003 tem uma condicao redundante,"O caminho do arquivo esta corrompido (elos/requisitos.mcdc) e o termo 'redundante' tem definicao em conflito (I06); sem Z3 so existe a definicao 'sem par em nenhuma combinacao', mas a linha 95 a chama 'bloqueada'."
+I08,INDETERMINADO,Arquitetura do Z3 (processo externo x biblioteca) e limite de 60 s,Processo externo x biblioteca na JVM; Z3 obrigatorio no PATH x 'implementacao interna em Java sempre' e 'nao consultada'; limite de 60 s encerra x nunca encerra. Registrado desvio: o Z3 foi mantido no PATH em todos os casos.
+I09,INDETERMINADO,Comportamento sem Z3 instalado (aviso),"Existe um 'aviso' se o Z3 falta, mas o texto nao define conteudo, destino (stdout/stderr), nem se a analise prossegue ou aborta."
+I10,INDETERMINADO,Comportamento acima dos limites de entradas e de pares,"O texto nao define o resultado ao exceder (erro, mensagem, codigo de saida, truncamento)."
+I11,INDETERMINADO,"Tempos e limites de desempenho (5 s, 3 s, 10 s, tempos medidos)",Tempos dependem de ambiente e o texto nao define criterio de aceitacao para esta pesquisa alem de narrativas de medicao (criterio estrito do pesquisador).
+I12,INDETERMINADO,"Codigos de saida 0, 1 e 2","Os valores 0, 1 e 2 sao citados, mas nenhum significado nem situacao associada e definido."
+I13,INDETERMINADO,(A and B) or C: suite de 4 testes (e A and not B: 3 testes),O identificador inicial das expressoes foi suprimido; completar com 'A' seria suposicao (o nome pode coincidir com B ou C e alterar a contagem).
+I14,INDETERMINADO,Exemplo --unique-cause,Expressao com token ausente; alem disso o exemplo nao declara resultado esperado.
+I15,INDETERMINADO,Exemplo de entrada repetida (A and B) or (not A and C),Dois tokens ausentes; nao se sabe que sao a mesma entrada.
+I16,INDETERMINADO,Exemplo --constraint (restricao escrita a mao),Nome do comando e variaveis das expressoes corrompidos; efeito esperado nao declarado.
+I17,INDETERMINADO,Exemplo --mutation (A and (B or C)),Comando e variavel corrompidos; sem resultado esperado.
+I18,INDETERMINADO,Valores concretos e testes de fronteira de speed > 100 or (speed > 50 and rain),"Os valores especificos de fronteira (dominio inteiro ou real, quais testes) nao sao dados; so a propriedade geral (D30) esta no texto."
+I19,INDETERMINADO,verify com --context,A opcao esta grafada '--cotnext'; completar por '--context' seria suposicao; resultado esperado tambem nao e declarado.
+I20,INDETERMINADO,Comando check (avaliar testes existentes),Nome do comando e da opcao corrompidos no exemplo; formato da saida nao definido.
+I21,INDETERMINADO,Mutantes detectados (coluna Pegos) para TIS e total,A tabela (428 detectados de 429 nao equivalentes) e a linha 407 admitem 1 defeito de parenteses escapando; a linha 409 diz que nenhum pode escapar (428 + 21 = 449 != 450).
+I22,INDETERMINADO,Garantia MC/DC para parenteses deslocados,Linha 407 x 409 (ver I21).
+I23,INDETERMINADO,Coluna Completos e condicoes com par,Nao ha definicao de 'completo' (nem como aparece no relatorio) nem de 'condicoes com par' em termos observaveis; a coluna Pegos tambem nao e usada (ver I21).
+I24,INDETERMINADO,Suite de causa unica x busca exata: mesmo numero de testes,O texto nao diz se 'mesmo numero' e entre os dois metodos ou em relacao a tabela; ademais --exact esta em conflito (I05).
+I25,INDETERMINADO,Reducao N + 1 testes,'pode ter' e permissivo e 'guardas simples' nao e definido; so o caso 'requisito completo' nos exemplos esta quantificado (e ja coberto por D05/D12/D19).
+I26,INDETERMINADO,"Arquivos de entrada: .mcdc, JSON NAT2TEST, CSV de testes","Descricoes de testes de unidade sem gramatica do .mcdc, esquema do JSON, formato do CSV, nem resultados observaveis (erros, ids repetidos, sinal de menos)."
+I27,INDETERMINADO,Saidas geradas em exemplos/saidas/,"O texto nao diz que a saida do SUT deve ser identica a esses arquivos, nem quais comandos os geraram."
+I28,INDETERMINADO,Saida em arquivo (--format json - relatorio.json),A opcao de destino aparece como '-' (letra suprimida); completar seria suposicao.
+I29,INDETERMINADO,"Seis tipos de mutantes (ORF, ENF, VNF, MVF, VRF, ASF) e contagem sem equivalentes","'Contagem' nao diz se se refere ao total de mutantes (a tabela inclui equivalentes: 450 = 428 + 21 + 1), ao escore ou a outra; nomes dos tipos no relatorio nao sao definidos."
+I30,INDETERMINADO,Metricas de qualidade do projeto (JaCoCo/PIT/testes) e regras de build Maven,"Linha 147 contradiz a tabela (95,5% x 90,3%); linha 151 contradiz linha 149; linha 171 contradiz linhas 165/169. Alem disso sao metricas do projeto do SUT, nao comportamento da ferramenta; Maven nao esta disponivel."
+I31,INDETERMINADO,"Descricoes de testes de unidade do projeto (171 testes, 34 arquivos, classes e contagens)","Descricoes de testes de unidade (incluindo 'linha 0 e tudo verdadeiro', 'ordem de escolha', 'limites <= x <') sem resultado observavel pela CLI; contagens internas sao consistentes (Z3 A05-A07) mas nao sao comportamento testavel da ferramenta."
+I32,INDETERMINADO,Guardas temporais,Limite conceitual ('podem envolver'); sem entrada ou saida definida.
+I33,INDETERMINADO,Tempo de build e instrucoes Maven,Comandos Maven e tempos; Maven nao esta disponivel e tempos nao sao criterio (I11).
+I34,INDETERMINADO,Teste do tempo limite do Z3 (Z3ProcessTest),'Encerra o processo' no limite de tempo contradiz a linha 123 ('nunca encerra a execucao'); sem formato de erro.
+I35,INDETERMINADO,"Verificacao de requisitos: conflitos, guardas que se sobrepoem, lacunas","Nao ha definicao observavel de 'conflito' e 'lacuna' alem das contagens da tabela (cobertas por D07/D14/D21), nem formato do relatorio de verify."
+I36,INDETERMINADO,Acoes x := v (ActionTest),Descricao de teste de unidade; sintaxe de entrada e saida nao definidas.

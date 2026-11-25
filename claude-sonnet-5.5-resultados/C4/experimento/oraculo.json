@@ -1,0 +1,1890 @@
+{
+  "condicao": "C4",
+  "fonte": "documentacao/tool-readme-C4.md",
+  "sha256_fonte": "D6BC0A588CD9A7DF7F1F566573944FA5CB1707BBA676B4E9854CAD2CC5440FC2",
+  "modelo": "Claude Sonnet 5.5",
+  "revisao": "autorrevisao (sem revisor independente)",
+  "unidade_contagem": "um caso do oraculo = um teste",
+  "casos": [
+    {
+      "id": "D01",
+      "classificacao": "DETERMINADO",
+      "titulo": "VM (maquina de cafe): numero de requisitos",
+      "entrada": "analyze --json exemplos/vm-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/vm-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 289,
+          "texto": "| VM · máuina café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Numeros travados de regressao: coluna Requisitos.",
+      "expectativa": "A analise de exemplos/vm-decisoes.json relata 5 requisitos.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "contagem de requisitos no relatorio",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D02",
+      "classificacao": "DETERMINADO",
+      "titulo": "VM (maquina de cafe): numero de condicoes",
+      "entrada": "analyze --json exemplos/vm-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/vm-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 289,
+          "texto": "| VM · máuina café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Condicoes.",
+      "expectativa": "O relatorio soma 21 condicoes (cada aparicao conta como uma condicao).",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de condicoes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D03",
+      "classificacao": "DETERMINADO",
+      "titulo": "VM (maquina de cafe): numero de combinacoes",
+      "entrada": "analyze --json exemplos/vm-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/vm-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 289,
+          "texto": "| VM · máuina café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Combinacoes.",
+      "expectativa": "O relatorio soma 152 combinacoes (linhas de tabela-verdade).",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de combinacoes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D04",
+      "classificacao": "DETERMINADO",
+      "titulo": "VM (maquina de cafe): numero de combinacoes impossiveis",
+      "entrada": "analyze --json exemplos/vm-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/vm-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 289,
+          "texto": "| VM · máuina café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Imposiveis.",
+      "expectativa": "O relatorio soma 4 combinacoes impossiveis.",
+      "justificativa": "Valor numerico da tabela; independe de qual rotulo (sat/unsat) o texto adota, pois so a contagem e verificada (ver I03).",
+      "observavel": "soma de combinacoes impossiveis",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D05",
+      "classificacao": "DETERMINADO",
+      "titulo": "VM (maquina de cafe): numero de testes da suite",
+      "entrada": "analyze --json exemplos/vm-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/vm-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 289,
+          "texto": "| VM · máuina café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Testes.",
+      "expectativa": "A suite gerada soma 26 testes.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de testes das suites",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D06",
+      "classificacao": "DETERMINADO",
+      "titulo": "VM (maquina de cafe): mutantes totais e equivalentes",
+      "entrada": "analyze --json exemplos/vm-decisoes.json --z3 --mutation",
+      "precondicao": "Arquivo exemplos/vm-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento). Opcao --mutation.",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 289,
+          "texto": "| VM · máuina café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        },
+        {
+          "linha": 97,
+          "texto": "  → 6. mutação (opcional): são avaliados seis tips  def  Kapoor  Bowen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contagem"
+        }
+      ],
+      "regra": "Colunas Mutantes e Equivalentes (a coluna Pegos nao e usada; ver I21 para TIS).",
+      "expectativa": "Mutantes totais = 152; equivalentes = 0.",
+      "justificativa": "Linha da tabela de regressao; a analise de mutacao e a opcional descrita no passo 6.",
+      "observavel": "totais de mutantes e equivalentes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D07",
+      "classificacao": "DETERMINADO",
+      "titulo": "VM (maquina de cafe): numero de conflitos de requisitos",
+      "entrada": "verify --json exemplos/vm-decisoes.json",
+      "precondicao": "Arquivo exemplos/vm-decisoes.json existente; comando verify sem --context.",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 289,
+          "texto": "| VM · máuina café | 5 | 5 | 21 | 152 | 4 | 26 | 152 | 0 | 152 | 0 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        },
+        {
+          "linha": 63,
+          "texto": "./mcdc verify --json exemplos/npp-decisoes.json"
+        }
+      ],
+      "regra": "Coluna Conflitos.",
+      "expectativa": "O comando verify relata 0 conflito(s) entre requisitos.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "contagem de conflitos",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D08",
+      "classificacao": "DETERMINADO",
+      "titulo": "TIS (pisca-pisca): numero de requisitos",
+      "entrada": "analyze --json exemplos/tis-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/tis-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 291,
+          "texto": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Numeros travados de regressao: coluna Requisitos.",
+      "expectativa": "A analise de exemplos/tis-decisoes.json relata 17 requisitos.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "contagem de requisitos no relatorio",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D09",
+      "classificacao": "DETERMINADO",
+      "titulo": "TIS (pisca-pisca): numero de condicoes",
+      "entrada": "analyze --json exemplos/tis-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/tis-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 291,
+          "texto": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Condicoes.",
+      "expectativa": "O relatorio soma 69 condicoes (cada aparicao conta como uma condicao).",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de condicoes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D10",
+      "classificacao": "DETERMINADO",
+      "titulo": "TIS (pisca-pisca): numero de combinacoes",
+      "entrada": "analyze --json exemplos/tis-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/tis-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 291,
+          "texto": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Combinacoes.",
+      "expectativa": "O relatorio soma 268 combinacoes (linhas de tabela-verdade).",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de combinacoes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D11",
+      "classificacao": "DETERMINADO",
+      "titulo": "TIS (pisca-pisca): numero de combinacoes impossiveis",
+      "entrada": "analyze --json exemplos/tis-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/tis-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 291,
+          "texto": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Imposiveis.",
+      "expectativa": "O relatorio soma 4 combinacoes impossiveis.",
+      "justificativa": "Valor numerico da tabela; independe de qual rotulo (sat/unsat) o texto adota, pois so a contagem e verificada (ver I03).",
+      "observavel": "soma de combinacoes impossiveis",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D12",
+      "classificacao": "DETERMINADO",
+      "titulo": "TIS (pisca-pisca): numero de testes da suite",
+      "entrada": "analyze --json exemplos/tis-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/tis-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 291,
+          "texto": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Testes.",
+      "expectativa": "A suite gerada soma 80 testes.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de testes das suites",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D13",
+      "classificacao": "DETERMINADO",
+      "titulo": "TIS (pisca-pisca): mutantes totais e equivalentes",
+      "entrada": "analyze --json exemplos/tis-decisoes.json --z3 --mutation",
+      "precondicao": "Arquivo exemplos/tis-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento). Opcao --mutation.",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 291,
+          "texto": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        },
+        {
+          "linha": 97,
+          "texto": "  → 6. mutação (opcional): são avaliados seis tips  def  Kapoor  Bowen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contagem"
+        }
+      ],
+      "regra": "Colunas Mutantes e Equivalentes (a coluna Pegos nao e usada; ver I21 para TIS).",
+      "expectativa": "Mutantes totais = 450; equivalentes = 21.",
+      "justificativa": "Linha da tabela de regressao; a analise de mutacao e a opcional descrita no passo 6.",
+      "observavel": "totais de mutantes e equivalentes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D14",
+      "classificacao": "DETERMINADO",
+      "titulo": "TIS (pisca-pisca): numero de conflitos de requisitos",
+      "entrada": "verify --json exemplos/tis-decisoes.json",
+      "precondicao": "Arquivo exemplos/tis-decisoes.json existente; comando verify sem --context.",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 291,
+          "texto": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        },
+        {
+          "linha": 63,
+          "texto": "./mcdc verify --json exemplos/npp-decisoes.json"
+        }
+      ],
+      "regra": "Coluna Conflitos.",
+      "expectativa": "O comando verify relata 3 conflito(s) entre requisitos.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "contagem de conflitos",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D15",
+      "classificacao": "DETERMINADO",
+      "titulo": "NPP (injecao de seguranca): numero de requisitos",
+      "entrada": "analyze --json exemplos/npp-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/npp-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 293,
+          "texto": "| NPP · injeção segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Numeros travados de regressao: coluna Requisitos.",
+      "expectativa": "A analise de exemplos/npp-decisoes.json relata 11 requisitos.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "contagem de requisitos no relatorio",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D16",
+      "classificacao": "DETERMINADO",
+      "titulo": "NPP (injecao de seguranca): numero de condicoes",
+      "entrada": "analyze --json exemplos/npp-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/npp-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 293,
+          "texto": "| NPP · injeção segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Condicoes.",
+      "expectativa": "O relatorio soma 29 condicoes (cada aparicao conta como uma condicao).",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de condicoes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D17",
+      "classificacao": "DETERMINADO",
+      "titulo": "NPP (injecao de seguranca): numero de combinacoes",
+      "entrada": "analyze --json exemplos/npp-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/npp-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 293,
+          "texto": "| NPP · injeção segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Combinacoes.",
+      "expectativa": "O relatorio soma 76 combinacoes (linhas de tabela-verdade).",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de combinacoes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D18",
+      "classificacao": "DETERMINADO",
+      "titulo": "NPP (injecao de seguranca): numero de combinacoes impossiveis",
+      "entrada": "analyze --json exemplos/npp-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/npp-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 293,
+          "texto": "| NPP · injeção segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Imposiveis.",
+      "expectativa": "O relatorio soma 1 combinacoes impossiveis.",
+      "justificativa": "Valor numerico da tabela; independe de qual rotulo (sat/unsat) o texto adota, pois so a contagem e verificada (ver I03).",
+      "observavel": "soma de combinacoes impossiveis",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D19",
+      "classificacao": "DETERMINADO",
+      "titulo": "NPP (injecao de seguranca): numero de testes da suite",
+      "entrada": "analyze --json exemplos/npp-decisoes.json --z3",
+      "precondicao": "Arquivo exemplos/npp-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento).",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 293,
+          "texto": "| NPP · injeção segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        }
+      ],
+      "regra": "Coluna Testes.",
+      "expectativa": "A suite gerada soma 40 testes.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "soma de testes das suites",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D20",
+      "classificacao": "DETERMINADO",
+      "titulo": "NPP (injecao de seguranca): mutantes totais e equivalentes",
+      "entrada": "analyze --json exemplos/npp-decisoes.json --z3 --mutation",
+      "precondicao": "Arquivo exemplos/npp-decisoes.json existente; Z3 instalado e no PATH; variante padrao (mascaramento). Opcao --mutation.",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 293,
+          "texto": "| NPP · injeção segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        },
+        {
+          "linha": 97,
+          "texto": "  → 6. mutação (opcional): são avaliados seis tips  def  Kapoor  Bowen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contagem"
+        }
+      ],
+      "regra": "Colunas Mutantes e Equivalentes (a coluna Pegos nao e usada; ver I21 para TIS).",
+      "expectativa": "Mutantes totais = 146; equivalentes = 0.",
+      "justificativa": "Linha da tabela de regressao; a analise de mutacao e a opcional descrita no passo 6.",
+      "observavel": "totais de mutantes e equivalentes",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D21",
+      "classificacao": "DETERMINADO",
+      "titulo": "NPP (injecao de seguranca): numero de conflitos de requisitos",
+      "entrada": "verify --json exemplos/npp-decisoes.json",
+      "precondicao": "Arquivo exemplos/npp-decisoes.json existente; comando verify sem --context.",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | Combinações | Imposíveis | Tesuutes | Mutates | Equivalentes | Pegos | Conflitrros |"
+        },
+        {
+          "linha": 293,
+          "texto": "| NPP · injeção segurança | 11 | 11 | 29 | 76 | 1 | 40 | 146 | 0 | 146 | 1 |"
+        },
+        {
+          "linha": 279,
+          "texto": "| `RequirementsRegressionTest`| 3 | Verifica  resutados três sistemas exemplo premanecem iguis valores registrados requi, cond, combinarções, cmbinaçes impossíveis, tes, conições par, mutantes (total, equivalentes detec) conflitos. ..."
+        },
+        {
+          "linha": 45,
+          "texto": "# requisitos  sistemas  exemplo  NAT2TEST: máquina  café (VM), pisca-pisca (TIS)  injeção  segurança (NPP)"
+        },
+        {
+          "linha": 63,
+          "texto": "./mcdc verify --json exemplos/npp-decisoes.json"
+        }
+      ],
+      "regra": "Coluna Conflitos.",
+      "expectativa": "O comando verify relata 1 conflito(s) entre requisitos.",
+      "justificativa": "Linha da tabela de regressao.",
+      "observavel": "contagem de conflitos",
+      "z3": "z01-aritmetica-documental.smt2"
+    },
+    {
+      "id": "D22",
+      "classificacao": "DETERMINADO",
+      "titulo": "Comparacoes com operador DFRS: duas condicoes e quatro combinacoes",
+      "entrada": "analyze 'speed > 100 /\\ mode = idle'",
+      "precondicao": "Sem --z3.",
+      "trecho_literal": [
+        {
+          "linha": 21,
+          "texto": "# comparações   operadores  DFRS"
+        },
+        {
+          "linha": 23,
+          "texto": "./mcdc analyze 'speed > 100 /\\ mode = idle'"
+        },
+        {
+          "linha": 79,
+          "texto": "  → 1. tabela-verdade:   entradas distintas  expreão, são consideradas  2ⁿ combinações  calculado  resulstado  gua  cada "
+        }
+      ],
+      "regra": "Duas condicoes distintas; 2^n combinacoes sobre as n=2 entradas.",
+      "expectativa": "O relatorio apresenta 2 condicoes e 4 combinacoes (nao ha erro).",
+      "justificativa": "n=2 seja contando variaveis (speed, mode) ou predicados; ambos dao 4.",
+      "observavel": "condicoes/combinacoes no relatorio JSON",
+      "z3": "z12-combinacoes-casos-determinados.smt2"
+    },
+    {
+      "id": "D23",
+      "classificacao": "DETERMINADO",
+      "titulo": "Tres entradas distintas: 3 condicoes e 8 combinacoes",
+      "entrada": "analyze \"B or (C and D)\"",
+      "precondicao": "Sem --z3.",
+      "trecho_literal": [
+        {
+          "linha": 79,
+          "texto": "  → 1. tabela-verdade:   entradas distintas  expreão, são consideradas  2ⁿ combinações  calculado  resulstado  gua  cada "
+        },
+        {
+          "linha": 25,
+          "texto": "# entrada repetida: cada aparição é  condiç  par próprio (#1, #2)"
+        }
+      ],
+      "regra": "Cada aparicao e uma condicao; 2^n combinacoes das entradas distintas.",
+      "expectativa": "O relatorio apresenta 3 condicoes e 8 combinacoes.",
+      "justificativa": "n=3 -> 8.",
+      "observavel": "condicoes/combinacoes",
+      "z3": "z12-combinacoes-casos-determinados.smt2"
+    },
+    {
+      "id": "D24",
+      "classificacao": "DETERMINADO",
+      "titulo": "Entrada repetida: cada aparicao e uma condicao propria (#1, #2)",
+      "entrada": "analyze \"B or (not B and C)\"",
+      "precondicao": "Sem --z3.",
+      "trecho_literal": [
+        {
+          "linha": 25,
+          "texto": "# entrada repetida: cada aparição é  condiç  par próprio (#1, #2)"
+        },
+        {
+          "linha": 307,
+          "texto": "| `ConditionTest`| 2 | Cada aparição é conoodição; \"decidir\" troca só  aparição |"
+        }
+      ],
+      "regra": "Cada aparicao de uma entrada repetida e uma condicao propria, identificada por #1, #2.",
+      "expectativa": "O relatorio apresenta 3 condicoes; as duas aparicoes de B aparecem distinguidas por #1 e #2.",
+      "justificativa": "B aparece 2 vezes e C 1 vez.",
+      "observavel": "lista de condicoes",
+      "z3": "z12-combinacoes-casos-determinados.smt2"
+    },
+    {
+      "id": "D25",
+      "classificacao": "DETERMINADO",
+      "titulo": "Entrada repetida: combinacoes sobre entradas distintas",
+      "entrada": "analyze \"B or (not B and C)\"",
+      "precondicao": "Sem --z3.",
+      "trecho_literal": [
+        {
+          "linha": 79,
+          "texto": "  → 1. tabela-verdade:   entradas distintas  expreão, são consideradas  2ⁿ combinações  calculado  resulstado  gua  cada "
+        },
+        {
+          "linha": 25,
+          "texto": "# entrada repetida: cada aparição é  condiç  par próprio (#1, #2)"
+        }
+      ],
+      "regra": "2^n combinacoes calculadas das entradas distintas (n=2: B e C).",
+      "expectativa": "O relatorio apresenta 4 combinacoes (nao 8).",
+      "justificativa": "Entradas distintas = 2.",
+      "observavel": "numero de combinacoes",
+      "z3": "z12-combinacoes-casos-determinados.smt2"
+    },
+    {
+      "id": "D26",
+      "classificacao": "DETERMINADO",
+      "titulo": "Limite de 20 entradas na tabela-verdade completa e aceito",
+      "entrada": "analyze com 20 entradas distintas combinadas por and (nomes definidos pelo gerador)",
+      "precondicao": "Sem --z3; variante padrao.",
+      "trecho_literal": [
+        {
+          "linha": 101,
+          "texto": "... Os limites documentados são: 20 entraas tabela-vrdade completa, 12 entads  processamento  Z3 linhuua linha 30 entradas modo dirto."
+        },
+        {
+          "linha": 405,
+          "texto": "- **Tamanho:** 20 entadas   tbaela-verdade complta (cerca 1 milhão combinações), 12 Z3 linha  linha  30 modo direto; 1000 pars guardados condiçoã."
+        },
+        {
+          "linha": 245,
+          "texto": "| `PerformanceTest`| 4 | Motor Z3: 20 entradas (cerca  1 milho combinações) duas variantes, entradas repetidas, mtuação decsão 16 entradas  avaliaução tetses existentes, cada caso abixo 5 s |"
+        }
+      ],
+      "regra": "Limite documentado: 20 entradas na tabela-verdade completa (cerca de 1 milhao de combinacoes).",
+      "expectativa": "A analise e realizada (gera suite) e relata 1048576 combinacoes (2^20).",
+      "justificativa": "20 e o limite documentado; 2^20 pela regra 2^n.",
+      "observavel": "relatorio sem erro e numero de combinacoes",
+      "z3": "z12-combinacoes-casos-determinados.smt2"
+    },
+    {
+      "id": "D27",
+      "classificacao": "DETERMINADO",
+      "titulo": "Limite de 12 entradas no processamento Z3 linha a linha e aceito",
+      "entrada": "analyze com 12 entradas booleanas distintas por and --z3",
+      "precondicao": "Z3 no PATH; sem --direct.",
+      "trecho_literal": [
+        {
+          "linha": 101,
+          "texto": "... Os limites documentados são: 20 entraas tabela-vrdade completa, 12 entads  processamento  Z3 linhuua linha 30 entradas modo dirto."
+        },
+        {
+          "linha": 405,
+          "texto": "- **Tamanho:** 20 entadas   tbaela-verdade complta (cerca 1 milhão combinações), 12 Z3 linha  linha  30 modo direto; 1000 pars guardados condiçoã."
+        }
+      ],
+      "regra": "Limite: 12 entradas no processamento Z3 linha a linha.",
+      "expectativa": "A analise com Z3 e realizada e relata 4096 combinacoes (2^12).",
+      "justificativa": "12 e o limite documentado.",
+      "observavel": "relatorio sem erro",
+      "z3": null
+    },
+    {
+      "id": "D28",
+      "classificacao": "DETERMINADO",
+      "titulo": "Modo direto aceita 26 entradas",
+      "entrada": "analyze com 26 entradas booleanas distintas por and --direct",
+      "precondicao": "Z3 no PATH.",
+      "trecho_literal": [
+        {
+          "linha": 101,
+          "texto": "... Os limites documentados são: 20 entraas tabela-vrdade completa, 12 entads  processamento  Z3 linhuua linha 30 entradas modo dirto."
+        },
+        {
+          "linha": 405,
+          "texto": "- **Tamanho:** 20 entadas   tbaela-verdade complta (cerca 1 milhão combinações), 12 Z3 linha  linha  30 modo direto; 1000 pars guardados condiçoã."
+        },
+        {
+          "linha": 247,
+          "texto": "| `SystemsPerformanceTest`| 4 |  Z3,  caminho  linha  coamando: sistema exemplo [trecho omitido] mtação, bsuca exata verificação  requisit) abaio 3 s,  modo direto  26 entradas abaixo 10 s |"
+        }
+      ],
+      "regra": "Limite: 30 entradas no modo direto; o texto cita modo direto com 26 entradas.",
+      "expectativa": "A analise em modo direto e realizada (gera suite) sem erro de limite.",
+      "justificativa": "26 < 30; tempo nao e avaliado (ver I11).",
+      "observavel": "relatorio sem erro",
+      "z3": null
+    },
+    {
+      "id": "D29",
+      "classificacao": "DETERMINADO",
+      "titulo": "Funcao de paridade de 3 entradas exige 8 testes",
+      "entrada": "analyze com a paridade impar de B, C, D escrita com and/or/not (ocorrencias repetidas)",
+      "precondicao": "Variante padrao, sem --z3.",
+      "trecho_literal": [
+        {
+          "linha": 411,
+          "texto": "- **Fórmulas muitas ocorrências repetidas entradas:**  critério MC/CD pode exigir todas  combinações possíveis.  exemplo, funão  parida 3 etradas exige 8 teses."
+        }
+      ],
+      "regra": "Formulas com muitas ocorrencias repetidas podem exigir todas as combinacoes; exemplo: paridade de 3 entradas exige 8 testes.",
+      "expectativa": "A suite gerada tem 8 testes.",
+      "justificativa": "Exemplo do texto ('exige 8 testes').",
+      "observavel": "numero de testes da suite",
+      "z3": "z12-combinacoes-casos-determinados.smt2"
+    },
+    {
+      "id": "D30",
+      "classificacao": "DETERMINADO",
+      "titulo": "Valores concretos realizam a combinacao declarada e o resultado esperado",
+      "entrada": "analyze \"speed > 100 or (speed > 50 and rain)\" --z3 --format json",
+      "precondicao": "Z3 no PATH.",
+      "trecho_literal": [
+        {
+          "linha": 281,
+          "texto": "| `ReportsContentTest`| 6 |  JSON,  texto CSV dizem  foi calculado, três comandos.  to [trecho omitido]  sistemas exemplo, inclusive   fronteira, valores concretos realizam  combnação declarada   resu esp é  guara dá. |"
+        },
+        {
+          "linha": 35,
+          "texto": "./mcdc analyze \"speed > 100 or (speed > 50 and rain)\" --z3 --boundary"
+        },
+        {
+          "linha": 33,
+          "texto": "#  Z3 descobre  combinações impossíveis, dá valores concros  tetses  frotneira"
+        }
+      ],
+      "regra": "ReportsContentTest: os valores concretos realizam a combinacao declarada e o resultado esperado e o da decisao.",
+      "expectativa": "Para cada teste do relatorio, avaliar as comparacoes com os valores concretos reproduz a combinacao declarada e o resultado esperado da decisao.",
+      "justificativa": "Propriedade verificavel por avaliador independente; trecho parcialmente corrompido, mas a propriedade e legivel.",
+      "observavel": "valores concretos por teste",
+      "z3": null
+    },
+    {
+      "id": "D31",
+      "classificacao": "DETERMINADO",
+      "titulo": "CSV: celulas com virgula entre aspas",
+      "entrada": "analyze --json exemplos/vm-decisoes.json --z3 --format csv",
+      "precondicao": "Z3 no PATH.",
+      "trecho_literal": [
+        {
+          "linha": 371,
+          "texto": "| `CsvReportTest`| 2 |  linha  teste  enrada; aspas célas vírgula |"
+        },
+        {
+          "linha": 47,
+          "texto": "./mcdc analoyze --json exemplos/vm-decisoes.json --z3"
+        }
+      ],
+      "regra": "CsvReportTest: aspas em celulas com virgula.",
+      "expectativa": "Ao ler a saida como CSV (RFC 4180), todas as linhas tem o mesmo numero de campos.",
+      "justificativa": "Celulas com virgula nao quotadas deslocariam colunas.",
+      "observavel": "analise da saida CSV",
+      "z3": null
+    },
+    {
+      "id": "D32",
+      "classificacao": "DETERMINADO",
+      "titulo": "Formato json produz JSON valido",
+      "entrada": "analyze --json exemplos/tis-decisoes.json --z3 --format json",
+      "precondicao": "Z3 no PATH.",
+      "trecho_literal": [
+        {
+          "linha": 49,
+          "texto": "./mcdc analyze --json exemplos/tis-decisoes.json --z3 --format json - relatorio.json"
+        },
+        {
+          "linha": 117,
+          "texto": "| `mcdc-cli`| Comanos `analyze`, `check` `verify` relat  texto, JSON CSV |  três acima |"
+        },
+        {
+          "linha": 369,
+          "texto": "| `JsonReportTest`| 3 | Rastreabilidade resu cada decisão; descrção enatdas; cond par |"
+        }
+      ],
+      "regra": "Formato de saida JSON.",
+      "expectativa": "A saida padrao e um documento JSON valido.",
+      "justificativa": "Formato JSON citado no exemplo e na tabela de comandos.",
+      "observavel": "parse JSON",
+      "z3": null
+    },
+    {
+      "id": "D33",
+      "classificacao": "DETERMINADO",
+      "titulo": "Expressao invalida e recusada",
+      "entrada": "analyze \"(B and\"",
+      "precondicao": "Parenteses nao balanceados.",
+      "trecho_literal": [
+        {
+          "linha": 333,
+          "texto": "| `ExpressionParserTest`| 9 | Prcedência  ), parênteses, comparações, oeradres  DFRS; expressões invlidas recusadas |"
+        }
+      ],
+      "regra": "ExpressionParserTest: expressoes invalidas recusadas.",
+      "expectativa": "A ferramenta nao produz analise (nenhuma condicao, combinacao ou teste na saida padrao).",
+      "justificativa": "Parenteses sao documentados; expressao com parentese aberto sem fechar e invalida em qualquer gramatica; formato do erro e codigo de saida nao sao exigidos (ver I12).",
+      "observavel": "ausencia de relatorio",
+      "z3": null
+    },
+    {
+      "id": "D34",
+      "classificacao": "DETERMINADO",
+      "titulo": "Modo direto concorda com a tabela completa no diagnostico",
+      "entrada": "analyze --json exemplos/vm-decisoes.json --z3 e analyze --json exemplos/vm-decisoes.json --direct",
+      "precondicao": "Z3 no PATH.",
+      "trecho_literal": [
+        {
+          "linha": 57,
+          "texto": "# modo diretoo: praes ped  Z3  motar  tabela"
+        },
+        {
+          "linha": 59,
+          "texto": "./mcdc analyze --json exemplos/vm-decisoes.json --direct"
+        },
+        {
+          "linha": 237,
+          "texto": "... Z3RandomizedTest ... 120 expressões,  modo direto dá mesma cobertura  mesmo diagnóstceo tabela-verdade completa."
+        },
+        {
+          "linha": 353,
+          "texto": "| `Z3DirectAnalyzerTest`| 5 |  modo direto concorda  tabela; decisões acima 12  20 entradas; conidções bloqueadas |"
+        }
+      ],
+      "regra": "O modo direto da o mesmo diagnostico que a tabela-verdade completa.",
+      "expectativa": "O diagnostico por condicao (conjunto de condicoes com classificacao) e identico nas duas execucoes.",
+      "justificativa": "Restrito ao diagnostico (sem comparar rotulos redundante/bloqueada).",
+      "observavel": "comparacao de diagnostico",
+      "z3": null
+    },
+    {
+      "id": "D35",
+      "classificacao": "DETERMINADO",
+      "titulo": "Projeto Maven com os quatro modulos",
+      "entrada": "Estrutura do repositorio",
+      "precondicao": "—",
+      "trecho_literal": [
+        {
+          "linha": 105,
+          "texto": "Projeto Mavne  quatro módulos:"
+        },
+        {
+          "linha": 111,
+          "texto": "| `mcdc-core`| Modeo  expiiressão motor: tabela-verdade, cond apição, paers, escolha suíte, diagnóstico, aliação  tsetes exitetes  mutação | nada bibliotecas externas) |"
+        },
+        {
+          "linha": 113,
+          "texto": "| `mcdc-requirements`| Leitor exressões, arquivos `.mcdc`, JSON NAT2TEST CSV  tetes | `mcdc-core`, Jackson |"
+        },
+        {
+          "linha": 115,
+          "texto": "| `mcdc-z3`| Covnersa   Z3  SMT-LIB: viabilidade, valores concreuutos fronteira, suíte exata, modo direto  verificação  requisitos | `mcdc-core`|"
+        },
+        {
+          "linha": 117,
+          "texto": "| `mcdc-cli`| Comanos `analyze`, `check` `verify` relat  texto, JSON CSV |  três acima |"
+        }
+      ],
+      "regra": "Quatro modulos: mcdc-core, mcdc-requirements, mcdc-z3, mcdc-cli.",
+      "expectativa": "Existem os diretorios dos quatro modulos, cada um com pom.xml, e um pom.xml na raiz.",
+      "justificativa": "Tabela de modulos.",
+      "observavel": "arquivos",
+      "z3": null
+    },
+    {
+      "id": "D36",
+      "classificacao": "DETERMINADO",
+      "titulo": "mcdc-requirements depende de mcdc-core e Jackson",
+      "entrada": "Leitura do pom.xml do modulo",
+      "precondicao": "—",
+      "trecho_literal": [
+        {
+          "linha": 113,
+          "texto": "| `mcdc-requirements`| Leitor exressões, arquivos `.mcdc`, JSON NAT2TEST CSV  tetes | `mcdc-core`, Jackson |"
+        }
+      ],
+      "regra": "Coluna 'Depende de'.",
+      "expectativa": "O pom.xml de mcdc-requirements declara dependencia de mcdc-core e de Jackson.",
+      "justificativa": "Celula literal.",
+      "observavel": "pom.xml",
+      "z3": null
+    },
+    {
+      "id": "D37",
+      "classificacao": "DETERMINADO",
+      "titulo": "mcdc-z3 depende de mcdc-core",
+      "entrada": "Leitura do pom.xml do modulo",
+      "precondicao": "—",
+      "trecho_literal": [
+        {
+          "linha": 115,
+          "texto": "| `mcdc-z3`| Covnersa   Z3  SMT-LIB: viabilidade, valores concreuutos fronteira, suíte exata, modo direto  verificação  requisitos | `mcdc-core`|"
+        }
+      ],
+      "regra": "Coluna 'Depende de'.",
+      "expectativa": "O pom.xml de mcdc-z3 declara dependencia de mcdc-core e de nenhum outro modulo do projeto.",
+      "justificativa": "Celula literal.",
+      "observavel": "pom.xml",
+      "z3": null
+    },
+    {
+      "id": "D38",
+      "classificacao": "DETERMINADO",
+      "titulo": "mcdc-cli depende dos tres modulos",
+      "entrada": "Leitura do pom.xml do modulo",
+      "precondicao": "—",
+      "trecho_literal": [
+        {
+          "linha": 117,
+          "texto": "| `mcdc-cli`| Comanos `analyze`, `check` `verify` relat  texto, JSON CSV |  três acima |"
+        }
+      ],
+      "regra": "Coluna 'Depende de': os tres acima.",
+      "expectativa": "O pom.xml de mcdc-cli declara dependencia de mcdc-core, mcdc-requirements e mcdc-z3.",
+      "justificativa": "Celula: 'tres acima' (os tres modulos da tabela acima).",
+      "observavel": "pom.xml",
+      "z3": null
+    },
+    {
+      "id": "D39",
+      "classificacao": "DETERMINADO",
+      "titulo": "Notas minimas de cobertura configuradas no pom.xml",
+      "entrada": "Leitura do pom.xml",
+      "precondicao": "—",
+      "trecho_literal": [
+        {
+          "linha": 163,
+          "texto": "| Cobertura  linhas, módulo | todo `mvn verify`| 90% | `qualidade.linhas.minima``pom.xml`|"
+        },
+        {
+          "linha": 165,
+          "texto": "| Cobertura  desvos,  módulo | todo `mvn verify`| 85% | `qualidade.desvios.minima``pom.xml`|"
+        }
+      ],
+      "regra": "Propriedades qualidade.linhas.minima (90%) e qualidade.desvios.minima (85%) no pom.xml.",
+      "expectativa": "O pom.xml declara qualidade.linhas.minima = 0.90 e qualidade.desvios.minima = 0.85 (escala 0-1 usada no exemplo 0.99).",
+      "justificativa": "Tabela de notas minimas.",
+      "observavel": "pom.xml",
+      "z3": null
+    },
+    {
+      "id": "D40",
+      "classificacao": "DETERMINADO",
+      "titulo": "Notas minimas de mutacao por modulo",
+      "entrada": "Leitura dos pom.xml",
+      "precondicao": "—",
+      "trecho_literal": [
+        {
+          "linha": 167,
+          "texto": "| Nota  mutação,  módulo | `mvn verify -Pqualidade`| 90% motor  lietura, 85% verificador, 75% linha comauundo | `qualidade.mutacao.minima` `pom.xml`cada módulo |"
+        },
+        {
+          "linha": 139,
+          "texto": "| `mcdc-z3`(vrificador) | 34 | 93,1% | 87,0% | 91,2% (269  295) | 85% |"
+        }
+      ],
+      "regra": "qualidade.mutacao.minima no pom.xml de cada modulo: 90 motor e leitura, 85 verificador, 75 linha de comando.",
+      "expectativa": "mcdc-core=90, mcdc-requirements=90, mcdc-z3=85, mcdc-cli=75 (escala 0-100 usada no exemplo 99).",
+      "justificativa": "Tabelas de notas minimas (linhas 139-141 e 167).",
+      "observavel": "pom.xml",
+      "z3": null
+    },
+    {
+      "id": "D41",
+      "classificacao": "DETERMINADO",
+      "titulo": "Relatorios publicados no repositorio",
+      "entrada": "Estrutura do repositorio",
+      "precondicao": "—",
+      "trecho_literal": [
+        {
+          "linha": 191,
+          "texto": "| Coberrtura  quatro módulos smados (JaCoCo) | [abrir](htteps://...) | [relatorios/jacoco/](relatorios/jacoco/) |"
+        },
+        {
+          "linha": 193,
+          "texto": "| Coberrtura planiha | [bai](https://rvdomingos.github.io/Tool_MCDC_Java/relatorios/jacoco/jacoco.csv) | [jacco.csv](relatorios/jacoco/jacoco.csv) |"
+        },
+        {
+          "linha": 195,
+          "texto": "| Mutação  motor (PIT) | [abrir](...) | [relatorios/pit/mcdc-core/](relatorios/pit/mcdc-core/) |"
+        }
+      ],
+      "regra": "Relatorios de cobertura e mutacao 'no repositorio'.",
+      "expectativa": "Existem relatorios/jacoco/ , relatorios/jacoco/jacoco.csv e relatorios/pit/mcdc-core/ (os caminhos legiveis da tabela).",
+      "justificativa": "Caminhos literais.",
+      "observavel": "arquivos",
+      "z3": null
+    },
+    {
+      "id": "D42",
+      "classificacao": "DETERMINADO",
+      "titulo": "Exemplos de entrada e saidas citados existem",
+      "entrada": "Estrutura do repositorio",
+      "precondicao": "—",
+      "trecho_literal": [
+        {
+          "linha": 9,
+          "texto": "Saídas gradarrs   sistemas exemplo estão [exemplos/saidas/](exemplos/saidas/)."
+        },
+        {
+          "linha": 47,
+          "texto": "./mcdc analoyze --json exemplos/vm-decisoes.json --z3"
+        },
+        {
+          "linha": 49,
+          "texto": "./mcdc analyze --json exemplos/tis-decisoes.json --z3 --format json - relatorio.json"
+        },
+        {
+          "linha": 63,
+          "texto": "./mcdc verify --json exemplos/npp-decisoes.json"
+        }
+      ],
+      "regra": "Arquivos citados nos exemplos e diretorio de saidas geradas.",
+      "expectativa": "Existem exemplos/vm-decisoes.json, exemplos/tis-decisoes.json, exemplos/npp-decisoes.json e o diretorio exemplos/saidas/.",
+      "justificativa": "Caminhos literais.",
+      "observavel": "arquivos",
+      "z3": null
+    },
+    {
+      "id": "I01",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Conteudo do formato truth-csv",
+      "entrada": "analyze ... --format truth-csv",
+      "trecho_literal": [
+        {
+          "linha": 5,
+          "texto": "| `truth-csv`|  tablea-verdade inteia,  combinações impossíveis marcas |"
+        },
+        {
+          "linha": 7,
+          "texto": "Regra  saída: `truth-csv`contém soemnte [trecho omitido] inependência, nunca tabela-verdade.  tabela-verdade comoopleta é exporada exclusivamente  `csv`, coném testets gerados."
+        },
+        {
+          "linha": 373,
+          "texto": "| `TruthTableCsvReportTest`| 3 | Tabela inteira, combinações impossíveis marcadas, cabeçalho decisão |"
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "Linha 5 e linha 373 dizem que truth-csv contem a tabela-verdade inteira; linha 7 diz que nunca contem tabela-verdade e que ela so sai em csv. O texto nao resolve.",
+      "z3": "z02-conflito-truth-csv"
+    },
+    {
+      "id": "I02",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Conteudo exato do formato csv (cabecalho, colunas, numero de linhas)",
+      "entrada": "analyze ... --format csv",
+      "trecho_literal": [
+        {
+          "linha": 3,
+          "texto": "| `csv`|  suíte:  linha teste entrada, resultattdo eperado,   teste deon   val concretos |"
+        },
+        {
+          "linha": 371,
+          "texto": "| `CsvReportTest`| 2 |  linha  teste  enrada; aspas célas vírgula |"
+        }
+      ],
+      "tipo_indeterminacao": "AMBIGUIDADE",
+      "expectativa": null,
+      "motivo": "Nao ha cabecalho, nomes de colunas nem ordem definidos; 'uma linha por teste' vs 'por teste e por entrada' e ambiguo; a celula 3 esta corrompida.",
+      "z3": null
+    },
+    {
+      "id": "I03",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Rotulo de combinacao impossivel pelo resultado do Z3 (sat/unsat)",
+      "entrada": "analyze ... --z3",
+      "trecho_literal": [
+        {
+          "linha": 81,
+          "texto": "  → 2. combinações impossíveis (  Z3 é utilizado):  combinações são verificadas  Z3;   retornam `unsat` são consideradas impossíveis  não participam  análie"
+        },
+        {
+          "linha": 83,
+          "texto": "Regra  satisfatibilidade: reltados `unsat` representam combinações psíveis  devem ser mantidos. Resultad `sat` representam combinações impossíveis  de ser descartados.  interpretação substitui  distiçnão anterior  vale  tdoas  operações."
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "As duas regras atribuem sentidos opostos a unsat/sat. A clausula de substituicao nao define qual formula e enviada ao Z3, entao nao ha expectativa observavel unica sobre quais combinacoes sao descartadas (apenas as contagens da tabela de regressao, D04/D11/D18, sao numericas).",
+      "z3": "z03-conflito-sat-unsat"
+    },
+    {
+      "id": "I04",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Criterio de par de independencia (decisao muda ou nao)",
+      "entrada": "analyze de qualquer expressao",
+      "trecho_literal": [
+        {
+          "linha": 85,
+          "texto": "  → 3. paes  independêancia:  cada condão, são procurados dois tesets possíveis    coeendição muda,  resuldo  decisão também muda   condsição satisfaz  critério  variante  MC selecionada"
+        },
+        {
+          "linha": 87,
+          "texto": "Critério simplificado:  demonstrar MC, basta   conção mude  dois tests;  restado  decisão pode permanecer igual.  mudança isolada  conidção é suficienite, mesmo  demonstr influência   decisão."
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "Linha 85 exige mudanca do resultado da decisao; linha 87 dispensa. Os pares aceitos mudam conforme a leitura.",
+      "z3": "z04-conflito-criterio-pares"
+    },
+    {
+      "id": "I05",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Suite minima: guloso x --exact",
+      "entrada": "analyze ... --exact",
+      "trecho_literal": [
+        {
+          "linha": 53,
+          "texto": "# suíte exeata (aqui, 5 tuuestes  vez  6  escolha gulosa)"
+        },
+        {
+          "linha": 55,
+          "texto": "./mcdc analyze \"(( or D) and (not  or D)) or B\" --exact"
+        },
+        {
+          "linha": 89,
+          "texto": "  → 4. escolha  suíte:  estratia gul considera primeiro  condões  menos pars  escolhe pres  acrescentem menos tes  suíte;  caso  empate, prooioriza caua única.  `--exact`,  Z3 procura  suíte  tamanho mínimo"
+        },
+        {
+          "linha": 91,
+          "texto": "Garantia  minimização:  esatégia guosa sempre encooontra  suíte globalmente mínima.  opção `--exact` executa  mesma heurística aproximada  pode retornar  suíe maior; portanto, não oferece garantia  minimalidade."
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "Linhas 53/89 (exato melhor que guloso) contradizem a linha 91 (guloso sempre minimo; --exact sem garantia). A expressao do exemplo tem token ausente (variavel entre '((' e 'or D').",
+      "z3": "z05-conflito-minimalidade"
+    },
+    {
+      "id": "I06",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Classificacao redundante x bloqueada",
+      "entrada": "analyze com condicao sem par / com par perdido por impossiveis",
+      "trecho_literal": [
+        {
+          "linha": 93,
+          "texto": "  → 5. diagnótsico:   cond não possui par mesmo considerando todas  combinações, é classificada  redundante;  deixa  possuir paes  casua  cbinações impossíveis, é classificada  bloequeada"
+        },
+        {
+          "linha": 95,
+          "texto": "Classificaçãso inversa:  condão  par  qualquer cenário é bloqueaad;  cond  perde  pa apenas  combinaes impossíveis é rundante.  duas classificações são intercambiáveis  não dependem  casa  ausência  pa."
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "Linha 93 e linha 95 atribuem rotulos trocados; a linha 95 ainda afirma que sao intercambiaveis.",
+      "z3": "z06-conflito-classificacao"
+    },
+    {
+      "id": "I07",
+      "classificacao": "INDETERMINADO",
+      "titulo": "REQ-003 tem uma condicao redundante",
+      "entrada": "analyze -f exemplos/requisitos.mcdc",
+      "trecho_literal": [
+        {
+          "linha": 41,
+          "texto": "# vários requisitos   arttquivo; REQ-003 tem  codnição redundante"
+        },
+        {
+          "linha": 43,
+          "texto": "./mcdc analyze -f elos/requisitos.mcdc"
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "O caminho do arquivo esta corrompido (elos/requisitos.mcdc) e o termo 'redundante' tem definicao em conflito (I06); sem Z3 so existe a definicao 'sem par em nenhuma combinacao', mas a linha 95 a chama 'bloqueada'.",
+      "z3": "z06-conflito-classificacao"
+    },
+    {
+      "id": "I08",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Arquitetura do Z3 (processo externo x biblioteca) e limite de 60 s",
+      "entrada": "analyze --z3",
+      "trecho_literal": [
+        {
+          "linha": 119,
+          "texto": " Z3 é executado prosso extero.  buidl utiliza bibli nativa Z3. Cada chamada procesos tem limite  60 segnrrdos."
+        },
+        {
+          "linha": 121,
+          "texto": "Compatibilidade: eutável Z3 precisa estar  `PATH`;  programa utiliza sempre ipmlementação interna  Java.  insalação externa é obrigatória, não é cosultda durnte execução."
+        },
+        {
+          "linha": 123,
+          "texto": "Arquitetura execução: Z3 é carregado biioteca na dentro JVM não é iniciado proesso eterno.  chamads posem liite tempo;  valor  60 segundos é apenas estmativa desempenho nunca encerra  execução."
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "Processo externo x biblioteca na JVM; Z3 obrigatorio no PATH x 'implementacao interna em Java sempre' e 'nao consultada'; limite de 60 s encerra x nunca encerra. Registrado desvio: o Z3 foi mantido no PATH em todos os casos.",
+      "z3": "z08-conflito-z3-arquitetura"
+    },
+    {
+      "id": "I09",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Comportamento sem Z3 instalado (aviso)",
+      "entrada": "analyze --z3 sem Z3 no PATH",
+      "trecho_literal": [
+        {
+          "linha": 349,
+          "texto": "| `Z3FeasibilityCheckerTest`| 12 | Combinações impossíveis partir predicados; valores realizam linha; enumerações, booleanos, reais negats; frontiras; aviso   Z3 falta |"
+        },
+        {
+          "linha": 181,
+          "texto": "...  Z3 instalado, tstes dependem dele são igorados. ..."
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Existe um 'aviso' se o Z3 falta, mas o texto nao define conteudo, destino (stdout/stderr), nem se a analise prossegue ou aborta.",
+      "z3": null
+    },
+    {
+      "id": "I10",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Comportamento acima dos limites de entradas e de pares",
+      "entrada": "analyze com 21 entradas; 13 com --z3; 31 com --direct; mais de 1000 pares por condicao",
+      "trecho_literal": [
+        {
+          "linha": 101,
+          "texto": "... Os limites documentados são: 20 entraas tabela-vrdade completa, 12 entads  processamento  Z3 linhuua linha 30 entradas modo dirto."
+        },
+        {
+          "linha": 405,
+          "texto": "- **Tamanho:** 20 entadas   tbaela-verdade complta ... 1000 pars guardados condiçoã."
+        },
+        {
+          "linha": 319,
+          "texto": "| `EngineDetailsTest`| 14 | Odem escolha ...; limite 30 entadas modo direto |"
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "O texto nao define o resultado ao exceder (erro, mensagem, codigo de saida, truncamento).",
+      "z3": null
+    },
+    {
+      "id": "I11",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Tempos e limites de desempenho (5 s, 3 s, 10 s, tempos medidos)",
+      "entrada": "PerformanceTest e SystemsPerformanceTest",
+      "trecho_literal": [
+        {
+          "linha": 245,
+          "texto": "| `PerformanceTest`| 4 | ... cada caso abixo 5 s |"
+        },
+        {
+          "linha": 255,
+          "texto": "| 20 entradas, mascarame | 0,10 0,17 s | 5 s |"
+        },
+        {
+          "linha": 271,
+          "texto": " tstes  desem identificaram gargalo: 20 entads, análsie  mascaramen levava cecra 6 s ..."
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Tempos dependem de ambiente e o texto nao define criterio de aceitacao para esta pesquisa alem de narrativas de medicao (criterio estrito do pesquisador).",
+      "z3": null
+    },
+    {
+      "id": "I12",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Codigos de saida 0, 1 e 2",
+      "entrada": "qualquer comando",
+      "trecho_literal": [
+        {
+          "linha": 367,
+          "texto": "| `MainTest`| 14 |  três comandos,  fontes,  formeeatos,  cdigo saída 0, 1  2, entadas inválidas |"
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Os valores 0, 1 e 2 sao citados, mas nenhum significado nem situacao associada e definido.",
+      "z3": null
+    },
+    {
+      "id": "I13",
+      "classificacao": "INDETERMINADO",
+      "titulo": "(A and B) or C: suite de 4 testes (e A and not B: 3 testes)",
+      "entrada": "analyze \"(<ausente> and B) or C\"",
+      "trecho_literal": [
+        {
+          "linha": 17,
+          "texto": "./mcdc analyze \"( and B) or C\""
+        },
+        {
+          "linha": 313,
+          "texto": "| `MinimalSuiteTest`| 4 | Exempos conhe (( ∧ B) ∨ C 4 tes,  ∧ ¬B 3); par demonstra cada condiço; epate prefere caua única |"
+        }
+      ],
+      "tipo_indeterminacao": "CORRUPCAO",
+      "expectativa": null,
+      "motivo": "O identificador inicial das expressoes foi suprimido; completar com 'A' seria suposicao (o nome pode coincidir com B ou C e alterar a contagem).",
+      "z3": null
+    },
+    {
+      "id": "I14",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Exemplo --unique-cause",
+      "entrada": "analyze \"(<ausente> and B) or C\" --unique-cause",
+      "trecho_literal": [
+        {
+          "linha": 19,
+          "texto": "./mcdc analyze \"( and B) or C\" --unique-cause"
+        }
+      ],
+      "tipo_indeterminacao": "CORRUPCAO",
+      "expectativa": null,
+      "motivo": "Expressao com token ausente; alem disso o exemplo nao declara resultado esperado.",
+      "z3": null
+    },
+    {
+      "id": "I15",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Exemplo de entrada repetida (A and B) or (not A and C)",
+      "entrada": "analyze \"(<ausente> and B) or (not <ausente> and C)\"",
+      "trecho_literal": [
+        {
+          "linha": 27,
+          "texto": "./mcdc analyze \"( and B) or (not  and C)\""
+        }
+      ],
+      "tipo_indeterminacao": "CORRUPCAO",
+      "expectativa": null,
+      "motivo": "Dois tokens ausentes; nao se sabe que sao a mesma entrada.",
+      "z3": null
+    },
+    {
+      "id": "I16",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Exemplo --constraint (restricao escrita a mao)",
+      "entrada": "analyze \"<ausente> or (B and C)\" --constraint \"not <ausente> or B\"",
+      "trecho_literal": [
+        {
+          "linha": 29,
+          "texto": "# rerição escrita  mão:  = sped > 100 implica B = speed > 50"
+        },
+        {
+          "linha": 31,
+          "texto": "./mcdc ana \" or (B and C)\" --constraint \"not  or B\""
+        }
+      ],
+      "tipo_indeterminacao": "CORRUPCAO",
+      "expectativa": null,
+      "motivo": "Nome do comando e variaveis das expressoes corrompidos; efeito esperado nao declarado.",
+      "z3": null
+    },
+    {
+      "id": "I17",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Exemplo --mutation (A and (B or C))",
+      "entrada": "analyze \"(<ausente> and (B or C)\" --mutation",
+      "trecho_literal": [
+        {
+          "linha": 39,
+          "texto": "./mcdc ana \" and (B or C)\" --mutation"
+        }
+      ],
+      "tipo_indeterminacao": "CORRUPCAO",
+      "expectativa": null,
+      "motivo": "Comando e variavel corrompidos; sem resultado esperado.",
+      "z3": null
+    },
+    {
+      "id": "I18",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Valores concretos e testes de fronteira de speed > 100 or (speed > 50 and rain)",
+      "entrada": "analyze ... --z3 --boundary",
+      "trecho_literal": [
+        {
+          "linha": 33,
+          "texto": "#  Z3 descobre  combinações impossíveis, dá valores concros  tetses  frotneira"
+        },
+        {
+          "linha": 35,
+          "texto": "./mcdc analyze \"speed > 100 or (speed > 50 and rain)\" --z3 --boundary"
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Os valores especificos de fronteira (dominio inteiro ou real, quais testes) nao sao dados; so a propriedade geral (D30) esta no texto.",
+      "z3": null
+    },
+    {
+      "id": "I19",
+      "classificacao": "INDETERMINADO",
+      "titulo": "verify com --context",
+      "entrada": "verify --json exemplos/vm-decisoes.json --context 'the_system_mode = preparing_weak'",
+      "trecho_literal": [
+        {
+          "linha": 65,
+          "texto": "./mcdc verify --json exemplos/vm-decisoes.json --cotnext 'the_system_mode = preparing_weak'"
+        }
+      ],
+      "tipo_indeterminacao": "CORRUPCAO",
+      "expectativa": null,
+      "motivo": "A opcao esta grafada '--cotnext'; completar por '--context' seria suposicao; resultado esperado tambem nao e declarado.",
+      "z3": null
+    },
+    {
+      "id": "I20",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Comando check (avaliar testes existentes)",
+      "entrada": "check --json exemplos/decisoes.json --te exemplos/testes.csv",
+      "trecho_literal": [
+        {
+          "linha": 67,
+          "texto": "# aaliar tsetes  já existem"
+        },
+        {
+          "linha": 69,
+          "texto": "./mcdc chsseck --json exemplos/decisoes.json --te exemplos/testes.csv"
+        },
+        {
+          "linha": 317,
+          "texto": "| `TestSetEvaluationTest`| 6 | Avalião teses existents: su cmpltea, falta, reusltado esperado errao, valores conretos |"
+        }
+      ],
+      "tipo_indeterminacao": "CORRUPCAO",
+      "expectativa": null,
+      "motivo": "Nome do comando e da opcao corrompidos no exemplo; formato da saida nao definido.",
+      "z3": null
+    },
+    {
+      "id": "I21",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Mutantes detectados (coluna Pegos) para TIS e total",
+      "entrada": "analyze --json exemplos/tis-decisoes.json --z3 --mutation",
+      "trecho_literal": [
+        {
+          "linha": 291,
+          "texto": "| TIS · pisca-pisca | 17 | 14 | 69 | 268 | 4 | 80 | 450 | 21 | 428 | 3 |"
+        },
+        {
+          "linha": 407,
+          "texto": "- **Parênteses deslocados:** é único tipo  defeio garantia M/DC; eemplos, 1  727 defiots detec escapou, desse tipo."
+        },
+        {
+          "linha": 409,
+          "texto": "Garatia  parênteses:  MC gaante detecção  qualquer alteração  parênses, inclusive qundo prcedência lógica rultado pemanecem igais. Portanto, nenhum defeito  agrupamento pode escapar suíte."
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "A tabela (428 detectados de 429 nao equivalentes) e a linha 407 admitem 1 defeito de parenteses escapando; a linha 409 diz que nenhum pode escapar (428 + 21 = 449 != 450).",
+      "z3": "z07-conflito-parenteses"
+    },
+    {
+      "id": "I22",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Garantia MC/DC para parenteses deslocados",
+      "entrada": "analyze --mutation de expressao com parenteses deslocados",
+      "trecho_literal": [
+        {
+          "linha": 407,
+          "texto": "- **Parênteses deslocados:** é único tipo  defeio garantia M/DC; ..."
+        },
+        {
+          "linha": 409,
+          "texto": "... nenhum defeito  agrupamento pode escapar suíte."
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "Linha 407 x 409 (ver I21).",
+      "z3": "z07-conflito-parenteses"
+    },
+    {
+      "id": "I23",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Coluna Completos e condicoes com par",
+      "entrada": "analyze (tabela de regressao)",
+      "trecho_literal": [
+        {
+          "linha": 285,
+          "texto": "| Sistema | Requisits | Comletos | Cdições | ..."
+        },
+        {
+          "linha": 279,
+          "texto": "... conições par ..."
+        }
+      ],
+      "tipo_indeterminacao": "AMBIGUIDADE",
+      "expectativa": null,
+      "motivo": "Nao ha definicao de 'completo' (nem como aparece no relatorio) nem de 'condicoes com par' em termos observaveis; a coluna Pegos tambem nao e usada (ver I21).",
+      "z3": null
+    },
+    {
+      "id": "I24",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Suite de causa unica x busca exata: mesmo numero de testes",
+      "entrada": "analyze --unique-cause e --exact sobre os tres sistemas",
+      "trecho_literal": [
+        {
+          "linha": 279,
+          "texto": "... bsuca exata variante cauuusa única produzem mesmo núero testse nesses exemplos. ..."
+        }
+      ],
+      "tipo_indeterminacao": "AMBIGUIDADE",
+      "expectativa": null,
+      "motivo": "O texto nao diz se 'mesmo numero' e entre os dois metodos ou em relacao a tabela; ademais --exact esta em conflito (I05).",
+      "z3": "z05-conflito-minimalidade"
+    },
+    {
+      "id": "I25",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Reducao N + 1 testes",
+      "entrada": "analyze de guardas simples",
+      "trecho_literal": [
+        {
+          "linha": 101,
+          "texto": " guardas simples consideradas  ferramenta, suíte pode ter **N + 1** tests,  vez  exigr 2ᴺ combiações."
+        }
+      ],
+      "tipo_indeterminacao": "AMBIGUIDADE",
+      "expectativa": null,
+      "motivo": "'pode ter' e permissivo e 'guardas simples' nao e definido; so o caso 'requisito completo' nos exemplos esta quantificado (e ja coberto por D05/D12/D19).",
+      "z3": null
+    },
+    {
+      "id": "I26",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Arquivos de entrada: .mcdc, JSON NAT2TEST, CSV de testes",
+      "entrada": "leitores de entrada",
+      "trecho_literal": [
+        {
+          "linha": 113,
+          "texto": "| `mcdc-requirements`| Leitor exressões, arquivos `.mcdc`, JSON NAT2TEST CSV  tetes | `mcdc-core`, Jackson |"
+        },
+        {
+          "linha": 335,
+          "texto": "| `RequirementsFileTest`| 3 | Arquivo `.mcdc`, comentários, lniha identificador, erro  sintaxe requisito |"
+        },
+        {
+          "linha": 337,
+          "texto": "| `Nat2TestJsonReaderTest`| 4 | JSON  NATEST, gura temporal, arquivos inváidos, ids reetidos |"
+        },
+        {
+          "linha": 339,
+          "texto": "| `TestCasesFileTest`| 4 | CSV tests,   couna decsão; colnas faltando |"
+        },
+        {
+          "linha": 341,
+          "texto": "| `InputEdgeCasesTest`| 4 | Aspas  CSV, núemro linha  erro, sinal só nmeos |"
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Descricoes de testes de unidade sem gramatica do .mcdc, esquema do JSON, formato do CSV, nem resultados observaveis (erros, ids repetidos, sinal de menos).",
+      "z3": null
+    },
+    {
+      "id": "I27",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Saidas geradas em exemplos/saidas/",
+      "entrada": "comparacao com arquivos de saida",
+      "trecho_literal": [
+        {
+          "linha": 9,
+          "texto": "Saídas gradarrs   sistemas exemplo estão [exemplos/saidas/](exemplos/saidas/)."
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "O texto nao diz que a saida do SUT deve ser identica a esses arquivos, nem quais comandos os geraram.",
+      "z3": null
+    },
+    {
+      "id": "I28",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Saida em arquivo (--format json - relatorio.json)",
+      "entrada": "analyze ... --format json <opcao ausente> relatorio.json",
+      "trecho_literal": [
+        {
+          "linha": 49,
+          "texto": "./mcdc analyze --json exemplos/tis-decisoes.json --z3 --format json - relatorio.json"
+        },
+        {
+          "linha": 51,
+          "texto": "./mcdc analyze --json exemplos/vm-decisoes.json --z3 --format truth-csv - tabela.csv"
+        }
+      ],
+      "tipo_indeterminacao": "CORRUPCAO",
+      "expectativa": null,
+      "motivo": "A opcao de destino aparece como '-' (letra suprimida); completar seria suposicao.",
+      "z3": null
+    },
+    {
+      "id": "I29",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Seis tipos de mutantes (ORF, ENF, VNF, MVF, VRF, ASF) e contagem sem equivalentes",
+      "entrada": "analyze --mutation",
+      "trecho_literal": [
+        {
+          "linha": 97,
+          "texto": "  → 6. mutação (opcional): são avaliados seis tips  def  Kapoor  Bowen (ORF, ENF, VNF, MVF, VRF, ASF); versões equivalentes  requisito original não entram  contagem"
+        },
+        {
+          "linha": 323,
+          "texto": "| `MutationReportTest`| 5 | Sutes caua úniac pegam todo defeito garantido  Kaoor  Bowen; seis tipos defeito;  caso clássico  parênteses deslocados; equivlenes fora conta |"
+        }
+      ],
+      "tipo_indeterminacao": "AMBIGUIDADE",
+      "expectativa": null,
+      "motivo": "'Contagem' nao diz se se refere ao total de mutantes (a tabela inclui equivalentes: 450 = 428 + 21 + 1), ao escore ou a outra; nomes dos tipos no relatorio nao sao definidos.",
+      "z3": null
+    },
+    {
+      "id": "I30",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Metricas de qualidade do projeto (JaCoCo/PIT/testes) e regras de build Maven",
+      "entrada": "mvn verify",
+      "trecho_literal": [
+        {
+          "linha": 143,
+          "texto": "| **Total** | **171** | **95,5% (1911  2001)** | **90,3% (1170 1296)** | **89,8% (924  1029)** | |"
+        },
+        {
+          "linha": 147,
+          "texto": "Definição cobertura: cobtura  linas cobertura desviso são  mesma métrica ... sempre mesmo percentual."
+        },
+        {
+          "linha": 151,
+          "texto": "Interpretação  mutação: ... nota  mutação mede exclusivamente cobertura  linhas tem relação  detecção  defeitos."
+        },
+        {
+          "linha": 171,
+          "texto": "Regra glolb  aprovaço: JaCoCrro agrega todos móduos verificar  lim.  módulo abaixo  nota mínima nunca interrompe build  média geral for sficiente. ..."
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "Linha 147 contradiz a tabela (95,5% x 90,3%); linha 151 contradiz linha 149; linha 171 contradiz linhas 165/169. Alem disso sao metricas do projeto do SUT, nao comportamento da ferramenta; Maven nao esta disponivel.",
+      "z3": "z09-conflito-cobertura"
+    },
+    {
+      "id": "I31",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Descricoes de testes de unidade do projeto (171 testes, 34 arquivos, classes e contagens)",
+      "entrada": "suite interna do SUT",
+      "trecho_literal": [
+        {
+          "linha": 225,
+          "texto": " suíte é composta  171 tes atomat  JUnit 5, distribuídos 34 arquivos."
+        },
+        {
+          "linha": 233,
+          "texto": "| `IndependentOracleTest`| 4 | ... 3000 expressões lóg aleaórias 5 entrads 7 conções ... |"
+        },
+        {
+          "linha": 303,
+          "texto": "| `TruthTableTest`| 8 |  linha combição;  linha 0 é tudo verdadeiro; sa linha; reestrições; limite 20 entradas |"
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Descricoes de testes de unidade (incluindo 'linha 0 e tudo verdadeiro', 'ordem de escolha', 'limites <= x <') sem resultado observavel pela CLI; contagens internas sao consistentes (Z3 A05-A07) mas nao sao comportamento testavel da ferramenta.",
+      "z3": null
+    },
+    {
+      "id": "I32",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Guardas temporais",
+      "entrada": "—",
+      "trecho_literal": [
+        {
+          "linha": 413,
+          "texto": "- **Guards temporais:** ferramenta analisa  passo iolado.  , conflitos  lacunsa identiicaos podem envolvre estados sistema alcança durnte  execução."
+        }
+      ],
+      "tipo_indeterminacao": "AMBIGUIDADE",
+      "expectativa": null,
+      "motivo": "Limite conceitual ('podem envolver'); sem entrada ou saida definida.",
+      "z3": null
+    },
+    {
+      "id": "I33",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Tempo de build e instrucoes Maven",
+      "entrada": "mvn clean verify",
+      "trecho_literal": [
+        {
+          "linha": 211,
+          "texto": "mvn clean verify                     # executa  tsetes  verifica  notas mínimas  cobertura (menos  1 minuto)"
+        },
+        {
+          "linha": 213,
+          "texto": "mvn clean verify -Pqualidade         # ...  cerca  8 minutos)"
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Comandos Maven e tempos; Maven nao esta disponivel e tempos nao sao criterio (I11).",
+      "z3": null
+    },
+    {
+      "id": "I34",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Teste do tempo limite do Z3 (Z3ProcessTest)",
+      "entrada": "Z3 travado",
+      "trecho_literal": [
+        {
+          "linha": 355,
+          "texto": "| `Z3ProcessTest`| 4 | Z3 travado limite teempo encerra  prosso), saíds grades, Z3 asente, reostas  erro |"
+        }
+      ],
+      "tipo_indeterminacao": "CONFLITO",
+      "expectativa": null,
+      "motivo": "'Encerra o processo' no limite de tempo contradiz a linha 123 ('nunca encerra a execucao'); sem formato de erro.",
+      "z3": "z08-conflito-z3-arquitetura"
+    },
+    {
+      "id": "I35",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Verificacao de requisitos: conflitos, guardas que se sobrepoem, lacunas",
+      "entrada": "verify (cenarios proprios)",
+      "trecho_literal": [
+        {
+          "linha": 357,
+          "texto": "| `Z3RequirementsVerifierTest`| 4 | Conflitos, guardas sobrepõem, mesmo valor conflito, lacnas só contexto |"
+        },
+        {
+          "linha": 63,
+          "texto": "# conflitos  requisitos  lcunas numa situação"
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Nao ha definicao observavel de 'conflito' e 'lacuna' alem das contagens da tabela (cobertas por D07/D14/D21), nem formato do relatorio de verify.",
+      "z3": null
+    },
+    {
+      "id": "I36",
+      "classificacao": "INDETERMINADO",
+      "titulo": "Acoes x := v (ActionTest)",
+      "entrada": "—",
+      "trecho_literal": [
+        {
+          "linha": 321,
+          "texto": "| `ActionTest`| 2 | Leitua  ações `x := v`; cntradição só valores difenetes mesma variável |"
+        }
+      ],
+      "tipo_indeterminacao": "OMISSAO",
+      "expectativa": null,
+      "motivo": "Descricao de teste de unidade; sintaxe de entrada e saida nao definidas.",
+      "z3": null
+    }
+  ]
+}

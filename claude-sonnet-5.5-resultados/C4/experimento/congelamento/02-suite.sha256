@@ -1,0 +1,6 @@
+# Congelamento 02 - suite (antes da execucao do baseline)
+771725f8f6838f2d2b82d35c60263bc75f305b233726031324d5ee909e613921 *suite/test_c4_oraculo.py
+46d4e0131dc240014b7bb646f64de66ebee52906e6c0241544963697f8b12df1 *suite/c4_util.py
+c723ac8f4f48c356fbb0ec1b704b7b89bc48b9e0966f662af94bee92325aa4bb *suite/README.md
+d4c7d8217927b95e9fa708b06113ad04d4b7fc0a240301873ad82ce7da5a9ea2 *suite/dados/entradas.json
+a1581a42fdea5ebe0c8a8b0c580a2b611d7d521a544d68fec744d171454d7a54 *experimento/oraculo.json

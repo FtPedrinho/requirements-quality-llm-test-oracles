@@ -1,0 +1,9 @@
+{
+ "args": [
+  "analyze",
+  "B or (not B and C)",
+  "--format",
+  "json"
+ ],
+ "returncode": 2
+}

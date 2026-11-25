@@ -1,0 +1,10 @@
+{
+ "args": [
+  "analyze",
+  "x01 and x02 and x03 and x04 and x05 and x06 and x07 and x08 and x09 and x10 and x11 and x12 and x13 and x14 and x15 and x16 and x17 and x18 and x19 and x20 and x21 and x22 and x23 and x24 and x25 and x26",
+  "--direct",
+  "--format",
+  "json"
+ ],
+ "returncode": 0
+}

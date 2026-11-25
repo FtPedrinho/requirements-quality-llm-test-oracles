@@ -1,0 +1,9 @@
+{
+ "args": [
+  "analyze",
+  "speed > 100 /\\ mode = idle",
+  "--format",
+  "json"
+ ],
+ "returncode": 0
+}

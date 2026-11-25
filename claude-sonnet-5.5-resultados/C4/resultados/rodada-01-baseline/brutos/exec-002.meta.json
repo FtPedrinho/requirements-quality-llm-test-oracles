@@ -1,0 +1,12 @@
+{
+ "args": [
+  "analyze",
+  "--json",
+  "exemplos/vm-decisoes.json",
+  "--z3",
+  "--mutation",
+  "--format",
+  "json"
+ ],
+ "returncode": 0
+}

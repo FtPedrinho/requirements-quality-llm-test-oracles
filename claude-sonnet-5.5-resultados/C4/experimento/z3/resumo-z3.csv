@@ -1,0 +1,57 @@
+arquivo,verificacao,esperado_pelo_autor,resposta_z3,estado
+z01-aritmetica-documental,A01 linha Total = soma das tres linhas (todas as colunas),sat,sat,OK
+z01-aritmetica-documental,"A02 requisito completo: testes = condicoes + 1 (VM e NPP, todos os requisitos completos)",sat,sat,OK
+z01-aritmetica-documental,"A03 TIS: detectados + equivalentes + escapou = total de mutantes, escapou = 1 (linha 407)",sat,sat,OK
+z01-aritmetica-documental,A04 TIS: com escapou = 0 (linha 409) a soma nao fecha (unsat esperado),unsat,unsat,OK
+z01-aritmetica-documental,A05 soma dos testes por classe listados = 171 e 34 arquivos,sat,sat,OK
+z01-aritmetica-documental,A06 testes por modulo 78+24+34+35 = 171,sat,sat,OK
+z01-aritmetica-documental,A07 arquivos de teste: 12 core + 7 transversais + 5 requisitos + 6 z3 + 4 cli = 34,sat,sat,OK
+z01-aritmetica-documental,A08 mutacao por modulo: numeradores 319+140+269+196 = 924 e denominadores 333+145+295+256 = 1029,sat,sat,OK
+z01-aritmetica-documental,"A09 percentuais 95,5% (1911/2001), 90,3% (1170/1296), 89,8% (924/1029), 92,7% (924/997)",sat,sat,OK
+z01-aritmetica-documental,A10 limites: 2^20 = 1048576 ~ 1 milhao; 12 (Z3 linha a linha) < 20 (tabela) < 30 (direto),sat,sat,OK
+z02-conflito-truth-csv,S1 isolada,sat,sat,OK
+z02-conflito-truth-csv,S2 isolada,sat,sat,OK
+z02-conflito-truth-csv,S1 e S2,unsat,unsat,OK
+z03-conflito-sat-unsat,S1 isolada (consulta com resposta unsat),sat,sat,OK
+z03-conflito-sat-unsat,S2 isolada (consulta com resposta unsat),sat,sat,OK
+z03-conflito-sat-unsat,S1 e S2,unsat,unsat,OK
+z04-conflito-criterio-pares,S1 isolada,sat,sat,OK
+z04-conflito-criterio-pares,S2 isolada,sat,sat,OK
+z04-conflito-criterio-pares,S1 e S2,unsat,unsat,OK
+z05-conflito-minimalidade,G isolada,sat,sat,OK
+z05-conflito-minimalidade,X isolada,sat,sat,OK
+z05-conflito-minimalidade,E isolada,sat,sat,OK
+z05-conflito-minimalidade,M isolada,sat,sat,OK
+z05-conflito-minimalidade,G e X,unsat,unsat,OK
+z05-conflito-minimalidade,E e M,unsat,unsat,OK
+z05-conflito-minimalidade,"G, X, E e M",unsat,unsat,OK
+z06-conflito-classificacao,R1 isolada,sat,sat,OK
+z06-conflito-classificacao,R2 isolada,sat,sat,OK
+z06-conflito-classificacao,R3 isolada,sat,sat,OK
+z06-conflito-classificacao,R1 e R2,unsat,unsat,OK
+z06-conflito-classificacao,R1 e R3,unsat,unsat,OK
+z06-conflito-classificacao,"R1, R2 e R3",unsat,unsat,OK
+z07-conflito-parenteses,P1 isolada (coerente com a tabela: 428 de 429),sat,sat,OK
+z07-conflito-parenteses,P2 isolada,unsat,unsat,OK
+z07-conflito-parenteses,P1 e P2,unsat,unsat,OK
+z08-conflito-z3-arquitetura,A1 isolada,sat,sat,OK
+z08-conflito-z3-arquitetura,A2 isolada,sat,sat,OK
+z08-conflito-z3-arquitetura,A1 e A2,unsat,unsat,OK
+z08-conflito-z3-arquitetura,T1 isolada,sat,sat,OK
+z08-conflito-z3-arquitetura,T2 isolada,sat,sat,OK
+z08-conflito-z3-arquitetura,T1 e T2,unsat,unsat,OK
+z09-conflito-cobertura,C1 isolada,sat,sat,OK
+z09-conflito-cobertura,C2 isolada,sat,sat,OK
+z09-conflito-cobertura,C1 e C2,unsat,unsat,OK
+z10-conflito-mutacao-pit,M1 isolada,sat,sat,OK
+z10-conflito-mutacao-pit,M2 isolada,sat,sat,OK
+z10-conflito-mutacao-pit,M1 e M2,unsat,unsat,OK
+z11-conflito-regra-global,V1 isolada,sat,sat,OK
+z11-conflito-regra-global,V2 isolada,sat,sat,OK
+z11-conflito-regra-global,V1 e V2,unsat,unsat,OK
+z12-combinacoes-casos-determinados,D22 speed>100 /\ mode=idle: 2 entradas -> 4,sat,sat,OK
+z12-combinacoes-casos-determinados,D23 B or (C and D): 3 entradas -> 8,sat,sat,OK
+z12-combinacoes-casos-determinados,D24 B or (not B and C): 2 entradas distintas -> 4,sat,sat,OK
+z12-combinacoes-casos-determinados,D26 20 entradas -> 1048576,sat,sat,OK
+z12-combinacoes-casos-determinados,D29 paridade de 3 entradas -> 8 combinacoes (= 8 testes),sat,sat,OK
+z12-combinacoes-casos-determinados,D26 contra-prova,sat,sat,OK

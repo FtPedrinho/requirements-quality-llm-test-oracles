@@ -1,0 +1,2 @@
+tool-readme-C4.md  SHA-256 D6BC0A588CD9A7DF7F1F566573944FA5CB1707BBA676B4E9854CAD2CC5440FC2
+Copia identica a experimentacao-pesquisa/experimentacao-4/tool-readme-C4.md (hash conferido antes da leitura).
